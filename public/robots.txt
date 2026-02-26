@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psicologakarentrujillo.com.mx/sitemap.xml

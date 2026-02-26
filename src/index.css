@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 256 27% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 256 27% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 256 27% 25%;
+
+    --primary: 256 27% 25%;
+    --primary-foreground: 210 40% 98%;
+    --primary-light: 256 24% 40%;
+    --primary-dark: 258 40% 20%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 256 27% 25%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16.3% 38%;
+
+    --accent: 240 33% 86%;
+    --accent-foreground: 256 27% 25%;
+    
+    --accent-blue: 240 33% 86%;
+    --accent-pink: 349 79% 92%;
+    --accent-sand: 30 53% 90%;
+    --accent-green: 120 52% 89%;
+    --whatsapp: 142 70% 49%;
+    --success: 160 84% 39%;
+    --warning: 38 92% 50%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 256 27% 25%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 256 27% 10%;
+    --foreground: 210 40% 98%;
+    --card: 256 27% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 256 27% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 256 27% 25%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 17px;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-weight: 400;
+  }
+
+  /* Párrafos y texto de cuerpo: nunca menos de peso 400 */
+  p, li, td, dd, blockquote {
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/80;
+  }
+
+  .glass-dark {
+    @apply bg-primary/95 backdrop-blur-lg;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .whatsapp-pulse {
+    animation: pulse-green 2s infinite;
+  }
+
+  @keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 hsl(142 70% 49% / 0.7); }
+    70% { box-shadow: 0 0 0 15px hsl(142 70% 49% / 0); }
+    100% { box-shadow: 0 0 0 0 hsl(142 70% 49% / 0); }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+  /* ── Blog prose styles ── */
+  .prose-blog {
+    @apply text-foreground leading-relaxed;
+  }
+  .prose-blog h2 {
+    @apply text-2xl md:text-3xl font-serif font-bold text-primary mt-12 mb-4 leading-snug;
+  }
+  .prose-blog h3 {
+    @apply text-xl font-bold text-primary mt-8 mb-3;
+  }
+  .prose-blog p {
+    @apply text-muted-foreground font-light leading-relaxed mb-5 text-base;
+  }
+  .prose-blog strong {
+    @apply font-bold text-primary;
+  }
+  .prose-blog ul {
+    @apply space-y-2 mb-6 pl-0;
+  }
+  .prose-blog li {
+    @apply flex items-start gap-3 text-sm text-muted-foreground font-light leading-relaxed;
+  }
+  .prose-blog blockquote {
+    @apply border-l-4 border-accent-blue bg-accent-blue/5 px-6 py-4 rounded-r-xl my-8 text-primary font-medium italic text-base leading-relaxed;
+  }
+  .prose-blog .highlight-box {
+    @apply bg-secondary border border-border rounded-xl p-6 my-8;
+  }
+  .prose-blog .answer-box {
+    @apply bg-primary text-primary-foreground rounded-xl p-6 my-8 font-medium text-base leading-relaxed;
+  }
+  .prose-blog .warning-box {
+    @apply bg-accent-pink/10 border border-accent-pink/30 rounded-xl p-5 my-6 text-sm text-foreground leading-relaxed;
+  }
