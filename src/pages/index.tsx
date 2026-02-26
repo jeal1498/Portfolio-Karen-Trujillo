@@ -931,6 +931,19 @@ export default function Home() {
                   </SectionReveal>
                 ))}
               </div>
+
+              <SectionReveal delay={0.25}>
+                <div className="text-center mt-8">
+                  <Link
+                    href="/blog"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary/20 text-primary font-bold text-[11px] uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all duration-200 group"
+                  >
+                    Ver todos los artículos
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </SectionReveal>
+
             </div>
           </section>
 
