@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 /* ═══════════════════════════════════════════════════════════════
    CONFIG — Cal.com URL (cambiar al URL real de Karen)
    ═══════════════════════════════════════════════════════════════ */
-const CAL_URL = 'https://cal.com/karentrujillo/valoracion-tdah-infantil';
+const CAL_URL = 'https://cal.com/psicologa-karen-trujillo/evaluacion-tdah-infantil';
 const WA_NUMBER = '529983211547';
 const PHONE_NUMBER = '529983211547';
 
