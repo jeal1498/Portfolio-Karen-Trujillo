@@ -112,7 +112,7 @@ export default function BlogIndex() {
           property="og:description"
           content="Guías y artículos basados en evidencia sobre TDAH en niños y adultos, TDAH en niñas y diagnóstico de autismo con ADOS-2 en Cancún."
         />
-        <link rel="canonical" href="https://psicologakarentrujillo.com.mx/blog" />
+        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog" />
       </Head>
 
       <Navbar />

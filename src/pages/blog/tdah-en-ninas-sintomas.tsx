@@ -75,7 +75,7 @@ const schema = {
     {
       '@type': 'Article',
       headline: 'TDAH en niñas: síntomas que casi nadie detecta',
-      url: 'https://psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas',
+      url: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas',
       datePublished: '2025-01-01',
       author: { '@type': 'Person', name: 'Karen Trujillo', jobTitle: 'Neuropsicóloga', hasCredential: { '@type': 'EducationalOccupationalCredential', credentialId: '11009616' } },
     },
@@ -92,11 +92,11 @@ export default function TDAHNinas() {
       <Head>
         <title>TDAH en Niñas: Síntomas que Casi Nadie Detecta | Neuropsicóloga Karen Trujillo Cancún</title>
         <meta name="description" content="El TDAH en niñas se diagnostica años más tarde que en niños porque los síntomas son distintos. Inatención sin hiperactividad, hipersensibilidad emocional, agotamiento por compensación. Valoración en Cancún." />
-        <link rel="canonical" href="https://psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
+        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
         <meta property="og:title" content="TDAH en Niñas: Por Qué Se Detecta Tan Tarde y Cómo Identificarlo" />
         <meta property="og:description" content="El TDAH femenino es invisible al sistema: no genera disrupción, se compensa con esfuerzo, se confunde con ansiedad. Señales, consecuencias y cómo evaluar a tu hija en Cancún." />
-        <meta property="og:url" content="https://psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
-        <meta property="og:image" content="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">

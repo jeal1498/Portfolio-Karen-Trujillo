@@ -37,7 +37,7 @@ const schema = {
     {
       '@type': 'Article',
       headline: '¿Cuánto cuesta una valoración de TDAH en Cancún?',
-      url: 'https://psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun',
+      url: 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun',
       datePublished: '2025-01-01',
       author: { '@type': 'Person', name: 'Karen Trujillo', jobTitle: 'Neuropsicóloga', hasCredential: { '@type': 'EducationalOccupationalCredential', credentialId: '11009616' } },
       mainEntity: { '@type': 'Offer', name: 'Valoración Neuropsicológica de TDAH en Cancún', price: '7000', priceCurrency: 'MXN' },
@@ -55,11 +55,11 @@ export default function CuantoCuestaValoracionTDAH() {
       <Head>
         <title>¿Cuánto cuesta una valoración de TDAH en Cancún? | Neuropsicóloga Karen Trujillo</title>
         <meta name="description" content="La valoración neuropsicológica de TDAH en Cancún cuesta $7,000 MXN. Incluye 4-5 sesiones, instrumentos estandarizados (CONNERS-3, WISC-V) e informe con cédula federal 11009616 válido ante SEP e IMSS." />
-        <link rel="canonical" href="https://psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
+        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
         <meta property="og:title" content="¿Cuánto cuesta una valoración de TDAH en Cancún? | Karen Trujillo" />
         <meta property="og:description" content="Precio de la valoración de TDAH en Cancún: $7,000 MXN. Pago distribuido en sesiones. Informe con cédula 11009616 válido ante SEP e IMSS." />
-        <meta property="og:url" content="https://psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
-        <meta property="og:image" content="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">

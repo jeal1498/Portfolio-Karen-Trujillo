@@ -142,26 +142,26 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      '@id': 'https://psicologakarentrujillo.com.mx/blog/senales-tdah-ninos/#article',
+      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos/#article',
       headline: 'Señales de TDAH en niños: guía para padres que sospechan',
       description: 'Guía completa para identificar señales reales de TDAH en niños de 3 a 17 años. Diferencia entre comportamiento típico y síntomas que justifican una evaluación neuropsicológica.',
-      image: 'https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
       datePublished: '2025-06-15',
       dateModified: '2025-06-15',
       author: {
         '@type': 'Person',
-        '@id': 'https://psicologakarentrujillo.com.mx/#physician',
+        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://psicologakarentrujillo.com.mx',
+        url: 'https://www.psicologakarentrujillo.com.mx',
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://psicologakarentrujillo.com.mx/#clinic',
+        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://psicologakarentrujillo.com.mx',
+        url: 'https://www.psicologakarentrujillo.com.mx',
       },
-      mainEntityOfPage: 'https://psicologakarentrujillo.com.mx/blog/senales-tdah-ninos',
+      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos',
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -172,9 +172,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'Señales de TDAH en niños', item: 'https://psicologakarentrujillo.com.mx/blog/senales-tdah-ninos' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
+        { '@type': 'ListItem', position: 3, name: 'Señales de TDAH en niños', item: 'https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos' },
       ],
     },
     {
@@ -248,15 +248,15 @@ export default function SenalesTDAHNinos() {
       <Head>
         <title>Señales de TDAH en niños: guía para padres | Neuropsicóloga Karen Trujillo</title>
         <meta name="description" content="¿Tu hijo no pone atención, pierde cosas o no se queda quieto? Conoce las señales reales de TDAH en niños de 3 a 17 años. Guía basada en evidencia por neuropsicóloga con cédula 11009616." />
-        <link rel="canonical" href="https://psicologakarentrujillo.com.mx/blog/senales-tdah-ninos" />
+        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos" />
 
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Señales de TDAH en niños: guía para padres que sospechan" />
         <meta property="og:description" content="Guía completa para identificar señales reales de TDAH en niños. Diferencia entre comportamiento típico y síntomas que justifican una evaluación neuropsicológica." />
-        <meta property="og:url" content="https://psicologakarentrujillo.com.mx/blog/senales-tdah-ninos" />
-        <meta property="og:image" content="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-15" />
 
@@ -317,7 +317,7 @@ export default function SenalesTDAHNinos() {
                 <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
                   <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md">
                     <Image
-                      src="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                      src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                       alt="Neuropsicóloga Karen Trujillo"
                       width={48}
                       height={48}
@@ -757,7 +757,7 @@ export default function SenalesTDAHNinos() {
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md shrink-0">
                       <Image
-                        src="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                        src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                         alt="Neuropsicóloga Karen Trujillo"
                         width={48}
                         height={48}
