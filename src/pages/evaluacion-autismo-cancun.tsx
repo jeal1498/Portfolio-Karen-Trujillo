@@ -162,11 +162,11 @@ const reviews = [
 /* ── Physician entity (reused across schemas) ── */
 const physicianEntity = {
   '@type': 'Physician',
-  '@id': 'https://psicologakarentrujillo.com.mx/#physician',
+  '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
   name: 'Karen Trujillo',
   jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-  url: 'https://psicologakarentrujillo.com.mx',
-  image: 'https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  url: 'https://www.psicologakarentrujillo.com.mx',
+  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
   telephone: '+529983211547',
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
@@ -195,7 +195,7 @@ const physicianEntity = {
 /* ── MedicalCondition entity ── */
 const teaCondition = {
   '@type': 'MedicalCondition',
-  '@id': 'https://psicologakarentrujillo.com.mx/#tea',
+  '@id': 'https://www.psicologakarentrujillo.com.mx/#tea',
   name: 'Trastorno del Espectro Autista (TEA)',
   alternateName: ['Autismo', 'TEA', 'Autism Spectrum Disorder', 'Espectro autista', 'Asperger'],
   code: [
@@ -237,11 +237,11 @@ const teaCondition = {
 /* ── MedicalClinic entity (local SEO + GEO) ── */
 const clinicEntity = {
   '@type': 'MedicalClinic',
-  '@id': 'https://psicologakarentrujillo.com.mx/#clinic',
+  '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
   name: 'Consultorio Neuropsicóloga Karen Trujillo',
-  url: 'https://psicologakarentrujillo.com.mx',
+  url: 'https://www.psicologakarentrujillo.com.mx',
   telephone: '+529983211547',
-  image: 'https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac Supermanzana Circuito casa 1587B',
@@ -270,8 +270,8 @@ const clinicEntity = {
     },
   ],
   medicalSpecialty: 'Neuropsychiatry',
-  availableService: { '@id': 'https://psicologakarentrujillo.com.mx/#tea-service' },
-  member: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+  availableService: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea-service' },
+  member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
 };
 
 const schema = {
@@ -281,23 +281,23 @@ const schema = {
     {
       '@type': 'MedicalWebPage',
       name: 'Evaluación y Diagnóstico de Autismo (TEA) en Cancún',
-      url: 'https://psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
+      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
       description: 'Evaluación neuropsicológica de Autismo (TEA) en Cancún con ADOS-2 y ADI-R. Diagnóstico con nivel de apoyo, perfil cognitivo y conducta adaptativa. Informe con cédula federal 11009616.',
       inLanguage: 'es-MX',
-      about: { '@id': 'https://psicologakarentrujillo.com.mx/#tea' },
+      about: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
       mentions: [
         { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalTest', name: 'ADOS-2' },
         { '@type': 'MedicalTest', name: 'ADI-R' },
       ],
-      reviewedBy: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+      reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       lastReviewed: '2025-06-01',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://psicologakarentrujillo.com.mx' },
-          { '@type': 'ListItem', position: 2, name: 'Evaluación Autismo (TEA)', item: 'https://psicologakarentrujillo.com.mx/evaluacion-autismo-cancun' },
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
+          { '@type': 'ListItem', position: 2, name: 'Evaluación Autismo (TEA)', item: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun' },
         ],
       },
     },
@@ -313,14 +313,14 @@ const schema = {
       name: 'ADOS-2',
       alternateName: 'Autism Diagnostic Observation Schedule — 2nd Edition',
       description: 'Escala de observación semiestructurada considerada el estándar de oro internacional para el diagnóstico del autismo. Evalúa comunicación, interacción social y conducta directamente con el niño.',
-      usedToDiagnose: { '@id': 'https://psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'ADI-R',
       alternateName: 'Autism Diagnostic Interview — Revised',
       description: 'Entrevista diagnóstica estructurada aplicada a padres o cuidadores principales. Explora la historia del desarrollo, comunicación, interacción social y patrones de conducta restringidos y repetitivos.',
-      usedToDiagnose: { '@id': 'https://psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
     },
     {
       '@type': 'DiagnosticProcedure',
@@ -328,26 +328,26 @@ const schema = {
       alternateName: 'Escala Wechsler de Inteligencia para Niños — 5ª edición',
       description: 'Evaluación de inteligencia y perfil cognitivo que mide atención, memoria de trabajo, velocidad de procesamiento y razonamiento.',
       sameAs: 'https://www.wikidata.org/wiki/Q2551426',
-      usedToDiagnose: { '@id': 'https://psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'Vineland-3',
       alternateName: 'Vineland Adaptive Behavior Scales — 3rd Edition',
       description: 'Evaluación de conducta adaptativa que mide comunicación, socialización, habilidades de la vida diaria y habilidades motoras.',
-      usedToDiagnose: { '@id': 'https://psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'SRS-2',
       alternateName: 'Social Responsiveness Scale — 2nd Edition',
       description: 'Escala que mide la severidad de los déficits en interacción social recíproca asociados al autismo, con formas para padres y maestros.',
-      usedToDiagnose: { '@id': 'https://psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
     },
     /* ── Service + Offer ── */
     {
       '@type': 'MedicalProcedure',
-      '@id': 'https://psicologakarentrujillo.com.mx/#tea-service',
+      '@id': 'https://www.psicologakarentrujillo.com.mx/#tea-service',
       name: 'Evaluación Neuropsicológica de Autismo (TEA)',
       procedureType: 'Diagnostic',
       howPerformed: 'Aplicación de ADOS-2 (observación directa), ADI-R (entrevista con padres), WISC-V (perfil cognitivo), Vineland-3 (conducta adaptativa) y SRS-2 (responsividad social). Elaboración de informe y sesión de devolución.',
@@ -355,8 +355,8 @@ const schema = {
       followup: 'Sesión de devolución con explicación del diagnóstico, nivel de apoyo, recomendaciones terapéuticas y adecuaciones escolares.',
       bodyLocation: 'Sistema nervioso central — comunicación social y conducta',
       status: 'EventScheduled',
-      provider: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
       offers: {
         '@type': 'Offer',
         price: '8500',
@@ -382,13 +382,13 @@ const schema = {
       author: { '@type': 'Person', name: r.name },
       reviewRating: { '@type': 'Rating', ratingValue: r.stars, bestRating: 5 },
       reviewBody: r.text,
-      itemReviewed: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       datePublished: `2025-0${i + 1}-15`,
     })),
     /* ── AggregateRating ── */
     {
       '@type': 'AggregateRating',
-      itemReviewed: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       ratingValue: '5.0',
       reviewCount: '47',
       bestRating: '5',
@@ -609,7 +609,7 @@ export default function AutismoCancunFunnel() {
       <Head>
         <title>Evaluación Autismo (TEA) en Cancún · ADOS-2 | Karen Trujillo</title>
         <meta name="description" content="¿Tu hijo muestra señales de autismo? Evaluación neuropsicológica de TEA en Cancún con ADOS-2 y ADI-R. Diagnóstico con nivel de apoyo. Informe oficial con cédula 11009616. $8,500 MXN. Agenda en línea." />
-        <link rel="canonical" href="https://psicologakarentrujillo.com.mx/evaluacion-autismo-cancun" />
+        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun" />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
@@ -621,8 +621,8 @@ export default function AutismoCancunFunnel() {
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo — Neuropsicología" />
         <meta property="og:title" content="Evaluación Autismo (TEA) en Cancún · ADOS-2 y ADI-R" />
         <meta property="og:description" content="Evaluación neuropsicológica de autismo con ADOS-2 — estándar de oro internacional. Informe con validez oficial. $8,500 MXN. Agenda en línea." />
-        <meta property="og:url" content="https://psicologakarentrujillo.com.mx/evaluacion-autismo-cancun" />
-        <meta property="og:image" content="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Evaluación Autismo (TEA) en Cancún | ADOS-2 y ADI-R" />
@@ -636,7 +636,7 @@ export default function AutismoCancunFunnel() {
             '@type': 'SpeakableSpecification',
             cssSelector: ['#definicion-tea', '#proceso-evaluacion', '#que-incluye-informe', '#diferenciador-neuropsicologia'],
           },
-          url: 'https://psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
+          url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
         }) }} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -1026,7 +1026,7 @@ export default function AutismoCancunFunnel() {
                     <div className="relative">
                       <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
                         <Image
-                          src="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                           alt="Neuropsicóloga Karen Trujillo — especialista en autismo y TDAH en Cancún"
                           width={256}
                           height={256}

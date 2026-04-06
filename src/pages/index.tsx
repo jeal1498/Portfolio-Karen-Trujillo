@@ -134,12 +134,12 @@ const schema = {
     /* ── MedicalBusiness (LocalBusiness + Medical) ── */
     {
       '@type': ['MedicalBusiness', 'MedicalClinic'],
-      '@id': 'https://psicologakarentrujillo.com.mx/#clinic',
+      '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
       name: 'Neuropsicóloga Karen Trujillo — Consultorio de Neuropsicología',
       alternateName: 'Consultorio Neuropsicóloga Karen Trujillo',
-      url: 'https://psicologakarentrujillo.com.mx',
+      url: 'https://www.psicologakarentrujillo.com.mx',
       telephone: '+529983211547',
-      image: 'https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
       description: 'Consultorio de neuropsicología clínica en Cancún, Quintana Roo. Especialista en diagnóstico de TDAH (niños y adultos) y Trastorno del Espectro Autista (TEA) con pruebas estandarizadas internacionales.',
       address: {
         '@type': 'PostalAddress',
@@ -178,7 +178,7 @@ const schema = {
         sameAs: 'https://www.wikidata.org/wiki/Q8969',
         containedInPlace: { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
       },
-      member: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+      member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       sameAs: [
         'https://www.facebook.com/share/1Bs93MjeKt/',
         'https://www.instagram.com/psicologakarentrujillo',
@@ -188,11 +188,11 @@ const schema = {
     /* ── Physician ── */
     {
       '@type': 'Physician',
-      '@id': 'https://psicologakarentrujillo.com.mx/#physician',
+      '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
       name: 'Karen Trujillo',
       jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-      url: 'https://psicologakarentrujillo.com.mx',
-      image: 'https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      url: 'https://www.psicologakarentrujillo.com.mx',
+      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
       telephone: '+529983211547',
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
@@ -219,30 +219,30 @@ const schema = {
     /* ── WebSite ── */
     {
       '@type': 'WebSite',
-      '@id': 'https://psicologakarentrujillo.com.mx/#website',
+      '@id': 'https://www.psicologakarentrujillo.com.mx/#website',
       name: 'Neuropsicóloga Karen Trujillo',
-      url: 'https://psicologakarentrujillo.com.mx',
+      url: 'https://www.psicologakarentrujillo.com.mx',
       inLanguage: 'es-MX',
-      publisher: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+      publisher: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
     },
     /* ── WebPage ── */
     {
       '@type': 'MedicalWebPage',
       name: 'Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo',
-      url: 'https://psicologakarentrujillo.com.mx',
+      url: 'https://www.psicologakarentrujillo.com.mx',
       description: 'Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Informes con validez oficial. Cédula 11009616.',
       inLanguage: 'es-MX',
-      isPartOf: { '@id': 'https://psicologakarentrujillo.com.mx/#website' },
+      isPartOf: { '@id': 'https://www.psicologakarentrujillo.com.mx/#website' },
       about: [
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
       ],
-      reviewedBy: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+      reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       lastReviewed: '2025-06-01',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://psicologakarentrujillo.com.mx' },
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
         ],
       },
     },
@@ -250,34 +250,34 @@ const schema = {
     {
       '@type': 'MedicalProcedure',
       name: 'Valoración Neuropsicológica de TDAH Infantil',
-      url: 'https://psicologakarentrujillo.com.mx/evaluacion-tdah-ninos',
+      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos',
       procedureType: 'Diagnostic',
-      provider: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
       offers: { '@type': 'Offer', price: '7000', priceCurrency: 'MXN' },
     },
     {
       '@type': 'MedicalProcedure',
       name: 'Valoración Neuropsicológica de TDAH en Adultos',
-      url: 'https://psicologakarentrujillo.com.mx/evaluacion-tdah-adultos',
+      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-adultos',
       procedureType: 'Diagnostic',
-      provider: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
       offers: { '@type': 'Offer', price: '7000', priceCurrency: 'MXN' },
     },
     {
       '@type': 'MedicalProcedure',
       name: 'Evaluación Neuropsicológica de Autismo (TEA)',
-      url: 'https://psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
+      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
       procedureType: 'Diagnostic',
-      provider: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
       offers: { '@type': 'Offer', price: '8500', priceCurrency: 'MXN' },
     },
     /* ── AggregateRating ── */
     {
       '@type': 'AggregateRating',
-      itemReviewed: { '@id': 'https://psicologakarentrujillo.com.mx/#physician' },
+      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       ratingValue: '5.0',
       reviewCount: '47',
       bestRating: '5',
@@ -349,7 +349,7 @@ export default function Home() {
       <Head>
         <title>Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula 11009616</title>
         <meta name="description" content="Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Pruebas estandarizadas internacionales. Informes con validez oficial. Agenda en línea." />
-        <link rel="canonical" href="https://psicologakarentrujillo.com.mx" />
+        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx" />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
@@ -361,8 +361,8 @@ export default function Home() {
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo" />
         <meta property="og:description" content="Evaluaciones neuropsicológicas con pruebas estandarizadas internacionales. TDAH niños, TDAH adultos y autismo (TEA). Informes con validez oficial." />
-        <meta property="og:url" content="https://psicologakarentrujillo.com.mx" />
-        <meta property="og:image" content="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo" />
@@ -376,7 +376,7 @@ export default function Home() {
             '@type': 'SpeakableSpecification',
             cssSelector: ['#que-es-neuropsicologia', '#servicios', '#ubicacion'],
           },
-          url: 'https://psicologakarentrujillo.com.mx',
+          url: 'https://www.psicologakarentrujillo.com.mx',
         }) }} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -457,7 +457,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="w-64 h-80 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/15">
                       <Image
-                        src="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                        src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                         alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y autismo en Cancún"
                         width={256}
                         height={320}
@@ -737,7 +737,7 @@ export default function Home() {
                     <div className="relative">
                       <div className="w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl">
                         <Image
-                          src="https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                           alt="Neuropsicóloga Karen Trujillo — Cancún"
                           width={208}
                           height={208}
