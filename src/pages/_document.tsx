@@ -4,7 +4,7 @@ const medicalBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
   name: 'Psic. Karen Trujillo — Valoraciones TDAH y Autismo en Cancún',
-  image: 'https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac',
@@ -13,7 +13,7 @@ const medicalBusinessSchema = {
     postalCode: '77539',
     addressCountry: 'MX',
   },
-  url: 'https://psicologakarentrujillo.com.mx',
+  url: 'https://www.psicologakarentrujillo.com.mx',
   telephone: '+529983211547',
   email: 'karentrujillopsic@gmail.com',
   priceRange: '$$',
@@ -25,8 +25,8 @@ const professionalSchema = {
   '@type': ['Physician', 'HealthcareProfessional'],
   name: 'Karen Trujillo',
   jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-  url: 'https://psicologakarentrujillo.com.mx',
-  image: 'https://psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  url: 'https://www.psicologakarentrujillo.com.mx',
+  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
   description: 'Neuropsicóloga especializada en valoración de TDAH (infantil y adultos) y diagnóstico de Autismo (TEA) en Cancún. Cédula Federal 11009616. 7+ años de experiencia.',
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
