@@ -14,7 +14,7 @@ interface SeoMeta {
 const HOME_DEFAULTS = {
   title: 'Valoración TDAH y Autismo en Cancún | Neuropsicóloga Karen Trujillo — Neuropsicóloga',
   description: 'Evaluación neuropsicológica de TDAH (niños y adultos) y Autismo en Cancún. Diagnóstico con instrumentos estandarizados (CONNERS, WISC-V, ADOS-2). Informe clínico con cédula 11009616.',
-  canonical: 'https://psicologakarentrujillo.com.mx',
+  canonical: 'https://www.psicologakarentrujillo.com.mx',
   ogTitle: 'Valoración TDAH y Autismo en Cancún | Neuropsicóloga Karen Trujillo',
   ogDescription: 'Diagnóstico neuropsicológico especializado de TDAH y Autismo en Cancún. Instrumentos estandarizados. Informe con cédula 11009616.',
 };
