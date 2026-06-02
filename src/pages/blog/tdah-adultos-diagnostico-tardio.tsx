@@ -179,7 +179,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Article',
+      '@type': ['Article', 'BlogPosting'],
       '@id': 'https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio/#article',
       headline: 'TDAH en adultos: por qué miles de personas llegan al diagnóstico después de los 30',
       description: 'Guía completa sobre TDAH en adultos no diagnosticados. Señales en el trabajo, relaciones y vida diaria. Diagnóstico diferencial con ansiedad, depresión y burnout.',
@@ -301,6 +301,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH en adultos: diagnóstico después de los 30 | Karen Trujillo" />
         <meta name="twitter:description" content="¿Procrastinas, pierdes cosas y sientes que el tiempo no alcanza? Guía de TDAH en adultos basada en evidencia." />
+        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 

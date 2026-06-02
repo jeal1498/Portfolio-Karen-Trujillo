@@ -292,7 +292,7 @@ const schema = {
         { '@type': 'MedicalTest', name: 'ADI-R' },
       ],
       reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      lastReviewed: '2025-06-01',
+      lastReviewed: '2026-06-02',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
