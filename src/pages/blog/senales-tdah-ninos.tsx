@@ -141,7 +141,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Article',
+      '@type': ['Article', 'BlogPosting'],
       '@id': 'https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos/#article',
       headline: 'Señales de TDAH en niños: guía para padres que sospechan',
       description: 'Guía completa para identificar señales reales de TDAH en niños de 3 a 17 años. Diferencia entre comportamiento típico y síntomas que justifican una evaluación neuropsicológica.',
@@ -263,6 +263,7 @@ export default function SenalesTDAHNinos() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Señales de TDAH en niños: guía para padres | Karen Trujillo" />
         <meta name="twitter:description" content="¿Tu hijo no pone atención? Conoce las señales reales de TDAH vs. comportamiento típico. Guía basada en evidencia." />
+        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 

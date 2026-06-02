@@ -442,7 +442,7 @@ const Footer: React.FC = () => {
               </p>
               <div className="hours-row">
                 <strong>Lun – Vie</strong>
-                <span>9:00 AM – 8:00 PM</span>
+                <span>9:00 AM – 7:00 PM</span>
               </div>
               <div className="hours-row">
                 <strong>Sábado</strong>

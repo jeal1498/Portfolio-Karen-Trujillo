@@ -282,7 +282,7 @@ const schema = {
         { '@type': 'MedicalTest', name: 'WISC-V', sameAs: 'https://www.wikidata.org/wiki/Q2551426' },
       ],
       reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      lastReviewed: '2025-06-01',
+      lastReviewed: '2026-06-02',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
