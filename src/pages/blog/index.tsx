@@ -78,6 +78,19 @@ const posts = [
   },
   {
     rank: 6,
+    slug: '/blog/cuanto-cuesta-evaluacion-autismo-mexico',
+    category: 'Autismo / TEA — Precios',
+    icon: DollarSign,
+    title: '¿Cuánto cuesta una evaluación de autismo en México?',
+    excerpt: 'Precio real, sin letra chica. $8,500 MXN que incluye ADOS-2, ADI-R, WISC-V, Vineland-3 y sesión de devolución. Por qué cuesta lo que cuesta y qué pasa si no se hace.',
+    readTime: '8 min',
+    featured: false,
+    accentClass: 'from-accent-sand/30 to-accent-sand/10',
+    badgeClass: 'bg-accent-sand/30 text-primary',
+    iconBg: 'bg-accent-sand/20',
+  },
+  {
+    rank: 7,
     slug: '/blog/tdah-inatento-sintomas',
     category: 'TDAH Inatento',
     icon: Clock,
@@ -90,7 +103,7 @@ const posts = [
     iconBg: 'bg-accent-blue/10',
   },
   {
-    rank: 7,
+    rank: 8,
     slug: '/blog/tdah-vs-ansiedad-diferencias',
     category: 'Diagnóstico diferencial',
     icon: Zap,
