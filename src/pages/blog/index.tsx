@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Clock, Brain, Users, DollarSign, Eye, Sparkles } from 'lucide-react';
+import { ArrowRight, Clock, Brain, Users, DollarSign, Eye, Sparkles, Zap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
@@ -75,6 +75,32 @@ const posts = [
     accentClass: 'from-accent-sand/30 to-accent-sand/10',
     badgeClass: 'bg-accent-sand/30 text-primary',
     iconBg: 'bg-accent-sand/20',
+  },
+  {
+    rank: 6,
+    slug: '/blog/tdah-inatento-sintomas',
+    category: 'TDAH Inatento',
+    icon: Clock,
+    title: 'TDAH inatento: el tipo que casi nadie detecta',
+    excerpt: 'Sin hiperactividad, sin escándalo, sin diagnóstico. El TDAH inatento pasa años invisible en niños y adultos porque se confunde con pereza o falta de motivación. Señales reales y cómo evaluarlo.',
+    readTime: '8 min',
+    featured: false,
+    accentClass: 'from-accent-blue/15 to-accent-blue/5',
+    badgeClass: 'bg-accent-blue/15 text-accent-blue',
+    iconBg: 'bg-accent-blue/10',
+  },
+  {
+    rank: 7,
+    slug: '/blog/tdah-vs-ansiedad-diferencias',
+    category: 'Diagnóstico diferencial',
+    icon: Zap,
+    title: '¿TDAH o ansiedad? Cómo saber cuál es cuál — o si son los dos',
+    excerpt: 'Comparten síntomas pero tienen causas distintas y tratamientos diferentes. Tabla comparativa completa, la realidad de la comorbilidad y por qué el diagnóstico diferencial cambia todo.',
+    readTime: '9 min',
+    featured: false,
+    accentClass: 'from-accent-pink/15 to-accent-pink/5',
+    badgeClass: 'bg-accent-pink/15 text-accent-pink',
+    iconBg: 'bg-accent-pink/10',
   },
 ];
 
