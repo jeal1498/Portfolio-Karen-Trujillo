@@ -172,12 +172,15 @@ const schema = {
       medicalSpecialty: 'Neuropsychiatry',
       currenciesAccepted: 'MXN',
       paymentAccepted: 'Efectivo, Transferencia bancaria, Tarjeta',
-      areaServed: {
-        '@type': 'City',
-        name: 'Cancún',
-        sameAs: 'https://www.wikidata.org/wiki/Q8969',
-        containedInPlace: { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
-      },
+      areaServed: [
+        { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
+        { '@type': 'City', name: 'Playa del Carmen', sameAs: 'https://www.wikidata.org/wiki/Q505403' },
+        { '@type': 'City', name: 'Tulum', sameAs: 'https://www.wikidata.org/wiki/Q697023' },
+        { '@type': 'City', name: 'Mérida', sameAs: 'https://www.wikidata.org/wiki/Q15678' },
+        { '@type': 'City', name: 'Isla Mujeres' },
+        { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
+        { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
+      ],
       member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       sameAs: [
         'https://www.facebook.com/share/1Bs93MjeKt/',
@@ -205,10 +208,21 @@ const schema = {
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
       ],
-      areaServed: {
-        '@type': 'City',
-        name: 'Cancún',
-        sameAs: 'https://www.wikidata.org/wiki/Q8969',
+      areaServed: [
+        { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
+        { '@type': 'City', name: 'Playa del Carmen', sameAs: 'https://www.wikidata.org/wiki/Q505403' },
+        { '@type': 'City', name: 'Tulum', sameAs: 'https://www.wikidata.org/wiki/Q697023' },
+        { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
+        { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
+      ],
+      memberOf: {
+        '@type': 'Organization',
+        name: 'Colegio de Psicólogos de Quintana Roo',
+      },
+      alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: 'Universidad Modelo',
+        address: { '@type': 'PostalAddress', addressLocality: 'Mérida', addressRegion: 'Yucatán', addressCountry: 'MX' },
       },
       sameAs: [
         'https://www.facebook.com/share/1Bs93MjeKt/',
