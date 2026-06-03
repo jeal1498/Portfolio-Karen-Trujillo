@@ -836,12 +836,25 @@ export default function Home() {
                   </SectionReveal>
                 ))}
               </div>
+
+              <SectionReveal delay={0.3}>
+                <div className="mt-10 text-center">
+                  <p className="text-sm text-muted-foreground font-light mb-3">
+                    ¿Ya te evaluaste con Karen? Tu experiencia ayuda a que más familias de Cancún nos encuentren.
+                  </p>
+                  <a
+                    href="https://www.google.com/search?q=Karen+Trujillo+Neuropsic%C3%B3loga+Canc%C3%BAn+rese%C3%B1as"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-primary border border-border hover:border-primary/40 hover:bg-secondary px-5 py-2.5 rounded-full transition-all"
+                  >
+                    <Star className="w-3.5 h-3.5 text-warning fill-warning" />
+                    Dejar reseña en Google
+                  </a>
+                </div>
+              </SectionReveal>
             </div>
           </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              6 · FAQ — General
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-card">
             <div className="max-w-3xl mx-auto px-6">
