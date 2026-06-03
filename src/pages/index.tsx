@@ -172,12 +172,15 @@ const schema = {
       medicalSpecialty: 'Neuropsychiatry',
       currenciesAccepted: 'MXN',
       paymentAccepted: 'Efectivo, Transferencia bancaria, Tarjeta',
-      areaServed: {
-        '@type': 'City',
-        name: 'Cancún',
-        sameAs: 'https://www.wikidata.org/wiki/Q8969',
-        containedInPlace: { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
-      },
+      areaServed: [
+        { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
+        { '@type': 'City', name: 'Playa del Carmen', sameAs: 'https://www.wikidata.org/wiki/Q505403' },
+        { '@type': 'City', name: 'Tulum', sameAs: 'https://www.wikidata.org/wiki/Q697023' },
+        { '@type': 'City', name: 'Mérida', sameAs: 'https://www.wikidata.org/wiki/Q15678' },
+        { '@type': 'City', name: 'Isla Mujeres' },
+        { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
+        { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
+      ],
       member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       sameAs: [
         'https://www.facebook.com/share/1Bs93MjeKt/',
@@ -205,10 +208,21 @@ const schema = {
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
       ],
-      areaServed: {
-        '@type': 'City',
-        name: 'Cancún',
-        sameAs: 'https://www.wikidata.org/wiki/Q8969',
+      areaServed: [
+        { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
+        { '@type': 'City', name: 'Playa del Carmen', sameAs: 'https://www.wikidata.org/wiki/Q505403' },
+        { '@type': 'City', name: 'Tulum', sameAs: 'https://www.wikidata.org/wiki/Q697023' },
+        { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
+        { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
+      ],
+      memberOf: {
+        '@type': 'Organization',
+        name: 'Colegio de Psicólogos de Quintana Roo',
+      },
+      alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: 'Universidad Modelo',
+        address: { '@type': 'PostalAddress', addressLocality: 'Mérida', addressRegion: 'Yucatán', addressCountry: 'MX' },
       },
       sameAs: [
         'https://www.facebook.com/share/1Bs93MjeKt/',
@@ -822,12 +836,25 @@ export default function Home() {
                   </SectionReveal>
                 ))}
               </div>
+
+              <SectionReveal delay={0.3}>
+                <div className="mt-10 text-center">
+                  <p className="text-sm text-muted-foreground font-light mb-3">
+                    ¿Ya te evaluaste con Karen? Tu experiencia ayuda a que más familias de Cancún nos encuentren.
+                  </p>
+                  <a
+                    href="https://www.google.com/search?q=Karen+Trujillo+Neuropsic%C3%B3loga+Canc%C3%BAn+rese%C3%B1as"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-primary border border-border hover:border-primary/40 hover:bg-secondary px-5 py-2.5 rounded-full transition-all"
+                  >
+                    <Star className="w-3.5 h-3.5 text-warning fill-warning" />
+                    Dejar reseña en Google
+                  </a>
+                </div>
+              </SectionReveal>
             </div>
           </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              6 · FAQ — General
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-card">
             <div className="max-w-3xl mx-auto px-6">

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Clock, Brain, Users, DollarSign, Eye, Sparkles } from 'lucide-react';
+import { ArrowRight, Clock, Brain, Users, DollarSign, Eye, Sparkles, Zap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
@@ -75,6 +75,84 @@ const posts = [
     accentClass: 'from-accent-sand/30 to-accent-sand/10',
     badgeClass: 'bg-accent-sand/30 text-primary',
     iconBg: 'bg-accent-sand/20',
+  },
+  {
+    rank: 6,
+    slug: '/blog/cuanto-cuesta-evaluacion-autismo-mexico',
+    category: 'Autismo / TEA — Precios',
+    icon: DollarSign,
+    title: '¿Cuánto cuesta una evaluación de autismo en México?',
+    excerpt: 'Precio real, sin letra chica. $8,500 MXN que incluye ADOS-2, ADI-R, WISC-V, Vineland-3 y sesión de devolución. Por qué cuesta lo que cuesta y qué pasa si no se hace.',
+    readTime: '8 min',
+    featured: false,
+    accentClass: 'from-accent-sand/30 to-accent-sand/10',
+    badgeClass: 'bg-accent-sand/30 text-primary',
+    iconBg: 'bg-accent-sand/20',
+  },
+  {
+    rank: 7,
+    slug: '/blog/autismo-nivel-1-sintomas-adultos',
+    category: 'Autismo / TEA',
+    icon: Brain,
+    title: 'Autismo nivel 1: cuando no pareces autista pero lo eres',
+    excerpt: 'Sin discapacidad intelectual, con lenguaje fluido — y sintiéndose diferente toda la vida sin saber por qué. El TEA nivel 1 (antes Asperger) es el perfil que más tarda en diagnosticarse.',
+    readTime: '10 min',
+    featured: false,
+    accentClass: 'from-accent-pink/15 to-accent-pink/5',
+    badgeClass: 'bg-accent-pink/15 text-accent-pink',
+    iconBg: 'bg-accent-pink/10',
+  },
+  {
+    rank: 8,
+    slug: '/blog/tdah-inatento-sintomas',
+    category: 'TDAH Inatento',
+    icon: Clock,
+    title: 'TDAH inatento: el tipo que casi nadie detecta',
+    excerpt: 'Sin hiperactividad, sin escándalo, sin diagnóstico. El TDAH inatento pasa años invisible en niños y adultos porque se confunde con pereza o falta de motivación. Señales reales y cómo evaluarlo.',
+    readTime: '8 min',
+    featured: false,
+    accentClass: 'from-accent-blue/15 to-accent-blue/5',
+    badgeClass: 'bg-accent-blue/15 text-accent-blue',
+    iconBg: 'bg-accent-blue/10',
+  },
+  {
+    rank: 9,
+    slug: '/blog/tdah-vs-ansiedad-diferencias',
+    category: 'Diagnóstico diferencial',
+    icon: Zap,
+    title: '¿TDAH o ansiedad? Cómo saber cuál es cuál — o si son los dos',
+    excerpt: 'Comparten síntomas pero tienen causas distintas y tratamientos diferentes. Tabla comparativa completa, la realidad de la comorbilidad y por qué el diagnóstico diferencial cambia todo.',
+    readTime: '9 min',
+    featured: false,
+    accentClass: 'from-accent-pink/15 to-accent-pink/5',
+    badgeClass: 'bg-accent-pink/15 text-accent-pink',
+    iconBg: 'bg-accent-pink/10',
+  },
+  {
+    rank: 10,
+    slug: '/blog/burnout-o-tdah-diferencias',
+    category: 'TDAH Adultos',
+    icon: Brain,
+    title: 'Burnout vs. TDAH: ¿por qué te sientes así y qué puedes hacer?',
+    excerpt: 'Los síntomas se parecen pero el origen es diferente. La diferencia clave: en el burnout hubo un antes en que funcionabas bien. En el TDAH, siempre fue así — aunque no lo supieras.',
+    readTime: '9 min',
+    featured: false,
+    accentClass: 'from-primary/15 to-primary/5',
+    badgeClass: 'bg-primary/10 text-primary',
+    iconBg: 'bg-primary/10',
+  },
+  {
+    rank: 11,
+    slug: '/blog/donde-evaluar-tdah-cancun',
+    category: 'Guía local · Cancún',
+    icon: Eye,
+    title: 'Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)',
+    excerpt: 'Ya decidiste que quieres una evaluación. ¿Cómo elegir bien? Los 5 criterios de una evaluación confiable, las señales de alerta y cómo es el proceso en Cancún.',
+    readTime: '7 min',
+    featured: false,
+    accentClass: 'from-accent-green/20 to-accent-green/5',
+    badgeClass: 'bg-accent-green/15 text-accent-green',
+    iconBg: 'bg-accent-green/10',
   },
 ];
 

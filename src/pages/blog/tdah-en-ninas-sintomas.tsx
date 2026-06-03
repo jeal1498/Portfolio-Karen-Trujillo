@@ -73,11 +73,41 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Article',
+      '@type': ['Article', 'BlogPosting'],
+      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas/#article',
       headline: 'TDAH en niñas: síntomas que casi nadie detecta',
-      url: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas',
-      datePublished: '2025-01-01',
-      author: { '@type': 'Person', name: 'Karen Trujillo', jobTitle: 'Neuropsicóloga', hasCredential: { '@type': 'EducationalOccupationalCredential', credentialId: '11009616' } },
+      description: 'El TDAH femenino es invisible al sistema educativo. No genera disrupción, se enmascara con esfuerzo y durante años se confunde con ansiedad, perfeccionismo o simplemente "ser despistada".',
+      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      datePublished: '2025-06-01',
+      dateModified: '2026-06-02',
+      author: {
+        '@type': 'Person',
+        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        name: 'Karen Trujillo',
+        jobTitle: 'Neuropsicóloga Clínica',
+        url: 'https://www.psicologakarentrujillo.com.mx',
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        name: 'Neuropsicóloga Karen Trujillo',
+        url: 'https://www.psicologakarentrujillo.com.mx',
+      },
+      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas',
+      inLanguage: 'es-MX',
+      about: {
+        '@type': 'MedicalCondition',
+        name: 'TDAH en niñas',
+        sameAs: 'https://www.wikidata.org/wiki/Q206811',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
+        { '@type': 'ListItem', position: 3, name: 'TDAH en niñas: síntomas que casi nadie detecta', item: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas' },
+      ],
     },
     {
       '@type': 'FAQPage',
@@ -93,10 +123,20 @@ export default function TDAHNinas() {
         <title>TDAH en Niñas: Síntomas que Casi Nadie Detecta | Neuropsicóloga Karen Trujillo Cancún</title>
         <meta name="description" content="El TDAH en niñas se diagnostica años más tarde que en niños porque los síntomas son distintos. Inatención sin hiperactividad, hipersensibilidad emocional, agotamiento por compensación. Valoración en Cancún." />
         <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="TDAH en Niñas: Por Qué Se Detecta Tan Tarde y Cómo Identificarlo" />
         <meta property="og:description" content="El TDAH femenino es invisible al sistema: no genera disrupción, se compensa con esfuerzo, se confunde con ansiedad. Señales, consecuencias y cómo evaluar a tu hija en Cancún." />
         <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
         <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH en niñas" />
+        <meta property="article:author" content="Karen Trujillo" />
+        <meta property="article:published_time" content="2025-06-01" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TDAH en niñas: síntomas que casi nadie detecta | Karen Trujillo" />
+        <meta name="twitter:description" content="El TDAH femenino se enmascara con esfuerzo y durante años se confunde con ansiedad. Señales y cómo evaluar a tu hija en Cancún." />
+        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">
