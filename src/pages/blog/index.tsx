@@ -128,6 +128,32 @@ const posts = [
     badgeClass: 'bg-accent-pink/15 text-accent-pink',
     iconBg: 'bg-accent-pink/10',
   },
+  {
+    rank: 10,
+    slug: '/blog/burnout-o-tdah-diferencias',
+    category: 'TDAH Adultos',
+    icon: Brain,
+    title: 'Burnout vs. TDAH: ¿por qué te sientes así y qué puedes hacer?',
+    excerpt: 'Los síntomas se parecen pero el origen es diferente. La diferencia clave: en el burnout hubo un antes en que funcionabas bien. En el TDAH, siempre fue así — aunque no lo supieras.',
+    readTime: '9 min',
+    featured: false,
+    accentClass: 'from-primary/15 to-primary/5',
+    badgeClass: 'bg-primary/10 text-primary',
+    iconBg: 'bg-primary/10',
+  },
+  {
+    rank: 11,
+    slug: '/blog/donde-evaluar-tdah-cancun',
+    category: 'Guía local · Cancún',
+    icon: Eye,
+    title: 'Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)',
+    excerpt: 'Ya decidiste que quieres una evaluación. ¿Cómo elegir bien? Los 5 criterios de una evaluación confiable, las señales de alerta y cómo es el proceso en Cancún.',
+    readTime: '7 min',
+    featured: false,
+    accentClass: 'from-accent-green/20 to-accent-green/5',
+    badgeClass: 'bg-accent-green/15 text-accent-green',
+    iconBg: 'bg-accent-green/10',
+  },
 ];
 
 /* ═══════════════════════════════════════════════════════════════
