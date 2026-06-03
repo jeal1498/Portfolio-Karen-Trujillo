@@ -91,6 +91,19 @@ const posts = [
   },
   {
     rank: 7,
+    slug: '/blog/autismo-nivel-1-sintomas-adultos',
+    category: 'Autismo / TEA',
+    icon: Brain,
+    title: 'Autismo nivel 1: cuando no pareces autista pero lo eres',
+    excerpt: 'Sin discapacidad intelectual, con lenguaje fluido — y sintiéndose diferente toda la vida sin saber por qué. El TEA nivel 1 (antes Asperger) es el perfil que más tarda en diagnosticarse.',
+    readTime: '10 min',
+    featured: false,
+    accentClass: 'from-accent-pink/15 to-accent-pink/5',
+    badgeClass: 'bg-accent-pink/15 text-accent-pink',
+    iconBg: 'bg-accent-pink/10',
+  },
+  {
+    rank: 8,
     slug: '/blog/tdah-inatento-sintomas',
     category: 'TDAH Inatento',
     icon: Clock,
@@ -103,7 +116,7 @@ const posts = [
     iconBg: 'bg-accent-blue/10',
   },
   {
-    rank: 8,
+    rank: 9,
     slug: '/blog/tdah-vs-ansiedad-diferencias',
     category: 'Diagnóstico diferencial',
     icon: Zap,
