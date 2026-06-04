@@ -66,12 +66,6 @@ const condicionesEvalua = [
     href: '/evaluacion-autismo-cancun',
   },
   {
-    condicion: 'Dislexia y trastornos del aprendizaje',
-    detalle:
-      'PROLEC-R, TOMAL-2, WISC-V, BRIEF-2 y CELF-5. Diagnóstico diferencial con TDAH cuando es necesario.',
-    href: '/evaluacion-dislexia-cancun',
-  },
-  {
     condicion: 'Perfiles cognitivos complejos',
     detalle:
       'Alumnos con múltiples dificultades o diagnósticos previos inconclusos que requieren un perfil neuropsicológico integrado.',
@@ -140,7 +134,7 @@ const schema = {
       '@id': 'https://www.psicologakarentrujillo.com.mx/para-escuelas/#page',
       name: 'Evaluaciones Neuropsicológicas para Escuelas en Cancún',
       description:
-        'Karen Trujillo ofrece evaluaciones de TDAH, autismo y dislexia para alumnos en Cancún con informe válido ante SEP. Referidos desde escuelas bienvenidos.',
+        'Karen Trujillo ofrece evaluaciones de TDAH y autismo para alumnos en Cancún con informe válido ante SEP. Referidos desde escuelas bienvenidos.',
       url: 'https://www.psicologakarentrujillo.com.mx/para-escuelas',
       inLanguage: 'es-MX',
       speakable: {
@@ -235,7 +229,7 @@ export default function ParaEscuelas() {
         <title>Evaluaciones Neuropsicológicas para Escuelas en Cancún | Karen Trujillo</title>
         <meta
           name="description"
-          content="Evaluaciones de TDAH, autismo y dislexia para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas. Cédula 11009616."
+          content="Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas. Cédula 11009616."
         />
         <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/para-escuelas" />
 
@@ -253,7 +247,7 @@ export default function ParaEscuelas() {
         />
         <meta
           property="og:description"
-          content="Evaluaciones de TDAH, autismo y dislexia para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas."
+          content="Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas."
         />
         <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/para-escuelas" />
         <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
