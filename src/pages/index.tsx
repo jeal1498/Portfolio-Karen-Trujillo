@@ -404,9 +404,12 @@ export default function Home() {
       </Head>
 
       <div className="antialiased selection:bg-accent-blue selection:text-primary w-full min-w-0 overflow-x-hidden">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:font-bold focus:text-sm">
+          Saltar al contenido principal
+        </a>
         <Navbar />
 
-        <main className="w-full min-w-0 overflow-x-hidden">
+        <main id="main-content" className="w-full min-w-0 overflow-x-hidden">
 
           {/* ══════════════════════════════════════════════════════
               1 · HERO — Positioning + trust signals
@@ -432,7 +435,7 @@ export default function Home() {
                     </h1>
 
                     <p className="text-lg sm:text-2xl font-serif text-primary/80 italic mb-6 max-w-xl mx-auto lg:mx-0">
-                      Diagnósticos claros que transforman vidas
+                      Respuestas donde antes había incertidumbre
                     </p>
 
                     <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
@@ -468,7 +471,7 @@ export default function Home() {
                 {/* Right: Photo */}
                 <div className="hidden lg:flex justify-center animate-[fadeIn_1s_ease-out_0.4s_both]">
                   <div className="relative">
-                    <div className="w-64 h-80 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/15">
+                    <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
                       <Image
                         src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                         alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y autismo en Cancún"
@@ -581,7 +584,7 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-5">
                 {services.map((service, i) => (
                   <SectionReveal key={service.slug} delay={i * 0.1}>
-                    <Link href={service.slug} className={`group block bg-card border-2 border-border rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 h-full ${service.borderHover}`}>
+                    <Link href={service.slug} className={`group block bg-card border-2 border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 h-full ${service.borderHover}`}>
                       {/* Header */}
                       <div className="p-6 pb-4 border-b border-border relative overflow-hidden">
                         <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-50`} />
@@ -616,7 +619,7 @@ export default function Home() {
                             <p className="text-lg font-serif font-bold text-primary">{service.price}</p>
                           </div>
                           <div className="flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest group-hover:gap-3 transition-all">
-                            Ver más
+                            Ver evaluación
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                           </div>
                         </div>
@@ -744,7 +747,7 @@ export default function Home() {
                   {/* Photo — visible on all screens */}
                   <div className="flex justify-center md:justify-start">
                     <div className="relative">
-                      <div className="w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                      <div className="w-44 h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden shadow-2xl shadow-white/10">
                         <Image
                           src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                           alt="Neuropsicóloga Karen Trujillo — Cancún"
