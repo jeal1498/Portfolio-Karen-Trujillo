@@ -109,7 +109,7 @@ const faqItems = [
   },
   {
     q: '¿Cuánto cuesta la valoración de TDAH inatento en Cancún?',
-    a: 'La valoración neuropsicológica de TDAH en el consultorio de Karen Trujillo en Cancún cuesta $7,000 MXN para niños (5-17 años) y para adultos (18+). El pago se distribuye en las sesiones del proceso. El informe tiene validez oficial ante SEP, IMSS y empleadores.',
+    a: 'La valoración neuropsicológica de TDAH en el consultorio de Karen Trujillo en Cancún cuesta $8,300 MXN para niños (5-17 años) y para adultos (18+). El pago se distribuye en las sesiones del proceso. El informe tiene validez oficial ante SEP, IMSS y empleadores.',
   },
 ];
 
@@ -436,12 +436,12 @@ export default function TDAHInatento() {
                 <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $7,000 MXN</span>
+                  <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $7,000 MXN</span>
+                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/blog/tdah-en-ninas-sintomas" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
