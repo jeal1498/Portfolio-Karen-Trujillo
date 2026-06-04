@@ -75,9 +75,9 @@ const credentials = [
 
 const whyNeuropsychology = [
   { title: 'Pruebas estandarizadas, no solo entrevista', desc: 'Instrumentos con normas internacionales que miden funciones cognitivas de forma objetiva y cuantificable.' },
-  { title: 'Diagnóstico diferencial preciso', desc: 'Diferencia TDAH de ansiedad, autismo de timidez, burnout de déficit atencional — con datos, no con impresiones.' },
+  { title: 'Diagnóstico diferencial preciso', desc: 'Diferencia TDAH de ansiedad, autismo de timidez, burnout de déficit atencional: datos objetivos, no impresiones.' },
   { title: 'Informe con validez oficial', desc: 'Documento respaldado por cédula profesional federal, aceptado por escuelas, SEP, IMSS y empleadores.' },
-  { title: 'Recomendaciones accionables', desc: 'No solo un diagnóstico — un plan concreto de intervención para la escuela, el trabajo y la vida diaria.' },
+  { title: 'Recomendaciones accionables', desc: 'No solo un diagnóstico: un plan concreto de intervención para la escuela, el trabajo y la vida diaria.' },
 ];
 
 const reviews = [
@@ -311,14 +311,15 @@ const schema = {
 
 function SectionReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(el); } },
-      { rootMargin: '-80px' }
+      ([entry]) => { if (entry.isIntersecting) { setRevealed(true); observer.unobserve(el); } },
+      { rootMargin: '0px 0px 50px 0px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -327,8 +328,8 @@ function SectionReveal({ children, className = '', delay = 0 }: { children: Reac
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${className}`}
-      style={{ transitionDelay: `${delay}s`, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
+      className={className}
+      style={revealed ? { animation: `sectionReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s both` } : undefined}
     >
       {children}
     </div>
@@ -403,16 +404,17 @@ export default function Home() {
       </Head>
 
       <div className="antialiased selection:bg-accent-blue selection:text-primary w-full min-w-0 overflow-x-hidden">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:font-bold focus:text-sm">
+          Saltar al contenido principal
+        </a>
         <Navbar />
 
-        <main className="w-full min-w-0 overflow-x-hidden">
+        <main id="main-content" className="w-full min-w-0 overflow-x-hidden">
 
           {/* ══════════════════════════════════════════════════════
               1 · HERO — Positioning + trust signals
               ══════════════════════════════════════════════════════ */}
           <section className="relative flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
             <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
@@ -433,7 +435,7 @@ export default function Home() {
                     </h1>
 
                     <p className="text-lg sm:text-2xl font-serif text-primary/80 italic mb-6 max-w-xl mx-auto lg:mx-0">
-                      Diagnósticos claros que transforman vidas
+                      Respuestas donde antes había incertidumbre
                     </p>
 
                     <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
@@ -469,7 +471,7 @@ export default function Home() {
                 {/* Right: Photo */}
                 <div className="hidden lg:flex justify-center animate-[fadeIn_1s_ease-out_0.4s_both]">
                   <div className="relative">
-                    <div className="w-64 h-80 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/15">
+                    <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
                       <Image
                         src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                         alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y autismo en Cancún"
@@ -506,7 +508,6 @@ export default function Home() {
           <section className="py-10 sm:py-14 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Encuentra tu evaluación</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Cuál es tu situación?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-8">Selecciona la opción que mejor te describe y te llevamos directo a la información que necesitas.</p>
               </SectionReveal>
@@ -576,7 +577,6 @@ export default function Home() {
           <section id="servicios" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-5xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Servicios de evaluación neuropsicológica</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Qué necesitas evaluar?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">Cada evaluación sigue un protocolo clínico riguroso con pruebas estandarizadas internacionales. Selecciona el servicio que más se ajusta a tu situación.</p>
               </SectionReveal>
@@ -584,7 +584,7 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-5">
                 {services.map((service, i) => (
                   <SectionReveal key={service.slug} delay={i * 0.1}>
-                    <Link href={service.slug} className={`group block bg-card border-2 border-border rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 h-full ${service.borderHover}`}>
+                    <Link href={service.slug} className={`group block bg-card border-2 border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 h-full ${service.borderHover}`}>
                       {/* Header */}
                       <div className="p-6 pb-4 border-b border-border relative overflow-hidden">
                         <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-50`} />
@@ -619,7 +619,7 @@ export default function Home() {
                             <p className="text-lg font-serif font-bold text-primary">{service.price}</p>
                           </div>
                           <div className="flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest group-hover:gap-3 transition-all">
-                            Ver más
+                            Ver evaluación
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                           </div>
                         </div>
@@ -653,7 +653,6 @@ export default function Home() {
           <section className="py-12 sm:py-16 bg-card border-b border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Así de simple</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">3 pasos hacia la claridad</h2>
               </SectionReveal>
 
@@ -715,9 +714,8 @@ export default function Home() {
           <section id="que-es-neuropsicologia" className="py-14 sm:py-20 bg-card">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">¿Por qué neuropsicología?</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">No es lo mismo una consulta que una evaluación neuropsicológica</h2>
-                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La neuropsicología mide cómo funciona tu cerebro con instrumentos objetivos. No se basa en impresiones — se basa en datos.</p>
+                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La neuropsicología mide cómo funciona el cerebro con instrumentos estandarizados. Los resultados son percentiles y diagnósticos verificables, no impresiones clínicas.</p>
               </SectionReveal>
 
               <div className="grid sm:grid-cols-2 gap-4">
@@ -749,7 +747,7 @@ export default function Home() {
                   {/* Photo — visible on all screens */}
                   <div className="flex justify-center md:justify-start">
                     <div className="relative">
-                      <div className="w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                      <div className="w-44 h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden shadow-2xl shadow-white/10">
                         <Image
                           src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                           alt="Neuropsicóloga Karen Trujillo — Cancún"
@@ -765,10 +763,9 @@ export default function Home() {
 
                   {/* Bio */}
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-3">La especialista</p>
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Karen Trujillo</h2>
                     <p className="text-primary-foreground/70 font-light leading-relaxed mb-6">
-                      Neuropsicóloga clínica con más de <strong className="text-primary-foreground font-semibold">7 años de experiencia</strong> en la evaluación y diagnóstico de TDAH y Trastorno del Espectro Autista en niños, adolescentes y adultos en Cancún. Domina instrumentos de clase mundial: CONNERS-3, WISC-V, WAIS-IV, CAARS-2, ADOS-2, ADI-R, BRIEF-2 y CPT-3. Cada evaluación combina <strong className="text-primary-foreground font-semibold">rigor clínico con calidez humana</strong> — las familias no solo reciben un diagnóstico, sino una hoja de ruta concreta.
+                      Neuropsicóloga clínica con más de <strong className="text-primary-foreground font-semibold">7 años de experiencia</strong> en la evaluación y diagnóstico de TDAH y Trastorno del Espectro Autista en niños, adolescentes y adultos en Cancún. Domina instrumentos de clase mundial: CONNERS-3, WISC-V, WAIS-IV, CAARS-2, ADOS-2, ADI-R, BRIEF-2 y CPT-3. Cada evaluación combina <strong className="text-primary-foreground font-semibold">rigor clínico con calidez humana</strong>: las familias no solo reciben un diagnóstico, sino una hoja de ruta concreta.
                     </p>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -807,7 +804,6 @@ export default function Home() {
           <section className="py-14 sm:py-20 bg-secondary">
             <div className="max-w-5xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen quienes ya se evaluaron</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">47+ familias y adultos con claridad</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-12">Reseñas de evaluaciones de TDAH infantil, TDAH adulto y autismo.</p>
               </SectionReveal>
@@ -910,7 +906,6 @@ export default function Home() {
           <section className="py-12 sm:py-16 bg-secondary/50 border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Aprende más</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center">Recursos sobre TDAH y Autismo</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Información basada en evidencia para entender mejor estas condiciones.</p>
               </SectionReveal>
@@ -918,7 +913,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-3 gap-4">
                 {[
                   {
-                    href: '/blog/senales-tdah-ninos',
+                    waText: 'Hola Karen, tengo dudas sobre las señales de TDAH en niños. ¿Podrías orientarme?',
                     icon: Users,
                     category: 'TDAH Infantil',
                     title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico',
@@ -926,7 +921,7 @@ export default function Home() {
                     color: 'from-accent-blue/10 to-accent-blue/5',
                   },
                   {
-                    href: '/blog/tdah-adultos-diagnostico-tardio',
+                    waText: 'Hola Karen, sospecho que podría tener TDAH no diagnosticado. ¿Me podrías orientar?',
                     icon: Brain,
                     category: 'TDAH Adultos',
                     title: 'TDAH en adultos: por qué miles de personas llegan al diagnóstico después de los 30',
@@ -934,7 +929,7 @@ export default function Home() {
                     color: 'from-primary/10 to-primary/5',
                   },
                   {
-                    href: '/blog/que-es-ados-2-autismo',
+                    waText: 'Hola Karen, quiero saber más sobre la evaluación de autismo con ADOS-2. ¿Puedes orientarme?',
                     icon: Puzzle,
                     category: 'Autismo (TEA)',
                     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
@@ -942,8 +937,8 @@ export default function Home() {
                     color: 'from-accent-pink/10 to-accent-pink/5',
                   },
                 ].map((resource, i) => (
-                  <SectionReveal key={resource.href} delay={i * 0.08}>
-                    <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
+                  <SectionReveal key={resource.category} delay={i * 0.08}>
+                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(resource.waText)}`} target="_blank" rel="noopener noreferrer" className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
                       {/* Top accent bar */}
                       <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
                       <div className="p-5 sm:p-6 flex flex-col h-full">
@@ -954,23 +949,25 @@ export default function Home() {
                         <h3 className="font-bold text-primary text-sm leading-snug mb-2 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
                         <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4 flex-1">{resource.desc}</p>
                         <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
-                          Leer más <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                          Consultar este tema <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                         </span>
                       </div>
-                    </Link>
+                    </a>
                   </SectionReveal>
                 ))}
               </div>
 
               <SectionReveal delay={0.25}>
                 <div className="text-center mt-8">
-                  <Link
-                    href="/blog"
+                  <a
+                    href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, tengo preguntas sobre TDAH y autismo. ¿Podríamos hablar?')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary/20 text-primary font-bold text-[11px] uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all duration-200 group"
                   >
-                    Ver todos los artículos
+                    Hacer una consulta gratuita
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </div>
               </SectionReveal>
 
@@ -984,7 +981,6 @@ export default function Home() {
           <section id="ubicacion" className="py-14 sm:py-20 bg-card border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Consultorio en Cancún</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">¿Dónde estamos?</h2>
               </SectionReveal>
 
