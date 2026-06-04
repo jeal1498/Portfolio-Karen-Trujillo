@@ -55,11 +55,6 @@ const condicionesEvalua = [
     href: '/evaluacion-autismo-cancun',
   },
   {
-    name: 'Dificultades de aprendizaje',
-    desc: 'Evaluación de dislexia, discalculia y otros trastornos específicos del aprendizaje.',
-    href: '#contacto',
-  },
-  {
     name: 'Diagnóstico diferencial',
     desc: 'Distinción entre TDAH y ansiedad, TEA y timidez social, dificultades de aprendizaje y bajo esfuerzo.',
     href: '/blog/tdah-vs-ansiedad-diferencias',

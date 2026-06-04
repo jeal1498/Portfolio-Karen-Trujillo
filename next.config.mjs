@@ -24,8 +24,9 @@ const nextConfig = {
       { source: '/blog/CostoValoracionTDAH',       destination: '/blog/cuanto-cuesta-valoracion-tdah-cancun', permanent: true },
       { source: '/blog/CuantoCuestaValoracionTDAH', destination: '/blog/cuanto-cuesta-valoracion-tdah-cancun', permanent: true },
 
-      // ── Página eliminada sin sustituto directo ───────────────────────────────
-      { source: '/blog/AdecuacionesEscolares', destination: '/', permanent: true },
+      // ── Páginas eliminadas sin sustituto directo ─────────────────────────────
+      { source: '/blog/AdecuacionesEscolares',  destination: '/',                      permanent: true },
+      { source: '/evaluacion-dislexia-cancun',  destination: '/evaluacion-tdah-ninos', permanent: true },
     ];
   },
 };
