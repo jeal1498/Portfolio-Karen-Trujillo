@@ -30,7 +30,7 @@ const posts = [
     category: 'Precios y proceso',
     icon: DollarSign,
     title: '¿Cuánto cuesta una valoración de TDAH en Cancún?',
-    excerpt: 'Precio real, qué incluye, cuántas sesiones son y por qué cuesta lo que cuesta. Sin letra chica: $7,000 MXN con informe clínico válido ante SEP e IMSS.',
+    excerpt: 'Precio real, qué incluye, cuántas sesiones son y por qué cuesta lo que cuesta. Sin letra chica: $8,300 MXN con informe clínico válido ante SEP e IMSS.',
     readTime: '7 min',
     featured: false,
     accentClass: 'from-accent-green/20 to-accent-green/5',

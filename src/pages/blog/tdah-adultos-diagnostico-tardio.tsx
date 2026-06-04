@@ -146,7 +146,7 @@ const faqItems = [
   },
   {
     q: '¿Cuánto cuesta una evaluación de TDAH en adultos en Cancún?',
-    a: 'La valoración de TDAH adulto tiene un costo de $7,000 MXN. Incluye todas las sesiones (4-5 citas presenciales en 2-3 semanas), batería completa de pruebas estandarizadas (CAARS-2, WAIS-IV, BRIEF-2A, CPT-3), informe clínico detallado y sesión de devolución de resultados.',
+    a: 'La valoración de TDAH adulto tiene un costo de $8,300 MXN. Incluye todas las sesiones (4-5 citas presenciales en 2-3 semanas), batería completa de pruebas estandarizadas (CAARS-2, WAIS-IV, BRIEF-2A, CPT-3), informe clínico detallado y sesión de devolución de resultados.',
   },
   {
     q: '¿Me pueden diagnosticar TDAH si ya me diagnosticaron ansiedad o depresión?',
@@ -701,7 +701,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     Ver evaluación TDAH adultos
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
-                  <p className="text-primary-foreground/50 text-xs font-light mt-4">$7,000 MXN · 4-5 sesiones · Informe con validez oficial</p>
+                  <p className="text-primary-foreground/50 text-xs font-light mt-4">$8,300 MXN · 4-5 sesiones · Informe con validez oficial</p>
                 </div>
               </SectionReveal>
             </div>
@@ -828,7 +828,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     {[
                       { label: 'Pruebas', value: 'CAARS-2, WAIS-IV, BRIEF-2A, CPT-3' },
                       { label: 'Duración', value: '4-5 sesiones · 2-3 semanas' },
-                      { label: 'Inversión', value: '$7,000 MXN todo incluido' },
+                      { label: 'Inversión', value: '$8,300 MXN todo incluido' },
                     ].map((item) => (
                       <div key={item.label} className="bg-card border border-border rounded-xl p-3 text-center">
                         <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.label}</p>

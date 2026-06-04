@@ -7,9 +7,9 @@ import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 
 const faqItems = [
-  { q: '¿Cuánto cuesta una valoración de TDAH en Cancún?', a: 'La valoración neuropsicológica de TDAH en Cancún con la Neuropsicóloga Karen Trujillo tiene un costo de $7,000 pesos mexicanos (MXN). Este precio incluye todas las sesiones del proceso (4 a 5 citas), la aplicación de instrumentos estandarizados internacionales, el análisis clínico y el informe final con cédula federal 11009616.' },
+  { q: '¿Cuánto cuesta una valoración de TDAH en Cancún?', a: 'La valoración neuropsicológica de TDAH en Cancún con la Neuropsicóloga Karen Trujillo tiene un costo de $8,300 pesos mexicanos (MXN). Este precio incluye todas las sesiones del proceso (4 a 5 citas), la aplicación de instrumentos estandarizados internacionales, el análisis clínico y el informe final con cédula federal 11009616.' },
   { q: '¿Se puede pagar la valoración de TDAH en parcialidades?', a: 'Sí. El pago se puede distribuir a lo largo de las sesiones del proceso de valoración, que se extienden entre 2 y 3 semanas.' },
-  { q: '¿Por qué una valoración de TDAH cuesta $7,000 pesos?', a: 'El costo refleja el uso de instrumentos estandarizados internacionales (como CONNERS-3, WISC-V y BRIEF-2 para niños, o CAARS y DIVA 2.0 para adultos), que tienen un costo de aplicación y de actualización clínica. Además incluye 4 a 5 sesiones de trabajo directo con el paciente y la familia, análisis de resultados y elaboración del informe clínico con validez oficial.' },
+  { q: '¿Por qué una valoración de TDAH cuesta $8,300 pesos?', a: 'El costo refleja el uso de instrumentos estandarizados internacionales (como CONNERS-3, WISC-V y BRIEF-2 para niños, o CAARS y DIVA 2.0 para adultos), que tienen un costo de aplicación y de actualización clínica. Además incluye 4 a 5 sesiones de trabajo directo con el paciente y la familia, análisis de resultados y elaboración del informe clínico con validez oficial.' },
   { q: '¿El informe de valoración de TDAH tiene validez ante la escuela o el IMSS?', a: 'Sí. El informe emitido por la Neuropsicóloga Karen Trujillo está respaldado por cédula profesional federal 11009616 y tiene validez ante instituciones educativas, SEP, IMSS y dependencias gubernamentales.' },
   { q: '¿Qué pasa si solo quiero una opinión rápida sobre si mi hijo tiene TDAH?', a: 'Una valoración neuropsicológica no es una opinión: es un diagnóstico clínico fundamentado en datos objetivos. No existe un atajo confiable al proceso completo. Diagnósticos rápidos sin instrumentos estandarizados no tienen validez oficial.' },
   { q: '¿La valoración de TDAH en Cancún es presencial o puede ser online?', a: 'La valoración de TDAH requiere sesiones presenciales en Cancún, Quintana Roo, ya que implica la aplicación directa de pruebas estandarizadas que no pueden realizarse de forma remota con la misma validez clínica.' },
@@ -38,7 +38,7 @@ const schema = {
       '@type': ['Article', 'BlogPosting'],
       '@id': 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun/#article',
       headline: '¿Cuánto cuesta una valoración de TDAH en Cancún?',
-      description: 'La valoración neuropsicológica de TDAH en Cancún cuesta $7,000 MXN. Incluye 4-5 sesiones, instrumentos estandarizados e informe con cédula federal 11009616 válido ante SEP e IMSS.',
+      description: 'La valoración neuropsicológica de TDAH en Cancún cuesta $8,300 MXN. Incluye 4-5 sesiones, instrumentos estandarizados e informe con cédula federal 11009616 válido ante SEP e IMSS.',
       image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
       datePublished: '2025-06-01',
       dateModified: '2026-06-02',
@@ -83,13 +83,13 @@ export default function CuantoCuestaValoracionTDAH() {
     <>
       <Head>
         <title>¿Cuánto cuesta una valoración de TDAH en Cancún? | Neuropsicóloga Karen Trujillo</title>
-        <meta name="description" content="La valoración neuropsicológica de TDAH en Cancún cuesta $7,000 MXN. Incluye 4-5 sesiones, instrumentos estandarizados (CONNERS-3, WISC-V) e informe con cédula federal 11009616 válido ante SEP e IMSS." />
+        <meta name="description" content="La valoración neuropsicológica de TDAH en Cancún cuesta $8,300 MXN. Incluye 4-5 sesiones, instrumentos estandarizados (CONNERS-3, WISC-V) e informe con cédula federal 11009616 válido ante SEP e IMSS." />
         <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="¿Cuánto cuesta una valoración de TDAH en Cancún? | Karen Trujillo" />
-        <meta property="og:description" content="Precio de la valoración de TDAH en Cancún: $7,000 MXN. Pago distribuido en sesiones. Informe con cédula 11009616 válido ante SEP e IMSS." />
+        <meta property="og:description" content="Precio de la valoración de TDAH en Cancún: $8,300 MXN. Pago distribuido en sesiones. Informe con cédula 11009616 válido ante SEP e IMSS." />
         <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
         <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — costo evaluación TDAH" />
@@ -97,7 +97,7 @@ export default function CuantoCuestaValoracionTDAH() {
         <meta property="article:published_time" content="2025-06-01" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿Cuánto cuesta una valoración de TDAH en Cancún? | Karen Trujillo" />
-        <meta name="twitter:description" content="La valoración de TDAH en Cancún cuesta $7,000 MXN. Incluye instrumentos estandarizados e informe con validez oficial ante SEP e IMSS." />
+        <meta name="twitter:description" content="La valoración de TDAH en Cancún cuesta $8,300 MXN. Incluye instrumentos estandarizados e informe con validez oficial ante SEP e IMSS." />
         <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
@@ -139,7 +139,7 @@ export default function CuantoCuestaValoracionTDAH() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                 <div className="bg-gradient-primary text-primary-foreground rounded-2xl p-8 text-center mb-10">
                   <p className="text-[10px] uppercase tracking-widest text-primary-foreground/60 mb-2">Costo total de la valoración</p>
-                  <div className="text-6xl font-serif font-bold mb-2">$7,000</div>
+                  <div className="text-6xl font-serif font-bold mb-2">$8,300</div>
                   <p className="text-primary-foreground/80 text-sm mb-4">pesos mexicanos (MXN) · Pago distribuido en sesiones</p>
                   <a
                     href="https://wa.me/529983211547?text=Hola%20Karen,%20leí%20tu%20artículo%20y%20quiero%20información%20sobre%20la%20valoración"

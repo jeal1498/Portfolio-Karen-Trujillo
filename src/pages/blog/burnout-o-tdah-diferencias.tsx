@@ -350,7 +350,7 @@ export default function BurnoutVsTDAH() {
                     <p className="text-xs text-muted-foreground font-light">sesiones presenciales</p>
                   </div>
                   <div className="bg-secondary border border-border rounded-xl p-4 text-center">
-                    <p className="text-2xl font-serif font-bold text-primary mb-1">$7,000</p>
+                    <p className="text-2xl font-serif font-bold text-primary mb-1">$8,300</p>
                     <p className="text-xs text-muted-foreground font-light">MXN · pago distribuido</p>
                   </div>
                 </div>

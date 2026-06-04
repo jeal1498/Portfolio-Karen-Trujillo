@@ -112,7 +112,7 @@ const faqItems = [
   },
   {
     q: '¿Cuánto cuesta evaluar a mi hijo por TDAH en Cancún?',
-    a: 'La valoración de TDAH infantil tiene un costo de $7,000 MXN. Incluye todas las sesiones (4-5 citas presenciales), pruebas estandarizadas (CONNERS-3, WISC-V, BRIEF-2, CPT-3), informe clínico completo y sesión de devolución con explicación de resultados y recomendaciones.',
+    a: 'La valoración de TDAH infantil tiene un costo de $8,300 MXN. Incluye todas las sesiones (4-5 citas presenciales), pruebas estandarizadas (CONNERS-3, WISC-V, BRIEF-2, CPT-3), informe clínico completo y sesión de devolución con explicación de resultados y recomendaciones.',
   },
 ];
 
@@ -653,7 +653,7 @@ export default function SenalesTDAHNinos() {
                     Ver evaluación TDAH infantil
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
-                  <p className="text-primary-foreground/50 text-xs font-light mt-4">$7,000 MXN · 4-5 sesiones · Informe con validez oficial</p>
+                  <p className="text-primary-foreground/50 text-xs font-light mt-4">$8,300 MXN · 4-5 sesiones · Informe con validez oficial</p>
                 </div>
               </SectionReveal>
             </div>
@@ -780,7 +780,7 @@ export default function SenalesTDAHNinos() {
                     {[
                       { label: 'Pruebas', value: 'CONNERS-3, WISC-V, BRIEF-2, CPT-3' },
                       { label: 'Duración', value: '4-5 sesiones · 2-3 semanas' },
-                      { label: 'Inversión', value: '$7,000 MXN todo incluido' },
+                      { label: 'Inversión', value: '$8,300 MXN todo incluido' },
                     ].map((item) => (
                       <div key={item.label} className="bg-card border border-border rounded-xl p-3 text-center">
                         <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.label}</p>
