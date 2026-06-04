@@ -11,18 +11,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
-/* ═══════════════════════════════════════════════════════════════
-   CONFIG
-   ═══════════════════════════════════════════════════════════════ */
-const WA_NUMBER = '529983211547';
-const PHONE_NUMBER = '529983211547';
+import { WA_NUMBER, PHONE_NUMBER, waUrl } from '@/lib/contact';
+import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
    ═══════════════════════════════════════════════════════════════ */
 
-const services = [
+const services: Service[] = [
   {
     slug: '/evaluacion-tdah-ninos',
     icon: Users,
@@ -64,7 +60,7 @@ const services = [
   },
 ];
 
-const credentials = [
+const credentials: Credential[] = [
   { icon: BadgeCheck, text: 'Cédula Federal 11009616' },
   { icon: Award, text: '7+ años de experiencia' },
   { icon: Stethoscope, text: 'Pruebas estandarizadas internacionales' },
@@ -80,7 +76,7 @@ const whyNeuropsychology = [
   { title: 'Recomendaciones accionables', desc: 'No solo un diagnóstico: un plan concreto de intervención para la escuela, el trabajo y la vida diaria.' },
 ];
 
-const reviews = [
+const reviews: Review[] = [
   { name: 'Mamá de Sofía, 7 años', text: 'Por fin alguien nos explicó qué pasaba con nuestra hija. El informe fue tan claro que la escuela implementó las adecuaciones de inmediato.', stars: 5, service: 'TDAH Infantil' },
   { name: 'Alejandro, 34 años', text: 'Llevaba años pensando que era "flojo". El informe me mostró exactamente qué funciones ejecutivas estaban afectadas. Fue liberador.', stars: 5, service: 'TDAH Adultos' },
   { name: 'Mamá de Emilia, 6 años', text: 'Nos dijeron que solo era "tímida". El diagnóstico de TEA nivel 1 nos dio claridad total. Las recomendaciones han transformado cómo la acompañamos.', stars: 5, service: 'Autismo (TEA)' },
@@ -89,7 +85,7 @@ const reviews = [
   { name: 'Mamá de Santiago, 4 años', text: 'Karen nos dio respuestas en 3 semanas. El informe fue tan detallado que la escuela supo exactamente qué implementar.', stars: 5, service: 'Autismo (TEA)' },
 ];
 
-const faqItems = [
+const faqItems: FaqItem[] = [
   {
     q: '¿Cuál es la diferencia entre un neuropsicólogo y un psicólogo?',
     a: 'Un psicólogo clínico evalúa conducta y emociones mediante entrevista y observación. Un neuropsicólogo aplica pruebas estandarizadas que miden funciones cognitivas del cerebro (atención, memoria de trabajo, velocidad de procesamiento) de forma cuantificable. Para TDAH y autismo, la evaluación neuropsicológica es el estándar clínico porque permite diagnóstico diferencial con datos objetivos.',
@@ -395,12 +391,6 @@ export default function Home() {
         }) }} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-
-        {/* Performance: CSS keyframes for hero animations */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-          @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        `}} />
       </Head>
 
       <div className="antialiased selection:bg-accent-blue selection:text-primary w-full min-w-0 overflow-x-hidden">
@@ -447,7 +437,7 @@ export default function Home() {
                         Ver servicios
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </a>
-                      <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito. ¿Podrías ayudarme?')}`} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
+                      <a href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito. ¿Podrías ayudarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp
                       </a>
@@ -564,7 +554,7 @@ export default function Home() {
 
               <SectionReveal delay={0.3}>
                 <p className="text-center text-xs text-muted-foreground/60 mt-6">
-                  ¿No estás seguro? <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="text-primary font-medium underline underline-offset-2 hover:text-primary/80 transition-colors">Escríbeme por WhatsApp</a> y te oriento sin costo.
+                  ¿No estás seguro? <a href={waUrl('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')} target="_blank" rel="noopener noreferrer" className="text-primary font-medium underline underline-offset-2 hover:text-primary/80 transition-colors">Escríbeme por WhatsApp</a> y te oriento sin costo.
                 </p>
               </SectionReveal>
             </div>
@@ -637,7 +627,7 @@ export default function Home() {
               <SectionReveal delay={0.35}>
                 <div className="mt-10 text-center">
                   <p className="text-sm text-muted-foreground font-light mb-4">¿No estás seguro cuál necesitas?</p>
-                  <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
+                  <a href={waUrl('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
                     <MessageCircle className="w-4 h-4" />
                     Orientación gratuita por WhatsApp
                   </a>
@@ -938,7 +928,7 @@ export default function Home() {
                   },
                 ].map((resource, i) => (
                   <SectionReveal key={resource.category} delay={i * 0.08}>
-                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(resource.waText)}`} target="_blank" rel="noopener noreferrer" className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
+                    <a href={waUrl(resource.waText)} target="_blank" rel="noopener noreferrer" className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
                       {/* Top accent bar */}
                       <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
                       <div className="p-5 sm:p-6 flex flex-col h-full">
@@ -960,7 +950,7 @@ export default function Home() {
               <SectionReveal delay={0.25}>
                 <div className="text-center mt-8">
                   <a
-                    href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, tengo preguntas sobre TDAH y autismo. ¿Podríamos hablar?')}`}
+                    href={waUrl('Hola Karen, tengo preguntas sobre TDAH y autismo. ¿Podríamos hablar?')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary/20 text-primary font-bold text-[11px] uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all duration-200 group"
@@ -1054,7 +1044,7 @@ export default function Home() {
                         Cómo llegar
                       </a>
                       <a
-                        href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, me gustaría agendar una cita en tu consultorio de Cancún.')}`}
+                        href={waUrl('Hola Karen, me gustaría agendar una cita en tu consultorio de Cancún.')}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
@@ -1107,7 +1097,7 @@ export default function Home() {
                 <div className="pt-8 border-t border-border">
                   <p className="text-center text-sm text-muted-foreground font-light mb-5">¿Prefieres hablar antes de agendar?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página y me gustaría saber más sobre las evaluaciones que ofreces.')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={waUrl('Hola Karen, vi tu página y me gustaría saber más sobre las evaluaciones que ofreces.')} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
@@ -1153,7 +1143,7 @@ export default function Home() {
                 Servicios
               </a>
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito.')}`}
+                href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-[10px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
