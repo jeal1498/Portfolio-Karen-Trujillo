@@ -405,7 +405,7 @@ export default function Home() {
               1 · HERO — Positioning + trust signals
               ══════════════════════════════════════════════════════ */}
           <section className="relative flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
@@ -420,7 +420,7 @@ export default function Home() {
                       <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground">Cancún, Quintana Roo · Cédula Federal 11009616</span>
                     </div>
 
-                    <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-[1.1] mb-4 text-balance">
+                    <h1 className="text-[2.25rem] sm:text-6xl lg:text-7xl font-serif font-bold text-primary leading-[1.05] mb-4 text-balance">
                       Neuropsicóloga<br /> en Cancún
                     </h1>
 
@@ -461,7 +461,7 @@ export default function Home() {
                 {/* Right: Photo */}
                 <div className="hidden lg:flex justify-center animate-[fadeIn_1s_ease-out_0.4s_both]">
                   <div className="relative">
-                    <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+                    <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-2xl shadow-primary/30 ring-4 ring-accent-pink/40">
                       <Image
                         src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                         alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y autismo en Cancún"
@@ -577,7 +577,7 @@ export default function Home() {
                     <Link href={service.slug} className={`group block bg-card border-2 border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 h-full ${service.borderHover}`}>
                       {/* Header */}
                       <div className="p-6 pb-4 border-b border-border relative overflow-hidden">
-                        <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-50`} />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-100`} />
                         <div className="relative">
                           <div className="flex items-center justify-between mb-4">
                             <div className="w-11 h-11 rounded-xl bg-card border border-border flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
@@ -648,7 +648,7 @@ export default function Home() {
 
               <div className="grid sm:grid-cols-3 gap-6 sm:gap-4 relative">
                 {/* Connecting line (desktop) */}
-                <div className="absolute top-10 left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent hidden sm:block" />
+                <div className="absolute top-10 left-[16.66%] right-[16.66%] h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent hidden sm:block" />
 
                 {[
                   {
@@ -712,7 +712,7 @@ export default function Home() {
                 {whyNeuropsychology.map((item, i) => (
                   <SectionReveal key={item.title} delay={i * 0.08}>
                     <div className="flex gap-4 p-5 sm:p-6 bg-secondary/50 rounded-2xl border border-border hover:border-accent-blue/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group h-full">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-blue/15 to-primary/10 border border-primary/15 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue/30 to-primary/20 border border-primary/25 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                         <CheckCircle2 className="w-4 h-4 text-primary/60" />
                       </div>
                       <div>
@@ -802,7 +802,7 @@ export default function Home() {
                 {reviews.map((review, i) => (
                   <SectionReveal key={i} delay={i * 0.08}>
                     <div className="bg-card border border-border rounded-2xl p-6 hover:border-accent-blue/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
-                      <div className="absolute top-3 right-4 text-6xl font-serif text-primary/5 group-hover:text-primary/10 transition-colors leading-none select-none">&ldquo;</div>
+                      <div className="absolute top-3 right-4 text-8xl font-serif text-primary/15 group-hover:text-primary/25 transition-colors leading-none select-none">&ldquo;</div>
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex gap-0.5">
                           {Array.from({ length: review.stars }).map((_, j) => (
@@ -1063,11 +1063,11 @@ export default function Home() {
           {/* ══════════════════════════════════════════════════════
               7 · CTA — Contact + quick links
               ══════════════════════════════════════════════════════ */}
-          <section id="cta-final" className="py-14 sm:py-20 bg-secondary border-t border-border">
+          <section id="cta-final" className="py-14 sm:py-20 bg-gradient-to-br from-secondary to-accent-blue/20 border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
                 <div className="text-center mb-10">
-                  <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4">¿Lista para dar el primer paso?</h2>
+                  <h2 className="text-4xl sm:text-5xl font-serif font-bold text-primary mb-4">¿Lista para dar el primer paso?</h2>
                   <p className="text-muted-foreground font-light max-w-xl mx-auto">Selecciona la evaluación que necesitas o escríbeme por WhatsApp para orientación gratuita.</p>
                 </div>
               </SectionReveal>
