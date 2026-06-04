@@ -199,7 +199,6 @@
   .prose-blog .warning-box {
     @apply bg-accent-pink/10 border border-accent-pink/30 rounded-xl p-5 my-6 text-sm text-foreground leading-relaxed;
   }
-}
 
 @keyframes fadeIn {
   from { opacity: 0; }
