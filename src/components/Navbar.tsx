@@ -3,6 +3,7 @@ import { Menu, Phone, X, ChevronDown, ChevronRight, Brain, User, Puzzle, Calenda
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { PHONE_NUMBER, waUrl } from '@/lib/contact';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -111,14 +112,14 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="tel:529983211547"
+            href={`tel:${PHONE_NUMBER}`}
             className="px-4 py-2 text-xs font-bold text-primary hover:bg-secondary rounded-lg transition-all flex items-center gap-2"
           >
             <Phone className="w-4 h-4" />
             Llamar
           </a>
           <a
-            href="https://wa.me/529983211547?text=Hola%20Karen,%20me%20interesa%20agendar%20una%20valoración"
+            href={waUrl('Hola Karen, me interesa agendar una valoración')}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-primary hover:opacity-90 text-primary-foreground text-[11px] font-bold px-6 py-3 rounded-lg transition-all uppercase tracking-widest shadow-lg shadow-primary/20 transform hover:-translate-y-0.5"
@@ -228,7 +229,7 @@ const Navbar = () => {
               {/* CTA buttons */}
               <div className="flex flex-col gap-2 mt-1">
                 <a
-                  href="tel:529983211547"
+                  href={`tel:${PHONE_NUMBER}`}
                   className="flex items-center justify-center gap-2 py-3 rounded-2xl font-bold uppercase tracking-widest text-xs transition-all active:scale-95"
                   style={{ background: 'rgba(255,255,255,0.15)', color: 'white', border: '1px solid rgba(255,255,255,0.2)' }}
                 >
@@ -236,7 +237,7 @@ const Navbar = () => {
                   Llamar
                 </a>
                 <a
-                  href="https://wa.me/529983211547?text=Hola%20Karen,%20quiero%20agendar%20una%20valoración"
+                  href={waUrl('Hola Karen, quiero agendar una valoración')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 py-3 rounded-2xl font-bold uppercase tracking-widest text-xs text-white transition-all active:scale-95"
