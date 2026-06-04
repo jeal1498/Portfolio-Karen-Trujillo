@@ -75,9 +75,9 @@ const credentials = [
 
 const whyNeuropsychology = [
   { title: 'Pruebas estandarizadas, no solo entrevista', desc: 'Instrumentos con normas internacionales que miden funciones cognitivas de forma objetiva y cuantificable.' },
-  { title: 'Diagnóstico diferencial preciso', desc: 'Diferencia TDAH de ansiedad, autismo de timidez, burnout de déficit atencional — con datos, no con impresiones.' },
+  { title: 'Diagnóstico diferencial preciso', desc: 'Diferencia TDAH de ansiedad, autismo de timidez, burnout de déficit atencional: datos objetivos, no impresiones.' },
   { title: 'Informe con validez oficial', desc: 'Documento respaldado por cédula profesional federal, aceptado por escuelas, SEP, IMSS y empleadores.' },
-  { title: 'Recomendaciones accionables', desc: 'No solo un diagnóstico — un plan concreto de intervención para la escuela, el trabajo y la vida diaria.' },
+  { title: 'Recomendaciones accionables', desc: 'No solo un diagnóstico: un plan concreto de intervención para la escuela, el trabajo y la vida diaria.' },
 ];
 
 const reviews = [
@@ -715,7 +715,7 @@ export default function Home() {
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">No es lo mismo una consulta que una evaluación neuropsicológica</h2>
-                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La neuropsicología mide cómo funciona tu cerebro con instrumentos objetivos. No se basa en impresiones — se basa en datos.</p>
+                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La neuropsicología mide cómo funciona el cerebro con instrumentos estandarizados. Los resultados son percentiles y diagnósticos verificables, no impresiones clínicas.</p>
               </SectionReveal>
 
               <div className="grid sm:grid-cols-2 gap-4">
@@ -765,7 +765,7 @@ export default function Home() {
                   <div>
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Karen Trujillo</h2>
                     <p className="text-primary-foreground/70 font-light leading-relaxed mb-6">
-                      Neuropsicóloga clínica con más de <strong className="text-primary-foreground font-semibold">7 años de experiencia</strong> en la evaluación y diagnóstico de TDAH y Trastorno del Espectro Autista en niños, adolescentes y adultos en Cancún. Domina instrumentos de clase mundial: CONNERS-3, WISC-V, WAIS-IV, CAARS-2, ADOS-2, ADI-R, BRIEF-2 y CPT-3. Cada evaluación combina <strong className="text-primary-foreground font-semibold">rigor clínico con calidez humana</strong> — las familias no solo reciben un diagnóstico, sino una hoja de ruta concreta.
+                      Neuropsicóloga clínica con más de <strong className="text-primary-foreground font-semibold">7 años de experiencia</strong> en la evaluación y diagnóstico de TDAH y Trastorno del Espectro Autista en niños, adolescentes y adultos en Cancún. Domina instrumentos de clase mundial: CONNERS-3, WISC-V, WAIS-IV, CAARS-2, ADOS-2, ADI-R, BRIEF-2 y CPT-3. Cada evaluación combina <strong className="text-primary-foreground font-semibold">rigor clínico con calidez humana</strong>: las familias no solo reciben un diagnóstico, sino una hoja de ruta concreta.
                     </p>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -913,7 +913,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-3 gap-4">
                 {[
                   {
-                    href: '/blog/senales-tdah-ninos',
+                    waText: 'Hola Karen, tengo dudas sobre las señales de TDAH en niños. ¿Podrías orientarme?',
                     icon: Users,
                     category: 'TDAH Infantil',
                     title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico',
@@ -921,7 +921,7 @@ export default function Home() {
                     color: 'from-accent-blue/10 to-accent-blue/5',
                   },
                   {
-                    href: '/blog/tdah-adultos-diagnostico-tardio',
+                    waText: 'Hola Karen, sospecho que podría tener TDAH no diagnosticado. ¿Me podrías orientar?',
                     icon: Brain,
                     category: 'TDAH Adultos',
                     title: 'TDAH en adultos: por qué miles de personas llegan al diagnóstico después de los 30',
@@ -929,7 +929,7 @@ export default function Home() {
                     color: 'from-primary/10 to-primary/5',
                   },
                   {
-                    href: '/blog/que-es-ados-2-autismo',
+                    waText: 'Hola Karen, quiero saber más sobre la evaluación de autismo con ADOS-2. ¿Puedes orientarme?',
                     icon: Puzzle,
                     category: 'Autismo (TEA)',
                     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
@@ -937,8 +937,8 @@ export default function Home() {
                     color: 'from-accent-pink/10 to-accent-pink/5',
                   },
                 ].map((resource, i) => (
-                  <SectionReveal key={resource.href} delay={i * 0.08}>
-                    <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
+                  <SectionReveal key={resource.category} delay={i * 0.08}>
+                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(resource.waText)}`} target="_blank" rel="noopener noreferrer" className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
                       {/* Top accent bar */}
                       <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
                       <div className="p-5 sm:p-6 flex flex-col h-full">
@@ -949,23 +949,25 @@ export default function Home() {
                         <h3 className="font-bold text-primary text-sm leading-snug mb-2 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
                         <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4 flex-1">{resource.desc}</p>
                         <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
-                          Leer más <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                          Consultar este tema <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                         </span>
                       </div>
-                    </Link>
+                    </a>
                   </SectionReveal>
                 ))}
               </div>
 
               <SectionReveal delay={0.25}>
                 <div className="text-center mt-8">
-                  <Link
-                    href="/blog"
+                  <a
+                    href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, tengo preguntas sobre TDAH y autismo. ¿Podríamos hablar?')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary/20 text-primary font-bold text-[11px] uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all duration-200 group"
                   >
-                    Ver todos los artículos
+                    Hacer una consulta gratuita
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </div>
               </SectionReveal>
 
