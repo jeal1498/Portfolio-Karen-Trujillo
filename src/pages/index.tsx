@@ -311,14 +311,15 @@ const schema = {
 
 function SectionReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(el); } },
-      { rootMargin: '-80px' }
+      ([entry]) => { if (entry.isIntersecting) { setRevealed(true); observer.unobserve(el); } },
+      { rootMargin: '0px 0px 50px 0px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -327,8 +328,8 @@ function SectionReveal({ children, className = '', delay = 0 }: { children: Reac
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${className}`}
-      style={{ transitionDelay: `${delay}s`, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
+      className={className}
+      style={revealed ? { animation: `sectionReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s both` } : undefined}
     >
       {children}
     </div>
