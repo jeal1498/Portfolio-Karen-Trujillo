@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-04T00:00:00Z",
+  "title": "Design System: Karen Trujillo — Neuropsicóloga en Cancún",
+  "extensions": {
+    "colorMeta": {
+      "plum-ink":       { "role": "primary",   "displayName": "Plum Ink",       "canonical": "#382f51", "tonalRamp": ["#0f0c17","#1d1a2c","#2b1f47","#382f51","#4a3d68","#5b4e7f","#8577a8","#c5bdd9","#e9e6f1","#f7f5fb"] },
+      "plum-medium":    { "role": "primary",   "displayName": "Plum Medium",    "canonical": "#5b4e7f", "tonalRamp": ["#0f0c17","#1d1a2c","#2b1f47","#382f51","#4a3d68","#5b4e7f","#8577a8","#c5bdd9","#e9e6f1","#f7f5fb"] },
+      "plum-deep":      { "role": "primary",   "displayName": "Plum Deep",      "canonical": "#2b1f47", "tonalRamp": ["#0f0c17","#1d1a2c","#2b1f47","#382f51","#4a3d68","#5b4e7f","#8577a8","#c5bdd9","#e9e6f1","#f7f5fb"] },
+      "quiet-white":    { "role": "neutral",   "displayName": "Quiet White",    "canonical": "#fafafa", "tonalRamp": ["#1a1a1a","#333333","#4d4d4d","#666666","#808080","#999999","#b3b3b3","#cccccc","#e6e6e6","#fafafa"] },
+      "surface":        { "role": "neutral",   "displayName": "Surface",        "canonical": "#ffffff", "tonalRamp": ["#1a1a1a","#333333","#4d4d4d","#666666","#808080","#999999","#b3b3b3","#cccccc","#e6e6e6","#ffffff"] },
+      "surface-muted":  { "role": "neutral",   "displayName": "Surface Muted",  "canonical": "#f1f5f9", "tonalRamp": ["#1c2128","#2d3748","#4a5568","#718096","#a0aec0","#cbd5e0","#e2e8f0","#edf2f7","#f1f5f9","#f8fafc"] },
+      "lavender-mist":  { "role": "secondary", "displayName": "Lavender Mist",  "canonical": "#d0d0e7", "tonalRamp": ["#1a1a2e","#2d2b52","#3f3c70","#5b4e7f","#7b6fa8","#9d91c7","#bdb5de","#d0d0e7","#e8e7f3","#f5f4fb"] },
+      "blush":          { "role": "secondary", "displayName": "Blush",          "canonical": "#fbdbe0", "tonalRamp": ["#2e0a12","#5c1424","#8a1e36","#b82848","#e0526e","#ef8a9b","#f7bac3","#fbdbe0","#fdeef1","#fff6f7"] },
+      "warm-sand":      { "role": "tertiary",  "displayName": "Warm Sand",      "canonical": "#f5dfc5", "tonalRamp": ["#2e1a05","#5c340a","#8a4e0f","#b86814","#e08228","#efaa6a","#f7ccaa","#f5dfc5","#faeee0","#fdf7f0"] },
+      "ink-secondary":  { "role": "neutral",   "displayName": "Ink Secondary",  "canonical": "#515e71", "tonalRamp": ["#111418","#222c38","#334458","#445270","#515e71","#718096","#a0aec0","#cbd5e0","#e2e8f0","#f1f5f9"] },
+      "border-subtle":  { "role": "neutral",   "displayName": "Border Subtle",  "canonical": "#e2e8f0", "tonalRamp": ["#1c2128","#2d3748","#4a5568","#718096","#a0aec0","#cbd5e0","#e2e8f0","#edf2f7","#f1f5f9","#f8fafc"] },
+      "success-teal":   { "role": "neutral",   "displayName": "Success Teal",   "canonical": "#10b77f", "tonalRamp": ["#032d1f","#055a3f","#07875f","#10b77f","#3dd6a0","#7de8c2","#b2f2df","#d5f8ee","#eafdf7","#f3fefb"] },
+      "whatsapp-green": { "role": "neutral",   "displayName": "WhatsApp Green", "canonical": "#25d366", "tonalRamp": ["#062b16","#0d562c","#148142","#1bac58","#25d366","#5adf8e","#90eab4","#c0f4d5","#dff9eb","#f2fdf6"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "H1 de hero únicamente. Máximo absoluto 6rem. Nunca en cuerpo ni labels." },
+      "headline": { "displayName": "Headline", "purpose": "H2 de sección. Siempre Playfair — su rareza en el sistema es lo que le da peso." },
+      "title":    { "displayName": "Title",    "purpose": "H3 de tarjeta y subtítulos de componente. Montserrat deliberado — contraste con h2 serif." },
+      "body":     { "displayName": "Body",     "purpose": "Texto descriptivo. Máximo 75ch. Siempre Montserrat 400." },
+      "label":    { "displayName": "Label",    "purpose": "Eyebrows, badges, etiquetas de CTA. Uppercase restringido — máximo una instancia por sección." }
+    },
+    "shadows": [
+      { "name": "hover-lift",    "value": "0 20px 60px -15px rgba(56,47,81,0.12)", "purpose": "Tarjeta en hover. Plum-tinted, no gris genérico." },
+      { "name": "soft-ambient",  "value": "0 10px 40px -10px rgba(56,47,81,0.08)", "purpose": "Elementos fijos elevados en reposo (navbar sticky, sticky CTA mobile)." },
+      { "name": "glow-accent",   "value": "0 0 20px rgba(208,208,231,0.3)",         "purpose": "Solo botón flotante WhatsApp y pulse animation. No para tarjetas." }
+    ],
+    "motion": [
+      { "name": "ease-out-quart", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Easing estándar para todas las transiciones de estado y reveals." },
+      { "name": "reveal-duration", "value": "700ms", "purpose": "Duración de la animación de entrada de sección (fade + translate-y)." },
+      { "name": "state-duration",  "value": "300ms", "purpose": "Duración de transiciones de hover/focus en botones y tarjetas." }
+    ],
+    "breakpoints": [
+      { "name": "sm",  "value": "640px"  },
+      { "name": "md",  "value": "768px"  },
+      { "name": "lg",  "value": "1024px" },
+      { "name": "2xl", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal. Gradiente plum, label uppercase, hover con lift y sombra más intensa.",
+      "html": "<button class=\"ds-btn-primary\"><span>Ver servicios</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #382f51 0%, #5b4e7f 100%); color: #ffffff; padding: 16px 28px; border-radius: 16px; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; box-shadow: 0 8px 24px rgba(56,47,81,0.25); transition: box-shadow 300ms cubic-bezier(0.22,1,0.36,1), transform 300ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { box-shadow: 0 16px 40px rgba(56,47,81,0.35); transform: translateY(-4px); } .ds-btn-primary:focus-visible { outline: 2px solid #382f51; outline-offset: 2px; } .ds-btn-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "CTA secundario. Ghost con borde plum/25, mismo tamaño que primario.",
+      "html": "<button class=\"ds-btn-secondary\">WhatsApp</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #382f51; padding: 16px 28px; border-radius: 16px; border: 2px solid rgba(56,47,81,0.25); cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: border-color 300ms, background 300ms; } .ds-btn-secondary:hover { border-color: rgba(56,47,81,0.6); background: rgba(56,47,81,0.05); } .ds-btn-secondary:focus-visible { outline: 2px solid #382f51; outline-offset: 2px; }"
+    },
+    {
+      "name": "WhatsApp Button",
+      "kind": "button",
+      "refersTo": "button-whatsapp",
+      "description": "Acción de contacto via WhatsApp. Verde sólido, sin gradiente.",
+      "html": "<a class=\"ds-btn-whatsapp\" href=\"#\">WhatsApp</a>",
+      "css": ".ds-btn-whatsapp { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #ffffff; padding: 14px 24px; border-radius: 12px; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: opacity 300ms; } .ds-btn-whatsapp:hover { opacity: 0.9; } .ds-btn-whatsapp:focus-visible { outline: 2px solid #25d366; outline-offset: 2px; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Tarjeta de servicio de evaluación. Header con tinte de color de categoría, body con descripción e instrumentos.",
+      "html": "<div class=\"ds-service-card\"><div class=\"ds-service-card__header\"><div class=\"ds-service-card__icon\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#382f51\" stroke-width=\"1.5\"><path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg></div><span class=\"ds-service-card__age\">5–17 años</span><p class=\"ds-service-card__label\">TDAH Infantil</p><h3 class=\"ds-service-card__title\">Valoración TDAH en Niños</h3></div><div class=\"ds-service-card__body\"><p class=\"ds-service-card__desc\">Evaluación con CONNERS-3, WISC-V, BRIEF-2 y CPT-3. Informe con adecuaciones curriculares.</p><div class=\"ds-service-card__tests\"><span class=\"ds-chip\">CONNERS-3</span><span class=\"ds-chip\">WISC-V</span><span class=\"ds-chip\">BRIEF-2</span></div><div class=\"ds-service-card__footer\"><div><p class=\"ds-service-card__from\">Desde</p><p class=\"ds-service-card__price\">$7,000 MXN</p></div><span class=\"ds-service-card__cta\">Ver más →</span></div></div></div>",
+      "css": ".ds-service-card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: box-shadow 300ms cubic-bezier(0.22,1,0.36,1), transform 300ms cubic-bezier(0.22,1,0.36,1), border-color 300ms; } .ds-service-card:hover { box-shadow: 0 20px 60px -15px rgba(56,47,81,0.12); transform: translateY(-4px); border-color: rgba(208,208,231,0.5); } .ds-service-card__header { padding: 24px 24px 16px; border-bottom: 1px solid #e2e8f0; background: linear-gradient(135deg, rgba(208,208,231,0.15) 0%, rgba(56,47,81,0.08) 100%); } .ds-service-card__icon { width: 44px; height: 44px; border-radius: 12px; background: #ffffff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; } .ds-service-card__age { font-family: 'Montserrat', sans-serif; font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #515e71; background: rgba(255,255,255,0.8); padding: 4px 12px; border-radius: 9999px; border: 1px solid #e2e8f0; float: right; } .ds-service-card__label { font-family: 'Montserrat', sans-serif; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(56,47,81,0.5); margin: 0 0 4px; clear: both; } .ds-service-card__title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: #382f51; margin: 0; line-height: 1.3; } .ds-service-card__body { padding: 24px; } .ds-service-card__desc { font-family: 'Montserrat', sans-serif; font-size: 0.875rem; font-weight: 400; color: #515e71; line-height: 1.65; margin: 0 0 16px; } .ds-service-card__tests { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; } .ds-chip { font-family: 'Montserrat', sans-serif; font-size: 0.625rem; font-weight: 500; color: #515e71; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 9999px; padding: 4px 10px; } .ds-service-card__footer { padding-top: 12px; border-top: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; } .ds-service-card__from { font-family: 'Montserrat', sans-serif; font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(56,47,81,0.5); margin: 0; } .ds-service-card__price { font-family: 'Playfair Display', Georgia, serif; font-size: 1.125rem; font-weight: 700; color: #382f51; margin: 0; } .ds-service-card__cta { font-family: 'Montserrat', sans-serif; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(56,47,81,0.5); }"
+    },
+    {
+      "name": "Credential Badge",
+      "kind": "chip",
+      "refersTo": "credential-chip",
+      "description": "Chip pequeño de credencial o confianza. Ghost con ícono + texto.",
+      "html": "<span class=\"ds-credential-badge\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#382f51\" stroke-width=\"2\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>Cédula 11009616</span>",
+      "css": ".ds-credential-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid #e2e8f0; border-radius: 9999px; background: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 500; color: #515e71; }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "service-card",
+      "description": "Acordeón de pregunta frecuente. Borde cambia a plum en abierto.",
+      "html": "<div class=\"ds-faq\" data-open=\"true\"><button class=\"ds-faq__trigger\"><span>¿Los informes tienen validez oficial?</span><span class=\"ds-faq__icon\">↑</span></button><div class=\"ds-faq__answer\"><p>Sí. Todos los informes clínicos están respaldados por cédula profesional federal 11009616 emitida por la SEP.</p></div></div>",
+      "css": ".ds-faq { background: rgba(241,245,249,0.5); border: 2px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: border-color 300ms, box-shadow 300ms; } .ds-faq[data-open='true'] { border-color: rgba(56,47,81,0.5); box-shadow: 0 8px 24px rgba(56,47,81,0.08); } .ds-faq__trigger { width: 100%; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: none; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.9375rem; font-weight: 700; color: #382f51; text-align: left; } .ds-faq__icon { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #382f51; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: #382f51; flex-shrink: 0; } .ds-faq__answer { padding: 0 24px 20px; border-top: 1px solid rgba(226,232,240,0.5); } .ds-faq__answer p { font-family: 'Montserrat', sans-serif; font-size: 0.875rem; font-weight: 400; color: #515e71; line-height: 1.65; margin: 16px 0 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Consulta del Especialista",
+    "overview": "Este sistema visual funciona como una consulta médica bien llevada: el espacio es ordenado y preciso, el especialista habla tu idioma, y sales con respuestas concretas en lugar de incertidumbre. No hay ornamento innecesario — cada elemento del diseño existe porque ayuda a que la familia ansiosa tome una decisión bien fundamentada. La credibilidad no se declara; se demuestra con instrumentos específicos, credenciales reales y testimonios con nombres propios.\n\nLa paleta gira en torno a un morado ciruela oscuro (plum-ink) que transmite autoridad clínica sin caer en el azul institucional frío. Las superficies son blancas y gris-azuladas muy suaves — limpias, no estériles.\n\nEste sistema rechaza explícitamente: las clínicas genéricas con fotos de stock en bata blanca, las landing pages de startup SaaS con métricas hero y gradientes de texto, los sitios hospitalarios fríos con azul corporativo sin cara, y las páginas de wellness con fondos crema y tono aspiracional vago.",
+    "keyCharacteristics": [
+      "Autoridad clínica sin distancia institucional",
+      "Legibilidad primero: jerarquía de información clara, sin sobrecarga visual",
+      "Plum ink como ancla; blanco y gris-azul como respiro",
+      "Serif para headings (personalidad), sans para cuerpo (claridad)",
+      "Sombras suaves solo en hover; planas en reposo",
+      "Animaciones de entrada discretas, con soporte completo de prefers-reduced-motion"
+    ],
+    "rules": [
+      { "name": "La Regla del Ancla Única", "body": "Plum Ink es el único color saturado del sistema. Los tres acentos (lavender, blush, sand) existen como tintes de fondo y nunca compiten con el ancla en intensidad.", "section": "colors" },
+      { "name": "La Regla del Contraste No Negociable", "body": "Ink Secondary (#515e71) sobre Surface (#ffffff) cumple 4.5:1. Antes de usar cualquier color de texto sobre fondo de color, verifica el ratio — nunca se asume.", "section": "colors" },
+      { "name": "La Regla del Serif para lo Importante", "body": "Playfair Display se reserva para h1 y h2 de sección. Nunca para body copy, labels, ni botones. Su rareza en el sistema es lo que le da peso.", "section": "typography" },
+      { "name": "La Regla del Weight Contrast", "body": "El único size step válido entre niveles adyacentes de jerarquía es ≥1.25x. Si dos niveles de heading se ven similares, uno de ellos sobra.", "section": "typography" },
+      { "name": "La Regla Plana en Reposo", "body": "Las tarjetas no tienen sombra en su estado por defecto. La profundidad en reposo se logra exclusivamente con el contraste de background.", "section": "elevation" },
+      { "name": "La Regla del Tinte de Marca", "body": "Todas las sombras tienen un tinte hacia plum-ink: rgba(56,47,81,0.X). El gris genérico de box-shadow hace que las tarjetas parezcan templates de Figma.", "section": "elevation" }
+    ],
+    "dos": [
+      "Usar Plum Ink (#382f51) como el único color de acento saturado.",
+      "Mantener el radius de tarjetas en 16px máximo (rounded-2xl).",
+      "Escribir labels y CTAs con verbo + objeto específico.",
+      "Usar Playfair Display exclusivamente para h1 y h2.",
+      "Agregar prefers-reduced-motion a cada animación.",
+      "Verificar contraste antes de cada color de texto nuevo.",
+      "Usar sombras con tinte plum: rgba(56,47,81,0.X).",
+      "Mostrar los instrumentos reales (ADOS-2, WISC-V, CAARS-2) como parte del diseño."
+    ],
+    "donts": [
+      "Don't usar clínicas genéricas con fotos de stock en bata blanca como referencia.",
+      "Don't usar el patrón hero de landing pages SaaS: métricas grandes, gradientes decorativos, copy de 'transforma tu vida'.",
+      "Don't reproducir la estética de wellness y coaching: fondos crema, tipografía delgada, tono aspiracional vago.",
+      "Don't aplicar background-clip: text con gradiente (gradient text).",
+      "Don't usar border-left mayor de 1px como acento decorativo en tarjetas o callouts.",
+      "Don't emparejar border: 1px solid con box-shadow de blur ≥16px en el mismo elemento.",
+      "Don't poner un eyebrow de texto pequeño uppercase en cada sección del sitio.",
+      "Don't usar border-radius mayor de 16px en tarjetas de contenido.",
+      "Don't aplicar la misma animación de entrada a cada sección como reflejo automático.",
+      "Don't gatear la visibilidad del contenido en una transición de clase."
+    ]
+  }
+}
