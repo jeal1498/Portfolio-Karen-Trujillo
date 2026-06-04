@@ -855,6 +855,9 @@ export default function Home() {
               </SectionReveal>
             </div>
           </section>
+
+          {/* ══════════════════════════════════════════════════════
+              6 · FAQ — General
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-card">
             <div className="max-w-3xl mx-auto px-6">
