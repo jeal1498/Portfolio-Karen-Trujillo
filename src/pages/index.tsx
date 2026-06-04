@@ -411,8 +411,6 @@ export default function Home() {
               1 · HERO — Positioning + trust signals
               ══════════════════════════════════════════════════════ */}
           <section className="relative flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
             <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
@@ -506,7 +504,6 @@ export default function Home() {
           <section className="py-10 sm:py-14 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Encuentra tu evaluación</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Cuál es tu situación?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-8">Selecciona la opción que mejor te describe y te llevamos directo a la información que necesitas.</p>
               </SectionReveal>
@@ -576,7 +573,6 @@ export default function Home() {
           <section id="servicios" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-5xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Servicios de evaluación neuropsicológica</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Qué necesitas evaluar?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">Cada evaluación sigue un protocolo clínico riguroso con pruebas estandarizadas internacionales. Selecciona el servicio que más se ajusta a tu situación.</p>
               </SectionReveal>
@@ -653,7 +649,6 @@ export default function Home() {
           <section className="py-12 sm:py-16 bg-card border-b border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Así de simple</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">3 pasos hacia la claridad</h2>
               </SectionReveal>
 
@@ -715,7 +710,6 @@ export default function Home() {
           <section id="que-es-neuropsicologia" className="py-14 sm:py-20 bg-card">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">¿Por qué neuropsicología?</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">No es lo mismo una consulta que una evaluación neuropsicológica</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La neuropsicología mide cómo funciona tu cerebro con instrumentos objetivos. No se basa en impresiones — se basa en datos.</p>
               </SectionReveal>
@@ -765,7 +759,6 @@ export default function Home() {
 
                   {/* Bio */}
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-3">La especialista</p>
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Karen Trujillo</h2>
                     <p className="text-primary-foreground/70 font-light leading-relaxed mb-6">
                       Neuropsicóloga clínica con más de <strong className="text-primary-foreground font-semibold">7 años de experiencia</strong> en la evaluación y diagnóstico de TDAH y Trastorno del Espectro Autista en niños, adolescentes y adultos en Cancún. Domina instrumentos de clase mundial: CONNERS-3, WISC-V, WAIS-IV, CAARS-2, ADOS-2, ADI-R, BRIEF-2 y CPT-3. Cada evaluación combina <strong className="text-primary-foreground font-semibold">rigor clínico con calidez humana</strong> — las familias no solo reciben un diagnóstico, sino una hoja de ruta concreta.
@@ -807,7 +800,6 @@ export default function Home() {
           <section className="py-14 sm:py-20 bg-secondary">
             <div className="max-w-5xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen quienes ya se evaluaron</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">47+ familias y adultos con claridad</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-12">Reseñas de evaluaciones de TDAH infantil, TDAH adulto y autismo.</p>
               </SectionReveal>
@@ -910,7 +902,6 @@ export default function Home() {
           <section className="py-12 sm:py-16 bg-secondary/50 border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Aprende más</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center">Recursos sobre TDAH y Autismo</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Información basada en evidencia para entender mejor estas condiciones.</p>
               </SectionReveal>
@@ -984,7 +975,6 @@ export default function Home() {
           <section id="ubicacion" className="py-14 sm:py-20 bg-card border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Consultorio en Cancún</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">¿Dónde estamos?</h2>
               </SectionReveal>
 
