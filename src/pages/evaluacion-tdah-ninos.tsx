@@ -104,7 +104,7 @@ const faqItems = [
   },
   {
     q: '¿Cuánto cuesta la valoración de TDAH infantil en Cancún?',
-    a: 'La valoración neuropsicológica de TDAH infantil tiene un costo total de $7,000 MXN. Incluye todas las sesiones (4-5 citas), pruebas estandarizadas (CONNERS-3, WISC-V, BRIEF-2, CPT-3), informe clínico completo y sesión de devolución con recomendaciones. Se solicita un anticipo de $1,000 MXN al agendar, que forma parte del costo total.',
+    a: 'La valoración neuropsicológica de TDAH infantil tiene un costo total de $8,300 MXN. Incluye todas las sesiones (4-5 citas), pruebas estandarizadas (CONNERS-3, WISC-V, BRIEF-2, CPT-3), informe clínico completo y sesión de devolución con recomendaciones. Se solicita un anticipo de $1,000 MXN al agendar, que forma parte del costo total.',
   },
   {
     q: '¿Qué pruebas se aplican para diagnosticar TDAH en niños?',
@@ -132,7 +132,7 @@ const faqItems = [
   },
   {
     q: '¿El anticipo de $1,000 es adicional al costo total?',
-    a: 'No. El anticipo de $1,000 MXN forma parte del costo total de $7,000 MXN. Al iniciar el proceso, solo quedarían $6,000 MXN por cubrir. Se solicita al agendar para confirmar el compromiso con el proceso clínico y asegurar tu lugar en agenda.',
+    a: 'No. El anticipo de $1,000 MXN forma parte del costo total de $8,300 MXN. Al iniciar el proceso, solo quedarían $7,300 MXN por cubrir. Se solicita al agendar para confirmar el compromiso con el proceso clínico y asegurar tu lugar en agenda.',
   },
   {
     q: '¿La valoración de TDAH se puede hacer en línea?',
@@ -140,7 +140,7 @@ const faqItems = [
   },
   {
     q: '¿Se puede pagar la valoración en parcialidades?',
-    a: 'El proceso está estructurado en dos pagos: un anticipo de $1,000 MXN al agendar (que forma parte del total) y el resto de $6,000 MXN antes de la entrega del informe clínico. Si necesitas una estructura de pago diferente, puedes consultarlo directamente por WhatsApp.',
+    a: 'El proceso está estructurado en dos pagos: un anticipo de $1,000 MXN al agendar (que forma parte del total) y el resto de $7,300 MXN antes de la entrega del informe clínico. Si necesitas una estructura de pago diferente, puedes consultarlo directamente por WhatsApp.',
   },
 ];
 
@@ -589,7 +589,7 @@ export default function TDAHNinosFunnel() {
     <>
       <Head>
         <title>Valoración TDAH Infantil en Cancún · Niños 5-17 | Karen Trujillo</title>
-        <meta name="description" content="¿Tu hijo no pone atención en la escuela? Valoración neuropsicológica de TDAH infantil en Cancún (5-17 años). Pruebas CONNERS-3, WISC-V. Informe oficial con cédula 11009616. $7,000 MXN. Agenda en línea." />
+        <meta name="description" content="¿Tu hijo no pone atención en la escuela? Valoración neuropsicológica de TDAH infantil en Cancún (5-17 años). Pruebas CONNERS-3, WISC-V. Informe oficial con cédula 11009616. $8,300 MXN. Agenda en línea." />
         <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos" />
 
         <meta name="geo.region" content="MX-ROO" />
@@ -601,7 +601,7 @@ export default function TDAHNinosFunnel() {
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo — Neuropsicología" />
         <meta property="og:title" content="Valoración TDAH Infantil en Cancún · Niños 5-17 años" />
-        <meta property="og:description" content="Evaluación neuropsicológica con pruebas estandarizadas. Informe con validez oficial ante SEP e IMSS. $7,000 MXN. Agenda en línea." />
+        <meta property="og:description" content="Evaluación neuropsicológica con pruebas estandarizadas. Informe con validez oficial ante SEP e IMSS. $8,300 MXN. Agenda en línea." />
         <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos" />
         <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
 
@@ -808,7 +808,7 @@ export default function TDAHNinosFunnel() {
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">¿Cómo funciona la valoración de TDAH infantil?</h2>
                 {/* AEO: Direct answer for "cuánto dura/cuesta valoración TDAH infantil cancún" */}
                 <p className="text-muted-foreground font-light mb-4 text-center max-w-2xl mx-auto">
-                  La valoración neuropsicológica de TDAH infantil en Cancún tiene un costo de <strong className="text-primary font-semibold">$7,000 MXN</strong> e incluye 4-5 sesiones presenciales distribuidas en 2 a 3 semanas. El proceso completo abarca entrevista con padres, pruebas estandarizadas al niño, cuestionarios a maestros, análisis clínico y sesión de devolución.
+                  La valoración neuropsicológica de TDAH infantil en Cancún tiene un costo de <strong className="text-primary font-semibold">$8,300 MXN</strong> e incluye 4-5 sesiones presenciales distribuidas en 2 a 3 semanas. El proceso completo abarca entrevista con padres, pruebas estandarizadas al niño, cuestionarios a maestros, análisis clínico y sesión de devolución.
                 </p>
                 <p className="text-sm text-primary/70 font-medium text-center mb-10">No es un proceso largo — son 5 pasos que te dan años de claridad.</p>
               </SectionReveal>
@@ -1203,7 +1203,7 @@ export default function TDAHNinosFunnel() {
                       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, currentColor 39px, currentColor 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, currentColor 39px, currentColor 40px)', backgroundSize: '40px 40px' }} />
                       <p className="text-[10px] uppercase tracking-[0.25em] font-bold text-muted-foreground/50 mb-4 relative">Inversión total</p>
                       <div className="flex items-end justify-center gap-3 mb-4 relative">
-                        <span className="text-[80px] sm:text-[96px] font-serif font-bold text-primary leading-none tracking-tight">$7,000</span>
+                        <span className="text-[80px] sm:text-[96px] font-serif font-bold text-primary leading-none tracking-tight">$8,300</span>
                         <span className="text-lg font-semibold text-muted-foreground/60 pb-3 tracking-widest">MXN</span>
                       </div>
                       <div className="flex flex-wrap justify-center gap-2 relative">

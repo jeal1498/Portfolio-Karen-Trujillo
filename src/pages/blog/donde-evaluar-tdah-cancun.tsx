@@ -80,7 +80,7 @@ const faqItems = [
   },
   {
     q: '¿Cuánto cuesta una evaluación de TDAH en Cancún?',
-    a: 'La evaluación neuropsicológica de TDAH en el consultorio de Karen Trujillo cuesta $7,000 MXN, tanto para niños (5-17 años) como para adultos (18+). El pago se distribuye a lo largo de las sesiones del proceso. Se solicita un depósito de $1,000 MXN para apartar la primera cita.',
+    a: 'La evaluación neuropsicológica de TDAH en el consultorio de Karen Trujillo cuesta $8,300 MXN, tanto para niños (5-17 años) como para adultos (18+). El pago se distribuye a lo largo de las sesiones del proceso. Se solicita un depósito de $1,000 MXN para apartar la primera cita.',
   },
   {
     q: '¿Cuál es la diferencia entre un neuropsicólogo y un psiquiatra para evaluar TDAH?',
@@ -289,7 +289,7 @@ export default function DondeEvaluarTDAHCancun() {
                 </div>
                 <div className="grid sm:grid-cols-3 gap-4">
                   <div className="bg-secondary border border-border rounded-xl p-5 text-center">
-                    <p className="text-xl font-bold text-primary mb-1">$7,000 MXN</p>
+                    <p className="text-xl font-bold text-primary mb-1">$8,300 MXN</p>
                     <p className="text-xs text-muted-foreground font-light">Costo total de la evaluación</p>
                   </div>
                   <div className="bg-secondary border border-border rounded-xl p-5 text-center">
@@ -358,12 +358,12 @@ export default function DondeEvaluarTDAHCancun() {
                 <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $7,000 MXN</span>
+                  <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $7,000 MXN</span>
+                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>

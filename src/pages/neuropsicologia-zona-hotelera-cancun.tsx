@@ -73,13 +73,13 @@ const serviciosConPrecio = [
   {
     nombre: 'Valoración TDAH Infantil',
     edad: '5–17 años',
-    precio: '$7,000 MXN',
+    precio: '$8,300 MXN',
     href: '/evaluacion-tdah-ninos',
   },
   {
     nombre: 'Valoración TDAH Adultos',
     edad: '18+ años',
-    precio: '$7,000 MXN',
+    precio: '$8,300 MXN',
     href: '/evaluacion-tdah-adultos',
   },
   {
@@ -195,7 +195,7 @@ const schema = {
         { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
         { '@type': 'State', name: 'Yucatán', sameAs: 'https://www.wikidata.org/wiki/Q3798' },
       ],
-      priceRange: '$7,000–$8,500 MXN',
+      priceRange: '$8,300–$8,500 MXN',
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '5.0',
