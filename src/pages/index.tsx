@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, type ReactNode } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -248,7 +248,7 @@ const schema = {
         { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
       ],
       reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      lastReviewed: '2025-06-01',
+      lastReviewed: '2026-06-04',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -264,7 +264,7 @@ const schema = {
       procedureType: 'Diagnostic',
       provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
-      offers: { '@type': 'Offer', price: '7000', priceCurrency: 'MXN' },
+      offers: { '@type': 'Offer', price: '8300', priceCurrency: 'MXN' },
     },
     {
       '@type': 'MedicalProcedure',
@@ -273,7 +273,7 @@ const schema = {
       procedureType: 'Diagnostic',
       provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
       location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
-      offers: { '@type': 'Offer', price: '7000', priceCurrency: 'MXN' },
+      offers: { '@type': 'Offer', price: '8300', priceCurrency: 'MXN' },
     },
     {
       '@type': 'MedicalProcedure',
@@ -305,7 +305,7 @@ const schema = {
    UTILITY COMPONENTS
    ═══════════════════════════════════════════════════════════════ */
 
-function SectionReveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+function SectionReveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [revealed, setRevealed] = useState(false);
 
@@ -856,6 +856,7 @@ export default function Home() {
                   <SectionReveal key={i} delay={i * 0.05}>
                     <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
                       <button
+                        id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-answer-${i}`}
@@ -869,6 +870,7 @@ export default function Home() {
                       <div
                         id={`faq-answer-${i}`}
                         role="region"
+                        aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
                         style={{
                           gridTemplateRows: openFaq === i ? '1fr' : '0fr',
@@ -903,7 +905,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-3 gap-4">
                 {[
                   {
-                    waText: 'Hola Karen, tengo dudas sobre las señales de TDAH en niños. ¿Podrías orientarme?',
+                    href: '/blog/senales-tdah-ninos',
                     icon: Users,
                     category: 'TDAH Infantil',
                     title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico',
@@ -911,7 +913,7 @@ export default function Home() {
                     color: 'from-accent-blue/10 to-accent-blue/5',
                   },
                   {
-                    waText: 'Hola Karen, sospecho que podría tener TDAH no diagnosticado. ¿Me podrías orientar?',
+                    href: '/blog/tdah-adultos-diagnostico-tardio',
                     icon: Brain,
                     category: 'TDAH Adultos',
                     title: 'TDAH en adultos: por qué miles de personas llegan al diagnóstico después de los 30',
@@ -919,7 +921,7 @@ export default function Home() {
                     color: 'from-primary/10 to-primary/5',
                   },
                   {
-                    waText: 'Hola Karen, quiero saber más sobre la evaluación de autismo con ADOS-2. ¿Puedes orientarme?',
+                    href: '/blog/que-es-ados-2-autismo',
                     icon: Puzzle,
                     category: 'Autismo (TEA)',
                     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
@@ -928,7 +930,7 @@ export default function Home() {
                   },
                 ].map((resource, i) => (
                   <SectionReveal key={resource.category} delay={i * 0.08}>
-                    <a href={waUrl(resource.waText)} target="_blank" rel="noopener noreferrer" className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
+                    <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
                       {/* Top accent bar */}
                       <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
                       <div className="p-5 sm:p-6 flex flex-col h-full">
@@ -939,10 +941,10 @@ export default function Home() {
                         <h3 className="font-bold text-primary text-sm leading-snug mb-2 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
                         <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4 flex-1">{resource.desc}</p>
                         <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
-                          Consultar este tema <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                          Leer artículo <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                         </span>
                       </div>
-                    </a>
+                    </Link>
                   </SectionReveal>
                 ))}
               </div>
