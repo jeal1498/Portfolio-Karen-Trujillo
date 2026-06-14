@@ -68,7 +68,7 @@ export default function SymptomChecker({
       <div className="p-8 border-b border-border">
         <div className="flex items-center gap-3 mb-3">
           <AlertCircle className="w-5 h-5 text-accent-blue shrink-0" />
-          <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
             Herramienta orientativa — No es diagnóstico
           </span>
         </div>
@@ -152,7 +152,7 @@ export default function SymptomChecker({
           )}
         </div>
 
-        <p className="text-[10px] text-muted-foreground/50 text-center mt-4">
+        <p className="text-xs text-muted-foreground/50 text-center mt-4">
           Esta herramienta es orientativa. Solo una valoración neuropsicológica formal puede establecer un diagnóstico.
         </p>
       </div>

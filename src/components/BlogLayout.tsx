@@ -62,7 +62,7 @@ const BlogLayout = ({
               </ol>
             </nav>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <span className={`inline-flex items-center px-3 py-1 rounded-full border text-[10px] font-bold uppercase tracking-widest mb-4 ${categoryColor}`}>
+              <span className={`inline-flex items-center px-3 py-1 rounded-full border text-xs font-bold uppercase tracking-widest mb-4 ${categoryColor}`}>
                 {category}
               </span>
               <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4 text-balance">{title}</h1>
@@ -84,7 +84,7 @@ const BlogLayout = ({
 
         <section className="py-16 px-6 bg-gradient-primary text-primary-foreground">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/60 mb-3">Neuropsicóloga Karen Trujillo · Cancún</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/60 mb-3">Neuropsicóloga Karen Trujillo · Cancún</p>
             <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Quieres dar el primer paso?</h2>
             <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
               La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal 11009616. Agenda una consulta inicial por WhatsApp sin compromiso.

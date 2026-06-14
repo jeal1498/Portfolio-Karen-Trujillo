@@ -89,7 +89,7 @@ const Navbar = () => {
                         className="flex flex-col px-4 py-3 rounded-lg hover:bg-secondary transition-colors"
                       >
                         <span className="text-xs font-bold text-primary">{v.label}</span>
-                        <span className="text-[10px] text-muted-foreground">{v.sub}</span>
+                        <span className="text-xs text-muted-foreground">{v.sub}</span>
                       </Link>
                     ))}
                   </div>
@@ -203,7 +203,7 @@ const Navbar = () => {
                         style={{ background: 'rgba(255,255,255,0.15)' }}>
                         <Icon className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-white font-bold text-[10px] leading-tight">{v.label}</span>
+                      <span className="text-white font-bold text-xs leading-tight">{v.label}</span>
                       <span className="text-[9px] leading-tight" style={{ color: 'rgba(255,255,255,0.5)' }}>{v.sub}</span>
                     </Link>
                   );

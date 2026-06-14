@@ -407,7 +407,7 @@ export default function SenalesTDAHNinos() {
           <section id="senales" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por categoría</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por categoría</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">14 señales de TDAH en niños que no debes ignorar</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">El TDAH tiene tres presentaciones: inatenta, hiperactiva-impulsiva, y combinada. Estas son las señales más frecuentes de cada una.</p>
               </SectionReveal>
@@ -452,7 +452,7 @@ export default function SenalesTDAHNinos() {
                                   >
                                     <div className="overflow-hidden">
                                       <p className="text-xs text-muted-foreground font-light leading-relaxed mt-2 pl-0 sm:pl-0 bg-secondary/50 p-3 rounded-xl border border-border/50">
-                                        <span className="font-bold text-primary/60 text-[10px] uppercase tracking-widest">Ejemplo: </span>
+                                        <span className="font-bold text-primary/60 text-xs uppercase tracking-widest">Ejemplo: </span>
                                         {item.example}
                                       </p>
                                     </div>
@@ -478,7 +478,7 @@ export default function SenalesTDAHNinos() {
           <section id="edad" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por edad</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por edad</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Cómo se ve el TDAH según la edad de tu hijo?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">El TDAH no se ve igual a los 4 años que a los 14. Estas son las señales más comunes en cada etapa.</p>
               </SectionReveal>
@@ -526,7 +526,7 @@ export default function SenalesTDAHNinos() {
           <section id="normal-vs-tdah" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">La pregunta clave</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">La pregunta clave</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Cuándo es &ldquo;cosa de niños&rdquo; y cuándo es TDAH?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La diferencia no está en qué hace tu hijo, sino en cómo, cuánto y cuánto le afecta.</p>
               </SectionReveal>
@@ -587,7 +587,7 @@ export default function SenalesTDAHNinos() {
           <section id="mitos" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Derribando mitos</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Derribando mitos</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center">5 mitos sobre TDAH en niños</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-12">Creencias que retrasan el diagnóstico y causan sufrimiento innecesario.</p>
               </SectionReveal>
@@ -622,7 +622,7 @@ export default function SenalesTDAHNinos() {
           <section id="que-hacer" className="py-14 sm:py-20 bg-gradient-primary text-primary-foreground scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-3 text-center">El siguiente paso</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/50 mb-3 text-center">El siguiente paso</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4 text-center">¿Reconoces estas señales en tu hijo?</h2>
                 <p className="text-primary-foreground/70 font-light text-center max-w-xl mx-auto mb-10">No necesitas tener certeza para buscar ayuda. Lo que necesitas es una evaluación que te dé respuestas claras.</p>
               </SectionReveal>
@@ -648,7 +648,7 @@ export default function SenalesTDAHNinos() {
                 <div className="text-center">
                   <Link
                     href="/evaluacion-tdah-ninos"
-                    className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-8 py-4 rounded-2xl bg-white text-primary shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                    className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-2xl bg-white text-primary shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                   >
                     Ver evaluación TDAH infantil
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -714,7 +714,7 @@ export default function SenalesTDAHNinos() {
           <section className="py-12 sm:py-16 bg-secondary/50 border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Sigue aprendiendo</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Sigue aprendiendo</p>
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-8 text-center">Recursos relacionados</h2>
               </SectionReveal>
 
@@ -729,7 +729,7 @@ export default function SenalesTDAHNinos() {
                           <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/60">{resource.category}</span>
                         </div>
                         <h3 className="font-bold text-primary text-sm leading-snug mb-3 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
-                        <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
                           Leer más <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                         </span>
                       </div>
@@ -792,7 +792,7 @@ export default function SenalesTDAHNinos() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href="/evaluacion-tdah-ninos"
-                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-primary text-primary-foreground font-bold text-[10px] uppercase tracking-widest rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
                     >
                       <Stethoscope className="w-4 h-4" />
                       Ver evaluación completa
@@ -802,7 +802,7 @@ export default function SenalesTDAHNinos() {
                       href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre señales de TDAH en niños y me gustaría agendar una evaluación para mi hijo.')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
+                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
                     >
                       <MessageCircle className="w-4 h-4" />
                       Agendar por WhatsApp
@@ -836,7 +836,7 @@ export default function SenalesTDAHNinos() {
             <div className="flex gap-2.5 max-w-lg mx-auto">
               <Link
                 href="/evaluacion-tdah-ninos"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-[10px] uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"
               >
                 <Brain className="w-4 h-4" />
                 Evaluar TDAH
@@ -845,7 +845,7 @@ export default function SenalesTDAHNinos() {
                 href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre TDAH en niños y me gustaría orientación.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-[10px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp

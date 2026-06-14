@@ -190,7 +190,7 @@ export default function BurnoutVsTDAH() {
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-pink/20 bg-accent-pink/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-pink/20 bg-accent-pink/10 text-xs font-bold uppercase tracking-widest mb-4 text-primary">
                   TDAH Adultos — Diagnóstico diferencial
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
@@ -399,17 +399,17 @@ export default function BurnoutVsTDAH() {
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Diagnóstico diferencial con ansiedad y burnout</span>
                 </Link>
                 <Link href="/blog/tdah-adultos-diagnostico-tardio" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">TDAH en adultos: diagnóstico tardío</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Por qué miles llegan al diagnóstico después de los 30</span>
                 </Link>
                 <Link href="/blog/tdah-vs-ansiedad-diferencias" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">¿TDAH o ansiedad? Cómo saber cuál es cuál</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas compartidos y diferencias clave</span>
                 </Link>

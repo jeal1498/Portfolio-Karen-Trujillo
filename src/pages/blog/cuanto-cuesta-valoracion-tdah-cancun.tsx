@@ -116,7 +116,7 @@ export default function CuantoCuestaValoracionTDAH() {
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-xs font-bold uppercase tracking-widest mb-4 text-primary">
                   Información & Precios
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
@@ -138,7 +138,7 @@ export default function CuantoCuestaValoracionTDAH() {
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                 <div className="bg-gradient-primary text-primary-foreground rounded-2xl p-8 text-center mb-10">
-                  <p className="text-[10px] uppercase tracking-widest text-primary-foreground/60 mb-2">Costo total de la valoración</p>
+                  <p className="text-xs uppercase tracking-widest text-primary-foreground/60 mb-2">Costo total de la valoración</p>
                   <div className="text-6xl font-serif font-bold mb-2">$8,300</div>
                   <p className="text-primary-foreground/80 text-sm mb-4">pesos mexicanos (MXN) · Pago distribuido en sesiones</p>
                   <a
@@ -224,17 +224,17 @@ export default function CuantoCuestaValoracionTDAH() {
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años</span>
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años</span>
                 </Link>
                 <Link href="/evaluacion-autismo-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Diagnóstico Autismo (TEA) en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 2 años</span>
                 </Link>

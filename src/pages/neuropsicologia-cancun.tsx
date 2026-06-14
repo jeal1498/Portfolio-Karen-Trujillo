@@ -358,7 +358,7 @@ export default function NeuropsicologiaCancun() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Agendar por WhatsApp
@@ -388,7 +388,7 @@ export default function NeuropsicologiaCancun() {
           <section id="que-es-neuropsicologia" className="py-14 sm:py-20 bg-card scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Neuropsicología clínica
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-8 text-center text-balance">
@@ -439,7 +439,7 @@ export default function NeuropsicologiaCancun() {
           <section id="diferenciadores" className="py-14 sm:py-20 bg-secondary scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   La diferencia importa
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -477,7 +477,7 @@ export default function NeuropsicologiaCancun() {
           <section id="karen-perfil" className="py-14 sm:py-20 bg-card border-t border-border relative overflow-hidden scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6 relative">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   La especialista
                 </p>
                 <h2 className="font-serif font-bold text-primary mb-14 text-center">
@@ -529,7 +529,7 @@ export default function NeuropsicologiaCancun() {
                           className="bg-secondary/60 border border-border rounded-xl p-3 text-center"
                         >
                           <p className="text-base font-serif font-bold text-primary">{stat.valor}</p>
-                          <p className="text-[10px] text-muted-foreground font-light leading-tight mt-0.5">
+                          <p className="text-xs text-muted-foreground font-light leading-tight mt-0.5">
                             {stat.label}
                           </p>
                         </div>
@@ -545,7 +545,7 @@ export default function NeuropsicologiaCancun() {
                       </div>
                       <div>
                         <p className="text-sm font-bold text-primary">5.0 · 47 reseñas</p>
-                        <p className="text-[10px] text-muted-foreground font-light">Verificadas en Google</p>
+                        <p className="text-xs text-muted-foreground font-light">Verificadas en Google</p>
                       </div>
                     </div>
 
@@ -638,7 +638,7 @@ export default function NeuropsicologiaCancun() {
           <section className="py-14 sm:py-20 bg-secondary border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Especialidades
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -673,7 +673,7 @@ export default function NeuropsicologiaCancun() {
                     href={WA}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                    className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Consultar por mi caso
@@ -691,7 +691,7 @@ export default function NeuropsicologiaCancun() {
           <section id="preguntas-frecuentes" className="py-14 sm:py-20 bg-card border-t border-border scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Preguntas frecuentes
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">
@@ -783,14 +783,14 @@ export default function NeuropsicologiaCancun() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 font-bold text-[10px] uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 font-bold text-xs uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Escribir por WhatsApp
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
 
-                <p className="mt-6 text-[10px] text-primary-foreground/45 font-light">
+                <p className="mt-6 text-xs text-primary-foreground/45 font-light">
                   Lunes a Viernes 9:00 – 7:00 PM · Sábados 9:00 – 2:00 PM
                 </p>
               </SectionReveal>
@@ -801,7 +801,7 @@ export default function NeuropsicologiaCancun() {
           {/* ── Internal linking for topical authority ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">
                 Evaluaciones disponibles en Cancún
               </p>
               <div className="grid sm:grid-cols-3 gap-3">
@@ -812,7 +812,7 @@ export default function NeuropsicologiaCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH Infantil</span>
-                    <span className="text-[10px] text-muted-foreground font-light">5-17 años</span>
+                    <span className="text-xs text-muted-foreground font-light">5-17 años</span>
                   </div>
                 </Link>
                 <Link
@@ -822,7 +822,7 @@ export default function NeuropsicologiaCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH Adultos</span>
-                    <span className="text-[10px] text-muted-foreground font-light">18+ años</span>
+                    <span className="text-xs text-muted-foreground font-light">18+ años</span>
                   </div>
                 </Link>
                 <Link
@@ -832,7 +832,7 @@ export default function NeuropsicologiaCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">Autismo (TEA)</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Diagnóstico ADOS-2</span>
+                    <span className="text-xs text-muted-foreground font-light">Diagnóstico ADOS-2</span>
                   </div>
                 </Link>
               </div>
