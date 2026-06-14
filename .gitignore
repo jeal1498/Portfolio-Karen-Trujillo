@@ -30,7 +30,12 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Codex CLI skills (not used in this project)
+.agents/
+
 # Claude Code internal — exclude private data, allow settings and hooks
 .claude/*
 !.claude/settings.json
 !.claude/hooks
+!.claude/commands
+!.claude/skills
