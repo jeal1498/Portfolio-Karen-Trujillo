@@ -25,12 +25,12 @@ const AboutSection = () => {
           >
             <div aria-hidden="true" className="absolute -top-10 -left-10 text-[12rem] font-serif leading-none text-accent-sand/40 select-none opacity-50">"</div>
 
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-8 relative z-10">
+            <h2 className="text-headline font-serif font-bold text-primary mb-8 relative z-10">
               Neuropsicología<br />
               <span className="italic text-primary-light">con rigor clínico.</span>
             </h2>
 
-            <div className="p-6 bg-accent-blue/10 border-l-4 border-accent-blue rounded-lg text-base leading-relaxed text-foreground font-medium mb-6">
+            <div className="px-6 py-5 bg-accent-blue/10 rounded-xl text-base leading-relaxed text-foreground font-medium mb-6">
               <p>
                 Soy <strong>Neuropsicóloga Karen Trujillo</strong> (Cédula Federal: 11009616), especializada
                 en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años
@@ -38,7 +38,7 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="space-y-4 text-muted-foreground font-light leading-relaxed text-base text-justify mb-8">
+            <div className="space-y-4 text-muted-foreground font-light leading-relaxed text-base mb-8">
               <p>
                 Me especializo exclusivamente en evaluación neuropsicológica porque creo que un diagnóstico preciso
                 cambia trayectorias de vida. Un niño con TDAH no diagnosticado es etiquetado como "flojo" o "difícil";
@@ -66,7 +66,7 @@ const AboutSection = () => {
             </div>
 
             {/* Credentials */}
-            <div className="mt-6 grid grid-cols-3 gap-3">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="px-4 py-3 rounded-lg bg-success/10 border border-success/20">
                 <p className="text-xs font-bold text-success uppercase tracking-wider mb-1">Cédula Federal</p>
                 <p className="text-sm font-bold text-primary">11009616</p>
@@ -139,7 +139,7 @@ const AboutSection = () => {
             </div>
 
             {/* Background decoration */}
-            <div aria-hidden="true" className="absolute inset-0 bg-accent-sand/25 rounded-3xl -z-10 rotate-2 scale-[1.03]" />
+            <div aria-hidden="true" className="absolute inset-0 bg-accent-sand/25 rounded-2xl -z-10 rotate-2 scale-[1.03]" />
           </motion.div>
 
         </div>

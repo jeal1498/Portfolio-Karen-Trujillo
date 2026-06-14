@@ -59,10 +59,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="px-4 py-2 rounded-full border border-primary/10 bg-card text-primary font-bold uppercase tracking-[0.2em] text-xs mb-6 inline-block shadow-sm">
-            Especialidad exclusiva
-          </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Valoraciones Neuropsicológicas</h2>
+          <h2 className="text-headline font-serif font-bold text-primary">Valoraciones Neuropsicológicas</h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto font-light">
             Diagnóstico de TDAH y Autismo con instrumentos estandarizados internacionales. Informe clínico con cédula federal válido ante escuelas, IMSS y organismos oficiales.
           </p>
@@ -73,20 +70,21 @@ const ServicesSection = () => {
           {evaluaciones.map((ev, index) => (
             <motion.article
               key={ev.title}
-              className="group bg-card rounded-xl shadow-sm hover:shadow-card transition-all duration-300 hover:-translate-y-2 border border-border overflow-hidden flex flex-col h-full"
+              className="group bg-card rounded-2xl shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(56,47,81,0.15)] transition-all duration-300 hover:-translate-y-2 border border-border overflow-hidden flex flex-col h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Colored accent bar */}
-              <div className={`h-1.5 w-full shrink-0 ${ev.accentBar}`} aria-hidden="true" />
+              {/* Colored category header — replaces thin accent bar */}
+              <div className={`${ev.bgColor} px-8 py-5 flex items-center gap-4 shrink-0`}>
+                <div className="w-11 h-11 rounded-xl bg-white/50 flex items-center justify-center text-primary shrink-0">
+                  <ev.icon className="w-5 h-5" aria-hidden="true" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest text-primary/70">{ev.edad}</span>
+              </div>
 
               <div className="p-8 flex flex-col flex-grow">
-                <div className={`w-14 h-14 rounded-xl ${ev.bgColor} flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all`}>
-                  <ev.icon className="w-6 h-6" aria-hidden="true" />
-                </div>
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">{ev.edad}</span>
                 <h3 className="font-bold text-xl mb-3 text-primary">{ev.title}</h3>
                 <p className="text-muted-foreground text-sm font-light leading-relaxed mb-5 flex-grow">{ev.description}</p>
 
@@ -102,7 +100,7 @@ const ServicesSection = () => {
                 <div className="pt-4 border-t border-border space-y-2">
                   <Link
                     href={ev.slug}
-                    className="block w-full py-3 rounded-lg bg-secondary text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/10 transition-all text-center"
+                    className="block w-full py-3 rounded-2xl bg-secondary text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/10 transition-all text-center"
                   >
                     Ver proceso completo
                   </Link>
@@ -110,7 +108,7 @@ const ServicesSection = () => {
                     href={`https://wa.me/529983211547?text=${ev.message}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full py-3 rounded-lg bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all text-center"
+                    className="block w-full py-3 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all text-center"
                   >
                     Agendar ahora
                   </a>
@@ -152,7 +150,7 @@ const ServicesSection = () => {
                 href="https://wa.me/529983211547?text=Hola%20Karen,%20quiero%20información%20sobre%20el%20proceso%20de%20valoración"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-lg hover:opacity-90 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-2xl hover:opacity-90 transition-all shadow-lg"
               >
                 Solicitar información <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>

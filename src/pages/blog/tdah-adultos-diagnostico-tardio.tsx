@@ -454,7 +454,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
               <div className="space-y-8">
                 {signals.map((group, gi) => (
                   <SectionReveal key={group.category} delay={gi * 0.1}>
-                    <div className="bg-card border border-border rounded-3xl overflow-hidden">
+                    <div className="bg-card border border-border rounded-2xl overflow-hidden">
                       {/* Category header */}
                       <div className="px-6 py-5 border-b border-border flex items-center gap-3">
                         <div className={`w-10 h-10 rounded-xl border-2 ${group.accent} flex items-center justify-center`}>

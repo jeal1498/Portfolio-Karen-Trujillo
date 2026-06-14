@@ -24,7 +24,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Mobile: compact circular crop */}
-          <div className="mx-auto w-36 h-36 rounded-full overflow-hidden border-4 border-card shadow-xl lg:hidden">
+          <div className="mx-auto w-44 h-44 rounded-full overflow-hidden shadow-[0_12px_40px_-8px_rgba(56,47,81,0.25)] md:hidden">
             <img
               src="/Psicologa_Karen_Trujillo.webp"
               alt="Neuropsicóloga Karen Trujillo, especialista en TDAH y autismo en Cancún"
@@ -34,7 +34,7 @@ const Hero = () => {
           </div>
 
           {/* Desktop: full photo with credential overlay card */}
-          <div className="hidden lg:block relative z-10 w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-[8px] border-card">
+          <div className="hidden md:block relative z-10 w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(56,47,81,0.30)]">
             <img
               src="/Psicologa_Karen_Trujillo.webp"
               alt="Neuropsicóloga Karen Trujillo, especialista en valoración de TDAH y Autismo en Cancún, Quintana Roo"
@@ -48,8 +48,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <div aria-hidden="true" className="absolute inset-0 bg-accent-sand rounded-2xl rotate-6 scale-95 -z-10 opacity-40 hidden lg:block" />
-          <div aria-hidden="true" className="absolute inset-0 bg-accent-pink rounded-2xl rotate-3 scale-90 -z-10 opacity-20 hidden lg:block" />
+          <div aria-hidden="true" className="absolute inset-0 bg-accent-sand rounded-2xl rotate-6 scale-95 -z-10 opacity-40 hidden md:block" />
+          <div aria-hidden="true" className="absolute inset-0 bg-accent-pink rounded-2xl rotate-3 scale-90 -z-10 opacity-20 hidden md:block" />
         </motion.div>
 
         {/* Content */}
@@ -64,9 +64,9 @@ const Hero = () => {
             <span className="text-xs uppercase tracking-widest font-bold text-muted-foreground">Agenda Abierta — Cancún &amp; Online</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary leading-[1.1] text-balance">
+          <h1 className="text-display font-serif font-bold text-primary text-balance">
             Valoración TDAH<br />
-            <span className="gradient-text font-normal italic">y Autismo</span><br />
+            <span className="text-primary-light font-normal italic">y Autismo</span><br />
             en Cancún
           </h1>
 
@@ -89,14 +89,14 @@ const Hero = () => {
               href="https://wa.me/529983211547?text=Hola%20Karen,%20me%20interesa%20agendar%20una%20valoración"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-primary hover:opacity-90 text-primary-foreground py-4 px-10 rounded-lg font-bold text-xs shadow-xl shadow-primary/25 hover:shadow-2xl hover:-translate-y-1 transition-all uppercase tracking-widest flex items-center justify-center gap-2"
+              className="bg-gradient-primary hover:opacity-90 text-primary-foreground py-4 px-10 rounded-2xl font-bold text-xs shadow-xl shadow-primary/25 hover:shadow-2xl hover:-translate-y-1 transition-all uppercase tracking-widest flex items-center justify-center gap-2"
             >
               Agendar Valoración <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <a
               href="#servicios"
               onClick={(e) => scrollToSection(e, '#servicios')}
-              className="bg-card text-primary border-2 border-primary py-4 px-10 rounded-lg font-bold text-xs hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest shadow-sm"
+              className="bg-card text-primary border-2 border-primary py-4 px-10 rounded-2xl font-bold text-xs hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest shadow-sm"
             >
               Ver Servicios
             </a>
