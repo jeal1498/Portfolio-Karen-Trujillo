@@ -1,5 +1,7 @@
 # Karen Trujillo — Neuropsicóloga en Cancún · Claude Instructions
 
+> **Preferencias del usuario:** leer `memory.md` al inicio de cada sesión. Actualizarlo proactivamente cuando el usuario indique nuevas preferencias.
+
 ## Contexto del Producto
 
 **Propósito:** Sitio web clínico de una sola página (+ rutas de servicio y blog) para Karen Trujillo, neuropsicóloga especializada en diagnóstico de TDAH y autismo en Cancún. Convierte familias con dudas en consultas agendadas estableciendo credibilidad clínica y calidez humana simultáneamente.
