@@ -137,114 +137,110 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile menu — glassmorphism */}
+      {/* Mobile menu — clean clinical panel */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: -12 }}
-            animate={{ opacity: 1, scale: 1,    y: 0    }}
-            exit={{   opacity: 0, scale: 0.96, y: -12  }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="absolute top-20 left-4 right-4 rounded-3xl shadow-2xl overflow-hidden"
-            style={{
-              background: 'linear-gradient(135deg, rgba(91,83,160,0.72) 0%, rgba(72,68,140,0.80) 50%, rgba(100,90,170,0.72) 100%)',
-              backdropFilter: 'blur(28px)',
-              WebkitBackdropFilter: 'blur(28px)',
-              border: '1px solid rgba(255,255,255,0.18)',
-            }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="absolute top-20 left-4 right-4 rounded-2xl bg-card border border-border shadow-[0_20px_60px_-10px_rgba(56,47,81,0.18)] overflow-hidden"
           >
-            {/* Ambient blobs */}
-            <div className="pointer-events-none absolute -top-16 -right-16 w-52 h-52 rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(120,160,255,0.35) 0%, transparent 70%)' }} />
-            <div className="pointer-events-none absolute -bottom-12 left-8 w-40 h-40 rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(220,160,100,0.25) 0%, transparent 70%)' }} />
+            <div className="p-5 flex flex-col gap-4">
 
-            <div className="relative z-10 p-6 flex flex-col gap-3">
-
-              {/* Header: logo + close */}
-              <div className="flex items-center justify-between mb-1">
+              {/* Header: Karen's photo + name + credential + close */}
+              <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center font-serif font-bold italic text-xl"
-                    style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>
-                    K
+                  <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-border shadow-sm">
+                    <img
+                      src="/Psicologa_Karen_Trujillo.webp"
+                      alt="Neuropsicóloga Karen Trujillo"
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-xs uppercase tracking-widest leading-none">Karen Trujillo</p>
-                    <p className="text-[9px] uppercase tracking-[0.18em] mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                      Neuropsicología · TDAH · Autismo
-                    </p>
+                    <p className="font-bold text-primary text-sm leading-none">Karen Trujillo</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">Cédula 11009616 · 7+ años</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                  style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
                   aria-label="Cerrar menú"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
-              {/* Valoraciones — icon cards */}
-              <p className="text-[9px] font-bold uppercase tracking-[0.22em] px-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                Valoraciones
-              </p>
-              <div className="grid grid-cols-3 gap-2">
-                {valoraciones.map((v) => {
-                  const Icon = v.icon;
-                  return (
-                    <Link
-                      key={v.href}
-                      href={v.href}
-                      className="flex flex-col items-center gap-2 p-3 rounded-2xl text-center transition-all active:scale-95"
-                      style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.14)' }}
-                    >
-                      <div className="w-9 h-9 rounded-xl flex items-center justify-center"
-                        style={{ background: 'rgba(255,255,255,0.15)' }}>
-                        <Icon className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-white font-bold text-xs leading-tight">{v.label}</span>
-                      <span className="text-[9px] leading-tight" style={{ color: 'rgba(255,255,255,0.5)' }}>{v.sub}</span>
-                    </Link>
-                  );
-                })}
+              <div className="h-px bg-border" />
+
+              {/* Valoraciones — color-differentiated rows */}
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-2 px-1">
+                  Valoraciones
+                </p>
+                <div className="flex flex-col gap-1.5">
+                  {valoraciones.map((v, i) => {
+                    const Icon = v.icon;
+                    const rowStyle = [
+                      'bg-accent-blue/10 border-l-2 border-accent-blue/60',
+                      'bg-accent-sand/25 border-l-2 border-accent-sand',
+                      'bg-accent-pink/10 border-l-2 border-accent-pink/50',
+                    ][i];
+                    return (
+                      <Link
+                        key={v.href}
+                        href={v.href}
+                        aria-label={`${v.label} — ${v.sub}`}
+                        className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all active:scale-[0.98] ${rowStyle}`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <Icon className="w-4 h-4 text-primary/50 shrink-0" aria-hidden="true" />
+                          <div>
+                            <span className="text-sm font-bold text-primary block leading-none">{v.label}</span>
+                            <span className="text-xs text-muted-foreground mt-0.5 block">{v.sub}</span>
+                          </div>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden="true" />
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Section links */}
-              <div className="flex flex-col gap-0.5 mt-1">
+              <div className="flex flex-col gap-0.5">
                 {sectionLinks.map((link) => (
                   <a
                     key={link.href}
                     href={sectionHref(link.href)}
                     onClick={(e) => handleSectionClick(e, link.href)}
-                    className="flex items-center justify-between px-3 py-3 rounded-xl transition-all active:scale-[0.98]"
-                    style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+                    className="flex items-center justify-between px-4 py-2.5 rounded-xl hover:bg-secondary transition-colors active:scale-[0.98]"
                   >
-                    <span className="text-sm font-bold uppercase tracking-widest text-white">{link.label}</span>
-                    <ChevronRight className="w-4 h-4" style={{ color: 'rgba(255,255,255,0.4)' }} />
+                    <span className="text-sm font-medium text-primary/70">{link.label}</span>
+                    <ChevronRight className="w-3.5 h-3.5 text-muted-foreground" aria-hidden="true" />
                   </a>
                 ))}
               </div>
 
-              {/* CTA buttons */}
-              <div className="flex flex-col gap-2 mt-1">
-                <a
-                  href={`tel:${PHONE_NUMBER}`}
-                  className="flex items-center justify-center gap-2 py-3 rounded-2xl font-bold uppercase tracking-widest text-xs transition-all active:scale-95"
-                  style={{ background: 'rgba(255,255,255,0.15)', color: 'white', border: '1px solid rgba(255,255,255,0.2)' }}
-                >
-                  <Phone className="w-4 h-4" />
-                  Llamar
-                </a>
+              {/* CTAs — primary button + secondary text link */}
+              <div className="flex flex-col gap-1 pt-1">
                 <a
                   href={waUrl('Hola Karen, quiero agendar una valoración')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-3 rounded-2xl font-bold uppercase tracking-widest text-xs text-white transition-all active:scale-95"
-                  style={{ background: 'rgba(60,55,120,0.85)', border: '1px solid rgba(255,255,255,0.15)' }}
+                  className="flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest transition-all active:scale-[0.98] shadow-lg shadow-primary/20"
                 >
-                  <CalendarDays className="w-4 h-4" />
+                  <CalendarDays className="w-4 h-4" aria-hidden="true" />
                   Agendar Valoración
+                </a>
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  className="flex items-center justify-center gap-1.5 py-2.5 text-primary/50 hover:text-primary font-bold text-xs uppercase tracking-widest transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5" aria-hidden="true" />
+                  Llamar
                 </a>
               </div>
 
