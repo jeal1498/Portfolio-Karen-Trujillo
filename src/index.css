@@ -111,6 +111,14 @@
 }
 
 @layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .label-caps {
+    @apply text-xs font-bold uppercase tracking-widest text-muted-foreground;
+  }
+
   .glass {
     @apply bg-white/70 backdrop-blur-xl border border-white/80;
   }
