@@ -11,7 +11,7 @@ const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20ar
 const similitudes = [
   {
     sintoma: 'Dificultad para concentrarse',
-    burnout: 'La mente está saturada y agotada — no puede procesar más',
+    burnout: 'La mente está saturada y agotada, no puede procesar más',
     tdah: 'El cerebro no sostiene el foco por su funcionamiento neurológico, independientemente del nivel de energía',
   },
   {

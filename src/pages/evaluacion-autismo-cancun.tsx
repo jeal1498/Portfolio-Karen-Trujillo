@@ -549,7 +549,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
 
         <div className="flex flex-col sm:flex-row gap-3">
           <CtaButton className="flex-1 justify-center">
-            {count > 4 ? 'Tu hijo merece claridad — Agendar' : 'Reservar mi lugar'}
+            {count > 4 ? 'Tu hijo merece claridad. Agendar' : 'Reservar mi lugar'}
           </CtaButton>
           {count > 0 && (
             <button
@@ -1067,7 +1067,7 @@ export default function AutismoCancunFunnel() {
                   <div className="space-y-6">
                     <div className="space-y-4 text-muted-foreground font-light leading-relaxed">
                       <p>La <strong className="text-primary font-semibold">neuropsicóloga Karen Trujillo</strong> es especialista clínica con más de 7 años de experiencia en la evaluación y diagnóstico de Trastorno del Espectro Autista, TDAH y dificultades del aprendizaje en niños, adolescentes y adultos en Cancún, Quintana Roo.</p>
-                      <p>Su formación incluye especialización en neuropsicología clínica y certificación en la aplicación del <strong className="text-primary font-semibold">ADOS-2 y ADI-R</strong> — los instrumentos considerados estándar de oro mundial para el diagnóstico del autismo. Complementa cada evaluación con WISC-V, Vineland-3 y SRS-2 para ofrecer un perfil integral.</p>
+                      <p>Su formación incluye especialización en neuropsicología clínica y certificación en la aplicación del <strong className="text-primary font-semibold">ADOS-2 y ADI-R</strong>, los instrumentos considerados estándar de oro mundial para el diagnóstico del autismo. Complementa cada evaluación con WISC-V, Vineland-3 y SRS-2 para ofrecer un perfil integral.</p>
                       <p>Lo que distingue su práctica es la combinación de rigor clínico con calidez humana: las familias no solo reciben un diagnóstico, sino una <strong className="text-primary font-semibold">hoja de ruta concreta</strong> para entender a su hijo y acompañarlo de forma efectiva en casa, en la escuela y en la terapia.</p>
                     </div>
 
@@ -1106,7 +1106,7 @@ export default function AutismoCancunFunnel() {
               <div className="space-y-4">
                 {[
                   { titulo: 'TEA confirmado', desc: 'Recibes un diagnóstico formal con nivel de apoyo especificado (1, 2 o 3), recomendaciones terapéuticas prioritarias (terapia de lenguaje, ocupacional, habilidades sociales), adecuaciones curriculares para la escuela y orientación familiar. El informe tiene validez oficial.', color: 'border-primary/30 bg-primary/5', iconColor: 'text-primary bg-primary/10 border-primary/20' },
-                  { titulo: 'No es TEA — diagnóstico diferencial', desc: 'El informe identifica qué sí está pasando: TDAH, ansiedad social, trastorno del lenguaje, trastorno de la comunicación social u otra condición. Saber qué no es autismo es igual de valioso porque evita intervenciones equivocadas y dirige al tratamiento correcto.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
+                  { titulo: 'No es TEA: diagnóstico diferencial', desc: 'El informe identifica qué sí está pasando: TDAH, ansiedad social, trastorno del lenguaje, trastorno de la comunicación social u otra condición. Saber qué no es autismo es igual de valioso porque evita intervenciones equivocadas y dirige al tratamiento correcto.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
                   { titulo: 'Rasgos subclínicos o perfil mixto', desc: 'Algunos niños muestran rasgos del espectro sin cumplir todos los criterios. En ese caso, recibes orientación sobre qué áreas fortalecer, qué terapias preventivas iniciar y cuándo revaluar si las señales se intensifican.', color: 'border-success/30 bg-success/5', iconColor: 'text-success bg-success/10 border-success/20' },
                 ].map((item, i) => (
                   <SectionReveal key={item.titulo} delay={i * 0.1}>
@@ -1364,7 +1364,7 @@ export default function AutismoCancunFunnel() {
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
         >
           <a href="#agendar" onClick={scrollToBooking} className="flex items-center justify-center w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-bold text-[11px] uppercase tracking-widest shadow-2xl shadow-primary/35 active:scale-[0.98] transition-transform">
-            {symptomCount > 4 ? 'Muchas señales — Agendar evaluación' : 'Agendar evaluación'}
+            {symptomCount > 4 ? 'Muchas señales. Agendar evaluación' : 'Agendar evaluación'}
           </a>
         </div>
       </div>

@@ -29,7 +29,7 @@ const signals = [
     accent: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20',
     items: [
       { signal: 'Se distrae con cualquier estímulo durante tareas escolares', example: 'Un ruido mínimo lo desconecta completamente de la tarea que estaba haciendo.' },
-      { signal: 'Pierde útiles, juguetes o materiales constantemente', example: 'Cada semana pierde lápices, borradores o cuadernos. No es descuido "normal" — es un patrón.' },
+      { signal: 'Pierde útiles, juguetes o materiales constantemente', example: 'Cada semana pierde lápices, borradores o cuadernos. No es descuido "normal", es un patrón.' },
       { signal: 'Parece no escuchar cuando le hablas directamente', example: 'Le dices algo mirándolo a los ojos y a los 10 segundos no recuerda qué le dijiste.' },
       { signal: 'No termina tareas o actividades que inició', example: 'Empieza la tarea con buena actitud, pero a los 5 minutos ya está haciendo otra cosa.' },
       { signal: 'Evita actividades que requieren esfuerzo mental sostenido', example: 'Leer un párrafo completo o resolver problemas de matemáticas genera resistencia desproporcionada.' },
@@ -41,9 +41,9 @@ const signals = [
     icon: Zap,
     accent: 'text-warning bg-warning/10 border-warning/20',
     items: [
-      { signal: 'No puede permanecer sentado cuando se espera que lo esté', example: 'En clase, en restaurantes o en la iglesia — se levanta repetidamente sin motivo aparente.' },
+      { signal: 'No puede permanecer sentado cuando se espera que lo esté', example: 'En clase, en restaurantes o en la iglesia: se levanta repetidamente sin motivo aparente.' },
       { signal: 'Mueve manos, pies o se retuerce en el asiento', example: 'Balancea la silla, golpetea la mesa, mueve las piernas de forma constante.' },
-      { signal: 'Corre o trepa en situaciones inapropiadas', example: 'En la sala de espera del doctor o en el supermercado — la energía no se adapta al contexto.' },
+      { signal: 'Corre o trepa en situaciones inapropiadas', example: 'En la sala de espera del doctor o en el supermercado: la energía no se adapta al contexto.' },
       { signal: 'Habla excesivamente o tiene dificultad para jugar en silencio', example: 'No puede estar en una actividad tranquila sin narrar, hacer ruidos o buscar estímulo.' },
     ],
   },
@@ -53,7 +53,7 @@ const signals = [
     accent: 'text-rose-500 bg-rose-50 dark:bg-rose-500/10 border-rose-200 dark:border-rose-500/20',
     items: [
       { signal: 'Responde antes de que terminen la pregunta', example: 'En clase o en casa, interrumpe con la respuesta sin esperar a que terminen de hablar.' },
-      { signal: 'Dificultad para esperar su turno', example: 'En juegos, filas o conversaciones — la espera genera frustración desproporcionada.' },
+      { signal: 'Dificultad para esperar su turno', example: 'En juegos, filas o conversaciones: la espera genera frustración desproporcionada.' },
       { signal: 'Interrumpe conversaciones o actividades de otros', example: 'Se mete en conversaciones ajenas o toma cosas de otros niños sin pedir permiso.' },
       { signal: 'Actúa sin pensar en las consecuencias', example: 'Dice cosas inapropiadas, toma decisiones arriesgadas o reacciona de forma exagerada sin procesarlo.' },
     ],
@@ -61,10 +61,10 @@ const signals = [
 ];
 
 const myths = [
-  { myth: '"Es flojo, si quisiera podría poner atención"', reality: 'El TDAH es una condición neurológica, no un problema de voluntad. Las funciones ejecutivas del cerebro — atención, inhibición, memoria de trabajo — operan de forma diferente.' },
+  { myth: '"Es flojo, si quisiera podría poner atención"', reality: 'El TDAH es una condición neurológica, no un problema de voluntad. Las funciones ejecutivas del cerebro, atención, inhibición, memoria de trabajo, operan de forma diferente.' },
   { myth: '"Solo los niños hiperactivos tienen TDAH"', reality: 'Existe el TDAH predominantemente inatento (antes "TDA"), donde no hay hiperactividad visible. Es más difícil de detectar y muy común en niñas.' },
-  { myth: '"Se le va a quitar cuando crezca"', reality: 'Sin intervención, el TDAH no desaparece — se transforma. Muchos adultos descubren que lo han tenido toda la vida sin saberlo.' },
-  { myth: '"Saca buenas calificaciones, no puede tener TDAH"', reality: 'Niños con alto CI pueden compensar el TDAH durante años. El esfuerzo que les cuesta es invisible — hasta que la exigencia supera su capacidad de compensar.' },
+  { myth: '"Se le va a quitar cuando crezca"', reality: 'Sin intervención, el TDAH no desaparece: se transforma. Muchos adultos descubren que lo han tenido toda la vida sin saberlo.' },
+  { myth: '"Saca buenas calificaciones, no puede tener TDAH"', reality: 'Niños con alto CI pueden compensar el TDAH durante años. El esfuerzo que les cuesta es invisible, hasta que la exigencia supera su capacidad de compensar.' },
   { myth: '"Es un invento de las farmacéuticas"', reality: 'El TDAH es una de las condiciones más estudiadas en neurociencia. Hay décadas de investigación con resonancias magnéticas, estudios genéticos y ensayos clínicos que confirman su base neurológica.' },
 ];
 
@@ -78,13 +78,13 @@ const ageRanges = [
   {
     range: '6 – 11 años (primaria)',
     desc: 'La etapa donde más se detecta el TDAH, porque la escuela exige atención sostenida y autocontrol.',
-    signs: ['Rendimiento escolar inconsistente — "puede pero no quiere"', 'Olvida tareas, pierde materiales, no anota instrucciones', 'Dificultad para organizar su mochila, cuarto o tiempo', 'Problemas sociales: interrumpe, no respeta turnos, reacciona de más'],
+    signs: ['Rendimiento escolar inconsistente: "puede pero no quiere"', 'Olvida tareas, pierde materiales, no anota instrucciones', 'Dificultad para organizar su mochila, cuarto o tiempo', 'Problemas sociales: interrumpe, no respeta turnos, reacciona de más'],
     note: 'Si la maestra te dice repetidamente que "puede más pero no se esfuerza", vale la pena evaluar.',
   },
   {
     range: '12 – 17 años (secundaria y prepa)',
     desc: 'En la adolescencia, la hiperactividad disminuye pero la inatención y la impulsividad persisten o se intensifican.',
-    signs: ['Procrastinación crónica y dificultad para iniciar tareas', 'Problemas con la planeación a mediano plazo (proyectos, exámenes)', 'Impulsividad emocional — reacciones exageradas, frustración rápida', 'Uso excesivo de pantallas como autoestimulación'],
+    signs: ['Procrastinación crónica y dificultad para iniciar tareas', 'Problemas con la planeación a mediano plazo (proyectos, exámenes)', 'Impulsividad emocional: reacciones exageradas, frustración rápida', 'Uso excesivo de pantallas como autoestimulación'],
     note: 'Muchos adolescentes compensan con inteligencia hasta que la exigencia académica o social los supera. El "burnout escolar" puede ser TDAH no diagnosticado.',
   },
 ];
@@ -96,7 +96,7 @@ const faqItems = [
   },
   {
     q: '¿Cuántas señales necesita tener mi hijo para que sea TDAH?',
-    a: 'Según los criterios del DSM-5, se necesitan al menos 6 síntomas de inatención y/o 6 de hiperactividad-impulsividad, presentes por más de 6 meses, en al menos 2 contextos (por ejemplo, casa y escuela). Sin embargo, la cantidad de señales no es suficiente — se necesita una evaluación neuropsicológica que mida el impacto real en las funciones ejecutivas.',
+    a: 'Según los criterios del DSM-5, se necesitan al menos 6 síntomas de inatención y/o 6 de hiperactividad-impulsividad, presentes por más de 6 meses, en al menos 2 contextos (por ejemplo, casa y escuela). Sin embargo, la cantidad de señales no es suficiente: se necesita una evaluación neuropsicológica que mida el impacto real en las funciones ejecutivas.',
   },
   {
     q: '¿La escuela puede diagnosticar TDAH?',
@@ -104,11 +104,11 @@ const faqItems = [
   },
   {
     q: '¿Es lo mismo TDAH que TDA?',
-    a: 'TDA (Trastorno por Déficit de Atención sin hiperactividad) era el término anterior. Actualmente, el DSM-5 lo clasifica como TDAH con presentación predominantemente inatenta. Es el mismo trastorno con diferente presentación — y es el más difícil de detectar porque no hay conductas disruptivas visibles.',
+    a: 'TDA (Trastorno por Déficit de Atención sin hiperactividad) era el término anterior. Actualmente, el DSM-5 lo clasifica como TDAH con presentación predominantemente inatenta. Es el mismo trastorno con diferente presentación, y es el más difícil de detectar porque no hay conductas disruptivas visibles.',
   },
   {
     q: '¿Si mi hijo tiene TDAH necesita medicamento?',
-    a: 'No necesariamente. El tratamiento del TDAH es multimodal: puede incluir intervención conductual, adecuaciones escolares, terapia y, en algunos casos, medicación. La evaluación neuropsicológica no prescribe medicamento — genera un informe con recomendaciones concretas para cada área afectada. La decisión sobre medicación la toma un neurólogo o psiquiatra con base en la evaluación.',
+    a: 'No necesariamente. El tratamiento del TDAH es multimodal: puede incluir intervención conductual, adecuaciones escolares, terapia y, en algunos casos, medicación. La evaluación neuropsicológica no prescribe medicamento; genera un informe con recomendaciones concretas para cada área afectada. La decisión sobre medicación la toma un neurólogo o psiquiatra con base en la evaluación.',
   },
   {
     q: '¿Cuánto cuesta evaluar a mi hijo por TDAH en Cancún?',
@@ -311,7 +311,7 @@ export default function SenalesTDAHNinos() {
                 </h1>
 
                 <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl">
-                  Guía completa para padres que sospechan que su hijo podría tener TDAH. Aprende a identificar las señales que justifican una evaluación neuropsicológica — por edad, por tipo de presentación y con ejemplos concretos.
+                  Guía completa para padres que sospechan que su hijo podría tener TDAH. Aprende a identificar las señales que justifican una evaluación neuropsicológica, por edad, por tipo de presentación y con ejemplos concretos.
                 </p>
 
                 {/* Author card */}
@@ -390,7 +390,7 @@ export default function SenalesTDAHNinos() {
                     Como neuropsicóloga, una de las frases que más escucho de los padres que llegan a mi consultorio es: <em className="text-primary font-medium">&ldquo;No sé si es normal o si ya debería preocuparme.&rdquo;</em>
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm sm:text-base mb-6">
-                    Y tiene sentido — todos los niños son distraídos en algún momento. Todos se mueven, todos interrumpen. La diferencia entre un comportamiento típico de la infancia y una señal real de TDAH está en tres factores: <strong className="text-primary font-semibold">la intensidad</strong> (qué tan fuerte es), <strong className="text-primary font-semibold">la frecuencia</strong> (qué tan seguido ocurre) y <strong className="text-primary font-semibold">el impacto</strong> (cuánto afecta su vida escolar, social o familiar).
+                    Y tiene sentido, todos los niños son distraídos en algún momento. Todos se mueven, todos interrumpen. La diferencia entre un comportamiento típico de la infancia y una señal real de TDAH está en tres factores: <strong className="text-primary font-semibold">la intensidad</strong> (qué tan fuerte es), <strong className="text-primary font-semibold">la frecuencia</strong> (qué tan seguido ocurre) y <strong className="text-primary font-semibold">el impacto</strong> (cuánto afecta su vida escolar, social o familiar).
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm sm:text-base">
                     Esta guía te va a ayudar a identificar las señales que justifican una evaluación profesional. No para que diagnostiques a tu hijo en casa — sino para que sepas cuándo buscar ayuda con datos, no con dudas.
