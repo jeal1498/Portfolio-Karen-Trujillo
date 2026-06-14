@@ -240,7 +240,7 @@ export default function BlogIndex() {
             transition={{ duration: 0.55, delay: 0.2 }}
           >
             <Link href={featured.slug} className="group block">
-              <div className={`relative rounded-3xl bg-gradient-to-br ${featured.accentClass} border border-border/60 p-8 md:p-12 hover:border-accent-blue/40 transition-all duration-300 hover:shadow-lg hover:shadow-accent-blue/10`}>
+              <div className={`relative rounded-2xl bg-gradient-to-br ${featured.accentClass} border border-border/60 p-8 md:p-12 hover:border-accent-blue/40 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(56,47,81,0.12)]`}>
 
                 {/* Top row */}
                 <div className="flex items-center gap-3 mb-6 flex-wrap">
@@ -322,10 +322,7 @@ export default function BlogIndex() {
                     </p>
 
                     {/* Footer */}
-                    <div className="flex items-center justify-between mt-auto">
-                      <span className="text-xs font-bold tracking-widest text-primary/30 uppercase">
-                        #{post.rank}
-                      </span>
+                    <div className="flex items-center justify-end mt-auto">
                       <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-200">
                         Leer <ArrowRight className="w-4 h-4" />
                       </span>
