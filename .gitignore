@@ -35,3 +35,4 @@ yarn-error.log*
 !.claude/settings.json
 !.claude/hooks
 !.claude/commands
+!.claude/skills
