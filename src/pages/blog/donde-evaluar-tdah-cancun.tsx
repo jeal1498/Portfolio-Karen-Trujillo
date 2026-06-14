@@ -193,7 +193,7 @@ export default function DondeEvaluarTDAHCancun() {
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-xs font-bold uppercase tracking-widest mb-4 text-primary">
                   Guía local · Cancún
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
@@ -356,17 +356,17 @@ export default function DondeEvaluarTDAHCancun() {
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">¿Cuánto cuesta la valoración de TDAH en Cancún?</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Precios, qué incluye y cómo pagarlo</span>
                 </Link>

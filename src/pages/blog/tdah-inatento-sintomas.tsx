@@ -206,7 +206,7 @@ export default function TDAHInatento() {
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-xs font-bold uppercase tracking-widest mb-4 text-primary">
                   TDAH — Inatención
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
@@ -362,7 +362,7 @@ export default function TDAHInatento() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   <div className="bg-card border border-border rounded-xl p-5">
-                    <p className="text-[10px] uppercase tracking-widest text-accent-blue font-bold mb-3">Para niños (5–17 años)</p>
+                    <p className="text-xs uppercase tracking-widest text-accent-blue font-bold mb-3">Para niños (5–17 años)</p>
                     <ul className="space-y-2 text-sm text-muted-foreground font-light">
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0" /> CONNERS-3 — escala de síntomas TDAH</li>
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0" /> WISC-V — perfil cognitivo e inteligencia</li>
@@ -371,7 +371,7 @@ export default function TDAHInatento() {
                     </ul>
                   </div>
                   <div className="bg-card border border-border rounded-xl p-5">
-                    <p className="text-[10px] uppercase tracking-widest text-primary font-bold mb-3">Para adultos (18+ años)</p>
+                    <p className="text-xs uppercase tracking-widest text-primary font-bold mb-3">Para adultos (18+ años)</p>
                     <ul className="space-y-2 text-sm text-muted-foreground font-light">
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0" /> CAARS-2 — escala de síntomas TDAH adulto</li>
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-success shrink-0" /> WAIS-IV — perfil cognitivo e inteligencia</li>
@@ -434,17 +434,17 @@ export default function TDAHInatento() {
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
                 </Link>
                 <Link href="/blog/tdah-en-ninas-sintomas" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">TDAH en niñas: síntomas que casi nadie detecta</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">El perfil invisible del TDAH femenino</span>
                 </Link>

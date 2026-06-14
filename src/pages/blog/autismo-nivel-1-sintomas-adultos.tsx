@@ -201,7 +201,7 @@ export default function AutismoNivel1SintomasAdultos() {
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-xs font-bold uppercase tracking-widest mb-4 text-primary">
                   Autismo / TEA — Diagnóstico tardío
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
@@ -400,17 +400,17 @@ export default function AutismoNivel1SintomasAdultos() {
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-autismo-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">Evaluación de Autismo en Cancún</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">ADOS-2 · Diagnóstico formal DSM-5 · $8,500 MXN</span>
                 </Link>
                 <Link href="/blog/que-es-ados-2-autismo" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">¿Qué es el ADOS-2 y por qué importa?</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">El estándar de oro del diagnóstico de autismo</span>
                 </Link>
                 <Link href="/blog/tdah-vs-ansiedad-diferencias" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
                   <span className="font-bold text-primary text-sm group-hover:underline">TDAH vs. ansiedad: cómo diferenciarlos</span>
                   <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas que se parecen pero tienen causas distintas</span>
                 </Link>
