@@ -497,7 +497,7 @@ export default function NeuropsicologiaCancun() {
                 <SectionReveal>
                   <div className="flex flex-col items-center md:items-start gap-5">
                     <div className="relative">
-                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
+                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
                         <Image
                           src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                           alt="Neuropsicóloga Karen Trujillo en Cancún — especialista en TDAH y autismo"
