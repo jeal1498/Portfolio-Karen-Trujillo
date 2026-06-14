@@ -423,7 +423,7 @@ function CtaButton({ variant = 'primary', children, className = '' }: { variant?
     <a
       href="#agendar"
       onClick={scrollToBooking}
-      className={`group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl transition-all duration-300 text-center ${
+      className={`group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl transition-all duration-300 text-center ${
         variant === 'primary'
           ? 'bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0'
           : 'border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 hover:-translate-y-0.5'
@@ -467,7 +467,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/10 rounded-full blur-2xl" />
           <div className="flex items-center gap-3 mb-3 relative">
             <AlertCircle className="w-5 h-5 text-accent-blue shrink-0" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
               Herramienta orientativa · No es diagnóstico
             </span>
           </div>
@@ -541,7 +541,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
             </button>
           )}
         </div>
-        <p className="text-[10px] text-muted-foreground/50 text-center mt-4">Solo una valoración neuropsicológica formal puede establecer un diagnóstico.</p>
+        <p className="text-xs text-muted-foreground/50 text-center mt-4">Solo una valoración neuropsicológica formal puede establecer un diagnóstico.</p>
       </div>
     </div>
   );
@@ -713,7 +713,7 @@ export default function TDAHNinosFunnel() {
           <section id="sintomas" className="py-14 sm:py-20 bg-secondary scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Muchos padres llegan con esta historia</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Muchos padres llegan con esta historia</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Te suena familiar?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-10">Los síntomas del TDAH suelen confundirse con problemas de conducta. Selecciona las señales que reconoces en tu hijo para saber si una valoración es recomendable.</p>
               </SectionReveal>
@@ -781,7 +781,7 @@ export default function TDAHNinosFunnel() {
                   ].map((tipo) => (
                     <div key={tipo.label} className="flex flex-col gap-0.5 px-4 py-3 bg-card border border-border rounded-2xl text-center min-w-[140px]">
                       <span className="text-xs font-bold text-primary">{tipo.label}</span>
-                      <span className="text-[10px] text-muted-foreground font-light">{tipo.desc}</span>
+                      <span className="text-xs text-muted-foreground font-light">{tipo.desc}</span>
                     </div>
                   ))}
                 </div>
@@ -804,7 +804,7 @@ export default function TDAHNinosFunnel() {
           <section id="proceso-valoracion" className="py-14 sm:py-20 bg-card">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Proceso clínico estructurado</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Proceso clínico estructurado</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">¿Cómo funciona la valoración de TDAH infantil?</h2>
                 {/* AEO: Direct answer for "cuánto dura/cuesta valoración TDAH infantil cancún" */}
                 <p className="text-muted-foreground font-light mb-4 text-center max-w-2xl mx-auto">
@@ -826,7 +826,7 @@ export default function TDAHNinosFunnel() {
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 mb-1">
                           <h3 className="font-bold text-primary">{p.titulo}</h3>
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 shrink-0 bg-secondary px-2 py-1 rounded-full">{p.duracion}</span>
+                          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60 shrink-0 bg-secondary px-2 py-1 rounded-full">{p.duracion}</span>
                         </div>
                         <p className="text-sm text-muted-foreground font-light leading-relaxed">{p.desc}</p>
                       </div>
@@ -866,7 +866,7 @@ export default function TDAHNinosFunnel() {
 
               <SectionReveal delay={0.3}>
                 <div className="bg-white/8 border border-white/15 rounded-2xl p-5 sm:p-8">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-6">Pruebas estandarizadas utilizadas</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/50 mb-6">Pruebas estandarizadas utilizadas</p>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {instrumentos.map((inst) => (
                       <div key={inst.nombre} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 w-full">
@@ -893,7 +893,7 @@ export default function TDAHNinosFunnel() {
           <section id="diferenciador-neuropsicologia" className="py-14 sm:py-20 bg-card border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué neuropsicología y no solo psicología?</h2>
 
                 <div className="max-w-2xl mx-auto space-y-4 mb-10">
@@ -915,10 +915,10 @@ export default function TDAHNinosFunnel() {
                   {/* Column headers — always 2 cols */}
                   <div className="grid grid-cols-2">
                     <div className="p-3 sm:p-4 bg-secondary/80 border-b border-r border-border text-center">
-                      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
                     </div>
                     <div className="p-3 sm:p-4 bg-primary/8 border-b border-border text-center">
-                      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
                     </div>
                   </div>
 
@@ -959,7 +959,7 @@ export default function TDAHNinosFunnel() {
           <section className="py-14 sm:py-20 bg-secondary">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen las familias</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen las familias</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">47+ familias en Cancún ya tienen claridad</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Las familias destacan la claridad del informe y las recomendaciones concretas para la escuela.</p>
               </SectionReveal>
@@ -977,7 +977,7 @@ export default function TDAHNinosFunnel() {
                       <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6 flex-1 relative z-10">&ldquo;{review.text}&rdquo;</p>
                       <div className="flex items-center gap-2 pt-4 border-t border-border">
                         <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent-blue/20 to-primary/15 flex items-center justify-center shrink-0">
-                          <span className="text-[10px] font-bold text-primary/60">{review.name.charAt(0)}</span>
+                          <span className="text-xs font-bold text-primary/60">{review.name.charAt(0)}</span>
                         </div>
                         <p className="text-xs font-bold text-primary">{review.name}</p>
                       </div>
@@ -1002,7 +1002,7 @@ export default function TDAHNinosFunnel() {
           <section className="py-14 sm:py-20 bg-card border-t border-border relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 relative">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La especialista detrás del proceso</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La especialista detrás del proceso</p>
                 <h2 className="font-serif font-bold text-primary mb-14 text-center">
                   <span className="block text-sm sm:text-base font-normal text-muted-foreground/70 uppercase tracking-[0.2em] mb-2">Conoce a</span>
                   <span className="block text-5xl sm:text-6xl lg:text-7xl">Karen Trujillo</span>
@@ -1045,7 +1045,7 @@ export default function TDAHNinosFunnel() {
                       ].map((stat) => (
                         <div key={stat.label} className="bg-secondary/60 border border-border rounded-xl p-3 text-center">
                           <p className="text-base font-serif font-bold text-primary">{stat.valor}</p>
-                          <p className="text-[10px] text-muted-foreground font-light leading-tight mt-0.5">{stat.label}</p>
+                          <p className="text-xs text-muted-foreground font-light leading-tight mt-0.5">{stat.label}</p>
                         </div>
                       ))}
                     </div>
@@ -1087,7 +1087,7 @@ export default function TDAHNinosFunnel() {
           <section className="py-14 sm:py-20 bg-secondary border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Después de la valoración</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Después de la valoración</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">¿Qué pasa con los resultados?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-10">Sin importar el resultado, siempre obtienes información valiosa sobre tu hijo. Estos son los tres escenarios posibles:</p>
               </SectionReveal>
@@ -1178,7 +1178,7 @@ export default function TDAHNinosFunnel() {
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 rounded-full border border-success/20 mb-6">
                     <CalendarCheck className="w-4 h-4 text-success" />
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-success">Agenda en línea · Confirma en minutos</span>
+                    <span className="text-xs uppercase tracking-widest font-bold text-success">Agenda en línea · Confirma en minutos</span>
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4">Reserva tu valoración ahora</h2>
                   <p className="text-muted-foreground font-light max-w-2xl mx-auto">Elige el horario que mejor te funcione. Tu lugar queda confirmado al completar el anticipo.</p>
@@ -1201,14 +1201,14 @@ export default function TDAHNinosFunnel() {
 
                     <div className="bg-card px-8 py-10 text-center relative overflow-hidden">
                       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, currentColor 39px, currentColor 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, currentColor 39px, currentColor 40px)', backgroundSize: '40px 40px' }} />
-                      <p className="text-[10px] uppercase tracking-[0.25em] font-bold text-muted-foreground/50 mb-4 relative">Inversión total</p>
+                      <p className="text-xs uppercase tracking-[0.25em] font-bold text-muted-foreground/50 mb-4 relative">Inversión total</p>
                       <div className="flex items-end justify-center gap-3 mb-4 relative">
                         <span className="text-[80px] sm:text-[96px] font-serif font-bold text-primary leading-none tracking-tight">$8,300</span>
                         <span className="text-lg font-semibold text-muted-foreground/60 pb-3 tracking-widest">MXN</span>
                       </div>
                       <div className="flex flex-wrap justify-center gap-2 relative">
                         {['4-5 sesiones', 'CONNERS-3 · WISC-V · BRIEF-2 · CPT-3', 'Informe oficial', 'Sesión de devolución'].map((chip) => (
-                          <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary border border-border rounded-full text-[10px] text-muted-foreground font-medium">
+                          <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary border border-border rounded-full text-xs text-muted-foreground font-medium">
                             <CheckCircle2 className="w-3 h-3 text-primary/50 shrink-0" />
                             {chip}
                           </span>
@@ -1245,7 +1245,7 @@ export default function TDAHNinosFunnel() {
                     </div>
                   </div>
 
-                  <p className="text-center text-[10px] text-muted-foreground/50 mt-4">Tu anticipo se descuenta del costo total. Sin costos ocultos.</p>
+                  <p className="text-center text-xs text-muted-foreground/50 mt-4">Tu anticipo se descuenta del costo total. Sin costos ocultos.</p>
                 </div>
               </SectionReveal>
 
@@ -1258,7 +1258,7 @@ export default function TDAHNinosFunnel() {
                       </div>
                       <div>
                         <p className="font-bold text-primary text-sm">Selecciona fecha y hora</p>
-                        <p className="text-[10px] text-muted-foreground">Cancún, Quintana Roo · Horario local</p>
+                        <p className="text-xs text-muted-foreground">Cancún, Quintana Roo · Horario local</p>
                       </div>
                     </div>
                     {!calLoaded && (
@@ -1303,16 +1303,16 @@ export default function TDAHNinosFunnel() {
                 <div className="mt-10 pt-8 border-t border-border">
                   <p className="text-center text-sm text-muted-foreground font-light mb-5">¿Prefieres hablar antes de agendar?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página de valoración TDAH infantil y tengo algunas dudas antes de agendar. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página de valoración TDAH infantil y tengo algunas dudas antes de agendar. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
-                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <Phone className="w-4 h-4" />
                       Llamar
                     </a>
                   </div>
-                  <p className="text-[10px] text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
+                  <p className="text-xs text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
                 </div>
               </SectionReveal>
             </div>
@@ -1322,20 +1322,20 @@ export default function TDAHNinosFunnel() {
           {/* ── Internal linking for topical authority ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Otros servicios disponibles en Cancún</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Otros servicios disponibles en Cancún</p>
               <div className="grid sm:grid-cols-2 gap-3">
                 <Link href="/evaluacion-tdah-adultos" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH en Adultos</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Valoración neuropsicológica +18 años</span>
+                    <span className="text-xs text-muted-foreground font-light">Valoración neuropsicológica +18 años</span>
                   </div>
                 </Link>
                 <Link href="/evaluacion-autismo-cancun" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">Autismo (TEA)</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Diagnóstico con ADOS-2 y M-CHAT</span>
+                    <span className="text-xs text-muted-foreground font-light">Diagnóstico con ADOS-2 y M-CHAT</span>
                   </div>
                 </Link>
               </div>

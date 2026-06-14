@@ -355,7 +355,7 @@ export default function ParaEscuelas() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Referir a un alumno
@@ -385,7 +385,7 @@ export default function ParaEscuelas() {
           <section className="py-14 sm:py-20 bg-card scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Confianza institucional
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center text-balance">
@@ -435,7 +435,7 @@ export default function ParaEscuelas() {
           <section id="que-incluye-informe" className="py-14 sm:py-20 bg-secondary scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   El informe
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -472,7 +472,7 @@ export default function ParaEscuelas() {
           <section id="condiciones" className="py-14 sm:py-20 bg-card border-t border-border scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Especialidades
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -510,7 +510,7 @@ export default function ParaEscuelas() {
           <section id="proceso-referencia" className="py-14 sm:py-20 bg-secondary border-t border-border scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Derivación escolar
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -566,7 +566,7 @@ export default function ParaEscuelas() {
           <section className="py-14 sm:py-20 bg-card border-t border-border scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Preguntas frecuentes
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">
@@ -655,14 +655,14 @@ export default function ParaEscuelas() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 font-bold text-[10px] uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 font-bold text-xs uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Referir a un alumno por WhatsApp
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
 
-                <p className="mt-6 text-[10px] text-primary-foreground/45 font-light">
+                <p className="mt-6 text-xs text-primary-foreground/45 font-light">
                   Lunes a Viernes 9:00 – 7:00 PM · Sábados 9:00 – 2:00 PM
                 </p>
               </SectionReveal>

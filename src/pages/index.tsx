@@ -433,11 +433,11 @@ export default function Home() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8 animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
-                      <a href="#servicios" onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
+                      <a href="#servicios" onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
                         Ver servicios
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </a>
-                      <a href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito. ¿Podrías ayudarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
+                      <a href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito. ¿Podrías ayudarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp
                       </a>
@@ -480,7 +480,7 @@ export default function Home() {
                       <div className="flex items-center gap-1.5">
                         <Star className="w-3.5 h-3.5 text-warning fill-warning" />
                         <span className="text-sm font-bold text-primary">5.0</span>
-                        <span className="text-[10px] text-muted-foreground font-light">(47+)</span>
+                        <span className="text-xs text-muted-foreground font-light">(47+)</span>
                       </div>
                     </div>
                   </div>
@@ -544,7 +544,7 @@ export default function Home() {
                         <p className="font-bold text-primary text-base mb-1">{option.title}</p>
                         <p className="text-xs text-muted-foreground font-light leading-relaxed">{option.subtitle}</p>
                       </div>
-                      <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/50 group-hover:text-primary group-hover:gap-2.5 transition-all mt-auto">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary/50 group-hover:text-primary group-hover:gap-2.5 transition-all mt-auto">
                         Ver evaluación <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                       </span>
                     </Link>
@@ -585,7 +585,7 @@ export default function Home() {
                             </div>
                             <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground bg-card/80 px-3 py-1 rounded-full border border-border">{service.age}</span>
                           </div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-primary/50 mb-1">{service.label}</p>
+                          <p className="text-xs font-bold uppercase tracking-widest text-primary/50 mb-1">{service.label}</p>
                           <h3 className="text-xl font-serif font-bold text-primary leading-tight">{service.title}</h3>
                         </div>
                       </div>
@@ -596,7 +596,7 @@ export default function Home() {
 
                         <div className="flex flex-wrap gap-1.5">
                           {service.tests.map((test) => (
-                            <span key={test} className="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary border border-border rounded-full text-[10px] text-muted-foreground font-medium">
+                            <span key={test} className="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary border border-border rounded-full text-xs text-muted-foreground font-medium">
                               <Brain className="w-2.5 h-2.5 text-primary/40" />
                               {test}
                             </span>
@@ -608,7 +608,7 @@ export default function Home() {
                             <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50">Desde</p>
                             <p className="text-lg font-serif font-bold text-primary">{service.price}</p>
                           </div>
-                          <div className="flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest group-hover:gap-3 transition-all">
+                          <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
                             Ver evaluación
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                           </div>
@@ -627,7 +627,7 @@ export default function Home() {
               <SectionReveal delay={0.35}>
                 <div className="mt-10 text-center">
                   <p className="text-sm text-muted-foreground font-light mb-4">¿No estás seguro cuál necesitas?</p>
-                  <a href={waUrl('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
+                  <a href={waUrl('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
                     <MessageCircle className="w-4 h-4" />
                     Orientación gratuita por WhatsApp
                   </a>
@@ -690,7 +690,7 @@ export default function Home() {
                 <div className="mt-10 flex items-center justify-center gap-3">
                   <div className="flex items-center gap-1.5 px-3 py-1.5 bg-success/8 border border-success/20 rounded-full">
                     <ShieldCheck className="w-3.5 h-3.5 text-success" />
-                    <span className="text-[10px] font-bold text-success uppercase tracking-widest">Reembolso completo si cancelas con 48 hrs</span>
+                    <span className="text-xs font-bold text-success uppercase tracking-widest">Reembolso completo si cancelas con 48 hrs</span>
                   </div>
                 </div>
               </SectionReveal>
@@ -766,7 +766,7 @@ export default function Home() {
                       ].map((stat) => (
                         <div key={stat.label} className="bg-white/10 border border-white/15 rounded-xl p-3 text-center">
                           <p className="text-xl font-serif font-bold text-primary-foreground">{stat.valor}</p>
-                          <p className="text-[10px] text-primary-foreground/55 font-light mt-0.5">{stat.label}</p>
+                          <p className="text-xs text-primary-foreground/55 font-light mt-0.5">{stat.label}</p>
                         </div>
                       ))}
                     </div>
@@ -814,7 +814,7 @@ export default function Home() {
                       <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6 flex-1 relative z-10">&ldquo;{review.text}&rdquo;</p>
                       <div className="flex items-center gap-2 pt-4 border-t border-border">
                         <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent-blue/20 to-primary/15 flex items-center justify-center shrink-0">
-                          <span className="text-[10px] font-bold text-primary/60">{review.name.charAt(0)}</span>
+                          <span className="text-xs font-bold text-primary/60">{review.name.charAt(0)}</span>
                         </div>
                         <p className="text-xs font-bold text-primary">{review.name}</p>
                       </div>
@@ -940,7 +940,7 @@ export default function Home() {
                         </div>
                         <h3 className="font-bold text-primary text-sm leading-snug mb-2 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
                         <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4 flex-1">{resource.desc}</p>
-                        <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
                           Leer artículo <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                         </span>
                       </div>
@@ -1040,7 +1040,7 @@ export default function Home() {
                         href={`https://www.google.com/maps/dir/?api=1&destination=21.1530418,-86.8958544`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-card border-2 border-border rounded-xl text-primary font-bold text-[10px] uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all active:scale-[0.98]"
+                        className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-card border-2 border-border rounded-xl text-primary font-bold text-xs uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all active:scale-[0.98]"
                       >
                         <Navigation className="w-4 h-4" />
                         Cómo llegar
@@ -1049,7 +1049,7 @@ export default function Home() {
                         href={waUrl('Hola Karen, me gustaría agendar una cita en tu consultorio de Cancún.')}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
+                        className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
                       >
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp
@@ -1084,9 +1084,9 @@ export default function Home() {
                       </div>
                       <div className="text-center">
                         <p className="font-bold text-primary text-sm mb-0.5">{service.label}</p>
-                        <p className="text-[10px] text-muted-foreground font-light">{service.age} · {service.price}</p>
+                        <p className="text-xs text-muted-foreground font-light">{service.age} · {service.price}</p>
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary/50 flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span className="text-xs font-bold uppercase tracking-widest text-primary/50 flex items-center gap-1 group-hover:gap-2 transition-all">
                         Agendar <ArrowRight className="w-3 h-3" />
                       </span>
                     </Link>
@@ -1099,16 +1099,16 @@ export default function Home() {
                 <div className="pt-8 border-t border-border">
                   <p className="text-center text-sm text-muted-foreground font-light mb-5">¿Prefieres hablar antes de agendar?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href={waUrl('Hola Karen, vi tu página y me gustaría saber más sobre las evaluaciones que ofreces.')} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={waUrl('Hola Karen, vi tu página y me gustaría saber más sobre las evaluaciones que ofreces.')} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
-                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <Phone className="w-4 h-4" />
                       Llamar
                     </a>
                   </div>
-                  <p className="text-[10px] text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
+                  <p className="text-xs text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
                 </div>
               </SectionReveal>
 
@@ -1139,7 +1139,7 @@ export default function Home() {
               <a
                 href="#servicios"
                 onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-primary/25 text-primary font-bold text-[10px] uppercase tracking-widest rounded-xl hover:border-primary/60 transition-all active:scale-[0.97]"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-primary/25 text-primary font-bold text-xs uppercase tracking-widest rounded-xl hover:border-primary/60 transition-all active:scale-[0.97]"
               >
                 <Brain className="w-4 h-4" />
                 Servicios
@@ -1148,7 +1148,7 @@ export default function Home() {
                 href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-[10px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp

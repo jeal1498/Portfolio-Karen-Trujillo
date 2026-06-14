@@ -44,10 +44,10 @@ const faqData = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-32 bg-card px-6">
+    <section id="faq" className="py-16 md:py-24 lg:py-32 bg-card px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
