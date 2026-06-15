@@ -461,24 +461,24 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Routing cards */}
-                  <div className="grid sm:grid-cols-3 gap-3 animate-[fadeIn_0.8s_ease-out_0.6s_both]">
+                  {/* Routing cards — vertical column for better scannability */}
+                  <div className="flex flex-col gap-2 animate-[fadeIn_0.8s_ease-out_0.6s_both]">
                     {[
-                      { href: '/evaluacion-tdah-ninos', label: 'TDAH Infantil', text: 'Mi hijo tiene problemas de atención o conducta', icon: Users },
-                      { href: '/evaluacion-tdah-adultos', label: 'TDAH Adultos', text: 'Sospecho que tengo TDAH no diagnosticado', icon: Briefcase },
-                      { href: '/evaluacion-autismo-cancun', label: 'Autismo (TEA)', text: 'Mi hijo se relaciona de forma diferente', icon: Puzzle },
+                      { href: '/evaluacion-tdah-ninos',     label: 'Para padres y madres', text: 'Mi hijo tiene problemas de atención o conducta' },
+                      { href: '/evaluacion-tdah-adultos',   label: 'Para adultos',          text: 'Sospecho que tengo TDAH no diagnosticado' },
+                      { href: '/evaluacion-autismo-cancun', label: 'Diagnóstico TEA',       text: 'Mi hijo se relaciona de forma diferente — busco diagnóstico de autismo' },
                     ].map((card) => (
                       <Link
                         key={card.href}
                         href={card.href}
-                        className="group flex flex-col gap-2 p-4 rounded-xl text-left transition-all duration-200 hover:-translate-y-0.5"
-                        style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(208,208,231,0.2)' }}
+                        className="group flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 hover:translate-x-1"
+                        style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}
                       >
-                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'rgba(208,208,231,0.7)' }}>{card.label}</span>
-                        <span className="text-sm font-medium leading-snug" style={{ color: 'rgba(255,255,255,0.88)' }}>{card.text}</span>
-                        <span className="text-xs font-semibold flex items-center gap-1 transition-all group-hover:gap-2" style={{ color: 'rgba(208,208,231,0.6)' }}>
-                          Ver evaluación <ArrowRight className="w-3 h-3" />
-                        </span>
+                        <div className="flex-1 min-w-0">
+                          <span className="block text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgba(208,208,231,0.65)' }}>{card.label}</span>
+                          <span className="block text-sm font-medium leading-snug" style={{ color: 'rgba(255,255,255,0.88)' }}>{card.text}</span>
+                        </div>
+                        <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: 'rgba(208,208,231,0.5)' }} />
                       </Link>
                     ))}
                   </div>
@@ -514,6 +514,32 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
+              1.3 · STATS BAR — Social proof strip
+              ══════════════════════════════════════════════════════ */}
+          <section aria-label="Métricas de experiencia" className="bg-white border-b border-border">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x divide-border">
+                {[
+                  { number: '7+',       label: 'Años de experiencia',      mono: false },
+                  { number: '500+',     label: 'Evaluaciones completadas', mono: false },
+                  { number: '47+',      label: 'Reseñas con 5 estrellas',  mono: false },
+                  { number: '11009616', label: 'Cédula Federal SEP',        mono: true  },
+                ].map((stat) => (
+                  <div key={stat.label} className="flex flex-col items-center justify-center py-5 px-4 text-center">
+                    <span className={`font-serif font-bold text-primary leading-none ${stat.mono ? 'text-lg sm:text-2xl' : 'text-3xl sm:text-[2.25rem]'}`}>
+                      {stat.number}
+                    </span>
+                    <span className="text-[10px] font-semibold text-muted-foreground tracking-widest mt-1.5 uppercase">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
               1.5 · SYMPTOM CHECKER — 3 tabs interactivo
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-card border-b border-border">
@@ -535,6 +561,7 @@ export default function Home() {
           <section id="servicios" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-5xl mx-auto px-6">
               <SectionReveal>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Evaluaciones disponibles</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Qué necesitas evaluar?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">Cada evaluación sigue un protocolo clínico riguroso con pruebas estandarizadas internacionales. Selecciona el servicio que más se ajusta a tu situación.</p>
               </SectionReveal>
@@ -611,6 +638,7 @@ export default function Home() {
           <section className="py-14 sm:py-20 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Paso a paso</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Cómo es el proceso?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-12">Desde que contactas hasta que recibes tu informe. Sin sorpresas.</p>
               </SectionReveal>
@@ -794,12 +822,42 @@ export default function Home() {
           <section className="py-14 sm:py-20 bg-secondary">
             <div className="max-w-5xl mx-auto px-6">
               <SectionReveal>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Familias reales</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">47+ familias y adultos con claridad</h2>
-                <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-12">Reseñas de evaluaciones de TDAH infantil, TDAH adulto y autismo.</p>
+                <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Reseñas de evaluaciones de TDAH infantil, TDAH adulto y autismo.</p>
+              </SectionReveal>
+
+              {/* Featured testimonial */}
+              <SectionReveal>
+                <div className="relative bg-white rounded-2xl p-8 md:p-10 mb-8 shadow-sm border border-border overflow-hidden max-w-[780px] mx-auto">
+                  <div
+                    aria-hidden="true"
+                    className="absolute top-1 left-4 font-serif leading-none select-none pointer-events-none"
+                    style={{ fontSize: '7rem', lineHeight: '1', color: '#d0d0e7', opacity: 0.7 }}
+                  >
+                    &ldquo;
+                  </div>
+                  <blockquote className="relative z-10 pt-6">
+                    <p className="font-serif italic text-primary leading-relaxed mb-5" style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)' }}>
+                      {reviews[0].text}
+                    </p>
+                    <footer className="flex items-center gap-3">
+                      <div>
+                        <cite className="not-italic font-bold text-primary text-sm">{reviews[0].name}</cite>
+                        <span className="text-muted-foreground text-sm">&nbsp;·&nbsp;{reviews[0].service}</span>
+                        <div className="flex gap-0.5 mt-1">
+                          {Array.from({ length: reviews[0].stars }).map((_, j) => (
+                            <Star key={j} className="w-3.5 h-3.5 text-warning fill-warning" aria-hidden="true" />
+                          ))}
+                        </div>
+                      </div>
+                    </footer>
+                  </blockquote>
+                </div>
               </SectionReveal>
 
               <div className="grid md:grid-cols-3 gap-5">
-                {reviews.map((review, i) => (
+                {reviews.slice(1, 4).map((review, i) => (
                   <SectionReveal key={i} delay={i * 0.08}>
                     <div className="bg-card border border-border rounded-2xl p-6 hover:border-accent-blue/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
                       <div className="absolute top-3 right-4 text-8xl font-serif text-primary/15 group-hover:text-primary/25 transition-colors leading-none select-none">&ldquo;</div>
@@ -848,6 +906,7 @@ export default function Home() {
           <section className="py-14 sm:py-20 bg-card">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Dudas frecuentes</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
               </SectionReveal>
 
