@@ -62,12 +62,12 @@ const services: Service[] = [
 ];
 
 const credentials: Credential[] = [
-  { icon: BadgeCheck, text: 'Cédula Federal 11009616' },
-  { icon: Award, text: '7+ años de experiencia' },
-  { icon: Stethoscope, text: 'Pruebas estandarizadas internacionales' },
-  { icon: Star, text: '47+ reseñas · 5 estrellas' },
-  { icon: FileText, text: 'Informes con validez oficial SEP e IMSS' },
-  { icon: CalendarCheck, text: 'Agenda en línea · Resultados en semanas' },
+  { icon: BadgeCheck,   text: 'Cédula Federal 11009616' },
+  { icon: Award,        text: '7+ años de experiencia' },
+  { icon: Stethoscope,  text: 'Pruebas estandarizadas internacionales' },
+  { icon: Star,         text: '47+ reseñas · 5 estrellas' },
+  { icon: FileText,     text: 'Informes con validez oficial SEP e IMSS' },
+  { icon: CalendarCheck,text: 'Agenda en línea · Resultados en semanas' },
 ];
 
 const whyNeuropsychology = [
@@ -78,11 +78,11 @@ const whyNeuropsychology = [
 ];
 
 const reviews: Review[] = [
-  { name: 'Mamá de Sofía, 7 años', text: 'Por fin alguien nos explicó qué pasaba con nuestra hija. El informe fue tan claro que la escuela implementó las adecuaciones de inmediato.', stars: 5, service: 'TDAH Infantil' },
-  { name: 'Alejandro, 34 años', text: 'Llevaba años pensando que era "flojo". El informe me mostró exactamente qué funciones ejecutivas estaban afectadas. Fue liberador.', stars: 5, service: 'TDAH Adultos' },
-  { name: 'Mamá de Emilia, 6 años', text: 'Nos dijeron que solo era "tímida". El diagnóstico de TEA nivel 1 nos dio claridad total. Las recomendaciones han transformado cómo la acompañamos.', stars: 5, service: 'Autismo (TEA)' },
-  { name: 'Papá de Diego, 10 años', text: 'Llevábamos dos años con dudas. Karen fue profesional, cálida y el proceso fue mucho más claro de lo que esperábamos.', stars: 5, service: 'TDAH Infantil' },
-  { name: 'Mariana, 28 años', text: 'Me diagnosticaron ansiedad dos veces antes de llegar aquí. Resultó ser TDAH inatento. Por fin entiendo por qué las estrategias anteriores no funcionaban.', stars: 5, service: 'TDAH Adultos' },
+  { name: 'Mamá de Sofía, 7 años',   text: 'Por fin alguien nos explicó qué pasaba con nuestra hija. El informe fue tan claro que la escuela implementó las adecuaciones de inmediato.', stars: 5, service: 'TDAH Infantil' },
+  { name: 'Alejandro, 34 años',       text: 'Llevaba años pensando que era "flojo". El informe me mostró exactamente qué funciones ejecutivas estaban afectadas. Fue liberador.', stars: 5, service: 'TDAH Adultos' },
+  { name: 'Mamá de Emilia, 6 años',   text: 'Nos dijeron que solo era "tímida". El diagnóstico de TEA nivel 1 nos dio claridad total. Las recomendaciones han transformado cómo la acompañamos.', stars: 5, service: 'Autismo (TEA)' },
+  { name: 'Papá de Diego, 10 años',   text: 'Llevábamos dos años con dudas. Karen fue profesional, cálida y el proceso fue mucho más claro de lo que esperábamos.', stars: 5, service: 'TDAH Infantil' },
+  { name: 'Mariana, 28 años',          text: 'Me diagnosticaron ansiedad dos veces antes de llegar aquí. Resultó ser TDAH inatento. Por fin entiendo por qué las estrategias anteriores no funcionaban.', stars: 5, service: 'TDAH Adultos' },
   { name: 'Mamá de Santiago, 4 años', text: 'Karen nos dio respuestas en 3 semanas. El informe fue tan detallado que la escuela supo exactamente qué implementar.', stars: 5, service: 'Autismo (TEA)' },
 ];
 
@@ -122,13 +122,12 @@ const faqItems: FaqItem[] = [
 ];
 
 /* ═══════════════════════════════════════════════════════════════
-   SCHEMA LD+JSON — Organization + Person + LocalBusiness + Services
+   SCHEMA LD+JSON
    ═══════════════════════════════════════════════════════════════ */
 
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    /* ── MedicalBusiness (LocalBusiness + Medical) ── */
     {
       '@type': ['MedicalBusiness', 'MedicalClinic'],
       '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
@@ -146,24 +145,10 @@ const schema = {
         postalCode: '77539',
         addressCountry: 'MX',
       },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 21.1619,
-        longitude: -86.8515,
-      },
+      geo: { '@type': 'GeoCoordinates', latitude: 21.1619, longitude: -86.8515 },
       openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '09:00',
-          closes: '19:00',
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: 'Saturday',
-          opens: '09:00',
-          closes: '14:00',
-        },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '19:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '14:00' },
       ],
       priceRange: '$8,300 - $8,500 MXN',
       medicalSpecialty: 'Neuropsychiatry',
@@ -185,7 +170,6 @@ const schema = {
         'https://www.tiktok.com/@psic.karentrujillo',
       ],
     },
-    /* ── Physician ── */
     {
       '@type': 'Physician',
       '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
@@ -207,15 +191,9 @@ const schema = {
       ],
       areaServed: [
         { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
-        { '@type': 'City', name: 'Playa del Carmen', sameAs: 'https://www.wikidata.org/wiki/Q505403' },
-        { '@type': 'City', name: 'Tulum', sameAs: 'https://www.wikidata.org/wiki/Q697023' },
         { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
-        { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
       ],
-      memberOf: {
-        '@type': 'Organization',
-        name: 'Colegio de Psicólogos de Quintana Roo',
-      },
+      memberOf: { '@type': 'Organization', name: 'Colegio de Psicólogos de Quintana Roo' },
       alumniOf: {
         '@type': 'CollegeOrUniversity',
         name: 'Universidad Modelo',
@@ -227,7 +205,6 @@ const schema = {
         'https://www.tiktok.com/@psic.karentrujillo',
       ],
     },
-    /* ── WebSite ── */
     {
       '@type': 'WebSite',
       '@id': 'https://www.psicologakarentrujillo.com.mx/#website',
@@ -236,7 +213,6 @@ const schema = {
       inLanguage: 'es-MX',
       publisher: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
     },
-    /* ── WebPage ── */
     {
       '@type': 'MedicalWebPage',
       name: 'Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo',
@@ -257,7 +233,6 @@ const schema = {
         ],
       },
     },
-    /* ── Services ── */
     {
       '@type': 'MedicalProcedure',
       name: 'Valoración Neuropsicológica de TDAH Infantil',
@@ -285,7 +260,6 @@ const schema = {
       location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
       offers: { '@type': 'Offer', price: '8500', priceCurrency: 'MXN' },
     },
-    /* ── AggregateRating ── */
     {
       '@type': 'AggregateRating',
       itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
@@ -294,7 +268,6 @@ const schema = {
       bestRating: '5',
       worstRating: '1',
     },
-    /* ── FAQ ── */
     {
       '@type': 'FAQPage',
       mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
@@ -333,6 +306,22 @@ function SectionReveal({ children, className = '', delay = 0 }: { children: Reac
   );
 }
 
+/* ─── service badge colours (match HTML prototype) ─── */
+const svcBadge = [
+  { bg: '#d0d0e7', color: '#382f51', hoverBorder: '#d0d0e7cc' },
+  { bg: '#f5dfc5', color: '#6b4e1a', hoverBorder: '#f5dfc5cc' },
+  { bg: '#fbdbe0', color: '#7a3040', hoverBorder: '#fbdbe0cc' },
+];
+
+/* ─── about section credential list ─── */
+const aboutCreds = [
+  'Cédula Profesional Federal: 11009616 (SEP)',
+  'Licenciada en Psicología — Universidad Modelo, Quintana Roo',
+  'Especialización en TDAH infantil: CONNERS-3, WISC-V, BRIEF-2',
+  'Especialización en TDAH adultos: CAARS-2, DIVA 2.0, CPT-3',
+  'Especialización en TEA: ADOS-2, M-CHAT-R/F, ADI-R, Vineland-3',
+  'Miembro del Colegio de Psicólogos de Quintana Roo',
+];
 
 /* ═══════════════════════════════════════════════════════════════
    MAIN PAGE — HOME
@@ -347,9 +336,7 @@ export default function Home() {
       const heroHeight = 600;
       const footerCta = document.getElementById('cta-final');
       const footerCtaTop = footerCta?.getBoundingClientRect().top ?? Infinity;
-      const pastHero = window.scrollY > heroHeight;
-      const beforeFooterCta = footerCtaTop > window.innerHeight;
-      setShowStickyCta(pastHero && beforeFooterCta);
+      setShowStickyCta(window.scrollY > heroHeight && footerCtaTop > window.innerHeight);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
@@ -380,21 +367,16 @@ export default function Home() {
         <meta name="twitter:title" content="Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo" />
         <meta name="twitter:description" content="Diagnóstico de TDAH y autismo con pruebas estandarizadas. Informes con validez oficial. Cancún, Q. Roo." />
 
-        {/* AEO: Speakable */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          speakable: {
-            '@type': 'SpeakableSpecification',
-            cssSelector: ['#que-es-neuropsicologia', '#servicios', '#ubicacion'],
-          },
+          speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#servicios', '#sobre-mi', '#ubicacion'] },
           url: 'https://www.psicologakarentrujillo.com.mx',
         }) }} />
-
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
-      <div className="antialiased selection:bg-accent-blue selection:text-primary w-full min-w-0 overflow-x-hidden">
+      <div className="antialiased w-full min-w-0 overflow-x-hidden" style={{ color: '#382f51', background: '#fff' }}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:font-bold focus:text-sm">
           Saltar al contenido principal
         </a>
@@ -403,66 +385,45 @@ export default function Home() {
         <main id="main-content" className="w-full min-w-0 overflow-x-hidden">
 
           {/* ══════════════════════════════════════════════════════
-              1 · HERO — Dark plum, positioning + trust signals
+              1 · HERO — dark plum, routing cards, photo badge
               ══════════════════════════════════════════════════════ */}
-          <section id="inicio" className="relative flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden" style={{ backgroundColor: '#2b1f47' }}>
-            {/* Subtle radial glow */}
-            <div aria-hidden="true" className="absolute top-1/2 left-1/4 w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none" style={{ background: 'rgba(208,208,231,0.06)' }} />
-            <div aria-hidden="true" className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none" style={{ background: 'rgba(251,219,224,0.05)' }} />
+          <section
+            id="inicio"
+            aria-label="Presentación principal"
+            className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+            style={{ background: '#2b1f47', paddingTop: '72px' }}
+          >
+            {/* Radial glow decorations */}
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
-            <div className="max-w-5xl mx-auto relative z-10">
-              <div className="grid lg:grid-cols-[1fr_280px] gap-12 lg:gap-16 items-center">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full py-16 sm:py-20 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-                {/* Left: Copy */}
-                <div className="text-center lg:text-left">
-                  <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                    {/* Credential bar */}
-                    <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1 mb-7">
-                      {['Cédula Federal 11009616', '7+ años de experiencia', '47 reseñas · 5 estrellas'].map((item, i) => (
-                        <span key={item} className="text-xs font-semibold tracking-wide flex items-center gap-1.5" style={{ color: 'rgba(208,208,231,0.8)' }}>
-                          {i > 0 && <span className="hidden sm:inline" style={{ color: 'rgba(208,208,231,0.3)' }}>·</span>}
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-
-                    <h1 className="text-[2.25rem] sm:text-6xl lg:text-7xl font-serif font-bold leading-[1.05] mb-4 text-balance text-white">
-                      Neuropsicóloga<br /> en Cancún
-                    </h1>
-
-                    <p className="text-lg sm:text-2xl font-serif italic mb-6 max-w-xl mx-auto lg:mx-0" style={{ color: 'rgba(208,208,231,0.75)' }}>
-                      Respuestas donde antes había incertidumbre
-                    </p>
-
-                    <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                      Evaluaciones neuropsicológicas de <strong className="text-white font-semibold">TDAH</strong> y <strong className="text-white font-semibold">Autismo (TEA)</strong> con pruebas estandarizadas internacionales. Informes clínicos con <strong className="text-white font-semibold">validez oficial</strong> ante escuelas, SEP, IMSS y empleadores.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8 animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
-                      <a
-                        href={waUrl('Hola Karen, vi tu página y me gustaría agendar una valoración')}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-center justify-center gap-2 font-bold text-sm px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
-                        style={{ background: '#25d366', color: '#fff' }}
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        Agendar por WhatsApp
-                      </a>
-                      <a
-                        href="#servicios"
-                        onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
-                        className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-xl transition-all duration-200 hover:bg-white/10"
-                        style={{ color: 'rgba(255,255,255,0.88)', border: '1.5px solid rgba(255,255,255,0.3)' }}
-                      >
-                        Ver servicios
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      </a>
-                    </div>
+                {/* Left: copy */}
+                <div className="animate-[fadeInUp_0.8s_ease-out_both]">
+                  {/* Credential bar */}
+                  <div className="flex flex-wrap gap-x-5 gap-y-1 mb-6">
+                    {['Cédula Federal 11009616', '47+ reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
+                      <span key={item} className="flex items-center gap-1.5 text-xs font-semibold tracking-wide" style={{ color: 'rgba(208,208,231,0.8)' }}>
+                        {i > 0 && <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full" style={{ background: 'rgba(208,208,231,0.45)' }} />}
+                        {item}
+                      </span>
+                    ))}
                   </div>
 
-                  {/* Routing cards — vertical column for better scannability */}
-                  <div className="flex flex-col gap-2 animate-[fadeIn_0.8s_ease-out_0.6s_both]">
+                  <h1 className="font-serif font-bold text-white leading-[1.12] mb-5" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)' }}>
+                    Diagnósticos que cambian<br />trayectorias de vida
+                  </h1>
+
+                  <p className="text-base leading-relaxed mb-8 max-w-[54ch]" style={{ color: 'rgba(208,208,231,0.82)' }}>
+                    Evaluaciones neuropsicológicas de <strong className="text-white font-semibold">TDAH</strong> y{' '}
+                    <strong className="text-white font-semibold">Autismo (TEA)</strong> con pruebas estandarizadas internacionales.
+                    Informes con validez oficial ante SEP, IMSS e instituciones educativas.
+                  </p>
+
+                  {/* Routing cards — vertical column */}
+                  <div className="flex flex-col gap-2.5 mb-8 animate-[fadeIn_0.8s_ease-out_0.35s_both]">
                     {[
                       { href: '/evaluacion-tdah-ninos',     label: 'Para padres y madres', text: 'Mi hijo tiene problemas de atención o conducta' },
                       { href: '/evaluacion-tdah-adultos',   label: 'Para adultos',          text: 'Sospecho que tengo TDAH no diagnosticado' },
@@ -471,53 +432,79 @@ export default function Home() {
                       <Link
                         key={card.href}
                         href={card.href}
-                        className="group flex items-center gap-3 p-4 rounded-xl text-left transition-all duration-200 hover:translate-x-1"
+                        className="group flex items-center gap-3 p-4 rounded-xl transition-all duration-200 hover:translate-x-1"
                         style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}
                       >
                         <div className="flex-1 min-w-0">
                           <span className="block text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgba(208,208,231,0.65)' }}>{card.label}</span>
                           <span className="block text-sm font-medium leading-snug" style={{ color: 'rgba(255,255,255,0.88)' }}>{card.text}</span>
                         </div>
-                        <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: 'rgba(208,208,231,0.5)' }} />
+                        <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: 'rgba(208,208,231,0.5)' }} aria-hidden="true" />
                       </Link>
                     ))}
                   </div>
+
+                  {/* CTAs */}
+                  <div className="flex flex-wrap gap-3 animate-[fadeIn_0.8s_ease-out_0.5s_both]">
+                    <a
+                      href={waUrl('Hola Karen, vi tu página y me gustaría agendar una valoración')}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-xl text-white transition-all hover:-translate-y-0.5 hover:brightness-110"
+                      style={{ background: '#25d366' }}
+                      aria-label="Agendar cita por WhatsApp"
+                    >
+                      <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                      Agendar por WhatsApp
+                    </a>
+                    <a
+                      href="#servicios"
+                      onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
+                      className="inline-flex items-center gap-2 font-semibold text-sm px-7 py-3.5 rounded-xl transition-all hover:bg-white/10"
+                      style={{ color: 'rgba(255,255,255,0.88)', border: '1.5px solid rgba(255,255,255,0.32)' }}
+                    >
+                      Ver servicios
+                    </a>
+                  </div>
                 </div>
 
-                {/* Right: Photo */}
-                <div className="hidden lg:flex justify-center animate-[fadeIn_1s_ease-out_0.4s_both]">
-                  <div className="relative">
-                    <div className="w-64 h-80 overflow-hidden shadow-2xl" style={{ borderRadius: '20px 20px 80px 20px' }}>
-                      <Image
-                        src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
-                        alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y autismo en Cancún"
-                        width={256}
-                        height={320}
-                        className="w-full h-full object-cover object-top"
-                        priority
-                        unoptimized
-                      />
-                    </div>
-                    <div className="absolute -bottom-5 -left-5 bg-white rounded-xl px-5 py-3 shadow-2xl" style={{ boxShadow: '0 8px 24px rgba(56,47,81,0.25)' }}>
-                      <p className="text-[10px] font-bold uppercase tracking-wide mb-0.5" style={{ color: '#5b4e7f' }}>Cédula Federal</p>
-                      <p className="text-lg font-bold font-mono" style={{ color: '#2b1f47' }}>11009616</p>
-                      <div className="flex items-center gap-1 mt-1">
-                        {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-warning text-warning" />)}
-                        <span className="text-xs font-bold ml-1" style={{ color: '#382f51' }}>5.0</span>
+                {/* Right: photo + badge */}
+                <div className="hidden lg:flex justify-end animate-[fadeIn_1s_ease-out_0.4s_both]">
+                  <div className="relative inline-block">
+                    <Image
+                      src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                      alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y Autismo en Cancún"
+                      width={440}
+                      height={587}
+                      className="block w-full object-cover object-top"
+                      style={{ maxWidth: '420px', borderRadius: '20px 20px 80px 20px', boxShadow: '0 30px 80px rgba(0,0,0,0.3)' }}
+                      priority
+                      unoptimized
+                    />
+                    {/* Photo badge */}
+                    <div
+                      className="absolute bg-white rounded-2xl"
+                      style={{ bottom: '24px', left: '-20px', padding: '14px 18px', minWidth: '210px', boxShadow: '0 8px 32px rgba(56,47,81,0.22)' }}
+                    >
+                      <p className="text-[11px] font-bold tracking-wide mb-1" style={{ color: '#5b4e7f' }}>Cédula 11009616 · SEP</p>
+                      <div className="flex gap-0.5 mb-1" aria-label="5 estrellas">
+                        {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
                       </div>
+                      <p className="text-[11px]" style={{ color: '#515e71' }}>47 reseñas verificadas · 5.0/5</p>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </section>
 
 
           {/* ══════════════════════════════════════════════════════
-              1.3 · STATS BAR — Social proof strip
+              2 · STATS BAR — social proof strip
               ══════════════════════════════════════════════════════ */}
           <section aria-label="Métricas de experiencia" className="bg-white border-b border-border">
-            <div className="max-w-5xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x divide-border">
                 {[
                   { number: '7+',       label: 'Años de experiencia',      mono: false },
@@ -526,10 +513,10 @@ export default function Home() {
                   { number: '11009616', label: 'Cédula Federal SEP',        mono: true  },
                 ].map((stat) => (
                   <div key={stat.label} className="flex flex-col items-center justify-center py-5 px-4 text-center">
-                    <span className={`font-serif font-bold text-primary leading-none ${stat.mono ? 'text-lg sm:text-2xl' : 'text-3xl sm:text-[2.25rem]'}`}>
+                    <span className={`font-serif font-bold leading-none ${stat.mono ? 'text-lg sm:text-2xl' : 'text-[2.25rem]'}`} style={{ color: '#382f51' }}>
                       {stat.number}
                     </span>
-                    <span className="text-[10px] font-semibold text-muted-foreground tracking-widest mt-1.5 uppercase">
+                    <span className="text-[10px] font-semibold tracking-widest mt-2 uppercase" style={{ color: '#515e71' }}>
                       {stat.label}
                     </span>
                   </div>
@@ -540,7 +527,7 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              1.5 · SYMPTOM CHECKER — 3 tabs interactivo
+              3 · SYMPTOM CHECKER — interactive 3-tab tool
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto px-6">
@@ -556,74 +543,81 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              2 · SERVICES — 3 pillars
+              4 · SERVICES — clean pill-badge cards
               ══════════════════════════════════════════════════════ */}
-          <section id="servicios" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
-            <div className="max-w-5xl mx-auto px-6">
+          <section id="servicios" aria-labelledby="servicios-heading" className="py-20 scroll-mt-20" style={{ background: '#f8f7fc' }}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Evaluaciones disponibles</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Qué necesitas evaluar?</h2>
-                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">Cada evaluación sigue un protocolo clínico riguroso con pruebas estandarizadas internacionales. Selecciona el servicio que más se ajusta a tu situación.</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center mb-2" style={{ color: '#5b4e7f' }}>Evaluaciones disponibles</p>
+                <h2 id="servicios-heading" className="font-serif font-bold text-center leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                  Evaluaciones especializadas
+                </h2>
+                <div className="w-10 h-0.5 rounded-full mx-auto mb-5" style={{ background: '#5b4e7f' }} />
+                <p className="text-base font-light text-center max-w-xl mx-auto mb-12" style={{ color: '#515e71' }}>
+                  Cada evaluación usa instrumentos estandarizados internacionales y genera un informe con validez oficial.
+                </p>
               </SectionReveal>
 
-              <div className="grid md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {services.map((service, i) => (
                   <SectionReveal key={service.slug} delay={i * 0.1}>
-                    <Link href={service.slug} className={`group block bg-card border-2 border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 h-full ${service.borderHover}`}>
-                      {/* Header */}
-                      <div className="p-6 pb-4 border-b border-border relative overflow-hidden">
-                        <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-100`} />
-                        <div className="relative">
-                          <div className="flex items-center justify-between mb-4">
-                            <div className="w-11 h-11 rounded-xl bg-card border border-border flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
-                              <service.icon className="w-5 h-5 text-primary/70" />
-                            </div>
-                            <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground bg-card/80 px-3 py-1 rounded-full border border-border">{service.age}</span>
-                          </div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-primary/50 mb-1">{service.label}</p>
-                          <h3 className="text-xl font-serif font-bold text-primary leading-tight">{service.title}</h3>
-                        </div>
+                    <div
+                      className="bg-white rounded-2xl p-7 flex flex-col transition-all duration-250 hover:-translate-y-1 group"
+                      style={{ border: '1px solid rgba(56,47,81,0.07)', '--hover-border': svcBadge[i].hoverBorder } as React.CSSProperties}
+                      onMouseEnter={(e) => (e.currentTarget.style.border = `1px solid ${svcBadge[i].hoverBorder}`)}
+                      onMouseLeave={(e) => (e.currentTarget.style.border = '1px solid rgba(56,47,81,0.07)')}
+                    >
+                      <span
+                        className="inline-block text-[11px] font-bold tracking-widest uppercase rounded-full px-3 py-1.5 mb-4 w-fit"
+                        style={{ background: svcBadge[i].bg, color: svcBadge[i].color }}
+                      >
+                        {service.label}
+                      </span>
+                      <h3 className="font-serif font-bold text-xl mb-1" style={{ color: '#382f51' }}>{service.title}</h3>
+                      <p className="text-xs font-bold mb-4" style={{ color: '#515e71', letterSpacing: '0.02em' }}>
+                        {service.age}&nbsp;&nbsp;·&nbsp;&nbsp;{service.price}
+                      </p>
+                      <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: '#515e71', lineHeight: '1.7' }}>
+                        {service.desc}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 mb-6">
+                        {service.tests.map((test) => (
+                          <span
+                            key={test}
+                            className="text-[11px] font-bold px-2.5 py-1 rounded-md"
+                            style={{ background: '#f8f7fc', color: '#5b4e7f', border: '1px solid rgba(91,78,127,0.15)' }}
+                          >
+                            {test}
+                          </span>
+                        ))}
                       </div>
-
-                      {/* Body */}
-                      <div className="p-6 space-y-4">
-                        <p className="text-sm text-muted-foreground font-light leading-relaxed">{service.desc}</p>
-
-                        <div className="flex flex-wrap gap-1.5">
-                          {service.tests.map((test) => (
-                            <span key={test} className="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary border border-border rounded-full text-xs text-muted-foreground font-medium">
-                              <Brain className="w-2.5 h-2.5 text-primary/40" />
-                              {test}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="pt-3 border-t border-border flex items-center justify-between">
-                          <div>
-                            <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50">Desde</p>
-                            <p className="text-lg font-serif font-bold text-primary">{service.price}</p>
-                          </div>
-                          <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
-                            Ver evaluación
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Emotional hook */}
-                      <div className="px-6 pb-5">
-                        <p className="text-xs text-primary/60 italic font-serif">{service.cta}</p>
-                      </div>
-                    </Link>
+                      <Link
+                        href={service.slug}
+                        className="block text-center text-xs font-bold uppercase tracking-widest py-2.5 px-5 rounded-lg transition-all hover:text-white"
+                        style={{ color: '#382f51', border: '1.5px solid #382f51' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#382f51'; (e.currentTarget as HTMLElement).style.color = '#fff'; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#382f51'; }}
+                      >
+                        Ver evaluación
+                      </Link>
+                    </div>
                   </SectionReveal>
                 ))}
               </div>
 
               <SectionReveal delay={0.35}>
                 <div className="mt-10 text-center">
-                  <p className="text-sm text-muted-foreground font-light mb-4">¿No estás seguro cuál necesitas?</p>
-                  <a href={waUrl('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
-                    <MessageCircle className="w-4 h-4" />
+                  <p className="text-sm font-light mb-4" style={{ color: '#515e71' }}>¿No estás seguro cuál necesitas?</p>
+                  <a
+                    href={waUrl('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-xl transition-all"
+                    style={{ border: '2px solid rgba(56,47,81,0.2)', color: '#382f51' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.5)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.2)')}
+                  >
+                    <MessageCircle className="w-4 h-4" aria-hidden="true" />
                     Orientación gratuita por WhatsApp
                   </a>
                 </div>
@@ -633,115 +627,113 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              2.5 · PRIMERA CITA — 5-step timeline
+              5 · PROCESS — numbered timeline 01-04
               ══════════════════════════════════════════════════════ */}
-          <section className="py-14 sm:py-20 bg-card border-b border-border">
-            <div className="max-w-3xl mx-auto px-6">
+          <section id="proceso" aria-labelledby="proceso-heading" className="py-20 bg-white">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Paso a paso</p>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Cómo es el proceso?</h2>
-                <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-12">Desde que contactas hasta que recibes tu informe. Sin sorpresas.</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Paso a paso</p>
+                <h2 id="proceso-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                  ¿Cómo es el proceso?
+                </h2>
+                <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: '#5b4e7f' }} />
+                <p className="text-base font-light max-w-[52ch] mb-14" style={{ color: '#515e71', lineHeight: '1.7' }}>
+                  Un proceso claro en cuatro pasos, desde la primera consulta hasta el informe final.
+                </p>
               </SectionReveal>
 
-              <div className="relative space-y-0">
+              <div className="flex flex-col max-w-[680px]" style={{ gap: 0 }}>
                 {[
                   {
-                    n: '1',
-                    title: 'Contacto y orientación',
-                    desc: 'Escríbeme por WhatsApp. En la misma llamada o chat te explico el proceso, resuelvo tus dudas y agendamos.',
-                    duration: 'Mismo día',
-                    icon: MessageCircle,
-                  },
-                  {
-                    n: '2',
-                    title: 'Entrevista clínica',
-                    desc: 'Anamnesis detallada: historia del desarrollo, antecedentes familiares, contexto escolar o laboral. Establece el mapa clínico.',
+                    n: '01',
+                    title: 'Entrevista inicial',
+                    subtitle: '(online o presencial)',
+                    desc: 'Primera sesión para conocer el motivo de consulta, historia clínica y contexto del paciente.',
                     duration: '60–90 min',
-                    icon: ClipboardList,
                   },
                   {
-                    n: '3',
-                    title: 'Aplicación de pruebas',
-                    desc: 'Instrumentos estandarizados internacionales según el tipo de evaluación (ADOS-2, WISC-V, CONNERS-3, CAARS-2…).',
-                    duration: '2–4 sesiones',
-                    icon: Brain,
+                    n: '02',
+                    title: 'Aplicación de pruebas neuropsicológicas',
+                    subtitle: '',
+                    desc: 'Sesiones presenciales de evaluación con instrumentos estandarizados internacionales.',
+                    duration: 'TDAH: 2–3 sesiones · Autismo: 3–4 sesiones',
                   },
                   {
-                    n: '4',
-                    title: 'Análisis e informe',
-                    desc: 'Interpretación clínica integrada. Redacción del informe con diagnóstico, perfil cognitivo y recomendaciones concretas.',
-                    duration: '5–7 días',
-                    icon: FileText,
+                    n: '03',
+                    title: 'Análisis e interpretación de resultados',
+                    subtitle: '',
+                    desc: 'Karen integra los datos de todas las pruebas en un informe clínico completo con diagnóstico diferencial.',
+                    duration: '',
                   },
                   {
-                    n: '5',
+                    n: '04',
                     title: 'Sesión de devolución',
-                    desc: 'Presentamos el diagnóstico, explicamos el perfil y establecemos el plan de acción. El informe queda en tus manos.',
-                    duration: '60–90 min',
-                    icon: CalendarCheck,
+                    subtitle: '',
+                    desc: 'Se explica el informe en detalle, se responden preguntas y se entregan recomendaciones concretas y plan terapéutico.',
+                    duration: 'Presencial u online',
                   },
                 ].map((step, i, arr) => (
-                  <SectionReveal key={step.n} delay={i * 0.08}>
-                    <div className="grid grid-cols-[72px_1fr] gap-4 relative">
+                  <SectionReveal key={step.n} delay={i * 0.1}>
+                    <div className="grid" style={{ gridTemplateColumns: '72px 1fr', gap: '1.5rem', paddingBottom: i < arr.length - 1 ? '2.5rem' : 0 }}>
                       {/* Number + connector */}
-                      <div className="flex flex-col items-center">
-                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 bg-secondary border-2 border-border font-serif text-2xl font-bold text-primary/40 group-hover:border-primary/40 transition-colors">
-                          {step.n}
-                        </div>
+                      <div style={{ position: 'relative' }}>
+                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#d0d0e7', lineHeight: '1' }}>{step.n}</div>
                         {i < arr.length - 1 && (
-                          <div className="w-px flex-1 mt-2 mb-0" style={{ background: 'linear-gradient(to bottom, rgba(208,208,231,0.6), transparent)', minHeight: '2.5rem' }} />
+                          <div
+                            style={{
+                              position: 'absolute',
+                              left: '36px',
+                              top: '58px',
+                              bottom: '-2rem',
+                              width: '1px',
+                              background: 'linear-gradient(to bottom, rgba(208,208,231,0.55), transparent)',
+                            }}
+                          />
                         )}
                       </div>
-
                       {/* Content */}
-                      <div className="pb-8">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h3 className="font-bold text-primary">{step.title}</h3>
-                          <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-border bg-secondary text-muted-foreground">{step.duration}</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground font-light leading-relaxed">{step.desc}</p>
+                      <div style={{ paddingTop: '0.25rem' }}>
+                        <h3 className="font-bold mb-2" style={{ fontSize: '1.1rem', color: '#382f51' }}>
+                          {step.title}{' '}
+                          {step.subtitle && <span className="font-normal text-sm" style={{ color: '#515e71' }}>{step.subtitle}</span>}
+                        </h3>
+                        <p className="text-sm leading-relaxed" style={{ color: '#515e71', lineHeight: '1.7' }}>{step.desc}</p>
+                        {step.duration && (
+                          <span
+                            className="inline-block text-xs font-semibold rounded-full mt-2.5"
+                            style={{ color: '#5b4e7f', background: '#f8f7fc', border: '1px solid #d0d0e7', padding: '4px 12px', letterSpacing: '0.06em' }}
+                          >
+                            {step.duration}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </SectionReveal>
                 ))}
               </div>
-
-              <SectionReveal delay={0.45}>
-                <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 bg-success/8 border border-success/20 rounded-full">
-                    <ShieldCheck className="w-3.5 h-3.5 text-success" />
-                    <span className="text-xs font-bold text-success uppercase tracking-widest">Reembolso completo si cancelas con 48 hrs</span>
-                  </div>
-                  <a
-                    href={waUrl('Hola Karen, me gustaría saber cuánto cuesta la valoración neuropsicológica.')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-bold uppercase tracking-widest text-primary hover:underline"
-                  >
-                    Ver precios →
-                  </a>
-                </div>
-              </SectionReveal>
             </div>
           </section>
 
 
           {/* ══════════════════════════════════════════════════════
-              3 · WHY NEUROPSYCHOLOGY — Differentiator
+              6 · WHY NEUROPSYCHOLOGY — differentiator
               ══════════════════════════════════════════════════════ */}
           <section id="que-es-neuropsicologia" className="py-14 sm:py-20 bg-card">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">No es lo mismo una consulta que una evaluación neuropsicológica</h2>
-                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La neuropsicología mide cómo funciona el cerebro con instrumentos estandarizados. Los resultados son percentiles y diagnósticos verificables, no impresiones clínicas.</p>
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
+                  No es lo mismo una consulta que una evaluación neuropsicológica
+                </h2>
+                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">
+                  La neuropsicología mide cómo funciona el cerebro con instrumentos estandarizados. Los resultados son percentiles y diagnósticos verificables, no impresiones clínicas.
+                </p>
               </SectionReveal>
-
               <div className="grid sm:grid-cols-2 gap-4">
                 {whyNeuropsychology.map((item, i) => (
                   <SectionReveal key={item.title} delay={i * 0.08}>
                     <div className="flex gap-4 p-5 sm:p-6 bg-secondary/50 rounded-2xl border border-border hover:border-accent-blue/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group h-full">
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue/30 to-primary/20 border border-primary/25 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <CheckCircle2 className="w-4 h-4 text-primary/60" />
+                        <CheckCircle2 className="w-4 h-4 text-primary/60" aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="font-bold text-primary mb-1 text-sm">{item.title}</h3>
@@ -756,98 +748,117 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              4 · ABOUT KAREN — Condensed bio
+              7 · ABOUT — dark plum, photo + credentials list
               ══════════════════════════════════════════════════════ */}
-          <section className="py-14 sm:py-20 bg-gradient-primary text-primary-foreground w-full">
-            <div className="max-w-4xl mx-auto px-6">
-              <SectionReveal>
-                <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-14 items-center">
-                  {/* Photo — visible on all screens */}
-                  <div className="flex justify-center md:justify-start">
-                    <div className="relative">
-                      <div className="w-44 h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden shadow-2xl shadow-white/10">
-                        <Image
-                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
-                          alt="Neuropsicóloga Karen Trujillo — Cancún"
-                          width={208}
-                          height={208}
-                          className="w-full h-full object-cover object-top"
-                          loading="lazy"
-                          unoptimized
-                        />
-                      </div>
-                    </div>
-                  </div>
+          <section id="sobre-mi" aria-labelledby="sobre-heading" className="py-20 scroll-mt-20" style={{ background: '#2b1f47' }}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-                  {/* Bio */}
-                  <div>
-                    <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Karen Trujillo</h2>
-                    <p className="text-primary-foreground/70 font-light leading-relaxed mb-6">
-                      Neuropsicóloga clínica con más de <strong className="text-primary-foreground font-semibold">7 años de experiencia</strong> en la evaluación y diagnóstico de TDAH y Trastorno del Espectro Autista en niños, adolescentes y adultos en Cancún. Domina instrumentos de clase mundial: CONNERS-3, WISC-V, WAIS-IV, CAARS-2, ADOS-2, ADI-R, BRIEF-2 y CPT-3. Cada evaluación combina <strong className="text-primary-foreground font-semibold">rigor clínico con calidez humana</strong>: las familias no solo reciben un diagnóstico, sino una hoja de ruta concreta.
-                    </p>
+                {/* Photo */}
+                <SectionReveal className="flex justify-center lg:justify-start">
+                  <Image
+                    src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                    alt="Neuropsicóloga Karen Trujillo — Cancún"
+                    width={400}
+                    height={467}
+                    className="block w-full object-cover object-top"
+                    style={{ maxWidth: '380px', borderRadius: '20px 80px 20px 20px', boxShadow: '0 24px 64px rgba(0,0,0,0.28)' }}
+                    loading="lazy"
+                    unoptimized
+                  />
+                </SectionReveal>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      {[
-                        { valor: '7+', label: 'años de experiencia' },
-                        { valor: '500+', label: 'evaluaciones realizadas' },
-                        { valor: '47+', label: 'reseñas 5 estrellas' },
-                      ].map((stat) => (
-                        <div key={stat.label} className="bg-white/10 border border-white/15 rounded-xl p-3 text-center">
-                          <p className="text-xl font-serif font-bold text-primary-foreground">{stat.valor}</p>
-                          <p className="text-xs text-primary-foreground/55 font-light mt-0.5">{stat.label}</p>
+                {/* Content */}
+                <SectionReveal delay={0.1}>
+                  <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                    Neuropsicóloga certificada
+                  </p>
+                  <h2 id="sobre-heading" className="font-serif font-bold text-white leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)' }}>
+                    Conoce a Karen Trujillo
+                  </h2>
+                  <div className="w-10 h-0.5 rounded-full mb-6" style={{ background: 'rgba(208,208,231,0.4)' }} />
+
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
+                    Soy Neuropsicóloga Karen Trujillo (Cédula Federal: 11009616), especializada en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
+                    Me especializo exclusivamente en evaluación neuropsicológica porque creo que un diagnóstico preciso cambia trayectorias de vida. Un niño con TDAH no diagnosticado es etiquetado como "flojo"; un adulto sin diagnóstico lleva décadas creyendo que el problema es su carácter. El diagnóstico correcto es el primer paso del tratamiento correcto.
+                  </p>
+
+                  {/* Credentials list */}
+                  <div className="mb-8">
+                    {aboutCreds.map((cred, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-3 py-2.5"
+                        style={{ borderBottom: i < aboutCreds.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+                      >
+                        <div
+                          className="flex items-center justify-center shrink-0 mt-0.5 rounded-full"
+                          style={{ width: '20px', height: '20px', background: 'rgba(208,208,231,0.14)' }}
+                        >
+                          <svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '11px', height: '11px' }} aria-hidden="true">
+                            <polyline points="2,6 5,9 10,3" />
+                          </svg>
                         </div>
-                      ))}
-                    </div>
+                        <span className="text-sm" style={{ color: 'rgba(255,255,255,0.78)' }}>{cred}</span>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              </SectionReveal>
 
-              <SectionReveal delay={0.15}>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8">
-                  {credentials.map((cred) => (
-                    <div key={cred.text} className="flex items-center gap-2.5 p-3 bg-white/8 border border-white/12 rounded-xl">
-                      <cred.icon className="w-4 h-4 text-accent-blue shrink-0" />
-                      <span className="text-xs text-primary-foreground/80 font-medium leading-snug">{cred.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </SectionReveal>
+                  {/* Mini stats */}
+                  <div className="flex flex-wrap gap-6 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                    {[{ v: '7+', l: 'Años' }, { v: '500+', l: 'Evaluaciones' }, { v: '47+', l: 'Reseñas 5★' }].map((s) => (
+                      <div key={s.l}>
+                        <p className="font-serif font-bold text-white" style={{ fontSize: '1.8rem', lineHeight: '1' }}>{s.v}</p>
+                        <p className="text-[11px] font-semibold uppercase tracking-widest mt-1" style={{ color: 'rgba(208,208,231,0.65)' }}>{s.l}</p>
+                      </div>
+                    ))}
+                  </div>
+                </SectionReveal>
+
+              </div>
             </div>
           </section>
 
 
           {/* ══════════════════════════════════════════════════════
-              5 · SOCIAL PROOF — Reviews (mixed services)
+              8 · TESTIMONIALS — featured quote + 3 cards
               ══════════════════════════════════════════════════════ */}
-          <section className="py-14 sm:py-20 bg-secondary">
-            <div className="max-w-5xl mx-auto px-6">
+          <section id="testimonios" aria-labelledby="testimonios-heading" className="py-20" style={{ background: '#f8f7fc' }}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Familias reales</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">47+ familias y adultos con claridad</h2>
-                <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Reseñas de evaluaciones de TDAH infantil, TDAH adulto y autismo.</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center mb-2" style={{ color: '#5b4e7f' }}>Familias reales</p>
+                <h2 id="testimonios-heading" className="font-serif font-bold text-center leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                  Lo que dicen las familias
+                </h2>
+                <div className="w-10 h-0.5 rounded-full mx-auto mb-12" style={{ background: '#5b4e7f' }} />
               </SectionReveal>
 
-              {/* Featured testimonial */}
+              {/* Featured quote */}
               <SectionReveal>
-                <div className="relative bg-white rounded-2xl p-8 md:p-10 mb-8 shadow-sm border border-border overflow-hidden max-w-[780px] mx-auto">
+                <div
+                  className="relative bg-white rounded-2xl overflow-hidden mx-auto mb-8"
+                  style={{ maxWidth: '780px', padding: '2.5rem 2.5rem 2rem', boxShadow: '0 4px 40px rgba(56,47,81,0.08)' }}
+                >
                   <div
                     aria-hidden="true"
-                    className="absolute top-1 left-4 font-serif leading-none select-none pointer-events-none"
-                    style={{ fontSize: '7rem', lineHeight: '1', color: '#d0d0e7', opacity: 0.7 }}
+                    className="absolute font-serif select-none pointer-events-none leading-none"
+                    style={{ top: '0.25rem', left: '1.5rem', fontSize: '7rem', lineHeight: '1', color: '#d0d0e7', opacity: 0.65 }}
                   >
                     &ldquo;
                   </div>
-                  <blockquote className="relative z-10 pt-6">
-                    <p className="font-serif italic text-primary leading-relaxed mb-5" style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)' }}>
+                  <blockquote className="relative z-10" style={{ paddingTop: '1.25rem', margin: 0 }}>
+                    <p className="font-serif italic leading-relaxed mb-5" style={{ fontSize: 'clamp(1.1rem,2.5vw,1.35rem)', color: '#382f51', lineHeight: '1.65' }}>
                       {reviews[0].text}
                     </p>
                     <footer className="flex items-center gap-3">
                       <div>
-                        <cite className="not-italic font-bold text-primary text-sm">{reviews[0].name}</cite>
-                        <span className="text-muted-foreground text-sm">&nbsp;·&nbsp;{reviews[0].service}</span>
-                        <div className="flex gap-0.5 mt-1">
-                          {Array.from({ length: reviews[0].stars }).map((_, j) => (
-                            <Star key={j} className="w-3.5 h-3.5 text-warning fill-warning" aria-hidden="true" />
+                        <cite className="not-italic font-bold text-sm" style={{ color: '#382f51' }}>{reviews[0].name}</cite>
+                        <span className="text-sm" style={{ color: '#515e71' }}>&nbsp;·&nbsp;{reviews[0].service}</span>
+                        <div className="flex gap-0.5 mt-1" aria-label="5 estrellas">
+                          {[...Array(reviews[0].stars)].map((_, j) => (
+                            <Star key={j} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />
                           ))}
                         </div>
                       </div>
@@ -856,43 +867,46 @@ export default function Home() {
                 </div>
               </SectionReveal>
 
-              <div className="grid md:grid-cols-3 gap-5">
+              {/* 3 testimonial cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {reviews.slice(1, 4).map((review, i) => (
-                  <SectionReveal key={i} delay={i * 0.08}>
-                    <div className="bg-card border border-border rounded-2xl p-6 hover:border-accent-blue/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
-                      <div className="absolute top-3 right-4 text-8xl font-serif text-primary/15 group-hover:text-primary/25 transition-colors leading-none select-none">&ldquo;</div>
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex gap-0.5">
-                          {Array.from({ length: review.stars }).map((_, j) => (
-                            <Star key={j} className="w-3.5 h-3.5 text-warning fill-warning" />
-                          ))}
-                        </div>
-                        <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50 bg-secondary px-2 py-0.5 rounded-full">{review.service}</span>
+                  <SectionReveal key={i} delay={i * 0.1}>
+                    <article
+                      className="bg-white rounded-2xl p-6 flex flex-col h-full transition-all hover:-translate-y-0.5"
+                      style={{ border: '1px solid rgba(56,47,81,0.07)', boxShadow: '0 2px 12px rgba(56,47,81,0.04)' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 10px 32px rgba(56,47,81,0.1)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '0 2px 12px rgba(56,47,81,0.04)')}
+                    >
+                      <div className="flex gap-0.5 mb-3" aria-label={`${review.stars} estrellas`}>
+                        {[...Array(review.stars)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
                       </div>
-                      <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6 flex-1 relative z-10">&ldquo;{review.text}&rdquo;</p>
-                      <div className="flex items-center gap-2 pt-4 border-t border-border">
-                        <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent-blue/20 to-primary/15 flex items-center justify-center shrink-0">
-                          <span className="text-xs font-bold text-primary/60">{review.name.charAt(0)}</span>
-                        </div>
-                        <p className="text-xs font-bold text-primary">{review.name}</p>
+                      <p className="text-sm leading-relaxed mb-6 flex-1 italic" style={{ color: '#515e71', lineHeight: '1.7' }}>
+                        &ldquo;{review.text}&rdquo;
+                      </p>
+                      <div className="border-t pt-4" style={{ borderColor: 'rgba(56,47,81,0.07)' }}>
+                        <p className="font-bold text-sm" style={{ color: '#382f51' }}>{review.name}</p>
+                        <p className="text-xs mt-0.5" style={{ color: '#515e71' }}>{review.service}</p>
                       </div>
-                    </div>
+                    </article>
                   </SectionReveal>
                 ))}
               </div>
 
               <SectionReveal delay={0.3}>
                 <div className="mt-10 text-center">
-                  <p className="text-sm text-muted-foreground font-light mb-3">
-                    ¿Ya te evaluaste con Karen? Tu experiencia ayuda a que más familias de Cancún nos encuentren.
+                  <p className="text-sm font-light mb-3" style={{ color: '#515e71' }}>
+                    ¿Ya te evaluaste con Karen? Tu reseña ayuda a que más familias de Cancún nos encuentren.
                   </p>
                   <a
                     href="https://www.google.com/search?q=Karen+Trujillo+Neuropsic%C3%B3loga+Canc%C3%BAn+rese%C3%B1as"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-primary border border-border hover:border-primary/40 hover:bg-secondary px-5 py-2.5 rounded-full transition-all"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full transition-all"
+                    style={{ color: '#382f51', border: '1px solid rgba(56,47,81,0.2)' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.5)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.2)')}
                   >
-                    <Star className="w-3.5 h-3.5 text-warning fill-warning" />
+                    <Star className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />
                     Dejar reseña en Google
                   </a>
                 </div>
@@ -900,47 +914,52 @@ export default function Home() {
             </div>
           </section>
 
+
           {/* ══════════════════════════════════════════════════════
-              6 · FAQ — General
+              9 · FAQ — clean border-bottom accordion
               ══════════════════════════════════════════════════════ */}
-          <section className="py-14 sm:py-20 bg-card">
-            <div className="max-w-3xl mx-auto px-6">
+          <section id="faq" aria-labelledby="faq-heading" className="py-20 bg-white">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-center text-primary/40 mb-2">Dudas frecuentes</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Dudas frecuentes</p>
+                <h2 id="faq-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                  Preguntas frecuentes
+                </h2>
+                <div className="w-10 h-0.5 rounded-full mb-10" style={{ background: '#5b4e7f' }} />
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div style={{ maxWidth: '720px' }} role="list">
                 {faqItems.map((faq, i) => (
-                  <SectionReveal key={i} delay={i * 0.05}>
-                    <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
+                  <SectionReveal key={i} delay={i * 0.04}>
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                       <button
                         id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
-                        aria-controls={`faq-answer-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        aria-controls={`faq-ans-${i}`}
+                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#5b4e7f')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = openFaq === i ? '#5b4e7f' : '#382f51')}
                       >
-                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}>
-                          <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} />
-                        </div>
+                        <span className="font-semibold text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 transition-transform duration-250"
+                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        />
                       </button>
                       <div
-                        id={`faq-answer-${i}`}
+                        id={`faq-ans-${i}`}
                         role="region"
                         aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
-                        style={{
-                          gridTemplateRows: openFaq === i ? '1fr' : '0fr',
-                          opacity: openFaq === i ? 1 : 0,
-                          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
-                        }}
+                        style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
-                            <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                          </div>
+                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                            {faq.a}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -952,97 +971,102 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              6.5 · RECURSOS — Blog / Topical authority placeholder
+              10 · BLOG — image cards
               ══════════════════════════════════════════════════════ */}
-          <section className="py-12 sm:py-16 bg-secondary/50 border-t border-border">
-            <div className="max-w-4xl mx-auto px-6">
+          <section id="blog" aria-labelledby="blog-heading" className="py-20" style={{ background: '#f8f7fc' }}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center">Recursos sobre TDAH y Autismo</h2>
-                <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Información basada en evidencia para entender mejor estas condiciones.</p>
-              </SectionReveal>
-
-              <div className="grid sm:grid-cols-3 gap-4">
-                {[
-                  {
-                    href: '/blog/senales-tdah-ninos',
-                    icon: Users,
-                    category: 'TDAH Infantil',
-                    title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico',
-                    desc: 'Aprende a distinguir entre falta de atención normal y las señales que justifican una evaluación neuropsicológica.',
-                    color: 'from-accent-blue/10 to-accent-blue/5',
-                  },
-                  {
-                    href: '/blog/tdah-adultos-diagnostico-tardio',
-                    icon: Brain,
-                    category: 'TDAH Adultos',
-                    title: 'TDAH en adultos: por qué miles de personas llegan al diagnóstico después de los 30',
-                    desc: 'Procrastinación crónica, desorganización y bajo rendimiento laboral pueden tener una explicación neurológica.',
-                    color: 'from-primary/10 to-primary/5',
-                  },
-                  {
-                    href: '/blog/que-es-ados-2-autismo',
-                    icon: Puzzle,
-                    category: 'Autismo (TEA)',
-                    title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
-                    desc: 'Entiende por qué esta prueba de observación directa supera cualquier método de diagnóstico basado solo en entrevista.',
-                    color: 'from-accent-pink/10 to-accent-pink/5',
-                  },
-                ].map((resource, i) => (
-                  <SectionReveal key={resource.category} delay={i * 0.08}>
-                    <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
-                      {/* Top accent bar */}
-                      <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
-                      <div className="p-5 sm:p-6 flex flex-col h-full">
-                        <div className="flex items-center gap-2 mb-3">
-                          <resource.icon className="w-3.5 h-3.5 text-primary/40" />
-                          <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/60">{resource.category}</span>
-                        </div>
-                        <h3 className="font-bold text-primary text-sm leading-snug mb-2 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
-                        <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4 flex-1">{resource.desc}</p>
-                        <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
-                          Leer artículo <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                        </span>
-                      </div>
-                    </Link>
-                  </SectionReveal>
-                ))}
-              </div>
-
-              <SectionReveal delay={0.25}>
-                <div className="text-center mt-8">
-                  <a
-                    href={waUrl('Hola Karen, tengo preguntas sobre TDAH y autismo. ¿Podríamos hablar?')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary/20 text-primary font-bold text-[11px] uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all duration-200 group"
+                <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Recursos y artículos</p>
+                    <h2 id="blog-heading" className="font-serif font-bold leading-tight" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                      Del blog
+                    </h2>
+                    <div className="w-10 h-0.5 rounded-full mt-3" style={{ background: '#5b4e7f' }} />
+                  </div>
+                  <Link
+                    href="/blog"
+                    className="text-sm font-semibold transition-opacity hover:opacity-70"
+                    style={{ color: '#5b4e7f', letterSpacing: '0.04em' }}
                   >
-                    Hacer una consulta gratuita
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                    Ver todos los artículos →
+                  </Link>
                 </div>
               </SectionReveal>
 
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  { href: '/blog/senales-tdah-ninos',       tag: 'TDAH Infantil', mins: '12', title: '¿Tu hijo no pone atención? Señales reales de TDAH en niños', img: '#d0d0e7', imgText: 'TDAH+Infantil' },
+                  { href: '/blog/tdah-adultos-diagnostico-tardio', tag: 'TDAH Adultos', mins: '10', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', img: '#f5dfc5', imgText: 'TDAH+Adultos' },
+                  { href: '/blog/que-es-ados-2-autismo',    tag: 'Autismo / TEA', mins: '11', title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', img: '#fbdbe0', imgText: 'Autismo+TEA' },
+                ].map((post, i) => (
+                  <SectionReveal key={post.href} delay={i * 0.1}>
+                    <article
+                      className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 group"
+                      style={{ border: '1px solid rgba(56,47,81,0.07)' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 10px 36px rgba(56,47,81,0.11)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`https://placehold.co/400x240/${post.img.replace('#', '')}/${post.img === '#d0d0e7' ? '382f51' : '382f51'}?text=${post.imgText}`}
+                        alt={`Artículo: ${post.title}`}
+                        width={400}
+                        height={240}
+                        className="w-full object-cover"
+                        style={{ height: '180px' }}
+                        loading="lazy"
+                      />
+                      <div className="p-5 flex flex-col flex-1">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span
+                            className="text-[10px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1"
+                            style={{ background: '#f8f7fc', color: '#5b4e7f' }}
+                          >
+                            {post.tag}
+                          </span>
+                          <span className="text-xs" style={{ color: '#515e71' }}>{post.mins} min</span>
+                        </div>
+                        <h3 className="font-serif font-bold leading-snug mb-4 flex-1" style={{ fontSize: '1.05rem', color: '#382f51', lineHeight: '1.4' }}>
+                          {post.title}
+                        </h3>
+                        <Link
+                          href={post.href}
+                          className="text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70"
+                          style={{ color: '#5b4e7f', letterSpacing: '0.03em' }}
+                        >
+                          Leer artículo →
+                        </Link>
+                      </div>
+                    </article>
+                  </SectionReveal>
+                ))}
+              </div>
             </div>
           </section>
 
 
           {/* ══════════════════════════════════════════════════════
-              6.7 · UBICACIÓN — Google Maps + address + hours
+              11 · LOCATION — Google Maps + address + hours
               ══════════════════════════════════════════════════════ */}
-          <section id="ubicacion" className="py-14 sm:py-20 bg-card border-t border-border">
-            <div className="max-w-4xl mx-auto px-6">
+          <section id="ubicacion" aria-labelledby="ubicacion-heading" className="py-20 bg-white border-t border-border scroll-mt-20">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">¿Dónde estamos?</h2>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Dónde encontrarnos</p>
+                <h2 id="ubicacion-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                  Consultorio en Cancún
+                </h2>
+                <div className="w-10 h-0.5 rounded-full mb-10" style={{ background: '#5b4e7f' }} />
               </SectionReveal>
 
-              <div className="grid md:grid-cols-[1fr_320px] gap-6">
-                {/* Map embed */}
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
+                {/* Map */}
                 <SectionReveal>
-                  <div className="rounded-2xl overflow-hidden border-2 border-border shadow-lg shadow-primary/5 bg-secondary" style={{ minHeight: '380px' }}>
+                  <div className="rounded-2xl overflow-hidden border-2 border-border shadow-lg" style={{ minHeight: '380px' }}>
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.9838296344037!2d-86.89585439999999!3d21.1530418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b10d813a9c7%3A0x4042823298a0080b!2sPsic%C3%B3loga%20Karen%20Trujillo%20%7C%20Neuropsicolog%C3%ADa%3A%20TDAH%20y%20Autismo!5e0!3m2!1ses-419!2smx!4v1772120174668!5m2!1ses-419!2smx"
-                      className="w-full h-full border-0"
-                      style={{ minHeight: '380px' }}
+                      className="w-full border-0"
+                      style={{ minHeight: '380px', display: 'block' }}
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
@@ -1051,66 +1075,75 @@ export default function Home() {
                   </div>
                 </SectionReveal>
 
-                {/* Info card */}
+                {/* Info */}
                 <SectionReveal delay={0.1}>
-                  <div className="bg-secondary/50 border border-border rounded-2xl p-6 h-full flex flex-col justify-between">
-                    {/* Address */}
-                    <div className="mb-6">
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center shrink-0">
-                          <MapPin className="w-4 h-4 text-primary/70" />
+                  <div className="flex flex-col gap-6">
+                    {[
+                      {
+                        Icon: MapPin,
+                        label: 'Dirección',
+                        content: (
+                          <p className="text-sm leading-relaxed" style={{ color: '#382f51', lineHeight: '1.6' }}>
+                            SM200 M49 L2, Hacienda de Chinconcuac<br />
+                            Supermanzana Circuito casa 1587B<br />
+                            Cancún, Quintana Roo · C.P. 77539
+                          </p>
+                        ),
+                      },
+                      {
+                        Icon: Clock,
+                        label: 'Horario',
+                        content: (
+                          <div className="text-sm" style={{ color: '#382f51', lineHeight: '1.65' }}>
+                            <p>Lunes–Viernes &nbsp;9:00 – 19:00</p>
+                            <p>Sábados &nbsp;9:00 – 14:00</p>
+                            <p style={{ color: '#515e71' }}>Domingos: cerrado</p>
+                          </div>
+                        ),
+                      },
+                      {
+                        Icon: Phone,
+                        label: 'Teléfono',
+                        content: (
+                          <a href={`tel:${PHONE_NUMBER}`} className="text-sm font-medium hover:underline" style={{ color: '#382f51' }}>
+                            +52 998 321 1547
+                          </a>
+                        ),
+                      },
+                    ].map(({ Icon, label, content }) => (
+                      <div key={label} className="flex gap-4 items-start">
+                        <div
+                          className="flex items-center justify-center shrink-0 rounded-xl"
+                          style={{ width: '42px', height: '42px', background: '#f8f7fc', border: '1px solid #d0d0e7' }}
+                        >
+                          <Icon className="w-4 h-4" style={{ color: '#5b4e7f' }} aria-hidden="true" />
                         </div>
-                        <p className="font-bold text-primary text-sm">Dirección</p>
+                        <div>
+                          <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: '#5b4e7f' }}>{label}</p>
+                          {content}
+                        </div>
                       </div>
-                      <p className="text-sm text-muted-foreground font-light leading-relaxed pl-[46px]">
-                        SM200 M49 L2, Hacienda de Chinconcuac<br />
-                        Supermanzana Circuito casa 1587B<br />
-                        Cancún, Quintana Roo · C.P. 77539
-                      </p>
-                    </div>
+                    ))}
 
-                    {/* Hours */}
-                    <div className="mb-6">
-                      <div className="flex items-center gap-2.5 mb-3">
-                        <div className="w-9 h-9 rounded-xl bg-accent-blue/10 border border-accent-blue/15 flex items-center justify-center shrink-0">
-                          <Clock className="w-4 h-4 text-accent-blue/70" />
-                        </div>
-                        <p className="font-bold text-primary text-sm">Horario</p>
-                      </div>
-                      <div className="text-sm text-muted-foreground font-light leading-relaxed pl-[46px] space-y-1">
-                        <div className="flex justify-between">
-                          <span>Lunes a Viernes</span>
-                          <span className="font-medium text-foreground">9:00 – 7:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Sábados</span>
-                          <span className="font-medium text-foreground">9:00 – 2:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Domingos</span>
-                          <span className="text-muted-foreground/50">Cerrado</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Contact shortcuts */}
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-2.5 pt-2">
                       <a
-                        href={`https://www.google.com/maps/dir/?api=1&destination=21.1530418,-86.8958544`}
+                        href="https://www.google.com/maps/dir/?api=1&destination=21.1530418,-86.8958544"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-card border-2 border-border rounded-xl text-primary font-bold text-xs uppercase tracking-widest hover:border-primary/50 hover:shadow-md transition-all active:scale-[0.98]"
+                        className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all border-2 border-border hover:border-primary/50"
+                        style={{ color: '#382f51', background: '#fff' }}
                       >
-                        <Navigation className="w-4 h-4" />
+                        <Navigation className="w-4 h-4" aria-hidden="true" />
                         Cómo llegar
                       </a>
                       <a
                         href={waUrl('Hola Karen, me gustaría agendar una cita en tu consultorio de Cancún.')}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
+                        className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all hover:opacity-90"
+                        style={{ background: '#25d366' }}
                       >
-                        <MessageCircle className="w-4 h-4" />
+                        <MessageCircle className="w-4 h-4" aria-hidden="true" />
                         WhatsApp
                       </a>
                     </div>
@@ -1122,61 +1155,81 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              7 · CTA — Contact + quick links
+              12 · CTA FINAL — closing conversion
               ══════════════════════════════════════════════════════ */}
           <section id="cta-final" className="py-14 sm:py-20 bg-gradient-to-br from-secondary to-accent-blue/20 border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
                 <div className="text-center mb-10">
                   <h2 className="text-4xl sm:text-5xl font-serif font-bold text-primary mb-4">¿Lista para dar el primer paso?</h2>
-                  <p className="text-muted-foreground font-light max-w-xl mx-auto">Selecciona la evaluación que necesitas o escríbeme por WhatsApp para orientación gratuita.</p>
+                  <p className="text-muted-foreground font-light max-w-xl mx-auto">
+                    Selecciona la evaluación que necesitas o escríbeme por WhatsApp para orientación gratuita.
+                  </p>
                 </div>
               </SectionReveal>
 
-              {/* Quick service links */}
               <SectionReveal delay={0.1}>
                 <div className="grid sm:grid-cols-3 gap-3 mb-10">
                   {services.map((service) => (
-                    <Link key={service.slug} href={service.slug} className={`group flex flex-col items-center gap-3 p-5 bg-card border-2 border-border rounded-2xl hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 ${service.borderHover}`}>
+                    <Link
+                      key={service.slug}
+                      href={service.slug}
+                      className={`group flex flex-col items-center gap-3 p-5 bg-card border-2 border-border rounded-2xl hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 ${service.borderHover}`}
+                    >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <service.icon className="w-5 h-5 text-primary/70" />
+                        <service.icon className="w-5 h-5 text-primary/70" aria-hidden="true" />
                       </div>
                       <div className="text-center">
                         <p className="font-bold text-primary text-sm mb-0.5">{service.label}</p>
                         <p className="text-xs text-muted-foreground font-light">{service.age} · {service.price}</p>
                       </div>
                       <span className="text-xs font-bold uppercase tracking-widest text-primary/50 flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Agendar <ArrowRight className="w-3 h-3" />
+                        Agendar <ArrowRight className="w-3 h-3" aria-hidden="true" />
                       </span>
                     </Link>
                   ))}
                 </div>
               </SectionReveal>
 
-              {/* Contact */}
               <SectionReveal delay={0.2}>
                 <div className="pt-8 border-t border-border">
                   <p className="text-center text-sm text-muted-foreground font-light mb-5">¿Prefieres hablar antes de agendar?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href={waUrl('Hola Karen, vi tu página y me gustaría saber más sobre las evaluaciones que ofreces.')} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
-                      <MessageCircle className="w-4 h-4" />
+                    <a
+                      href={waUrl('Hola Karen, vi tu página y me gustaría saber más sobre las evaluaciones que ofreces.')}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all hover:opacity-90"
+                      style={{ background: '#25d366' }}
+                    >
+                      <MessageCircle className="w-4 h-4" aria-hidden="true" />
                       WhatsApp
                     </a>
-                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
-                      <Phone className="w-4 h-4" />
+                    <a
+                      href={`tel:${PHONE_NUMBER}`}
+                      className="flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all"
+                    >
+                      <Phone className="w-4 h-4" aria-hidden="true" />
                       Llamar
                     </a>
                   </div>
-                  <p className="text-xs text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
+                  <p className="text-xs text-muted-foreground/50 text-center mt-4">
+                    Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM
+                  </p>
                 </div>
               </SectionReveal>
 
-              {/* Trust badges */}
               <SectionReveal delay={0.3}>
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><Shield className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Reembolso del anticipo</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Cédula 11009616</span>
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border">
+                    <Shield className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Cancelación con 48 hrs
+                  </span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border">
+                    <ShieldCheck className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Reembolso del anticipo
+                  </span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border">
+                    <BadgeCheck className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Cédula 11009616
+                  </span>
                 </div>
               </SectionReveal>
             </div>
@@ -1186,9 +1239,7 @@ export default function Home() {
 
         <Footer />
 
-        {/* ══════════════════════════════════════════════════════
-            STICKY CTA — Mobile only, appears after hero
-            ══════════════════════════════════════════════════════ */}
+        {/* ── Sticky CTA — mobile only, appears after hero ── */}
         <div
           className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${showStickyCta ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
@@ -1200,21 +1251,23 @@ export default function Home() {
                 onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-primary/25 text-primary font-bold text-xs uppercase tracking-widest rounded-xl hover:border-primary/60 transition-all active:scale-[0.97]"
               >
-                <Brain className="w-4 h-4" />
+                <Brain className="w-4 h-4" aria-hidden="true" />
                 Servicios
               </a>
               <a
                 href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
+                style={{ background: '#25d366' }}
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
                 WhatsApp
               </a>
             </div>
           </div>
         </div>
+
       </div>
     </>
   );
