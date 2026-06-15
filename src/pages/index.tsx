@@ -412,10 +412,13 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <h1 className="font-serif font-bold text-white leading-[1.12] mb-5" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)' }}>
-                    Neuropsicóloga<br />en Cancún<br />
-                    <span className="font-normal italic" style={{ color: 'rgba(208,208,231,0.72)' }}>Respuestas donde antes había incertidumbre</span>
+                  <h1 className="font-serif font-bold text-white leading-[1.08] mb-4" style={{ fontSize: 'clamp(3rem, 7vw, 5rem)' }}>
+                    Neuropsicóloga<br />en Cancún
                   </h1>
+
+                  <p className="font-serif font-normal italic leading-snug mb-5" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', color: 'rgba(208,208,231,0.72)' }}>
+                    Respuestas donde antes había incertidumbre
+                  </p>
 
                   <p className="text-base leading-relaxed mb-8 max-w-[54ch]" style={{ color: 'rgba(208,208,231,0.82)' }}>
                     Evaluaciones neuropsicológicas de <strong className="text-white font-semibold">TDAH</strong> y{' '}
