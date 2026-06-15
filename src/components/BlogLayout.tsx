@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, Clock, Calendar, User } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock, Calendar, User, BookOpen, LayoutTemplate } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
@@ -43,6 +43,8 @@ const BlogLayout = ({
   ctaMessage = 'Hola%20Karen,%20le%C3%AD%20tu%20blog%20y%20me%20gustar%C3%ADa%20agendar%20una%20valoraci%C3%B3n',
   accentColor = 'blue',
 }: BlogLayoutProps) => {
+  const [readingMode, setReadingMode] = useState(false);
+
   const accentMap = {
     blue: 'bg-accent-blue/20',
     sand: 'bg-accent-sand/30',
@@ -131,8 +133,20 @@ const BlogLayout = ({
 
         {/* Content + TOC sidebar (desktop: 2 columns, mobile: stacked) */}
         <section className="py-12 px-6 bg-card">
-          <div className="max-w-6xl mx-auto">
-            <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-16 xl:gap-20">
+          <div className={readingMode ? 'max-w-[740px] mx-auto' : 'max-w-6xl mx-auto'}>
+            {/* Reading mode toggle */}
+            <div className="mb-6 flex justify-end">
+              <button
+                onClick={() => setReadingMode((v) => !v)}
+                aria-pressed={readingMode}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-xs font-semibold text-primary/70 hover:text-primary hover:border-primary/40 transition-all bg-card"
+              >
+                {readingMode ? <LayoutTemplate className="w-3.5 h-3.5" /> : <BookOpen className="w-3.5 h-3.5" />}
+                {readingMode ? 'Vista normal' : 'Modo lectura'}
+              </button>
+            </div>
+
+            <div className={readingMode ? '' : 'lg:grid lg:grid-cols-[1fr_260px] lg:gap-16 xl:gap-20'}>
               {/* Article content */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -142,8 +156,8 @@ const BlogLayout = ({
                 <div className="prose-blog">{children}</div>
               </motion.div>
 
-              {/* TOC sidebar — hidden on mobile, sticky on desktop */}
-              <TableOfContents />
+              {/* TOC sidebar — hidden on mobile, hidden in reading mode, sticky on desktop */}
+              {!readingMode && <TableOfContents />}
             </div>
           </div>
         </section>

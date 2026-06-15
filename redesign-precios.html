@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios y qué incluye cada evaluación | Karen Trujillo Neuropsicóloga · Cancún</title>
+  <meta name="description" content="Precios de evaluación neuropsicológica de TDAH y autismo en Cancún. TDAH niños $8,300 · TDAH adultos $8,300 · TEA $8,500. Todo incluido: pruebas, sesiones e informe oficial." />
+  <meta name="author" content="Karen Trujillo, Neuropsicóloga — Cédula 11009616" />
+  <link rel="canonical" href="https://karentrujillo.com/precios" />
+  <meta property="og:title" content="Precios y qué incluye cada evaluación — Karen Trujillo Neuropsicóloga" />
+  <meta property="og:description" content="Precios claros y sin letra chica. TDAH niños $8,300 · TDAH adultos $8,300 · TEA $8,500. Todo incluido: sesiones, pruebas e informe con validez oficial." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN Play -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'plum-deep':  '#2b1f47',
+            'plum-ink':   '#382f51',
+            'plum-mid':   '#5b4e7f',
+            'lavender':   '#d0d0e7',
+            'blush':      '#fbdbe0',
+            'sand':       '#f5dfc5',
+            'surface':    '#f8f7fc',
+            'ink2':       '#515e71',
+            'wa':         '#25d366',
+          },
+          fontFamily: {
+            display: ['Gloock', 'Georgia', 'serif'],
+            body:    ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background: #ffffff;
+      color: #515e71;
+    }
+
+    /* ── Navbar ── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1rem 1.5rem;
+      transition: background 0.25s ease, box-shadow 0.25s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 16px rgba(56,47,81,0.10);
+    }
+    .nav-logo {
+      font-family: 'Gloock', serif;
+      font-size: 1.125rem;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    #navbar.scrolled .nav-logo { color: #382f51; }
+    .nav-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+    #navbar.scrolled .nav-link { color: rgba(56,47,81,0.75); }
+    .nav-link:hover, #navbar.scrolled .nav-link:hover { color: #382f51; }
+    #navbar:not(.scrolled) .nav-link:hover { color: #ffffff; }
+    .nav-cta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+      padding: 0.5rem 1.125rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      transition: background 0.18s ease;
+    }
+    #navbar.scrolled .nav-cta { background: #382f51; border-color: #382f51; }
+    .nav-cta:hover { background: rgba(255,255,255,0.28); }
+    #navbar.scrolled .nav-cta:hover { background: #2b1f47; }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    /* ── Page Header ── */
+    .page-header {
+      background: #2b1f47;
+      padding-top: 7rem;
+      padding-bottom: 3.5rem;
+    }
+    .layout-wrapper {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .breadcrumb {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: rgba(208,208,231,0.65);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.375rem;
+    }
+    .breadcrumb a { color: rgba(208,208,231,0.8); text-decoration: none; }
+    .breadcrumb a:hover { color: #d0d0e7; }
+    .page-headline {
+      font-family: 'Gloock', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      max-width: 680px;
+    }
+    .page-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.0625rem;
+      color: rgba(208,208,231,0.85);
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 2rem;
+    }
+    .header-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+    .trust-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4375rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: rgba(208,208,231,0.8);
+    }
+    .trust-chip svg { color: #d0d0e7; flex-shrink: 0; }
+
+    /* ── Section Heading ── */
+    .section-eyebrow {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5b4e7f;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Gloock', serif;
+      font-size: clamp(1.625rem, 3.5vw, 2.25rem);
+      color: #2b1f47;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .section-body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: #515e71;
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    /* ── Pricing Cards ── */
+    .pricing-section {
+      padding: 5rem 1.5rem 3rem;
+      background: #f8f7fc;
+    }
+    .pricing-intro {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .pricing-intro .section-body { margin: 0 auto; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .pricing-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1.5px solid rgba(91,78,127,0.12);
+      transition: box-shadow 0.22s ease, transform 0.22s ease;
+    }
+    .pricing-card:hover {
+      box-shadow: 0 12px 40px rgba(56,47,81,0.14);
+      transform: translateY(-4px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pricing-card:hover { transform: none; }
+    }
+    .pricing-card.featured {
+      border-color: #5b4e7f;
+      box-shadow: 0 8px 32px rgba(56,47,81,0.16);
+    }
+
+    .card-top {
+      padding: 1.75rem 1.75rem 1.25rem;
+    }
+    .card-category-badge {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      margin-bottom: 0.875rem;
+    }
+    .badge-lavender { background: #d0d0e7; color: #2b1f47; }
+    .badge-sand     { background: #f5dfc5; color: #382f51; }
+    .badge-blush    { background: #fbdbe0; color: #5b4e7f; }
+
+    .card-service-name {
+      font-family: 'Gloock', serif;
+      font-size: 1.25rem;
+      color: #2b1f47;
+      line-height: 1.2;
+      margin-bottom: 0.375rem;
+    }
+    .card-age {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      color: #5b4e7f;
+      font-weight: 500;
+      margin-bottom: 1.375rem;
+    }
+    .card-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.375rem;
+      margin-bottom: 0.25rem;
+    }
+    .card-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #382f51;
+      line-height: 1;
+    }
+    .card-currency {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #5b4e7f;
+    }
+    .card-price-note {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(81,94,113,0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-divider {
+      height: 1px;
+      background: rgba(91,78,127,0.1);
+      margin: 0 1.75rem;
+    }
+
+    .card-includes {
+      padding: 1.5rem 1.75rem;
+      flex: 1;
+    }
+    .card-includes-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5b4e7f;
+      margin-bottom: 1rem;
+    }
+    .includes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6875rem;
+    }
+    .includes-list li {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      color: #515e71;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      line-height: 1.5;
+    }
+    .includes-list li::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(91,78,127,0.15);
+      flex-shrink: 0;
+      margin-top: 0.15em;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5l2.5 2.5 3.5-4' stroke='%235b4e7f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .card-bottom {
+      padding: 1.25rem 1.75rem 1.75rem;
+    }
+    .btn-wa-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #25d366;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      padding: 0.875rem 1.25rem;
+      border-radius: 10px;
+      width: 100%;
+      text-align: center;
+      transition: background 0.18s ease, transform 0.15s ease;
+    }
+    .btn-wa-card:hover { background: #1da854; transform: translateY(-1px); }
+    .btn-wa-card svg { flex-shrink: 0; }
+
+    /* ── What's Included Detail Section ── */
+    .detail-section {
+      padding: 5rem 1.5rem;
+      background: #ffffff;
+    }
+    .detail-header {
+      max-width: 540px;
+      margin-bottom: 3.5rem;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    @media (min-width: 1024px) {
+      .detail-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .detail-col {}
+    .detail-col-name {
+      font-family: 'Gloock', serif;
+      font-size: 1.125rem;
+      color: #2b1f47;
+      margin-bottom: 0.25rem;
+    }
+    .detail-col-age {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: #5b4e7f;
+      font-weight: 500;
+      margin-bottom: 1.375rem;
+    }
+    .instrument-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid rgba(91,78,127,0.13);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .instrument-item {
+      padding: 0.875rem 1.125rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .instrument-item:not(:last-child) { border-bottom: 1px solid rgba(91,78,127,0.08); }
+    .instrument-item:nth-child(odd) { background: #f8f7fc; }
+    .instrument-item:nth-child(even) { background: #ffffff; }
+    .instrument-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #382f51;
+    }
+    .instrument-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      color: rgba(81,94,113,0.8);
+      line-height: 1.45;
+    }
+    .detail-col-also {
+      margin-top: 1.25rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      color: #515e71;
+    }
+    .detail-col-also strong { color: #382f51; font-weight: 600; }
+
+    /* ── Payment Section ── */
+    .payment-section {
+      padding: 5rem 1.5rem;
+      background: #f8f7fc;
+    }
+    .payment-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 768px) {
+      .payment-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .payment-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .payment-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid rgba(91,78,127,0.1);
+    }
+    .payment-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(91,78,127,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.125rem;
+      color: #5b4e7f;
+    }
+    .payment-title {
+      font-family: 'Gloock', serif;
+      font-size: 1.0625rem;
+      color: #2b1f47;
+      margin-bottom: 0.625rem;
+    }
+    .payment-body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      color: #515e71;
+      line-height: 1.65;
+    }
+    .payment-body strong { color: #382f51; font-weight: 700; }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 5rem 1.5rem;
+      background: #ffffff;
+    }
+    .faq-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid rgba(91,78,127,0.12);
+    }
+    .faq-btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 1.25rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .faq-question {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2b1f47;
+      line-height: 1.4;
+    }
+    .faq-chevron {
+      flex-shrink: 0;
+      color: #5b4e7f;
+      transition: transform 0.22s ease;
+    }
+    .faq-btn[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      display: none;
+      padding-bottom: 1.25rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9375rem;
+      color: #515e71;
+      line-height: 1.7;
+    }
+    .faq-answer.open { display: block; }
+
+    /* ── CTA Bottom ── */
+    .cta-bottom {
+      background: #2b1f47;
+      padding: 4.5rem 1.5rem;
+      text-align: center;
+    }
+    .cta-bottom-inner { max-width: 660px; margin: 0 auto; }
+    .cta-bottom h2 {
+      font-family: 'Gloock', serif;
+      font-size: clamp(1.625rem, 3.5vw, 2.25rem);
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .cta-bottom p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: rgba(208,208,231,0.85);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .cta-bottom-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.875rem;
+    }
+    .btn-wa-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25d366;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.9375rem 1.875rem;
+      border-radius: 10px;
+      transition: background 0.18s ease, transform 0.15s ease;
+    }
+    .btn-wa-lg:hover { background: #1da854; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.9375rem 1.875rem;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55); }
+
+    /* ── Footer ── */
+    .site-footer { background: #2b1f47; padding: 3.5rem 1.5rem 2rem; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) { .footer-top { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; } }
+    .footer-logo { font-family: 'Gloock', serif; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.625rem; }
+    .footer-desc { font-family: 'Montserrat', sans-serif; font-size: 0.875rem; color: rgba(208,208,231,0.65); line-height: 1.65; max-width: 300px; }
+    .footer-col-title { font-family: 'Montserrat', sans-serif; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(208,208,231,0.5); margin-bottom: 0.875rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a { font-family: 'Montserrat', sans-serif; font-size: 0.875rem; color: rgba(208,208,231,0.75); text-decoration: none; transition: color 0.15s ease; }
+    .footer-links a:hover { color: #d0d0e7; }
+    .footer-divider { border: none; border-top: 1px solid rgba(208,208,231,0.1); margin-bottom: 1.5rem; }
+    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem; }
+    .footer-copy { font-family: 'Montserrat', sans-serif; font-size: 0.8125rem; color: rgba(208,208,231,0.45); }
+    .footer-cedula { font-family: 'Montserrat', sans-serif; font-size: 0.8125rem; color: rgba(208,208,231,0.45); }
+
+    /* ── Floating WhatsApp ── */
+    .fab-wa {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200;
+      width: 56px; height: 56px; background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .fab-wa:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    @media (prefers-reduced-motion: reduce) { .fab-wa:hover { transform: none; } }
+    .fab-wa svg { width: 26px; height: 26px; }
+
+    /* ── Utility ── */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav id="navbar" aria-label="Navegación principal">
+  <div class="layout-wrapper flex items-center justify-between" style="padding-top:0;padding-bottom:0;">
+    <a href="/" class="nav-logo" aria-label="Karen Trujillo Neuropsicóloga — Inicio">Karen Trujillo</a>
+
+    <div class="hidden md:flex items-center gap-6 lg:gap-8">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/#servicios" class="nav-link">Servicios</a>
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20información%20sobre%20precios" target="_blank" rel="noopener noreferrer" class="nav-cta">Agendar</a>
+    </div>
+
+    <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú" class="md:hidden flex flex-col gap-1.5 p-2">
+      <span class="block w-5 h-0.5 bg-white transition-all" id="ham-1"></span>
+      <span class="block w-5 h-0.5 bg-white transition-all" id="ham-2"></span>
+      <span class="block w-5 h-0.5 bg-white transition-all" id="ham-3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="navigation" aria-label="Menú móvil"
+    style="display:none; position:absolute; top:100%; left:0; right:0; background:rgba(43,31,71,0.97); backdrop-filter:blur(12px); flex-direction:column; padding:1rem 1.5rem 1.5rem; gap:0.25rem;">
+    <a href="/" class="nav-link" style="padding:0.75rem 0; display:block; color:rgba(208,208,231,0.85); border-bottom:1px solid rgba(208,208,231,0.1);">Inicio</a>
+    <a href="/#servicios" class="nav-link" style="padding:0.75rem 0; display:block; color:rgba(208,208,231,0.85); border-bottom:1px solid rgba(208,208,231,0.1);">Servicios</a>
+    <a href="/blog" class="nav-link" style="padding:0.75rem 0; display:block; color:rgba(208,208,231,0.85); border-bottom:1px solid rgba(208,208,231,0.1);">Blog</a>
+    <a href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20información%20sobre%20precios" target="_blank" rel="noopener noreferrer"
+      class="btn-wa-card" style="margin-top:0.75rem; border-radius:8px;">Agendar evaluación</a>
+  </div>
+</nav>
+
+<!-- ══════════════ PAGE HEADER ══════════════ -->
+<header class="page-header">
+  <div class="layout-wrapper">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a>
+      <span class="opacity-40" aria-hidden="true">/</span>
+      <span>Precios</span>
+    </nav>
+
+    <h1 class="page-headline">Precios claros, sin letra chica</h1>
+    <p class="page-sub">El costo cubre todo: sesiones de evaluación, baterías de pruebas, análisis, informe clínico y entrega con explicación. No hay cobros adicionales.</p>
+
+    <div class="header-trust">
+      <div class="trust-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Instrumentos estandarizados internacionales
+      </div>
+      <div class="trust-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Informe con validez ante IMSS y SEP
+      </div>
+      <div class="trust-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Entrega en 2–3 semanas
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ PRICING CARDS ══════════════ -->
+<section class="pricing-section" aria-labelledby="pricing-heading">
+  <div class="layout-wrapper">
+    <div class="pricing-intro">
+      <span class="section-eyebrow">Servicios</span>
+      <h2 class="section-title" id="pricing-heading">Tres evaluaciones, un estándar</h2>
+      <p class="section-body">Cada valoración es diferente por edad y objetivo, pero comparten el mismo rigor metodológico y la misma promesa: un diagnóstico diferencial preciso, no una impresión clínica.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- ── TDAH Niños ── -->
+      <div class="pricing-card" role="article" aria-label="Evaluación TDAH en Niños">
+        <div class="card-top">
+          <span class="card-category-badge badge-lavender">TDAH Infantil</span>
+          <h3 class="card-service-name">Evaluación TDAH Niños</h3>
+          <p class="card-age">Para niños y adolescentes de 5 a 17 años</p>
+          <div class="card-price-row">
+            <span class="card-currency">$</span>
+            <span class="card-price">8,300</span>
+            <span class="card-currency">MXN</span>
+          </div>
+          <p class="card-price-note">Todo incluido · Sin cobros adicionales</p>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-includes">
+          <p class="card-includes-label">Qué incluye</p>
+          <ul class="includes-list">
+            <li>Entrevista clínica con padres (DIVA adaptado)</li>
+            <li>Escala Conners-3 para niños y padres</li>
+            <li>WISC-V — inteligencia y velocidad de procesamiento</li>
+            <li>BRIEF-2 — funciones ejecutivas (niños)</li>
+            <li>CPT-3 — atención sostenida computarizada</li>
+            <li>Sesión de devolución con padres e hijo</li>
+            <li>Informe clínico completo con validez oficial</li>
+            <li>Orientaciones para escuela e institución</li>
+          </ul>
+        </div>
+        <div class="card-bottom">
+          <a
+            href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluación%20de%20TDAH%20para%20niños.%20¿Cuál%20es%20la%20disponibilidad?"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+            aria-label="Consultar disponibilidad para evaluación TDAH en niños"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+            Consultar disponibilidad
+          </a>
+        </div>
+      </div>
+
+      <!-- ── TDAH Adultos (featured) ── -->
+      <div class="pricing-card featured" role="article" aria-label="Evaluación TDAH en Adultos">
+        <div class="card-top">
+          <span class="card-category-badge badge-sand">TDAH Adultos</span>
+          <h3 class="card-service-name">Evaluación TDAH Adultos</h3>
+          <p class="card-age">Para mayores de 18 años</p>
+          <div class="card-price-row">
+            <span class="card-currency">$</span>
+            <span class="card-price">8,300</span>
+            <span class="card-currency">MXN</span>
+          </div>
+          <p class="card-price-note">Todo incluido · Sin cobros adicionales</p>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-includes">
+          <p class="card-includes-label">Qué incluye</p>
+          <ul class="includes-list">
+            <li>Entrevista diagnóstica estructurada DIVA 2.0</li>
+            <li>CAARS-2 — Conners' Adult ADHD Rating Scales</li>
+            <li>WAIS-IV — inteligencia general adultos</li>
+            <li>BRIEF-2A — funciones ejecutivas adultos</li>
+            <li>CPT-3 — atención y control inhibitorio</li>
+            <li>Sesión de devolución de resultados</li>
+            <li>Informe con validez ante IMSS y empleadores</li>
+            <li>Recomendaciones de tratamiento específicas</li>
+          </ul>
+        </div>
+        <div class="card-bottom">
+          <a
+            href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluación%20de%20TDAH%20para%20adultos.%20¿Cuál%20es%20la%20disponibilidad?"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+            aria-label="Consultar disponibilidad para evaluación TDAH en adultos"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+            Consultar disponibilidad
+          </a>
+        </div>
+      </div>
+
+      <!-- ── TEA / Autismo ── -->
+      <div class="pricing-card" role="article" aria-label="Evaluación Autismo TEA">
+        <div class="card-top">
+          <span class="card-category-badge badge-blush">Autismo · TEA</span>
+          <h3 class="card-service-name">Evaluación Autismo (TEA)</h3>
+          <p class="card-age">Niños, adolescentes y adultos</p>
+          <div class="card-price-row">
+            <span class="card-currency">$</span>
+            <span class="card-price">8,500</span>
+            <span class="card-currency">MXN</span>
+          </div>
+          <p class="card-price-note">Todo incluido · Sin cobros adicionales</p>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-includes">
+          <p class="card-includes-label">Qué incluye</p>
+          <ul class="includes-list">
+            <li>ADOS-2 — protocolo de observación directa (gold standard)</li>
+            <li>ADI-R — entrevista diagnóstica con padres</li>
+            <li>WISC-V / WAIS-IV según edad</li>
+            <li>Vineland-3 — habilidades adaptativas</li>
+            <li>Evaluación sensorial y comunicación</li>
+            <li>Sesión de devolución detallada</li>
+            <li>Informe con validez para apoyos escolares e IMSS</li>
+            <li>Orientaciones de intervención temprana</li>
+          </ul>
+        </div>
+        <div class="card-bottom">
+          <a
+            href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluación%20de%20autismo%20(TEA).%20¿Cuál%20es%20la%20disponibilidad?"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+            aria-label="Consultar disponibilidad para evaluación de autismo"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+            Consultar disponibilidad
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHAT'S INCLUDED — INSTRUMENTS ══════════════ -->
+<section class="detail-section" aria-labelledby="instruments-heading">
+  <div class="layout-wrapper">
+    <div class="detail-header">
+      <span class="section-eyebrow">Por qué importa</span>
+      <h2 class="section-title" id="instruments-heading">Cada instrumento tiene un propósito específico</h2>
+      <p class="section-body">Un diagnóstico neuropsicológico no es una impresión clínica ni un cuestionario en línea. Es el resultado de aplicar baterías estandarizadas que han sido validadas con miles de personas. Esto es lo que cada prueba mide.</p>
+    </div>
+
+    <div class="detail-grid">
+
+      <!-- TDAH Niños instruments -->
+      <div class="detail-col">
+        <div class="card-category-badge badge-lavender" style="margin-bottom:0.75rem;">TDAH Infantil (5–17 años)</div>
+        <h3 class="detail-col-name">Evaluación TDAH Niños</h3>
+        <p class="detail-col-age">$8,300 MXN · Todo incluido</p>
+        <ul class="instrument-list" aria-label="Pruebas incluidas en evaluación TDAH niños">
+          <li class="instrument-item">
+            <span class="instrument-name">CONNERS-3</span>
+            <span class="instrument-desc">Escala de padres y maestros para inatención, hiperactividad e impulsividad. Detecta patrones conductuales en el entorno real del niño.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">WISC-V</span>
+            <span class="instrument-desc">Escala de inteligencia infantil. Mide CI, velocidad de procesamiento y memoria de trabajo para descartar déficits cognitivos.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">BRIEF-2</span>
+            <span class="instrument-desc">Inventario de funciones ejecutivas: planificación, organización, flexibilidad cognitiva y monitoreo conductual en niños.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">CPT-3</span>
+            <span class="instrument-desc">Test de atención sostenida computarizado. Mide omisiones, comisiones y variabilidad de respuesta — objetivo e independiente del reporte de terceros.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">Entrevista DIVA adaptada</span>
+            <span class="instrument-desc">Historia evolutiva del niño: desarrollo temprano, rendimiento escolar, conducta en distintos contextos y antecedentes familiares.</span>
+          </li>
+        </ul>
+        <p class="detail-col-also" style="margin-top:1.125rem;">Incluye <strong>carta para la escuela</strong> con recomendaciones de ajustes pedagógicos y protocolos de apoyo.</p>
+      </div>
+
+      <!-- TDAH Adultos instruments -->
+      <div class="detail-col">
+        <div class="card-category-badge badge-sand" style="margin-bottom:0.75rem;">TDAH Adultos (+18 años)</div>
+        <h3 class="detail-col-name">Evaluación TDAH Adultos</h3>
+        <p class="detail-col-age">$8,300 MXN · Todo incluido</p>
+        <ul class="instrument-list" aria-label="Pruebas incluidas en evaluación TDAH adultos">
+          <li class="instrument-item">
+            <span class="instrument-name">DIVA 2.0</span>
+            <span class="instrument-desc">Entrevista diagnóstica retrospectiva de TDAH en adultos. Evalúa síntomas actuales e infancia con criterios DSM-5. Única entrevista diseñada específicamente para adultos.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">CAARS-2</span>
+            <span class="instrument-desc">Conners' Adult ADHD Rating Scales. Cuantifica inatención, hiperactividad e impulsividad en adultos con normas actualizadas.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">WAIS-IV</span>
+            <span class="instrument-desc">Escala de inteligencia adultos. Velocidad de procesamiento, memoria de trabajo y razonamiento para diagnóstico diferencial.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">BRIEF-2A</span>
+            <span class="instrument-desc">Inventario de funciones ejecutivas para adultos: gestión emocional, planificación, monitoreo y flexibilidad.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">CPT-3</span>
+            <span class="instrument-desc">Test computarizado de atención sostenida y control inhibitorio. Objetivo: no depende del autoreporte del paciente.</span>
+          </li>
+        </ul>
+        <p class="detail-col-also" style="margin-top:1.125rem;">El informe tiene <strong>validez ante IMSS, ISSSTE, empleadores y universidades</strong> en México.</p>
+      </div>
+
+      <!-- TEA instruments -->
+      <div class="detail-col">
+        <div class="card-category-badge badge-blush" style="margin-bottom:0.75rem;">Autismo · TEA</div>
+        <h3 class="detail-col-name">Evaluación Autismo (TEA)</h3>
+        <p class="detail-col-age">$8,500 MXN · Todo incluido</p>
+        <ul class="instrument-list" aria-label="Pruebas incluidas en evaluación de autismo">
+          <li class="instrument-item">
+            <span class="instrument-name">ADOS-2</span>
+            <span class="instrument-desc">Autism Diagnostic Observation Schedule. Observación directa semiestructurada. Estándar de oro internacional para diagnóstico de TEA.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">ADI-R</span>
+            <span class="instrument-desc">Autism Diagnostic Interview. Entrevista con padres sobre historia temprana: comunicación, socialización y conductas repetitivas desde los primeros años.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">WISC-V / WAIS-IV</span>
+            <span class="instrument-desc">Perfil cognitivo completo para identificar fortalezas e identificar necesidades de apoyo específicas.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">Vineland-3</span>
+            <span class="instrument-desc">Escala de conducta adaptativa. Evalúa comunicación, vida cotidiana y socialización funcional en la vida real.</span>
+          </li>
+          <li class="instrument-item">
+            <span class="instrument-name">Evaluación sensorial</span>
+            <span class="instrument-desc">Perfil sensorial para identificar hiper/hiposensibilidades y su impacto en el funcionamiento diario.</span>
+          </li>
+        </ul>
+        <p class="detail-col-also" style="margin-top:1.125rem;">Incluye orientaciones de <strong>intervención temprana</strong> y apoyo para solicitar apoyos en institución educativa.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PAYMENT & POLICY ══════════════ -->
+<section class="payment-section" aria-labelledby="payment-heading">
+  <div class="layout-wrapper">
+    <span class="section-eyebrow">Forma de pago</span>
+    <h2 class="section-title" id="payment-heading">Cómo funciona el proceso de pago</h2>
+    <p class="section-body">Proceso transparente y sin sorpresas — exactamente como manejas la información con tus pacientes.</p>
+
+    <div class="payment-grid">
+
+      <div class="payment-card">
+        <div class="payment-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h3 class="payment-title">Anticipo para confirmar fecha</h3>
+        <p class="payment-body">Al agendar se solicita un <strong>anticipo del 50%</strong> ($4,150 o $4,250 según evaluación). Este confirma tu lugar en la agenda y reserva las sesiones necesarias.</p>
+      </div>
+
+      <div class="payment-card">
+        <div class="payment-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="payment-title">Saldo al entregar el informe</h3>
+        <p class="payment-body">El <strong>50% restante</strong> se liquida en la sesión de devolución de resultados, cuando se entrega el informe completo. No antes.</p>
+      </div>
+
+      <div class="payment-card">
+        <div class="payment-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="payment-title">Métodos de pago</h3>
+        <p class="payment-body">Transferencia bancaria (SPEI), pago en efectivo y tarjeta de crédito/débito. <strong>Se emite factura</strong> (CFDI) para quienes la soliciten.</p>
+      </div>
+
+      <div class="payment-card">
+        <div class="payment-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3 class="payment-title">Cancelaciones y reagendamientos</h3>
+        <p class="payment-body">Cancelaciones con <strong>más de 48 horas</strong> de anticipación se reagendan sin costo. Cancelaciones en menos de 48 horas pierden el anticipo. El proceso de evaluación dura entre 1 y 2 semanas.</p>
+      </div>
+
+      <div class="payment-card">
+        <div class="payment-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3 class="payment-title">Entrega del informe</h3>
+        <p class="payment-body">El informe se entrega en <strong>2–3 semanas</strong> a partir de completar todas las sesiones. Se entrega en formato PDF y una copia impresa, con explicación presencial de los resultados.</p>
+      </div>
+
+      <div class="payment-card">
+        <div class="payment-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 class="payment-title">¿Tienes preguntas sobre el costo?</h3>
+        <p class="payment-body">Escribe por WhatsApp antes de agendar. <strong>Sin compromiso.</strong> Karen responde personalmente a dudas sobre el proceso, el precio y qué tipo de evaluación necesitas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="faq-section" aria-labelledby="faq-heading">
+  <div class="faq-inner">
+    <div class="faq-intro">
+      <span class="section-eyebrow">Preguntas frecuentes</span>
+      <h2 class="section-title" id="faq-heading">Lo que más nos preguntan sobre precios</h2>
+    </div>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-1">
+          <span class="faq-question">¿Por qué cuesta lo mismo TDAH niños y adultos?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-1" class="faq-answer" role="region">
+          Las baterías de pruebas son diferentes (WISC-V para niños vs. WAIS-IV para adultos, CONNERS-3 vs. CAARS-2), pero la cantidad de instrumentos y tiempo de evaluación es equivalente. Ambas incluyen 2–3 sesiones de aplicación más una sesión de devolución de resultados.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-2">
+          <span class="faq-question">¿Por qué la evaluación de TEA es ligeramente más cara?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-2" class="faq-answer" role="region">
+          El ADOS-2 y el ADI-R son protocolos de mayor complejidad de aplicación y calificación. El ADOS-2 en particular requiere entrenamiento especializado y es el estándar de oro internacional para diagnóstico de TEA — su aplicación correcta toma entre 45 y 60 minutos solo de observación directa, más el análisis posterior.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-3">
+          <span class="faq-question">¿El precio incluye seguimiento después del informe?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-3" class="faq-answer" role="region">
+          El precio incluye la sesión de devolución de resultados y orientación inmediata sobre los hallazgos. Si después de recibir el informe tienes preguntas adicionales, Karen responde por WhatsApp sin costo adicional durante las primeras 2 semanas. El seguimiento terapéutico continuo se cotiza por separado.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-4">
+          <span class="faq-question">¿Puedo pagar la evaluación en partes?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-4" class="faq-answer" role="region">
+          Sí. La evaluación se paga en dos partes: 50% al agendar (anticipo) y 50% al recibir el informe. Esto permite distribuir el costo a lo largo del proceso, que dura entre 1 y 2 semanas.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-5">
+          <span class="faq-question">¿El IMSS o un seguro médico privado cubre la evaluación?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-5" class="faq-answer" role="region">
+          Depende de la póliza. Algunos seguros privados reembolsan evaluaciones neuropsicológicas con factura (CFDI). El IMSS no suele reembolsarlo directamente, pero el informe tiene validez para tramitar apoyos y seguimientos dentro del sistema. Consulta primero con tu aseguradora.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-6">
+          <span class="faq-question">¿Cuánto tiempo dura todo el proceso, de principio a fin?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-6" class="faq-answer" role="region">
+          El proceso completo — desde la primera sesión hasta recibir el informe — toma entre 3 y 5 semanas. Las sesiones de aplicación duran 1–2 semanas, y el análisis y redacción del informe toma 2–3 semanas adicionales. Se programa una sesión final de devolución de resultados para explicar los hallazgos.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA BOTTOM ══════════════ -->
+<section class="cta-bottom" aria-labelledby="cta-bottom-heading">
+  <div class="cta-bottom-inner">
+    <h2 id="cta-bottom-heading">¿Listo para dar el siguiente paso?</h2>
+    <p>Escribe por WhatsApp para conocer la disponibilidad y resolver cualquier duda antes de agendar. Sin compromiso, sin formularios — respuesta directa de Karen.</p>
+    <div class="cta-bottom-btns">
+      <a
+        href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20información%20sobre%20precios%20y%20disponibilidad%20para%20una%20evaluación"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-wa-lg"
+        aria-label="Escribir a Karen por WhatsApp"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+        Escribir por WhatsApp
+      </a>
+      <a href="tel:+529983211547" class="btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        +52 998 321 1547
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="site-footer" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Pie de página</h2>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">Karen Trujillo</p>
+        <p class="footer-desc">Neuropsicóloga especializada en diagnóstico de TDAH y autismo en Cancún. Evaluaciones con instrumentos estandarizados internacionales e informes con validez oficial.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Servicios</p>
+        <ul class="footer-links">
+          <li><a href="/evaluacion-tdah-ninos">TDAH en Niños</a></li>
+          <li><a href="/evaluacion-tdah-adultos">TDAH en Adultos</a></li>
+          <li><a href="/evaluacion-autismo-cancun">Evaluación Autismo</a></li>
+          <li><a href="/para-escuelas">Para Escuelas</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Información</p>
+        <ul class="footer-links">
+          <li><a href="/#sobre-karen">Sobre Karen</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/precios">Precios</a></li>
+          <li><a href="https://wa.me/529983211547?text=Hola%20Karen%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Karen Trujillo — Neuropsicóloga. Cancún, Quintana Roo.</p>
+      <p class="footer-cedula">Cédula Profesional 11009616 · SEP México</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ FLOATING WHATSAPP ══════════════ -->
+<a
+  href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20información%20sobre%20precios"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fab-wa"
+  aria-label="Escribir por WhatsApp a Karen Trujillo"
+>
+  <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/>
+  </svg>
+</a>
+
+<!-- ══════════════ SCRIPTS ══════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Navbar ── */
+  var navbar = document.getElementById('navbar');
+  function updateNavbar() {
+    if (window.scrollY > 40) { navbar.classList.add('scrolled'); }
+    else { navbar.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  /* ── Mobile Menu ── */
+  var toggle = document.getElementById('nav-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var ham1 = document.getElementById('ham-1');
+  var ham2 = document.getElementById('ham-2');
+  var ham3 = document.getElementById('ham-3');
+
+  toggle.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.contains('open');
+    if (isOpen) {
+      mobileMenu.classList.remove('open');
+      mobileMenu.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menú');
+      ham1.style.transform = ''; ham2.style.opacity = ''; ham3.style.transform = '';
+    } else {
+      mobileMenu.classList.add('open');
+      mobileMenu.style.display = 'flex';
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Cerrar menú');
+      if (!prefersReducedMotion) {
+        ham1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+        ham2.style.opacity = '0';
+        ham3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+      }
+    }
+  });
+
+  /* ── FAQ Accordion ── */
+  var faqBtns = document.querySelectorAll('.faq-btn');
+  faqBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      var answerId = btn.getAttribute('aria-controls');
+      var answer = document.getElementById(answerId);
+
+      faqBtns.forEach(function (other) {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          var otherId = other.getAttribute('aria-controls');
+          var otherAnswer = document.getElementById(otherId);
+          if (otherAnswer) otherAnswer.classList.remove('open');
+        }
+      });
+
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        if (answer) answer.classList.remove('open');
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        if (answer) answer.classList.add('open');
+      }
+    });
+  });
+
+})();
+</script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Karen Trujillo — Neuropsicóloga",
+      "description": "Evaluación neuropsicológica de TDAH y autismo en Cancún",
+      "telephone": "+529983211547",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cancún",
+        "addressRegion": "Quintana Roo",
+        "addressCountry": "MX"
+      },
+      "url": "https://karentrujillo.com",
+      "priceRange": "$$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Evaluaciones Neuropsicológicas",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Evaluación TDAH Niños (5–17 años)" },
+            "price": "8300",
+            "priceCurrency": "MXN"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Evaluación TDAH Adultos (+18 años)" },
+            "price": "8300",
+            "priceCurrency": "MXN"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Evaluación Autismo (TEA)" },
+            "price": "8500",
+            "priceCurrency": "MXN"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la evaluación de TDAH en niños en Cancún?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La evaluación de TDAH en niños (5–17 años) tiene un costo de $8,300 MXN todo incluido: sesiones de aplicación, WISC-V, CONNERS-3, BRIEF-2, CPT-3 e informe clínico con validez oficial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la evaluación de TDAH en adultos en Cancún?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La evaluación de TDAH adultos (mayores de 18 años) tiene un costo de $8,300 MXN todo incluido: DIVA 2.0, CAARS-2, WAIS-IV, BRIEF-2A, CPT-3 e informe con validez ante IMSS y empleadores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la evaluación de autismo (TEA) en Cancún?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La evaluación de autismo tiene un costo de $8,500 MXN todo incluido: ADOS-2, ADI-R, WISC-V/WAIS-IV, Vineland-3, evaluación sensorial e informe completo con orientaciones de intervención."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
