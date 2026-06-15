@@ -43,18 +43,24 @@ const Navbar = () => {
 
   const sectionHref = (hash: string) => isHome ? hash : `/${hash}`;
 
+  const isDarkHero = isHome && !isScrolled;
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-300">
-      <nav className={`glass max-w-6xl mx-auto rounded-2xl px-6 py-4 flex justify-between items-center transition-shadow duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-soft'}`}>
+      <nav className={`max-w-6xl mx-auto rounded-2xl px-6 py-4 flex justify-between items-center transition-all duration-500 ${
+        isDarkHero ? 'bg-transparent' : `glass ${isScrolled ? 'shadow-lg' : 'shadow-soft'}`
+      }`}>
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center text-primary-foreground font-serif font-bold italic text-lg transition-transform group-hover:scale-110 group-hover:rotate-6">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-serif font-bold italic text-lg transition-transform group-hover:scale-110 group-hover:rotate-6 ${
+            isDarkHero ? 'bg-white/15 text-white border border-white/25' : 'bg-gradient-primary text-primary-foreground'
+          }`}>
             K
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-primary text-sm uppercase tracking-widest leading-none">Karen Trujillo</span>
-            <span className="text-[9px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">Neuropsicología · TDAH · Autismo</span>
+            <span className={`font-bold text-sm uppercase tracking-widest leading-none transition-colors ${isDarkHero ? 'text-white' : 'text-primary'}`}>Karen Trujillo</span>
+            <span className={`text-[9px] font-medium uppercase tracking-[0.2em] mt-1 transition-colors ${isDarkHero ? 'text-white/60' : 'text-muted-foreground'}`}>Neuropsicología · TDAH · Autismo</span>
           </div>
         </Link>
 
@@ -66,7 +72,9 @@ const Navbar = () => {
             onMouseLeave={() => setShowValoraciones(false)}
           >
             <button
-              className="flex items-center gap-1 px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary/70 hover:text-primary hover:bg-secondary rounded-lg transition-all"
+              className={`flex items-center gap-1 px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-lg transition-all ${
+                isDarkHero ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-primary/70 hover:text-primary hover:bg-secondary'
+              }`}
               aria-haspopup="true"
               aria-expanded={showValoraciones}
             >
@@ -103,7 +111,9 @@ const Navbar = () => {
               key={link.href}
               href={sectionHref(link.href)}
               onClick={(e) => handleSectionClick(e, link.href)}
-              className="px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary/70 hover:text-primary hover:bg-secondary rounded-lg transition-all"
+              className={`px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-lg transition-all ${
+                isDarkHero ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-primary/70 hover:text-primary hover:bg-secondary'
+              }`}
             >
               {link.label}
             </a>
@@ -113,7 +123,9 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-3">
           <a
             href={`tel:${PHONE_NUMBER}`}
-            className="px-4 py-2 text-xs font-bold text-primary hover:bg-secondary rounded-lg transition-all flex items-center gap-2"
+            className={`px-4 py-2 text-xs font-bold rounded-lg transition-all flex items-center gap-2 ${
+              isDarkHero ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-primary hover:bg-secondary'
+            }`}
           >
             <Phone className="w-4 h-4" />
             Llamar
@@ -122,7 +134,11 @@ const Navbar = () => {
             href={waUrl('Hola Karen, me interesa agendar una valoración')}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-primary hover:opacity-90 text-primary-foreground text-[11px] font-bold px-6 py-3 rounded-lg transition-all uppercase tracking-widest shadow-lg shadow-primary/20 transform hover:-translate-y-0.5"
+            className={`text-[11px] font-bold px-6 py-3 rounded-lg transition-all uppercase tracking-widest shadow-lg transform hover:-translate-y-0.5 ${
+              isDarkHero
+                ? 'bg-white/15 hover:bg-white/25 text-white border border-white/30'
+                : 'bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-primary/20'
+            }`}
           >
             Agendar Valoración
           </a>
