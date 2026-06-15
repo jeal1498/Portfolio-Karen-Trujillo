@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Karen Trujillo · Neuropsicóloga en Cancún</title>
+  <meta name="description" content="Artículos clínicos sobre TDAH y autismo escritos por la Neuropsicóloga Karen Trujillo. Información basada en evidencia para padres y adultos en Cancún." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Gloock', 'Georgia', 'serif'],
+            body:    ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            'plum-deep': '#2b1f47',
+            'plum-ink':  '#382f51',
+            'plum-mid':  '#5b4e7f',
+            'lavender':  '#d0d0e7',
+            'blush':     '#fbdbe0',
+            'sand':      '#f5dfc5',
+            'surface':   '#f8f7fc',
+            'ink2':      '#515e71',
+            'wa':        '#25d366',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* ─── Reset & Base ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background-color: #f8f7fc;
+      color: #2b1f47;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ─── Navbar ─────────────────────────────────────────────── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: #2b1f47;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(208, 208, 231, 0.1);
+    }
+
+    .navbar-inner {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Gloock', Georgia, serif;
+      color: #ffffff;
+      font-size: 1.0625rem;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+
+    .nav-logo span {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #d0d0e7;
+      margin-left: 6px;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+    }
+
+    .nav-link {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .nav-link.active {
+      color: #d0d0e7;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .nav-cta {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #d0d0e7;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      background-color: #382f51;
+      border: 1.5px solid rgba(208, 208, 231, 0.35);
+      letter-spacing: 0.03em;
+    }
+
+    .nav-cta:focus-visible {
+      outline: 2px solid #d0d0e7;
+      outline-offset: 3px;
+    }
+
+    /* ─── Category filter pills ──────────────────────────────── */
+    .filter-strip {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .filter-strip::-webkit-scrollbar { display: none; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid rgba(208, 208, 231, 0.35);
+      color: #d0d0e7;
+      background: transparent;
+      white-space: nowrap;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .pill.active {
+      background-color: #382f51;
+      color: #ffffff;
+      border-color: #382f51;
+    }
+
+    .pill:not(.active):hover {
+      background-color: rgba(208, 208, 231, 0.15);
+      border-color: rgba(208, 208, 231, 0.55);
+    }
+
+    .pill:focus-visible {
+      outline: 2px solid #d0d0e7;
+      outline-offset: 2px;
+    }
+
+    /* ─── Category badges ─────────────────────────────────────── */
+    .badge {
+      display: inline-block;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+
+    /* TDAH Infantil / Niñas / Inatento → lavender */
+    .badge-tdah-infantil,
+    .badge-tdah-ninas,
+    .badge-tdah-inatento {
+      background-color: #d0d0e7;
+      color: #382f51;
+    }
+
+    /* TDAH Adultos → sand */
+    .badge-tdah-adultos {
+      background-color: #f5dfc5;
+      color: #5b4e7f;
+    }
+
+    /* Autismo / TEA → blush */
+    .badge-autismo {
+      background-color: #fbdbe0;
+      color: #7a2535;
+    }
+
+    /* Precios → surface with border */
+    .badge-precios {
+      background-color: #f8f7fc;
+      color: #515e71;
+      border: 1px solid #d0d0e7;
+    }
+
+    /* Diagnóstico → plum-mid */
+    .badge-diagnostico {
+      background-color: #5b4e7f;
+      color: #ffffff;
+    }
+
+    /* Cancún / Local → plum-ink */
+    .badge-cancun {
+      background-color: #382f51;
+      color: #ffffff;
+    }
+
+    /* ─── Featured card ──────────────────────────────────────── */
+    .featured-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 1024px) {
+      .featured-card { flex-direction: row; }
+    }
+
+    .featured-img-wrap {
+      width: 100%;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    @media (min-width: 1024px) {
+      .featured-img-wrap {
+        width: 40%;
+        min-height: 320px;
+      }
+    }
+
+    .featured-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 220px;
+    }
+
+    @media (min-width: 1024px) {
+      .featured-img { min-height: 340px; }
+    }
+
+    .featured-body {
+      padding: 28px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      .featured-body {
+        width: 60%;
+        padding: 40px 44px;
+      }
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .featured-title {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      line-height: 1.3;
+      color: #2b1f47;
+      margin: 0 0 14px;
+    }
+
+    .featured-excerpt {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: #515e71;
+      margin: 0 0 24px;
+    }
+
+    .featured-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 30px;
+      background-color: #382f51;
+      color: #ffffff;
+      border-radius: 9999px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      align-self: flex-start;
+      border: none;
+    }
+
+    .featured-cta:hover {
+      background-color: #4a3f6a;
+    }
+
+    .featured-cta:focus-visible {
+      outline: 2px solid #382f51;
+      outline-offset: 3px;
+    }
+
+    /* ─── Article grid cards ─────────────────────────────────── */
+    .article-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: none;
+      position: relative;
+    }
+    .article-card.popular::before {
+      content: '🔥 Más leído';
+      position: absolute; top: 10px; right: 10px; z-index: 2;
+      background: #382f51; color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .65rem; font-weight: 700; letter-spacing: .05em;
+      padding: 4px 10px; border-radius: 9999px;
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 1.0625rem;
+      line-height: 1.42;
+      color: #2b1f47;
+      margin: 9px 0 10px;
+    }
+
+    .card-excerpt {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.84rem;
+      line-height: 1.65;
+      color: #515e71;
+      flex: 1;
+      margin: 0;
+    }
+
+    .card-footer {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .read-time {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.75rem;
+      color: #515e71;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .card-link {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #382f51;
+      text-decoration: none;
+    }
+
+    .card-link:hover { color: #5b4e7f; }
+
+    .card-link:focus-visible {
+      outline: 2px solid #382f51;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ─── Sidebar ─────────────────────────────────────────────── */
+    .sidebar-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .sidebar-title {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 1.0625rem;
+      color: #2b1f47;
+      margin: 0 0 12px;
+    }
+
+    .sidebar-desc {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.84rem;
+      line-height: 1.65;
+      color: #515e71;
+      margin: 0 0 18px;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 0;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #382f51;
+      text-decoration: none;
+      border-bottom: 1px solid #f0eef8;
+    }
+
+    .sidebar-link:last-child { border-bottom: none; }
+
+    .sidebar-link:hover { color: #5b4e7f; }
+
+    .sidebar-link:focus-visible {
+      outline: 2px solid #382f51;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px 20px;
+      background-color: #25d366;
+      color: #ffffff;
+      border-radius: 9999px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+    }
+
+    .wa-btn:hover { background-color: #1fb85a; }
+
+    .wa-btn:focus-visible {
+      outline: 2px solid #25d366;
+      outline-offset: 3px;
+    }
+
+    .sidebar-creds {
+      background: linear-gradient(135deg, #382f51 0%, #2b1f47 100%);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    .sidebar-creds-label {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #d0d0e7;
+      opacity: 0.72;
+      margin: 0 0 6px;
+    }
+
+    .sidebar-creds-num {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 1.125rem;
+      color: #ffffff;
+      margin: 0 0 6px;
+    }
+
+    .sidebar-creds-desc {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: #d0d0e7;
+      opacity: 0.82;
+      margin: 0;
+    }
+
+    /* ─── Sticky sidebar on desktop ──────────────────────────── */
+    @media (min-width: 1024px) {
+      .sticky-sidebar {
+        position: sticky;
+        top: 80px;
+        align-self: start;
+      }
+    }
+
+    /* ─── Newsletter strip ────────────────────────────────────── */
+    .newsletter-strip {
+      background-color: #2b1f47;
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .newsletter-title {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: #ffffff;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    }
+
+    .newsletter-sub {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #d0d0e7;
+      opacity: 0.88;
+      margin: 0 0 32px;
+    }
+
+    .newsletter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 32px;
+      background-color: #25d366;
+      color: #ffffff;
+      border-radius: 9999px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      border: none;
+    }
+
+    .newsletter-btn:hover { background-color: #1fb85a; }
+
+    .newsletter-btn:focus-visible {
+      outline: 2px solid #d0d0e7;
+      outline-offset: 4px;
+    }
+
+    /* ─── Floating WhatsApp ───────────────────────────────────── */
+    .float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .float-wa:focus-visible {
+      outline: 2px solid #25d366;
+      outline-offset: 4px;
+    }
+
+    /* ─── Footer ──────────────────────────────────────────────── */
+    .site-footer {
+      background-color: #1e1535;
+      padding: 36px 24px;
+    }
+
+    .footer-inner {
+      max-width: 72rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-logo {
+      font-family: 'Gloock', Georgia, serif;
+      color: #ffffff;
+      font-size: 0.9375rem;
+      opacity: 0.9;
+    }
+
+    .footer-copy {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.75rem;
+      color: #d0d0e7;
+      opacity: 0.6;
+      text-align: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav-link {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.75rem;
+      color: #d0d0e7;
+      opacity: 0.7;
+      text-decoration: none;
+    }
+
+    .footer-nav-link:hover { opacity: 1; }
+
+    /* ─── Empty state ─────────────────────────────────────────── */
+    #empty-state {
+      display: none;
+      padding: 64px 0;
+      text-align: center;
+    }
+
+    #empty-state p:first-child {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 1.25rem;
+      color: #382f51;
+      margin: 0 0 8px;
+    }
+
+    #empty-state p:last-child {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.875rem;
+      color: #515e71;
+      margin: 0;
+    }
+
+    #empty-state button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #5b4e7f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      padding: 0;
+    }
+
+    /* ─── Transition (respects prefers-reduced-motion) ────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .article-card {
+        transition:
+          box-shadow 220ms ease-out,
+          transform  220ms ease-out,
+          opacity    240ms ease-out;
+      }
+
+      .article-card:hover {
+        box-shadow: 0 8px 32px rgba(56, 47, 81, 0.12);
+        transform: translateY(-4px);
+      }
+
+      .featured-card {
+        transition:
+          box-shadow 220ms ease-out,
+          transform  220ms ease-out;
+      }
+
+      .featured-card:hover {
+        box-shadow: 0 8px 32px rgba(56, 47, 81, 0.12);
+        transform: translateY(-3px);
+      }
+
+      .sidebar-card {
+        transition: box-shadow 220ms ease-out;
+      }
+
+      .sidebar-card:hover {
+        box-shadow: 0 6px 24px rgba(56, 47, 81, 0.08);
+      }
+
+      .pill {
+        transition:
+          background-color 160ms ease-out,
+          border-color     160ms ease-out,
+          color            160ms ease-out;
+      }
+
+      .card-link {
+        transition: color 160ms ease-out;
+      }
+
+      .float-wa {
+        transition:
+          box-shadow 200ms ease-out,
+          transform  200ms ease-out;
+      }
+
+      .float-wa:hover {
+        box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+        transform: scale(1.08);
+      }
+
+      .featured-section {
+        transition: opacity 240ms ease-out;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STICKY NAVBAR
+  ════════════════════════════════════════════════════════════════ -->
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="/" class="nav-logo" aria-label="Karen Trujillo Neuropsicóloga — ir al inicio">
+        Karen Trujillo<span class="hidden md:inline">· Neuropsicóloga</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="/#servicios" class="nav-link">Servicios</a>
+        <a href="/blog" class="nav-link active" aria-current="page">Blog</a>
+        <a
+          href="https://wa.me/529981234567"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-cta"
+          aria-label="Agendar evaluación por WhatsApp"
+        >Agendar</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PAGE HEADER + CATEGORY FILTERS
+  ════════════════════════════════════════════════════════════════ -->
+  <section style="background-color:#2b1f47;" aria-labelledby="blog-heading">
+    <div style="max-width:72rem; margin:0 auto; padding:56px 20px 48px;">
+
+      <p style="font-family:'Montserrat',sans-serif; font-size:0.625rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#d0d0e7; opacity:0.72; margin:0 0 12px;">
+        Blog · Neuropsicología
+      </p>
+
+      <h1
+        id="blog-heading"
+        style="font-family:'Gloock',Georgia,serif; font-size:clamp(1.75rem,4vw,2.6rem); line-height:1.2; color:#ffffff; margin:0 0 16px; max-width:640px;"
+      >
+        Recursos sobre TDAH y Autismo
+      </h1>
+
+      <p style="font-family:'Montserrat',sans-serif; font-size:1rem; line-height:1.75; color:#d0d0e7; opacity:0.88; margin:0 0 40px; max-width:620px;">
+        Información clínica, consejos para padres y guías para navegar el proceso de diagnóstico. Escrito por la Neuropsicóloga Karen Trujillo.
+      </p>
+
+      <!-- Filter pills -->
+      <div class="filter-strip" role="group" aria-label="Filtrar artículos por categoría">
+        <button
+          class="pill active"
+          data-filter="Todos"
+          type="button"
+          onclick="filterArticles('Todos', this)"
+        >Todos</button>
+        <button
+          class="pill"
+          data-filter="TDAH Infantil"
+          type="button"
+          onclick="filterArticles('TDAH Infantil', this)"
+        >TDAH Infantil</button>
+        <button
+          class="pill"
+          data-filter="TDAH Adultos"
+          type="button"
+          onclick="filterArticles('TDAH Adultos', this)"
+        >TDAH Adultos</button>
+        <button
+          class="pill"
+          data-filter="Autismo / TEA"
+          type="button"
+          onclick="filterArticles('Autismo / TEA', this)"
+        >Autismo / TEA</button>
+        <button
+          class="pill"
+          data-filter="Diagnóstico"
+          type="button"
+          onclick="filterArticles('Diagnóstico', this)"
+        >Diagnóstico</button>
+        <button
+          class="pill"
+          data-filter="Precios"
+          type="button"
+          onclick="filterArticles('Precios', this)"
+        >Precios</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════════════════════ -->
+  <main
+    id="main-content"
+    style="max-width:72rem; margin:0 auto; padding:48px 20px 64px;"
+  >
+
+    <!-- ── FEATURED ARTICLE ─────────────────────────────────── -->
+    <section
+      class="featured-section"
+      id="featured-section"
+      aria-label="Artículo destacado"
+      style="margin-bottom:48px;"
+    >
+      <article
+        class="featured-card"
+        data-category="TDAH Infantil"
+        id="featured-article"
+      >
+        <!-- Image (40% on desktop) -->
+        <div class="featured-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80"
+            alt="Señales de TDAH en niños — evaluación neuropsicológica infantil"
+            class="featured-img"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Content (60% on desktop) -->
+        <div class="featured-body">
+          <div class="featured-meta">
+            <span class="badge badge-tdah-infantil">TDAH Infantil</span>
+            <span class="read-time" aria-label="Tiempo de lectura: 12 minutos">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12 min
+            </span>
+          </div>
+
+          <h2 class="featured-title">
+            ¿Tu hijo no pone atención? Señales reales de TDAH en niños
+          </h2>
+
+          <p class="featured-excerpt">
+            Guía para padres que sospechan: cómo diferenciar el comportamiento típico de señales que sí justifican una evaluación neuropsicológica. Por edades, con criterios clínicos reales.
+          </p>
+
+          <a
+            href="/blog/senales-reales-tdah-ninos"
+            class="featured-cta"
+            aria-label="Leer artículo: ¿Tu hijo no pone atención? Señales reales de TDAH en niños"
+          >
+            Leer artículo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- ── ARTICLE GRID + SIDEBAR ────────────────────────────── -->
+    <div style="display:flex; flex-direction:column; gap:40px;" class="lg:flex-row" id="content-row">
+
+      <!-- Article Grid -->
+      <div style="flex:1; min-width:0;" id="article-area">
+        <div
+          id="cards-grid"
+          style="display:grid; grid-template-columns:1fr; gap:28px;"
+          class="md:grid-cols-2"
+        >
+
+          <!-- ─── Card 1: Costo TDAH ─────────────────────────── -->
+          <article class="article-card" data-category="Precios">
+            <img
+              src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80"
+              alt="Proceso de evaluación neuropsicológica — costo de valoración TDAH en Cancún"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-precios">Precios</span>
+              <h3 class="card-title">¿Cuánto cuesta una valoración de TDAH en Cancún?</h3>
+              <p class="card-excerpt">Precio real, sin letra chica. $8,300 MXN que incluye informe clínico válido ante SEP e IMSS.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 7 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 min
+                </span>
+                <a href="/blog/costo-valoracion-tdah-cancun" class="card-link" aria-label="Leer: ¿Cuánto cuesta una valoración de TDAH en Cancún?">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 2: TDAH Adultos ──────────────────────── -->
+          <article class="article-card popular" data-category="TDAH Adultos">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+              alt="Adulto con dificultades de atención — TDAH en adultos diagnóstico tardío"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-tdah-adultos">TDAH Adultos</span>
+              <h3 class="card-title">TDAH en adultos: por qué miles llegan al diagnóstico después de los 30</h3>
+              <p class="card-excerpt">Te compensaste con inteligencia, te diagnosticaron ansiedad, o simplemente nadie lo vio.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 10 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  10 min
+                </span>
+                <a href="/blog/tdah-adultos-diagnostico-despues-30" class="card-link" aria-label="Leer: TDAH en adultos después de los 30">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 3: TDAH en Niñas ─────────────────────── -->
+          <article class="article-card popular" data-category="TDAH Infantil">
+            <img
+              src="https://images.unsplash.com/photo-1605711285791-0219e80e43a3?auto=format&fit=crop&w=800&q=80"
+              alt="Niña en entorno escolar — TDAH femenino síntomas invisibles"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-tdah-ninas">TDAH en Niñas</span>
+              <h3 class="card-title">TDAH en niñas: los síntomas que casi nadie detecta</h3>
+              <p class="card-excerpt">Sin hiperactividad, sin disrupción, con notas aceptables. El TDAH femenino es invisible al sistema.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 9 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  9 min
+                </span>
+                <a href="/blog/tdah-ninas-sintomas-invisibles" class="card-link" aria-label="Leer: TDAH en niñas">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 4: ADOS-2 ────────────────────────────── -->
+          <article class="article-card popular" data-category="Autismo / TEA">
+            <img
+              src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=800&q=80"
+              alt="Evaluación de autismo con ADOS-2 — estándar de oro para diagnóstico TEA"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-autismo">Autismo / TEA</span>
+              <h3 class="card-title">¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?</h3>
+              <p class="card-excerpt">El instrumento más confiable del mundo para evaluar TEA explicado sin jerga.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 11 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  11 min
+                </span>
+                <a href="/blog/que-es-el-ados-2" class="card-link" aria-label="Leer: ¿Qué es el ADOS-2?">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 5: Costo Autismo ─────────────────────── -->
+          <article class="article-card" data-category="Precios">
+            <img
+              src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?auto=format&fit=crop&w=800&q=80"
+              alt="Costo de evaluación de autismo en México — qué incluye el precio"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-autismo">Autismo · Precios</span>
+              <h3 class="card-title">¿Cuánto cuesta una evaluación de autismo en México?</h3>
+              <p class="card-excerpt">$8,500 MXN que incluye ADOS-2, ADI-R, WISC-V, Vineland-3 y sesión de devolución.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 8 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  8 min
+                </span>
+                <a href="/blog/costo-evaluacion-autismo-mexico" class="card-link" aria-label="Leer: Costo de evaluación de autismo en México">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 6: Autismo Nivel 1 ───────────────────── -->
+          <article class="article-card" data-category="Autismo / TEA">
+            <img
+              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+              alt="Autismo nivel 1 — personas sin diagnóstico aparente que funcionan diferente"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-autismo">Autismo / TEA</span>
+              <h3 class="card-title">Autismo nivel 1: cuando no pareces autista pero lo eres</h3>
+              <p class="card-excerpt">Sin discapacidad intelectual, con lenguaje fluido — y sintiéndose diferente toda la vida sin saber por qué.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 10 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  10 min
+                </span>
+                <a href="/blog/autismo-nivel-1" class="card-link" aria-label="Leer: Autismo nivel 1">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 7: TDAH Inatento ─────────────────────── -->
+          <article class="article-card" data-category="TDAH Infantil">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+              alt="TDAH inatento — síntomas invisibles en entornos cotidianos"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-tdah-inatento">TDAH Inatento</span>
+              <h3 class="card-title">TDAH inatento: el tipo que casi nadie detecta</h3>
+              <p class="card-excerpt">Sin hiperactividad, sin escándalo, sin diagnóstico. El TDAH inatento pasa años invisible.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 8 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  8 min
+                </span>
+                <a href="/blog/tdah-inatento" class="card-link" aria-label="Leer: TDAH inatento">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 8: TDAH vs Ansiedad ──────────────────── -->
+          <article class="article-card" data-category="Diagnóstico">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80"
+              alt="Diagnóstico diferencial — TDAH vs ansiedad cómo distinguirlos"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-diagnostico">Diagnóstico</span>
+              <h3 class="card-title">¿TDAH o ansiedad? Cómo saber cuál es cuál — o si son los dos</h3>
+              <p class="card-excerpt">Comparten síntomas pero tienen causas distintas y tratamientos diferentes.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 9 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  9 min
+                </span>
+                <a href="/blog/tdah-o-ansiedad" class="card-link" aria-label="Leer: ¿TDAH o ansiedad?">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 9: Burnout vs TDAH ───────────────────── -->
+          <article class="article-card" data-category="TDAH Adultos">
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+              alt="Burnout vs TDAH — cómo diferenciarlos en adultos"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-tdah-adultos">TDAH Adultos</span>
+              <h3 class="card-title">Burnout vs. TDAH: ¿por qué te sientes así y qué puedes hacer?</h3>
+              <p class="card-excerpt">Los síntomas se parecen pero el origen es diferente. La diferencia clave: en el burnout hubo un antes.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 9 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  9 min
+                </span>
+                <a href="/blog/burnout-vs-tdah" class="card-link" aria-label="Leer: Burnout vs TDAH">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ─── Card 10: Dónde evaluar en Cancún ──────────── -->
+          <article class="article-card" data-category="Diagnóstico">
+            <img
+              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80"
+              alt="Opciones para evaluar TDAH en Cancún — qué buscar en una clínica neuropsicológica"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <span class="badge badge-cancun">Cancún</span>
+              <h3 class="card-title">Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)</h3>
+              <p class="card-excerpt">Los 5 criterios de una evaluación confiable, las señales de alerta y cómo es el proceso.</p>
+              <div class="card-footer">
+                <span class="read-time" aria-label="Tiempo de lectura: 7 minutos">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 min
+                </span>
+                <a href="/blog/donde-evaluar-tdah-cancun" class="card-link" aria-label="Leer: Dónde evaluar TDAH en Cancún">Leer artículo →</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /cards-grid -->
+
+        <!-- Empty state -->
+        <div id="empty-state" role="status" aria-live="polite" aria-atomic="true">
+          <p>No hay artículos en esta categoría todavía.</p>
+          <p>
+            <button
+              type="button"
+              onclick="filterArticles('Todos', document.querySelector('[data-filter=Todos]'))"
+            >Ver todos los artículos</button>
+          </p>
+        </div>
+
+      </div><!-- /article-area -->
+
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+      <aside
+        class="sticky-sidebar"
+        style="width:100%; flex-shrink:0;"
+        aria-label="Acciones rápidas y servicios"
+      >
+        <!-- Override width on desktop via inline style + media query via class -->
+        <style>
+          @media (min-width: 1024px) {
+            #sidebar { width: 288px; }
+          }
+        </style>
+        <div id="sidebar" style="display:flex; flex-direction:column; gap:16px;">
+
+          <!-- Agendar card -->
+          <div class="sidebar-card">
+            <h2 class="sidebar-title">¿Listo para agendar?</h2>
+            <p class="sidebar-desc">
+              Habla directamente con Karen por WhatsApp. Responde dudas sobre el proceso y agenda la fecha que mejor te funcione.
+            </p>
+            <a
+              href="https://wa.me/529981234567"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="wa-btn"
+              aria-label="Escribir a Karen Trujillo por WhatsApp para agendar evaluación"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              Escribir por WhatsApp
+            </a>
+          </div>
+
+          <!-- Servicios card -->
+          <div class="sidebar-card">
+            <h2 class="sidebar-title">Servicios disponibles</h2>
+            <nav aria-label="Servicios de evaluación neuropsicológica">
+              <a href="/evaluacion-tdah-ninos" class="sidebar-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                Evaluación TDAH Niños
+              </a>
+              <a href="/evaluacion-tdah-adultos" class="sidebar-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                Evaluación TDAH Adultos
+              </a>
+              <a href="/evaluacion-autismo-cancun" class="sidebar-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                Evaluación Autismo (TEA)
+              </a>
+            </nav>
+          </div>
+
+          <!-- Credentials card -->
+          <div class="sidebar-creds">
+            <p class="sidebar-creds-label">Cédula Profesional</p>
+            <p class="sidebar-creds-num">11009616</p>
+            <p class="sidebar-creds-desc">
+              Neuropsicología clínica · ADOS-2, WISC-V, CAARS-2, CONNERS-3, BRIEF-2, CPT-3
+            </p>
+          </div>
+
+        </div><!-- /sidebar -->
+      </aside>
+
+    </div><!-- /content-row -->
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NEWSLETTER / WA CTA STRIP
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="newsletter-strip" aria-labelledby="cta-heading">
+    <div style="max-width:560px; margin:0 auto;">
+      <h2 class="newsletter-title" id="cta-heading">
+        ¿Tienes dudas sobre el diagnóstico de tu hijo?
+      </h2>
+      <p class="newsletter-sub">
+        Habla con Karen por WhatsApp y obtén orientación inicial sin costo.
+      </p>
+      <a
+        href="https://wa.me/529981234567"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="newsletter-btn"
+        aria-label="Escribir a Karen Trujillo por WhatsApp para orientación inicial"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-logo">Karen Trujillo · Neuropsicóloga</span>
+      <p class="footer-copy">Cédula Profesional 11009616 · Cancún, Quintana Roo · © 2024</p>
+      <nav class="footer-nav" aria-label="Navegación secundaria">
+        <a href="/" class="footer-nav-link">Inicio</a>
+        <a href="/#servicios" class="footer-nav-link">Servicios</a>
+        <a href="/blog" class="footer-nav-link">Blog</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FLOATING WHATSAPP BUTTON
+  ════════════════════════════════════════════════════════════════ -->
+  <a
+    href="https://wa.me/529981234567"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="float-wa"
+    aria-label="Contactar a Karen Trujillo por WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       RESPONSIVE GRID via Tailwind (can't do md:grid-cols-2 inline)
+  ════════════════════════════════════════════════════════════════ -->
+  <style>
+    @media (min-width: 768px) {
+      #cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #content-row {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       JAVASCRIPT — Category Filter Logic
+  ════════════════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /*
+       * FILTER_MAP:
+       * Maps pill data-filter value → array of data-category values that should
+       * be visible. null means "show everything."
+       * Note: "TDAH Infantil" filter includes cards tagged "TDAH Infantil"
+       * (which covers the TDAH Niñas, TDAH Inatento badges too, since those
+       *  cards carry data-category="TDAH Infantil").
+       * "Precios" includes both "Precios" and any Autismo+Precios combo
+       * (those cards carry data-category="Precios").
+       */
+      var FILTER_MAP = {
+        'Todos':         null,
+        'TDAH Infantil': ['TDAH Infantil'],
+        'TDAH Adultos':  ['TDAH Adultos'],
+        'Autismo / TEA': ['Autismo / TEA'],
+        'Diagnóstico':   ['Diagnóstico'],
+        'Precios':       ['Precios'],
+      };
+
+      function showEl(el) {
+        el.style.removeProperty('display');
+        el.removeAttribute('aria-hidden');
+        if (!reducedMotion) {
+          el.style.opacity = '0';
+          // Let paint happen, then fade in
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              el.style.opacity = '1';
+            });
+          });
+        }
+      }
+
+      function hideEl(el) {
+        if (reducedMotion) {
+          el.style.display = 'none';
+          el.setAttribute('aria-hidden', 'true');
+        } else {
+          el.style.opacity = '0';
+          el.setAttribute('aria-hidden', 'true');
+          setTimeout(function () {
+            // Only set display:none after opacity transition
+            if (el.getAttribute('aria-hidden') === 'true') {
+              el.style.display = 'none';
+            }
+          }, 260);
+        }
+      }
+
+      window.filterArticles = function (filterValue, clickedPill) {
+        // 1. Update pill states
+        document.querySelectorAll('.pill').forEach(function (p) {
+          p.classList.toggle('active', p === clickedPill || p.dataset.filter === filterValue);
+        });
+
+        var allowed = FILTER_MAP[filterValue]; // null = all
+
+        // 2. Filter article grid cards
+        var cards = document.querySelectorAll('#cards-grid .article-card');
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+          var cat = (card.dataset.category || '').trim();
+          var show = (allowed === null) || allowed.indexOf(cat) !== -1;
+          if (show) {
+            showEl(card);
+            visibleCount++;
+          } else {
+            hideEl(card);
+          }
+        });
+
+        // 3. Empty state
+        var emptyState = document.getElementById('empty-state');
+        if (emptyState) {
+          if (visibleCount === 0) {
+            emptyState.style.display = 'block';
+          } else {
+            emptyState.style.display = 'none';
+          }
+        }
+
+        // 4. Featured article
+        var featuredSection = document.getElementById('featured-section');
+        var featuredArticle = document.getElementById('featured-article');
+
+        if (featuredSection && featuredArticle) {
+          var featCat = (featuredArticle.dataset.category || '').trim();
+          var featShow = (allowed === null) || allowed.indexOf(featCat) !== -1;
+
+          if (featShow) {
+            featuredSection.style.display = '';
+            showEl(featuredSection);
+          } else {
+            hideEl(featuredSection);
+            // Collapse height after fade
+            if (!reducedMotion) {
+              setTimeout(function () {
+                if (featuredSection.getAttribute('aria-hidden') === 'true') {
+                  featuredSection.style.display = 'none';
+                }
+              }, 260);
+            }
+          }
+        }
+      };
+
+      // Ensure featured section is visible on load
+      (function init() {
+        var fs = document.getElementById('featured-section');
+        if (fs) {
+          fs.style.opacity = '1';
+          fs.removeAttribute('aria-hidden');
+        }
+      })();
+
+    })();
+  </script>
+
+</body>
+</html>

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SymptomCheckerHome from '@/components/SymptomCheckerHome';
 import { WA_NUMBER, PHONE_NUMBER, waUrl } from '@/lib/contact';
 import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';
 
@@ -402,12 +403,12 @@ export default function Home() {
         <main id="main-content" className="w-full min-w-0 overflow-x-hidden">
 
           {/* ══════════════════════════════════════════════════════
-              1 · HERO — Positioning + trust signals
+              1 · HERO — Dark plum, positioning + trust signals
               ══════════════════════════════════════════════════════ */}
-          <section className="relative flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section id="inicio" className="relative flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden" style={{ backgroundColor: '#2b1f47' }}>
+            {/* Subtle radial glow */}
+            <div aria-hidden="true" className="absolute top-1/2 left-1/4 w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none" style={{ background: 'rgba(208,208,231,0.06)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none" style={{ background: 'rgba(251,219,224,0.05)' }} />
 
             <div className="max-w-5xl mx-auto relative z-10">
               <div className="grid lg:grid-cols-[1fr_280px] gap-12 lg:gap-16 items-center">
@@ -415,45 +416,70 @@ export default function Home() {
                 {/* Left: Copy */}
                 <div className="text-center lg:text-left">
                   <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/10">
-                      <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-sm shadow-success shrink-0" />
-                      <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground">Cancún, Quintana Roo · Cédula Federal 11009616</span>
+                    {/* Credential bar */}
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1 mb-7">
+                      {['Cédula Federal 11009616', '7+ años de experiencia', '47 reseñas · 5 estrellas'].map((item, i) => (
+                        <span key={item} className="text-xs font-semibold tracking-wide flex items-center gap-1.5" style={{ color: 'rgba(208,208,231,0.8)' }}>
+                          {i > 0 && <span className="hidden sm:inline" style={{ color: 'rgba(208,208,231,0.3)' }}>·</span>}
+                          {item}
+                        </span>
+                      ))}
                     </div>
 
-                    <h1 className="text-[2.25rem] sm:text-6xl lg:text-7xl font-serif font-bold text-primary leading-[1.05] mb-4 text-balance">
+                    <h1 className="text-[2.25rem] sm:text-6xl lg:text-7xl font-serif font-bold leading-[1.05] mb-4 text-balance text-white">
                       Neuropsicóloga<br /> en Cancún
                     </h1>
 
-                    <p className="text-lg sm:text-2xl font-serif text-primary/80 italic mb-6 max-w-xl mx-auto lg:mx-0">
+                    <p className="text-lg sm:text-2xl font-serif italic mb-6 max-w-xl mx-auto lg:mx-0" style={{ color: 'rgba(208,208,231,0.75)' }}>
                       Respuestas donde antes había incertidumbre
                     </p>
 
-                    <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-                      Evaluaciones neuropsicológicas de <strong className="text-primary font-semibold">TDAH</strong> y <strong className="text-primary font-semibold">Autismo (TEA)</strong> con pruebas estandarizadas internacionales. Informes clínicos con <strong className="text-primary font-semibold">validez oficial</strong> ante escuelas, SEP, IMSS y empleadores.
+                    <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                      Evaluaciones neuropsicológicas de <strong className="text-white font-semibold">TDAH</strong> y <strong className="text-white font-semibold">Autismo (TEA)</strong> con pruebas estandarizadas internacionales. Informes clínicos con <strong className="text-white font-semibold">validez oficial</strong> ante escuelas, SEP, IMSS y empleadores.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8 animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
-                      <a href="#servicios" onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
+                      <a
+                        href={waUrl('Hola Karen, vi tu página y me gustaría agendar una valoración')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center justify-center gap-2 font-bold text-sm px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+                        style={{ background: '#25d366', color: '#fff' }}
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        Agendar por WhatsApp
+                      </a>
+                      <a
+                        href="#servicios"
+                        onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
+                        className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-xl transition-all duration-200 hover:bg-white/10"
+                        style={{ color: 'rgba(255,255,255,0.88)', border: '1.5px solid rgba(255,255,255,0.3)' }}
+                      >
                         Ver servicios
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      </a>
-                      <a href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito. ¿Podrías ayudarme?')} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
-                        <MessageCircle className="w-4 h-4" />
-                        WhatsApp
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-xs text-muted-foreground animate-[fadeIn_0.8s_ease-out_0.6s_both]">
+                  {/* Routing cards */}
+                  <div className="grid sm:grid-cols-3 gap-3 animate-[fadeIn_0.8s_ease-out_0.6s_both]">
                     {[
-                      { icon: BadgeCheck, text: 'Cédula 11009616' },
-                      { icon: Star, text: '47+ reseñas · 5 estrellas' },
-                      { icon: Stethoscope, text: 'Pruebas internacionales' },
-                    ].map((badge) => (
-                      <span key={badge.text} className="flex items-center gap-1.5">
-                        <badge.icon className="w-3.5 h-3.5 text-primary/50" />
-                        <span className="font-medium">{badge.text}</span>
-                      </span>
+                      { href: '/evaluacion-tdah-ninos', label: 'TDAH Infantil', text: 'Mi hijo tiene problemas de atención o conducta', icon: Users },
+                      { href: '/evaluacion-tdah-adultos', label: 'TDAH Adultos', text: 'Sospecho que tengo TDAH no diagnosticado', icon: Briefcase },
+                      { href: '/evaluacion-autismo-cancun', label: 'Autismo (TEA)', text: 'Mi hijo se relaciona de forma diferente', icon: Puzzle },
+                    ].map((card) => (
+                      <Link
+                        key={card.href}
+                        href={card.href}
+                        className="group flex flex-col gap-2 p-4 rounded-xl text-left transition-all duration-200 hover:-translate-y-0.5"
+                        style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(208,208,231,0.2)' }}
+                      >
+                        <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'rgba(208,208,231,0.7)' }}>{card.label}</span>
+                        <span className="text-sm font-medium leading-snug" style={{ color: 'rgba(255,255,255,0.88)' }}>{card.text}</span>
+                        <span className="text-xs font-semibold flex items-center gap-1 transition-all group-hover:gap-2" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                          Ver evaluación <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -461,7 +487,7 @@ export default function Home() {
                 {/* Right: Photo */}
                 <div className="hidden lg:flex justify-center animate-[fadeIn_1s_ease-out_0.4s_both]">
                   <div className="relative">
-                    <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-2xl shadow-primary/30 ring-4 ring-accent-pink/40">
+                    <div className="w-64 h-80 overflow-hidden shadow-2xl" style={{ borderRadius: '20px 20px 80px 20px' }}>
                       <Image
                         src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                         alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y autismo en Cancún"
@@ -472,90 +498,32 @@ export default function Home() {
                         unoptimized
                       />
                     </div>
-                    <div className="absolute -bottom-5 -left-5 bg-gradient-primary text-primary-foreground rounded-2xl px-5 py-3 shadow-xl shadow-primary/25">
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-primary-foreground/70">Cédula Federal</p>
-                      <p className="text-lg font-bold font-mono">11009616</p>
-                    </div>
-                    <div className="absolute -top-3 -right-3 bg-card border border-border rounded-2xl px-4 py-2 shadow-lg">
-                      <div className="flex items-center gap-1.5">
-                        <Star className="w-3.5 h-3.5 text-warning fill-warning" />
-                        <span className="text-sm font-bold text-primary">5.0</span>
-                        <span className="text-xs text-muted-foreground font-light">(47+)</span>
+                    <div className="absolute -bottom-5 -left-5 bg-white rounded-xl px-5 py-3 shadow-2xl" style={{ boxShadow: '0 8px 24px rgba(56,47,81,0.25)' }}>
+                      <p className="text-[10px] font-bold uppercase tracking-wide mb-0.5" style={{ color: '#5b4e7f' }}>Cédula Federal</p>
+                      <p className="text-lg font-bold font-mono" style={{ color: '#2b1f47' }}>11009616</p>
+                      <div className="flex items-center gap-1 mt-1">
+                        {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-warning text-warning" />)}
+                        <span className="text-xs font-bold ml-1" style={{ color: '#382f51' }}>5.0</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </section>
 
 
           {/* ══════════════════════════════════════════════════════
-              1.5 · SEGMENTADOR — "¿Quién eres?" routing
+              1.5 · SYMPTOM CHECKER — 3 tabs interactivo
               ══════════════════════════════════════════════════════ */}
-          <section className="py-10 sm:py-14 bg-card border-b border-border">
+          <section className="py-14 sm:py-20 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Cuál es tu situación?</h2>
-                <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-8">Selecciona la opción que mejor te describe y te llevamos directo a la información que necesitas.</p>
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Reconoces estas señales?</h2>
+                <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-8">Selecciona el perfil que más se parece a tu situación y marca lo que reconozcas.</p>
               </SectionReveal>
-
-              <div className="grid sm:grid-cols-3 gap-4">
-                {[
-                  {
-                    href: '/evaluacion-tdah-ninos',
-                    icon: Users,
-                    emoji: '👦',
-                    title: 'Soy padre/madre',
-                    subtitle: 'Mi hijo tiene problemas de atención o conducta',
-                    color: 'from-accent-blue/15 to-primary/10',
-                    border: 'hover:border-accent-blue/60',
-                  },
-                  {
-                    href: '/evaluacion-tdah-adultos',
-                    icon: Briefcase,
-                    emoji: '🧠',
-                    title: 'Soy adulto',
-                    subtitle: 'Sospecho que tengo TDAH no diagnosticado',
-                    color: 'from-primary/15 to-accent-blue/10',
-                    border: 'hover:border-primary/60',
-                  },
-                  {
-                    href: '/evaluacion-autismo-cancun',
-                    icon: Puzzle,
-                    emoji: '🧩',
-                    title: 'Busco diagnóstico de autismo',
-                    subtitle: 'Mi hijo se relaciona de forma diferente',
-                    color: 'from-accent-pink/15 to-primary/10',
-                    border: 'hover:border-accent-pink/60',
-                  },
-                ].map((option, i) => (
-                  <SectionReveal key={option.href} delay={i * 0.08}>
-                    <Link
-                      href={option.href}
-                      className={`group flex flex-col items-center text-center gap-4 p-6 sm:p-7 bg-secondary/50 border-2 border-border rounded-2xl hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 h-full ${option.border}`}
-                    >
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${option.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 text-2xl`}>
-                        {option.emoji}
-                      </div>
-                      <div>
-                        <p className="font-bold text-primary text-base mb-1">{option.title}</p>
-                        <p className="text-xs text-muted-foreground font-light leading-relaxed">{option.subtitle}</p>
-                      </div>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary/50 group-hover:text-primary group-hover:gap-2.5 transition-all mt-auto">
-                        Ver evaluación <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                      </span>
-                    </Link>
-                  </SectionReveal>
-                ))}
-              </div>
-
-              <SectionReveal delay={0.3}>
-                <p className="text-center text-xs text-muted-foreground/60 mt-6">
-                  ¿No estás seguro? <a href={waUrl('Hola Karen, no estoy seguro qué evaluación necesito. ¿Podrías orientarme?')} target="_blank" rel="noopener noreferrer" className="text-primary font-medium underline underline-offset-2 hover:text-primary/80 transition-colors">Escríbeme por WhatsApp</a> y te oriento sin costo.
-                </p>
+              <SectionReveal delay={0.1}>
+                <SymptomCheckerHome />
               </SectionReveal>
             </div>
           </section>
@@ -638,60 +606,92 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              2.5 · MINI-PROCESO — 3 steps to clarity
+              2.5 · PRIMERA CITA — 5-step timeline
               ══════════════════════════════════════════════════════ */}
-          <section className="py-12 sm:py-16 bg-card border-b border-border">
-            <div className="max-w-4xl mx-auto px-6">
+          <section className="py-14 sm:py-20 bg-card border-b border-border">
+            <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">3 pasos hacia la claridad</h2>
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Cómo es el proceso?</h2>
+                <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-12">Desde que contactas hasta que recibes tu informe. Sin sorpresas.</p>
               </SectionReveal>
 
-              <div className="grid sm:grid-cols-3 gap-6 sm:gap-4 relative">
-                {/* Connecting line (desktop) */}
-                <div className="absolute top-10 left-[16.66%] right-[16.66%] h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent hidden sm:block" />
-
+              <div className="relative space-y-0">
                 {[
                   {
-                    step: '01',
-                    icon: CalendarCheck,
-                    title: 'Agenda tu cita',
-                    desc: 'Elige fecha y hora en línea. Confirma con el anticipo y tu lugar queda reservado.',
-                    accent: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20',
+                    n: '1',
+                    title: 'Contacto y orientación',
+                    desc: 'Escríbeme por WhatsApp. En la misma llamada o chat te explico el proceso, resuelvo tus dudas y agendamos.',
+                    duration: 'Mismo día',
+                    icon: MessageCircle,
                   },
                   {
-                    step: '02',
+                    n: '2',
+                    title: 'Entrevista clínica',
+                    desc: 'Anamnesis detallada: historia del desarrollo, antecedentes familiares, contexto escolar o laboral. Establece el mapa clínico.',
+                    duration: '60–90 min',
                     icon: ClipboardList,
-                    title: 'Evalúa con pruebas reales',
-                    desc: 'En 3-5 sesiones presenciales aplicamos pruebas estandarizadas internacionales con rigor clínico.',
-                    accent: 'text-primary bg-primary/10 border-primary/20',
                   },
                   {
-                    step: '03',
-                    icon: FileText,
-                    title: 'Recibe tu informe',
-                    desc: 'Diagnóstico claro, perfil detallado y recomendaciones concretas. Informe con validez oficial.',
-                    accent: 'text-success bg-success/10 border-success/20',
+                    n: '3',
+                    title: 'Aplicación de pruebas',
+                    desc: 'Instrumentos estandarizados internacionales según el tipo de evaluación (ADOS-2, WISC-V, CONNERS-3, CAARS-2…).',
+                    duration: '2–4 sesiones',
+                    icon: Brain,
                   },
-                ].map((item, i) => (
-                  <SectionReveal key={item.step} delay={i * 0.12}>
-                    <div className="flex flex-col items-center text-center group">
-                      <div className={`relative w-20 h-20 rounded-2xl border-2 ${item.accent} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
-                        <item.icon className="w-8 h-8" />
-                        <span className="absolute -top-2.5 -right-2.5 w-7 h-7 rounded-full bg-card border-2 border-border flex items-center justify-center text-[11px] font-bold text-primary shadow-sm">{item.step}</span>
+                  {
+                    n: '4',
+                    title: 'Análisis e informe',
+                    desc: 'Interpretación clínica integrada. Redacción del informe con diagnóstico, perfil cognitivo y recomendaciones concretas.',
+                    duration: '5–7 días',
+                    icon: FileText,
+                  },
+                  {
+                    n: '5',
+                    title: 'Sesión de devolución',
+                    desc: 'Presentamos el diagnóstico, explicamos el perfil y establecemos el plan de acción. El informe queda en tus manos.',
+                    duration: '60–90 min',
+                    icon: CalendarCheck,
+                  },
+                ].map((step, i, arr) => (
+                  <SectionReveal key={step.n} delay={i * 0.08}>
+                    <div className="grid grid-cols-[72px_1fr] gap-4 relative">
+                      {/* Number + connector */}
+                      <div className="flex flex-col items-center">
+                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 bg-secondary border-2 border-border font-serif text-2xl font-bold text-primary/40 group-hover:border-primary/40 transition-colors">
+                          {step.n}
+                        </div>
+                        {i < arr.length - 1 && (
+                          <div className="w-px flex-1 mt-2 mb-0" style={{ background: 'linear-gradient(to bottom, rgba(208,208,231,0.6), transparent)', minHeight: '2.5rem' }} />
+                        )}
                       </div>
-                      <h3 className="font-bold text-primary text-base mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-[260px]">{item.desc}</p>
+
+                      {/* Content */}
+                      <div className="pb-8">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h3 className="font-bold text-primary">{step.title}</h3>
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-border bg-secondary text-muted-foreground">{step.duration}</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground font-light leading-relaxed">{step.desc}</p>
+                      </div>
                     </div>
                   </SectionReveal>
                 ))}
               </div>
 
-              <SectionReveal delay={0.4}>
-                <div className="mt-10 flex items-center justify-center gap-3">
+              <SectionReveal delay={0.45}>
+                <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                   <div className="flex items-center gap-1.5 px-3 py-1.5 bg-success/8 border border-success/20 rounded-full">
                     <ShieldCheck className="w-3.5 h-3.5 text-success" />
                     <span className="text-xs font-bold text-success uppercase tracking-widest">Reembolso completo si cancelas con 48 hrs</span>
                   </div>
+                  <a
+                    href={waUrl('Hola Karen, me gustaría saber cuánto cuesta la valoración neuropsicológica.')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold uppercase tracking-widest text-primary hover:underline"
+                  >
+                    Ver precios →
+                  </a>
                 </div>
               </SectionReveal>
             </div>
