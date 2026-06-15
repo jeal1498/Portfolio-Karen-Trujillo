@@ -864,6 +864,38 @@
     }
     .fab-wa svg { width: 26px; height: 26px; }
 
+    /* ── Reading Mode ── */
+    .reading-mode-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4375rem;
+      background: transparent;
+      border: 1px solid rgba(91, 78, 127, 0.22);
+      color: #5b4e7f;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8125rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.02em;
+    }
+    .reading-mode-btn:hover { background: rgba(91,78,127,0.07); border-color: rgba(91,78,127,0.4); color: #382f51; }
+    .reading-mode-btn svg { flex-shrink: 0; }
+
+    @media (min-width: 1024px) {
+      body.reading-mode .two-col {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 740px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body.reading-mode .sidebar { display: none; }
+      body.reading-mode .prose { max-width: 100%; }
+    }
+
     /* ── Utility ── */
     .sr-only {
       position: absolute;
@@ -962,6 +994,17 @@
 
     <!-- ── LEFT: Article content ── -->
     <main id="article-content" aria-label="Contenido del artículo">
+
+      <!-- Reading Mode Toggle -->
+      <button
+        id="reading-mode-btn"
+        class="reading-mode-btn"
+        aria-pressed="false"
+        title="Alternar modo lectura"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span class="rm-label">Modo lectura</span>
+      </button>
 
       <!-- Intro -->
       <div class="prose">
@@ -1432,6 +1475,16 @@
 
   window.addEventListener('scroll', updateTocActive, { passive: true });
   updateTocActive();
+
+  /* ── Reading Mode Toggle ── */
+  var readingBtn = document.getElementById('reading-mode-btn');
+  if (readingBtn) {
+    readingBtn.addEventListener('click', function () {
+      var isReading = document.body.classList.toggle('reading-mode');
+      readingBtn.querySelector('.rm-label').textContent = isReading ? 'Vista normal' : 'Modo lectura';
+      readingBtn.setAttribute('aria-pressed', isReading ? 'true' : 'false');
+    });
+  }
 
 })();
 </script>
