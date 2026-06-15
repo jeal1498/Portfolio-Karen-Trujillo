@@ -413,7 +413,8 @@ export default function Home() {
                   </div>
 
                   <h1 className="font-serif font-bold text-white leading-[1.12] mb-5" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)' }}>
-                    Diagnósticos que cambian<br />trayectorias de vida
+                    Neuropsicóloga<br />en Cancún<br />
+                    <span className="font-normal italic" style={{ color: 'rgba(208,208,231,0.72)' }}>Respuestas donde antes había incertidumbre</span>
                   </h1>
 
                   <p className="text-base leading-relaxed mb-8 max-w-[54ch]" style={{ color: 'rgba(208,208,231,0.82)' }}>
