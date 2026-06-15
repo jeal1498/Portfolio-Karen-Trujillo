@@ -338,6 +338,15 @@
       display: flex;
       flex-direction: column;
       box-shadow: none;
+      position: relative;
+    }
+    .article-card.popular::before {
+      content: '🔥 Más leído';
+      position: absolute; top: 10px; right: 10px; z-index: 2;
+      background: #382f51; color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .65rem; font-weight: 700; letter-spacing: .05em;
+      padding: 4px 10px; border-radius: 9999px;
     }
 
     .card-img {
@@ -916,7 +925,7 @@
           </article>
 
           <!-- ─── Card 2: TDAH Adultos ──────────────────────── -->
-          <article class="article-card" data-category="TDAH Adultos">
+          <article class="article-card popular" data-category="TDAH Adultos">
             <img
               src="https://placehold.co/600x340/5b4e7f/ffffff?text=TDAH+Adultos"
               alt="Adulto descubriendo diagnóstico de TDAH después de los 30"
@@ -938,7 +947,7 @@
           </article>
 
           <!-- ─── Card 3: TDAH en Niñas ─────────────────────── -->
-          <article class="article-card" data-category="TDAH Infantil">
+          <article class="article-card popular" data-category="TDAH Infantil">
             <img
               src="https://placehold.co/600x340/d0d0e7/382f51?text=TDAH+en+Ni%C3%B1as"
               alt="TDAH en niñas, síntomas que el sistema educativo no detecta"
@@ -960,7 +969,7 @@
           </article>
 
           <!-- ─── Card 4: ADOS-2 ────────────────────────────── -->
-          <article class="article-card" data-category="Autismo / TEA">
+          <article class="article-card popular" data-category="Autismo / TEA">
             <img
               src="https://placehold.co/600x340/fbdbe0/382f51?text=ADOS-2"
               alt="Herramienta ADOS-2 para diagnóstico de autismo"

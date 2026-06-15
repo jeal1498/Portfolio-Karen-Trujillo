@@ -606,6 +606,83 @@
       .featured-quote { padding: 2rem 1.5rem 1.5rem; }
       .featured-quote::before { font-size: 4rem; }
     }
+
+    /* ── Symptom Checker ─────────────────────────────── */
+    .profile-tabs { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:36px; }
+    .profile-tab {
+      background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.72); padding: 10px 22px; border-radius: 9999px;
+      font-family: 'Montserrat',sans-serif; font-size: .875rem; font-weight: 600;
+      cursor: pointer; transition: all .2s; letter-spacing: .02em;
+    }
+    .profile-tab.active, .profile-tab:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.5); color: #fff; }
+    .checker-panel { display: none; }
+    .checker-panel.active { display: block; }
+    .symptom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px,1fr)); gap: 10px; max-width: 860px; margin: 0 auto 28px; }
+    .sym-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.13);
+      border-radius: 12px; padding: 14px 16px; cursor: pointer; transition: all .2s;
+    }
+    .sym-item.checked { background: rgba(255,255,255,.16); border-color: rgba(208,208,231,.55); }
+    .sym-item input[type=checkbox] { width: 17px; height: 17px; flex-shrink: 0; accent-color: var(--wa); margin-top: 2px; cursor: pointer; }
+    .sym-item label { font-size: .875rem; color: rgba(255,255,255,.8); line-height: 1.5; cursor: pointer; }
+    .checker-result {
+      max-width: 580px; margin: 0 auto;
+      background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.22);
+      border-radius: 16px; padding: 28px 32px; text-align: center; display: none;
+    }
+    .checker-result.visible { display: block; }
+    .checker-result-title { font-family: 'Gloock',Georgia,serif; font-size: 1.35rem; color: #fff; margin-bottom: 8px; }
+    .checker-result-desc { font-size: .9rem; color: rgba(255,255,255,.72); line-height: 1.68; margin-bottom: 22px; }
+
+    /* ── Process entrance animation ─────────────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .timeline-item { opacity: 0; transform: translateX(-18px); transition: opacity .5s ease, transform .5s ease; }
+      .timeline-item.anim-in { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── Primera Cita Timeline ──────────────────────── */
+    .cita-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; position: relative; }
+    .cita-grid::before { content:''; position:absolute; top:24px; left:10%; right:10%; height:2px; background:rgba(56,47,81,.1); z-index:0; }
+    .cita-step { text-align: center; padding: 0 8px; position: relative; z-index: 1; }
+    .cita-num { width: 48px; height: 48px; border-radius: 50%; background: var(--plum-ink); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: .85rem; font-weight: 700; border: 3px solid #fff; box-shadow: 0 0 0 2px rgba(56,47,81,.15); }
+    .cita-min { font-size: .67rem; font-weight: 700; color: var(--plum-mid); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 6px; }
+    .cita-title { font-size: .875rem; font-weight: 700; color: var(--plum-ink); margin-bottom: 5px; }
+    .cita-desc { font-size: .78rem; color: var(--ink2); line-height: 1.6; }
+    @media (max-width: 767px) {
+      .cita-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .cita-grid::before { display: none; }
+    }
+    @media (max-width: 479px) { .cita-grid { grid-template-columns: 1fr; } }
+
+    /* ── Google Reviews Widget ──────────────────────── */
+    .g-widget { background: #fff; border-radius: 20px; padding: 36px 40px; border: 1px solid rgba(56,47,81,.08); box-shadow: 0 4px 32px rgba(56,47,81,.06); }
+    .g-widget-top { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+    .g-rating-block { text-align: center; }
+    .g-rating-num { font-family: 'Gloock',serif; font-size: 3.5rem; color: var(--plum-ink); line-height: 1; }
+    .g-stars-big { color: #f59e0b; font-size: 1.15rem; letter-spacing: 3px; margin: 4px 0; }
+    .g-count { font-size: .8rem; color: var(--ink2); }
+    .g-divider { width: 1px; height: 56px; background: rgba(56,47,81,.12); flex-shrink: 0; }
+    .g-meta-title { font-family: 'Gloock',serif; font-size: 1.1rem; color: var(--plum-ink); margin-bottom: 4px; }
+    .g-meta-sub { font-size: .82rem; color: var(--ink2); margin-bottom: 8px; }
+    .g-carousel { overflow: hidden; position: relative; }
+    .g-track { display: flex; gap: 16px; transition: transform .4s ease; }
+    @media (prefers-reduced-motion: reduce) { .g-track { transition: none; } }
+    .g-card { flex: 0 0 calc(33.33% - 11px); min-width: 220px; background: var(--surf); border-radius: 14px; padding: 20px; border: 1px solid rgba(56,47,81,.07); }
+    @media (max-width: 767px) { .g-card { flex: 0 0 82%; } }
+    .g-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .g-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--plum-ink); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; flex-shrink: 0; }
+    .g-name { font-size: .85rem; font-weight: 700; color: var(--plum-ink); }
+    .g-ago { font-size: .72rem; color: var(--ink2); margin-top: 1px; }
+    .g-card-stars { color: #f59e0b; font-size: .8rem; letter-spacing: 1px; margin-bottom: 10px; }
+    .g-card-text { font-size: .84rem; color: var(--ink2); line-height: 1.65; }
+    .g-nav { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; }
+    .g-btn { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(56,47,81,.18); background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+    .g-btn:hover { border-color: var(--plum-ink); background: rgba(56,47,81,.05); }
+    .g-dots { display: flex; gap: 6px; align-items: center; }
+    .g-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(56,47,81,.18); transition: background .2s, width .2s; cursor: pointer; }
+    .g-dot.active { background: var(--plum-ink); width: 18px; border-radius: 9999px; }
   </style>
 </head>
 <body>
@@ -815,7 +892,71 @@
   </div>
 </section>
 
-<!-- ===== PROCESS ===== -->
+<!-- ===== CHECKER ===== -->
+<section id="que-evaluacion" aria-labelledby="checker-heading" style="background:var(--plum-deep); padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6" style="text-align:center;">
+    <h2 id="checker-heading" class="section-heading section-heading-light">¿Qué evaluación necesita mi caso?</h2>
+    <div class="divider-plum mx-auto" style="background:rgba(208,208,231,.4);"></div>
+    <p style="font-size:1.05rem; color:rgba(255,255,255,.68); line-height:1.7; max-width:52ch; margin:0 auto 36px;">
+      Marca las situaciones que describes y te orientamos a la evaluación correcta.
+    </p>
+    <div class="profile-tabs" role="tablist">
+      <button class="profile-tab active" data-target="panel-ninos" role="tab" aria-selected="true" aria-controls="panel-ninos">👦 Mi hijo (5–17 años)</button>
+      <button class="profile-tab" data-target="panel-adultos" role="tab" aria-selected="false" aria-controls="panel-adultos">🧑 Soy adulto</button>
+      <button class="profile-tab" data-target="panel-tea" role="tab" aria-selected="false" aria-controls="panel-tea">🌀 Diagnóstico de autismo</button>
+    </div>
+    <!-- Panel: Niños -->
+    <div id="panel-ninos" class="checker-panel active" role="tabpanel">
+      <div class="symptom-grid">
+        <div class="sym-item"><input type="checkbox" id="n1" class="sym-check" data-panel="ninos"><label for="n1">Le cuesta mantener la atención en tareas aunque quiera hacerlas</label></div>
+        <div class="sym-item"><input type="checkbox" id="n2" class="sym-check" data-panel="ninos"><label for="n2">Se distrae con estímulos externos constantemente</label></div>
+        <div class="sym-item"><input type="checkbox" id="n3" class="sym-check" data-panel="ninos"><label for="n3">Olvida instrucciones recién dadas o pierde sus cosas con frecuencia</label></div>
+        <div class="sym-item"><input type="checkbox" id="n4" class="sym-check" data-panel="ninos"><label for="n4">Es impulsivo: actúa antes de pensar, interrumpe, no espera su turno</label></div>
+        <div class="sym-item"><input type="checkbox" id="n5" class="sym-check" data-panel="ninos"><label for="n5">Su rendimiento escolar no corresponde a su inteligencia evidente</label></div>
+        <div class="sym-item"><input type="checkbox" id="n6" class="sym-check" data-panel="ninos"><label for="n6">Los maestros reportan dificultades de conducta o atención repetidamente</label></div>
+      </div>
+      <div class="checker-result" id="result-ninos">
+        <div class="checker-result-title">Te corresponde: Valoración TDAH Infantil</div>
+        <p class="checker-result-desc">Estas señales corresponden al perfil de TDAH en niños y adolescentes. La evaluación con CONNERS-3, WISC-V, BRIEF-2 y CPT-3 puede darte respuestas concretas y un informe con validez oficial ante la escuela. <strong style="color:#fff;">Precio: $8,300 MXN — todo incluido.</strong></p>
+        <a href="https://wa.me/529983211547?text=Hola%2C+quiero+agendar+una+valoraci%C3%B3n+TDAH+infantil" class="btn-wa" style="display:inline-flex; margin:0 auto;">Agendar valoración TDAH infantil</a>
+      </div>
+    </div>
+    <!-- Panel: Adultos -->
+    <div id="panel-adultos" class="checker-panel" role="tabpanel" hidden>
+      <div class="symptom-grid">
+        <div class="sym-item"><input type="checkbox" id="a1" class="sym-check" data-panel="adultos"><label for="a1">Dificultad para sostener la atención en tareas sin estimulación inmediata</label></div>
+        <div class="sym-item"><input type="checkbox" id="a2" class="sym-check" data-panel="adultos"><label for="a2">Procrastinas crónicamente tareas importantes aunque quieras hacerlas</label></div>
+        <div class="sym-item"><input type="checkbox" id="a3" class="sym-check" data-panel="adultos"><label for="a3">Olvidas compromisos, citas y conversaciones con frecuencia</label></div>
+        <div class="sym-item"><input type="checkbox" id="a4" class="sym-check" data-panel="adultos"><label for="a4">Empiezas muchos proyectos y rara vez los terminas</label></div>
+        <div class="sym-item"><input type="checkbox" id="a5" class="sym-check" data-panel="adultos"><label for="a5">Sientes que el tiempo no se percibe bien hasta el último momento</label></div>
+        <div class="sym-item"><input type="checkbox" id="a6" class="sym-check" data-panel="adultos"><label for="a6">Tienes diagnósticos de ansiedad o depresión que no terminan de explicarte</label></div>
+      </div>
+      <div class="checker-result" id="result-adultos">
+        <div class="checker-result-title">Te corresponde: Valoración TDAH Adultos</div>
+        <p class="checker-result-desc">Estas señales corresponden al perfil de TDAH adulto. La evaluación con CAARS-2, WAIS-IV, BRIEF-2A y CPT-3 distingue TDAH de ansiedad y burnout. <strong style="color:#fff;">Precio: $8,300 MXN — todo incluido.</strong></p>
+        <a href="https://wa.me/529983211547?text=Hola%2C+quiero+agendar+una+valoraci%C3%B3n+TDAH+adultos" class="btn-wa" style="display:inline-flex; margin:0 auto;">Agendar valoración TDAH adultos</a>
+      </div>
+    </div>
+    <!-- Panel: TEA -->
+    <div id="panel-tea" class="checker-panel" role="tabpanel" hidden>
+      <div class="symptom-grid">
+        <div class="sym-item"><input type="checkbox" id="t1" class="sym-check" data-panel="tea"><label for="t1">Dificultad para entender las reglas sociales no escritas</label></div>
+        <div class="sym-item"><input type="checkbox" id="t2" class="sym-check" data-panel="tea"><label for="t2">Intereses muy intensos y específicos en uno o pocos temas</label></div>
+        <div class="sym-item"><input type="checkbox" id="t3" class="sym-check" data-panel="tea"><label for="t3">Necesidad de rutinas predecibles; los cambios generan angustia</label></div>
+        <div class="sym-item"><input type="checkbox" id="t4" class="sym-check" data-panel="tea"><label for="t4">Sensibilidad sensorial elevada (ruidos, texturas, luces brillantes)</label></div>
+        <div class="sym-item"><input type="checkbox" id="t5" class="sym-check" data-panel="tea"><label for="t5">Dificultad para mantener conversaciones recíprocas o trabajo en equipo</label></div>
+        <div class="sym-item"><input type="checkbox" id="t6" class="sym-check" data-panel="tea"><label for="t6">Comportamientos repetitivos o intereses muy restringidos desde pequeño</label></div>
+      </div>
+      <div class="checker-result" id="result-tea">
+        <div class="checker-result-title">Te corresponde: Evaluación de Autismo (TEA)</div>
+        <p class="checker-result-desc">Estas señales corresponden al perfil de Trastorno del Espectro Autista. La evaluación con ADOS-2, ADI-R, WISC-V y Vineland-3 entrega un diagnóstico formal con nivel de apoyo. <strong style="color:#fff;">Precio: $8,500 MXN — todo incluido.</strong></p>
+        <a href="https://wa.me/529983211547?text=Hola%2C+quiero+agendar+una+evaluaci%C3%B3n+de+autismo" class="btn-wa" style="display:inline-flex; margin:0 auto;">Agendar evaluación de autismo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS =====
 <section id="proceso" aria-labelledby="proceso-heading" style="background:#fff; padding: 5rem 0;">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="mb-12">
@@ -876,6 +1017,48 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRIMERA CITA ===== -->
+<section aria-labelledby="cita-heading" style="background:var(--surface); padding: 4.5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10" style="text-align:center;">
+      <h2 id="cita-heading" class="section-heading">¿Qué pasa en tu primera cita?</h2>
+      <p class="section-sub mx-auto" style="text-align:center; max-width:44ch;">Los primeros 90 minutos con Karen. Sin sorpresas.</p>
+    </div>
+    <div class="cita-grid">
+      <div class="cita-step">
+        <div class="cita-num">1</div>
+        <div class="cita-min">Min 0–10</div>
+        <div class="cita-title">Bienvenida</div>
+        <p class="cita-desc">Karen te recibe, explica el proceso completo y resuelve dudas antes de empezar.</p>
+      </div>
+      <div class="cita-step">
+        <div class="cita-num">2</div>
+        <div class="cita-min">Min 10–30</div>
+        <div class="cita-title">Historia clínica</div>
+        <p class="cita-desc">Completamos un formulario estructurado: antecedentes, motivo de consulta y contexto familiar o laboral.</p>
+      </div>
+      <div class="cita-step">
+        <div class="cita-num">3</div>
+        <div class="cita-min">Min 30–60</div>
+        <div class="cita-title">Entrevista clínica</div>
+        <p class="cita-desc">Karen entrevista al paciente (y a los padres si es menor) con preguntas específicas sobre síntomas e historia.</p>
+      </div>
+      <div class="cita-step">
+        <div class="cita-num">4</div>
+        <div class="cita-min">Min 60–80</div>
+        <div class="cita-title">Plan personalizado</div>
+        <p class="cita-desc">Se define qué pruebas se aplicarán, cuántas sesiones serán y el calendario de evaluación.</p>
+      </div>
+      <div class="cita-step">
+        <div class="cita-num">5</div>
+        <div class="cita-min">Min 80–90</div>
+        <div class="cita-title">Próximas citas</div>
+        <p class="cita-desc">Agendas las sesiones de evaluación. Saldrás con fecha, horario y claridad total sobre el proceso.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1005,6 +1188,50 @@
         <div style="font-size:0.75rem; color:var(--ink2); margin-top:2px;">Evaluación TDAH Adultos</div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ===== GOOGLE REVIEWS ===== -->
+<section aria-labelledby="reviews-heading" style="background:#fff; padding: 4.5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <h2 id="reviews-heading" class="section-heading">Reseñas verificadas en Google</h2>
+    </div>
+    <div class="g-widget">
+      <div class="g-widget-top">
+        <div class="g-rating-block">
+          <div class="g-rating-num">5.0</div>
+          <div class="g-stars-big">★★★★★</div>
+          <div class="g-count">47 reseñas en Google</div>
+        </div>
+        <div class="g-divider"></div>
+        <div>
+          <div class="g-meta-title">Karen Trujillo — Neuropsicóloga</div>
+          <div class="g-meta-sub">Cancún, Quintana Roo · Psicología clínica</div>
+          <a href="https://wa.me/529983211547" style="font-size:.82rem; font-weight:700; color:var(--plum-ink); text-decoration:none;">Agendar evaluación →</a>
+        </div>
+      </div>
+      <div class="g-carousel" id="g-carousel">
+        <div class="g-track" id="g-track">
+          <div class="g-card"><div class="g-card-head"><div class="g-avatar">S</div><div><div class="g-name">Sofía M.</div><div class="g-ago">hace 3 semanas</div></div></div><div class="g-card-stars">★★★★★</div><p class="g-card-text">"Por fin entendí por qué mi hijo tenía dificultades en la escuela. El informe fue tan claro que la escuela implementó las adecuaciones de inmediato."</p></div>
+          <div class="g-card"><div class="g-card-head"><div class="g-avatar">C</div><div><div class="g-name">Carlos L.</div><div class="g-ago">hace 1 mes</div></div></div><div class="g-card-stars">★★★★★</div><p class="g-card-text">"La evaluación fue muy completa y profesional. Por fin entendí mi diagnóstico de TDAH y qué pasos seguir. Karen es excelente en su trato y conocimiento."</p></div>
+          <div class="g-card"><div class="g-card-head"><div class="g-avatar">M</div><div><div class="g-name">Mariana R.</div><div class="g-ago">hace 2 meses</div></div></div><div class="g-card-stars">★★★★★</div><p class="g-card-text">"Me diagnosticaron ansiedad dos veces antes de llegar aquí. Resultó ser TDAH inatento. Karen fue la primera en ver el cuadro completo. Fue liberador."</p></div>
+          <div class="g-card"><div class="g-card-head"><div class="g-avatar">A</div><div><div class="g-name">Alejandro T.</div><div class="g-ago">hace 2 meses</div></div></div><div class="g-card-stars">★★★★★</div><p class="g-card-text">"Llevaba años pensando que era 'flojo'. El informe me mostró exactamente qué funciones ejecutivas estaban afectadas. Fue muy liberador tener datos objetivos."</p></div>
+          <div class="g-card"><div class="g-card-head"><div class="g-avatar">P</div><div><div class="g-name">Papá de Diego</div><div class="g-ago">hace 3 meses</div></div></div><div class="g-card-stars">★★★★★</div><p class="g-card-text">"Llevábamos dos años con dudas. Karen fue profesional, cálida y el proceso fue mucho más claro de lo que esperábamos. El informe fue impecable."</p></div>
+          <div class="g-card"><div class="g-card-head"><div class="g-avatar">E</div><div><div class="g-name">Mamá de Emilia</div><div class="g-ago">hace 4 meses</div></div></div><div class="g-card-stars">★★★★★</div><p class="g-card-text">"Nos dijeron que solo era 'tímida'. El diagnóstico de TEA nivel 1 nos dio claridad total y un camino concreto a seguir. Muy recomendada."</p></div>
+        </div>
+      </div>
+      <div class="g-nav">
+        <button class="g-btn" id="g-prev" aria-label="Reseña anterior"><svg width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <div class="g-dots" id="g-dots">
+          <span class="g-dot active" data-idx="0"></span>
+          <span class="g-dot" data-idx="1"></span>
+          <span class="g-dot" data-idx="2"></span>
+          <span class="g-dot" data-idx="3"></span>
+        </div>
+        <button class="g-btn" id="g-next" aria-label="Siguiente reseña"><svg width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
@@ -1309,6 +1536,81 @@
         iconOpen.style.display = 'block';
         iconClose.style.display = 'none';
       });
+    });
+  })();
+
+  // --- Symptom Checker ---
+  (function () {
+    var tabs = document.querySelectorAll('.profile-tab');
+    var panels = document.querySelectorAll('.checker-panel');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = tab.getAttribute('data-target');
+        tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        panels.forEach(function (p) { p.classList.remove('active'); p.hidden = true; });
+        tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+        var panel = document.getElementById(target);
+        if (panel) { panel.classList.add('active'); panel.hidden = false; }
+        document.querySelectorAll('.checker-result').forEach(function(r){ r.classList.remove('visible'); });
+      });
+    });
+    document.querySelectorAll('.sym-check').forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        var panel = cb.getAttribute('data-panel');
+        var checked = document.querySelectorAll('.sym-check[data-panel="' + panel + '"]:checked').length;
+        cb.closest('.sym-item').classList.toggle('checked', cb.checked);
+        var result = document.getElementById('result-' + panel);
+        if (result) result.classList.toggle('visible', checked >= 3);
+      });
+    });
+  })();
+
+  // --- Process animation (Intersection Observer) ---
+  (function () {
+    if (!window.IntersectionObserver) return;
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+    var items = document.querySelectorAll('.timeline-item');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var delay = Number(el.getAttribute('data-anim-delay') || 0);
+        setTimeout(function () { el.classList.add('anim-in'); }, delay);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.2 });
+    items.forEach(function (item, i) {
+      item.setAttribute('data-anim-delay', i * 130);
+      observer.observe(item);
+    });
+  })();
+
+  // --- Google Reviews Carousel ---
+  (function () {
+    var track = document.getElementById('g-track');
+    var dots  = document.querySelectorAll('.g-dot');
+    var prev  = document.getElementById('g-prev');
+    var next  = document.getElementById('g-next');
+    if (!track || !prev || !next) return;
+    var current = 0;
+    var maxDot  = dots.length - 1;
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, maxDot));
+      var card = track.querySelector('.g-card');
+      if (!card) return;
+      var step = card.offsetWidth + 16;
+      if (prefersReduced) track.style.transition = 'none';
+      else track.style.transition = '';
+      track.style.transform = 'translateX(-' + (current * step) + 'px)';
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    }
+    prev.addEventListener('click', function () { goTo(current - 1); });
+    next.addEventListener('click', function () { goTo(current + 1); });
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () { goTo(Number(dot.getAttribute('data-idx'))); });
     });
   })();
 
