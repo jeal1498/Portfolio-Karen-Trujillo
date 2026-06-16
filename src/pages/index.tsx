@@ -402,29 +402,31 @@ export default function Home() {
 
                 {/* Left: copy */}
                 <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                  {/* Credential bar */}
-                  <div className="flex flex-wrap gap-x-5 gap-y-1 mb-6">
-                    {['Cédula Federal 11009616', '47+ reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
-                      <span key={item} className="flex items-center gap-1.5 text-xs font-semibold tracking-wide" style={{ color: 'rgba(208,208,231,0.8)' }}>
-                        {i > 0 && <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full" style={{ background: 'rgba(208,208,231,0.45)' }} />}
-                        {item}
-                      </span>
-                    ))}
+                  <div className="text-center">
+                    {/* Credential bar */}
+                    <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 mb-6">
+                      {['Cédula Federal 11009616', '47+ reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
+                        <span key={item} className="flex items-center gap-1.5 text-xs font-semibold tracking-wide" style={{ color: 'rgba(208,208,231,0.8)' }}>
+                          {i > 0 && <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full" style={{ background: 'rgba(208,208,231,0.45)' }} />}
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+
+                    <h1 className="font-serif font-bold text-white leading-[1.08] mb-4" style={{ fontSize: 'clamp(1.9rem, 9vw, 5rem)' }}>
+                      Neuropsicóloga<br />en Cancún
+                    </h1>
+
+                    <p className="font-serif font-normal italic leading-snug mb-5" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', color: 'rgba(208,208,231,0.72)' }}>
+                      Respuestas donde antes había incertidumbre
+                    </p>
+
+                    <p className="text-base leading-relaxed mb-8 max-w-[54ch] mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
+                      Evaluaciones neuropsicológicas de <strong className="text-white font-semibold">TDAH</strong> y{' '}
+                      <strong className="text-white font-semibold">Autismo (TEA)</strong> con pruebas estandarizadas internacionales.
+                      Informes con validez oficial ante SEP, IMSS e instituciones educativas.
+                    </p>
                   </div>
-
-                  <h1 className="font-serif font-bold text-white leading-[1.08] mb-4" style={{ fontSize: 'clamp(1.9rem, 9vw, 5rem)' }}>
-                    Neuropsicóloga<br />en Cancún
-                  </h1>
-
-                  <p className="font-serif font-normal italic leading-snug mb-5" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', color: 'rgba(208,208,231,0.72)' }}>
-                    Respuestas donde antes había incertidumbre
-                  </p>
-
-                  <p className="text-base leading-relaxed mb-8 max-w-[54ch]" style={{ color: 'rgba(208,208,231,0.82)' }}>
-                    Evaluaciones neuropsicológicas de <strong className="text-white font-semibold">TDAH</strong> y{' '}
-                    <strong className="text-white font-semibold">Autismo (TEA)</strong> con pruebas estandarizadas internacionales.
-                    Informes con validez oficial ante SEP, IMSS e instituciones educativas.
-                  </p>
 
                   {/* Routing cards — vertical column */}
                   <div className="flex flex-col gap-2.5 mb-8 animate-[fadeIn_0.8s_ease-out_0.35s_both]">
