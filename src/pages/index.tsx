@@ -412,7 +412,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <h1 className="font-serif font-bold text-white leading-[1.08] mb-4" style={{ fontSize: 'clamp(3rem, 7vw, 5rem)' }}>
+                  <h1 className="font-serif font-bold text-white leading-[1.08] mb-4" style={{ fontSize: 'clamp(1.9rem, 9vw, 5rem)' }}>
                     Neuropsicóloga<br />en Cancún
                   </h1>
 
