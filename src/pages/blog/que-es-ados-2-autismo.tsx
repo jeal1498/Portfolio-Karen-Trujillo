@@ -9,7 +9,7 @@ import {
   ChevronDown, AlertTriangle, Eye,
   BookOpen, ArrowLeft, ListChecks, HelpCircle,
   Lightbulb, XCircle, Stethoscope,
-  Activity, Shield, Layers,
+  Activity, Shield, Layers, Facebook, Link2,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -69,8 +69,8 @@ const faqItems = [
 ];
 
 const relatedResources = [
-  { href: '/blog/senales-tdah-ninos', icon: Users, category: 'TDAH Infantil', title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico', color: 'from-accent-blue/10 to-accent-blue/5' },
-  { href: '/blog/tdah-adultos-diagnostico-tardio', icon: Briefcase, category: 'TDAH Adultos', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', color: 'from-primary/10 to-primary/5' },
+  { href: '/blog/senales-tdah-ninos', icon: Users, category: 'TDAH Infantil', title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico', img: 'https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Infantil' },
+  { href: '/blog/tdah-adultos-diagnostico-tardio', icon: Briefcase, category: 'TDAH Adultos', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', img: 'https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Adultos' },
 ];
 
 const schema = {
@@ -92,6 +92,7 @@ function SectionReveal({ children, className = '', delay = 0 }: { children: Reac
 export default function QueEsAdos2Autismo() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showStickyCta, setShowStickyCta] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   useEffect(() => { const handleScroll = () => { const heroHeight = 500; const ctaFinal = document.getElementById('cta-evaluacion'); const ctaTop = ctaFinal?.getBoundingClientRect().top ?? Infinity; setShowStickyCta(window.scrollY > heroHeight && ctaTop > window.innerHeight); }; window.addEventListener('scroll', handleScroll, { passive: true }); handleScroll(); return () => window.removeEventListener('scroll', handleScroll); }, []);
 
   return (
@@ -144,6 +145,25 @@ export default function QueEsAdos2Autismo() {
             </div>
           </section>
 
+          {/* IMAGEN DESTACADA — Hero image (placeholder) */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Qu%C3%A9+es+el+ADOS-2"
+                    alt="¿Qué es el ADOS-2? El estándar de oro para diagnosticar autismo — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
+            </div>
+          </section>
+
           {/* TABLE OF CONTENTS */}
           <section className="py-8 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto px-6">
@@ -169,6 +189,25 @@ export default function QueEsAdos2Autismo() {
                   <p className="text-muted-foreground font-light leading-relaxed text-sm sm:text-base mb-6">A diferencia de los cuestionarios que llenan los padres o las entrevistas clínicas, el ADOS-2 no depende de lo que alguien recuerda o interpreta — <strong className="text-primary font-semibold">observa el comportamiento real en tiempo real</strong>. Le presenta al niño (o adulto) situaciones sociales diseñadas y mide cómo responde, con criterios de puntuación objetivos y un algoritmo diagnóstico validado.</p>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm sm:text-base">Por eso las guías clínicas internacionales lo consideran el &ldquo;estándar de oro&rdquo;: es el instrumento con mayor evidencia científica para el diagnóstico de Trastorno del Espectro Autista (TEA) a nivel mundial.</p>
                 </div>
+              </SectionReveal>
+            </div>
+          </section>
+
+          {/* IMAGEN INLINE 1 (placeholder) */}
+          <section className="pb-12 sm:pb-16 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Evaluaci%C3%B3n+ADOS-2"
+                    alt="Sesión de evaluación con ADOS-2 para diagnóstico de autismo — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </SectionReveal>
             </div>
           </section>
@@ -307,6 +346,25 @@ export default function QueEsAdos2Autismo() {
             </div>
           </section>
 
+          {/* IMAGEN INLINE 2 (placeholder) */}
+          <section className="py-12 sm:py-16 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Niveles+de+Apoyo+TEA"
+                    alt="Niveles de apoyo en autismo según el DSM-5 — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
+            </div>
+          </section>
+
           {/* MITOS */}
           <section id="mitos" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
@@ -377,6 +435,48 @@ export default function QueEsAdos2Autismo() {
             </div>
           </section>
 
+          {/* COMPARTIR — Social share */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir en Facebook"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent('¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo? — https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir por WhatsApp"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText('https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo');
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                    aria-label="Copiar enlace"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Link2 className="w-4 h-4" />
+                  </button>
+                  {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+                </div>
+              </SectionReveal>
+            </div>
+          </section>
+
           {/* RELATED */}
           <section className="py-12 sm:py-16 bg-secondary/50 border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
@@ -385,7 +485,14 @@ export default function QueEsAdos2Autismo() {
                 {relatedResources.map((resource, i) => (
                   <SectionReveal key={resource.href} delay={i * 0.08}>
                     <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
-                      <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
+                      <img
+                        src={resource.img}
+                        alt={resource.title}
+                        width={640}
+                        height={400}
+                        className="w-full h-auto aspect-video object-cover"
+                        loading="lazy"
+                      />
                       <div className="p-5 sm:p-6">
                         <div className="flex items-center gap-2 mb-3"><resource.icon className="w-3.5 h-3.5 text-primary/40" /><span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/60">{resource.category}</span></div>
                         <h3 className="font-bold text-primary text-sm leading-snug mb-3 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
@@ -399,33 +506,33 @@ export default function QueEsAdos2Autismo() {
           </section>
 
           {/* CTA FINAL */}
-          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-card border-t border-border">
+          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-plum-deep border-t border-white/10">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <div className="text-center mb-8"><h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">Un diagnóstico claro cambia todo</h2><p className="text-muted-foreground font-light max-w-xl mx-auto">Saber el nivel de apoyo exacto, las fortalezas y las necesidades de tu hijo te da una hoja de ruta concreta. La evaluación con ADOS-2 es el primer paso.</p></div>
+                <div className="text-center mb-8"><h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">Un diagnóstico claro cambia todo</h2><p className="text-white/70 font-light max-w-xl mx-auto">Saber el nivel de apoyo exacto, las fortalezas y las necesidades de tu hijo te da una hoja de ruta concreta. La evaluación con ADOS-2 es el primer paso.</p></div>
               </SectionReveal>
               <SectionReveal delay={0.1}>
-                <div className="bg-secondary/50 border-2 border-border rounded-2xl p-6 sm:p-8 mb-8">
+                <div className="bg-white/8 border border-white/15 rounded-2xl p-6 sm:p-8 mb-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md shrink-0"><Image src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" loading="lazy" unoptimized /></div>
-                    <div><p className="font-bold text-primary">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span></div></div>
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0"><Image src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" loading="lazy" unoptimized /></div>
+                    <div><p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span></div></div>
                   </div>
                   <div className="grid sm:grid-cols-3 gap-3 mb-6">
                     {[{ label: 'Pruebas', value: 'ADOS-2, ADI-R, WISC-V, Vineland-3, SRS-2' },{ label: 'Duración', value: '5-6 sesiones · 3-4 semanas' },{ label: 'Inversión', value: '$8,500 MXN todo incluido' }].map((item) => (
-                      <div key={item.label} className="bg-card border border-border rounded-xl p-3 text-center"><p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.label}</p><p className="text-xs font-medium text-primary">{item.value}</p></div>
+                      <div key={item.label} className="bg-white/8 border border-white/15 rounded-xl p-3 text-center"><p className="text-[9px] font-bold uppercase tracking-widest text-white/50 mb-1">{item.label}</p><p className="text-xs font-medium text-white">{item.value}</p></div>
                     ))}
                   </div>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Link href="/evaluacion-autismo-cancun" className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"><Stethoscope className="w-4 h-4" />Ver evaluación completa<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></Link>
+                    <Link href="/evaluacion-autismo-cancun" className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"><Stethoscope className="w-4 h-4" />Ver evaluación completa<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></Link>
                     <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre el ADOS-2 y me gustaría agendar una evaluación de autismo para mi hijo.')}`} target="_blank" rel="noopener noreferrer" className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"><MessageCircle className="w-4 h-4" />Agendar por WhatsApp</a>
                   </div>
                 </div>
               </SectionReveal>
               <SectionReveal delay={0.2}>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Reembolso del anticipo</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Validez oficial SEP e IMSS</span>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-white/70">
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Cancelación con 48 hrs</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Reembolso del anticipo</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><BadgeCheck className="w-3.5 h-3.5 text-white/50" /> Validez oficial SEP e IMSS</span>
                 </div>
               </SectionReveal>
             </div>

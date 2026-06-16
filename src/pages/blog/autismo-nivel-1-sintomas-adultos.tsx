@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, Brain, AlertTriangle, CheckCircle2, HelpCircle, ChevronDown } from 'lucide-react';
+import { ArrowRight, Brain, AlertTriangle, CheckCircle2, HelpCircle, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -159,7 +160,12 @@ const schema = {
   ],
 };
 
+const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos';
+const HEADLINE = 'Autismo nivel 1: cuando no pareces autista pero lo eres';
+
 export default function AutismoNivel1SintomasAdultos() {
+  const [linkCopied, setLinkCopied] = useState(false);
+
   return (
     <>
       <Head>
@@ -220,6 +226,25 @@ export default function AutismoNivel1SintomasAdultos() {
             </div>
           </section>
 
+          {/* ── Imagen destacada (placeholder) ── */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Autismo+Nivel+1+en+Adultos"
+                    alt="Autismo nivel 1: cuando no pareces autista pero lo eres — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </motion.div>
+            </div>
+          </section>
+
           {/* ── Síntomas cotidianos ── */}
           <section id="sintomas-cotidianos" className="py-16 px-6 bg-card">
             <div className="max-w-3xl mx-auto">
@@ -264,6 +289,25 @@ export default function AutismoNivel1SintomasAdultos() {
                     </p>
                   </div>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen inline 1 (placeholder) ── */}
+          <section className="py-12 px-6 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Enmascaramiento+Social"
+                    alt="Adulto con TEA nivel 1 procesando interacciones sociales — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -314,6 +358,25 @@ export default function AutismoNivel1SintomasAdultos() {
                     </div>
                   ))}
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen inline 2 (placeholder) ── */}
+          <section className="py-12 px-6 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Evaluación+de+TEA+con+ADOS-2"
+                    alt="Sesión de evaluación de TEA nivel 1 en adultos — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -379,6 +442,46 @@ export default function AutismoNivel1SintomasAdultos() {
             </div>
           </section>
 
+          {/* ── Compartir ── */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir en Facebook"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${HEADLINE} — ${CANONICAL_URL}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir por WhatsApp"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(CANONICAL_URL);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  aria-label="Copiar enlace"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Link2 className="w-4 h-4" />
+                </button>
+                {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+              </div>
+            </div>
+          </section>
+
           {/* ── CTA ── */}
           <section className="py-16 px-6 bg-gradient-primary text-primary-foreground">
             <div className="max-w-3xl mx-auto text-center">
@@ -386,6 +489,18 @@ export default function AutismoNivel1SintomasAdultos() {
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
                 Si llevas años sintiéndote diferente sin saber por qué, una evaluación neuropsicológica puede darte por fin una respuesta. Karen Trujillo realiza evaluaciones de TEA en Cancún con el ADOS-2, el estándar de oro mundial, y cédula federal 11009616.
               </p>
+              <div className="flex items-center justify-center gap-3 mb-6 text-xs text-primary-foreground/80">
+                <img
+                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  alt="Neuropsicóloga Karen Trujillo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover object-top"
+                  loading="lazy"
+                />
+                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>★ 47+ reseñas · 5.0</span>
+              </div>
               <div className="flex justify-center">
                 <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-lg hover:opacity-90 transition-all">
@@ -400,20 +515,50 @@ export default function AutismoNivel1SintomasAdultos() {
             <div className="max-w-5xl mx-auto">
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/evaluacion-autismo-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Evaluación de Autismo en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">ADOS-2 · Diagnóstico formal DSM-5 · $8,500 MXN</span>
+                <Link href="/evaluacion-autismo-cancun" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/fbdbe0/382f51?text=Servicio"
+                    alt="Evaluación de Autismo en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Evaluación de Autismo en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">ADOS-2 · Diagnóstico formal DSM-5 · $8,500 MXN</span>
+                  </div>
                 </Link>
-                <Link href="/blog/que-es-ados-2-autismo" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">¿Qué es el ADOS-2 y por qué importa?</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">El estándar de oro del diagnóstico de autismo</span>
+                <Link href="/blog/que-es-ados-2-autismo" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/fbdbe0/382f51?text=Artículo"
+                    alt="¿Qué es el ADOS-2 y por qué importa?"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">¿Qué es el ADOS-2 y por qué importa?</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">El estándar de oro del diagnóstico de autismo</span>
+                  </div>
                 </Link>
-                <Link href="/blog/tdah-vs-ansiedad-diferencias" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">TDAH vs. ansiedad: cómo diferenciarlos</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas que se parecen pero tienen causas distintas</span>
+                <Link href="/blog/tdah-vs-ansiedad-diferencias" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Artículo"
+                    alt="TDAH vs. ansiedad: cómo diferenciarlos"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">TDAH vs. ansiedad: cómo diferenciarlos</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas que se parecen pero tienen causas distintas</span>
+                  </div>
                 </Link>
               </div>
             </div>
