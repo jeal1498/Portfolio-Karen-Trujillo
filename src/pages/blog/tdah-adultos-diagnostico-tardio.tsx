@@ -319,42 +319,41 @@ export default function TDAHAdultosDiagnosticoTardio() {
           {/* ══════════════════════════════════════════════════════
               HERO — Article header
               ══════════════════════════════════════════════════════ */}
-          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-blue/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-3xl mx-auto relative z-10">
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-xs text-muted-foreground mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
+              <nav className="flex items-center gap-2 text-xs mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                <Link href="/" className="hover:text-[#d0d0e7] transition-colors flex items-center gap-1">
                   <ArrowLeft className="w-3 h-3" />
                   Inicio
                 </Link>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-muted-foreground/40">Blog</span>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-primary font-medium">TDAH Adultos</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>Blog</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
+                <span className="font-medium" style={{ color: '#d0d0e7' }}>TDAH Adultos</span>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/15">
-                  <BookOpen className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground">Guía para adultos · Basada en evidencia</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <BookOpen className="w-3.5 h-3.5" style={{ color: '#d0d0e7' }} />
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-white">Guía para adultos · Basada en evidencia</span>
                 </div>
 
-                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-primary leading-[1.15] mb-5 text-balance">
+                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-[1.15] mb-5 text-balance">
                   TDAH en adultos:<br />
-                  <span className="text-primary/60">por qué miles llegan al diagnóstico después de los 30</span>
+                  <span style={{ color: 'rgba(208,208,231,0.72)' }}>por qué miles llegan al diagnóstico después de los 30</span>
                 </h1>
 
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl">
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Si toda la vida has sentido que &ldquo;puedes más pero no rindes&rdquo;, que te cuesta lo que a otros parece fácil, o que ningún diagnóstico previo explica del todo lo que te pasa — esta guía es para ti.
                 </p>
 
                 {/* Author card */}
-                <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
-                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md">
+                <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both] rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md">
                     <Image
                       src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                       alt="Neuropsicóloga Karen Trujillo"
@@ -366,10 +365,10 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-primary text-sm">Neuropsicóloga Karen Trujillo</p>
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span>
-                      <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-primary/40" /> 14 min de lectura</span>
+                    <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p>
+                    <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
+                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span>
+                      <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 14 min de lectura</span>
                     </div>
                   </div>
                 </div>
@@ -717,20 +716,21 @@ export default function TDAHAdultosDiagnosticoTardio() {
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }}>
                       <button
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-blog-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full py-5 sm:py-6 flex justify-between items-center gap-4 text-left cursor-pointer"
                       >
                         <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}>
-                          <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} />
-                        </div>
+                        <ChevronDown
+                          className="w-3.5 h-3.5 text-muted-foreground shrink-0"
+                          style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}
+                        />
                       </button>
                       <div
                         id={`faq-blog-${i}`}
@@ -743,7 +743,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                         }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
+                          <div className="pb-5 sm:pb-6">
                             <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
                           </div>
                         </div>
