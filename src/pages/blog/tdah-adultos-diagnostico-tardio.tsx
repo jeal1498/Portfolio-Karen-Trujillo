@@ -9,7 +9,7 @@ import {
   ChevronDown, AlertTriangle, Eye,
   BookOpen, ArrowLeft, ListChecks, HelpCircle,
   Lightbulb, XCircle, Stethoscope, Coffee,
-  Heart, Repeat,
+  Heart, Repeat, Facebook, Link2,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -160,14 +160,14 @@ const relatedResources = [
     icon: Users,
     category: 'TDAH Infantil',
     title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico',
-    color: 'from-accent-blue/10 to-accent-blue/5',
+    img: 'https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Infantil',
   },
   {
     href: '/blog/que-es-ados-2-autismo',
     icon: Puzzle,
     category: 'Autismo (TEA)',
     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
-    color: 'from-accent-pink/10 to-accent-pink/5',
+    img: 'https://placehold.co/640x400/fbdbe0/382f51?text=Autismo+(TEA)',
   },
 ];
 
@@ -266,6 +266,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [expandedSignal, setExpandedSignal] = useState<string | null>(null);
   const [showStickyCta, setShowStickyCta] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -319,42 +320,41 @@ export default function TDAHAdultosDiagnosticoTardio() {
           {/* ══════════════════════════════════════════════════════
               HERO — Article header
               ══════════════════════════════════════════════════════ */}
-          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-blue/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-3xl mx-auto relative z-10">
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-xs text-muted-foreground mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
+              <nav className="flex items-center gap-2 text-xs mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                <Link href="/" className="hover:text-[#d0d0e7] transition-colors flex items-center gap-1">
                   <ArrowLeft className="w-3 h-3" />
                   Inicio
                 </Link>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-muted-foreground/40">Blog</span>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-primary font-medium">TDAH Adultos</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>Blog</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
+                <span className="font-medium" style={{ color: '#d0d0e7' }}>TDAH Adultos</span>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/15">
-                  <BookOpen className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground">Guía para adultos · Basada en evidencia</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <BookOpen className="w-3.5 h-3.5" style={{ color: '#d0d0e7' }} />
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-white">Guía para adultos · Basada en evidencia</span>
                 </div>
 
-                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-primary leading-[1.15] mb-5 text-balance">
+                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-[1.15] mb-5 text-balance">
                   TDAH en adultos:<br />
-                  <span className="text-primary/60">por qué miles llegan al diagnóstico después de los 30</span>
+                  <span style={{ color: 'rgba(208,208,231,0.72)' }}>por qué miles llegan al diagnóstico después de los 30</span>
                 </h1>
 
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl">
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Si toda la vida has sentido que &ldquo;puedes más pero no rindes&rdquo;, que te cuesta lo que a otros parece fácil, o que ningún diagnóstico previo explica del todo lo que te pasa — esta guía es para ti.
                 </p>
 
                 {/* Author card */}
-                <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
-                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md">
+                <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both] rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md">
                     <Image
                       src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                       alt="Neuropsicóloga Karen Trujillo"
@@ -366,14 +366,36 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-primary text-sm">Neuropsicóloga Karen Trujillo</p>
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span>
-                      <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-primary/40" /> 14 min de lectura</span>
+                    <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p>
+                    <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
+                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span>
+                      <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 14 min de lectura</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              IMAGEN DESTACADA — Hero image (placeholder)
+              ══════════════════════════════════════════════════════ */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=TDAH+en+Adultos"
+                    alt="TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
             </div>
           </section>
 
@@ -435,6 +457,28 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     Esta guía te va a ayudar a entender por qué el diagnóstico llega tarde, cómo se ve el TDAH adulto en la vida real, y por qué confundirlo con ansiedad o burnout puede costarte años de tratamientos que no funcionan.
                   </p>
                 </div>
+              </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              IMAGEN INLINE 1 (placeholder)
+              ══════════════════════════════════════════════════════ */}
+          <section className="pb-12 sm:pb-16 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Vida+diaria+con+TDAH"
+                    alt="Adulto con TDAH organizando su rutina diaria — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </SectionReveal>
             </div>
           </section>
@@ -593,6 +637,28 @@ export default function TDAHAdultosDiagnosticoTardio() {
 
 
           {/* ══════════════════════════════════════════════════════
+              IMAGEN INLINE 2 (placeholder)
+              ══════════════════════════════════════════════════════ */}
+          <section className="py-12 sm:py-16 bg-secondary">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Evaluación+Neuropsicológica"
+                    alt="Sesión de evaluación neuropsicológica para diagnóstico de TDAH — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
               IMPACTO — Cost of not knowing
               ══════════════════════════════════════════════════════ */}
           <section id="impacto" className="py-14 sm:py-20 bg-card scroll-mt-20">
@@ -717,20 +783,21 @@ export default function TDAHAdultosDiagnosticoTardio() {
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }}>
                       <button
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-blog-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full py-5 sm:py-6 flex justify-between items-center gap-4 text-left cursor-pointer"
                       >
                         <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}>
-                          <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} />
-                        </div>
+                        <ChevronDown
+                          className="w-3.5 h-3.5 text-muted-foreground shrink-0"
+                          style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}
+                        />
                       </button>
                       <div
                         id={`faq-blog-${i}`}
@@ -743,7 +810,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                         }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
+                          <div className="pb-5 sm:pb-6">
                             <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
                           </div>
                         </div>
@@ -752,6 +819,51 @@ export default function TDAHAdultosDiagnosticoTardio() {
                   </SectionReveal>
                 ))}
               </div>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              COMPARTIR — Social share
+              ══════════════════════════════════════════════════════ */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir en Facebook"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent('TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 — https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir por WhatsApp"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText('https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio');
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                    aria-label="Copiar enlace"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Link2 className="w-4 h-4" />
+                  </button>
+                  {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+                </div>
+              </SectionReveal>
             </div>
           </section>
 
@@ -770,7 +882,14 @@ export default function TDAHAdultosDiagnosticoTardio() {
                 {relatedResources.map((resource, i) => (
                   <SectionReveal key={resource.href} delay={i * 0.08}>
                     <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
-                      <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
+                      <img
+                        src={resource.img}
+                        alt={resource.title}
+                        width={640}
+                        height={400}
+                        className="w-full h-auto aspect-video object-cover"
+                        loading="lazy"
+                      />
                       <div className="p-5 sm:p-6">
                         <div className="flex items-center gap-2 mb-3">
                           <resource.icon className="w-3.5 h-3.5 text-primary/40" />
@@ -792,19 +911,19 @@ export default function TDAHAdultosDiagnosticoTardio() {
           {/* ══════════════════════════════════════════════════════
               CTA FINAL — Conversion bridge to funnel
               ══════════════════════════════════════════════════════ */}
-          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-card border-t border-border">
+          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-plum-deep border-t border-white/10">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">Dejar de preguntarte es más fácil que seguir con la duda</h2>
-                  <p className="text-muted-foreground font-light max-w-xl mx-auto">Una evaluación neuropsicológica te da respuestas en semanas. Si llegaste hasta aquí, probablemente ya sabes lo que necesitas.</p>
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">Dejar de preguntarte es más fácil que seguir con la duda</h2>
+                  <p className="text-white/70 font-light max-w-xl mx-auto">Una evaluación neuropsicológica te da respuestas en semanas. Si llegaste hasta aquí, probablemente ya sabes lo que necesitas.</p>
                 </div>
               </SectionReveal>
 
               <SectionReveal delay={0.1}>
-                <div className="bg-secondary/50 border-2 border-border rounded-2xl p-6 sm:p-8 mb-8">
+                <div className="bg-white/8 border border-white/15 rounded-2xl p-6 sm:p-8 mb-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md shrink-0">
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0">
                       <Image
                         src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
                         alt="Neuropsicóloga Karen Trujillo"
@@ -816,9 +935,9 @@ export default function TDAHAdultosDiagnosticoTardio() {
                       />
                     </div>
                     <div>
-                      <p className="font-bold text-primary">Neuropsicóloga Karen Trujillo</p>
-                      <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-1">
-                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span>
+                      <p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p>
+                      <div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1">
+                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span>
                         <span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span>
                       </div>
                     </div>
@@ -830,9 +949,9 @@ export default function TDAHAdultosDiagnosticoTardio() {
                       { label: 'Duración', value: '4-5 sesiones · 2-3 semanas' },
                       { label: 'Inversión', value: '$8,300 MXN todo incluido' },
                     ].map((item) => (
-                      <div key={item.label} className="bg-card border border-border rounded-xl p-3 text-center">
-                        <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.label}</p>
-                        <p className="text-xs font-medium text-primary">{item.value}</p>
+                      <div key={item.label} className="bg-white/8 border border-white/15 rounded-xl p-3 text-center">
+                        <p className="text-[9px] font-bold uppercase tracking-widest text-white/50 mb-1">{item.label}</p>
+                        <p className="text-xs font-medium text-white">{item.value}</p>
                       </div>
                     ))}
                   </div>
@@ -840,7 +959,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href="/evaluacion-tdah-adultos"
-                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
                     >
                       <Stethoscope className="w-4 h-4" />
                       Ver evaluación completa
@@ -860,10 +979,10 @@ export default function TDAHAdultosDiagnosticoTardio() {
               </SectionReveal>
 
               <SectionReveal delay={0.2}>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Reembolso del anticipo</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Validez oficial SEP e IMSS</span>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-white/70">
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Cancelación con 48 hrs</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Reembolso del anticipo</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><BadgeCheck className="w-3.5 h-3.5 text-white/50" /> Validez oficial SEP e IMSS</span>
                 </div>
               </SectionReveal>
             </div>

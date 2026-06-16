@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, HelpCircle, DollarSign, Clock, FileText } from 'lucide-react';
+import { ArrowRight, CheckCircle2, HelpCircle, DollarSign, Clock, FileText, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -148,7 +149,13 @@ const schema = {
   ],
 };
 
+const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-evaluacion-autismo-mexico';
+const HEADLINE = '¿Cuánto cuesta una evaluación de autismo en México?';
+
 export default function CuantoCuestaEvaluacionAutismo() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [linkCopied, setLinkCopied] = useState(false);
+
   return (
     <>
       <Head>
@@ -177,33 +184,53 @@ export default function CuantoCuestaEvaluacionAutismo() {
         <main>
 
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 animate-pulse" />
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
-                <ol className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
-                  <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
+                <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                  <li><Link href="/" className="transition-colors hover:text-[#d0d0e7]" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
                   <li>/</li>
-                  <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+                  <li><Link href="/blog" className="transition-colors hover:text-[#d0d0e7]" style={{ color: 'rgba(208,208,231,0.7)' }}>Blog</Link></li>
                   <li>/</li>
-                  <li className="text-primary font-medium">Costo evaluación autismo</li>
+                  <li className="font-medium" style={{ color: '#d0d0e7' }}>Costo evaluación autismo</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-xs font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full mb-4 text-xs font-bold uppercase tracking-widest" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#d0d0e7' }}>
                   Autismo / TEA — Precios y proceso
                 </span>
-                <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
+                <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
                   ¿Cuánto cuesta una evaluación de autismo en México?
                 </h1>
-                <p className="text-muted-foreground text-lg font-light leading-relaxed mb-6">
+                <p className="text-lg font-light leading-relaxed mb-6" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Precio real, sin letra chica. Lo que incluye, cuántas sesiones son y por qué cuesta lo que cuesta. Porque tomar esta decisión merece información completa.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-t border-border pt-4">
-                  <span>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                <div className="flex flex-wrap items-center gap-4 text-xs pt-4 rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>8 min de lectura</span>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen destacada (placeholder) ── */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Costo+Evaluación+de+Autismo"
+                    alt="¿Cuánto cuesta una evaluación de autismo en México? — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -267,6 +294,25 @@ export default function CuantoCuestaEvaluacionAutismo() {
                     </div>
                   ))}
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen inline 1 (placeholder) ── */}
+          <section className="py-12 px-6 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Sesión+de+Evaluación"
+                    alt="Sesión de evaluación de TEA incluida en el proceso — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -344,6 +390,25 @@ export default function CuantoCuestaEvaluacionAutismo() {
             </div>
           </section>
 
+          {/* ── Imagen inline 2 (placeholder) ── */}
+          <section className="py-12 px-6 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/d0d0e7/382f51?text=ADOS-2"
+                    alt="Aplicación del ADOS-2 en la evaluación de autismo — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </motion.div>
+            </div>
+          </section>
+
           {/* ── Pago ── */}
           <section className="py-16 px-6 bg-card">
             <div className="max-w-3xl mx-auto">
@@ -376,16 +441,79 @@ export default function CuantoCuestaEvaluacionAutismo() {
                 <HelpCircle className="w-6 h-6 text-accent-blue" />
                 Preguntas frecuentes
               </h2>
-              <div className="space-y-3">
+              <div role="list">
                 {faqItems.map((faq, i) => (
-                  <details key={i} className="group bg-card border-2 border-border hover:border-accent-blue rounded-xl transition-all open:border-primary open:shadow-lg">
-                    <summary className="p-5 font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4 text-sm">
-                      <span>{faq.q}</span>
-                      <span className="text-muted-foreground shrink-0 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-                    </summary>
-                    <p className="px-5 pb-5 text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                  </details>
+                  <div key={i} role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }}>
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      aria-expanded={openFaq === i}
+                      aria-controls={`faq-${i}`}
+                      className="w-full py-5 sm:py-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                    >
+                      <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
+                      <ChevronDown
+                        className="w-3.5 h-3.5 text-muted-foreground shrink-0"
+                        style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}
+                      />
+                    </button>
+                    <div
+                      id={`faq-${i}`}
+                      role="region"
+                      className="grid transition-all duration-300"
+                      style={{
+                        gridTemplateRows: openFaq === i ? '1fr' : '0fr',
+                        opacity: openFaq === i ? 1 : 0,
+                        transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                      }}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="pb-5 sm:pb-6">
+                          <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Compartir ── */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir en Facebook"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${HEADLINE} — ${CANONICAL_URL}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir por WhatsApp"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(CANONICAL_URL);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  aria-label="Copiar enlace"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Link2 className="w-4 h-4" />
+                </button>
+                {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
               </div>
             </div>
           </section>
@@ -397,6 +525,18 @@ export default function CuantoCuestaEvaluacionAutismo() {
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
                 No tienes que decidir solo. Karen Trujillo (cédula federal 11009616) puede orientarte sobre si la evaluación es el paso adecuado para tu hijo o familiar, sin compromiso.
               </p>
+              <div className="flex items-center justify-center gap-3 mb-6 text-xs text-primary-foreground/80">
+                <img
+                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  alt="Neuropsicóloga Karen Trujillo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover object-top"
+                  loading="lazy"
+                />
+                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>★ 47+ reseñas · 5.0</span>
+              </div>
               <a
                 href={WA}
                 target="_blank"
@@ -413,20 +553,50 @@ export default function CuantoCuestaEvaluacionAutismo() {
             <div className="max-w-5xl mx-auto">
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/evaluacion-autismo-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Evaluación de Autismo en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">ADOS-2 + informe clínico completo · $8,500 MXN</span>
+                <Link href="/evaluacion-autismo-cancun" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/fbdbe0/382f51?text=Servicio"
+                    alt="Evaluación de Autismo en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Evaluación de Autismo en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">ADOS-2 + informe clínico completo · $8,500 MXN</span>
+                  </div>
                 </Link>
-                <Link href="/blog/que-es-ados-2-autismo" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">¿Qué es el ADOS-2 y para qué sirve?</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">El estándar de oro en diagnóstico de autismo</span>
+                <Link href="/blog/que-es-ados-2-autismo" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/fbdbe0/382f51?text=Artículo"
+                    alt="¿Qué es el ADOS-2 y para qué sirve?"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">¿Qué es el ADOS-2 y para qué sirve?</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">El estándar de oro en diagnóstico de autismo</span>
+                  </div>
                 </Link>
-                <Link href="/blog/tdah-vs-ansiedad-diferencias" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">TDAH vs. ansiedad: cómo diferenciarlos</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas que se parecen pero tienen origen diferente</span>
+                <Link href="/blog/tdah-vs-ansiedad-diferencias" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Artículo"
+                    alt="TDAH vs. ansiedad: cómo diferenciarlos"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">TDAH vs. ansiedad: cómo diferenciarlos</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas que se parecen pero tienen origen diferente</span>
+                  </div>
                 </Link>
               </div>
             </div>

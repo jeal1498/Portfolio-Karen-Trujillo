@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, DollarSign, Calendar, FileText, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle2, DollarSign, Calendar, FileText, Shield, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+
+const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun';
+const ARTICLE_HEADLINE = '¿Cuánto cuesta una valoración de TDAH en Cancún?';
 
 const faqItems = [
   { q: '¿Cuánto cuesta una valoración de TDAH en Cancún?', a: 'La valoración neuropsicológica de TDAH en Cancún con la Neuropsicóloga Karen Trujillo tiene un costo de $8,300 pesos mexicanos (MXN). Este precio incluye todas las sesiones del proceso (4 a 5 citas), la aplicación de instrumentos estandarizados internacionales, el análisis clínico y el informe final con cédula federal 11009616.' },
@@ -79,6 +83,8 @@ const schema = {
 };
 
 export default function CuantoCuestaValoracionTDAH() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [linkCopied, setLinkCopied] = useState(false);
   return (
     <>
       <Head>
@@ -105,30 +111,50 @@ export default function CuantoCuestaValoracionTDAH() {
         <Navbar />
         <main>
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-sand/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 animate-pulse" />
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
-                <ol className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
-                  <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
+                <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                  <li><Link href="/" className="hover:text-[#d0d0e7] transition-colors" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
                   <li>/</li>
-                  <li className="text-primary font-medium">¿Cuánto cuesta una valoración de TDAH en Cancún?</li>
+                  <li className="font-medium" style={{ color: '#d0d0e7' }}>¿Cuánto cuesta una valoración de TDAH en Cancún?</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-xs font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full mb-4 text-xs font-bold uppercase tracking-widest" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#d0d0e7' }}>
                   Información & Precios
                 </span>
-                <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
+                <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
                   ¿Cuánto cuesta una valoración de TDAH en Cancún?
                 </h1>
-                <p className="text-muted-foreground text-lg font-light leading-relaxed mb-6">
+                <p className="text-lg font-light leading-relaxed mb-6" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Guía completa sobre el costo, qué incluye y por qué importa la calidad del diagnóstico.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-t border-border pt-4">
-                  <span>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
                   <span>Cancún, Quintana Roo</span>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen destacada (placeholder) ── */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Costo+de+la+Valoración+de+TDAH"
+                    alt="¿Cuánto cuesta una valoración de TDAH en Cancún? — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -163,6 +189,20 @@ export default function CuantoCuestaValoracionTDAH() {
                   ))}
                 </div>
 
+                <div className="mb-12">
+                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                    <img
+                      src="https://placehold.co/960x540/f5dfc5/382f51?text=Qué+Incluye+la+Valoración"
+                      alt="Qué incluye el precio de la valoración de TDAH — imagen ilustrativa"
+                      width={960}
+                      height={540}
+                      className="w-full h-auto aspect-video object-cover"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+                </div>
+
                 <h2 className="text-2xl font-serif font-bold text-primary mb-6">Valoración completa vs. diagnóstico de bajo costo</h2>
                 <div className="overflow-x-auto rounded-xl border border-border mb-12">
                   <table className="w-full text-sm">
@@ -185,19 +225,97 @@ export default function CuantoCuestaValoracionTDAH() {
                   </table>
                 </div>
 
+                <div className="mb-12">
+                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                    <img
+                      src="https://placehold.co/960x540/d0d0e7/382f51?text=Diagnóstico+Confiable+vs+Económico"
+                      alt="Comparación entre una valoración completa y un diagnóstico de bajo costo — imagen ilustrativa"
+                      width={960}
+                      height={540}
+                      className="w-full h-auto aspect-video object-cover"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+                </div>
+
                 <h2 className="text-2xl font-serif font-bold text-primary mb-6">Preguntas frecuentes sobre el costo</h2>
-                <div className="space-y-4 mb-10">
+                <div role="list" className="mb-10">
                   {faqItems.map((faq, i) => (
-                    <details key={i} className="group bg-card border-2 border-border hover:border-accent-blue rounded-xl transition-all open:border-primary open:shadow-lg">
-                      <summary className="p-6 font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
-                        <span>{faq.q}</span>
-                        <span className="text-muted-foreground shrink-0 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-                      </summary>
-                      <p className="px-6 pb-6 text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                    </details>
+                    <div key={i} role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }}>
+                      <button
+                        id={`faq-btn-${i}`}
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        aria-expanded={openFaq === i}
+                        aria-controls={`faq-answer-${i}`}
+                        className="w-full py-5 sm:py-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        style={{ background: 'none', border: 'none' }}
+                      >
+                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 text-muted-foreground"
+                          style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <div
+                        id={`faq-answer-${i}`}
+                        role="region"
+                        aria-labelledby={`faq-btn-${i}`}
+                        className="grid transition-all duration-300"
+                        style={{
+                          gridTemplateRows: openFaq === i ? '1fr' : '0fr',
+                          opacity: openFaq === i ? 1 : 0,
+                        }}
+                      >
+                        <div className="overflow-hidden">
+                          <p className="text-muted-foreground text-sm font-light leading-relaxed pb-5 sm:pb-6">{faq.a}</p>
+                        </div>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </motion.div>
+            </div>
+          </section>
+
+          {/* ── Compartir ── */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir en Facebook"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${ARTICLE_HEADLINE} — ${CANONICAL_URL}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir por WhatsApp"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(CANONICAL_URL);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  aria-label="Copiar enlace"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Link2 className="w-4 h-4" />
+                </button>
+                {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+              </div>
             </div>
           </section>
 
@@ -208,6 +326,17 @@ export default function CuantoCuestaValoracionTDAH() {
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
                 La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal 11009616. Agenda una consulta inicial por WhatsApp sin compromiso.
               </p>
+              <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
+                <img
+                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  alt="Neuropsicóloga Karen Trujillo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
+                />
+                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>★ 47+ reseñas · 5.0</span>
+              </div>
               <a
                 href="https://wa.me/529983211547?text=Hola%20Karen,%20leí%20tu%20artículo%20y%20quiero%20información%20sobre%20la%20valoración"
                 target="_blank" rel="noopener noreferrer"
@@ -223,20 +352,50 @@ export default function CuantoCuestaValoracionTDAH() {
             <div className="max-w-5xl mx-auto">
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años</span>
+                <Link href="/evaluacion-tdah-ninos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoración+TDAH+Infantil"
+                    alt="Valoración TDAH Infantil en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años</span>
+                  </div>
                 </Link>
-                <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años</span>
+                <Link href="/evaluacion-tdah-adultos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoración+TDAH+Adultos"
+                    alt="Valoración TDAH Adultos en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años</span>
+                  </div>
                 </Link>
-                <Link href="/evaluacion-autismo-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Diagnóstico Autismo (TEA) en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 2 años</span>
+                <Link href="/evaluacion-autismo-cancun" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/fbdbe0/382f51?text=Diagnóstico+Autismo+(TEA)"
+                    alt="Diagnóstico Autismo (TEA) en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Diagnóstico Autismo (TEA) en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 2 años</span>
+                  </div>
                 </Link>
               </div>
             </div>
