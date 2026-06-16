@@ -285,51 +285,39 @@ export default function ParaEscuelas() {
           {/* ══════════════════════════════════════════════════════
               1 · HERO
               ══════════════════════════════════════════════════════ */}
-          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div
-              className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse"
-              style={{ animationDelay: '1.5s' }}
-            />
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-            <div
-              className="absolute inset-0 opacity-[0.025]"
-              style={{
-                backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-                backgroundSize: '32px 32px',
-              }}
-            />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
 
               <nav aria-label="Breadcrumb" className="mb-6 animate-[fadeIn_0.6s_ease-out_both]">
-                <ol className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <ol className="flex items-center justify-center gap-2 text-xs" style={{ color: 'rgba(208,208,231,0.6)' }}>
                   <li>
-                    <Link href="/" className="hover:text-primary transition-colors">
+                    <Link href="/" className="hover:text-white transition-colors">
                       Inicio
                     </Link>
                   </li>
-                  <li className="text-border">/</li>
-                  <li className="text-primary font-medium">Para Escuelas</li>
+                  <li style={{ color: 'rgba(208,208,231,0.3)' }}>/</li>
+                  <li className="text-white font-medium">Para Escuelas</li>
                 </ol>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/10 max-w-full">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 max-w-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}>
                   <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-sm shadow-success shrink-0" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground text-center leading-snug">
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(208,208,231,0.8)' }}>
                     Para docentes y orientadores · Cancún
                   </span>
                 </div>
 
-                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-[1.1] mb-6 text-balance">
+                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-6 text-balance">
                   Evaluaciones neuropsicológicas<br className="hidden sm:block" /> para escuelas en Cancún
                 </h1>
 
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Informes con diagnóstico formal, perfil cognitivo y recomendaciones pedagógicas específicas.{' '}
-                  <strong className="text-primary font-semibold">Validez oficial SEP.</strong>{' '}
+                  <strong className="text-white font-semibold">Validez oficial SEP.</strong>{' '}
                   Referidos bienvenidos.
                 </p>
               </div>
@@ -342,9 +330,10 @@ export default function ParaEscuelas() {
                 ].map((chip) => (
                   <span
                     key={chip.text}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-card border border-border rounded-full text-xs font-medium text-foreground shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 border rounded-full text-xs font-medium"
+                    style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(208,208,231,0.18)', color: 'rgba(208,208,231,0.85)' }}
                   >
-                    <chip.icon className="w-3.5 h-3.5 text-primary/60 shrink-0" />
+                    <chip.icon className="w-3.5 h-3.5 shrink-0" style={{ color: 'rgba(208,208,231,0.6)' }} />
                     {chip.text}
                   </span>
                 ))}
@@ -367,15 +356,13 @@ export default function ParaEscuelas() {
                     e.preventDefault();
                     document.getElementById('que-incluye-informe')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-primary/15 text-primary/70 hover:border-primary/30 hover:text-primary transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/30 text-white/85 hover:bg-white/10 transition-all duration-300"
                 >
                   Ver qué incluye el informe
                   <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5 shrink-0" />
                 </a>
               </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </section>
 
 
@@ -574,49 +561,36 @@ export default function ParaEscuelas() {
                 </h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div
-                      className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${
-                        openFaq === i
-                          ? 'border-primary/50 shadow-lg shadow-primary/8'
-                          : 'border-border hover:border-accent-blue/30 hover:shadow-sm'
-                      }`}
-                    >
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                       <button
+                        id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-answer-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
                       >
-                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div
-                          className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${
-                            openFaq === i ? 'border-primary bg-primary/10' : 'border-border'
-                          }`}
-                        >
-                          <ChevronDown
-                            className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${
-                              openFaq === i ? 'rotate-180 text-primary' : ''
-                            }`}
-                          />
-                        </div>
+                        <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 transition-transform duration-250"
+                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        />
                       </button>
                       <div
                         id={`faq-answer-${i}`}
                         role="region"
+                        aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
-                        style={{
-                          gridTemplateRows: openFaq === i ? '1fr' : '0fr',
-                          opacity: openFaq === i ? 1 : 0,
-                          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
-                        }}
+                        style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
-                            <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                          </div>
+                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                            {faq.a}
+                          </p>
                         </div>
                       </div>
                     </div>
