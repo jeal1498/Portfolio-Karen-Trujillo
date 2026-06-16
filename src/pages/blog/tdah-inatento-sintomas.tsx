@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, Eye, Brain, Clock, AlertTriangle, CheckCircle2, HelpCircle, ChevronDown } from 'lucide-react';
+import { ArrowRight, Eye, Brain, Clock, AlertTriangle, CheckCircle2, HelpCircle, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -164,7 +165,12 @@ const schema = {
   ],
 };
 
+const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/tdah-inatento-sintomas';
+const HEADLINE = 'TDAH inatento: el tipo que casi nadie detecta';
+
 export default function TDAHInatento() {
+  const [linkCopied, setLinkCopied] = useState(false);
+
   return (
     <>
       <Head>
@@ -225,6 +231,25 @@ export default function TDAHInatento() {
             </div>
           </section>
 
+          {/* ── Imagen destacada (placeholder) ── */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=TDAH+Inatento"
+                    alt="TDAH inatento: el tipo que casi nadie detecta — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </motion.div>
+            </div>
+          </section>
+
           {/* ── Definición ── */}
           <section id="definicion-tdah-inatento" className="py-16 px-6 bg-card">
             <div className="max-w-3xl mx-auto">
@@ -274,6 +299,25 @@ export default function TDAHInatento() {
                     <strong>Importante:</strong> Todos los niños se distraen a veces. Lo que diferencia al TDAH inatento es la <em>intensidad, frecuencia y persistencia</em> de estas dificultades — no el hecho aislado.
                   </p>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen inline 1 (placeholder) ── */}
+          <section className="py-12 px-6 bg-card">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/f5dfc5/382f51?text=TDAH+en+Ni%C3%B1os"
+                    alt="Niño con TDAH inatento en el salón de clases — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -329,6 +373,25 @@ export default function TDAHInatento() {
                     <p className="text-sm text-foreground leading-relaxed"><strong>Los síntomas se atribuyen a personalidad.</strong> "Es muy soñador", "no tiene ambición", "podría si quisiera". Estas frases acompañan a muchos adultos con TDAH inatento no diagnosticado.</p>
                   </div>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen inline 2 (placeholder) ── */}
+          <section className="py-12 px-6 bg-card border-b border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Diagn%C3%B3stico+Tard%C3%ADo"
+                    alt="Por qué el TDAH inatento se detecta tan tarde — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -409,6 +472,46 @@ export default function TDAHInatento() {
             </div>
           </section>
 
+          {/* ── Compartir ── */}
+          <section className="py-8 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir en Facebook"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${HEADLINE} — ${CANONICAL_URL}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir por WhatsApp"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(CANONICAL_URL);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  aria-label="Copiar enlace"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Link2 className="w-4 h-4" />
+                </button>
+                {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+              </div>
+            </div>
+          </section>
+
           {/* ── CTA Doble ── */}
           <section className="py-16 px-6 bg-gradient-primary text-primary-foreground">
             <div className="max-w-3xl mx-auto text-center">
@@ -416,6 +519,17 @@ export default function TDAHInatento() {
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
                 Una evaluación neuropsicológica completa da la respuesta con datos objetivos — no con impresiones. Karen Trujillo atiende en Cancún con cédula federal 11009616.
               </p>
+              <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
+                <img
+                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  alt="Neuropsicóloga Karen Trujillo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
+                />
+                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>★ 47+ reseñas · 5.0</span>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={WA_NINOS} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-lg hover:opacity-90 transition-all">
@@ -434,20 +548,50 @@ export default function TDAHInatento() {
             <div className="max-w-5xl mx-auto">
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
+                <Link href="/evaluacion-tdah-ninos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoraci%C3%B3n+TDAH+Infantil"
+                    alt="Valoración TDAH Infantil en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
+                  </div>
                 </Link>
-                <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
+                <Link href="/evaluacion-tdah-adultos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoraci%C3%B3n+TDAH+Adultos"
+                    alt="Valoración TDAH Adultos en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
+                  </div>
                 </Link>
-                <Link href="/blog/tdah-en-ninas-sintomas" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">TDAH en niñas: síntomas que casi nadie detecta</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">El perfil invisible del TDAH femenino</span>
+                <Link href="/blog/tdah-en-ninas-sintomas" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+en+Ni%C3%B1as"
+                    alt="TDAH en niñas: síntomas que casi nadie detecta"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">TDAH en niñas: síntomas que casi nadie detecta</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">El perfil invisible del TDAH femenino</span>
+                  </div>
                 </Link>
               </div>
             </div>
