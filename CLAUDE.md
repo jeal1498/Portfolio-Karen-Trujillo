@@ -112,3 +112,29 @@ interface FaqItem { q, a }
 - Duraciones entre 220–380ms; easing `ease-out` preferido
 
 **Cambios quirúrgicos:** No refactorizar código adyacente que no sea parte de la tarea. No agregar abstracciones para uso único.
+
+# Lessons Learned
+
+## 1. Verificación visual sin navegador disponible - error-pattern
+- **Fecha**: 2026-06-16
+- **Clasificación**: error-pattern
+- **Lección**: Las herramientas MCP `playwright`/`chrome-devtools` fallan en este entorno remoto (`Chromium distribution 'chrome' is not found`). No hay navegador disponible para screenshots o snapshots de accesibilidad.
+- **Acción**: Verificar cambios de UI levantando `next dev`, haciendo `curl` al HTML renderizado por SSR y usando `grep` para confirmar la presencia de marcadores esperados (clases CSS, URLs de imagen, textos clave), en vez de depender de captura visual.
+
+## 2. Conteo de ocurrencias en HTML de una sola línea - error-pattern
+- **Fecha**: 2026-06-16
+- **Clasificación**: error-pattern
+- **Lección**: El HTML servido por Next.js SSR suele venir como una sola línea larga (sin saltos de línea). `grep -c` cuenta líneas coincidentes, no ocurrencias — con HTML de una línea, `grep -c "X"` siempre da como máximo 1 aunque "X" aparezca varias veces.
+- **Acción**: Usar `grep -o "X" archivo | wc -l` para contar ocurrencias reales al verificar contenido renderizado.
+
+## 3. `tsconfig.tsbuildinfo` está versionado en este repo - automation-pattern
+- **Fecha**: 2026-06-16
+- **Clasificación**: automation-pattern
+- **Lección**: A diferencia de la convención usual de ignorar cachés de build, este repo versiona `tsconfig.tsbuildinfo` (confirmado con `git log --follow -- tsconfig.tsbuildinfo`, múltiples commits `chore: actualizar caché...`). El stop-hook de git marca el repo como "sucio" si este archivo queda sin commitear tras correr `tsc`/`next build`.
+- **Acción**: Antes de asumir que un archivo de build es descartable, revisar su historial con `git log --follow`. Si está versionado, incluirlo en el commit junto con los cambios de código.
+
+## 4. Delegar el mismo patrón a múltiples agentes en paralelo - automation-pattern
+- **Fecha**: 2026-06-16
+- **Clasificación**: automation-pattern
+- **Lección**: Al aplicar un patrón idéntico de 5 partes (imagen hero, imágenes inline, compartir social, CTA oscuro, tarjetas relacionadas con imagen) a 11 artículos del blog, repartir el trabajo en 4 agentes en paralelo (2-3 archivos cada uno) funcionó bien siempre que cada agente recibiera instrucción explícita de auto-verificar con `npx tsc --noEmit -p .` y confirmar con `git status`/`git diff --stat` que solo tocó sus archivos asignados. Los agentes detectaron y corrigieron solos sus propios bugs (secciones duplicadas, tags JSX malformados, colisión de fondos del mismo color).
+- **Acción**: Al repartir tareas repetitivas entre agentes en paralelo, siempre instruir verificación propia (`tsc`, diff de archivos) antes de reportar como completado.
