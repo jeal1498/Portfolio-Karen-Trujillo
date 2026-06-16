@@ -312,23 +312,27 @@ export default function Precios() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">Preguntas sobre el costo</h2>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqPrecios.map((faq, i) => (
-                  <div
-                    key={i}
-                    className={`bg-card border-2 rounded-2xl overflow-hidden transition-all duration-300 ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent/40'}`}
-                  >
+                  <div key={i} role="listitem" style={{ borderBottom: i < faqPrecios.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                     <button
+                      id={`faq-btn-${i}`}
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
                       aria-expanded={openFaq === i}
-                      className="w-full p-5 flex justify-between items-center gap-4 text-left cursor-pointer"
+                      aria-controls={`faq-answer-${i}`}
+                      className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
                     >
-                      <span className="font-bold text-primary text-sm">{faq.q}</span>
-                      <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}>
-                        <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} />
-                      </div>
+                      <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                      <ChevronDown
+                        className="w-5 h-5 shrink-0 transition-transform duration-250"
+                        style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                        aria-hidden="true"
+                      />
                     </button>
                     <div
+                      role="region"
+                      aria-labelledby={`faq-btn-${i}`}
                       className="grid transition-all duration-300"
                       style={{
                         gridTemplateRows: openFaq === i ? '1fr' : '0fr',
@@ -337,9 +341,9 @@ export default function Precios() {
                       }}
                     >
                       <div className="overflow-hidden">
-                        <div className="px-5 pb-5 pt-4 border-t border-border/50">
-                          <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                        </div>
+                        <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                          {faq.a}
+                        </p>
                       </div>
                     </div>
                   </div>
