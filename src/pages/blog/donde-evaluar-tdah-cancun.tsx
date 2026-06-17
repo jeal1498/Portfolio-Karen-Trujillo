@@ -6,9 +6,11 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20gu%C3%ADa%20sobre%20evaluaci%C3%B3n%20de%20TDAH%20en%20Canc%C3%BAn%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n';
-const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20gu%C3%ADa%20sobre%20evaluaci%C3%B3n%20de%20TDAH%20en%20Canc%C3%BAn%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n`;
+const CANONICAL_URL = `${SITE_URL}/blog/donde-evaluar-tdah-cancun`;
 const ARTICLE_HEADLINE = 'Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)';
 
 const criteriosCalidad = [
@@ -79,7 +81,7 @@ const procesoKaren = [
 const faqItems = [
   {
     q: '¿Dónde se puede evaluar TDAH en Cancún?',
-    a: 'La neuropsicóloga Karen Trujillo (cédula 11009616) realiza evaluaciones neuropsicológicas de TDAH en su consultorio ubicado en SM200 M49 L2, Hacienda de Chinconcuac, Cancún, Quintana Roo. Atiende niños de 5-17 años y adultos de 18 en adelante. El proceso toma 2-3 semanas (4-5 sesiones) y el informe tiene validez oficial ante SEP, IMSS e instituciones.',
+    a: `La neuropsicóloga Karen Trujillo (cédula ${CEDULA}) realiza evaluaciones neuropsicológicas de TDAH en su consultorio ubicado en SM200 M49 L2, Hacienda de Chinconcuac, Cancún, Quintana Roo. Atiende niños de 5-17 años y adultos de 18 en adelante. El proceso toma 2-3 semanas (4-5 sesiones) y el informe tiene validez oficial ante SEP, IMSS e instituciones.`,
   },
   {
     q: '¿Cuánto cuesta una evaluación de TDAH en Cancún?',
@@ -108,26 +110,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun/#article',
+      '@id': `${CANONICAL_URL}/#article`,
       headline: 'Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)',
-      description: 'Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula 11009616).',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      description: `Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula ${CEDULA}).`,
+      image: KAREN_IMAGE,
       datePublished: '2026-06-03',
       dateModified: '2026-06-03',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -142,9 +144,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'Dónde evaluar TDAH en Cancún', item: 'https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'Dónde evaluar TDAH en Cancún', item: CANONICAL_URL },
       ],
     },
     {
@@ -160,22 +162,22 @@ export default function DondeEvaluarTDAHCancun() {
     <>
       <Head>
         <title>Dónde evaluar TDAH en Cancún: guía para elegir bien | Karen Trujillo</title>
-        <meta name="description" content="Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula 11009616)." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun" />
+        <meta name="description" content={`Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula ${CEDULA}).`} />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)" />
         <meta property="og:description" content="Ya decidiste que quieres una evaluación. Ahora la pregunta es: ¿cómo elegir bien? Criterios concretos, señales de alerta y el proceso paso a paso." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — guía evaluación TDAH" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-03" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dónde evaluar TDAH en Cancún: guía para elegir bien | Karen Trujillo" />
         <meta name="twitter:description" content="Criterios concretos, señales de alerta y el proceso paso a paso para elegir bien dónde evaluar TDAH en Cancún." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -208,7 +210,7 @@ export default function DondeEvaluarTDAHCancun() {
                   Ya decidiste que quieres una evaluación. Ahora la pregunta es: ¿cómo elegir bien? Esta guía te da los criterios concretos.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(208,208,231,0.18)' }}>
-                  <span><strong style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</strong> — Cédula 11009616</span>
+                  <span><strong style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</strong> — Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>7 min de lectura</span>
                 </div>
@@ -340,7 +342,7 @@ export default function DondeEvaluarTDAHCancun() {
                     <p className="text-xs text-muted-foreground font-light">Duración del proceso completo</p>
                   </div>
                   <div className="bg-secondary border border-border rounded-xl p-5 text-center">
-                    <p className="text-xl font-bold text-primary mb-1">Cédula 11009616</p>
+                    <p className="text-xl font-bold text-primary mb-1">Cédula {CEDULA}</p>
                     <p className="text-xs text-muted-foreground font-light">Habilitación federal SEP</p>
                   </div>
                 </div>
@@ -433,17 +435,17 @@ export default function DondeEvaluarTDAHCancun() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Listo para agendar?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Karen Trujillo es neuropsicóloga clínica con cédula federal 11009616, especializada en evaluación de TDAH en Cancún. Atiende niños de 5-17 años y adultos. El informe tiene validez oficial ante SEP, IMSS e instituciones.
+                Karen Trujillo es neuropsicóloga clínica con cédula federal {CEDULA}, especializada en evaluación de TDAH en Cancún. Atiende niños de 5-17 años y adultos. El informe tiene validez oficial ante SEP, IMSS e instituciones.
               </p>
               <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
                 <img
-                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  src={KAREN_IMAGE}
                   alt="Neuropsicóloga Karen Trujillo"
                   width={36}
                   height={36}
                   className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
                 />
-                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
                 <span>★ 47+ reseñas · 5.0</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

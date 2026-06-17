@@ -9,12 +9,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { SOCIAL, SOCIAL_PROFILES, INSTAGRAM_HANDLE } from '@/lib/contact';
+import { SOCIAL, SOCIAL_PROFILES, INSTAGRAM_HANDLE, WA_NUMBER, PHONE_E164 } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica`;
+const CANONICAL_URL = `${SITE_URL}/neuropsicologia-cancun`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -31,7 +33,7 @@ const diferenciadores = [
   },
   {
     title: 'Informe con validez oficial',
-    desc: 'El informe neuropsicológico emitido con cédula federal (11009616) tiene validez ante escuelas, SEP, IMSS, ISSSTE y empleadores. Es el documento que abre puertas a adecuaciones curriculares, apoyos escolares y planes de intervención.',
+    desc: `El informe neuropsicológico emitido con cédula federal (${CEDULA}) tiene validez ante escuelas, SEP, IMSS, ISSSTE y empleadores. Es el documento que abre puertas a adecuaciones curriculares, apoyos escolares y planes de intervención.`,
   },
   {
     title: 'Recomendaciones concretas y accionables',
@@ -82,7 +84,7 @@ const faqItems = [
   },
   {
     q: '¿Es Karen Trujillo neuropsicóloga certificada?',
-    a: 'Sí. Karen Trujillo es neuropsicóloga clínica con cédula federal 11009616, egresada de la Universidad Modelo (Mérida, Yucatán), con más de 7 años de experiencia y 500+ evaluaciones realizadas. Es miembro activa del Colegio de Psicólogos de Quintana Roo. Su consultorio está ubicado en Cancún, Quintana Roo.',
+    a: `Sí. Karen Trujillo es neuropsicóloga clínica con cédula federal ${CEDULA}, egresada de la Universidad Modelo (Mérida, Yucatán), con más de 7 años de experiencia y 500+ evaluaciones realizadas. Es miembro activa del Colegio de Psicólogos de Quintana Roo. Su consultorio está ubicado en Cancún, Quintana Roo.`,
   },
   {
     q: '¿Dónde está el consultorio en Cancún?',
@@ -102,14 +104,14 @@ const schema = {
   '@graph': [
     {
       '@type': 'AboutPage',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun/#page',
+      '@id': `${CANONICAL_URL}/#page`,
       name: 'Neuropsicóloga en Cancún — Karen Trujillo',
       description:
-        'Conoce a Karen Trujillo, neuropsicóloga clínica en Cancún con cédula 11009616, especializada en evaluación de TDAH y autismo. Miembro del Colegio de Psicólogos de Quintana Roo.',
-      url: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun',
+        `Conoce a Karen Trujillo, neuropsicóloga clínica en Cancún con cédula ${CEDULA}, especializada en evaluación de TDAH y autismo. Miembro del Colegio de Psicólogos de Quintana Roo.`,
+      url: CANONICAL_URL,
       inLanguage: 'es-MX',
-      about: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      mainEntity: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      about: { '@id': `${SITE_URL}/#physician` },
+      mainEntity: { '@id': `${SITE_URL}/#physician` },
       speakable: {
         '@type': 'SpeakableSpecification',
         cssSelector: ['#que-es-neuropsicologia', '#diferenciadores', '#karen-perfil', '#preguntas-frecuentes'],
@@ -118,27 +120,27 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Neuropsicóloga en Cancún',
-          item: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun',
+          item: CANONICAL_URL,
         },
       ],
     },
     {
       '@type': 'Physician',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+      '@id': `${SITE_URL}/#physician`,
       name: 'Karen Trujillo',
       jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-      url: 'https://www.psicologakarentrujillo.com.mx',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-      telephone: '+529983211547',
+      url: SITE_URL,
+      image: KAREN_IMAGE,
+      telephone: PHONE_E164,
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'Cédula Profesional Federal',
-        credentialId: '11009616',
+        credentialId: CEDULA,
         issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
       },
       alumniOf: { '@type': 'EducationalOrganization', name: 'Universidad Modelo', addressLocality: 'Mérida', addressRegion: 'Yucatán' },
@@ -156,8 +158,8 @@ const schema = {
       },
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '47',
+        ratingValue: REVIEWS.ratingValue,
+        reviewCount: REVIEWS.reviewCount,
         bestRating: '5',
         worstRating: '1',
       },
@@ -230,12 +232,12 @@ export default function NeuropsicologiaCancun() {
   return (
     <>
       <Head>
-        <title>Neuropsicóloga en Cancún — Karen Trujillo | Cédula 11009616</title>
+        <title>{`Neuropsicóloga en Cancún — Karen Trujillo | Cédula ${CEDULA}`}</title>
         <meta
           name="description"
-          content="Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal 11009616. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales. Miembro del Colegio de Psicólogos de Quintana Roo."
+          content={`Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal ${CEDULA}. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales. Miembro del Colegio de Psicólogos de Quintana Roo.`}
         />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun" />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
@@ -248,16 +250,16 @@ export default function NeuropsicologiaCancun() {
         <meta property="og:title" content="Neuropsicóloga en Cancún — Karen Trujillo | Especialista TDAH y TEA" />
         <meta
           property="og:description"
-          content="Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal 11009616. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales."
+          content={`Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal ${CEDULA}. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales.`}
         />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Neuropsicóloga en Cancún — Karen Trujillo | Cédula 11009616" />
+        <meta name="twitter:title" content={`Neuropsicóloga en Cancún — Karen Trujillo | Cédula ${CEDULA}`} />
         <meta
           name="twitter:description"
-          content="Neuropsicóloga clínica en Cancún especializada en TDAH y autismo. Evaluaciones con pruebas estandarizadas internacionales. Cédula federal 11009616."
+          content={`Neuropsicóloga clínica en Cancún especializada en TDAH y autismo. Evaluaciones con pruebas estandarizadas internacionales. Cédula federal ${CEDULA}.`}
         />
 
         <script
@@ -323,7 +325,7 @@ export default function NeuropsicologiaCancun() {
               {/* Trust stat chips */}
               <div className="animate-[fadeInUp_0.8s_ease-out_0.2s_both] flex flex-wrap justify-center gap-3 mb-10">
                 {[
-                  { icon: BadgeCheck, text: 'Cédula 11009616' },
+                  { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Clock, text: '7+ años de experiencia' },
                   { icon: Users, text: '500+ evaluaciones' },
                   { icon: Award, text: 'Colegio de Psicólogos de Q.Roo' },
@@ -483,7 +485,7 @@ export default function NeuropsicologiaCancun() {
                     <div className="relative">
                       <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
                         <Image
-                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                          src={KAREN_IMAGE}
                           alt="Neuropsicóloga Karen Trujillo en Cancún — especialista en TDAH y autismo"
                           width={256}
                           height={256}
@@ -496,7 +498,7 @@ export default function NeuropsicologiaCancun() {
                         <p className="text-[9px] font-bold uppercase tracking-widest text-primary-foreground/70">
                           Cédula Federal
                         </p>
-                        <p className="text-sm font-bold font-mono">11009616</p>
+                        <p className="text-sm font-bold font-mono">{CEDULA}</p>
                       </div>
                     </div>
 
@@ -506,7 +508,7 @@ export default function NeuropsicologiaCancun() {
                         { valor: '7+', label: 'años de experiencia' },
                         { valor: '500+', label: 'evaluaciones' },
                         { valor: '47+', label: 'reseñas 5 estrellas' },
-                        { valor: '5.0', label: 'calificación promedio' },
+                        { valor: REVIEWS.ratingValue, label: 'calificación promedio' },
                       ].map((stat) => (
                         <div
                           key={stat.label}
@@ -528,7 +530,7 @@ export default function NeuropsicologiaCancun() {
                         ))}
                       </div>
                       <div>
-                        <p className="text-sm font-bold text-primary">5.0 · 47 reseñas</p>
+                        <p className="text-sm font-bold text-primary">{REVIEWS.ratingValue} · {REVIEWS.reviewCount} reseñas</p>
                         <p className="text-xs text-muted-foreground font-light">Verificadas en Google</p>
                       </div>
                     </div>
@@ -557,7 +559,7 @@ export default function NeuropsicologiaCancun() {
                           Universidad Modelo (Mérida, Yucatán)
                         </strong>
                         , con cédula profesional federal{' '}
-                        <strong className="text-primary font-semibold">11009616</strong> emitida por la SEP.
+                        <strong className="text-primary font-semibold">{CEDULA}</strong> emitida por la SEP.
                         Cuenta con más de 7 años de experiencia clínica y más de 500 evaluaciones realizadas en
                         Cancún, Quintana Roo.
                       </p>
@@ -581,7 +583,7 @@ export default function NeuropsicologiaCancun() {
                     {/* Credentials list */}
                     <div className="space-y-2">
                       {[
-                        { icon: BadgeCheck, label: 'Cédula Federal 11009616 — SEP' },
+                        { icon: BadgeCheck, label: `Cédula Federal ${CEDULA} — SEP` },
                         { icon: Award, label: 'Universidad Modelo, Mérida, Yucatán' },
                         { icon: Stethoscope, label: '7+ años de experiencia clínica' },
                         { icon: Users, label: '500+ evaluaciones realizadas' },
