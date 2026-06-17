@@ -210,7 +210,7 @@ export default function BurnoutVsTDAH() {
                   Es la pregunta que más hacen los adultos en consulta. Los síntomas se parecen, la confusión es real. Pero la respuesta cambia completamente el tratamiento.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>9 min de lectura</span>
                 </div>

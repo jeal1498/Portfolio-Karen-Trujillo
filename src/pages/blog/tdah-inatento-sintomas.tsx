@@ -225,7 +225,7 @@ export default function TDAHInatento() {
                   No hace escándalo, no interrumpe, no pelea. Simplemente parece ausente, despistado o "poco esforzado". Por eso pasa años sin diagnóstico — a veces toda la infancia.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>8 min de lectura</span>
                 </div>
