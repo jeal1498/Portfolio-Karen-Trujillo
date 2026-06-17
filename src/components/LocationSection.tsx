@@ -1,6 +1,6 @@
 import { MapPin, Clock, Video } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { HOURS } from '@/lib/site';
+import { HOURS, ADDRESS } from '@/lib/site';
 
 const LocationSection = () => {
   return (
@@ -30,9 +30,9 @@ const LocationSection = () => {
                 <div>
                   <p className="text-sm font-bold text-primary mb-1">Dirección</p>
                   <address className="text-xs text-muted-foreground leading-relaxed not-italic">
-                    SM200 M49 L2, Hacienda de Chinconcuac,<br />
-                    Circuito casa 1587B, C.P. 77539<br />
-                    Cancún, Quintana Roo, México.
+                    {ADDRESS.streetAddress},<br />
+                    C.P. {ADDRESS.postalCode}<br />
+                    {ADDRESS.addressLocality}, {ADDRESS.addressRegion}, México.
                   </address>
                 </div>
               </div>

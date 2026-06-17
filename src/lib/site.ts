@@ -18,7 +18,7 @@ export const KAREN_IMAGE = `${SITE_URL}${KAREN_IMAGE_PATH}`;
 
 /** Dirección postal del consultorio (campos de PostalAddress en schema.org). */
 export const ADDRESS = {
-  streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac',
+  streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac, Circuito casa 1587B',
   addressLocality: 'Cancún',
   addressRegion: 'Quintana Roo',
   postalCode: '77539',

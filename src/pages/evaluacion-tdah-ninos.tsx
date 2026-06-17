@@ -345,15 +345,6 @@ const schema = {
         areaServed: { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
       },
     },
-    /* ── HowTo ── */
-    {
-      '@type': 'HowTo',
-      name: 'Proceso de valoración neuropsicológica de TDAH infantil en Cancún',
-      description: 'Protocolo clínico de 5 fases para diagnosticar TDAH en niños de 5 a 17 años. Duración total: 2 a 3 semanas.',
-      totalTime: 'P3W',
-      estimatedCost: { '@type': 'MonetaryAmount', currency: 'MXN', value: '7000' },
-      step: proceso.map((p, i) => ({ '@type': 'HowToStep', name: p.titulo, text: p.desc, position: i + 1 })),
-    },
     /* ── Individual Reviews ── */
     ...reviews.map((r, i) => ({
       '@type': 'Review',
