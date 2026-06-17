@@ -339,7 +339,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula {CEDULA}</title>
+        <title>{`Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula ${CEDULA}`}</title>
         <meta name="description" content="Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Pruebas estandarizadas internacionales. Informes con validez oficial. Agenda en línea." />
         <link rel="canonical" href={`${SITE_URL}/`} />
 
