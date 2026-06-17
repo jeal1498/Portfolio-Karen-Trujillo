@@ -220,7 +220,7 @@ export default function AutismoNivel1SintomasAdultos() {
                   No hay discapacidad intelectual. Hay lenguaje fluido. Hay personas que funcionan — y se agotan en el intento. El TEA nivel 1 es el perfil que más tarda en diagnosticarse.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>10 min de lectura</span>
                 </div>
@@ -234,7 +234,7 @@ export default function AutismoNivel1SintomasAdultos() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Autismo+Nivel+1+en+Adultos"
+                    src="/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg"
                     alt="Autismo nivel 1: cuando no pareces autista pero lo eres — imagen ilustrativa"
                     width={1200}
                     height={675}
@@ -301,7 +301,7 @@ export default function AutismoNivel1SintomasAdultos() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Enmascaramiento+Social"
+                    src="/blog/sand-enmascaramiento-social-960x540.svg"
                     alt="Adulto con TEA nivel 1 procesando interacciones sociales — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -370,7 +370,7 @@ export default function AutismoNivel1SintomasAdultos() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Evaluación+de+TEA+con+ADOS-2"
+                    src="/blog/lavender-evaluacion-de-tea-con-ados-2-960x540.svg"
                     alt="Sesión de evaluación de TEA nivel 1 en adultos — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -519,7 +519,7 @@ export default function AutismoNivel1SintomasAdultos() {
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-autismo-cancun" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/fbdbe0/382f51?text=Servicio"
+                    src="/blog/blush-servicio-640x400.svg"
                     alt="Evaluación de Autismo en Cancún"
                     width={640}
                     height={400}
@@ -534,7 +534,7 @@ export default function AutismoNivel1SintomasAdultos() {
                 </Link>
                 <Link href="/blog/que-es-ados-2-autismo" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/fbdbe0/382f51?text=Artículo"
+                    src="/blog/blush-articulo-640x400.svg"
                     alt="¿Qué es el ADOS-2 y por qué importa?"
                     width={640}
                     height={400}
@@ -549,7 +549,7 @@ export default function AutismoNivel1SintomasAdultos() {
                 </Link>
                 <Link href="/blog/tdah-vs-ansiedad-diferencias" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Artículo"
+                    src="/blog/lavender-articulo-640x400.svg"
                     alt="TDAH vs. ansiedad: cómo diferenciarlos"
                     width={640}
                     height={400}

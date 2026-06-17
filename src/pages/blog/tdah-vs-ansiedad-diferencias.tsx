@@ -190,7 +190,7 @@ export default function TDAHvsAnsiedad() {
                   Es una de las preguntas más frecuentes en consulta. Los síntomas se parecen, la confusión es real — pero la respuesta importa porque el tratamiento es diferente.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4 rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
+                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>9 min de lectura</span>
                 </div>
@@ -204,7 +204,7 @@ export default function TDAHvsAnsiedad() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=TDAH+o+Ansiedad"
+                    src="/blog/dark-tdah-o-ansiedad-1200x675.svg"
                     alt="¿TDAH o ansiedad? Cómo saber cuál es cuál — o si son los dos — imagen ilustrativa"
                     width={1200}
                     height={675}
@@ -292,7 +292,7 @@ export default function TDAHvsAnsiedad() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/f5dfc5/382f51?text=S%C3%ADntomas+Compartidos"
+                    src="/blog/sand-sintomas-compartidos-960x540.svg"
                     alt="Síntomas compartidos entre TDAH y ansiedad — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -367,7 +367,7 @@ export default function TDAHvsAnsiedad() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Evaluaci%C3%B3n+Neuropsicol%C3%B3gica"
+                    src="/blog/lavender-evaluacion-neuropsicologica-960x540.svg"
                     alt="Evaluación neuropsicológica para diagnóstico diferencial de TDAH y ansiedad — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -525,7 +525,7 @@ export default function TDAHvsAnsiedad() {
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-tdah-adultos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoraci%C3%B3n+TDAH+Adultos"
+                    src="/blog/lavender-valoracion-tdah-adultos-640x400.svg"
                     alt="Valoración TDAH Adultos en Cancún"
                     width={640}
                     height={400}
@@ -540,7 +540,7 @@ export default function TDAHvsAnsiedad() {
                 </Link>
                 <Link href="/blog/tdah-inatento-sintomas" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Inatento"
+                    src="/blog/lavender-tdah-inatento-640x400.svg"
                     alt="TDAH inatento: el tipo que casi nadie detecta"
                     width={640}
                     height={400}
@@ -555,7 +555,7 @@ export default function TDAHvsAnsiedad() {
                 </Link>
                 <Link href="/blog/tdah-adultos-diagnostico-tardio" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+en+Adultos"
+                    src="/blog/lavender-tdah-en-adultos-640x400.svg"
                     alt="TDAH en adultos: diagnóstico tardío"
                     width={640}
                     height={400}
