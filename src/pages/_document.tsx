@@ -69,7 +69,7 @@ const professionalSchema = {
 
 export default function Document() {
   return (
-    <Html lang="es" className="scroll-smooth">
+    <Html lang="es-MX" className="scroll-smooth">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

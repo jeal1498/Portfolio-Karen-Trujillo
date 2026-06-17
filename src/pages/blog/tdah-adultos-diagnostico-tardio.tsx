@@ -162,14 +162,14 @@ const relatedResources = [
     icon: Users,
     category: 'TDAH Infantil',
     title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico',
-    img: 'https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Infantil',
+    img: '/blog/lavender-tdah-infantil-640x400.svg',
   },
   {
     href: '/blog/que-es-ados-2-autismo',
     icon: Puzzle,
     category: 'Autismo (TEA)',
     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
-    img: 'https://placehold.co/640x400/fbdbe0/382f51?text=Autismo+(TEA)',
+    img: '/blog/blush-autismo-tea-640x400.svg)',
   },
 ];
 
@@ -368,7 +368,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p>
+                    <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p>
                     <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
                       <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 14 min de lectura</span>
@@ -388,7 +388,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=TDAH+en+Adultos"
+                    src="/blog/dark-tdah-en-adultos-1200x675.svg"
                     alt="TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 — imagen ilustrativa"
                     width={1200}
                     height={675}
@@ -472,7 +472,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Vida+diaria+con+TDAH"
+                    src="/blog/sand-vida-diaria-con-tdah-960x540.svg"
                     alt="Adulto con TDAH organizando su rutina diaria — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -646,7 +646,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Evaluación+Neuropsicológica"
+                    src="/blog/lavender-evaluacion-neuropsicologica-960x540.svg"
                     alt="Sesión de evaluación neuropsicológica para diagnóstico de TDAH — imagen ilustrativa"
                     width={960}
                     height={540}

@@ -210,7 +210,7 @@ export default function DondeEvaluarTDAHCancun() {
                   Ya decidiste que quieres una evaluación. Ahora la pregunta es: ¿cómo elegir bien? Esta guía te da los criterios concretos.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(208,208,231,0.18)' }}>
-                  <span><strong style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</strong> — Cédula {CEDULA}</span>
+                  <span><strong style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</strong> · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>7 min de lectura</span>
                 </div>
@@ -224,7 +224,7 @@ export default function DondeEvaluarTDAHCancun() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Dónde+Evaluar+TDAH+en+Cancún"
+                    src="/blog/dark-donde-evaluar-tdah-en-cancun-1200x675.svg"
                     alt="Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar) — imagen ilustrativa"
                     width={1200}
                     height={675}
@@ -265,7 +265,7 @@ export default function DondeEvaluarTDAHCancun() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Cómo+Elegir+Bien"
+                    src="/blog/sand-como-elegir-bien-960x540.svg"
                     alt="Cómo elegir un consultorio confiable para evaluar TDAH en Cancún — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -356,7 +356,7 @@ export default function DondeEvaluarTDAHCancun() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Consultorio+en+Cancún"
+                    src="/blog/lavender-consultorio-en-cancun-960x540.svg"
                     alt="Consultorio de evaluación de TDAH de Karen Trujillo en Cancún — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -472,7 +472,7 @@ export default function DondeEvaluarTDAHCancun() {
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-tdah-ninos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoración+TDAH+Infantil"
+                    src="/blog/lavender-valoracion-tdah-infantil-640x400.svg"
                     alt="Valoración TDAH Infantil en Cancún"
                     width={640}
                     height={400}
@@ -487,7 +487,7 @@ export default function DondeEvaluarTDAHCancun() {
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoración+TDAH+Adultos"
+                    src="/blog/lavender-valoracion-tdah-adultos-640x400.svg"
                     alt="Valoración TDAH Adultos en Cancún"
                     width={640}
                     height={400}
@@ -502,7 +502,7 @@ export default function DondeEvaluarTDAHCancun() {
                 </Link>
                 <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/f5dfc5/382f51?text=Costo+de+la+Valoración"
+                    src="/blog/sand-costo-de-la-valoracion-640x400.svg"
                     alt="¿Cuánto cuesta la valoración de TDAH en Cancún?"
                     width={640}
                     height={400}

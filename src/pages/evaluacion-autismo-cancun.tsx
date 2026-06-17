@@ -11,7 +11,7 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SOCIAL_PROFILES, WA_NUMBER, PHONE_NUMBER, PHONE_E164 } from '@/lib/contact';
-import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG — Cal.com URL (cambiar al URL real de Karen)
@@ -249,8 +249,8 @@ const clinicEntity = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 21.1619,
-    longitude: -86.8515,
+    latitude: GEO.latitude,
+    longitude: GEO.longitude,
   },
   openingHoursSpecification: [
     {
@@ -363,15 +363,6 @@ const schema = {
         validFrom: '2025-01-01',
         areaServed: { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
       },
-    },
-    /* ── HowTo ── */
-    {
-      '@type': 'HowTo',
-      name: 'Proceso de evaluación neuropsicológica de autismo (TEA) en Cancún',
-      description: 'Protocolo clínico de 5 fases para diagnosticar autismo con ADOS-2 y ADI-R. Duración total: 3 a 4 semanas.',
-      totalTime: 'P4W',
-      estimatedCost: { '@type': 'MonetaryAmount', currency: 'MXN', value: '8500' },
-      step: proceso.map((p, i) => ({ '@type': 'HowToStep', name: p.titulo, text: p.desc, position: i + 1 })),
     },
     /* ── Individual Reviews ── */
     ...reviews.map((r, i) => ({
@@ -610,8 +601,8 @@ export default function AutismoCancunFunnel() {
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />

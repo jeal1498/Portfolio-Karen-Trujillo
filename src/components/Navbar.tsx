@@ -6,6 +6,7 @@ import { waUrl } from '@/lib/contact';
 
 const NAV_LINKS = [
   { href: '#servicios', label: 'Servicios' },
+  { href: '/precios', label: 'Precios' },
   { href: '#proceso', label: 'Proceso' },
   { href: '#sobre-mi', label: 'Sobre mí' },
   { href: '#testimonios', label: 'Testimonios' },

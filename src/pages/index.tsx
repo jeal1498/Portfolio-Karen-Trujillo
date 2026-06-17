@@ -13,7 +13,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SymptomCheckerHome from '@/components/SymptomCheckerHome';
 import { WA_NUMBER, PHONE_NUMBER, PHONE_E164, waUrl, SOCIAL_PROFILES } from '@/lib/contact';
-import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO, ADDRESS } from '@/lib/site';
 import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';
 
 /* ═══════════════════════════════════════════════════════════════
@@ -140,13 +140,9 @@ const schema = {
       description: 'Consultorio de neuropsicología clínica en Cancún, Quintana Roo. Especialista en diagnóstico de TDAH (niños y adultos) y Trastorno del Espectro Autista (TEA) con pruebas estandarizadas internacionales.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac Supermanzana Circuito casa 1587B',
-        addressLocality: 'Cancún',
-        addressRegion: 'Quintana Roo',
-        postalCode: '77539',
-        addressCountry: 'MX',
+        ...ADDRESS,
       },
-      geo: { '@type': 'GeoCoordinates', latitude: 21.1619, longitude: -86.8515 },
+      geo: { '@type': 'GeoCoordinates', latitude: GEO.latitude, longitude: GEO.longitude },
       openingHoursSpecification: [
         { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '19:00' },
         { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '14:00' },
@@ -261,6 +257,14 @@ const schema = {
       bestRating: '5',
       worstRating: '1',
     },
+    ...reviews.map((r, i) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.name },
+      reviewRating: { '@type': 'Rating', ratingValue: String(r.stars), bestRating: '5' },
+      reviewBody: r.text,
+      itemReviewed: { '@id': `${SITE_URL}/#clinic` },
+      datePublished: `2025-0${i + 1}-15`,
+    })),
     {
       '@type': 'FAQPage',
       mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
@@ -339,14 +343,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula {CEDULA}</title>
+        <title>{`Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula ${CEDULA}`}</title>
         <meta name="description" content="Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Pruebas estandarizadas internacionales. Informes con validez oficial. Agenda en línea." />
         <link rel="canonical" href={`${SITE_URL}/`} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
@@ -897,7 +901,7 @@ export default function Home() {
                     ¿Ya te evaluaste con Karen? Tu reseña ayuda a que más familias de Cancún nos encuentren.
                   </p>
                   <a
-                    href="https://www.google.com/search?q=Karen+Trujillo+Neuropsic%C3%B3loga+Canc%C3%BAn+rese%C3%B1as"
+                    href="https://maps.google.com/maps?cid=4630406520710891531&action=writeareview"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full transition-all"
@@ -995,9 +999,9 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { href: '/blog/senales-tdah-ninos',       tag: 'TDAH Infantil', mins: '12', title: '¿Tu hijo no pone atención? Señales reales de TDAH en niños', img: '#d0d0e7', imgText: 'TDAH+Infantil' },
-                  { href: '/blog/tdah-adultos-diagnostico-tardio', tag: 'TDAH Adultos', mins: '10', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', img: '#f5dfc5', imgText: 'TDAH+Adultos' },
-                  { href: '/blog/que-es-ados-2-autismo',    tag: 'Autismo / TEA', mins: '11', title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', img: '#fbdbe0', imgText: 'Autismo+TEA' },
+                  { href: '/blog/senales-tdah-ninos',       tag: 'TDAH Infantil', mins: '12', title: '¿Tu hijo no pone atención? Señales reales de TDAH en niños', imgSrc: '/blog/dark-senales-de-tdah-en-ninos-1200x675.svg' },
+                  { href: '/blog/tdah-adultos-diagnostico-tardio', tag: 'TDAH Adultos', mins: '10', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', imgSrc: '/blog/dark-tdah-en-adultos-1200x675.svg' },
+                  { href: '/blog/que-es-ados-2-autismo',    tag: 'Autismo / TEA', mins: '11', title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', imgSrc: '/blog/dark-que-es-el-ados-2-1200x675.svg' },
                 ].map((post, i) => (
                   <SectionReveal key={post.href} delay={i * 0.1}>
                     <article
@@ -1008,7 +1012,7 @@ export default function Home() {
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={`https://placehold.co/400x240/${post.img.replace('#', '')}/${post.img === '#d0d0e7' ? '382f51' : '382f51'}?text=${post.imgText}`}
+                        src={post.imgSrc}
                         alt={`Artículo: ${post.title}`}
                         width={400}
                         height={240}

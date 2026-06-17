@@ -71,8 +71,8 @@ const faqItems = [
 ];
 
 const relatedResources = [
-  { href: '/blog/senales-tdah-ninos', icon: Users, category: 'TDAH Infantil', title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico', img: 'https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Infantil' },
-  { href: '/blog/tdah-adultos-diagnostico-tardio', icon: Briefcase, category: 'TDAH Adultos', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', img: 'https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Adultos' },
+  { href: '/blog/senales-tdah-ninos', icon: Users, category: 'TDAH Infantil', title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico', img: '/blog/lavender-tdah-infantil-640x400.svg' },
+  { href: '/blog/tdah-adultos-diagnostico-tardio', icon: Briefcase, category: 'TDAH Adultos', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', img: '/blog/lavender-tdah-adultos-640x400.svg' },
 ];
 
 const schema = {
@@ -141,7 +141,7 @@ export default function QueEsAdos2Autismo() {
                 <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(208,208,231,0.82)' }}>Si buscas un diagnóstico confiable de Trastorno del Espectro Autista para tu hijo, necesitas entender por qué el ADOS-2 es el instrumento más respaldado por la ciencia — y por qué una evaluación sin él es incompleta.</p>
                 <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both] rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                   <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md"><Image src={KAREN_IMAGE} alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" priority unoptimized /></div>
-                  <div><p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p><div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 13 min de lectura</span></div></div>
+                  <div><p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p><div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 13 min de lectura</span></div></div>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function QueEsAdos2Autismo() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Qu%C3%A9+es+el+ADOS-2"
+                    src="/blog/dark-que-es-el-ados-2-1200x675.svg"
                     alt="¿Qué es el ADOS-2? El estándar de oro para diagnosticar autismo — imagen ilustrativa"
                     width={1200}
                     height={675}
@@ -201,7 +201,7 @@ export default function QueEsAdos2Autismo() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Evaluaci%C3%B3n+ADOS-2"
+                    src="/blog/sand-evaluacion-ados-2-960x540.svg"
                     alt="Sesión de evaluación con ADOS-2 para diagnóstico de autismo — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -354,7 +354,7 @@ export default function QueEsAdos2Autismo() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Niveles+de+Apoyo+TEA"
+                    src="/blog/lavender-niveles-de-apoyo-tea-960x540.svg"
                     alt="Niveles de apoyo en autismo según el DSM-5 — imagen ilustrativa"
                     width={960}
                     height={540}
