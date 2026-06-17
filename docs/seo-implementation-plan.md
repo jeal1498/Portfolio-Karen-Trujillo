@@ -2,7 +2,7 @@
 
 > **Para Claude Code (sesión nueva):** Este documento es un handoff autocontenido. Léelo completo, confirma con el usuario los puntos marcados **🔒 REQUIERE CONFIRMACIÓN DEL DUEÑO** antes de tocarlos, y ejecuta las tareas por fases, una a una, verificando cada cambio. Marca cada tarea como hecha conforme avances.
 >
-> Origen: auditoría SEO del 2026-06-17 (HTML en vivo + código fuente + sub-agents de la herramienta `claude-seo` ya instalada en `.claude/skills/seo*`). Health Score inicial: **78/100**.
+> Origen: auditoría SEO del 2026-06-17 (HTML en vivo + código fuente + sub-agents de la herramienta `claude-seo` ya instalada en `.claude/skills/seo*`). Health Score inicial: **78/100**. Evidencia detallada y hallazgos por categoría en [`docs/seo-audit-report.md`](./seo-audit-report.md).
 
 ---
 
