@@ -6,6 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { WA_NUMBER } from '@/lib/contact';
+import { CEDULA } from '@/lib/site';
 
 const faqData = [
   {
@@ -18,11 +20,11 @@ const faqData = [
   },
   {
     question: '¿Qué incluye el diagnóstico de Autismo (TEA) para niños en Cancún?',
-    answer: 'El diagnóstico de TEA incluye evaluación con instrumentos estandarizados como ADOS-2, M-CHAT-R/F, ADI-R y Vineland-3, entrevista a padres/tutores, observación conductual estructurada y elaboración de informe clínico con cédula federal 11009616, válido ante escuelas, IMSS e instituciones de apoyo. El proceso es aplicable desde los 2 años.',
+    answer: `El diagnóstico de TEA incluye evaluación con instrumentos estandarizados como ADOS-2, M-CHAT-R/F, ADI-R y Vineland-3, entrevista a padres/tutores, observación conductual estructurada y elaboración de informe clínico con cédula federal ${CEDULA}, válido ante escuelas, IMSS e instituciones de apoyo. El proceso es aplicable desde los 2 años.`,
   },
   {
     question: '¿El diagnóstico tiene validez oficial ante la escuela o el IMSS?',
-    answer: 'Sí. Todos los informes emitidos están respaldados por cédula profesional federal 11009616 y tienen validez ante instituciones educativas, SEP, IMSS y dependencias gubernamentales. Incluyen recomendaciones de adecuaciones curriculares cuando aplica para facilitar apoyos escolares.',
+    answer: `Sí. Todos los informes emitidos están respaldados por cédula profesional federal ${CEDULA} y tienen validez ante instituciones educativas, SEP, IMSS y dependencias gubernamentales. Incluyen recomendaciones de adecuaciones curriculares cuando aplica para facilitar apoyos escolares.`,
   },
   {
     question: '¿Cuál es la diferencia entre TDAH y Autismo (TEA)?',
@@ -90,7 +92,7 @@ const FAQSection = () => {
         >
           <p className="text-primary font-serif italic text-lg mb-4">"¿Tienes más preguntas sobre el proceso de valoración? Escríbeme sin compromiso."</p>
           <a
-            href="https://wa.me/529983211547?text=Hola%20Karen,%20tengo%20preguntas%20sobre%20la%20valoración"
+            href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20tengo%20preguntas%20sobre%20la%20valoración`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"

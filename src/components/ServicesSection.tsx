@@ -1,6 +1,8 @@
 import { Zap, Network, FileCheck, ArrowRight, CheckCircle2, UserCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { WA_NUMBER } from '@/lib/contact';
+import { CEDULA } from '@/lib/site';
 
 const evaluaciones = [
   {
@@ -105,7 +107,7 @@ const ServicesSection = () => {
                     Ver proceso completo
                   </Link>
                   <a
-                    href={`https://wa.me/529983211547?text=${ev.message}`}
+                    href={`https://wa.me/${WA_NUMBER}?text=${ev.message}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-3 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all text-center"
@@ -147,7 +149,7 @@ const ServicesSection = () => {
 
             <div className="text-center mt-10">
               <a
-                href="https://wa.me/529983211547?text=Hola%20Karen,%20quiero%20información%20sobre%20el%20proceso%20de%20valoración"
+                href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20quiero%20información%20sobre%20el%20proceso%20de%20valoración`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-2xl hover:opacity-90 transition-all shadow-lg"
@@ -173,10 +175,10 @@ const ServicesSection = () => {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="font-bold text-lg text-primary mb-1">Certificados Clínicos</h3>
-            <p className="text-muted-foreground text-sm font-light">Valoraciones clínicas con cédula federal 11009616 para trámites escolares, laborales, legales e institucionales. Requieren evaluación previa.</p>
+            <p className="text-muted-foreground text-sm font-light">Valoraciones clínicas con cédula federal {CEDULA} para trámites escolares, laborales, legales e institucionales. Requieren evaluación previa.</p>
           </div>
           <a
-            href="https://wa.me/529983211547?text=Hola%20Karen,%20necesito%20un%20certificado%20clínico"
+            href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20necesito%20un%20certificado%20clínico`}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"

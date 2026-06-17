@@ -10,10 +10,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 import { waUrl } from '@/lib/contact';
+import { SITE_URL, CEDULA } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
    ═══════════════════════════════════════════════════════════════ */
+
+const CANONICAL_URL = `${SITE_URL}/precios`;
 
 const evaluaciones = [
   {
@@ -146,7 +149,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Precios de Evaluaciones Neuropsicológicas — Karen Trujillo Cancún',
-  url: 'https://www.psicologakarentrujillo.com.mx/precios',
+  url: CANONICAL_URL,
   itemListElement: evaluaciones.map((ev, i) => ({
     '@type': 'ListItem',
     position: i + 1,
@@ -155,11 +158,11 @@ const schema = {
       name: ev.title,
       price: ev.precio.replace(/[^0-9]/g, ''),
       priceCurrency: 'MXN',
-      url: `https://www.psicologakarentrujillo.com.mx${ev.href}`,
+      url: `${SITE_URL}${ev.href}`,
       seller: {
         '@type': 'Person',
         name: 'Karen Trujillo',
-        identifier: 'Cédula Federal 11009616',
+        identifier: `Cédula Federal ${CEDULA}`,
       },
     },
   })),
@@ -176,12 +179,12 @@ export default function Precios() {
     <>
       <Head>
         <title>Precios de Evaluaciones Neuropsicológicas en Cancún | Karen Trujillo</title>
-        <meta name="description" content="Costos de valoración de TDAH y diagnóstico de autismo (TEA) en Cancún. TDAH $8,300 MXN · TEA $8,500 MXN. Incluye todas las sesiones, pruebas e informe clínico. Cédula 11009616." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/precios" />
+        <meta name="description" content={`Costos de valoración de TDAH y diagnóstico de autismo (TEA) en Cancún. TDAH $8,300 MXN · TEA $8,500 MXN. Incluye todas las sesiones, pruebas e informe clínico. Cédula ${CEDULA}.`} />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Precios — Neuropsicóloga Karen Trujillo Cancún" />
         <meta property="og:description" content="Valoración TDAH $8,300 MXN · Evaluación TEA $8,500 MXN. Precio todo incluido: sesiones, pruebas e informe oficial." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/precios" />
+        <meta property="og:url" content={CANONICAL_URL} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -193,7 +196,7 @@ export default function Precios() {
           <section className="pt-32 pb-16 px-6" style={{ backgroundColor: '#2b1f47' }}>
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] mb-4" style={{ color: 'rgba(208,208,231,0.65)' }}>
-                Neuropsicóloga Karen Trujillo · Cancún · Cédula 11009616
+                Neuropsicóloga Karen Trujillo · Cancún · Cédula {CEDULA}
               </p>
               <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">
                 Inversión en el<br />diagnóstico correcto

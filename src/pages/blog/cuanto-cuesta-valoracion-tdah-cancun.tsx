@@ -6,15 +6,17 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun';
+const CANONICAL_URL = `${SITE_URL}/blog/cuanto-cuesta-valoracion-tdah-cancun`;
 const ARTICLE_HEADLINE = '¿Cuánto cuesta una valoración de TDAH en Cancún?';
 
 const faqItems = [
-  { q: '¿Cuánto cuesta una valoración de TDAH en Cancún?', a: 'La valoración neuropsicológica de TDAH en Cancún con la Neuropsicóloga Karen Trujillo tiene un costo de $8,300 pesos mexicanos (MXN). Este precio incluye todas las sesiones del proceso (4 a 5 citas), la aplicación de instrumentos estandarizados internacionales, el análisis clínico y el informe final con cédula federal 11009616.' },
+  { q: '¿Cuánto cuesta una valoración de TDAH en Cancún?', a: `La valoración neuropsicológica de TDAH en Cancún con la Neuropsicóloga Karen Trujillo tiene un costo de $8,300 pesos mexicanos (MXN). Este precio incluye todas las sesiones del proceso (4 a 5 citas), la aplicación de instrumentos estandarizados internacionales, el análisis clínico y el informe final con cédula federal ${CEDULA}.` },
   { q: '¿Se puede pagar la valoración de TDAH en parcialidades?', a: 'Sí. El pago se puede distribuir a lo largo de las sesiones del proceso de valoración, que se extienden entre 2 y 3 semanas.' },
   { q: '¿Por qué una valoración de TDAH cuesta $8,300 pesos?', a: 'El costo refleja el uso de instrumentos estandarizados internacionales (como CONNERS-3, WISC-V y BRIEF-2 para niños, o CAARS y DIVA 2.0 para adultos), que tienen un costo de aplicación y de actualización clínica. Además incluye 4 a 5 sesiones de trabajo directo con el paciente y la familia, análisis de resultados y elaboración del informe clínico con validez oficial.' },
-  { q: '¿El informe de valoración de TDAH tiene validez ante la escuela o el IMSS?', a: 'Sí. El informe emitido por la Neuropsicóloga Karen Trujillo está respaldado por cédula profesional federal 11009616 y tiene validez ante instituciones educativas, SEP, IMSS y dependencias gubernamentales.' },
+  { q: '¿El informe de valoración de TDAH tiene validez ante la escuela o el IMSS?', a: `Sí. El informe emitido por la Neuropsicóloga Karen Trujillo está respaldado por cédula profesional federal ${CEDULA} y tiene validez ante instituciones educativas, SEP, IMSS y dependencias gubernamentales.` },
   { q: '¿Qué pasa si solo quiero una opinión rápida sobre si mi hijo tiene TDAH?', a: 'Una valoración neuropsicológica no es una opinión: es un diagnóstico clínico fundamentado en datos objetivos. No existe un atajo confiable al proceso completo. Diagnósticos rápidos sin instrumentos estandarizados no tienen validez oficial.' },
   { q: '¿La valoración de TDAH en Cancún es presencial o puede ser online?', a: 'La valoración de TDAH requiere sesiones presenciales en Cancún, Quintana Roo, ya que implica la aplicación directa de pruebas estandarizadas que no pueden realizarse de forma remota con la misma validez clínica.' },
 ];
@@ -22,7 +24,7 @@ const faqItems = [
 const loQueIncluye = [
   { icon: Calendar, label: '4 a 5 sesiones clínicas', desc: 'Entrevista inicial, aplicación de pruebas, cuestionarios y sesión de devolución.' },
   { icon: FileText, label: 'Informe clínico completo', desc: 'Diagnóstico diferencial, perfil neuropsicológico y plan de intervención.' },
-  { icon: Shield, label: 'Validez oficial (cédula 11009616)', desc: 'Reconocido ante SEP, IMSS, escuelas e instituciones gubernamentales.' },
+  { icon: Shield, label: `Validez oficial (cédula ${CEDULA})`, desc: 'Reconocido ante SEP, IMSS, escuelas e instituciones gubernamentales.' },
   { icon: CheckCircle2, label: 'Instrumentos estandarizados', desc: 'CONNERS-3, WISC-V, BRIEF-2 (niños) / CAARS, DIVA 2.0, CPT-3 (adultos).' },
   { icon: ArrowRight, label: 'Sesión de devolución a padres', desc: 'Explicación detallada del diagnóstico y recomendaciones concretas de acción.' },
   { icon: DollarSign, label: 'Pago distribuido en sesiones', desc: 'El costo total se puede repartir a lo largo del proceso de 2 a 3 semanas.' },
@@ -30,7 +32,7 @@ const loQueIncluye = [
 
 const comparativa = [
   { aspecto: 'Instrumentos utilizados', barato: 'Escalas de síntomas no estandarizadas o entrevista clínica informal', karen: 'CONNERS-3, WISC-V, BRIEF-2, CPT-3 — estandarizados internacionalmente' },
-  { aspecto: 'Validez del informe', barato: 'Sin cédula federal o con cédula estatal solamente', karen: 'Informe con cédula federal 11009616 — válido ante SEP, IMSS e instituciones' },
+  { aspecto: 'Validez del informe', barato: 'Sin cédula federal o con cédula estatal solamente', karen: `Informe con cédula federal ${CEDULA} — válido ante SEP, IMSS e instituciones` },
   { aspecto: 'Diagnóstico diferencial', barato: 'Difícil distinguir TDAH de ansiedad, dificultades de aprendizaje u otros cuadros', karen: 'Perfil neuropsicológico completo que descarta o confirma otras condiciones' },
   { aspecto: 'Recomendaciones escolares', barato: 'Genéricas o inexistentes', karen: 'Adecuaciones curriculares específicas para solicitar ante la escuela' },
 ];
@@ -40,26 +42,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun/#article',
+      '@id': `${CANONICAL_URL}/#article`,
       headline: '¿Cuánto cuesta una valoración de TDAH en Cancún?',
-      description: 'La valoración neuropsicológica de TDAH en Cancún cuesta $8,300 MXN. Incluye 4-5 sesiones, instrumentos estandarizados e informe con cédula federal 11009616 válido ante SEP e IMSS.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      description: `La valoración neuropsicológica de TDAH en Cancún cuesta $8,300 MXN. Incluye 4-5 sesiones, instrumentos estandarizados e informe con cédula federal ${CEDULA} válido ante SEP e IMSS.`,
+      image: KAREN_IMAGE,
       datePublished: '2025-06-01',
       dateModified: '2026-06-02',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -70,9 +72,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: '¿Cuánto cuesta una valoración de TDAH en Cancún?', item: 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: '¿Cuánto cuesta una valoración de TDAH en Cancún?', item: CANONICAL_URL },
       ],
     },
     {
@@ -89,22 +91,22 @@ export default function CuantoCuestaValoracionTDAH() {
     <>
       <Head>
         <title>¿Cuánto cuesta una valoración de TDAH en Cancún? | Neuropsicóloga Karen Trujillo</title>
-        <meta name="description" content="La valoración neuropsicológica de TDAH en Cancún cuesta $8,300 MXN. Incluye 4-5 sesiones, instrumentos estandarizados (CONNERS-3, WISC-V) e informe con cédula federal 11009616 válido ante SEP e IMSS." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
+        <meta name="description" content={`La valoración neuropsicológica de TDAH en Cancún cuesta $8,300 MXN. Incluye 4-5 sesiones, instrumentos estandarizados (CONNERS-3, WISC-V) e informe con cédula federal ${CEDULA} válido ante SEP e IMSS.`} />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="¿Cuánto cuesta una valoración de TDAH en Cancún? | Karen Trujillo" />
-        <meta property="og:description" content="Precio de la valoración de TDAH en Cancún: $8,300 MXN. Pago distribuido en sesiones. Informe con cédula 11009616 válido ante SEP e IMSS." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-valoracion-tdah-cancun" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:description" content={`Precio de la valoración de TDAH en Cancún: $8,300 MXN. Pago distribuido en sesiones. Informe con cédula ${CEDULA} válido ante SEP e IMSS.`} />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — costo evaluación TDAH" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-01" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿Cuánto cuesta una valoración de TDAH en Cancún? | Karen Trujillo" />
         <meta name="twitter:description" content="La valoración de TDAH en Cancún cuesta $8,300 MXN. Incluye instrumentos estandarizados e informe con validez oficial ante SEP e IMSS." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">
@@ -133,7 +135,7 @@ export default function CuantoCuestaValoracionTDAH() {
                   Guía completa sobre el costo, qué incluye y por qué importa la calidad del diagnóstico.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                 </div>
               </motion.div>
@@ -168,7 +170,7 @@ export default function CuantoCuestaValoracionTDAH() {
                   <div className="text-6xl font-serif font-bold mb-2">$8,300</div>
                   <p className="text-primary-foreground/80 text-sm mb-4">pesos mexicanos (MXN) · Pago distribuido en sesiones</p>
                   <a
-                    href="https://wa.me/529983211547?text=Hola%20Karen,%20leí%20tu%20artículo%20y%20quiero%20información%20sobre%20la%20valoración"
+                    href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20leí%20tu%20artículo%20y%20quiero%20información%20sobre%20la%20valoración`}
                     target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-3 rounded-lg hover:opacity-90 transition-all"
                   >
@@ -324,21 +326,21 @@ export default function CuantoCuestaValoracionTDAH() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Quieres dar el primer paso?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal 11009616. Agenda una consulta inicial por WhatsApp sin compromiso.
+                La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal {CEDULA}. Agenda una consulta inicial por WhatsApp sin compromiso.
               </p>
               <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
                 <img
-                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  src={KAREN_IMAGE}
                   alt="Neuropsicóloga Karen Trujillo"
                   width={36}
                   height={36}
                   className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
                 />
-                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
                 <span>★ 47+ reseñas · 5.0</span>
               </div>
               <a
-                href="https://wa.me/529983211547?text=Hola%20Karen,%20leí%20tu%20artículo%20y%20quiero%20información%20sobre%20la%20valoración"
+                href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20leí%20tu%20artículo%20y%20quiero%20información%20sobre%20la%20valoración`}
                 target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-10 py-4 rounded-lg hover:opacity-90 transition-all shadow-lg"
               >

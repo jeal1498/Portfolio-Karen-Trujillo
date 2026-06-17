@@ -7,12 +7,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER, PHONE_E164 } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, ADDRESS, REVIEWS } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA =
-  'https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica%20y%20vengo%20desde%20fuera%20de%20Canc%C3%BAn';
+const CANONICAL_URL = `${SITE_URL}/neuropsicologia-zona-hotelera-cancun`;
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica%20y%20vengo%20desde%20fuera%20de%20Canc%C3%BAn`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -109,7 +111,7 @@ const faqItems = [
   },
   {
     q: '¿El informe es válido en toda la República Mexicana?',
-    a: 'Sí. El informe neuropsicológico emitido por la psic. Karen Trujillo (cédula federal 11009616) tiene validez oficial en toda la República Mexicana ante escuelas, SEP, IMSS, ISSSTE, y empleadores.',
+    a: `Sí. El informe neuropsicológico emitido por la psic. Karen Trujillo (cédula federal ${CEDULA}) tiene validez oficial en toda la República Mexicana ante escuelas, SEP, IMSS, ISSSTE, y empleadores.`,
   },
   {
     q: '¿Por qué no hay más neuropsicólogos con ADOS-2 en la Riviera Maya?',
@@ -125,12 +127,10 @@ const schema = {
   '@graph': [
     {
       '@type': 'LandingPage',
-      '@id':
-        'https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun/#page',
+      '@id': `${CANONICAL_URL}/#page`,
       name: 'Neuropsicóloga para la Zona Hotelera y Riviera Maya — Karen Trujillo',
-      description:
-        'Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para pacientes de la Zona Hotelera, Playa del Carmen, Tulum y Riviera Maya. Karen Trujillo, cédula 11009616.',
-      url: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun',
+      description: `Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para pacientes de la Zona Hotelera, Playa del Carmen, Tulum y Riviera Maya. Karen Trujillo, cédula ${CEDULA}.`,
+      url: CANONICAL_URL,
       inLanguage: 'es-MX',
       speakable: {
         '@type': 'SpeakableSpecification',
@@ -144,30 +144,26 @@ const schema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Inicio',
-          item: 'https://www.psicologakarentrujillo.com.mx',
+          item: SITE_URL,
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Neuropsicóloga Zona Hotelera y Riviera Maya',
-          item: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun',
+          item: CANONICAL_URL,
         },
       ],
     },
     {
       '@type': 'LocalBusiness',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#localbusiness',
+      '@id': `${SITE_URL}/#localbusiness`,
       name: 'Karen Trujillo — Neuropsicóloga Clínica en Cancún',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-      telephone: '+529983211547',
-      url: 'https://www.psicologakarentrujillo.com.mx',
+      image: KAREN_IMAGE,
+      telephone: PHONE_E164,
+      url: SITE_URL,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac',
-        addressLocality: 'Cancún',
-        addressRegion: 'Quintana Roo',
-        postalCode: '77539',
-        addressCountry: 'MX',
+        ...ADDRESS,
       },
       openingHoursSpecification: [
         {
@@ -198,8 +194,8 @@ const schema = {
       priceRange: '$8,300–$8,500 MXN',
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '47',
+        ratingValue: REVIEWS.ratingValue,
+        reviewCount: REVIEWS.reviewCount,
         bestRating: '5',
         worstRating: '1',
       },
@@ -274,11 +270,11 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
         <title>Neuropsicóloga para Zona Hotelera y Riviera Maya | Karen Trujillo Cancún</title>
         <meta
           name="description"
-          content="Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula 11009616."
+          content={`Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula ${CEDULA}.`}
         />
         <link
           rel="canonical"
-          href="https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun"
+          href={CANONICAL_URL}
         />
 
         <meta name="geo.region" content="MX-ROO" />
@@ -295,15 +291,15 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
         />
         <meta
           property="og:description"
-          content="Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula 11009616."
+          content={`Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula ${CEDULA}.`}
         />
         <meta
           property="og:url"
-          content="https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun"
+          content={CANONICAL_URL}
         />
         <meta
           property="og:image"
-          content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+          content={KAREN_IMAGE}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -313,7 +309,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
         />
         <meta
           name="twitter:description"
-          content="Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. Karen Trujillo, cédula 11009616."
+          content={`Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. Karen Trujillo, cédula ${CEDULA}.`}
         />
 
         <script

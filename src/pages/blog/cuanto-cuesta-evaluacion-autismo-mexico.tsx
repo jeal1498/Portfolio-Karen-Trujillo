@@ -6,8 +6,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20el%20costo%20de%20la%20evaluaci%C3%B3n%20de%20autismo%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20el%20costo%20de%20la%20evaluaci%C3%B3n%20de%20autismo%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n`;
 
 const detallesCosto = [
   {
@@ -82,7 +84,7 @@ const faqItems = [
   },
   {
     q: '¿El informe tiene validez oficial?',
-    a: 'Sí. El informe de evaluación de TEA emitido por la neuropsicóloga Karen Trujillo (cédula federal 11009616) tiene validez oficial ante escuelas, SEP, IMSS, ISSSTE y empleadores. Incluye diagnóstico formal según DSM-5, nivel de apoyo requerido (1, 2 o 3), perfil cognitivo y recomendaciones de intervención.',
+    a: 'Sí. El informe de evaluación de TEA emitido por la neuropsicóloga Karen Trujillo (cédula federal ' + CEDULA + ') tiene validez oficial ante escuelas, SEP, IMSS, ISSSTE y empleadores. Incluye diagnóstico formal según DSM-5, nivel de apoyo requerido (1, 2 o 3), perfil cognitivo y recomendaciones de intervención.',
   },
   {
     q: '¿Qué pasa si no hacemos la evaluación?',
@@ -103,26 +105,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-evaluacion-autismo-mexico/#article',
+      '@id': `${SITE_URL}/blog/cuanto-cuesta-evaluacion-autismo-mexico/#article`,
       headline: '¿Cuánto cuesta una evaluación de autismo en México?',
       description: 'La evaluación de autismo (TEA) con ADOS-2 en Cancún cuesta $8,500 MXN e incluye 5-6 sesiones, informe clínico completo y validez ante SEP e IMSS. Precio transparente, sin letra chica.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2026-06-02',
       dateModified: '2026-06-02',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-evaluacion-autismo-mexico',
+      mainEntityOfPage: `${SITE_URL}/blog/cuanto-cuesta-evaluacion-autismo-mexico`,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -137,9 +139,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: '¿Cuánto cuesta una evaluación de autismo en México?', item: 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-evaluacion-autismo-mexico' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: '¿Cuánto cuesta una evaluación de autismo en México?', item: `${SITE_URL}/blog/cuanto-cuesta-evaluacion-autismo-mexico` },
       ],
     },
     {
@@ -149,7 +151,7 @@ const schema = {
   ],
 };
 
-const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-evaluacion-autismo-mexico';
+const CANONICAL_URL = `${SITE_URL}/blog/cuanto-cuesta-evaluacion-autismo-mexico`;
 const HEADLINE = '¿Cuánto cuesta una evaluación de autismo en México?';
 
 export default function CuantoCuestaEvaluacionAutismo() {
@@ -161,21 +163,21 @@ export default function CuantoCuestaEvaluacionAutismo() {
       <Head>
         <title>¿Cuánto cuesta una evaluación de autismo en México? | Karen Trujillo Cancún</title>
         <meta name="description" content="La evaluación de autismo (TEA) con ADOS-2 en Cancún cuesta $8,500 MXN e incluye 5-6 sesiones, informe clínico completo y validez ante SEP e IMSS. Precio transparente, sin letra chica." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-evaluacion-autismo-mexico" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="¿Cuánto cuesta el diagnóstico de autismo en México?" />
         <meta property="og:description" content="La evaluación de autismo (TEA) con ADOS-2 en Cancún cuesta $8,500 MXN e incluye 5-6 sesiones, informe clínico completo y validez ante SEP e IMSS. Precio transparente, sin letra chica." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/cuanto-cuesta-evaluacion-autismo-mexico" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — evaluación de autismo TEA" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿Cuánto cuesta el diagnóstico de autismo en México? | Karen Trujillo" />
         <meta name="twitter:description" content="Evaluación TEA con ADOS-2 en Cancún: $8,500 MXN. Todo incluido, sin letra chica. Informe con validez SEP e IMSS." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -208,7 +210,7 @@ export default function CuantoCuestaEvaluacionAutismo() {
                   Precio real, sin letra chica. Lo que incluye, cuántas sesiones son y por qué cuesta lo que cuesta. Porque tomar esta decisión merece información completa.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4 rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>8 min de lectura</span>
                 </div>
@@ -523,18 +525,18 @@ export default function CuantoCuestaEvaluacionAutismo() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Quieres saber si es el momento de evaluar?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                No tienes que decidir solo. Karen Trujillo (cédula federal 11009616) puede orientarte sobre si la evaluación es el paso adecuado para tu hijo o familiar, sin compromiso.
+                No tienes que decidir solo. Karen Trujillo (cédula federal {CEDULA}) puede orientarte sobre si la evaluación es el paso adecuado para tu hijo o familiar, sin compromiso.
               </p>
               <div className="flex items-center justify-center gap-3 mb-6 text-xs text-primary-foreground/80">
                 <img
-                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  src={KAREN_IMAGE}
                   alt="Neuropsicóloga Karen Trujillo"
                   width={36}
                   height={36}
                   className="w-9 h-9 rounded-full object-cover object-top"
                   loading="lazy"
                 />
-                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
                 <span>★ 47+ reseñas · 5.0</span>
               </div>
               <a

@@ -9,11 +9,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20soy%20docente%2Forientador%20y%20quisiera%20referir%20a%20un%20alumno%20para%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica';
+const CANONICAL_URL = `${SITE_URL}/para-escuelas`;
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20soy%20docente%2Forientador%20y%20quisiera%20referir%20a%20un%20alumno%20para%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -43,7 +46,7 @@ const queIncluye = [
   {
     titulo: 'Validez oficial SEP',
     descripcion:
-      'El informe está emitido por la psic. Karen Trujillo (cédula federal 11009616), miembro del Colegio de Psicólogos de Quintana Roo. Tiene plena validez ante la SEP y es suficiente para implementar adecuaciones curriculares.',
+      `El informe está emitido por la psic. Karen Trujillo (cédula federal ${CEDULA}), miembro del Colegio de Psicólogos de Quintana Roo. Tiene plena validez ante la SEP y es suficiente para implementar adecuaciones curriculares.`,
   },
   {
     titulo: 'Sesión de orientación disponible',
@@ -103,7 +106,7 @@ const faqItems = [
   },
   {
     q: '¿El informe sirve para implementar adecuaciones curriculares?',
-    a: 'Sí. El informe neuropsicológico de Karen Trujillo (cédula federal 11009616) tiene validez oficial ante la SEP y es el documento que permite a las escuelas implementar adecuaciones curriculares formales. Incluye diagnóstico DSM-5, perfil cognitivo completo y recomendaciones pedagógicas específicas — no genéricas.',
+    a: `Sí. El informe neuropsicológico de Karen Trujillo (cédula federal ${CEDULA}) tiene validez oficial ante la SEP y es el documento que permite a las escuelas implementar adecuaciones curriculares formales. Incluye diagnóstico DSM-5, perfil cognitivo completo y recomendaciones pedagógicas específicas — no genéricas.`,
   },
   {
     q: '¿Cuánto tiempo tarda el proceso de evaluación?',
@@ -131,11 +134,11 @@ const schema = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/para-escuelas/#page',
+      '@id': `${CANONICAL_URL}/#page`,
       name: 'Evaluaciones Neuropsicológicas para Escuelas en Cancún',
       description:
         'Karen Trujillo ofrece evaluaciones de TDAH y autismo para alumnos en Cancún con informe válido ante SEP. Referidos desde escuelas bienvenidos.',
-      url: 'https://www.psicologakarentrujillo.com.mx/para-escuelas',
+      url: CANONICAL_URL,
       inLanguage: 'es-MX',
       speakable: {
         '@type': 'SpeakableSpecification',
@@ -149,13 +152,13 @@ const schema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Inicio',
-          item: 'https://www.psicologakarentrujillo.com.mx',
+          item: SITE_URL,
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Para Escuelas',
-          item: 'https://www.psicologakarentrujillo.com.mx/para-escuelas',
+          item: CANONICAL_URL,
         },
       ],
     },
@@ -229,9 +232,9 @@ export default function ParaEscuelas() {
         <title>Evaluaciones Neuropsicológicas para Escuelas en Cancún | Karen Trujillo</title>
         <meta
           name="description"
-          content="Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas. Cédula 11009616."
+          content={`Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas. Cédula ${CEDULA}.`}
         />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/para-escuelas" />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
@@ -249,8 +252,8 @@ export default function ParaEscuelas() {
           property="og:description"
           content="Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas."
         />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/para-escuelas" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -259,7 +262,7 @@ export default function ParaEscuelas() {
         />
         <meta
           name="twitter:description"
-          content="Informe neuropsicológico con validez SEP, cuestionarios para maestros y recomendaciones pedagógicas específicas. Cédula 11009616."
+          content={`Informe neuropsicológico con validez SEP, cuestionarios para maestros y recomendaciones pedagógicas específicas. Cédula ${CEDULA}.`}
         />
 
         <script
@@ -325,7 +328,7 @@ export default function ParaEscuelas() {
               {/* Trust stat chips */}
               <div className="animate-[fadeInUp_0.8s_ease-out_0.2s_both] flex flex-wrap justify-center gap-3 mb-10">
                 {[
-                  { icon: BadgeCheck, text: 'Cédula 11009616' },
+                  { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Award, text: 'Colegio de Psicólogos de Q.Roo' },
                 ].map((chip) => (
                   <span
@@ -385,7 +388,7 @@ export default function ParaEscuelas() {
                   {
                     icon: ShieldCheck,
                     title: 'Informe con validez SEP',
-                    desc: 'El informe neuropsicológico lleva la cédula federal 11009616 y es suficiente para que la escuela implemente adecuaciones curriculares formales sin trámites adicionales.',
+                    desc: `El informe neuropsicológico lleva la cédula federal ${CEDULA} y es suficiente para que la escuela implemente adecuaciones curriculares formales sin trámites adicionales.`,
                   },
                   {
                     icon: ClipboardList,
@@ -619,7 +622,7 @@ export default function ParaEscuelas() {
                 </h2>
 
                 <p className="text-primary-foreground/75 font-light leading-relaxed max-w-xl mx-auto mb-10">
-                  Escribe por WhatsApp para describir el caso. La psic. Karen Trujillo (cédula federal 11009616),
+                  Escribe por WhatsApp para describir el caso. La psic. Karen Trujillo (cédula federal {CEDULA}),
                   miembro del Colegio de Psicólogos de Quintana Roo, responde directamente y orienta
                   sobre si la evaluación neuropsicológica es adecuada para el alumno. La referencia desde
                   la escuela es bienvenida — el proceso continúa con la familia.

@@ -12,7 +12,8 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SymptomCheckerHome from '@/components/SymptomCheckerHome';
-import { WA_NUMBER, PHONE_NUMBER, waUrl } from '@/lib/contact';
+import { WA_NUMBER, PHONE_NUMBER, PHONE_E164, waUrl, SOCIAL_PROFILES } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
 import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';
 
 /* ═══════════════════════════════════════════════════════════════
@@ -62,7 +63,7 @@ const services: Service[] = [
 ];
 
 const credentials: Credential[] = [
-  { icon: BadgeCheck,   text: 'Cédula Federal 11009616' },
+  { icon: BadgeCheck,   text: `Cédula Federal ${CEDULA}` },
   { icon: Award,        text: '7+ años de experiencia' },
   { icon: Stethoscope,  text: 'Pruebas estandarizadas internacionales' },
   { icon: Star,         text: '47+ reseñas · 5 estrellas' },
@@ -97,7 +98,7 @@ const faqItems: FaqItem[] = [
   },
   {
     q: '¿Los informes tienen validez oficial?',
-    a: 'Sí. Todos los informes clínicos están respaldados por cédula profesional federal 11009616 emitida por la SEP. Tienen validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS, empleadores y dependencias gubernamentales en todo México.',
+    a: `Sí. Todos los informes clínicos están respaldados por cédula profesional federal ${CEDULA} emitida por la SEP. Tienen validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS, empleadores y dependencias gubernamentales en todo México.`,
   },
   {
     q: '¿Cuánto cuesta una evaluación neuropsicológica en Cancún?',
@@ -130,12 +131,12 @@ const schema = {
   '@graph': [
     {
       '@type': ['MedicalBusiness', 'MedicalClinic'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+      '@id': `${SITE_URL}/#clinic`,
       name: 'Neuropsicóloga Karen Trujillo — Consultorio de Neuropsicología',
       alternateName: 'Consultorio Neuropsicóloga Karen Trujillo',
-      url: 'https://www.psicologakarentrujillo.com.mx',
-      telephone: '+529983211547',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      url: SITE_URL,
+      telephone: PHONE_E164,
+      image: KAREN_IMAGE,
       description: 'Consultorio de neuropsicología clínica en Cancún, Quintana Roo. Especialista en diagnóstico de TDAH (niños y adultos) y Trastorno del Espectro Autista (TEA) con pruebas estandarizadas internacionales.',
       address: {
         '@type': 'PostalAddress',
@@ -163,25 +164,21 @@ const schema = {
         { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
         { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
       ],
-      member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      sameAs: [
-        'https://www.facebook.com/share/1Bs93MjeKt/',
-        'https://www.instagram.com/psicologakarentrujillo',
-        'https://www.tiktok.com/@psic.karentrujillo',
-      ],
+      member: { '@id': `${SITE_URL}/#physician` },
+      sameAs: SOCIAL_PROFILES,
     },
     {
       '@type': 'Physician',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+      '@id': `${SITE_URL}/#physician`,
       name: 'Karen Trujillo',
       jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-      url: 'https://www.psicologakarentrujillo.com.mx',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-      telephone: '+529983211547',
+      url: SITE_URL,
+      image: KAREN_IMAGE,
+      telephone: PHONE_E164,
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'Cédula Profesional Federal',
-        credentialId: '11009616',
+        credentialId: CEDULA,
         issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
       },
       medicalSpecialty: 'Neuropsychiatry',
@@ -199,72 +196,68 @@ const schema = {
         name: 'Universidad Modelo',
         address: { '@type': 'PostalAddress', addressLocality: 'Mérida', addressRegion: 'Yucatán', addressCountry: 'MX' },
       },
-      sameAs: [
-        'https://www.facebook.com/share/1Bs93MjeKt/',
-        'https://www.instagram.com/psicologakarentrujillo',
-        'https://www.tiktok.com/@psic.karentrujillo',
-      ],
+      sameAs: SOCIAL_PROFILES,
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#website',
+      '@id': `${SITE_URL}/#website`,
       name: 'Neuropsicóloga Karen Trujillo',
-      url: 'https://www.psicologakarentrujillo.com.mx',
+      url: SITE_URL,
       inLanguage: 'es-MX',
-      publisher: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      publisher: { '@id': `${SITE_URL}/#physician` },
     },
     {
       '@type': 'MedicalWebPage',
       name: 'Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo',
-      url: 'https://www.psicologakarentrujillo.com.mx',
-      description: 'Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Informes con validez oficial. Cédula 11009616.',
+      url: SITE_URL,
+      description: `Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Informes con validez oficial. Cédula ${CEDULA}.`,
       inLanguage: 'es-MX',
-      isPartOf: { '@id': 'https://www.psicologakarentrujillo.com.mx/#website' },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
       about: [
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
       ],
-      reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      reviewedBy: { '@id': `${SITE_URL}/#physician` },
       lastReviewed: '2026-06-04',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
         ],
       },
     },
     {
       '@type': 'MedicalProcedure',
       name: 'Valoración Neuropsicológica de TDAH Infantil',
-      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos',
+      url: `${SITE_URL}/evaluacion-tdah-ninos`,
       procedureType: 'Diagnostic',
-      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': `${SITE_URL}/#physician` },
+      location: { '@id': `${SITE_URL}/#clinic` },
       offers: { '@type': 'Offer', price: '8300', priceCurrency: 'MXN' },
     },
     {
       '@type': 'MedicalProcedure',
       name: 'Valoración Neuropsicológica de TDAH en Adultos',
-      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-adultos',
+      url: `${SITE_URL}/evaluacion-tdah-adultos`,
       procedureType: 'Diagnostic',
-      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': `${SITE_URL}/#physician` },
+      location: { '@id': `${SITE_URL}/#clinic` },
       offers: { '@type': 'Offer', price: '8300', priceCurrency: 'MXN' },
     },
     {
       '@type': 'MedicalProcedure',
       name: 'Evaluación Neuropsicológica de Autismo (TEA)',
-      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
+      url: `${SITE_URL}/evaluacion-autismo-cancun`,
       procedureType: 'Diagnostic',
-      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': `${SITE_URL}/#physician` },
+      location: { '@id': `${SITE_URL}/#clinic` },
       offers: { '@type': 'Offer', price: '8500', priceCurrency: 'MXN' },
     },
     {
       '@type': 'AggregateRating',
-      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      ratingValue: '5.0',
-      reviewCount: '47',
+      itemReviewed: { '@id': `${SITE_URL}/#physician` },
+      ratingValue: REVIEWS.ratingValue,
+      reviewCount: REVIEWS.reviewCount,
       bestRating: '5',
       worstRating: '1',
     },
@@ -315,7 +308,7 @@ const svcBadge = [
 
 /* ─── about section credential list ─── */
 const aboutCreds = [
-  'Cédula Profesional Federal: 11009616 (SEP)',
+  `Cédula Profesional Federal: ${CEDULA} (SEP)`,
   'Licenciada en Psicología — Universidad Modelo, Quintana Roo',
   'Especialización en TDAH infantil: CONNERS-3, WISC-V, BRIEF-2',
   'Especialización en TDAH adultos: CAARS-2, DIVA 2.0, CPT-3',
@@ -346,9 +339,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula 11009616</title>
+        <title>Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula {CEDULA}</title>
         <meta name="description" content="Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Pruebas estandarizadas internacionales. Informes con validez oficial. Agenda en línea." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/" />
+        <link rel="canonical" href={`${SITE_URL}/`} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
@@ -360,8 +353,8 @@ export default function Home() {
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo" />
         <meta property="og:description" content="Evaluaciones neuropsicológicas con pruebas estandarizadas internacionales. TDAH niños, TDAH adultos y autismo (TEA). Informes con validez oficial." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo" />
@@ -371,7 +364,7 @@ export default function Home() {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#servicios', '#sobre-mi', '#ubicacion'] },
-          url: 'https://www.psicologakarentrujillo.com.mx',
+          url: SITE_URL,
         }) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
@@ -405,7 +398,7 @@ export default function Home() {
                   <div className="text-center">
                     {/* Credential bar */}
                     <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 mb-6">
-                      {['Cédula Federal 11009616', '47+ reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
+                      {[`Cédula Federal ${CEDULA}`, '47+ reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
                         <span key={item} className="flex items-center gap-1.5 text-xs font-semibold tracking-wide" style={{ color: 'rgba(208,208,231,0.8)' }}>
                           {i > 0 && <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full" style={{ background: 'rgba(208,208,231,0.45)' }} />}
                           {item}
@@ -478,7 +471,7 @@ export default function Home() {
                 <div className="hidden lg:flex justify-end animate-[fadeIn_1s_ease-out_0.4s_both]">
                   <div className="relative inline-block">
                     <Image
-                      src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                      src={KAREN_IMAGE}
                       alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y Autismo en Cancún"
                       width={440}
                       height={587}
@@ -492,7 +485,7 @@ export default function Home() {
                       className="absolute bg-white rounded-2xl"
                       style={{ bottom: '24px', left: '-20px', padding: '14px 18px', minWidth: '210px', boxShadow: '0 8px 32px rgba(56,47,81,0.22)' }}
                     >
-                      <p className="text-[11px] font-bold tracking-wide mb-1" style={{ color: '#5b4e7f' }}>Cédula 11009616 · SEP</p>
+                      <p className="text-[11px] font-bold tracking-wide mb-1" style={{ color: '#5b4e7f' }}>Cédula {CEDULA} · SEP</p>
                       <div className="flex gap-0.5 mb-1" aria-label="5 estrellas">
                         {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
                       </div>
@@ -516,7 +509,7 @@ export default function Home() {
                   { number: '7+',       label: 'Años de experiencia',      mono: false },
                   { number: '500+',     label: 'Evaluaciones completadas', mono: false },
                   { number: '47+',      label: 'Reseñas con 5 estrellas',  mono: false },
-                  { number: '11009616', label: 'Cédula Federal SEP',        mono: true  },
+                  { number: CEDULA,     label: 'Cédula Federal SEP',        mono: true  },
                 ].map((stat) => (
                   <div key={stat.label} className="flex flex-col items-center justify-center py-5 px-4 text-center">
                     <span className={`font-serif font-bold leading-none ${stat.mono ? 'text-lg sm:text-2xl' : 'text-[2.25rem]'}`} style={{ color: '#382f51' }}>
@@ -763,7 +756,7 @@ export default function Home() {
                 {/* Photo */}
                 <SectionReveal className="flex justify-center lg:justify-start">
                   <Image
-                    src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                    src={KAREN_IMAGE}
                     alt="Neuropsicóloga Karen Trujillo — Cancún"
                     width={400}
                     height={467}
@@ -785,7 +778,7 @@ export default function Home() {
                   <div className="w-10 h-0.5 rounded-full mb-6" style={{ background: 'rgba(208,208,231,0.4)' }} />
 
                   <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
-                    Soy Neuropsicóloga Karen Trujillo (Cédula Federal: 11009616), especializada en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
+                    Soy Neuropsicóloga Karen Trujillo (Cédula Federal: {CEDULA}), especializada en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
                   </p>
                   <p className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
                     Me especializo exclusivamente en evaluación neuropsicológica porque creo que un diagnóstico preciso cambia trayectorias de vida. Un niño con TDAH no diagnosticado es etiquetado como "flojo"; un adulto sin diagnóstico lleva décadas creyendo que el problema es su carácter. El diagnóstico correcto es el primer paso del tratamiento correcto.
@@ -1234,7 +1227,7 @@ export default function Home() {
                     <ShieldCheck className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Reembolso del anticipo
                   </span>
                   <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border">
-                    <BadgeCheck className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Cédula 11009616
+                    <BadgeCheck className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Cédula {CEDULA}
                   </span>
                 </div>
               </SectionReveal>
