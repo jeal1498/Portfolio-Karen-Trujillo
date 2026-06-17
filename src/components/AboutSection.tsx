@@ -1,5 +1,6 @@
 import { GraduationCap, Brain, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { CEDULA, KAREN_IMAGE_PATH } from '@/lib/site';
 
 const instrumentos = [
   { grupo: 'TDAH Infantil', items: 'CONNERS-3, WISC-V, BRIEF-2' },
@@ -32,7 +33,7 @@ const AboutSection = () => {
 
             <div className="px-6 py-5 bg-accent-blue/10 rounded-xl text-base leading-relaxed text-foreground font-medium mb-6">
               <p>
-                Soy <strong>Neuropsicóloga Karen Trujillo</strong> (Cédula Federal: 11009616), especializada
+                Soy <strong>Neuropsicóloga Karen Trujillo</strong> (Cédula Federal: {CEDULA}), especializada
                 en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años
                 de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
               </p>
@@ -69,7 +70,7 @@ const AboutSection = () => {
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="px-4 py-3 rounded-lg bg-success/10 border border-success/20">
                 <p className="text-xs font-bold text-success uppercase tracking-wider mb-1">Cédula Federal</p>
-                <p className="text-sm font-bold text-primary">11009616</p>
+                <p className="text-sm font-bold text-primary">{CEDULA}</p>
               </div>
               <div className="px-4 py-3 rounded-lg bg-primary/10 border border-primary/20">
                 <p className="text-xs font-bold text-primary uppercase tracking-wider mb-1">Experiencia</p>
@@ -93,7 +94,7 @@ const AboutSection = () => {
             {/* Photo container */}
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl max-h-[520px] aspect-[3/4]">
               <img
-                src="/Psicologa_Karen_Trujillo.webp"
+                src={KAREN_IMAGE_PATH}
                 alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y autismo en Cancún, Quintana Roo"
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
@@ -103,7 +104,7 @@ const AboutSection = () => {
             {/* Credential overlay — bottom left */}
             <div className="absolute -bottom-4 -left-4 z-20 glass p-4 rounded-xl shadow-lg hidden md:block">
               <p className="text-xs font-bold text-primary uppercase tracking-wide mb-1">Cédula Federal</p>
-              <p className="text-xl font-bold text-primary">11009616</p>
+              <p className="text-xl font-bold text-primary">{CEDULA}</p>
               <p className="text-xs text-muted-foreground">Neuropsicóloga Clínica</p>
             </div>
 

@@ -1,22 +1,19 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { SOCIAL_PROFILES } from '@/lib/contact';
+import { PHONE_E164, SOCIAL_PROFILES } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, ADDRESS, REVIEWS } from '@/lib/site';
 
 const medicalBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+  '@id': `${SITE_URL}/#clinic`,
   name: 'Psic. Karen Trujillo — Valoraciones TDAH y Autismo en Cancún',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  image: KAREN_IMAGE,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac',
-    addressLocality: 'Cancún',
-    addressRegion: 'Quintana Roo',
-    postalCode: '77539',
-    addressCountry: 'MX',
+    ...ADDRESS,
   },
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  telephone: '+529983211547',
+  url: SITE_URL,
+  telephone: PHONE_E164,
   email: 'karentrujillopsic@gmail.com',
   priceRange: '$$',
   medicalSpecialty: 'Neuropsychiatry',
@@ -34,16 +31,16 @@ const medicalBusinessSchema = {
 const professionalSchema = {
   '@context': 'https://schema.org',
   '@type': ['Physician', 'HealthcareProfessional'],
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+  '@id': `${SITE_URL}/#physician`,
   name: 'Karen Trujillo',
   jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-  description: 'Neuropsicóloga especializada en valoración de TDAH (infantil y adultos) y diagnóstico de Autismo (TEA) en Cancún. Cédula Federal 11009616. 7+ años de experiencia. Miembro del Colegio de Psicólogos de Quintana Roo.',
+  url: SITE_URL,
+  image: KAREN_IMAGE,
+  description: `Neuropsicóloga especializada en valoración de TDAH (infantil y adultos) y diagnóstico de Autismo (TEA) en Cancún. Cédula Federal ${CEDULA}. 7+ años de experiencia. Miembro del Colegio de Psicólogos de Quintana Roo.`,
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'Cédula Profesional Federal',
-    credentialId: '11009616',
+    credentialId: CEDULA,
     issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
   },
   alumniOf: {
@@ -62,8 +59,8 @@ const professionalSchema = {
   },
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '47',
+    ratingValue: REVIEWS.ratingValue,
+    reviewCount: REVIEWS.reviewCount,
     bestRating: '5',
     worstRating: '1',
   },

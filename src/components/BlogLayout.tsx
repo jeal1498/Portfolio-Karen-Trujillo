@@ -7,6 +7,8 @@ import FloatingButtons from '@/components/FloatingButtons';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import TableOfContents from '@/components/TableOfContents';
 import { motion } from 'framer-motion';
+import { WA_NUMBER } from '@/lib/contact';
+import { CEDULA, KAREN_IMAGE_PATH } from '@/lib/site';
 
 interface RelatedArticle {
   href: string;
@@ -107,7 +109,7 @@ const BlogLayout = ({
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 shadow-sm">
                     <img
-                      src="/Psicologa_Karen_Trujillo.webp"
+                      src={KAREN_IMAGE_PATH}
                       alt="Neuropsicóloga Karen Trujillo"
                       className="w-full h-full object-cover object-top"
                       loading="lazy"
@@ -115,7 +117,7 @@ const BlogLayout = ({
                   </div>
                   <span className="text-xs text-muted-foreground flex items-center gap-1.5">
                     <User className="w-3.5 h-3.5" aria-hidden="true" />
-                    Karen Trujillo — Cédula 11009616
+                    Karen Trujillo — Cédula {CEDULA}
                   </span>
                 </div>
                 <span className="text-xs text-muted-foreground flex items-center gap-1.5 ml-auto">
@@ -172,11 +174,11 @@ const BlogLayout = ({
               ¿Quieres dar el primer paso?
             </h2>
             <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-              Atención en Cancún con cédula federal 11009616. Agenda una consulta inicial por
+              Atención en Cancún con cédula federal {CEDULA}. Agenda una consulta inicial por
               WhatsApp sin compromiso.
             </p>
             <a
-              href={`https://wa.me/529983211547?text=${ctaMessage}`}
+              href={`https://wa.me/${WA_NUMBER}?text=${ctaMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-10 py-4 rounded-2xl hover:opacity-90 transition-all shadow-lg"

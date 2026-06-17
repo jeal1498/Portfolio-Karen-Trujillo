@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { WA_NUMBER } from '@/lib/contact';
 
 interface TocItem {
   id: string;
@@ -77,7 +78,7 @@ const TableOfContents = () => {
 
         <div className="mt-8 pt-6 border-t border-border">
           <a
-            href="https://wa.me/529983211547?text=Hola%20Karen,%20le%C3%AD%20tu%20blog%20y%20me%20gustar%C3%ADa%20agendar%20una%20valoraci%C3%B3n"
+            href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20le%C3%AD%20tu%20blog%20y%20me%20gustar%C3%ADa%20agendar%20una%20valoraci%C3%B3n`}
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full py-2.5 rounded-2xl bg-gradient-primary text-primary-foreground text-xs font-bold uppercase tracking-widest text-center hover:opacity-90 transition-all"

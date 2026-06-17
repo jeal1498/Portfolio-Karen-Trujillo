@@ -6,8 +6,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20autismo%20nivel%201%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20autismo%20nivel%201%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n`;
 
 const sintomasCotidianos = [
   {
