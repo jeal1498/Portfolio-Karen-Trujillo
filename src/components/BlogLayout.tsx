@@ -117,7 +117,7 @@ const BlogLayout = ({
                   </div>
                   <span className="text-xs text-muted-foreground flex items-center gap-1.5">
                     <User className="w-3.5 h-3.5" aria-hidden="true" />
-                    Karen Trujillo — Cédula {CEDULA}
+                    Revisado por Karen Trujillo, Neuropsicóloga (Cédula {CEDULA})
                   </span>
                 </div>
                 <span className="text-xs text-muted-foreground flex items-center gap-1.5 ml-auto">

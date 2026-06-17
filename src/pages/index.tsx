@@ -13,7 +13,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SymptomCheckerHome from '@/components/SymptomCheckerHome';
 import { WA_NUMBER, PHONE_NUMBER, PHONE_E164, waUrl, SOCIAL_PROFILES } from '@/lib/contact';
-import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO, ADDRESS } from '@/lib/site';
 import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';
 
 /* ═══════════════════════════════════════════════════════════════
@@ -140,11 +140,7 @@ const schema = {
       description: 'Consultorio de neuropsicología clínica en Cancún, Quintana Roo. Especialista en diagnóstico de TDAH (niños y adultos) y Trastorno del Espectro Autista (TEA) con pruebas estandarizadas internacionales.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac Supermanzana Circuito casa 1587B',
-        addressLocality: 'Cancún',
-        addressRegion: 'Quintana Roo',
-        postalCode: '77539',
-        addressCountry: 'MX',
+        ...ADDRESS,
       },
       geo: { '@type': 'GeoCoordinates', latitude: GEO.latitude, longitude: GEO.longitude },
       openingHoursSpecification: [
@@ -261,6 +257,14 @@ const schema = {
       bestRating: '5',
       worstRating: '1',
     },
+    ...reviews.map((r, i) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.name },
+      reviewRating: { '@type': 'Rating', ratingValue: String(r.stars), bestRating: '5' },
+      reviewBody: r.text,
+      itemReviewed: { '@id': `${SITE_URL}/#clinic` },
+      datePublished: `2025-0${i + 1}-15`,
+    })),
     {
       '@type': 'FAQPage',
       mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
@@ -897,7 +901,7 @@ export default function Home() {
                     ¿Ya te evaluaste con Karen? Tu reseña ayuda a que más familias de Cancún nos encuentren.
                   </p>
                   <a
-                    href="https://www.google.com/search?q=Karen+Trujillo+Neuropsic%C3%B3loga+Canc%C3%BAn+rese%C3%B1as"
+                    href="https://maps.google.com/maps?cid=4630406520710891531&action=writeareview"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full transition-all"

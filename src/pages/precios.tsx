@@ -10,7 +10,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 import { waUrl } from '@/lib/contact';
-import { SITE_URL, CEDULA } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -185,6 +185,7 @@ export default function Precios() {
         <meta property="og:title" content="Precios — Neuropsicóloga Karen Trujillo Cancún" />
         <meta property="og:description" content="Valoración TDAH $8,300 MXN · Evaluación TEA $8,500 MXN. Precio todo incluido: sesiones, pruebas e informe oficial." />
         <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
