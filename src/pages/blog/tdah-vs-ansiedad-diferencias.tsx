@@ -190,7 +190,7 @@ export default function TDAHvsAnsiedad() {
                   Es una de las preguntas más frecuentes en consulta. Los síntomas se parecen, la confusión es real — pero la respuesta importa porque el tratamiento es diferente.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4 rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
+                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>9 min de lectura</span>
                 </div>

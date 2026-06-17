@@ -220,7 +220,7 @@ export default function AutismoNivel1SintomasAdultos() {
                   No hay discapacidad intelectual. Hay lenguaje fluido. Hay personas que funcionan — y se agotan en el intento. El TEA nivel 1 es el perfil que más tarda en diagnosticarse.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>10 min de lectura</span>
                 </div>

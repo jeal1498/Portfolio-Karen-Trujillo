@@ -210,7 +210,7 @@ export default function CuantoCuestaEvaluacionAutismo() {
                   Precio real, sin letra chica. Lo que incluye, cuántas sesiones son y por qué cuesta lo que cuesta. Porque tomar esta decisión merece información completa.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4 rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
+                  <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>8 min de lectura</span>
                 </div>
