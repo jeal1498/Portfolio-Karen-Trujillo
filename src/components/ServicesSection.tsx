@@ -114,6 +114,12 @@ const ServicesSection = () => {
                   >
                     Agendar ahora
                   </a>
+                  <Link
+                    href="/precios"
+                    className="block w-full text-center text-xs font-semibold text-muted-foreground hover:text-primary transition-colors pt-1"
+                  >
+                    Ver precios →
+                  </Link>
                 </div>
               </div>
             </motion.article>

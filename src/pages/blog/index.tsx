@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 import { waUrl } from '@/lib/contact';
-import { SITE_URL, CEDULA } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    DATA — ordenados por relevancia SEO
@@ -199,6 +199,7 @@ export default function BlogIndex() {
           property="og:description"
           content="Guías y artículos basados en evidencia sobre TDAH en niños y adultos, TDAH en niñas y diagnóstico de autismo con ADOS-2 en Cancún."
         />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <link rel="canonical" href={`${SITE_URL}/blog`} />
       </Head>
 
