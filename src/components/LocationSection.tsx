@@ -1,5 +1,6 @@
 import { MapPin, Clock, Video } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { HOURS } from '@/lib/site';
 
 const LocationSection = () => {
   return (
@@ -42,8 +43,8 @@ const LocationSection = () => {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-primary mb-1">Horarios de Atención</p>
-                  <p className="text-xs text-muted-foreground"><strong>Lunes a Viernes:</strong> 9:00 AM - 8:00 PM</p>
-                  <p className="text-xs text-muted-foreground"><strong>Sábados:</strong> 9:00 AM - 2:00 PM</p>
+                  <p className="text-xs text-muted-foreground"><strong>Lunes a Viernes:</strong> {HOURS.weekdays.display}</p>
+                  <p className="text-xs text-muted-foreground"><strong>Sábados:</strong> {HOURS.saturday.display}</p>
                 </div>
               </div>
 
