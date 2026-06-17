@@ -320,7 +320,7 @@ export default function SenalesTDAHNinos() {
                 <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
                   <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/15 shadow-md">
                     <Image
-                      src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                      src={KAREN_IMAGE}
                       alt="Neuropsicóloga Karen Trujillo"
                       width={48}
                       height={48}
@@ -332,7 +332,7 @@ export default function SenalesTDAHNinos() {
                   <div>
                     <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p>
                     <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
-                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3" /> Cédula 11009616</span>
+                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3" /> Cédula {CEDULA}</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min de lectura</span>
                     </div>
                   </div>
@@ -786,7 +786,7 @@ export default function SenalesTDAHNinos() {
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Compartir en Facebook"
@@ -795,7 +795,7 @@ export default function SenalesTDAHNinos() {
                     <Facebook className="w-4 h-4" />
                   </a>
                   <a
-                    href={`https://wa.me/?text=${encodeURIComponent('¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico — https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent(`¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico — ${CANONICAL_URL}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Compartir por WhatsApp"
@@ -806,7 +806,7 @@ export default function SenalesTDAHNinos() {
                   <button
                     type="button"
                     onClick={() => {
-                      navigator.clipboard.writeText('https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos');
+                      navigator.clipboard.writeText(CANONICAL_URL);
                       setLinkCopied(true);
                       setTimeout(() => setLinkCopied(false), 2000);
                     }}
@@ -879,7 +879,7 @@ export default function SenalesTDAHNinos() {
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0">
                       <Image
-                        src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                        src={KAREN_IMAGE}
                         alt="Neuropsicóloga Karen Trujillo"
                         width={48}
                         height={48}
@@ -891,7 +891,7 @@ export default function SenalesTDAHNinos() {
                     <div>
                       <p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p>
                       <div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1">
-                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span>
+                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span>
                         <span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span>
                       </div>
                     </div>
