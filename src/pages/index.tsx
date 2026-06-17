@@ -13,7 +13,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SymptomCheckerHome from '@/components/SymptomCheckerHome';
 import { WA_NUMBER, PHONE_NUMBER, PHONE_E164, waUrl, SOCIAL_PROFILES } from '@/lib/contact';
-import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO } from '@/lib/site';
 import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';
 
 /* ═══════════════════════════════════════════════════════════════
@@ -146,7 +146,7 @@ const schema = {
         postalCode: '77539',
         addressCountry: 'MX',
       },
-      geo: { '@type': 'GeoCoordinates', latitude: 21.1619, longitude: -86.8515 },
+      geo: { '@type': 'GeoCoordinates', latitude: GEO.latitude, longitude: GEO.longitude },
       openingHoursSpecification: [
         { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '19:00' },
         { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '14:00' },
@@ -345,8 +345,8 @@ export default function Home() {
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
