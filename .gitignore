@@ -39,3 +39,4 @@ yarn-error.log*
 !.claude/hooks
 !.claude/commands
 !.claude/skills
+!.claude/agents
