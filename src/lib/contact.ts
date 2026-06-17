@@ -1,5 +1,7 @@
 export const WA_NUMBER = '529983211547';
 export const PHONE_NUMBER = '529983211547';
+/** Teléfono en formato E.164, para `telephone` en JSON-LD. */
+export const PHONE_E164 = '+529983211547';
 
 export function waUrl(message: string): string {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;

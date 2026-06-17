@@ -13,8 +13,10 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
 
-const WA_NUMBER = '529983211547';
+const CANONICAL_URL = `${SITE_URL}/blog/que-es-ados-2-autismo`;
 
 const adosModules = [
   { module: 'Módulo 1', target: 'Niños sin lenguaje o con palabras sueltas', age: 'Desde 31 meses', method: 'Juego libre, respuesta al nombre, burbujas, juguetes de causa-efecto. El evaluador observa cómo el niño inicia interacción, señala, hace contacto visual y comparte interés.', accent: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
@@ -76,8 +78,8 @@ const relatedResources = [
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'Article', '@id': 'https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo/#article', headline: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', description: 'Guía completa sobre el ADOS-2: qué evalúa, cómo se aplica, sus 4 módulos, y por qué supera cualquier otro método diagnóstico para TEA.', image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp', datePublished: '2025-06-29', dateModified: '2025-06-29', author: { '@type': 'Person', '@id': 'https://www.psicologakarentrujillo.com.mx/#physician', name: 'Karen Trujillo', jobTitle: 'Neuropsicóloga Clínica', url: 'https://www.psicologakarentrujillo.com.mx' }, publisher: { '@type': 'Organization', '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic', name: 'Neuropsicóloga Karen Trujillo', url: 'https://www.psicologakarentrujillo.com.mx' }, mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo', inLanguage: 'es-MX', about: { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' } },
-    { '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' }, { '@type': 'ListItem', position: 3, name: 'ADOS-2 y autismo', item: 'https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo' } ] },
+    { '@type': 'Article', '@id': `${CANONICAL_URL}/#article`, headline: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', description: 'Guía completa sobre el ADOS-2: qué evalúa, cómo se aplica, sus 4 módulos, y por qué supera cualquier otro método diagnóstico para TEA.', image: KAREN_IMAGE, datePublished: '2025-06-29', dateModified: '2025-06-29', author: { '@type': 'Person', '@id': `${SITE_URL}/#physician`, name: 'Karen Trujillo', jobTitle: 'Neuropsicóloga Clínica', url: SITE_URL }, publisher: { '@type': 'Organization', '@id': `${SITE_URL}/#clinic`, name: 'Neuropsicóloga Karen Trujillo', url: SITE_URL }, mainEntityOfPage: CANONICAL_URL, inLanguage: 'es-MX', about: { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' } },
+    { '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` }, { '@type': 'ListItem', position: 3, name: 'ADOS-2 y autismo', item: CANONICAL_URL } ] },
     { '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 };
@@ -100,14 +102,14 @@ export default function QueEsAdos2Autismo() {
       <Head>
         <title>¿Qué es el ADOS-2? Estándar de oro para diagnosticar autismo | Neuropsicóloga Karen Trujillo</title>
         <meta name="description" content="El ADOS-2 es la prueba más confiable del mundo para diagnosticar autismo (TEA). Conoce qué evalúa, cómo se aplica y por qué supera a los cuestionarios y entrevistas. Evaluación con ADOS-2 en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?" />
         <meta property="og:description" content="Guía completa sobre el ADOS-2: qué evalúa, sus 4 módulos, y por qué es el instrumento más confiable para diagnosticar Trastorno del Espectro Autista." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-29" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -138,8 +140,8 @@ export default function QueEsAdos2Autismo() {
                 <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-[1.15] mb-5 text-balance">¿Qué es el ADOS-2?<br /><span style={{ color: 'rgba(208,208,231,0.72)' }}>El estándar de oro para diagnosticar autismo</span></h1>
                 <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(208,208,231,0.82)' }}>Si buscas un diagnóstico confiable de Trastorno del Espectro Autista para tu hijo, necesitas entender por qué el ADOS-2 es el instrumento más respaldado por la ciencia — y por qué una evaluación sin él es incompleta.</p>
                 <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both] rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md"><Image src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" priority unoptimized /></div>
-                  <div><p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p><div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 13 min de lectura</span></div></div>
+                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md"><Image src={KAREN_IMAGE} alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" priority unoptimized /></div>
+                  <div><p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p><div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 13 min de lectura</span></div></div>
                 </div>
               </div>
             </div>
@@ -442,7 +444,7 @@ export default function QueEsAdos2Autismo() {
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Compartir en Facebook"
@@ -451,7 +453,7 @@ export default function QueEsAdos2Autismo() {
                     <Facebook className="w-4 h-4" />
                   </a>
                   <a
-                    href={`https://wa.me/?text=${encodeURIComponent('¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo? — https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent(`¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo? — ${CANONICAL_URL}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Compartir por WhatsApp"
@@ -462,7 +464,7 @@ export default function QueEsAdos2Autismo() {
                   <button
                     type="button"
                     onClick={() => {
-                      navigator.clipboard.writeText('https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo');
+                      navigator.clipboard.writeText(CANONICAL_URL);
                       setLinkCopied(true);
                       setTimeout(() => setLinkCopied(false), 2000);
                     }}
@@ -514,8 +516,8 @@ export default function QueEsAdos2Autismo() {
               <SectionReveal delay={0.1}>
                 <div className="bg-white/8 border border-white/15 rounded-2xl p-6 sm:p-8 mb-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0"><Image src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" loading="lazy" unoptimized /></div>
-                    <div><p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span></div></div>
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0"><Image src={KAREN_IMAGE} alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" loading="lazy" unoptimized /></div>
+                    <div><p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span></div></div>
                   </div>
                   <div className="grid sm:grid-cols-3 gap-3 mb-6">
                     {[{ label: 'Pruebas', value: 'ADOS-2, ADI-R, WISC-V, Vineland-3, SRS-2' },{ label: 'Duración', value: '5-6 sesiones · 3-4 semanas' },{ label: 'Inversión', value: '$8,500 MXN todo incluido' }].map((item) => (

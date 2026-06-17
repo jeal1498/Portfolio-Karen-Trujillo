@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ComponentType } from 'react';
 import { Instagram, Facebook } from 'lucide-react';
 import { PHONE_NUMBER, waUrl, SOCIAL } from '@/lib/contact';
+import { CEDULA, REVIEWS } from '@/lib/site';
 
 const SERVICIOS = [
   { href: '/evaluacion-tdah-ninos', label: 'TDAH Infantil' },
@@ -59,8 +60,8 @@ const Footer = () => (
           <p className="font-sans text-[0.75rem] font-bold tracking-[0.06em] uppercase text-[#d0d0e7]/60 mb-3 mt-1">
             Neuropsicóloga en Cancún
           </p>
-          <p className="font-sans text-[0.8rem] text-[#d0d0e7]/55">Cédula Federal 11009616</p>
-          <p className="text-amber-400 text-[0.85rem] tracking-[0.05em] mt-1">★★★★★ 5.0</p>
+          <p className="font-sans text-[0.8rem] text-[#d0d0e7]/55">Cédula Federal {CEDULA}</p>
+          <p className="text-amber-400 text-[0.85rem] tracking-[0.05em] mt-1">★★★★★ {REVIEWS.ratingValue}</p>
         </div>
 
         {/* Servicios */}
