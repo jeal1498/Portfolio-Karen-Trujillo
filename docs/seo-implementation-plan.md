@@ -24,13 +24,22 @@
 - `tsconfig.tsbuildinfo` **está versionado** en este repo: si corres `tsc`/`next build`, inclúyelo en el commit.
 - Tras instalar deps SEO opcionales (no necesarias para casi todas estas tareas): `pip install -r .claude/skills/seo/requirements.txt`.
 
-### Verificación estándar por tarea
+### Setup inicial (contenedor/clon nuevo) — córrelo una vez
 ```bash
-npx tsc --noEmit                 # 0 errores de tipos
-npm run build                    # build verde (incluye tsconfig.tsbuildinfo en el commit)
-# Verificación en vivo de SSR de una ruta concreta:
-npm run dev &                    # luego: curl -sL http://localhost:3000/<ruta> | grep -o '<patrón>'
+git checkout claude/exciting-newton-lfn2v8   # rama de trabajo (o crea una rama de feature desde aquí)
+npm install                                  # gestor: npm (hay package-lock.json). Instala dependencias
+npm run dev                                  # servidor de desarrollo en http://localhost:3000
 ```
+> En algunos entornos remotos un hook de SessionStart ya corre `npm install`; ejecútalo igual si `node_modules` no existe.
+
+### Verificación por tarea
+```bash
+npx tsc --noEmit        # 0 errores de tipos (hay tsconfig; recuerda: tsconfig.tsbuildinfo va versionado)
+npm run build           # build verde — si cambia tsconfig.tsbuildinfo, inclúyelo en el commit
+# Verificación SSR en vivo de una ruta (con `npm run dev` corriendo en :3000):
+curl -sL http://localhost:3000/<ruta> | grep -o '<patrón>'
+```
+> **Scripts disponibles:** `dev`, `build`, `start`. **No hay** `lint` ni `test` ni ESLint en el proyecto → usa `npx tsc --noEmit` como verificación de calidad.
 
 ---
 
