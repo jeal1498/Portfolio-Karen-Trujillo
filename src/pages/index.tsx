@@ -12,7 +12,7 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SymptomCheckerHome from '@/components/SymptomCheckerHome';
-import { WA_NUMBER, PHONE_NUMBER, waUrl } from '@/lib/contact';
+import { WA_NUMBER, PHONE_NUMBER, waUrl, SOCIAL_PROFILES } from '@/lib/contact';
 import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';
 
 /* ═══════════════════════════════════════════════════════════════
@@ -164,11 +164,7 @@ const schema = {
         { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
       ],
       member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      sameAs: [
-        'https://www.facebook.com/share/1Bs93MjeKt/',
-        'https://www.instagram.com/psicologakarentrujillo',
-        'https://www.tiktok.com/@psic.karentrujillo',
-      ],
+      sameAs: SOCIAL_PROFILES,
     },
     {
       '@type': 'Physician',
@@ -199,11 +195,7 @@ const schema = {
         name: 'Universidad Modelo',
         address: { '@type': 'PostalAddress', addressLocality: 'Mérida', addressRegion: 'Yucatán', addressCountry: 'MX' },
       },
-      sameAs: [
-        'https://www.facebook.com/share/1Bs93MjeKt/',
-        'https://www.instagram.com/psicologakarentrujillo',
-        'https://www.tiktok.com/@psic.karentrujillo',
-      ],
+      sameAs: SOCIAL_PROFILES,
     },
     {
       '@type': 'WebSite',

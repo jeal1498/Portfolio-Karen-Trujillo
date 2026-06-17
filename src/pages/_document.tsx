@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { SOCIAL_PROFILES } from '@/lib/contact';
 
 const medicalBusinessSchema = {
   '@context': 'https://schema.org',
@@ -66,11 +67,7 @@ const professionalSchema = {
     bestRating: '5',
     worstRating: '1',
   },
-  sameAs: [
-    'https://www.facebook.com/share/1Bs93MjeKt/',
-    'https://www.instagram.com/psicologakarentrujillo',
-    'https://www.tiktok.com/@psic.karentrujillo',
-  ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 export default function Document() {
