@@ -10,13 +10,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SOCIAL_PROFILES, WA_NUMBER, PHONE_NUMBER, PHONE_E164 } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, KAREN_IMAGE_PATH, REVIEWS } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG — Cal.com URL (cambiar al URL real de Karen)
    ═══════════════════════════════════════════════════════════════ */
 const CAL_URL = 'https://cal.com/psicologa-karen-trujillo/evaluacion-tdah-infantil';
-const WA_NUMBER = '529983211547';
-const PHONE_NUMBER = '529983211547';
+const CANONICAL_URL = `${SITE_URL}/evaluacion-tdah-ninos`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -112,7 +113,7 @@ const faqItems = [
   },
   {
     q: '¿El informe de TDAH tiene validez oficial ante la escuela?',
-    a: 'Sí. El informe clínico está respaldado por cédula profesional federal 11009616 emitida por la SEP y tiene validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS y dependencias gubernamentales en todo México. Incluye recomendaciones específicas de adecuaciones curriculares.',
+    a: `Sí. El informe clínico está respaldado por cédula profesional federal ${CEDULA} emitida por la SEP y tiene validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS y dependencias gubernamentales en todo México. Incluye recomendaciones específicas de adecuaciones curriculares.`,
   },
   {
     q: '¿Cuál es la diferencia entre TDAH y problemas de conducta?',
@@ -157,16 +158,16 @@ const reviews = [
 /* ── Physician entity (reused across schemas) ── */
 const physicianEntity = {
   '@type': 'Physician',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+  '@id': `${SITE_URL}/#physician`,
   name: 'Karen Trujillo',
   jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-  telephone: '+529983211547',
+  url: SITE_URL,
+  image: KAREN_IMAGE,
+  telephone: PHONE_E164,
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'Cédula Profesional Federal',
-    credentialId: '11009616',
+    credentialId: CEDULA,
     issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
   },
   medicalSpecialty: 'Neuropsychiatry',
@@ -180,17 +181,13 @@ const physicianEntity = {
     sameAs: 'https://www.wikidata.org/wiki/Q8969',
     containedInPlace: { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
   },
-  sameAs: [
-    'https://www.facebook.com/share/1Bs93MjeKt/',
-    'https://www.instagram.com/psicologakarentrujillo',
-    'https://www.tiktok.com/@psic.karentrujillo',
-  ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 /* ── MedicalCondition entity ── */
 const tdahCondition = {
   '@type': 'MedicalCondition',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil',
+  '@id': `${SITE_URL}/#tdah-infantil`,
   name: 'Trastorno por Déficit de Atención e Hiperactividad (TDAH) en niños',
   alternateName: ['TDAH infantil', 'ADHD en niños', 'Déficit de atención infantil'],
   code: [
@@ -227,11 +224,11 @@ const tdahCondition = {
 /* ── MedicalClinic entity (NEW — local SEO + GEO) ── */
 const clinicEntity = {
   '@type': 'MedicalClinic',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+  '@id': `${SITE_URL}/#clinic`,
   name: 'Consultorio Neuropsicóloga Karen Trujillo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  telephone: '+529983211547',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  url: SITE_URL,
+  telephone: PHONE_E164,
+  image: KAREN_IMAGE,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac Supermanzana Circuito casa 1587B',
@@ -260,8 +257,8 @@ const clinicEntity = {
     },
   ],
   medicalSpecialty: 'Neuropsychiatry',
-  availableService: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil-service' },
-  member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+  availableService: { '@id': `${SITE_URL}/#tdah-infantil-service` },
+  member: { '@id': `${SITE_URL}/#physician` },
 };
 
 const schema = {
@@ -271,23 +268,23 @@ const schema = {
     {
       '@type': 'MedicalWebPage',
       name: 'Valoración Neuropsicológica de TDAH Infantil en Cancún',
-      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos',
-      description: 'Evaluación neuropsicológica de TDAH en niños y adolescentes (5-17 años) en Cancún. Diagnóstico con CONNERS-3, WISC-V, BRIEF-2 y CPT-3. Informe clínico con cédula federal 11009616.',
+      url: CANONICAL_URL,
+      description: `Evaluación neuropsicológica de TDAH en niños y adolescentes (5-17 años) en Cancún. Diagnóstico con CONNERS-3, WISC-V, BRIEF-2 y CPT-3. Informe clínico con cédula federal ${CEDULA}.`,
       inLanguage: 'es-MX',
-      about: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      about: { '@id': `${SITE_URL}/#tdah-infantil` },
       mentions: [
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalCondition', name: 'Autismo', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
         { '@type': 'AnatomicalStructure', name: 'Corteza prefrontal', sameAs: 'https://www.wikidata.org/wiki/Q80919' },
         { '@type': 'MedicalTest', name: 'WISC-V', sameAs: 'https://www.wikidata.org/wiki/Q2551426' },
       ],
-      reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      reviewedBy: { '@id': `${SITE_URL}/#physician` },
       lastReviewed: '2026-06-02',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-          { '@type': 'ListItem', position: 2, name: 'Valoración TDAH Infantil', item: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos' },
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Valoración TDAH Infantil', item: CANONICAL_URL },
         ],
       },
     },
@@ -302,7 +299,7 @@ const schema = {
       '@type': 'DiagnosticProcedure',
       name: 'CONNERS-3',
       description: 'Escala de evaluación de síntomas de TDAH con formas para padres, maestros y el propio niño. Estándar internacional para medir inatención, hiperactividad e impulsividad.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     {
       '@type': 'DiagnosticProcedure',
@@ -310,25 +307,25 @@ const schema = {
       alternateName: 'Escala Wechsler de Inteligencia para Niños — 5ª edición',
       description: 'Evaluación de inteligencia y perfil cognitivo que mide atención, memoria de trabajo, velocidad de procesamiento y razonamiento.',
       sameAs: 'https://www.wikidata.org/wiki/Q2551426',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'BRIEF-2',
       description: 'Inventario de Evaluación Conductual de la Función Ejecutiva. Mide regulación emocional, planificación, organización e inhibición en contextos cotidianos.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'CPT-3',
       alternateName: 'Conners Continuous Performance Test',
       description: 'Prueba computarizada que mide atención sostenida, vigilancia e impulsividad de forma objetiva durante 14 minutos.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     /* ── Service + Offer ── */
     {
       '@type': 'MedicalProcedure',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil-service',
+      '@id': `${SITE_URL}/#tdah-infantil-service`,
       name: 'Valoración Neuropsicológica de TDAH Infantil',
       procedureType: 'Diagnostic',
       howPerformed: 'Aplicación de pruebas neuropsicológicas estandarizadas (CONNERS-3, WISC-V, BRIEF-2, CPT-3), entrevista clínica con padres, cuestionarios a maestros, elaboración de informe y sesión de devolución.',
@@ -336,8 +333,8 @@ const schema = {
       followup: 'Sesión de devolución con explicación del diagnóstico, recomendaciones terapéuticas y adecuaciones escolares.',
       bodyLocation: 'Sistema nervioso central — funciones ejecutivas',
       status: 'EventScheduled',
-      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': `${SITE_URL}/#physician` },
+      location: { '@id': `${SITE_URL}/#clinic` },
       offers: {
         '@type': 'Offer',
         price: '7000',
@@ -363,15 +360,15 @@ const schema = {
       author: { '@type': 'Person', name: r.name },
       reviewRating: { '@type': 'Rating', ratingValue: r.stars, bestRating: 5 },
       reviewBody: r.text,
-      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      itemReviewed: { '@id': `${SITE_URL}/#physician` },
       datePublished: `2025-0${i + 1}-15`,
     })),
     /* ── AggregateRating ── */
     {
       '@type': 'AggregateRating',
-      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      ratingValue: '5.0',
-      reviewCount: '47',
+      itemReviewed: { '@id': `${SITE_URL}/#physician` },
+      ratingValue: REVIEWS.ratingValue,
+      reviewCount: REVIEWS.reviewCount,
       bestRating: '5',
       worstRating: '1',
     },
@@ -589,8 +586,8 @@ export default function TDAHNinosFunnel() {
     <>
       <Head>
         <title>Valoración TDAH Infantil en Cancún · Niños 5-17 | Karen Trujillo</title>
-        <meta name="description" content="¿Tu hijo no pone atención en la escuela? Valoración neuropsicológica de TDAH infantil en Cancún (5-17 años). Pruebas CONNERS-3, WISC-V. Informe oficial con cédula 11009616. $8,300 MXN. Agenda en línea." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos" />
+        <meta name="description" content={`¿Tu hijo no pone atención en la escuela? Valoración neuropsicológica de TDAH infantil en Cancún (5-17 años). Pruebas CONNERS-3, WISC-V. Informe oficial con cédula ${CEDULA}. $8,300 MXN. Agenda en línea.`} />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
@@ -602,8 +599,8 @@ export default function TDAHNinosFunnel() {
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo — Neuropsicología" />
         <meta property="og:title" content="Valoración TDAH Infantil en Cancún · Niños 5-17 años" />
         <meta property="og:description" content="Evaluación neuropsicológica con pruebas estandarizadas. Informe con validez oficial ante SEP e IMSS. $8,300 MXN. Agenda en línea." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Valoración TDAH Infantil en Cancún | Niños 5-17 años" />
@@ -617,7 +614,7 @@ export default function TDAHNinosFunnel() {
             '@type': 'SpeakableSpecification',
             cssSelector: ['#definicion-tdah', '#proceso-valoracion', '#que-incluye-informe', '#diferenciador-neuropsicologia'],
           },
-          url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos',
+          url: CANONICAL_URL,
         }) }} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -673,7 +670,7 @@ export default function TDAHNinosFunnel() {
                 </p>
 
                 <p className="text-xs sm:text-sm mb-8" style={{ color: 'rgba(208,208,231,0.6)' }}>
-                  <strong className="text-white">Neuropsicóloga Karen Trujillo</strong> · Cédula Federal 11009616 · 7+ años de experiencia
+                  <strong className="text-white">Neuropsicóloga Karen Trujillo</strong> · Cédula Federal {CEDULA} · 7+ años de experiencia
                 </p>
               </div>
 
@@ -687,7 +684,7 @@ export default function TDAHNinosFunnel() {
 
               <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs animate-[fadeIn_0.8s_ease-out_0.6s_both]">
                 {[
-                  { icon: BadgeCheck, text: 'Cédula 11009616' },
+                  { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Stethoscope, text: 'Pruebas estandarizadas internacionales' },
                   { icon: CalendarCheck, text: 'Agenda en línea' },
                 ].map((badge) => (
@@ -784,7 +781,7 @@ export default function TDAHNinosFunnel() {
                 <div className="p-5 bg-card rounded-2xl border border-border shadow-sm relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent-blue/60 to-primary/40 rounded-l-2xl" />
                   <p className="text-sm text-muted-foreground font-light leading-relaxed pl-2">
-                    <strong className="text-primary font-semibold">En Cancún, Quintana Roo</strong>, la neuropsicóloga Karen Trujillo (cédula 11009616) aplica pruebas como <strong className="text-primary font-semibold">CONNERS-3, WISC-V, BRIEF-2 y CPT-3</strong> para emitir un informe clínico con validez oficial ante la SEP, IMSS e instituciones educativas.
+                    <strong className="text-primary font-semibold">En Cancún, Quintana Roo</strong>, la neuropsicóloga Karen Trujillo (cédula {CEDULA}) aplica pruebas como <strong className="text-primary font-semibold">CONNERS-3, WISC-V, BRIEF-2 y CPT-3</strong> para emitir un informe clínico con validez oficial ante la SEP, IMSS e instituciones educativas.
                   </p>
                 </div>
               </SectionReveal>
@@ -1010,7 +1007,7 @@ export default function TDAHNinosFunnel() {
                     <div className="relative">
                       <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
                         <Image
-                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                          src={KAREN_IMAGE}
                           alt="Neuropsicóloga Karen Trujillo — especialista en TDAH infantil en Cancún"
                           width={256}
                           height={256}
@@ -1021,7 +1018,7 @@ export default function TDAHNinosFunnel() {
                       </div>
                       <div className="absolute -bottom-4 -right-4 bg-gradient-primary text-primary-foreground rounded-2xl px-4 py-2 shadow-xl shadow-primary/25">
                         <p className="text-[9px] font-bold uppercase tracking-widest text-primary-foreground/70">Cédula Federal</p>
-                        <p className="text-sm font-bold font-mono">11009616</p>
+                        <p className="text-sm font-bold font-mono">{CEDULA}</p>
                       </div>
                     </div>
 
@@ -1297,7 +1294,7 @@ export default function TDAHNinosFunnel() {
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
                   <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><Shield className="w-3.5 h-3.5 text-primary/50" /> Pago seguro</span>
                   <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><Clock className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs de anticipación</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Cédula 11009616</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Cédula {CEDULA}</span>
                 </div>
               </SectionReveal>
 

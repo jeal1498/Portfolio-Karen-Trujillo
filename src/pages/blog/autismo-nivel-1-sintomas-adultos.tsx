@@ -6,8 +6,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20autismo%20nivel%201%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20autismo%20nivel%201%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n`;
 
 const sintomasCotidianos = [
   {
@@ -93,7 +95,7 @@ const faqItems = [
   },
   {
     q: '¿Cómo se diagnostica el autismo nivel 1 en adultos en Cancún?',
-    a: 'La neuropsicóloga Karen Trujillo (cédula 11009616) realiza evaluaciones de TEA en Cancún usando el ADOS-2 (el estándar de oro mundial para diagnóstico de autismo), junto con ADI-R, WISC-V o WAIS-IV, Vineland-3 y SRS-2. El proceso dura 3-4 semanas (5-6 sesiones). El informe incluye diagnóstico formal según DSM-5, nivel de apoyo requerido y recomendaciones de intervención con validez oficial ante instituciones.',
+    a: 'La neuropsicóloga Karen Trujillo (cédula ' + CEDULA + ') realiza evaluaciones de TEA en Cancún usando el ADOS-2 (el estándar de oro mundial para diagnóstico de autismo), junto con ADI-R, WISC-V o WAIS-IV, Vineland-3 y SRS-2. El proceso dura 3-4 semanas (5-6 sesiones). El informe incluye diagnóstico formal según DSM-5, nivel de apoyo requerido y recomendaciones de intervención con validez oficial ante instituciones.',
   },
   {
     q: '¿Tiene sentido diagnosticarse como adulto?',
@@ -114,26 +116,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos/#article',
+      '@id': `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos/#article`,
       headline: 'Autismo nivel 1: cuando no pareces autista pero lo eres',
       description: 'El autismo nivel 1 (antes Asperger) en adultos tiene síntomas distintos al autismo clásico. Sin diagnóstico previo, muchos adultos llevan años sintiéndose diferentes sin saber por qué. Evaluación en Cancún.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2026-06-02',
       dateModified: '2026-06-02',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos',
+      mainEntityOfPage: `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos`,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -148,9 +150,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'Autismo nivel 1: síntomas en adultos', item: 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'Autismo nivel 1: síntomas en adultos', item: `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos` },
       ],
     },
     {
@@ -160,7 +162,7 @@ const schema = {
   ],
 };
 
-const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos';
+const CANONICAL_URL = `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos`;
 const HEADLINE = 'Autismo nivel 1: cuando no pareces autista pero lo eres';
 
 export default function AutismoNivel1SintomasAdultos() {
@@ -171,21 +173,21 @@ export default function AutismoNivel1SintomasAdultos() {
       <Head>
         <title>Autismo Nivel 1 en Adultos: síntomas y diagnóstico tardío | Karen Trujillo Cancún</title>
         <meta name="description" content="El autismo nivel 1 (antes Asperger) en adultos tiene síntomas distintos al autismo clásico. Sin diagnóstico previo, muchos adultos llevan años sintiéndose diferentes sin saber por qué. Evaluación en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío" />
         <meta property="og:description" content="No hay discapacidad intelectual. Hay lenguaje fluido. Hay personas que funcionan — y se agotan en el intento. El TEA nivel 1 es el perfil que más tarda en diagnosticarse." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — autismo nivel 1 adultos diagnóstico" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío | Karen Trujillo" />
         <meta name="twitter:description" content="El TEA nivel 1 (antes Asperger) es el perfil autista que más tarda en diagnosticarse. Señales en adultos y cómo evaluarlo en Cancún." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -218,7 +220,7 @@ export default function AutismoNivel1SintomasAdultos() {
                   No hay discapacidad intelectual. Hay lenguaje fluido. Hay personas que funcionan — y se agotan en el intento. El TEA nivel 1 es el perfil que más tarda en diagnosticarse.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>10 min de lectura</span>
                 </div>
@@ -487,18 +489,18 @@ export default function AutismoNivel1SintomasAdultos() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Crees que puede ser TEA nivel 1?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Si llevas años sintiéndote diferente sin saber por qué, una evaluación neuropsicológica puede darte por fin una respuesta. Karen Trujillo realiza evaluaciones de TEA en Cancún con el ADOS-2, el estándar de oro mundial, y cédula federal 11009616.
+                Si llevas años sintiéndote diferente sin saber por qué, una evaluación neuropsicológica puede darte por fin una respuesta. Karen Trujillo realiza evaluaciones de TEA en Cancún con el ADOS-2, el estándar de oro mundial, y cédula federal {CEDULA}.
               </p>
               <div className="flex items-center justify-center gap-3 mb-6 text-xs text-primary-foreground/80">
                 <img
-                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  src={KAREN_IMAGE}
                   alt="Neuropsicóloga Karen Trujillo"
                   width={36}
                   height={36}
                   className="w-9 h-9 rounded-full object-cover object-top"
                   loading="lazy"
                 />
-                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
                 <span>★ 47+ reseñas · 5.0</span>
               </div>
               <div className="flex justify-center">

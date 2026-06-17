@@ -13,11 +13,13 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA_NUMBER = '529983211547';
+const CANONICAL_URL = `${SITE_URL}/blog/tdah-adultos-diagnostico-tardio`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -138,7 +140,7 @@ const faqItems = [
   },
   {
     q: '¿El diagnóstico de TDAH en adultos tiene validez oficial?',
-    a: 'Sí. El informe clínico está respaldado por cédula profesional federal 11009616 emitida por la SEP. Tiene validez ante empleadores, universidades, IMSS y dependencias gubernamentales. Incluye diagnóstico con código CIE-10, perfil de funciones ejecutivas y recomendaciones.',
+    a: `Sí. El informe clínico está respaldado por cédula profesional federal ${CEDULA} emitida por la SEP. Tiene validez ante empleadores, universidades, IMSS y dependencias gubernamentales. Incluye diagnóstico con código CIE-10, perfil de funciones ejecutivas y recomendaciones.`,
   },
   {
     q: '¿Si me diagnostican TDAH, estoy obligado a tomar medicamento?',
@@ -180,26 +182,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio/#article',
+      '@id': `${CANONICAL_URL}/#article`,
       headline: 'TDAH en adultos: por qué miles de personas llegan al diagnóstico después de los 30',
       description: 'Guía completa sobre TDAH en adultos no diagnosticados. Señales en el trabajo, relaciones y vida diaria. Diagnóstico diferencial con ansiedad, depresión y burnout.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2025-06-22',
       dateModified: '2025-06-22',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -210,9 +212,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'TDAH en adultos', item: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'TDAH en adultos', item: CANONICAL_URL },
       ],
     },
     {
@@ -286,23 +288,23 @@ export default function TDAHAdultosDiagnosticoTardio() {
     <>
       <Head>
         <title>TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 | Neuropsicóloga Karen Trujillo</title>
-        <meta name="description" content="¿Procrastinas, pierdes cosas y sientes que el tiempo no te alcanza? Podrías tener TDAH no diagnosticado. Guía basada en evidencia para adultos. Neuropsicóloga con cédula 11009616 en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio" />
+        <meta name="description" content={`¿Procrastinas, pierdes cosas y sientes que el tiempo no te alcanza? Podrías tener TDAH no diagnosticado. Guía basada en evidencia para adultos. Neuropsicóloga con cédula ${CEDULA} en Cancún.`} />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="TDAH en adultos: por qué miles llegan al diagnóstico después de los 30" />
         <meta property="og:description" content="Guía completa sobre TDAH en adultos no diagnosticados. Señales en el trabajo, relaciones y vida diaria. Diagnóstico diferencial con ansiedad y burnout." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-22" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH en adultos: diagnóstico después de los 30 | Karen Trujillo" />
         <meta name="twitter:description" content="¿Procrastinas, pierdes cosas y sientes que el tiempo no alcanza? Guía de TDAH en adultos basada en evidencia." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -356,7 +358,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                 <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both] rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                   <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md">
                     <Image
-                      src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                      src={KAREN_IMAGE}
                       alt="Neuropsicóloga Karen Trujillo"
                       width={48}
                       height={48}
@@ -368,7 +370,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                   <div>
                     <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo</p>
                     <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
-                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span>
+                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 14 min de lectura</span>
                     </div>
                   </div>
@@ -832,7 +834,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Compartir en Facebook"
@@ -841,7 +843,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     <Facebook className="w-4 h-4" />
                   </a>
                   <a
-                    href={`https://wa.me/?text=${encodeURIComponent('TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 — https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent(`TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 — ${CANONICAL_URL}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Compartir por WhatsApp"
@@ -852,7 +854,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                   <button
                     type="button"
                     onClick={() => {
-                      navigator.clipboard.writeText('https://www.psicologakarentrujillo.com.mx/blog/tdah-adultos-diagnostico-tardio');
+                      navigator.clipboard.writeText(CANONICAL_URL);
                       setLinkCopied(true);
                       setTimeout(() => setLinkCopied(false), 2000);
                     }}
@@ -925,7 +927,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0">
                       <Image
-                        src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                        src={KAREN_IMAGE}
                         alt="Neuropsicóloga Karen Trujillo"
                         width={48}
                         height={48}
@@ -937,7 +939,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     <div>
                       <p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p>
                       <div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1">
-                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula 11009616</span>
+                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span>
                         <span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span>
                       </div>
                     </div>

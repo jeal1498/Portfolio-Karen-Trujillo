@@ -1,5 +1,7 @@
 import { ArrowRight, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { WA_NUMBER } from '@/lib/contact';
+import { CEDULA, KAREN_IMAGE_PATH, REVIEWS } from '@/lib/site';
 
 const Hero = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -26,7 +28,7 @@ const Hero = () => {
           {/* Mobile: compact circular crop */}
           <div className="mx-auto w-44 h-44 rounded-full overflow-hidden shadow-[0_12px_40px_-8px_rgba(56,47,81,0.25)] md:hidden">
             <img
-              src="/Psicologa_Karen_Trujillo.webp"
+              src={KAREN_IMAGE_PATH}
               alt="Neuropsicóloga Karen Trujillo, especialista en TDAH y autismo en Cancún"
               className="w-full h-full object-cover object-top"
               loading="eager"
@@ -36,7 +38,7 @@ const Hero = () => {
           {/* Desktop: full photo with credential overlay card */}
           <div className="hidden md:block relative z-10 w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(56,47,81,0.30)]">
             <img
-              src="/Psicologa_Karen_Trujillo.webp"
+              src={KAREN_IMAGE_PATH}
               alt="Neuropsicóloga Karen Trujillo, especialista en valoración de TDAH y Autismo en Cancún, Quintana Roo"
               className="w-full h-full object-cover object-top"
               loading="eager"
@@ -44,7 +46,7 @@ const Hero = () => {
             <div className="absolute bottom-6 right-6 glass p-5 rounded-2xl shadow-lg max-w-[230px] backdrop-blur-xl">
               <span className="text-xs font-bold text-primary block mb-2">Informe Clínico Oficial</span>
               <p className="text-xs font-serif italic text-primary leading-relaxed">Diagnóstico con validez ante SEP, IMSS e instituciones educativas.</p>
-              <p className="text-xs font-bold text-primary/80 mt-3 uppercase tracking-wider">Cédula Federal 11009616</p>
+              <p className="text-xs font-bold text-primary/80 mt-3 uppercase tracking-wider">Cédula Federal {CEDULA}</p>
             </div>
           </div>
 
@@ -72,7 +74,7 @@ const Hero = () => {
 
           <p className="text-muted-foreground text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-balance">
             Diagnóstico neuropsicológico con instrumentos estandarizados internacionales. Informe clínico con validez oficial ante escuelas, IMSS e instituciones.{' '}
-            <strong className="text-primary">Neuropsicóloga Karen Trujillo — Cédula Federal 11009616.</strong>
+            <strong className="text-primary">Neuropsicóloga Karen Trujillo — Cédula Federal {CEDULA}.</strong>
           </p>
 
           {/* Service pills */}
@@ -86,7 +88,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
             <a
-              href="https://wa.me/529983211547?text=Hola%20Karen,%20me%20interesa%20agendar%20una%20valoración"
+              href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20me%20interesa%20agendar%20una%20valoración`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-primary hover:opacity-90 text-primary-foreground py-4 px-10 rounded-2xl font-bold text-xs shadow-xl shadow-primary/25 hover:shadow-2xl hover:-translate-y-1 transition-all uppercase tracking-widest flex items-center justify-center gap-2"
@@ -108,12 +110,12 @@ const Hero = () => {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3.5 h-3.5 text-warning fill-warning" aria-hidden="true" />
               ))}
-              <span className="text-sm font-bold text-primary ml-1">5.0</span>
+              <span className="text-sm font-bold text-primary ml-1">{REVIEWS.ratingValue}</span>
             </div>
             <span className="text-border hidden sm:inline" aria-hidden="true">·</span>
-            <span className="text-xs text-muted-foreground">47 reseñas Google</span>
+            <span className="text-xs text-muted-foreground">{REVIEWS.reviewCount} reseñas Google</span>
             <span className="text-border hidden sm:inline" aria-hidden="true">·</span>
-            <span className="text-xs text-muted-foreground"><strong className="text-primary">Cédula</strong> 11009616</span>
+            <span className="text-xs text-muted-foreground"><strong className="text-primary">Cédula</strong> {CEDULA}</span>
             <span className="text-border hidden sm:inline" aria-hidden="true">·</span>
             <span className="text-xs text-muted-foreground"><strong className="text-primary">7+</strong> años de experiencia</span>
           </div>
