@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 import { waUrl } from '@/lib/contact';
+import { SITE_URL, CEDULA } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    DATA — ordenados por relevancia SEO
@@ -191,14 +192,14 @@ export default function BlogIndex() {
         <title>Blog | Neuropsicóloga Karen Trujillo — TDAH y Autismo en Cancún</title>
         <meta
           name="description"
-          content="Artículos clínicos sobre TDAH en niños, adultos y niñas, autismo y evaluación neuropsicológica en Cancún. Escritos por la Psic. Karen Trujillo, cédula 11009616."
+          content={`Artículos clínicos sobre TDAH en niños, adultos y niñas, autismo y evaluación neuropsicológica en Cancún. Escritos por la Psic. Karen Trujillo, cédula ${CEDULA}.`}
         />
         <meta property="og:title" content="Blog sobre TDAH y Autismo | Karen Trujillo Neuropsicóloga" />
         <meta
           property="og:description"
           content="Guías y artículos basados en evidencia sobre TDAH en niños y adultos, TDAH en niñas y diagnóstico de autismo con ADOS-2 en Cancún."
         />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog" />
+        <link rel="canonical" href={`${SITE_URL}/blog`} />
       </Head>
 
       <Navbar />
@@ -427,7 +428,7 @@ export default function BlogIndex() {
               <p className="text-[0.625rem] font-bold uppercase tracking-[0.1em] text-white/70 mb-2">
                 Cédula Profesional
               </p>
-              <p className="font-serif text-lg text-white mb-2">11009616</p>
+              <p className="font-serif text-lg text-white mb-2">{CEDULA}</p>
               <p className="text-xs text-white/80 leading-relaxed">
                 Neuropsicología clínica · ADOS-2, WISC-V, CAARS-2, CONNERS-3, BRIEF-2, CPT-3
               </p>

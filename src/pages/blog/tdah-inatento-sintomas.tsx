@@ -6,9 +6,11 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA_NINOS = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20TDAH%20inatento%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20para%20mi%20hijo';
-const WA_ADULTOS = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20TDAH%20inatento%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20para%20adultos';
+const WA_NINOS = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20TDAH%20inatento%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20para%20mi%20hijo`;
+const WA_ADULTOS = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20TDAH%20inatento%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20para%20adultos`;
 
 const sintomasNinos = [
   {
@@ -102,7 +104,7 @@ const faqItems = [
   },
   {
     q: '¿Cómo se diagnostica el TDAH inatento en Cancún?',
-    a: 'La neuropsicóloga Karen Trujillo (cédula 11009616) realiza evaluaciones de TDAH en Cancún utilizando instrumentos estandarizados internacionales: CONNERS-3 para niños (5-17 años) o CAARS-2 para adultos (18+), junto con WISC-V o WAIS-IV para evaluar el perfil cognitivo, y BRIEF-2 para funciones ejecutivas. El proceso dura 2-3 semanas e incluye entre 4 y 5 sesiones.',
+    a: `La neuropsicóloga Karen Trujillo (cédula ${CEDULA}) realiza evaluaciones de TDAH en Cancún utilizando instrumentos estandarizados internacionales: CONNERS-3 para niños (5-17 años) o CAARS-2 para adultos (18+), junto con WISC-V o WAIS-IV para evaluar el perfil cognitivo, y BRIEF-2 para funciones ejecutivas. El proceso dura 2-3 semanas e incluye entre 4 y 5 sesiones.`,
   },
   {
     q: '¿Se puede tener TDAH inatento y ansiedad al mismo tiempo?',
@@ -114,31 +116,34 @@ const faqItems = [
   },
 ];
 
+const CANONICAL_URL = `${SITE_URL}/blog/tdah-inatento-sintomas`;
+const HEADLINE = 'TDAH inatento: el tipo que casi nadie detecta';
+
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/tdah-inatento-sintomas/#article',
+      '@id': `${SITE_URL}/blog/tdah-inatento-sintomas/#article`,
       headline: 'TDAH inatento: el tipo de TDAH que casi nadie detecta',
       description: 'El TDAH inatento (antes llamado TDA) es el subtipo más subdiagnosticado. Sin hiperactividad visible, se confunde con pereza o falta de motivación. Aprende a identificarlo en niños y adultos.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2026-06-02',
       dateModified: '2026-06-02',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-inatento-sintomas',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -153,9 +158,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'TDAH inatento: el tipo que casi nadie detecta', item: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-inatento-sintomas' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'TDAH inatento: el tipo que casi nadie detecta', item: CANONICAL_URL },
       ],
     },
     {
@@ -165,9 +170,6 @@ const schema = {
   ],
 };
 
-const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/tdah-inatento-sintomas';
-const HEADLINE = 'TDAH inatento: el tipo que casi nadie detecta';
-
 export default function TDAHInatento() {
   const [linkCopied, setLinkCopied] = useState(false);
 
@@ -176,21 +178,21 @@ export default function TDAHInatento() {
       <Head>
         <title>TDAH Inatento: síntomas en niños y adultos | Neuropsicóloga Karen Trujillo Cancún</title>
         <meta name="description" content="El TDAH inatento (antes TDA) no tiene hiperactividad visible. Por eso casi nadie lo detecta. Conoce los síntomas en niños y adultos, por qué se diagnostica tarde y cómo evaluarlo en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/tdah-inatento-sintomas" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="TDAH Inatento: el tipo de TDAH que casi nadie detecta" />
         <meta property="og:description" content="Sin hiperactividad visible, el TDAH inatento se confunde con pereza o falta de motivación durante años. Señales en niños y adultos, y cómo evaluarlo en Cancún." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/tdah-inatento-sintomas" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH inatento" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH Inatento: el tipo que casi nadie detecta | Karen Trujillo" />
         <meta name="twitter:description" content="Sin hiperactividad, el TDAH inatento pasa invisible durante años. Señales en niños y adultos, y cómo evaluarlo en Cancún." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -223,7 +225,7 @@ export default function TDAHInatento() {
                   No hace escándalo, no interrumpe, no pelea. Simplemente parece ausente, despistado o "poco esforzado". Por eso pasa años sin diagnóstico — a veces toda la infancia.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>8 min de lectura</span>
                 </div>
@@ -422,7 +424,7 @@ export default function TDAHInatento() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl font-serif font-bold text-primary mb-4">¿Cómo se diagnostica el TDAH inatento?</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-6">
-                  El diagnóstico de TDAH inatento requiere una evaluación neuropsicológica completa — no basta con una entrevista ni con cuestionarios aislados. La neuropsicóloga Karen Trujillo (cédula 11009616) utiliza instrumentos estandarizados internacionales que miden objetivamente la atención, la memoria de trabajo y las funciones ejecutivas.
+                  El diagnóstico de TDAH inatento requiere una evaluación neuropsicológica completa — no basta con una entrevista ni con cuestionarios aislados. La neuropsicóloga Karen Trujillo (cédula {CEDULA}) utiliza instrumentos estandarizados internacionales que miden objetivamente la atención, la memoria de trabajo y las funciones ejecutivas.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   <div className="bg-card border border-border rounded-xl p-5">
@@ -517,17 +519,17 @@ export default function TDAHInatento() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Sospechas que puede ser TDAH inatento?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Una evaluación neuropsicológica completa da la respuesta con datos objetivos — no con impresiones. Karen Trujillo atiende en Cancún con cédula federal 11009616.
+                Una evaluación neuropsicológica completa da la respuesta con datos objetivos — no con impresiones. Karen Trujillo atiende en Cancún con cédula federal {CEDULA}.
               </p>
               <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
                 <img
-                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  src={KAREN_IMAGE}
                   alt="Neuropsicóloga Karen Trujillo"
                   width={36}
                   height={36}
                   className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
                 />
-                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
                 <span>★ 47+ reseñas · 5.0</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

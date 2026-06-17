@@ -6,8 +6,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20burnout%20vs%20TDAH%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20para%20adultos';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20burnout%20vs%20TDAH%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20valoraci%C3%B3n%20para%20adultos`;
 
 const similitudes = [
   {
@@ -91,7 +93,7 @@ const faqItems = [
   },
   {
     q: '¿Cómo se evalúa el TDAH en adultos en Cancún?',
-    a: 'La neuropsicóloga Karen Trujillo (cédula 11009616) realiza evaluaciones de TDAH adulto en Cancún usando instrumentos estandarizados internacionales: CAARS-2 (escala de síntomas TDAH adulto), WAIS-IV (perfil cognitivo), BRIEF-2A (funciones ejecutivas) y CPT-3 (atención sostenida computarizada). El proceso toma 2-3 semanas en 4-5 sesiones. El informe incluye diagnóstico diferencial y tiene validez oficial.',
+    a: `La neuropsicóloga Karen Trujillo (cédula ${CEDULA}) realiza evaluaciones de TDAH adulto en Cancún usando instrumentos estandarizados internacionales: CAARS-2 (escala de síntomas TDAH adulto), WAIS-IV (perfil cognitivo), BRIEF-2A (funciones ejecutivas) y CPT-3 (atención sostenida computarizada). El proceso toma 2-3 semanas en 4-5 sesiones. El informe incluye diagnóstico diferencial y tiene validez oficial.`,
   },
   {
     q: '¿El tratamiento del burnout y el TDAH es diferente?',
@@ -104,26 +106,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/burnout-o-tdah-diferencias/#article',
+      '@id': `${SITE_URL}/blog/burnout-o-tdah-diferencias/#article`,
       headline: 'Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos)',
       description: 'El burnout y el TDAH comparten síntomas pero tienen causas distintas. La diferencia clave: en el burnout hubo un antes. En el TDAH, siempre fue así. Diagnóstico diferencial en Cancún.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2026-06-03',
       dateModified: '2026-06-03',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/burnout-o-tdah-diferencias',
+      mainEntityOfPage: `${SITE_URL}/blog/burnout-o-tdah-diferencias`,
       inLanguage: 'es-MX',
       about: [
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
@@ -137,9 +139,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'Burnout vs. TDAH: diferencias', item: 'https://www.psicologakarentrujillo.com.mx/blog/burnout-o-tdah-diferencias' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'Burnout vs. TDAH: diferencias', item: `${SITE_URL}/blog/burnout-o-tdah-diferencias` },
       ],
     },
     {
@@ -149,7 +151,7 @@ const schema = {
   ],
 };
 
-const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/burnout-o-tdah-diferencias';
+const CANONICAL_URL = `${SITE_URL}/blog/burnout-o-tdah-diferencias`;
 const HEADLINE = 'Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos)';
 
 export default function BurnoutVsTDAH() {
@@ -161,21 +163,21 @@ export default function BurnoutVsTDAH() {
       <Head>
         <title>Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos) | Karen Trujillo</title>
         <meta name="description" content="El burnout y el TDAH comparten síntomas pero tienen causas distintas. La diferencia clave: en el burnout hubo un antes. En el TDAH, siempre fue así. Diagnóstico diferencial en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/burnout-o-tdah-diferencias" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos)" />
         <meta property="og:description" content="Síntomas compartidos, diferencias clave y por qué el burnout y el TDAH pueden coexistir. Guía clínica completa para adultos en Cancún." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/burnout-o-tdah-diferencias" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — burnout vs TDAH diferencias adultos" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-03" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos)" />
         <meta name="twitter:description" content="Comparten síntomas pero son diferentes. Guía clínica para distinguir burnout de TDAH y entender por qué pueden coexistir." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -208,7 +210,7 @@ export default function BurnoutVsTDAH() {
                   Es la pregunta que más hacen los adultos en consulta. Los síntomas se parecen, la confusión es real. Pero la respuesta cambia completamente el tratamiento.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                   <span>9 min de lectura</span>
                 </div>
@@ -403,7 +405,7 @@ export default function BurnoutVsTDAH() {
                   La evaluación neuropsicológica no se basa en impresiones ni en listas de síntomas autoreportados. Utiliza instrumentos estandarizados que miden objetivamente la atención sostenida, las funciones ejecutivas, la memoria de trabajo y el perfil emocional. Con esos datos, el diagnóstico diferencial no es una opinión — es un perfil clínico con evidencia.
                 </p>
                 <p className="text-muted-foreground font-light leading-relaxed mb-6">
-                  La neuropsicóloga Karen Trujillo (cédula 11009616) atiende en Cancún, Quintana Roo. La evaluación de TDAH adulto incluye CAARS-2 para síntomas TDAH en adultos, WAIS-IV para el perfil cognitivo, BRIEF-2A para funciones ejecutivas y CPT-3 para atención sostenida computarizada. El proceso dura 2-3 semanas (4-5 sesiones) y el informe final incluye diagnóstico diferencial, historia del desarrollo y plan de intervención con validez oficial.
+                  La neuropsicóloga Karen Trujillo (cédula {CEDULA}) atiende en Cancún, Quintana Roo. La evaluación de TDAH adulto incluye CAARS-2 para síntomas TDAH en adultos, WAIS-IV para el perfil cognitivo, BRIEF-2A para funciones ejecutivas y CPT-3 para atención sostenida computarizada. El proceso dura 2-3 semanas (4-5 sesiones) y el informe final incluye diagnóstico diferencial, historia del desarrollo y plan de intervención con validez oficial.
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4">
                   <div className="bg-secondary border border-border rounded-xl p-4 text-center">
@@ -513,18 +515,18 @@ export default function BurnoutVsTDAH() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Quieres saber qué está pasando realmente?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                La neuropsicóloga Karen Trujillo realiza diagnósticos diferenciales completos de TDAH, burnout y condiciones relacionadas en Cancún. Cédula federal 11009616. Informe con validez oficial.
+                La neuropsicóloga Karen Trujillo realiza diagnósticos diferenciales completos de TDAH, burnout y condiciones relacionadas en Cancún. Cédula federal {CEDULA}. Informe con validez oficial.
               </p>
               <div className="flex items-center justify-center gap-3 mb-6 text-xs text-primary-foreground/80">
                 <img
-                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  src={KAREN_IMAGE}
                   alt="Neuropsicóloga Karen Trujillo"
                   width={36}
                   height={36}
                   className="w-9 h-9 rounded-full object-cover object-top"
                   loading="lazy"
                 />
-                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
                 <span>★ 47+ reseñas · 5.0</span>
               </div>
               <a href={WA} target="_blank" rel="noopener noreferrer"

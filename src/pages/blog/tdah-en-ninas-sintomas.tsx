@@ -6,8 +6,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const CANONICAL_URL = 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas';
+const CANONICAL_URL = `${SITE_URL}/blog/tdah-en-ninas-sintomas`;
 const ARTICLE_HEADLINE = 'TDAH en niñas: síntomas que casi nadie detecta';
 
 const diferencias = [
@@ -78,26 +80,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas/#article',
+      '@id': `${SITE_URL}/blog/tdah-en-ninas-sintomas/#article`,
       headline: 'TDAH en niñas: síntomas que casi nadie detecta',
       description: 'El TDAH femenino es invisible al sistema educativo. No genera disrupción, se enmascara con esfuerzo y durante años se confunde con ansiedad, perfeccionismo o simplemente "ser despistada".',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2025-06-01',
       dateModified: '2026-06-02',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -108,9 +110,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'TDAH en niñas: síntomas que casi nadie detecta', item: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'TDAH en niñas: síntomas que casi nadie detecta', item: CANONICAL_URL },
       ],
     },
     {
@@ -127,21 +129,21 @@ export default function TDAHNinas() {
       <Head>
         <title>TDAH en Niñas: Síntomas que Casi Nadie Detecta | Neuropsicóloga Karen Trujillo Cancún</title>
         <meta name="description" content="El TDAH en niñas se diagnostica años más tarde que en niños porque los síntomas son distintos. Inatención sin hiperactividad, hipersensibilidad emocional, agotamiento por compensación. Valoración en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="TDAH en Niñas: Por Qué Se Detecta Tan Tarde y Cómo Identificarlo" />
         <meta property="og:description" content="El TDAH femenino es invisible al sistema: no genera disrupción, se compensa con esfuerzo, se confunde con ansiedad. Señales, consecuencias y cómo evaluar a tu hija en Cancún." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH en niñas" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-01" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH en niñas: síntomas que casi nadie detecta | Karen Trujillo" />
         <meta name="twitter:description" content="El TDAH femenino se enmascara con esfuerzo y durante años se confunde con ansiedad. Señales y cómo evaluar a tu hija en Cancún." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">
@@ -170,7 +172,7 @@ export default function TDAHNinas() {
                   El TDAH femenino es invisible al sistema educativo. No genera disrupción, se enmascara con esfuerzo y durante años se confunde con ansiedad, perfeccionismo o simplemente "ser despistada".
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Neuropsicóloga Karen Trujillo — Cédula {CEDULA}</span>
                   <span>Cancún, Quintana Roo</span>
                 </div>
               </motion.div>
@@ -348,21 +350,21 @@ export default function TDAHNinas() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Sospechas que tu hija podría tener TDAH?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Una valoración neuropsicológica formal es la única forma de saberlo con certeza. La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal 11009616.
+                Una valoración neuropsicológica formal es la única forma de saberlo con certeza. La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal {CEDULA}.
               </p>
               <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
                 <img
-                  src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                  src={KAREN_IMAGE}
                   alt="Neuropsicóloga Karen Trujillo"
                   width={36}
                   height={36}
                   className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
                 />
-                <span>Karen Trujillo · Cédula 11009616</span>
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
                 <span>★ 47+ reseñas · 5.0</span>
               </div>
               <a
-                href="https://wa.me/529983211547?text=Hola%20Karen,%20leí%20tu%20artículo%20sobre%20TDAH%20en%20niñas%20y%20quiero%20información"
+                href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20leí%20tu%20artículo%20sobre%20TDAH%20en%20niñas%20y%20quiero%20información`}
                 target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-10 py-4 rounded-lg hover:opacity-90 transition-all shadow-lg"
               >
