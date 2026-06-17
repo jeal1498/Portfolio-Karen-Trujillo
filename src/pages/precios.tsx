@@ -199,7 +199,7 @@ export default function Precios() {
                 Neuropsicóloga Karen Trujillo · Cancún · Cédula {CEDULA}
               </p>
               <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">
-                Inversión en el<br />diagnóstico correcto
+                Inversión en el{' '}<br />diagnóstico correcto
               </h1>
               <p className="text-lg font-light mb-10 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 Precio todo incluido: entrevista, pruebas estandarizadas, informe clínico con validez oficial y sesión de devolución.

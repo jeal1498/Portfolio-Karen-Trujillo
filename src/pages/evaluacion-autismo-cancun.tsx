@@ -364,15 +364,6 @@ const schema = {
         areaServed: { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
       },
     },
-    /* ── HowTo ── */
-    {
-      '@type': 'HowTo',
-      name: 'Proceso de evaluación neuropsicológica de autismo (TEA) en Cancún',
-      description: 'Protocolo clínico de 5 fases para diagnosticar autismo con ADOS-2 y ADI-R. Duración total: 3 a 4 semanas.',
-      totalTime: 'P4W',
-      estimatedCost: { '@type': 'MonetaryAmount', currency: 'MXN', value: '8500' },
-      step: proceso.map((p, i) => ({ '@type': 'HowToStep', name: p.titulo, text: p.desc, position: i + 1 })),
-    },
     /* ── Individual Reviews ── */
     ...reviews.map((r, i) => ({
       '@type': 'Review',
