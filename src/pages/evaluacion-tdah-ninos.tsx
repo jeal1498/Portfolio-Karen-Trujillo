@@ -11,7 +11,7 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SOCIAL_PROFILES, WA_NUMBER, PHONE_NUMBER, PHONE_E164 } from '@/lib/contact';
-import { SITE_URL, CEDULA, KAREN_IMAGE, KAREN_IMAGE_PATH, REVIEWS } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE, KAREN_IMAGE_PATH, REVIEWS, GEO } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG — Cal.com URL (cambiar al URL real de Karen)
@@ -239,8 +239,8 @@ const clinicEntity = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 21.1619,
-    longitude: -86.8515,
+    latitude: GEO.latitude,
+    longitude: GEO.longitude,
   },
   openingHoursSpecification: [
     {
@@ -591,8 +591,8 @@ export default function TDAHNinosFunnel() {
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />

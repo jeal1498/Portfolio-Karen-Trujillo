@@ -25,6 +25,9 @@ export const ADDRESS = {
   addressCountry: 'MX',
 } as const;
 
+/** Coordenadas GPS del consultorio (del pin verificado en GBP). */
+export const GEO = { latitude: 21.1530418, longitude: -86.8958544 } as const;
+
 /** Calificación agregada (Google). Valores como string para JSON-LD. */
 export const REVIEWS = {
   ratingValue: '5.0',
