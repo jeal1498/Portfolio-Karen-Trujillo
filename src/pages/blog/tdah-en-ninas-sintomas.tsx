@@ -185,7 +185,7 @@ export default function TDAHNinas() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=TDAH+en+Niñas"
+                    src="/blog/dark-tdah-en-ninas-1200x675.svg"
                     alt="TDAH en niñas: síntomas que casi nadie detecta — imagen ilustrativa"
                     width={1200}
                     height={675}
@@ -230,7 +230,7 @@ export default function TDAHNinas() {
                 <div className="mb-12">
                   <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                     <img
-                      src="https://placehold.co/960x540/fbdbe0/382f51?text=TDAH+Femenino"
+                      src="/blog/blush-tdah-femenino-960x540.svg"
                       alt="Niña con TDAH inatento en el ámbito escolar — imagen ilustrativa"
                       width={960}
                       height={540}
@@ -277,7 +277,7 @@ export default function TDAHNinas() {
                 <div className="mb-12">
                   <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                     <img
-                      src="https://placehold.co/960x540/d0d0e7/382f51?text=Diagnóstico+a+Tiempo"
+                      src="/blog/lavender-diagnostico-a-tiempo-960x540.svg"
                       alt="Evaluación neuropsicológica oportuna para niñas con TDAH — imagen ilustrativa"
                       width={960}
                       height={540}
@@ -380,7 +380,7 @@ export default function TDAHNinas() {
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link href="/evaluacion-tdah-ninos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoración+TDAH+Infantil"
+                    src="/blog/lavender-valoracion-tdah-infantil-640x400.svg"
                     alt="Valoración TDAH Infantil en Cancún"
                     width={640}
                     height={400}
@@ -395,7 +395,7 @@ export default function TDAHNinas() {
                 </Link>
                 <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/f5dfc5/382f51?text=Costo+de+la+Valoración"
+                    src="/blog/sand-costo-de-la-valoracion-640x400.svg"
                     alt="¿Cuánto cuesta una valoración de TDAH en Cancún?"
                     width={640}
                     height={400}
@@ -410,7 +410,7 @@ export default function TDAHNinas() {
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="https://placehold.co/640x400/d0d0e7/382f51?text=Valoración+TDAH+Adultos"
+                    src="/blog/lavender-valoracion-tdah-adultos-640x400.svg"
                     alt="Valoración TDAH Adultos en Cancún"
                     width={640}
                     height={400}

@@ -999,9 +999,9 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { href: '/blog/senales-tdah-ninos',       tag: 'TDAH Infantil', mins: '12', title: '¿Tu hijo no pone atención? Señales reales de TDAH en niños', img: '#d0d0e7', imgText: 'TDAH+Infantil' },
-                  { href: '/blog/tdah-adultos-diagnostico-tardio', tag: 'TDAH Adultos', mins: '10', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', img: '#f5dfc5', imgText: 'TDAH+Adultos' },
-                  { href: '/blog/que-es-ados-2-autismo',    tag: 'Autismo / TEA', mins: '11', title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', img: '#fbdbe0', imgText: 'Autismo+TEA' },
+                  { href: '/blog/senales-tdah-ninos',       tag: 'TDAH Infantil', mins: '12', title: '¿Tu hijo no pone atención? Señales reales de TDAH en niños', imgSrc: '/blog/dark-senales-de-tdah-en-ninos-1200x675.svg' },
+                  { href: '/blog/tdah-adultos-diagnostico-tardio', tag: 'TDAH Adultos', mins: '10', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', imgSrc: '/blog/dark-tdah-en-adultos-1200x675.svg' },
+                  { href: '/blog/que-es-ados-2-autismo',    tag: 'Autismo / TEA', mins: '11', title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', imgSrc: '/blog/dark-que-es-el-ados-2-1200x675.svg' },
                 ].map((post, i) => (
                   <SectionReveal key={post.href} delay={i * 0.1}>
                     <article
@@ -1012,7 +1012,7 @@ export default function Home() {
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={`https://placehold.co/400x240/${post.img.replace('#', '')}/${post.img === '#d0d0e7' ? '382f51' : '382f51'}?text=${post.imgText}`}
+                        src={post.imgSrc}
                         alt={`Artículo: ${post.title}`}
                         width={400}
                         height={240}

@@ -124,14 +124,14 @@ const relatedResources = [
     icon: Briefcase,
     category: 'TDAH Adultos',
     title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30',
-    img: 'https://placehold.co/640x400/d0d0e7/382f51?text=TDAH+Adultos',
+    img: '/blog/lavender-tdah-adultos-640x400.svg',
   },
   {
     href: '/blog/que-es-ados-2-autismo',
     icon: Puzzle,
     category: 'Autismo (TEA)',
     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
-    img: 'https://placehold.co/640x400/fbdbe0/382f51?text=Autismo+(TEA)',
+    img: '/blog/blush-autismo-tea-640x400.svg)',
   },
 ];
 
@@ -350,7 +350,7 @@ export default function SenalesTDAHNinos() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="https://placehold.co/1200x675/382f51/d0d0e7?text=Se%C3%B1ales+de+TDAH+en+Ni%C3%B1os"
+                    src="/blog/dark-senales-de-tdah-en-ninos-1200x675.svg"
                     alt="¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico — imagen ilustrativa"
                     width={1200}
                     height={675}
@@ -433,7 +433,7 @@ export default function SenalesTDAHNinos() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/f5dfc5/382f51?text=Ni%C3%B1o+en+el+aula"
+                    src="/blog/sand-nino-en-el-aula-960x540.svg"
                     alt="Niño en el aula mostrando dificultad para mantener la atención — imagen ilustrativa"
                     width={960}
                     height={540}
@@ -670,7 +670,7 @@ export default function SenalesTDAHNinos() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
                   <img
-                    src="https://placehold.co/960x540/d0d0e7/382f51?text=Evaluaci%C3%B3n+Neuropsicol%C3%B3gica+Infantil"
+                    src="/blog/lavender-evaluacion-neuropsicologica-infantil-960x540.svg"
                     alt="Evaluación neuropsicológica infantil para diagnóstico de TDAH — imagen ilustrativa"
                     width={960}
                     height={540}
