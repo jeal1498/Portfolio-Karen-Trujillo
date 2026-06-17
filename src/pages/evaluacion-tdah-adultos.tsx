@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SOCIAL_PROFILES } from '@/lib/contact';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG — Cal.com URL (cambiar al URL real de Karen)
@@ -184,11 +185,7 @@ const physicianEntity = {
     sameAs: 'https://www.wikidata.org/wiki/Q8969',
     containedInPlace: { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
   },
-  sameAs: [
-    'https://www.facebook.com/share/1Bs93MjeKt/',
-    'https://www.instagram.com/psicologakarentrujillo',
-    'https://www.tiktok.com/@psic.karentrujillo',
-  ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 /* ── MedicalCondition entity ── */

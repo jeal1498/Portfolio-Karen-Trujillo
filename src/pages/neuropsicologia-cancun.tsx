@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SOCIAL, SOCIAL_PROFILES, INSTAGRAM_HANDLE } from '@/lib/contact';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
@@ -160,11 +161,7 @@ const schema = {
         bestRating: '5',
         worstRating: '1',
       },
-      sameAs: [
-        'https://www.facebook.com/share/1Bs93MjeKt/',
-        'https://www.instagram.com/psicologakarentrujillo',
-        'https://www.tiktok.com/@psic.karentrujillo',
-      ],
+      sameAs: SOCIAL_PROFILES,
     },
     {
       '@type': 'FAQPage',
@@ -538,13 +535,13 @@ export default function NeuropsicologiaCancun() {
 
                     {/* Instagram */}
                     <a
-                      href="https://www.instagram.com/psicologakarentrujillo"
+                      href={SOCIAL.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Instagram className="w-4 h-4 shrink-0" />
-                      @psicologakarentrujillo
+                      {INSTAGRAM_HANDLE}
                     </a>
                   </div>
                 </SectionReveal>
