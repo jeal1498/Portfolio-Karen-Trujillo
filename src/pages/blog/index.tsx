@@ -42,7 +42,7 @@ const posts = [
     title: '¿Tu hijo no pone atención? Señales reales de TDAH en niños',
     excerpt: 'Guía para padres que sospechan: cómo diferenciar el comportamiento típico de señales que sí justifican una evaluación neuropsicológica. Por edades, con criterios clínicos reales.',
     readTime: '12 min',
-    img: 'https://placehold.co/900x500/d0d0e7/382f51?text=TDAH+en+Ni%C3%B1os',
+    img: '/blog/lavender-tdah-en-ninos-900x500.svg',
   },
   {
     rank: 2,
@@ -53,7 +53,7 @@ const posts = [
     title: '¿Cuánto cuesta una valoración de TDAH en Cancún?',
     excerpt: 'Precio real, qué incluye, cuántas sesiones son y por qué cuesta lo que cuesta. Sin letra chica: $8,300 MXN con informe clínico válido ante SEP e IMSS.',
     readTime: '7 min',
-    img: 'https://placehold.co/600x340/f5dfc5/382f51?text=Costo+TDAH',
+    img: '/blog/sand-costo-tdah-600x340.svg',
   },
   {
     rank: 3,
@@ -64,7 +64,7 @@ const posts = [
     title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30',
     excerpt: 'Te compensaste con inteligencia, te diagnosticaron ansiedad, o simplemente nadie lo vio. Las razones por las que el TDAH adulto se detecta tarde y qué hacer al respecto.',
     readTime: '10 min',
-    img: 'https://placehold.co/600x340/5b4e7f/ffffff?text=TDAH+Adultos',
+    img: '/blog/5b4e7f-tdah-adultos-600x340.svg',
     popular: true,
   },
   {
@@ -76,7 +76,7 @@ const posts = [
     title: 'TDAH en niñas: los síntomas que casi nadie detecta',
     excerpt: 'Sin hiperactividad, sin disrupción, con notas aceptables. El TDAH femenino es invisible al sistema porque se compensa con esfuerzo hasta que el cuerpo no puede más.',
     readTime: '9 min',
-    img: 'https://placehold.co/600x340/d0d0e7/382f51?text=TDAH+en+Ni%C3%B1as',
+    img: '/blog/lavender-tdah-en-ninas-600x340.svg',
     popular: true,
   },
   {
@@ -88,7 +88,7 @@ const posts = [
     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
     excerpt: 'El instrumento más confiable del mundo para evaluar TEA explicado sin jerga. Qué mide, cómo se aplica, sus 4 módulos y por qué supera cualquier cuestionario.',
     readTime: '11 min',
-    img: 'https://placehold.co/600x340/fbdbe0/382f51?text=ADOS-2',
+    img: '/blog/blush-ados-2-600x340.svg',
     popular: true,
   },
   {
@@ -100,7 +100,7 @@ const posts = [
     title: '¿Cuánto cuesta una evaluación de autismo en México?',
     excerpt: 'Precio real, sin letra chica. $8,500 MXN que incluye ADOS-2, ADI-R, WISC-V, Vineland-3 y sesión de devolución. Por qué cuesta lo que cuesta y qué pasa si no se hace.',
     readTime: '8 min',
-    img: 'https://placehold.co/600x340/fbdbe0/382f51?text=Costo+Autismo',
+    img: '/blog/blush-costo-autismo-600x340.svg',
   },
   {
     rank: 7,
@@ -111,7 +111,7 @@ const posts = [
     title: 'Autismo nivel 1: cuando no pareces autista pero lo eres',
     excerpt: 'Sin discapacidad intelectual, con lenguaje fluido — y sintiéndose diferente toda la vida sin saber por qué. El TEA nivel 1 (antes Asperger) es el perfil que más tarda en diagnosticarse.',
     readTime: '10 min',
-    img: 'https://placehold.co/600x340/2b1f47/d0d0e7?text=Autismo+Nivel+1',
+    img: '/blog/2b1f47-autismo-nivel-1-600x340.svg',
   },
   {
     rank: 8,
@@ -122,7 +122,7 @@ const posts = [
     title: 'TDAH inatento: el tipo que casi nadie detecta',
     excerpt: 'Sin hiperactividad, sin escándalo, sin diagnóstico. El TDAH inatento pasa años invisible en niños y adultos porque se confunde con pereza o falta de motivación. Señales reales y cómo evaluarlo.',
     readTime: '8 min',
-    img: 'https://placehold.co/600x340/d0d0e7/382f51?text=TDAH+Inatento',
+    img: '/blog/lavender-tdah-inatento-600x340.svg',
   },
   {
     rank: 9,
@@ -133,7 +133,7 @@ const posts = [
     title: '¿TDAH o ansiedad? Cómo saber cuál es cuál — o si son los dos',
     excerpt: 'Comparten síntomas pero tienen causas distintas y tratamientos diferentes. Tabla comparativa completa, la realidad de la comorbilidad y por qué el diagnóstico diferencial cambia todo.',
     readTime: '9 min',
-    img: 'https://placehold.co/600x340/f8f7fc/382f51?text=TDAH+vs+Ansiedad',
+    img: '/blog/f8f7fc-tdah-vs-ansiedad-600x340.svg',
   },
   {
     rank: 10,
@@ -144,7 +144,7 @@ const posts = [
     title: 'Burnout vs. TDAH: ¿por qué te sientes así y qué puedes hacer?',
     excerpt: 'Los síntomas se parecen pero el origen es diferente. La diferencia clave: en el burnout hubo un antes en que funcionabas bien. En el TDAH, siempre fue así — aunque no lo supieras.',
     readTime: '9 min',
-    img: 'https://placehold.co/600x340/5b4e7f/ffffff?text=Burnout+vs+TDAH',
+    img: '/blog/5b4e7f-burnout-vs-tdah-600x340.svg',
   },
   {
     rank: 11,
@@ -155,7 +155,7 @@ const posts = [
     title: 'Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)',
     excerpt: 'Ya decidiste que quieres una evaluación. ¿Cómo elegir bien? Los 5 criterios de una evaluación confiable, las señales de alerta y cómo es el proceso en Cancún.',
     readTime: '7 min',
-    img: 'https://placehold.co/600x340/382f51/d0d0e7?text=Canc%C3%BAn',
+    img: '/blog/dark-cancun-600x340.svg',
   },
 ];
 
