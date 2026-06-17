@@ -28,6 +28,12 @@ export const ADDRESS = {
 /** Coordenadas GPS del consultorio (del pin verificado en GBP). */
 export const GEO = { latitude: 21.1530418, longitude: -86.8958544 } as const;
 
+/** Horarios de atención. Fuente única para UI y schema OpeningHoursSpecification. */
+export const HOURS = {
+  weekdays: { opens: '09:00', closes: '19:00', display: '9:00 AM – 7:00 PM' },
+  saturday: { opens: '09:00', closes: '14:00', display: '9:00 AM – 2:00 PM' },
+} as const;
+
 /** Calificación agregada (Google). Valores como string para JSON-LD. */
 export const REVIEWS = {
   ratingValue: '5.0',
