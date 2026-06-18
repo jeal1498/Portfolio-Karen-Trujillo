@@ -249,19 +249,19 @@ export default function SenalesTDAHNinos() {
   return (
     <>
       <Head>
-        <title>Señales de TDAH en niños: guía para padres | Neuropsicóloga Karen Trujillo</title>
+        <title>Señales de TDAH en niños: guía para padres</title>
         <meta name="description" content={`¿Tu hijo no pone atención, pierde cosas o no se queda quieto? Conoce las señales reales de TDAH en niños de 3 a 17 años. Guía basada en evidencia por neuropsicóloga con cédula ${CEDULA}.`} />
         <link rel="canonical" href={CANONICAL_URL} />
 
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="Señales de TDAH en niños: guía para padres que sospechan" />
+        <meta property="og:title" content="Señales de TDAH en niños: guía para padres" />
         <meta property="og:description" content="Guía completa para identificar señales reales de TDAH en niños. Diferencia entre comportamiento típico y síntomas que justifican una evaluación neuropsicológica." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-senales-de-tdah-en-ninos-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-15" />
@@ -269,7 +269,7 @@ export default function SenalesTDAHNinos() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Señales de TDAH en niños: guía para padres | Karen Trujillo" />
         <meta name="twitter:description" content="¿Tu hijo no pone atención? Conoce las señales reales de TDAH vs. comportamiento típico. Guía basada en evidencia." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-senales-de-tdah-en-ninos-1200x675.svg`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -336,6 +336,7 @@ export default function SenalesTDAHNinos() {
                     <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p>
                     <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
                       <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3" /> Cédula {CEDULA}</span>
+                      <time dateTime="2025-06-15">15 jun 2025</time>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min de lectura</span>
                     </div>
                   </div>

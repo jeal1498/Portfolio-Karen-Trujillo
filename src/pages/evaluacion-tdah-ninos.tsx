@@ -1313,6 +1313,36 @@ export default function TDAHNinosFunnel() {
           </section>
 
 
+          {/* ── Blog hub-and-spoke ── */}
+          <section className="py-10 sm:py-12 border-t border-border">
+            <div className="max-w-2xl mx-auto px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Artículos relacionados</p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                <Link href="/blog/senales-tdah-ninos" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">Señales de TDAH en niños</span>
+                    <span className="text-xs text-muted-foreground font-light">Guía para padres</span>
+                  </div>
+                </Link>
+                <Link href="/blog/tdah-en-ninas-sintomas" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">TDAH en niñas: síntomas</span>
+                    <span className="text-xs text-muted-foreground font-light">Por qué se detecta tan tarde</span>
+                  </div>
+                </Link>
+                <Link href="/blog/tdah-inatento-sintomas" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">TDAH Inatento</span>
+                    <span className="text-xs text-muted-foreground font-light">El tipo que casi nadie detecta</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* ── Internal linking for topical authority ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">

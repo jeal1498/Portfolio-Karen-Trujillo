@@ -176,25 +176,25 @@ export default function TDAHInatento() {
   return (
     <>
       <Head>
-        <title>TDAH Inatento: síntomas en niños y adultos | Neuropsicóloga Karen Trujillo Cancún</title>
+        <title>TDAH Inatento: síntomas en niños y adultos</title>
         <meta name="description" content="El TDAH inatento (antes TDA) no tiene hiperactividad visible. Por eso casi nadie lo detecta. Conoce los síntomas en niños y adultos, por qué se diagnostica tarde y cómo evaluarlo en Cancún." />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="TDAH Inatento: el tipo de TDAH que casi nadie detecta" />
+        <meta property="og:title" content="TDAH Inatento: síntomas en niños y adultos" />
         <meta property="og:description" content="Sin hiperactividad visible, el TDAH inatento se confunde con pereza o falta de motivación durante años. Señales en niños y adultos, y cómo evaluarlo en Cancún." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-tdah-inatento-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH inatento" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH Inatento: el tipo que casi nadie detecta | Karen Trujillo" />
         <meta name="twitter:description" content="Sin hiperactividad, el TDAH inatento pasa invisible durante años. Señales en niños y adultos, y cómo evaluarlo en Cancún." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-tdah-inatento-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -228,6 +228,7 @@ export default function TDAHInatento() {
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                   <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2026-06-02">2 jun 2026</time>
                   <span>Cancún, Quintana Roo</span>
                   <span>8 min de lectura</span>
                 </div>
