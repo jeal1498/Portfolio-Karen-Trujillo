@@ -1113,7 +1113,7 @@ export default function Home() {
                         Icon: Phone,
                         label: 'Teléfono',
                         content: (
-                          <a href={`tel:${PHONE_NUMBER}`} className="text-sm font-medium hover:underline" style={{ color: '#382f51' }}>
+                          <a href={`tel:${PHONE_E164}`} className="text-sm font-medium hover:underline" style={{ color: '#382f51' }}>
                             +52 998 321 1547
                           </a>
                         ),
@@ -1214,7 +1214,7 @@ export default function Home() {
                       WhatsApp
                     </a>
                     <a
-                      href={`tel:${PHONE_NUMBER}`}
+                      href={`tel:${PHONE_E164}`}
                       className="flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all"
                     >
                       <Phone className="w-4 h-4" aria-hidden="true" />

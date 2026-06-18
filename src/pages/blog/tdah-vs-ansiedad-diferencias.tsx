@@ -141,25 +141,25 @@ export default function TDAHvsAnsiedad() {
   return (
     <>
       <Head>
-        <title>¿TDAH o Ansiedad? Diferencias y cómo saber cuál es cuál | Karen Trujillo Cancún</title>
+        <title>¿TDAH o ansiedad? Diferencias clave y cómo distinguirlos</title>
         <meta name="description" content="El TDAH y la ansiedad comparten síntomas pero tienen causas y tratamientos distintos. Aprende las diferencias clave, por qué pueden coexistir y cómo el diagnóstico diferencial resuelve la confusión." />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="¿TDAH o ansiedad? Cómo diferenciarlos y por qué importa" />
+        <meta property="og:title" content="¿TDAH o ansiedad? Diferencias clave y cómo distinguirlos" />
         <meta property="og:description" content="Síntomas compartidos, diferencias clave y la realidad de la comorbilidad. Guía clínica completa para entender qué tienes — o si tienes los dos." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-tdah-o-ansiedad-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH vs ansiedad diagnóstico diferencial" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿TDAH o ansiedad? Diferencias y cómo saber cuál es cuál" />
         <meta name="twitter:description" content="Comparten síntomas pero son diferentes. Guía clínica para distinguir TDAH de ansiedad y entender por qué pueden coexistir." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-tdah-o-ansiedad-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -193,6 +193,7 @@ export default function TDAHvsAnsiedad() {
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4 rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                   <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2026-06-02">2 jun 2026</time>
                   <span>Cancún, Quintana Roo</span>
                   <span>9 min de lectura</span>
                 </div>

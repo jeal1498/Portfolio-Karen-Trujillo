@@ -171,7 +171,7 @@ export default function AutismoNivel1SintomasAdultos() {
   return (
     <>
       <Head>
-        <title>Autismo Nivel 1 en Adultos: síntomas y diagnóstico tardío | Karen Trujillo Cancún</title>
+        <title>Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío</title>
         <meta name="description" content="El autismo nivel 1 (antes Asperger) en adultos tiene síntomas distintos al autismo clásico. Sin diagnóstico previo, muchos adultos llevan años sintiéndose diferentes sin saber por qué. Evaluación en Cancún." />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
@@ -180,16 +180,16 @@ export default function AutismoNivel1SintomasAdultos() {
         <meta property="og:title" content="Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío" />
         <meta property="og:description" content="No hay discapacidad intelectual. Hay lenguaje fluido. Hay personas que funcionan — y se agotan en el intento. El TEA nivel 1 es el perfil que más tarda en diagnosticarse." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — autismo nivel 1 adultos diagnóstico" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío | Karen Trujillo" />
         <meta name="twitter:description" content="El TEA nivel 1 (antes Asperger) es el perfil autista que más tarda en diagnosticarse. Señales en adultos y cómo evaluarlo en Cancún." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -223,6 +223,7 @@ export default function AutismoNivel1SintomasAdultos() {
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
                   <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2026-06-02">2 jun 2026</time>
                   <span>Cancún, Quintana Roo</span>
                   <span>10 min de lectura</span>
                 </div>
