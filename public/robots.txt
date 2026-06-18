@@ -29,7 +29,11 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
+# Google AI Overviews and Gemini Search — allow
 User-agent: Google-Extended
-Disallow: /
+Allow: /
+
+User-agent: GoogleOther-Extended
+Allow: /
 
 Sitemap: https://www.psicologakarentrujillo.com.mx/sitemap.xml

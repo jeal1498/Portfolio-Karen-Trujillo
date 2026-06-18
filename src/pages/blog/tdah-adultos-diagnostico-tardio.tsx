@@ -169,7 +169,7 @@ const relatedResources = [
     icon: Puzzle,
     category: 'Autismo (TEA)',
     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
-    img: '/blog/blush-autismo-tea-640x400.svg)',
+    img: '/blog/blush-autismo-tea-640x400.svg',
   },
 ];
 
