@@ -186,6 +186,8 @@ export default function TDAHInatento() {
         <meta property="og:description" content="Sin hiperactividad visible, el TDAH inatento se confunde con pereza o falta de motivación durante años. Señales en niños y adultos, y cómo evaluarlo en Cancún." />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH inatento" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />

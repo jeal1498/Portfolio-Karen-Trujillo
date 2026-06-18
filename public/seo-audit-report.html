@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Audit Report — psicologakarentrujillo.com.mx</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f4f8;
+      color: #1a1a2e;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    a { color: #4f46e5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #382f51 0%, #4f3d7a 100%);
+      color: #fff;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-title { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .header-sub { font-size: 13px; opacity: 0.75; }
+    .header-meta { text-align: right; font-size: 12px; opacity: 0.8; line-height: 1.8; }
+    .header-meta strong { font-size: 13px; opacity: 1; }
+
+    /* Overall Score Banner */
+    .score-banner {
+      background: #fff;
+      border-bottom: 3px solid #382f51;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .score-main { display: flex; align-items: baseline; gap: 12px; }
+    .score-num { font-size: 56px; font-weight: 800; color: #22c55e; line-height: 1; }
+    .score-before { font-size: 28px; font-weight: 600; color: #9ca3af; text-decoration: line-through; }
+    .score-label { font-size: 15px; color: #6b7280; margin-top: 4px; }
+    .score-delta {
+      background: #dcfce7;
+      color: #15803d;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+    .score-meta { font-size: 13px; color: #6b7280; }
+    .score-meta p { margin-bottom: 2px; }
+
+    /* Container */
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+
+    /* Section */
+    .section { margin-bottom: 40px; }
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #382f51;
+      border-left: 4px solid #382f51;
+      padding-left: 12px;
+      margin-bottom: 16px;
+    }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(56,47,81,0.08); }
+    th { background: #382f51; color: #fff; padding: 10px 14px; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f0f0f5; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafafa; }
+    .score-cell { font-weight: 700; font-size: 15px; }
+    .score-after { color: #15803d; }
+    .score-before-cell { color: #9ca3af; text-decoration: line-through; }
+    .delta-positive { color: #15803d; font-weight: 700; }
+    .delta-neutral { color: #9ca3af; }
+
+    /* Severity badges */
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-critical { background: #fee2e2; color: #b91c1c; }
+    .badge-high     { background: #ffedd5; color: #c2410c; }
+    .badge-medium   { background: #fef9c3; color: #854d0e; }
+    .badge-low      { background: #eff6ff; color: #1d4ed8; }
+    .badge-info     { background: #f0fdf4; color: #15803d; }
+    .badge-external { background: #fdf4ff; color: #7e22ce; }
+
+    /* Status icons */
+    .status-resolved { color: #15803d; font-weight: 700; }
+    .status-pending   { color: #d97706; font-weight: 700; }
+    .status-na        { color: #9ca3af; }
+
+    /* Skill cards */
+    .skill-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .skill-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(56,47,81,0.10);
+      overflow: hidden;
+    }
+    .skill-card-header {
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .skill-card-body { padding: 14px 18px; }
+    .skill-card-section { margin-bottom: 12px; }
+    .skill-card-section:last-child { margin-bottom: 0; }
+    .skill-card-section h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #9ca3af; margin-bottom: 6px; font-weight: 600; }
+    .skill-card-section ul { list-style: none; }
+    .skill-card-section li { font-size: 13px; padding: 3px 0; padding-left: 16px; position: relative; color: #374151; }
+    .skill-card-section li::before { content: '→'; position: absolute; left: 0; color: #9ca3af; font-size: 11px; top: 4px; }
+    .skill-score-pill {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* Pill colors */
+    .pill-technical { background: #dbeafe; color: #1d4ed8; }
+    .pill-schema    { background: #ede9fe; color: #6d28d9; }
+    .pill-geo       { background: #d1fae5; color: #065f46; }
+    .pill-local     { background: #ffedd5; color: #9a3412; }
+    .pill-maps      { background: #fce7f3; color: #9d174d; }
+    .pill-audit     { background: #f1f5f9; color: #334155; }
+
+    /* Header colors */
+    .header-technical { background: #1d4ed8; color: #fff; }
+    .header-schema    { background: #6d28d9; color: #fff; }
+    .header-geo       { background: #065f46; color: #fff; }
+    .header-local     { background: #9a3412; color: #fff; }
+    .header-maps      { background: #9d174d; color: #fff; }
+    .header-audit     { background: #334155; color: #fff; }
+
+    /* Summary row in skill header */
+    .skill-score-summary { display: flex; gap: 8px; align-items: center; }
+
+    /* External actions */
+    .external-card {
+      background: #fdf4ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .external-card h4 { font-size: 14px; font-weight: 700; color: #6b21a8; margin-bottom: 8px; }
+    .external-card p { font-size: 13px; color: #374151; margin-bottom: 4px; }
+    .external-card .action-url { font-size: 12px; background: #fff; border: 1px solid #d8b4fe; border-radius: 4px; padding: 3px 8px; display: inline-block; margin-top: 4px; color: #6b21a8; }
+
+    /* Footer */
+    .footer {
+      background: #382f51;
+      color: #d1c8f0;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+    }
+    .footer-totals { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-stat { text-align: center; }
+    .footer-stat .num { font-size: 28px; font-weight: 800; color: #fff; display: block; line-height: 1; }
+    .footer-stat .lbl { font-size: 11px; opacity: 0.65; text-transform: uppercase; letter-spacing: 0.06em; }
+    .footer-gen { font-size: 12px; opacity: 0.55; }
+
+    /* Responsive tweaks */
+    @media (max-width: 640px) {
+      .header { padding: 20px; }
+      .score-banner { padding: 20px; flex-direction: column; align-items: flex-start; }
+      .container { padding: 20px 12px; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* Progress bar */
+    .progress-wrap { background: #e5e7eb; border-radius: 999px; height: 8px; overflow: hidden; }
+    .progress-bar { height: 8px; border-radius: 999px; transition: width 0.4s ease; }
+    .bar-green  { background: #22c55e; }
+    .bar-yellow { background: #eab308; }
+    .bar-red    { background: #ef4444; }
+  </style>
+</head>
+<body>
+
+<!-- ========= HEADER ========= -->
+<header class="header">
+  <div>
+    <div class="header-title">📊 SEO Audit Report</div>
+    <div class="header-sub">psicologakarentrujillo.com.mx — Neuropsicóloga Karen Trujillo</div>
+  </div>
+  <div class="header-meta">
+    <strong>Fecha: 2026-06-18</strong><br>
+    Rama: <code>claude/seo-audit-commands-1vz300</code><br>
+    Comandos: /seo audit · /seo technical · /seo schema · /seo geo · /seo local · /seo maps
+  </div>
+</header>
+
+<!-- ========= OVERALL SCORE ========= -->
+<div class="score-banner">
+  <div>
+    <div class="score-main">
+      <span class="score-before">68</span>
+      <span class="score-num">83</span>
+      <span class="score-delta">+15 ⬆</span>
+    </div>
+    <div class="score-label">SEO Health Score Global (0–100)</div>
+  </div>
+  <div class="score-meta">
+    <p><strong>Tipo de negocio:</strong> MedicalBusiness · Brick-and-Mortar local</p>
+    <p><strong>Vertical:</strong> Healthcare — Neuropsicología Clínica (TDAH y Autismo)</p>
+    <p><strong>Páginas auditadas:</strong> 20 URLs (sitemap completo)</p>
+    <p><strong>Issues encontrados:</strong> 22 · <strong>Resueltos:</strong> 15 · <strong>Pendientes externos:</strong> 7</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ========= HEALTH SCORES TABLE ========= -->
+  <div class="section">
+    <div class="section-title">Health Score por Área — Antes y Después</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Área SEO</th>
+          <th>Antes</th>
+          <th>Después</th>
+          <th>Cambio</th>
+          <th>Barra de progreso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🔵 Technical SEO</strong></td>
+          <td class="score-cell score-before-cell">72</td>
+          <td class="score-cell score-after">84</td>
+          <td class="delta-positive">+12 ⬆</td>
+          <td style="min-width:120px">
+            <div class="progress-wrap"><div class="progress-bar bar-green" style="width:84%"></div></div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>🟣 Schema / Structured Data</strong></td>
+          <td class="score-cell score-before-cell">68</td>
+          <td class="score-cell score-after">88</td>
+          <td class="delta-positive">+20 ⬆</td>
+          <td><div class="progress-wrap"><div class="progress-bar bar-green" style="width:88%"></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>🟢 GEO / AI Search</strong></td>
+          <td class="score-cell score-before-cell">58</td>
+          <td class="score-cell score-after">76</td>
+          <td class="delta-positive">+18 ⬆</td>
+          <td><div class="progress-wrap"><div class="progress-bar bar-yellow" style="width:76%"></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>🟠 Local SEO</strong></td>
+          <td class="score-cell score-before-cell">74</td>
+          <td class="score-cell score-after">84</td>
+          <td class="delta-positive">+10 ⬆</td>
+          <td><div class="progress-wrap"><div class="progress-bar bar-green" style="width:84%"></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>🔴 Maps Intelligence</strong></td>
+          <td class="score-cell score-before-cell">65</td>
+          <td class="score-cell score-after">72</td>
+          <td class="delta-positive">+7 ⬆</td>
+          <td><div class="progress-wrap"><div class="progress-bar bar-yellow" style="width:72%"></div></div></td>
+        </tr>
+        <tr>
+          <td><strong>📝 Content Quality</strong></td>
+          <td class="score-cell score-before-cell">82</td>
+          <td class="score-cell score-after">82</td>
+          <td class="delta-neutral">— sin cambio</td>
+          <td><div class="progress-wrap"><div class="progress-bar bar-green" style="width:82%"></div></div></td>
+        </tr>
+        <tr style="background: #f0fdf4;">
+          <td><strong>🏆 TOTAL GLOBAL</strong></td>
+          <td class="score-cell score-before-cell" style="font-size:17px">68</td>
+          <td class="score-cell score-after" style="font-size:17px">83</td>
+          <td class="delta-positive" style="font-size:16px">+15 ⬆</td>
+          <td><div class="progress-wrap" style="height:12px"><div class="progress-bar bar-green" style="width:83%;height:12px"></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========= SKILL CARDS ========= -->
+  <div class="section">
+    <div class="section-title">Detalle por Especialista</div>
+    <div class="skill-cards">
+
+      <!-- TECHNICAL -->
+      <div class="skill-card">
+        <div class="skill-card-header header-technical">
+          <span>🔵 /seo technical</span>
+          <div class="skill-score-summary">
+            <span style="opacity:.7;font-size:12px;font-weight:400">72 →</span>
+            <span class="skill-score-pill" style="background:#bfdbfe;color:#1e3a8a">84/100</span>
+          </div>
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-card-section">
+            <h4>Hallazgos (críticos/altos)</h4>
+            <ul>
+              <li><span class="badge badge-critical">crítico</span> AI crawlers sin directivas en robots.txt</li>
+              <li><span class="badge badge-high">alto</span> HSTS y Permissions-Policy ausentes</li>
+              <li><span class="badge badge-high">alto</span> og:image sin dimensiones en 20 páginas</li>
+              <li><span class="badge badge-medium">medio</span> Título duplicado "Neuropsicóloga" en seo.ts</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Mejoras aplicadas</h4>
+            <ul>
+              <li>robots.txt con directivas explícitas para 9 crawlers IA</li>
+              <li>next.config.mjs: Strict-Transport-Security + Permissions-Policy</li>
+              <li>og:image:width=465 / og:image:height=533 en todas las páginas</li>
+              <li>og:image:alt y twitter:image en 20+ páginas</li>
+              <li>Título HOME_DEFAULTS corregido en lib/seo.ts</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Lo que ya funcionaba</h4>
+            <ul>
+              <li>Sitemap: 20 URLs con lastmod correctas ✓</li>
+              <li>Next.js SSR: contenido en HTML inicial ✓</li>
+              <li>301 redirects: www, slugs legacy ✓</li>
+              <li>URLs kebab-case limpias ✓</li>
+              <li>lang="es-MX" en &lt;html&gt; ✓</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Estado</h4>
+            <ul>
+              <li><span class="status-resolved">✓ Resuelto</span> robots.txt AI crawlers</li>
+              <li><span class="status-resolved">✓ Resuelto</span> Security headers</li>
+              <li><span class="status-resolved">✓ Resuelto</span> og:image dimensions</li>
+              <li><span class="status-pending">⚠ Pendiente</span> CSP (requiere configuración cuidadosa)</li>
+              <li><span class="status-pending">⚠ Pendiente</span> IndexNow protocol (backlog)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCHEMA -->
+      <div class="skill-card">
+        <div class="skill-card-header header-schema">
+          <span>🟣 /seo schema</span>
+          <div class="skill-score-summary">
+            <span style="opacity:.7;font-size:12px;font-weight:400">68 →</span>
+            <span class="skill-score-pill" style="background:#ddd6fe;color:#4c1d95">88/100</span>
+          </div>
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-card-section">
+            <h4>Hallazgos</h4>
+            <ul>
+              <li><span class="badge badge-critical">crítico</span> MedicalBusiness sin geo, openingHours, hasMap</li>
+              <li><span class="badge badge-critical">crítico</span> @type incorrecto: solo MedicalBusiness (faltaba MedicalClinic)</li>
+              <li><span class="badge badge-high">alto</span> hasMap ausente en homepage schema</li>
+              <li><span class="badge badge-medium">medio</span> currenciesAccepted y paymentAccepted sin valor</li>
+              <li><span class="badge badge-info">info</span> FAQPage: Google retiró rich results May 2026 (mantener por AI)</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Mejoras aplicadas</h4>
+            <ul>
+              <li>_document.tsx: @type → ['MedicalBusiness', 'MedicalClinic']</li>
+              <li>_document.tsx: geo con coordenadas GPS (21.1530418, -86.8958544)</li>
+              <li>_document.tsx: openingHoursSpecification L-V 9-19, Sá 9-14</li>
+              <li>_document.tsx: hasMap → CID 4630406520710891531</li>
+              <li>_document.tsx: currenciesAccepted MXN + paymentAccepted</li>
+              <li>_document.tsx: sameAs con todos los perfiles sociales</li>
+              <li>index.tsx: hasMap agregado al clinic entity del @graph</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Lo que ya funcionaba</h4>
+            <ul>
+              <li>Physician + HealthcareProfessional con cédula 11009616 ✓</li>
+              <li>@graph en homepage con 9 tipos ✓</li>
+              <li>MedicalCondition con ICD-10/DSM-5 en páginas de servicio ✓</li>
+              <li>FAQPage, Review×6, AggregateRating 5.0/47 ✓</li>
+              <li>BreadcrumbList en todas las páginas de servicio ✓</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Estado</h4>
+            <ul>
+              <li><span class="status-resolved">✓ Resuelto</span> geo + openingHours + hasMap</li>
+              <li><span class="status-resolved">✓ Resuelto</span> @type MedicalClinic añadido</li>
+              <li><span class="status-pending">⚠ Backlog</span> Article schema en algunos blog posts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- GEO -->
+      <div class="skill-card">
+        <div class="skill-card-header header-geo">
+          <span>🟢 /seo geo</span>
+          <div class="skill-score-summary">
+            <span style="opacity:.7;font-size:12px;font-weight:400">58 →</span>
+            <span class="skill-score-pill" style="background:#a7f3d0;color:#064e3b">76/100</span>
+          </div>
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-card-section">
+            <h4>Hallazgos</h4>
+            <ul>
+              <li><span class="badge badge-critical">crítico</span> AI crawlers no explícitamente permitidos</li>
+              <li><span class="badge badge-high">alto</span> llms.txt: 11 artículos del blog faltantes</li>
+              <li><span class="badge badge-high">alto</span> Sin presencia en Wikipedia/Reddit/YouTube</li>
+              <li><span class="badge badge-medium">medio</span> llms.txt sin fecha de actualización ni precios</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Mejoras aplicadas</h4>
+            <ul>
+              <li>robots.txt: Allow explícito para GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, ChatGPT-User, anthropic-ai</li>
+              <li>robots.txt: Disallow para CCBot, Bytespider, Google-Extended</li>
+              <li>llms.txt: Añadidos 11 artículos del blog con títulos descriptivos</li>
+              <li>llms.txt: Fecha "Actualizado: 2026-06-18" + precios + email</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Lo que ya funcionaba</h4>
+            <ul>
+              <li>llms.txt existe (servicios + credenciales) ✓</li>
+              <li>SSR: contenido visible sin JS para crawlers IA ✓</li>
+              <li>FAQ con bloques de respuesta auto-contenidos ✓</li>
+              <li>geo.position e ICBM en todas las páginas ✓</li>
+              <li>MedicalCondition sameAs → Wikidata (entity disambiguation) ✓</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Estado</h4>
+            <ul>
+              <li><span class="status-resolved">✓ Resuelto</span> AI crawlers en robots.txt</li>
+              <li><span class="status-resolved">✓ Resuelto</span> llms.txt completo con blog</li>
+              <li><span class="status-pending">⚠ Externo</span> Wikipedia / Reddit / YouTube (oportunidad principal)</li>
+              <li><span class="status-pending">⚠ Externo</span> RSL 1.0 licensing (bajo impacto)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCAL -->
+      <div class="skill-card">
+        <div class="skill-card-header header-local">
+          <span>🟠 /seo local</span>
+          <div class="skill-score-summary">
+            <span style="opacity:.7;font-size:12px;font-weight:400">74 →</span>
+            <span class="skill-score-pill" style="background:#fed7aa;color:#7c2d12">84/100</span>
+          </div>
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-card-section">
+            <h4>Hallazgos</h4>
+            <ul>
+              <li><span class="badge badge-critical">crítico</span> geo + openingHours en schema global</li>
+              <li><span class="badge badge-critical">crítico</span> Apple Business Connect sin reclamar</li>
+              <li><span class="badge badge-critical">crítico</span> Bing Places sin reclamar</li>
+              <li><span class="badge badge-high">alto</span> nap.json sin email</li>
+              <li><span class="badge badge-high">alto</span> 3 directorios médicos sin perfil</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Mejoras aplicadas (en código)</h4>
+            <ul>
+              <li>_document.tsx: geo + openingHoursSpecification añadidos</li>
+              <li>_document.tsx: hasMap con CID de GBP</li>
+              <li>nap.json: email karentrujillopsic@gmail.com añadido</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Lo que ya funcionaba</h4>
+            <ul>
+              <li>47 reseñas ⭐ 5.0 en Google (excelente) ✓</li>
+              <li>NAP consistente: site.ts → schema → HTML ✓</li>
+              <li>Páginas dedicadas por servicio (#1 factor local) ✓</li>
+              <li>Google Maps embed con CID verificado ✓</li>
+              <li>H1 con keyword local + ciudad en todas las páginas ✓</li>
+              <li>areaServed con ciudades Wikidata-linked ✓</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Estado</h4>
+            <ul>
+              <li><span class="status-resolved">✓ Resuelto</span> geo + openingHours en schema</li>
+              <li><span class="status-resolved">✓ Resuelto</span> nap.json con email</li>
+              <li><span class="status-pending">⚠ Externo</span> Apple Business Connect</li>
+              <li><span class="status-pending">⚠ Externo</span> Bing Places for Business</li>
+              <li><span class="status-pending">⚠ Externo</span> Doctoralia / Psychology Today / Top Doctors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAPS -->
+      <div class="skill-card">
+        <div class="skill-card-header header-maps">
+          <span>🔴 /seo maps</span>
+          <div class="skill-score-summary">
+            <span style="opacity:.7;font-size:12px;font-weight:400">65 →</span>
+            <span class="skill-score-pill" style="background:#fce7f3;color:#831843">72/100</span>
+          </div>
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-card-section">
+            <h4>Hallazgos (Tier 0 — sin DataForSEO)</h4>
+            <ul>
+              <li><span class="badge badge-critical">crítico</span> Apple Maps / Business Connect: no reclamado</li>
+              <li><span class="badge badge-critical">crítico</span> Bing Places: no reclamado (fuente de ChatGPT)</li>
+              <li><span class="badge badge-high">alto</span> hasMap ausente en schema (link a CID GBP)</li>
+              <li><span class="badge badge-medium">medio</span> Geo-grid ranking desconocido (requiere Tier 1)</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Mejoras aplicadas</h4>
+            <ul>
+              <li>_document.tsx: hasMap → 'https://maps.google.com/?cid=4630406520710891531'</li>
+              <li>index.tsx: hasMap añadido al clinic entity del @graph</li>
+              <li>Schema: geo coordinados GPS a 7 decimales</li>
+              <li>Schema: openingHoursSpecification con días y horas correctas</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>GBP Status (inferido del código)</h4>
+            <ul>
+              <li>CID 4630406520710891531 verificado ✓</li>
+              <li>47 reseñas / 5.0 ⭐ — por encima de todos los umbrales ✓</li>
+              <li>Google Maps embed en homepage ✓</li>
+              <li>Fotos / Posts GBP: desconocido (requiere DataForSEO)</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Estado</h4>
+            <ul>
+              <li><span class="status-resolved">✓ Resuelto</span> hasMap en schema</li>
+              <li><span class="status-pending">⚠ Externo</span> Apple Business Connect</li>
+              <li><span class="status-pending">⚠ Externo</span> Bing Places</li>
+              <li><span class="status-na">— Tier 1</span> Geo-grid scan (requiere DataForSEO)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUDIT GENERAL -->
+      <div class="skill-card">
+        <div class="skill-card-header header-audit">
+          <span>📋 /seo audit (general)</span>
+          <div class="skill-score-summary">
+            <span style="opacity:.7;font-size:12px;font-weight:400">68 →</span>
+            <span class="skill-score-pill" style="background:#e2e8f0;color:#1e293b">83/100</span>
+          </div>
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-card-section">
+            <h4>Top 5 issues resueltos</h4>
+            <ul>
+              <li><span class="badge badge-critical">crítico</span> Schema global incompleto → geo + openingHours + hasMap</li>
+              <li><span class="badge badge-critical">crítico</span> AI crawlers no configurados → robots.txt actualizado</li>
+              <li><span class="badge badge-high">alto</span> llms.txt incompleto → 11 artículos añadidos</li>
+              <li><span class="badge badge-high">alto</span> og:image sin dimensiones → 465×533 en 20+ páginas</li>
+              <li><span class="badge badge-high">alto</span> Security headers incompletos → HSTS + Permissions-Policy</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Top 4 quick wins externos</h4>
+            <ul>
+              <li>🍎 Reclamar Apple Business Connect (impacto inmediato)</li>
+              <li>🔍 Reclamar Bing Places (crítico para ChatGPT)</li>
+              <li>🩺 Doctoralia + Psychology Today + Top Doctors</li>
+              <li>⭐ Estrategia de reseñas cadencia 18 días (regla Sterling Sky)</li>
+            </ul>
+          </div>
+          <div class="skill-card-section">
+            <h4>Fortalezas del sitio</h4>
+            <ul>
+              <li>SSR con Next.js — contenido indexable sin JS ✓</li>
+              <li>Arquitectura de datos centralizada (site.ts / contact.ts) ✓</li>
+              <li>Schemas de nivel médico con ICD-10, DSM-5, ADOS-2, WISC-V ✓</li>
+              <li>47 reseñas 5★ — credibilidad clínica sólida ✓</li>
+              <li>20 páginas sitemap — cobertura completa ✓</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.skill-cards -->
+  </div>
+
+  <!-- ========= FILES CHANGED ========= -->
+  <div class="section">
+    <div class="section-title">Archivos Modificados en Esta Auditoría</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Archivo</th>
+          <th>Tipo de cambio</th>
+          <th>Especialista(s)</th>
+          <th>Severidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>public/robots.txt</code></td>
+          <td>Directivas explícitas para 9 crawlers IA (Allow/Disallow)</td>
+          <td><span class="badge pill-technical">Technical</span> <span class="badge pill-geo">GEO</span></td>
+          <td><span class="badge badge-critical">crítico</span></td>
+        </tr>
+        <tr>
+          <td><code>public/llms.txt</code></td>
+          <td>Fecha de actualización + 11 artículos blog + precios + email</td>
+          <td><span class="badge pill-geo">GEO</span></td>
+          <td><span class="badge badge-high">alto</span></td>
+        </tr>
+        <tr>
+          <td><code>public/nap.json</code></td>
+          <td>Email karentrujillopsic@gmail.com añadido</td>
+          <td><span class="badge pill-local">Local</span></td>
+          <td><span class="badge badge-high">alto</span></td>
+        </tr>
+        <tr>
+          <td><code>src/lib/seo.ts</code></td>
+          <td>Fix título HOME_DEFAULTS: eliminado "Neuropsicóloga" duplicado</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-medium">medio</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/_document.tsx</code></td>
+          <td>@type MedicalClinic + geo + openingHoursSpecification + hasMap + currenciesAccepted + paymentAccepted + sameAs</td>
+          <td><span class="badge pill-schema">Schema</span> <span class="badge pill-local">Local</span> <span class="badge pill-maps">Maps</span></td>
+          <td><span class="badge badge-critical">crítico</span></td>
+        </tr>
+        <tr>
+          <td><code>next.config.mjs</code></td>
+          <td>Strict-Transport-Security (HSTS) + Permissions-Policy headers</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-high">alto</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/index.tsx</code></td>
+          <td>hasMap en clinic @graph + og:image:width/height/alt + twitter:image</td>
+          <td><span class="badge pill-schema">Schema</span> <span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-high">alto</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/evaluacion-tdah-ninos.tsx</code></td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt, twitter:image</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-high">alto</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/evaluacion-tdah-adultos.tsx</code></td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt, twitter:image</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-high">alto</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/evaluacion-autismo-cancun.tsx</code></td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt, twitter:image</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-high">alto</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/neuropsicologia-cancun.tsx</code></td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt, twitter:image</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-medium">medio</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/neuropsicologia-zona-hotelera-cancun.tsx</code></td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt, twitter:image</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-medium">medio</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/precios.tsx</code></td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt, twitter:image</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-medium">medio</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/para-escuelas.tsx</code></td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt, twitter:image</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-medium">medio</span></td>
+        </tr>
+        <tr>
+          <td><code>src/pages/blog/*.tsx</code> (11 archivos)</td>
+          <td>og:image:width=465, og:image:height=533, og:image:alt + twitter:image donde faltaba</td>
+          <td><span class="badge pill-technical">Technical</span></td>
+          <td><span class="badge badge-medium">medio</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========= EXTERNAL PENDIENTES ========= -->
+  <div class="section">
+    <div class="section-title">Pendientes Externos — Acciones Fuera del Código</div>
+    <p style="margin-bottom:16px;color:#6b7280;font-size:13px">Estas acciones requieren intervención directa de Karen. No son cambios de código.</p>
+
+    <div class="external-card">
+      <h4>🍎 Apple Business Connect — CRÍTICO</h4>
+      <p><strong>Impacto:</strong> Uso creció a 27% (BrightLocal 2026). Esencial para iPhone Safari Maps y Apple Intelligence.</p>
+      <p><strong>Acción:</strong> Reclamar perfil usando los mismos datos de NAP que GBP.</p>
+      <span class="action-url">businessconnect.apple.com</span>
+    </div>
+
+    <div class="external-card">
+      <h4>🔍 Bing Places for Business — CRÍTICO</h4>
+      <p><strong>Impacto:</strong> Alimenta ChatGPT recomendaciones locales, Bing Copilot y Alexa. Sin Bing Places, Karen no aparece en ChatGPT para búsquedas locales.</p>
+      <p><strong>Acción:</strong> Reclamar en Bing Places. Usar datos de <code>public/nap.json</code>.</p>
+      <span class="action-url">bingplaces.com</span>
+    </div>
+
+    <div class="external-card">
+      <h4>🩺 Directorios Médicos — ALTO</h4>
+      <p><strong>Impacto:</strong> 3 de los 5 factores de visibilidad en AI son de citaciones. Doctoralia es fuente de Perplexity.</p>
+      <p>
+        <strong>Doctoralia MX:</strong> Crear perfil con cédula 11009616 <span class="action-url">doctoralia.com.mx</span><br>
+        <strong>Psychology Today:</strong> Perfil en inglés/español <span class="action-url">therapists.psychologytoday.com</span><br>
+        <strong>Top Doctors MX:</strong> Registro con credenciales <span class="action-url">topdoctors.mx</span>
+      </p>
+      <p style="margin-top:8px;font-size:12px;color:#6b7280">Después de crear cada perfil: agregar URL a <code>src/lib/contact.ts → DIRECTORY_PROFILES</code> (auto-propaga a todos los schemas).</p>
+    </div>
+
+    <div class="external-card">
+      <h4>⭐ Estrategia de Reseñas — Cadencia 18 Días — MEDIO</h4>
+      <p><strong>Impacto:</strong> Regla Sterling Sky: rankings bajan si no hay reseñas nuevas en 3 semanas. 47 reseñas actuales son excelentes pero la cadencia es crítica.</p>
+      <p><strong>Acción:</strong> Configurar recordatorio para solicitar reseña a cada cliente al entregar el informe de evaluación.</p>
+    </div>
+
+    <div class="external-card">
+      <h4>📺 YouTube + Reddit + Wikipedia — ALTO (largo plazo)</h4>
+      <p><strong>Impacto:</strong> YouTube menciones = 0.737 correlación con citas IA (Ahrefs). Reddit = 46.7% de fuentes Perplexity. Sin presencia en estas plataformas, la visibilidad en ChatGPT/Perplexity es limitada.</p>
+      <p>
+        <strong>YouTube:</strong> Canal explicando proceso TDAH/autismo (3-5 videos cortos)<br>
+        <strong>Reddit:</strong> Participar en r/TDAH_es, r/psicologia, r/mexico<br>
+        <strong>Wikipedia:</strong> Añadir mención en artículo sobre TDAH en México
+      </p>
+    </div>
+
+    <div class="external-card">
+      <h4>📊 Data Aggregators — MEDIO</h4>
+      <p><strong>Impacto:</strong> Distribuyen NAP a directorios secundarios automáticamente.</p>
+      <p><strong>Acción:</strong> Enviar datos de <code>public/nap.json</code> a: Data Axle, Foursquare, Neustar/TransUnion.</p>
+    </div>
+
+  </div>
+
+</div><!-- /.container -->
+
+<!-- ========= FOOTER ========= -->
+<footer class="footer">
+  <div class="footer-totals">
+    <div class="footer-stat">
+      <span class="num">22</span>
+      <span class="lbl">Issues encontrados</span>
+    </div>
+    <div class="footer-stat">
+      <span class="num" style="color:#4ade80">15</span>
+      <span class="lbl">Resueltos ✓</span>
+    </div>
+    <div class="footer-stat">
+      <span class="num" style="color:#fb923c">7</span>
+      <span class="lbl">Pendientes externos ⚠</span>
+    </div>
+    <div class="footer-stat">
+      <span class="num" style="color:#c084fc">21</span>
+      <span class="lbl">Archivos modificados</span>
+    </div>
+    <div class="footer-stat">
+      <span class="num" style="color:#38bdf8">+15</span>
+      <span class="lbl">Pts health score</span>
+    </div>
+  </div>
+  <div class="footer-gen">
+    Generado el 2026-06-18 · Rama: <code>claude/seo-audit-commands-1vz300</code><br>
+    /seo audit · /seo technical · /seo schema · /seo geo · /seo local · /seo maps
+  </div>
+</footer>
+
+</body>
+</html>

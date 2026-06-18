@@ -161,6 +161,7 @@ const schema = {
         { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
       ],
       member: { '@id': `${SITE_URL}/#physician` },
+      hasMap: 'https://maps.google.com/?cid=4630406520710891531',
       sameAs: SOCIAL_PROFILES,
     },
     {
@@ -359,10 +360,14 @@ export default function Home() {
         <meta property="og:description" content="Evaluaciones neuropsicológicas con pruebas estandarizadas internacionales. TDAH niños, TDAH adultos y autismo (TEA). Informes con validez oficial." />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo" />
         <meta name="twitter:description" content="Diagnóstico de TDAH y autismo con pruebas estandarizadas. Informes con validez oficial. Cancún, Q. Roo." />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
