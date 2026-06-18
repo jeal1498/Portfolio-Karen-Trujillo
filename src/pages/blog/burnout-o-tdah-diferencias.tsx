@@ -161,25 +161,25 @@ export default function BurnoutVsTDAH() {
   return (
     <>
       <Head>
-        <title>Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos) | Karen Trujillo</title>
+        <title>Burnout vs. TDAH: diferencias y cómo identificarlos</title>
         <meta name="description" content="El burnout y el TDAH comparten síntomas pero tienen causas distintas. La diferencia clave: en el burnout hubo un antes. En el TDAH, siempre fue así. Diagnóstico diferencial en Cancún." />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos)" />
+        <meta property="og:title" content="Burnout vs. TDAH: diferencias y cómo identificarlos" />
         <meta property="og:description" content="Síntomas compartidos, diferencias clave y por qué el burnout y el TDAH pueden coexistir. Guía clínica completa para adultos en Cancún." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-burnout-vs-tdah-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — burnout vs TDAH diferencias adultos" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-03" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos)" />
         <meta name="twitter:description" content="Comparten síntomas pero son diferentes. Guía clínica para distinguir burnout de TDAH y entender por qué pueden coexistir." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-burnout-vs-tdah-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -213,6 +213,7 @@ export default function BurnoutVsTDAH() {
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
                   <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2026-06-03">3 jun 2026</time>
                   <span>Cancún, Quintana Roo</span>
                   <span>9 min de lectura</span>
                 </div>

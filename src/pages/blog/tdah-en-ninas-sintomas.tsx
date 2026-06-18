@@ -127,25 +127,25 @@ export default function TDAHNinas() {
   return (
     <>
       <Head>
-        <title>TDAH en Niñas: Síntomas que Casi Nadie Detecta | Neuropsicóloga Karen Trujillo Cancún</title>
+        <title>TDAH en niñas: síntomas que casi nadie detecta</title>
         <meta name="description" content="El TDAH en niñas se diagnostica años más tarde que en niños porque los síntomas son distintos. Inatención sin hiperactividad, hipersensibilidad emocional, agotamiento por compensación. Valoración en Cancún." />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="TDAH en Niñas: Por Qué Se Detecta Tan Tarde y Cómo Identificarlo" />
+        <meta property="og:title" content="TDAH en niñas: síntomas que casi nadie detecta" />
         <meta property="og:description" content="El TDAH femenino es invisible al sistema: no genera disrupción, se compensa con esfuerzo, se confunde con ansiedad. Señales, consecuencias y cómo evaluar a tu hija en Cancún." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH en niñas" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-01" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH en niñas: síntomas que casi nadie detecta | Karen Trujillo" />
         <meta name="twitter:description" content="El TDAH femenino se enmascara con esfuerzo y durante años se confunde con ansiedad. Señales y cómo evaluar a tu hija en Cancún." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">
@@ -175,6 +175,7 @@ export default function TDAHNinas() {
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
                   <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2025-06-01">1 jun 2025</time>
                   <span>Cancún, Quintana Roo</span>
                 </div>
               </motion.div>

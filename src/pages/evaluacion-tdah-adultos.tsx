@@ -345,7 +345,7 @@ const schema = {
       location: { '@id': `${SITE_URL}/#clinic` },
       offers: {
         '@type': 'Offer',
-        price: '7000',
+        price: '8300',
         priceCurrency: 'MXN',
         description: 'Proceso completo: 4-5 sesiones, pruebas estandarizadas, informe clínico y sesión de devolución. Anticipo de $1,000 MXN al agendar.',
         availability: 'https://schema.org/InStock',
@@ -1301,7 +1301,7 @@ export default function TDAHAdultosFunnel() {
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
-                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`tel:${PHONE_E164}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <Phone className="w-4 h-4" />
                       Llamar
                     </a>
@@ -1312,6 +1312,36 @@ export default function TDAHAdultosFunnel() {
             </div>
           </section>
 
+
+          {/* ── Blog hub-and-spoke ── */}
+          <section className="py-10 sm:py-12 border-t border-border">
+            <div className="max-w-2xl mx-auto px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Artículos relacionados</p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                <Link href="/blog/tdah-adultos-diagnostico-tardio" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">TDAH en adultos: diagnóstico tardío</span>
+                    <span className="text-xs text-muted-foreground font-light">Por qué miles lo descubren después de los 30</span>
+                  </div>
+                </Link>
+                <Link href="/blog/burnout-o-tdah-diferencias" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">Burnout vs. TDAH</span>
+                    <span className="text-xs text-muted-foreground font-light">Cómo diferenciarlos</span>
+                  </div>
+                </Link>
+                <Link href="/blog/tdah-vs-ansiedad-diferencias" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">¿TDAH o ansiedad?</span>
+                    <span className="text-xs text-muted-foreground font-light">Diferencias clave</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
 
           {/* ── Internal linking for topical authority ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">

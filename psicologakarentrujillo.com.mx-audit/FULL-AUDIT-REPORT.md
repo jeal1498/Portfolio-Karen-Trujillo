@@ -1,137 +1,211 @@
-# Full SEO Audit Report — psicologakarentrujillo.com.mx
-
-**Fecha de auditoría:** 2026-06-18  
-**Rama git:** claude/seo-audit-commands-1vz300  
-**Comandos ejecutados:** /seo audit · /seo technical · /seo schema · /seo geo · /seo local · /seo maps  
-**URL del sitio:** https://www.psicologakarentrujillo.com.mx
+# Auditoría SEO Completa — psicologakarentrujillo.com.mx
+**Fecha:** 2026-06-18 | **Método:** análisis de código fuente (sitio live devuelve 403 por Cloudflare)
 
 ---
 
-## Executive Summary
+## Puntuación Global: 74 / 100
 
-### Overall SEO Health Score: 68/100 → 83/100
+| Categoría | Peso | Puntuación | Ponderado |
+|-----------|------|-----------|-----------|
+| Technical SEO | 22% | 79 | 17.4 |
+| Content Quality (E-E-A-T) | 23% | 78 | 17.9 |
+| On-Page SEO | 20% | 72 | 14.4 |
+| Schema / Structured Data | 10% | 78 | 7.8 |
+| Performance (CWV) | 10% | N/D* | — |
+| AI Search Readiness (GEO) | 10% | 74 | 7.4 |
+| Images | 5% | 45 | 2.2 |
+| **TOTAL** | **100%** | | **≈ 74** |
 
-**Business Type Detected:** MedicalBusiness + Brick-and-Mortar Local Service  
-**Industry Vertical:** Healthcare — Neuropsicología Clínica (TDAH y Autismo)  
-**Páginas crawleadas:** 20 (todas en sitemap)
-
-### Top 5 Issues Resueltos en Esta Auditoría
-
-1. 🔴 **Schema global incompleto** — `MedicalBusiness` en `_document.tsx` sin `geo`, `openingHoursSpecification`, `hasMap`. **RESUELTO.**
-2. 🔴 **AI crawlers no configurados** — GPTBot, ClaudeBot, PerplexityBot sin directivas explícitas. **RESUELTO.**
-3. 🟡 **llms.txt incompleto** — 11 artículos del blog faltantes. **RESUELTO.**
-4. 🟡 **og:image sin dimensiones** — Faltaban `og:image:width/height` en todas las páginas. **RESUELTO.**
-5. 🟡 **Headers de seguridad faltantes** — Sin HSTS ni Permissions-Policy. **RESUELTO.**
-
-### Quick Wins Identificados (Externos)
-
-1. Reclamar **Apple Business Connect** (businessconnect.apple.com) — impacto inmediato
-2. Reclamar **Bing Places** (bingplaces.com) — crítico para ChatGPT local
-3. Crear perfiles en **Doctoralia, Psychology Today, Top Doctors**
-4. Estrategia de **reseñas con cadencia de 18 días**
+*Sin datos de campo — Cloudflare bloquea CrUX fetch. Requiere Google Search Console.
 
 ---
 
-## Scores por Categoría
-
-| Categoría | Antes | Después | Cambio |
-|-----------|-------|---------|--------|
-| Technical SEO | 72 | 84 | +12 ⬆️ |
-| Content Quality | 82 | 82 | — |
-| On-Page SEO | 80 | 82 | +2 ⬆️ |
-| Schema / Structured Data | 68 | 88 | +20 ⬆️ |
-| AI Search Readiness (GEO) | 58 | 76 | +18 ⬆️ |
-| Local SEO | 74 | 84 | +10 ⬆️ |
-| Maps Intelligence | 65 | 72 | +7 ⬆️ |
-| **TOTAL** | **68** | **83** | **+15 ⬆️** |
+## Tipo de negocio
+**Local Service · Healthcare · Neuropsicología Clínica** — presencial en Cancún con opción híbrida. Sector YMYL: reglas E-E-A-T de máxima exigencia.
 
 ---
 
-## Technical SEO
+## 5 Issues Críticos
 
-Ver `findings/technical.md` para detalle completo.
+### 🔴 C-1: Google-Extended bloqueado en robots.txt
+El sitio **no puede aparecer en Google AI Overviews**. `Google-Extended` está agrupado con scrapers de entrenamiento (CCBot, Bytespider) — clasificación errónea. Google-Extended es el crawler de AI Overviews y Gemini Search.
+**Fix:** 2 líneas en `public/robots.txt`. **Tiempo:** 2 min.
 
-**Resumen:**
-- Sitemap: 20 URLs correctas, todas las páginas incluidas ✅
-- robots.txt: Actualizado con directivas AI crawlers ✅
-- SSR: Next.js Pages Router — contenido en HTML inicial ✅
-- Redirects: www, slugs legacy, páginas eliminadas — todos 301 ✅
-- Headers: HSTS y Permissions-Policy agregados ✅
+### 🔴 C-2: Precio incorrecto en Schema ($7,000 vs $8,300 MXN)
+`evaluacion-tdah-ninos.tsx`, `evaluacion-tdah-adultos.tsx` e `index.tsx` declaran `"price": "7000"` en `MedicalProcedure > Offer`. El precio real es $8,300 MXN. Google puede mostrar el dato del schema en rich results.
+**Fix:** 3 ediciones de línea. **Tiempo:** 5 min.
 
----
+### 🔴 C-3: og:image portrait (465×533) en las 20 páginas
+Facebook, WhatsApp, LinkedIn y Twitter requieren 1200×630 landscape. Los 11 artículos del blog ya tienen SVG hero 1200×675 — no se usan como og:image.
+**Fix:** Apuntar og:image de blog a SVG existente; generar 9 imágenes landscape para páginas principales.
 
-## Schema & Structured Data
+### 🔴 C-4: Contradicción de anticipo entre páginas
+`/precios` dice anticipo ≈ 50% (~$4,150). Páginas de servicio dicen $1,000–$1,500 MXN. Quiebra la confianza en el momento de mayor intención.
+**Fix:** Estandarizar texto en todas las páginas. **Tiempo:** 20 min.
 
-Ver `findings/schema.md` para detalle completo.
-
-**Schemas presentes:**
-- Global: `MedicalBusiness` + `MedicalClinic` + `Physician` + `HealthcareProfessional`
-- Homepage: `@graph` con 9 tipos incluyendo `MedicalProcedure`, `FAQPage`, `Review`, `AggregateRating`
-- Páginas de servicio: `MedicalWebPage`, `DiagnosticProcedure` con ICD-10/DSM-5, `MedicalCondition`
-- Todos: `BreadcrumbList`, `OpeningHoursSpecification`, `GeoCoordinates`
-
----
-
-## GEO / AI Search
-
-Ver `findings/geo.md` para detalle completo.
-
-**Estado actual:**
-- `llms.txt`: Completo con 11 artículos de blog, precios, credenciales ✅
-- AI crawlers: Permitidos explícitamente ✅
-- SSR: Todo el contenido visible sin JS ✅
-- Wikipedia/Reddit/YouTube: Sin presencia (oportunidad principal)
+### 🔴 C-5: Hub-and-spoke roto — pillar pages sin links al blog
+Las 3 páginas de servicio reciben PageRank de 11 artículos pero devuelven cero. Circuito de PageRank roto.
+**Fix:** Sección "Recursos relacionados" al final de cada página de servicio.
 
 ---
 
-## Local SEO
+## 5 Quick Wins
 
-Ver `findings/local.md` para detalle completo.
-
-**Fortalezas:**
-- 47 reseñas 5★ en Google ✅
-- NAP consistente en sitio + schema ✅
-- Páginas dedicadas por servicio ✅
-- Mapa embebido con CID verificado ✅
-
-**Pendiente externo:**
-- Apple Business Connect ❌
-- Bing Places ❌
-- Directorio Doctoralia/PsychologyToday/TopDoctors ❌
+1. **Desbloquear Google-Extended** en robots.txt → 2 min → AI Overviews
+2. **Corregir precio schema** `"7000"` → `"8300"` en 3 archivos → 5 min
+3. **og:image de blog** → apuntar a SVG hero existente → 30 min → social previews
+4. **tel: href** → `PHONE_NUMBER` → `PHONE_E164` en FloatingButtons y servicios → 20 min
+5. **Schema zona-hotelera** → `LocalBusiness` → `['MedicalBusiness','MedicalClinic']` + `geo` → 10 min
 
 ---
 
-## Maps Intelligence
+## Technical SEO — 79/100
 
-Ver `findings/maps.md` para detalle completo.
+**Fortalezas:** SSR completo, canonical en todas las páginas, redirect 301 www, security headers (HSTS preload, X-Frame-Options, X-Content-Type-Options), 404 configurada, sitemap con cobertura 100%.
 
-**Estado Tier 0 (sin DataForSEO):**
-- GBP activo con CID verificado ✅
-- `hasMap` en schema apuntando a CID ✅ (agregado en esta auditoría)
-- Geo-grid ranking desconocido (requiere DataForSEO Tier 1)
-- Cross-platform: Solo Google Maps activo; Bing y Apple pendientes
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🔴 Crítico | Google-Extended bloqueado (ver C-1) |
+| 🟡 Alto | Sin Content-Security-Policy header |
+| 🟡 Medio | 3 páginas sin links internos desde nav/footer: `/para-escuelas`, `/neuropsicologia-cancun`, `/neuropsicologia-zona-hotelera-cancun` |
+| 🟡 Medio | `applySeo()` en lib/seo.ts es código muerto (no se llama en ninguna página) |
+| 🟢 Bajo | AggregateRating duplicado en `_document.tsx` e `index.tsx` |
 
 ---
 
-## Archivos Modificados en Esta Auditoría
+## Content Quality / E-E-A-T — 78/100
 
-| Archivo | Tipo de Cambio | Especialista |
-|---------|---------------|-------------|
-| `public/robots.txt` | AI crawler directives | Technical |
-| `public/llms.txt` | Agregar 11 blog articles + update date | GEO |
-| `public/nap.json` | Agregar email | Local |
-| `src/lib/seo.ts` | Fix título duplicado | Technical |
-| `src/pages/_document.tsx` | Añadir geo, openingHours, hasMap, currencies | Schema + Local + Maps |
-| `next.config.mjs` | HSTS + Permissions-Policy | Technical |
-| `src/pages/index.tsx` | hasMap en schema + og dimensions + twitter:image | Schema + Technical |
-| `src/pages/evaluacion-tdah-ninos.tsx` | og:image dimensions + twitter:image | Technical |
-| `src/pages/evaluacion-tdah-adultos.tsx` | og:image dimensions + twitter:image | Technical |
-| `src/pages/evaluacion-autismo-cancun.tsx` | og:image dimensions + twitter:image | Technical |
-| `src/pages/neuropsicologia-cancun.tsx` | og:image dimensions + twitter:image | Technical |
-| `src/pages/neuropsicologia-zona-hotelera-cancun.tsx` | og:image dimensions + twitter:image | Technical |
-| `src/pages/precios.tsx` | og:image dimensions + twitter:image | Technical |
-| `src/pages/para-escuelas.tsx` | og:image dimensions + twitter:image | Technical |
-| `src/pages/blog/*.tsx` (11 archivos) | og:image dimensions + twitter:image | Technical |
+| Factor | Puntuación |
+|--------|-----------|
+| Experience | 75/100 |
+| Expertise | 88/100 |
+| Authoritativeness | 72/100 |
+| Trustworthiness | 88/100 |
 
-**Total: ~21 archivos modificados**
+**Fortalezas:** instrumentos diagnósticos específicos en cada página, cédula 11009616 en 4+ lugares, 47 reseñas nombradas, precios transparentes con desglose de pagos, artículos del blog con DSM-5, ICD-10 y ejemplos por grupo de edad.
 
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🔴 Alto | 16 de 18 títulos superan 60 caracteres (peor: 102 chars) |
+| 🔴 Alto | og:image portrait en todas las páginas |
+| 🟡 Medio | Sin byline visible con fecha en artículos (solo en JSON-LD) |
+| 🟡 Medio | Sin links a fuentes externas de autoridad (APA, NIH, DSM-5) |
+| 🟡 Medio | Sin Privacy Policy page (pese a captura de leads vía WhatsApp) |
+| 🟡 Medio | Meta descriptions > 160 chars en 4 páginas |
+
+---
+
+## Schema / Structured Data — 78/100
+
+**Fortalezas excepcionales para clínica individual:** `['MedicalBusiness','MedicalClinic']` dual @type, `Physician` con `hasCredential`/`alumniOf`/`memberOf`, `MedicalCondition` con ICD-10 + DSM-5 + Wikidata sameAs, 4–5 `DiagnosticProcedure` por página de servicio, `AggregateRating` 5.0/47 + 6 `Review` con nombres reales, `SpeakableSpecification`, `openingHoursSpecification` UTC-5, @graph coherente con `/#physician` y `/#clinic` cross-references.
+
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🔴 Crítico | `price: '7000'` en nodos TDAH (ver C-2) |
+| 🟡 Medio | Imagen en schema de blog: portrait 465×533 en lugar de hero SVG 1200×675 |
+| 🟡 Medio | zona-hotelera `LocalBusiness` sin `geo` ni `hasMap` |
+| 🟡 Medio | `que-es-ados-2-autismo`: `@type: 'Article'` en lugar de `['Article','BlogPosting']` |
+| 🟡 Medio | Blog index sin schema (añadir `CollectionPage` + `BreadcrumbList`) |
+| 🟢 Bajo | Oportunidad: `Service` schema en páginas de servicio para feature "Servicios" en SERP |
+| 🟢 Bajo | `SpeakableSpecification` faltante en artículos del blog |
+
+---
+
+## GEO / AI Search Readiness — 74/100
+
+| Plataforma | Disponibilidad | Estado |
+|-----------|----------------|--------|
+| Google AI Overviews | Bloqueada | 🔴 CRÍTICO |
+| ChatGPT | Alta | 🟡 Sin YouTube |
+| Perplexity | Alta | ✅ |
+| Bing Copilot | Media | 🟡 Sin directorios |
+
+**Fortalezas:** `llms.txt` presente y completo, brand co-mention "Karen Trujillo + neuropsicóloga + Cancún" en cada título/meta/schema, pasajes definitorios con DSM-5 bajo IDs de sección, FAQ self-contained (60–140 palabras por respuesta).
+
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🔴 Crítico | Google-Extended bloqueado (ver C-1) |
+| 🟡 Alto | Sin canal YouTube (correlación 0.737 con citabilidad en ChatGPT) |
+| 🟡 Medio | Sin `<time>` visible en artículos de blog |
+| 🟡 Medio | `SpeakableSpecification` ausente en los 11 artículos del blog |
+| 🟡 Medio | Doctoralia MX, Psychology Today MX, Top Doctors: pendientes |
+
+---
+
+## Local SEO — 76/100
+
+**Fortalezas:** fuente de verdad única (`lib/contact.ts` + `lib/site.ts`), 47 reseñas a 5.0 estrellas, Maps embed con CID confirmado, páginas de neuropsicología con contenido genuinamente local.
+
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🟡 Alto | `tel:${PHONE_NUMBER}` sin prefijo `+` en FloatingButtons y páginas de servicio |
+| 🟡 Alto | `LocalBusiness` en zona-hotelera en lugar de `['MedicalBusiness','MedicalClinic']` |
+| 🟡 Medio | Sin Google Maps embed en páginas de neuropsicología |
+| 🟡 Medio | Doctoralia MX, Psychology Today MX, Top Doctors MX pendientes |
+| 🟡 Medio | "Psicóloga" (iframe Maps) vs "Neuropsicóloga" (schema) — inconsistencia de nombre |
+| 🟢 Bajo | Bing Places y Apple Business Connect sin reclamar |
+
+---
+
+## SXO / Search Experience — 74/100
+
+**Fortalezas:** SymptomChecker con CTA adaptativo, sección "¿Qué pasa si no tiene TDAH?" con 3 escenarios, tabla neuropsicología vs. psicología, FAQ 12 preguntas por servicio.
+
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🔴 Crítico | Contradicción anticipo entre /precios y páginas de servicio (ver C-4) |
+| 🟡 Alto | Social proof aparece como sección 7/11 en mobile — muy abajo del fold |
+| 🟡 Alto | Sin captura de email ni ruta de nurturing para prospectos en consideración |
+| 🟡 Medio | Blog CTAs enlazan a raíz del servicio en lugar de `#agendar` |
+| 🟡 Medio | Captions de imágenes del blog con texto placeholder visible |
+
+---
+
+## Sitemap — 80/100
+
+**Fortalezas:** cobertura 100% (20/20 páginas), sin URLs fantasma, www consistente, sitemap en robots.txt.
+
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🟡 Medio | Todas las URLs tienen `lastmod: 2026-06-17` idéntico — Google ignora lastmod uniforme |
+| 🟡 Medio | Sin image sitemap (57 assets no declarados) |
+
+---
+
+## Content Cluster — 52/100
+
+**Issues:**
+| Severidad | Hallazgo |
+|-----------|---------|
+| 🔴 Crítico | 0/3 páginas de servicio enlazan a artículos del blog (ver C-5) |
+| 🟡 Alto | `que-es-ados-2-autismo` no enlaza a sus pares del cluster TEA |
+| 🟡 Medio | Canibalización: `burnout-o-tdah` vs `tdah-vs-ansiedad` compiten por el mismo intent |
+| 🟡 Medio | 10 artículos recomendados faltantes (ver findings/cluster.md) |
+
+---
+
+## Archivos de hallazgos detallados
+- `findings/technical.md` — Technical SEO (79/100)
+- `findings/content.md` — Content & E-E-A-T (78/100)
+- `findings/schema.md` — Structured Data (78/100)
+- `findings/geo.md` — GEO / AI Search (74/100)
+- `findings/local.md` — Local SEO (76/100)
+- `findings/sxo.md` — Search Experience (74/100)
+- `findings/sitemap.md` — Sitemap (80/100)
+- `findings/cluster.md` — Content Cluster (52/100)
+
+---
+
+## Limitaciones
+- Sin datos de campo CWV (necesita Google Search Console + CrUX)
+- Sin datos de rankings reales (necesita GSC o DataForSEO)
+- Sin auditoría de backlinks (necesita Moz API o Ahrefs)
+- Sin estado real del perfil Google Business
+- Sin screenshots (Playwright/Chrome no disponibles en entorno remoto)

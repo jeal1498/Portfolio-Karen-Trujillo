@@ -189,17 +189,19 @@ export default function BlogIndex() {
   return (
     <>
       <Head>
-        <title>Blog | Neuropsicóloga Karen Trujillo — TDAH y Autismo en Cancún</title>
+        <title>Blog sobre TDAH y Autismo en Cancún | Karen Trujillo</title>
         <meta
           name="description"
           content={`Artículos clínicos sobre TDAH en niños, adultos y niñas, autismo y evaluación neuropsicológica en Cancún. Escritos por la Psic. Karen Trujillo, cédula ${CEDULA}.`}
         />
-        <meta property="og:title" content="Blog sobre TDAH y Autismo | Karen Trujillo Neuropsicóloga" />
+        <meta property="og:title" content="Blog sobre TDAH y Autismo en Cancún | Karen Trujillo" />
         <meta
           property="og:description"
           content="Guías y artículos basados en evidencia sobre TDAH en niños y adultos, TDAH en niñas y diagnóstico de autismo con ADOS-2 en Cancún."
         />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <link rel="canonical" href={`${SITE_URL}/blog`} />
       </Head>
 

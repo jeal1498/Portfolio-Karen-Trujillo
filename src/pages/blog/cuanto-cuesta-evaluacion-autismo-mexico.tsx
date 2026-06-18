@@ -161,25 +161,25 @@ export default function CuantoCuestaEvaluacionAutismo() {
   return (
     <>
       <Head>
-        <title>¿Cuánto cuesta una evaluación de autismo en México? | Karen Trujillo Cancún</title>
+        <title>¿Cuánto cuesta una evaluación de autismo en México?</title>
         <meta name="description" content="La evaluación de autismo (TEA) con ADOS-2 en Cancún cuesta $8,500 MXN e incluye 5-6 sesiones, informe clínico completo y validez ante SEP e IMSS. Precio transparente, sin letra chica." />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="¿Cuánto cuesta el diagnóstico de autismo en México?" />
+        <meta property="og:title" content="¿Cuánto cuesta una evaluación de autismo en México?" />
         <meta property="og:description" content="La evaluación de autismo (TEA) con ADOS-2 en Cancún cuesta $8,500 MXN e incluye 5-6 sesiones, informe clínico completo y validez ante SEP e IMSS. Precio transparente, sin letra chica." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-costo-evaluacion-de-autismo-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — evaluación de autismo TEA" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿Cuánto cuesta el diagnóstico de autismo en México? | Karen Trujillo" />
         <meta name="twitter:description" content="Evaluación TEA con ADOS-2 en Cancún: $8,500 MXN. Todo incluido, sin letra chica. Informe con validez SEP e IMSS." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-costo-evaluacion-de-autismo-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -213,6 +213,7 @@ export default function CuantoCuestaEvaluacionAutismo() {
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs pt-4 rounded-2xl p-4" style={{ color: 'rgba(208,208,231,0.75)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                   <span className="font-bold" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2026-06-02">2 jun 2026</time>
                   <span>Cancún, Quintana Roo</span>
                   <span>8 min de lectura</span>
                 </div>
