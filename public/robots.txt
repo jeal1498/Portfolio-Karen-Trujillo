@@ -1,5 +1,35 @@
+# Allow all general crawlers
 User-agent: *
 Allow: /
 Disallow: /404
+
+# AI Search crawlers — allow for visibility in AI Overviews, ChatGPT, Perplexity
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# AI training crawlers — block to protect content
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
 
 Sitemap: https://www.psicologakarentrujillo.com.mx/sitemap.xml

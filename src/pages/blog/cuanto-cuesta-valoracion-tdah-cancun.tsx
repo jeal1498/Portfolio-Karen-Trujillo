@@ -100,6 +100,8 @@ export default function CuantoCuestaValoracionTDAH() {
         <meta property="og:description" content={`Precio de la valoración de TDAH en Cancún: $8,300 MXN. Pago distribuido en sesiones. Informe con cédula ${CEDULA} válido ante SEP e IMSS.`} />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — costo evaluación TDAH" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-01" />

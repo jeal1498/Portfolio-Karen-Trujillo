@@ -110,11 +110,15 @@ export default function QueEsAdos2Autismo() {
         <meta property="og:description" content="Guía completa sobre el ADOS-2: qué evalúa, sus 4 módulos, y por qué es el instrumento más confiable para diagnosticar Trastorno del Espectro Autista." />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-29" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿Qué es el ADOS-2? Estándar de oro para autismo | Karen Trujillo" />
         <meta name="twitter:description" content="Guía completa sobre la prueba más confiable del mundo para diagnosticar autismo. Qué evalúa, cómo se aplica y por qué importa." />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         <style dangerouslySetInnerHTML={{ __html: `@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }` }} />
       </Head>

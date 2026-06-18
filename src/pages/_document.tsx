@@ -1,22 +1,45 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { PHONE_E164, SOCIAL_PROFILES } from '@/lib/contact';
-import { SITE_URL, CEDULA, KAREN_IMAGE, ADDRESS, REVIEWS } from '@/lib/site';
+import { SITE_URL, CEDULA, KAREN_IMAGE, ADDRESS, GEO, HOURS, REVIEWS } from '@/lib/site';
 
 const medicalBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalBusiness',
+  '@type': ['MedicalBusiness', 'MedicalClinic'],
   '@id': `${SITE_URL}/#clinic`,
   name: 'Psic. Karen Trujillo — Valoraciones TDAH y Autismo en Cancún',
+  alternateName: 'Neuropsicóloga Karen Trujillo Cancún',
   image: KAREN_IMAGE,
   address: {
     '@type': 'PostalAddress',
     ...ADDRESS,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: GEO.latitude,
+    longitude: GEO.longitude,
   },
   url: SITE_URL,
   telephone: PHONE_E164,
   email: 'karentrujillopsic@gmail.com',
   priceRange: '$$',
   medicalSpecialty: 'Neuropsychiatry',
+  currenciesAccepted: 'MXN',
+  paymentAccepted: 'Efectivo, Transferencia bancaria, Tarjeta',
+  hasMap: 'https://maps.google.com/?cid=4630406520710891531',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: HOURS.weekdays.opens,
+      closes: HOURS.weekdays.closes,
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: HOURS.saturday.opens,
+      closes: HOURS.saturday.closes,
+    },
+  ],
   areaServed: [
     { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
     { '@type': 'City', name: 'Playa del Carmen', sameAs: 'https://www.wikidata.org/wiki/Q505403' },
@@ -26,6 +49,7 @@ const medicalBusinessSchema = {
     { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
     { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
   ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 const professionalSchema = {

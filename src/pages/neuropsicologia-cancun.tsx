@@ -254,6 +254,9 @@ export default function NeuropsicologiaCancun() {
         />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`Neuropsicóloga en Cancún — Karen Trujillo | Cédula ${CEDULA}`} />
@@ -261,6 +264,7 @@ export default function NeuropsicologiaCancun() {
           name="twitter:description"
           content={`Neuropsicóloga clínica en Cancún especializada en TDAH y autismo. Evaluaciones con pruebas estandarizadas internacionales. Cédula federal ${CEDULA}.`}
         />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script
           type="application/ld+json"

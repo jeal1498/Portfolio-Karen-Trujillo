@@ -171,6 +171,8 @@ export default function DondeEvaluarTDAHCancun() {
         <meta property="og:description" content="Ya decidiste que quieres una evaluación. Ahora la pregunta es: ¿cómo elegir bien? Criterios concretos, señales de alerta y el proceso paso a paso." />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — guía evaluación TDAH" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-03" />
