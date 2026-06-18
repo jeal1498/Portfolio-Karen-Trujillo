@@ -155,11 +155,17 @@ const schema = {
       ],
     },
     {
-      '@type': 'LocalBusiness',
+      '@type': ['MedicalBusiness', 'MedicalClinic'],
       '@id': `${SITE_URL}/#localbusiness`,
       name: 'Karen Trujillo — Neuropsicóloga Clínica en Cancún',
       image: KAREN_IMAGE,
       telephone: PHONE_E164,
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: GEO.latitude,
+        longitude: GEO.longitude,
+      },
+      hasMap: 'https://maps.google.com/?cid=4630406520710891531',
       url: SITE_URL,
       address: {
         '@type': 'PostalAddress',
@@ -631,6 +637,27 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                   </div>
                 </div>
               </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ── Mapa — ubicación del consultorio ── */}
+          <section className="py-10 sm:py-12 border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Ubicación del consultorio</p>
+              <div className="rounded-2xl overflow-hidden border border-border shadow-md" style={{ height: 320 }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.9838296344037!2d-86.89585439999999!3d21.1530418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b10d813a9c7%3A0x4042823298a0080b!2sPsic%C3%B3loga%20Karen%20Trujillo%20%7C%20Neuropsicolog%C3%ADa%3A%20TDAH%20y%20Autismo!5e0!3m2!1ses-419!2smx!4v1772120174668!5m2!1ses-419!2smx"
+                  width="100%"
+                  height="320"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Consultorio Neuropsicóloga Karen Trujillo en Cancún"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground/70 text-center mt-3">SM200 M49 L2, Hacienda de Chinconcuac, Cancún · A 20 min de la Zona Hotelera</p>
             </div>
           </section>
 

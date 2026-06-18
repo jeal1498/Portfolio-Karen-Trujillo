@@ -287,19 +287,19 @@ export default function TDAHAdultosDiagnosticoTardio() {
   return (
     <>
       <Head>
-        <title>TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 | Neuropsicóloga Karen Trujillo</title>
+        <title>TDAH en adultos: el diagnóstico tardío que lo cambia todo</title>
         <meta name="description" content={`¿Procrastinas, pierdes cosas y sientes que el tiempo no te alcanza? Podrías tener TDAH no diagnosticado. Guía basada en evidencia para adultos. Neuropsicóloga con cédula ${CEDULA} en Cancún.`} />
         <link rel="canonical" href={CANONICAL_URL} />
 
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="TDAH en adultos: por qué miles llegan al diagnóstico después de los 30" />
+        <meta property="og:title" content="TDAH en adultos: el diagnóstico tardío que lo cambia todo" />
         <meta property="og:description" content="Guía completa sobre TDAH en adultos no diagnosticados. Señales en el trabajo, relaciones y vida diaria. Diagnóstico diferencial con ansiedad y burnout." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-tdah-en-adultos-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-22" />
@@ -307,7 +307,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH en adultos: diagnóstico después de los 30 | Karen Trujillo" />
         <meta name="twitter:description" content="¿Procrastinas, pierdes cosas y sientes que el tiempo no alcanza? Guía de TDAH en adultos basada en evidencia." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-tdah-en-adultos-1200x675.svg`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -374,6 +374,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                     <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p>
                     <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
                       <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span>
+                      <time dateTime="2025-06-22">22 jun 2025</time>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 14 min de lectura</span>
                     </div>
                   </div>

@@ -100,25 +100,25 @@ export default function QueEsAdos2Autismo() {
   return (
     <>
       <Head>
-        <title>¿Qué es el ADOS-2? Estándar de oro para diagnosticar autismo | Neuropsicóloga Karen Trujillo</title>
+        <title>¿Qué es el ADOS-2? La prueba estándar para autismo</title>
         <meta name="description" content="El ADOS-2 es la prueba más confiable del mundo para diagnosticar autismo (TEA). Conoce qué evalúa, cómo se aplica y por qué supera a los cuestionarios y entrevistas. Evaluación con ADOS-2 en Cancún." />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?" />
+        <meta property="og:title" content="¿Qué es el ADOS-2? La prueba estándar para autismo" />
         <meta property="og:description" content="Guía completa sobre el ADOS-2: qué evalúa, sus 4 módulos, y por qué es el instrumento más confiable para diagnosticar Trastorno del Espectro Autista." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-que-es-el-ados-2-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-29" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿Qué es el ADOS-2? Estándar de oro para autismo | Karen Trujillo" />
         <meta name="twitter:description" content="Guía completa sobre la prueba más confiable del mundo para diagnosticar autismo. Qué evalúa, cómo se aplica y por qué importa." />
-        <meta name="twitter:image" content={KAREN_IMAGE} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-que-es-el-ados-2-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         <style dangerouslySetInnerHTML={{ __html: `@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }` }} />
       </Head>
@@ -145,7 +145,7 @@ export default function QueEsAdos2Autismo() {
                 <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(208,208,231,0.82)' }}>Si buscas un diagnóstico confiable de Trastorno del Espectro Autista para tu hijo, necesitas entender por qué el ADOS-2 es el instrumento más respaldado por la ciencia — y por qué una evaluación sin él es incompleta.</p>
                 <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both] rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                   <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md"><Image src={KAREN_IMAGE} alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" priority unoptimized /></div>
-                  <div><p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p><div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 13 min de lectura</span></div></div>
+                  <div><p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p><div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><time dateTime="2025-06-29">29 jun 2025</time><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 13 min de lectura</span></div></div>
                 </div>
               </div>
             </div>
