@@ -592,10 +592,14 @@ export default function TDAHNinosFunnel() {
         <meta property="og:description" content="Evaluación neuropsicológica con pruebas estandarizadas. Informe con validez oficial ante SEP e IMSS. $8,300 MXN. Agenda en línea." />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Valoración TDAH Infantil en Cancún | Niños 5-17 años" />
         <meta name="twitter:description" content="Evaluación neuropsicológica de TDAH infantil con instrumentos estandarizados. Informe oficial. Agenda en línea. Cancún, Q. Roo." />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         {/* AEO: Speakable — includes new diferenciador section */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
