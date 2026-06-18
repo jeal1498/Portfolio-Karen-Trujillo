@@ -138,3 +138,21 @@ interface FaqItem { q, a }
 - **Clasificación**: automation-pattern
 - **Lección**: Al aplicar un patrón idéntico de 5 partes (imagen hero, imágenes inline, compartir social, CTA oscuro, tarjetas relacionadas con imagen) a 11 artículos del blog, repartir el trabajo en 4 agentes en paralelo (2-3 archivos cada uno) funcionó bien siempre que cada agente recibiera instrucción explícita de auto-verificar con `npx tsc --noEmit -p .` y confirmar con `git status`/`git diff --stat` que solo tocó sus archivos asignados. Los agentes detectaron y corrigieron solos sus propios bugs (secciones duplicadas, tags JSX malformados, colisión de fondos del mismo color).
 - **Acción**: Al repartir tareas repetitivas entre agentes en paralelo, siempre instruir verificación propia (`tsc`, diff de archivos) antes de reportar como completado.
+
+## 5. El sitio live devuelve 403 (Cloudflare) — usar análisis de código fuente - error-pattern
+- **Fecha**: 2026-06-18
+- **Clasificación**: error-pattern
+- **Lección**: `https://www.psicologakarentrujillo.com.mx` devuelve HTTP 403 a peticiones de servidor (curl, WebFetch, agentes). Cloudflare bloquea el acceso programático. Los intentos de crawl o análisis del sitio live siempre fallan.
+- **Acción**: Para auditorías SEO, analizar directamente los archivos fuente (`src/pages/`, `public/`, `src/lib/`) en vez de hacer fetch del sitio. El análisis de código fuente es más completo: detecta schemas JSON-LD, meta tags, redirects en next.config.mjs, robots.txt — todo sin necesidad de acceso HTTP.
+
+## 6. og:image de blog no usa la imagen hero del propio artículo - error-pattern
+- **Fecha**: 2026-06-18
+- **Clasificación**: error-pattern
+- **Lección**: Los 11 artículos del blog tienen imágenes hero propias en `/public/blog/dark-*.svg` (1200×675) que se usan como `<img>` en el contenido, pero la meta tag `og:image` de cada artículo apunta a `KAREN_IMAGE` (foto retrato 465×533). Son dos usos distintos y no están conectados. Cuando alguien comparte un artículo del blog en redes sociales, aparece la foto de Karen en vez de la ilustración del artículo.
+- **Acción**: Al escribir nuevos artículos de blog, asegurarse de que `og:image` apunte a la imagen hero del artículo (ej: `/blog/dark-*.svg`) y no a `KAREN_IMAGE`. Tarea pendiente: actualizar los 11 artículos existentes.
+
+## 7. Todas las imágenes del sitio existen y funcionan (no hay referencias rotas) - automation-pattern
+- **Fecha**: 2026-06-18
+- **Clasificación**: automation-pattern
+- **Lección**: La tarea T-02 (reemplazar 75 imágenes placehold.co) ya resolvió todas las referencias rotas. El sitio tiene 56 SVGs de blog + 1 foto WebP de Karen + 2 favicons = 59 archivos de imagen, todos correctamente referenciados. No hay imágenes huérfanas ni referencias rotas.
+- **Acción**: El gap de imágenes pendiente es de tipo OG/social: las 8 páginas principales (homepage + 3 evaluación + 2 neuropsicología + precios + para-escuelas) usan la foto retrato de Karen (465×533) como og:image en lugar de imágenes landscape 1200×630 optimizadas para redes sociales.

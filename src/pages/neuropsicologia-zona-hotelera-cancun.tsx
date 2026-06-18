@@ -301,6 +301,9 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           property="og:image"
           content={KAREN_IMAGE}
         />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -311,6 +314,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           name="twitter:description"
           content={`Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. Karen Trujillo, cédula ${CEDULA}.`}
         />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script
           type="application/ld+json"

@@ -611,10 +611,14 @@ export default function AutismoCancunFunnel() {
         <meta property="og:description" content="Evaluación neuropsicológica de autismo con ADOS-2 — estándar de oro internacional. Informe con validez oficial. $8,500 MXN. Agenda en línea." />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Evaluación Autismo (TEA) en Cancún | ADOS-2 y ADI-R" />
         <meta name="twitter:description" content="Evaluación neuropsicológica de autismo con instrumentos estandarizados. Informe oficial. Agenda en línea. Cancún, Q. Roo." />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         {/* AEO: Speakable */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
