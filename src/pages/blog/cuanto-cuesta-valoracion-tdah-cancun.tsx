@@ -388,7 +388,7 @@ export default function CuantoCuestaValoracionTDAH() {
                 </Link>
                 <Link href="/evaluacion-autismo-cancun" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="/blog/blush-diagnostico-autismo-tea-640x400.svg)"
+                    src="/blog/blush-diagnostico-autismo-tea-640x400.svg"
                     alt="Diagnóstico Autismo (TEA) en Cancún"
                     width={640}
                     height={400}

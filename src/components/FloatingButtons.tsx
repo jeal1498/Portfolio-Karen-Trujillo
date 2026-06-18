@@ -1,6 +1,6 @@
 import { Phone, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { PHONE_NUMBER, WA_NUMBER } from '@/lib/contact';
+import { PHONE_E164, WA_NUMBER } from '@/lib/contact';
 
 const FloatingButtons = () => {
   return (
@@ -11,7 +11,7 @@ const FloatingButtons = () => {
       transition={{ duration: 0.5, delay: 1 }}
     >
       <a 
-        href={`tel:${PHONE_NUMBER}`}
+        href={`tel:${PHONE_E164}`}
         className="flex-1 bg-card/90 backdrop-blur-md text-primary border-2 border-card/50 py-4 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 transition-all active:scale-95 hover:bg-card"
       >
         <Phone className="w-4 h-4" /> Llamar

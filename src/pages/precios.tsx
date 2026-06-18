@@ -86,12 +86,12 @@ const politicasPago = [
   {
     icon: CreditCard,
     title: 'Anticipo al agendar',
-    desc: '50% del total al momento de confirmar la cita. Reserva tu lugar y cubre los materiales de evaluación.',
+    desc: 'Anticipo de $1,000 MXN (TDAH) o $1,500 MXN (TEA) al confirmar la cita. Forma parte del costo total — no es un cargo adicional.',
   },
   {
     icon: FileText,
     title: 'Saldo al entregar',
-    desc: 'El 50% restante se liquida al entregar el informe en la sesión de devolución.',
+    desc: 'El saldo restante se liquida al entregar el informe en la sesión de devolución.',
   },
   {
     icon: Shield,
@@ -122,7 +122,7 @@ const faqPrecios = [
   },
   {
     q: '¿Se puede pagar en parcialidades?',
-    a: 'El esquema es 50% al inicio y 50% al entregar el informe. No se ofrecen más parcialidades. Este esquema está diseñado para proteger tanto al paciente como el proceso clínico.',
+    a: 'El esquema es dos pagos: un anticipo de $1,000 MXN (TDAH) o $1,500 MXN (TEA) al agendar, y el saldo restante al entregar el informe. No se ofrecen más parcialidades. Este esquema está diseñado para proteger tanto al paciente como el proceso clínico.',
   },
   {
     q: '¿El informe tiene vigencia para usarse?',
