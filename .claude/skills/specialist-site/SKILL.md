@@ -40,27 +40,37 @@ Crea este to-do al inicio y táchalo conforme avanzas:
 
 ## Fase 0 — Scaffold del proyecto
 
-Esta fase crea el proyecto desde cero. Solo se ejecuta una vez por cliente.
+Esta fase crea la carpeta del nuevo cliente dentro del monorepo. Solo se ejecuta una vez por cliente.
+
+**Estructura esperada del monorepo:**
+```
+[raíz del repo]/
+├── .claude/skills/specialist-site/   ← este skill
+├── karen-trujillo/                   ← cliente existente (sirve de template)
+├── [nuevo-cliente]/                  ← lo que crea esta fase
+└── ...
+```
 
 ### Paso 0.1 — Pedir nombre del proyecto
 
-Antes de clonar, preguntar:
-- **Slug del proyecto** — nombre de carpeta y repo (ej: `portfolio-dr-garcia`, `sitio-nutriologa-lopez`)
-- **Dónde crear la carpeta** — ruta local donde vivirá el proyecto
+Antes de crear nada, preguntar:
+- **Slug del cliente** — nombre de subcarpeta (ej: `dr-garcia`, `nutriologa-lopez`, `dentista-martinez`)
+- **Ruta del monorepo** — confirmar dónde está la raíz (ej: `/home/user/JEAL`)
+- **Nombre de la carpeta template** — por defecto `karen-trujillo` (preguntar si es diferente)
 
-### Paso 0.2 — Clonar el template de Karen
+### Paso 0.2 — Crear la carpeta del cliente copiando el template
+
+No se clona un repo nuevo. Se copia la carpeta de Karen dentro del mismo monorepo:
 
 ```bash
-# Clonar el repo de Karen como punto de partida
-git clone https://github.com/jeal1498/Portfolio-Karen-Trujillo.git [slug-del-proyecto]
-cd [slug-del-proyecto]
+# Desde la raíz del monorepo
+cp -r [carpeta-template]/ [slug-cliente]/
 
-# Desconectar del repo de Karen y empezar historial limpio
-rm -rf .git
-git init
-git add .
-git commit -m "chore: scaffold inicial desde template specialist-site"
+# Entrar a la carpeta del nuevo cliente
+cd [slug-cliente]/
 ```
+
+El repo git del monorepo ya existe — no se necesita `git init`.
 
 ### Paso 0.3 — Limpiar contenido específico de Karen
 
@@ -137,12 +147,13 @@ Si hay errores por los arrays vacíos o referencias eliminadas, corregirlos ante
 ### Paso 0.5 — Commit del scaffold limpio
 
 ```bash
-git add .
-git commit -m "chore: limpiar contenido de Karen — proyecto listo para nuevo especialista"
+# Desde la raíz del monorepo
+git add [slug-cliente]/
+git commit -m "chore: scaffold [slug-cliente] — proyecto listo para nuevo especialista"
 ```
 
-El proyecto ahora tiene toda la infraestructura lista y cero contenido del cliente anterior.
-Continuar con Fase 1.
+El monorepo ahora tiene una carpeta nueva con toda la infraestructura lista y cero
+contenido del cliente anterior. Continuar con Fase 1 trabajando dentro de `[slug-cliente]/`.
 
 ---
 
