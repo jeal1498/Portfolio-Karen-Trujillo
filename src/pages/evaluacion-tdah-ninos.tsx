@@ -10,13 +10,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SOCIAL_PROFILES, WA_NUMBER, PHONE_NUMBER, PHONE_E164 } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, KAREN_IMAGE_PATH, REVIEWS, GEO } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG — Cal.com URL (cambiar al URL real de Karen)
    ═══════════════════════════════════════════════════════════════ */
 const CAL_URL = 'https://cal.com/psicologa-karen-trujillo/evaluacion-tdah-infantil';
-const WA_NUMBER = '529983211547';
-const PHONE_NUMBER = '529983211547';
+const CANONICAL_URL = `${SITE_URL}/evaluacion-tdah-ninos`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -49,7 +50,7 @@ const proceso = [
 ];
 
 const instrumentos = [
-  { nombre: 'CONNERS-3', desc: 'Escala de síntomas TDAH — padres, maestros y el propio niño' },
+  { nombre: 'CONNERS-3', desc: 'Escala de síntomas TDAH: padres, maestros y el propio niño' },
   { nombre: 'WISC-V', desc: 'Inteligencia y perfil cognitivo: atención, memoria de trabajo' },
   { nombre: 'BRIEF-2', desc: 'Funciones ejecutivas en contexto cotidiano' },
   { nombre: 'CPT-3', desc: 'Prueba computarizada de atención sostenida' },
@@ -112,7 +113,7 @@ const faqItems = [
   },
   {
     q: '¿El informe de TDAH tiene validez oficial ante la escuela?',
-    a: 'Sí. El informe clínico está respaldado por cédula profesional federal 11009616 emitida por la SEP y tiene validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS y dependencias gubernamentales en todo México. Incluye recomendaciones específicas de adecuaciones curriculares.',
+    a: `Sí. El informe clínico está respaldado por cédula profesional federal ${CEDULA} emitida por la SEP y tiene validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS y dependencias gubernamentales en todo México. Incluye recomendaciones específicas de adecuaciones curriculares.`,
   },
   {
     q: '¿Cuál es la diferencia entre TDAH y problemas de conducta?',
@@ -157,16 +158,16 @@ const reviews = [
 /* ── Physician entity (reused across schemas) ── */
 const physicianEntity = {
   '@type': 'Physician',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+  '@id': `${SITE_URL}/#physician`,
   name: 'Karen Trujillo',
   jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-  telephone: '+529983211547',
+  url: SITE_URL,
+  image: KAREN_IMAGE,
+  telephone: PHONE_E164,
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'Cédula Profesional Federal',
-    credentialId: '11009616',
+    credentialId: CEDULA,
     issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
   },
   medicalSpecialty: 'Neuropsychiatry',
@@ -180,17 +181,13 @@ const physicianEntity = {
     sameAs: 'https://www.wikidata.org/wiki/Q8969',
     containedInPlace: { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
   },
-  sameAs: [
-    'https://www.facebook.com/share/1Bs93MjeKt/',
-    'https://www.instagram.com/psicologakarentrujillo',
-    'https://www.tiktok.com/@psic.karentrujillo',
-  ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 /* ── MedicalCondition entity ── */
 const tdahCondition = {
   '@type': 'MedicalCondition',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil',
+  '@id': `${SITE_URL}/#tdah-infantil`,
   name: 'Trastorno por Déficit de Atención e Hiperactividad (TDAH) en niños',
   alternateName: ['TDAH infantil', 'ADHD en niños', 'Déficit de atención infantil'],
   code: [
@@ -227,11 +224,11 @@ const tdahCondition = {
 /* ── MedicalClinic entity (NEW — local SEO + GEO) ── */
 const clinicEntity = {
   '@type': 'MedicalClinic',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+  '@id': `${SITE_URL}/#clinic`,
   name: 'Consultorio Neuropsicóloga Karen Trujillo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  telephone: '+529983211547',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  url: SITE_URL,
+  telephone: PHONE_E164,
+  image: KAREN_IMAGE,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac Supermanzana Circuito casa 1587B',
@@ -242,8 +239,8 @@ const clinicEntity = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 21.1619,
-    longitude: -86.8515,
+    latitude: GEO.latitude,
+    longitude: GEO.longitude,
   },
   openingHoursSpecification: [
     {
@@ -260,8 +257,8 @@ const clinicEntity = {
     },
   ],
   medicalSpecialty: 'Neuropsychiatry',
-  availableService: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil-service' },
-  member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+  availableService: { '@id': `${SITE_URL}/#tdah-infantil-service` },
+  member: { '@id': `${SITE_URL}/#physician` },
 };
 
 const schema = {
@@ -271,23 +268,23 @@ const schema = {
     {
       '@type': 'MedicalWebPage',
       name: 'Valoración Neuropsicológica de TDAH Infantil en Cancún',
-      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos',
-      description: 'Evaluación neuropsicológica de TDAH en niños y adolescentes (5-17 años) en Cancún. Diagnóstico con CONNERS-3, WISC-V, BRIEF-2 y CPT-3. Informe clínico con cédula federal 11009616.',
+      url: CANONICAL_URL,
+      description: `Evaluación neuropsicológica de TDAH en niños y adolescentes (5-17 años) en Cancún. Diagnóstico con CONNERS-3, WISC-V, BRIEF-2 y CPT-3. Informe clínico con cédula federal ${CEDULA}.`,
       inLanguage: 'es-MX',
-      about: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      about: { '@id': `${SITE_URL}/#tdah-infantil` },
       mentions: [
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalCondition', name: 'Autismo', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
         { '@type': 'AnatomicalStructure', name: 'Corteza prefrontal', sameAs: 'https://www.wikidata.org/wiki/Q80919' },
         { '@type': 'MedicalTest', name: 'WISC-V', sameAs: 'https://www.wikidata.org/wiki/Q2551426' },
       ],
-      reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      reviewedBy: { '@id': `${SITE_URL}/#physician` },
       lastReviewed: '2026-06-02',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-          { '@type': 'ListItem', position: 2, name: 'Valoración TDAH Infantil', item: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos' },
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Valoración TDAH Infantil', item: CANONICAL_URL },
         ],
       },
     },
@@ -302,7 +299,7 @@ const schema = {
       '@type': 'DiagnosticProcedure',
       name: 'CONNERS-3',
       description: 'Escala de evaluación de síntomas de TDAH con formas para padres, maestros y el propio niño. Estándar internacional para medir inatención, hiperactividad e impulsividad.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     {
       '@type': 'DiagnosticProcedure',
@@ -310,25 +307,25 @@ const schema = {
       alternateName: 'Escala Wechsler de Inteligencia para Niños — 5ª edición',
       description: 'Evaluación de inteligencia y perfil cognitivo que mide atención, memoria de trabajo, velocidad de procesamiento y razonamiento.',
       sameAs: 'https://www.wikidata.org/wiki/Q2551426',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'BRIEF-2',
       description: 'Inventario de Evaluación Conductual de la Función Ejecutiva. Mide regulación emocional, planificación, organización e inhibición en contextos cotidianos.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'CPT-3',
       alternateName: 'Conners Continuous Performance Test',
       description: 'Prueba computarizada que mide atención sostenida, vigilancia e impulsividad de forma objetiva durante 14 minutos.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tdah-infantil` },
     },
     /* ── Service + Offer ── */
     {
       '@type': 'MedicalProcedure',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#tdah-infantil-service',
+      '@id': `${SITE_URL}/#tdah-infantil-service`,
       name: 'Valoración Neuropsicológica de TDAH Infantil',
       procedureType: 'Diagnostic',
       howPerformed: 'Aplicación de pruebas neuropsicológicas estandarizadas (CONNERS-3, WISC-V, BRIEF-2, CPT-3), entrevista clínica con padres, cuestionarios a maestros, elaboración de informe y sesión de devolución.',
@@ -336,11 +333,11 @@ const schema = {
       followup: 'Sesión de devolución con explicación del diagnóstico, recomendaciones terapéuticas y adecuaciones escolares.',
       bodyLocation: 'Sistema nervioso central — funciones ejecutivas',
       status: 'EventScheduled',
-      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': `${SITE_URL}/#physician` },
+      location: { '@id': `${SITE_URL}/#clinic` },
       offers: {
         '@type': 'Offer',
-        price: '7000',
+        price: '8300',
         priceCurrency: 'MXN',
         description: 'Proceso completo: 4-5 sesiones, pruebas estandarizadas, informe clínico y sesión de devolución. Anticipo de $1,000 MXN al agendar.',
         availability: 'https://schema.org/InStock',
@@ -348,30 +345,21 @@ const schema = {
         areaServed: { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
       },
     },
-    /* ── HowTo ── */
-    {
-      '@type': 'HowTo',
-      name: 'Proceso de valoración neuropsicológica de TDAH infantil en Cancún',
-      description: 'Protocolo clínico de 5 fases para diagnosticar TDAH en niños de 5 a 17 años. Duración total: 2 a 3 semanas.',
-      totalTime: 'P3W',
-      estimatedCost: { '@type': 'MonetaryAmount', currency: 'MXN', value: '7000' },
-      step: proceso.map((p, i) => ({ '@type': 'HowToStep', name: p.titulo, text: p.desc, position: i + 1 })),
-    },
     /* ── Individual Reviews ── */
     ...reviews.map((r, i) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: r.name },
       reviewRating: { '@type': 'Rating', ratingValue: r.stars, bestRating: 5 },
       reviewBody: r.text,
-      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      itemReviewed: { '@id': `${SITE_URL}/#physician` },
       datePublished: `2025-0${i + 1}-15`,
     })),
     /* ── AggregateRating ── */
     {
       '@type': 'AggregateRating',
-      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      ratingValue: '5.0',
-      reviewCount: '47',
+      itemReviewed: { '@id': `${SITE_URL}/#physician` },
+      ratingValue: REVIEWS.ratingValue,
+      reviewCount: REVIEWS.reviewCount,
       bestRating: '5',
       worstRating: '1',
     },
@@ -423,7 +411,7 @@ function CtaButton({ variant = 'primary', children, className = '' }: { variant?
     <a
       href="#agendar"
       onClick={scrollToBooking}
-      className={`group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl transition-all duration-300 text-center ${
+      className={`group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl transition-all duration-300 text-center ${
         variant === 'primary'
           ? 'bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0'
           : 'border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 hover:-translate-y-0.5'
@@ -461,13 +449,13 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
   const result = getResult();
 
   return (
-    <div className="bg-card rounded-3xl border-2 border-border overflow-hidden shadow-xl shadow-primary/5">
+    <div className="bg-card rounded-2xl border-2 border-border overflow-hidden shadow-xl shadow-primary/5">
       {showHeader && (
         <div className="p-6 sm:p-8 border-b border-border bg-gradient-to-br from-secondary/80 to-secondary/30 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/10 rounded-full blur-2xl" />
           <div className="flex items-center gap-3 mb-3 relative">
             <AlertCircle className="w-5 h-5 text-accent-blue shrink-0" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
               Herramienta orientativa · No es diagnóstico
             </span>
           </div>
@@ -530,7 +518,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
 
         <div className="flex flex-col sm:flex-row gap-3">
           <CtaButton className="flex-1 justify-center">
-            {count > 4 ? 'Tu hijo merece claridad — Agendar' : 'Reservar mi lugar'}
+            {count > 4 ? 'Tu hijo merece claridad. Agendar' : 'Reservar mi lugar'}
           </CtaButton>
           {count > 0 && (
             <button
@@ -541,7 +529,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
             </button>
           )}
         </div>
-        <p className="text-[10px] text-muted-foreground/50 text-center mt-4">Solo una valoración neuropsicológica formal puede establecer un diagnóstico.</p>
+        <p className="text-xs text-muted-foreground/50 text-center mt-4">Solo una valoración neuropsicológica formal puede establecer un diagnóstico.</p>
       </div>
     </div>
   );
@@ -589,25 +577,29 @@ export default function TDAHNinosFunnel() {
     <>
       <Head>
         <title>Valoración TDAH Infantil en Cancún · Niños 5-17 | Karen Trujillo</title>
-        <meta name="description" content="¿Tu hijo no pone atención en la escuela? Valoración neuropsicológica de TDAH infantil en Cancún (5-17 años). Pruebas CONNERS-3, WISC-V. Informe oficial con cédula 11009616. $8,300 MXN. Agenda en línea." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos" />
+        <meta name="description" content={`¿Tu hijo no pone atención en la escuela? Valoración neuropsicológica de TDAH infantil en Cancún (5-17 años). Pruebas CONNERS-3, WISC-V. Informe oficial con cédula ${CEDULA}. $8,300 MXN. Agenda en línea.`} />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo — Neuropsicología" />
         <meta property="og:title" content="Valoración TDAH Infantil en Cancún · Niños 5-17 años" />
         <meta property="og:description" content="Evaluación neuropsicológica con pruebas estandarizadas. Informe con validez oficial ante SEP e IMSS. $8,300 MXN. Agenda en línea." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Valoración TDAH Infantil en Cancún | Niños 5-17 años" />
         <meta name="twitter:description" content="Evaluación neuropsicológica de TDAH infantil con instrumentos estandarizados. Informe oficial. Agenda en línea. Cancún, Q. Roo." />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         {/* AEO: Speakable — includes new diferenciador section */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -617,7 +609,7 @@ export default function TDAHNinosFunnel() {
             '@type': 'SpeakableSpecification',
             cssSelector: ['#definicion-tdah', '#proceso-valoracion', '#que-incluye-informe', '#diferenciador-neuropsicologia'],
           },
-          url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-tdah-ninos',
+          url: CANONICAL_URL,
         }) }} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -637,72 +629,67 @@ export default function TDAHNinosFunnel() {
           {/* ══════════════════════════════════════════════════════
               1 · HERO — H1 SEO + subtítulo emocional + outcome-first copy
               ══════════════════════════════════════════════════════ */}
-          <section className="relative flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section className="relative flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
 
               <nav aria-label="Breadcrumb" className="mb-6 animate-[fadeIn_0.6s_ease-out_both]">
-                <ol className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                  <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
-                  <li className="text-border">/</li>
-                  <li className="text-primary font-medium">Valoración TDAH Infantil</li>
+                <ol className="flex items-center justify-center gap-2 text-xs" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                  <li><Link href="/" className="hover:text-white transition-colors">Inicio</Link></li>
+                  <li style={{ color: 'rgba(208,208,231,0.3)' }}>/</li>
+                  <li className="text-white font-medium">Valoración TDAH Infantil</li>
                 </ol>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/10 max-w-full">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 max-w-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}>
                   <span className="w-2 h-2 rounded-full bg-warning animate-pulse shadow-sm shadow-warning shrink-0" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground text-center leading-snug">Disponibilidad limitada · Cancún · Niños 5-17 años</span>
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(208,208,231,0.8)' }}>Disponibilidad limitada · Cancún · Niños 5-17 años</span>
                 </div>
 
                 {/* H1 — keyword-rich for SEO */}
-                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-[1.1] mb-4 text-balance">
+                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-4 text-balance">
                   Valoración TDAH Infantil<br className="hidden sm:block" /> en Cancún
                 </h1>
 
                 {/* Emotional hook — visually prominent subtitle */}
-                <p className="text-lg sm:text-2xl font-serif text-primary/80 italic mb-6 max-w-2xl mx-auto">
+                <p className="text-lg sm:text-2xl font-serif italic mb-6 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.72)' }}>
                   Por fin, claridad sobre lo que le pasa a tu hijo
                 </p>
 
                 {/* Subheadline — outcome first, features second */}
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto">
-                  Un diagnóstico formal que la escuela respeta y que te da un camino concreto para ayudarlo. Evaluación con pruebas estandarizadas internacionales (CONNERS-3, WISC-V, BRIEF-2, CPT-3) e informe clínico con <strong className="text-primary font-semibold">validez oficial</strong> ante escuelas, SEP e IMSS.
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
+                  Un diagnóstico formal que la escuela respeta y que te da un camino concreto para ayudarlo. Evaluación con pruebas estandarizadas internacionales (CONNERS-3, WISC-V, BRIEF-2, CPT-3) e informe clínico con <strong className="text-white font-semibold">validez oficial</strong> ante escuelas, SEP e IMSS.
                 </p>
 
-                <p className="text-xs sm:text-sm text-muted-foreground/70 mb-8">
-                  <strong className="text-primary">Neuropsicóloga Karen Trujillo</strong> · Cédula Federal 11009616 · 7+ años de experiencia
+                <p className="text-xs sm:text-sm mb-8" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                  <strong className="text-white">Neuropsicóloga Karen Trujillo</strong> · Cédula Federal {CEDULA} · 7+ años de experiencia
                 </p>
               </div>
 
               <div ref={heroCTARef} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
                 <CtaButton>Agendar valoración</CtaButton>
-                <a href="#sintomas" onClick={(e) => { e.preventDefault(); document.getElementById('sintomas')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-primary/15 text-primary/70 hover:border-primary/30 hover:text-primary transition-all duration-300">
+                <a href="#sintomas" onClick={(e) => { e.preventDefault(); document.getElementById('sintomas')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/25 text-white/80 hover:border-white/50 hover:text-white transition-all duration-300">
                   ¿Mi hijo podría tener TDAH?
                   <ArrowDown className="w-3 h-3 transition-transform group-hover:translate-y-0.5 shrink-0" />
                 </a>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground animate-[fadeIn_0.8s_ease-out_0.6s_both]">
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs animate-[fadeIn_0.8s_ease-out_0.6s_both]">
                 {[
-                  { icon: BadgeCheck, text: 'Cédula 11009616' },
+                  { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Stethoscope, text: 'Pruebas estandarizadas internacionales' },
                   { icon: CalendarCheck, text: 'Agenda en línea' },
                 ].map((badge) => (
-                  <span key={badge.text} className="flex items-center gap-1.5">
-                    <badge.icon className="w-3.5 h-3.5 text-primary/50" />
+                  <span key={badge.text} className="flex items-center gap-1.5" style={{ color: 'rgba(208,208,231,0.85)' }}>
+                    <badge.icon className="w-3.5 h-3.5" style={{ color: 'rgba(208,208,231,0.6)' }} />
                     <span className="font-medium">{badge.text}</span>
                   </span>
                 ))}
               </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </section>
 
 
@@ -713,8 +700,8 @@ export default function TDAHNinosFunnel() {
           <section id="sintomas" className="py-14 sm:py-20 bg-secondary scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Muchos padres llegan con esta historia</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Te suena familiar?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Muchos padres llegan con esta historia</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center text-balance">¿Te suena familiar?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-10">Los síntomas del TDAH suelen confundirse con problemas de conducta. Selecciona las señales que reconoces en tu hijo para saber si una valoración es recomendable.</p>
               </SectionReveal>
 
@@ -770,7 +757,7 @@ export default function TDAHNinosFunnel() {
               <SectionReveal>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-6 text-center">¿Qué es el TDAH infantil?</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-6 text-center max-w-2xl mx-auto">
-                  El <strong className="text-primary font-semibold">Trastorno por Déficit de Atención e Hiperactividad (TDAH)</strong> es una condición neurológica que afecta la <strong className="text-primary font-semibold">corteza prefrontal</strong> — la zona responsable de planificar, organizarse y regular emociones. <strong className="text-primary font-semibold">No es falta de inteligencia ni de disciplina.</strong> El diagnóstico requiere síntomas persistentes en casa y escuela por más de 6 meses (criterios <strong className="text-primary font-semibold">DSM-5</strong>, código F90 del CIE-10).
+                  El <strong className="text-primary font-semibold">Trastorno por Déficit de Atención e Hiperactividad (TDAH)</strong> es una condición neurológica que afecta la <strong className="text-primary font-semibold">corteza prefrontal</strong>, la zona responsable de planificar, organizarse y regular emociones. <strong className="text-primary font-semibold">No es falta de inteligencia ni de disciplina.</strong> El diagnóstico requiere síntomas persistentes en casa y escuela por más de 6 meses (criterios <strong className="text-primary font-semibold">DSM-5</strong>, código F90 del CIE-10).
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -781,7 +768,7 @@ export default function TDAHNinosFunnel() {
                   ].map((tipo) => (
                     <div key={tipo.label} className="flex flex-col gap-0.5 px-4 py-3 bg-card border border-border rounded-2xl text-center min-w-[140px]">
                       <span className="text-xs font-bold text-primary">{tipo.label}</span>
-                      <span className="text-[10px] text-muted-foreground font-light">{tipo.desc}</span>
+                      <span className="text-xs text-muted-foreground font-light">{tipo.desc}</span>
                     </div>
                   ))}
                 </div>
@@ -789,7 +776,7 @@ export default function TDAHNinosFunnel() {
                 <div className="p-5 bg-card rounded-2xl border border-border shadow-sm relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent-blue/60 to-primary/40 rounded-l-2xl" />
                   <p className="text-sm text-muted-foreground font-light leading-relaxed pl-2">
-                    <strong className="text-primary font-semibold">En Cancún, Quintana Roo</strong>, la neuropsicóloga Karen Trujillo (cédula 11009616) aplica pruebas como <strong className="text-primary font-semibold">CONNERS-3, WISC-V, BRIEF-2 y CPT-3</strong> para emitir un informe clínico con validez oficial ante la SEP, IMSS e instituciones educativas.
+                    <strong className="text-primary font-semibold">En Cancún, Quintana Roo</strong>, la neuropsicóloga Karen Trujillo (cédula {CEDULA}) aplica pruebas como <strong className="text-primary font-semibold">CONNERS-3, WISC-V, BRIEF-2 y CPT-3</strong> para emitir un informe clínico con validez oficial ante la SEP, IMSS e instituciones educativas.
                   </p>
                 </div>
               </SectionReveal>
@@ -804,13 +791,13 @@ export default function TDAHNinosFunnel() {
           <section id="proceso-valoracion" className="py-14 sm:py-20 bg-card">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Proceso clínico estructurado</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">¿Cómo funciona la valoración de TDAH infantil?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Proceso clínico estructurado</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">¿Cómo funciona la valoración de TDAH infantil?</h2>
                 {/* AEO: Direct answer for "cuánto dura/cuesta valoración TDAH infantil cancún" */}
                 <p className="text-muted-foreground font-light mb-4 text-center max-w-2xl mx-auto">
                   La valoración neuropsicológica de TDAH infantil en Cancún tiene un costo de <strong className="text-primary font-semibold">$8,300 MXN</strong> e incluye 4-5 sesiones presenciales distribuidas en 2 a 3 semanas. El proceso completo abarca entrevista con padres, pruebas estandarizadas al niño, cuestionarios a maestros, análisis clínico y sesión de devolución.
                 </p>
-                <p className="text-sm text-primary/70 font-medium text-center mb-10">No es un proceso largo — son 5 pasos que te dan años de claridad.</p>
+                <p className="text-sm text-primary/70 font-medium text-center mb-10">No es un proceso largo: son 5 pasos que te dan años de claridad.</p>
               </SectionReveal>
 
               <div className="space-y-0 relative">
@@ -826,7 +813,7 @@ export default function TDAHNinosFunnel() {
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 mb-1">
                           <h3 className="font-bold text-primary">{p.titulo}</h3>
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 shrink-0 bg-secondary px-2 py-1 rounded-full">{p.duracion}</span>
+                          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60 shrink-0 bg-secondary px-2 py-1 rounded-full">{p.duracion}</span>
                         </div>
                         <p className="text-sm text-muted-foreground font-light leading-relaxed">{p.desc}</p>
                       </div>
@@ -866,7 +853,7 @@ export default function TDAHNinosFunnel() {
 
               <SectionReveal delay={0.3}>
                 <div className="bg-white/8 border border-white/15 rounded-2xl p-5 sm:p-8">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-6">Pruebas estandarizadas utilizadas</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/50 mb-6">Pruebas estandarizadas utilizadas</p>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {instrumentos.map((inst) => (
                       <div key={inst.nombre} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 w-full">
@@ -893,32 +880,32 @@ export default function TDAHNinosFunnel() {
           <section id="diferenciador-neuropsicologia" className="py-14 sm:py-20 bg-card border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué neuropsicología y no solo psicología?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué neuropsicología y no solo psicología?</h2>
 
                 <div className="max-w-2xl mx-auto space-y-4 mb-10">
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    Una consulta psicológica evalúa conducta y emociones a través de entrevista clínica. La valoración neuropsicológica va más allá: <strong className="text-primary font-semibold">mide las funciones ejecutivas del cerebro</strong> — atención sostenida, memoria de trabajo, velocidad de procesamiento y control inhibitorio — mediante pruebas estandarizadas con normas internacionales.
+                    Una consulta psicológica evalúa conducta y emociones a través de entrevista clínica. La valoración neuropsicológica va más allá: <strong className="text-primary font-semibold">mide las funciones ejecutivas del cerebro</strong> (atención sostenida, memoria de trabajo, velocidad de procesamiento y control inhibitorio) mediante pruebas estandarizadas con normas internacionales.
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
                     Para el TDAH, esta diferencia es crucial. Los síntomas del TDAH se solapan con ansiedad, trastornos del aprendizaje y altas capacidades. <strong className="text-primary font-semibold">Solo un perfil neuropsicológico completo permite un diagnóstico diferencial preciso</strong> que descarte condiciones similares y evite intervenciones equivocadas.
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    En la práctica, esto significa que el informe no dice solo &ldquo;tiene TDAH&rdquo; o &ldquo;no tiene TDAH&rdquo;. Revela exactamente <strong className="text-primary font-semibold">qué funciones están comprometidas, en qué grado y qué intervenciones específicas</strong> necesita tu hijo — tanto en terapia como en la escuela.
+                    En la práctica, esto significa que el informe no dice solo &ldquo;tiene TDAH&rdquo; o &ldquo;no tiene TDAH&rdquo;. Revela exactamente <strong className="text-primary font-semibold">qué funciones están comprometidas, en qué grado y qué intervenciones específicas</strong> necesita tu hijo, tanto en terapia como en la escuela.
                   </p>
                 </div>
               </SectionReveal>
 
               {/* Comparative table — unified 2-column layout for all screens */}
               <SectionReveal delay={0.15}>
-                <div className="max-w-3xl mx-auto bg-secondary/50 rounded-3xl border border-border overflow-hidden">
+                <div className="max-w-3xl mx-auto bg-secondary/50 rounded-2xl border border-border overflow-hidden">
                   {/* Column headers — always 2 cols */}
                   <div className="grid grid-cols-2">
                     <div className="p-3 sm:p-4 bg-secondary/80 border-b border-r border-border text-center">
-                      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
                     </div>
                     <div className="p-3 sm:p-4 bg-primary/8 border-b border-border text-center">
-                      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
                     </div>
                   </div>
 
@@ -959,8 +946,8 @@ export default function TDAHNinosFunnel() {
           <section className="py-14 sm:py-20 bg-secondary">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen las familias</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">47+ familias en Cancún ya tienen claridad</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen las familias</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">47+ familias en Cancún ya tienen claridad</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Las familias destacan la claridad del informe y las recomendaciones concretas para la escuela.</p>
               </SectionReveal>
 
@@ -977,7 +964,7 @@ export default function TDAHNinosFunnel() {
                       <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6 flex-1 relative z-10">&ldquo;{review.text}&rdquo;</p>
                       <div className="flex items-center gap-2 pt-4 border-t border-border">
                         <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent-blue/20 to-primary/15 flex items-center justify-center shrink-0">
-                          <span className="text-[10px] font-bold text-primary/60">{review.name.charAt(0)}</span>
+                          <span className="text-xs font-bold text-primary/60">{review.name.charAt(0)}</span>
                         </div>
                         <p className="text-xs font-bold text-primary">{review.name}</p>
                       </div>
@@ -1002,7 +989,7 @@ export default function TDAHNinosFunnel() {
           <section className="py-14 sm:py-20 bg-card border-t border-border relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 relative">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La especialista detrás del proceso</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La especialista detrás del proceso</p>
                 <h2 className="font-serif font-bold text-primary mb-14 text-center">
                   <span className="block text-sm sm:text-base font-normal text-muted-foreground/70 uppercase tracking-[0.2em] mb-2">Conoce a</span>
                   <span className="block text-5xl sm:text-6xl lg:text-7xl">Karen Trujillo</span>
@@ -1013,9 +1000,9 @@ export default function TDAHNinosFunnel() {
                 <SectionReveal>
                   <div className="flex flex-col items-center md:items-start gap-5">
                     <div className="relative">
-                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
+                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
                         <Image
-                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                          src={KAREN_IMAGE}
                           alt="Neuropsicóloga Karen Trujillo — especialista en TDAH infantil en Cancún"
                           width={256}
                           height={256}
@@ -1026,7 +1013,7 @@ export default function TDAHNinosFunnel() {
                       </div>
                       <div className="absolute -bottom-4 -right-4 bg-gradient-primary text-primary-foreground rounded-2xl px-4 py-2 shadow-xl shadow-primary/25">
                         <p className="text-[9px] font-bold uppercase tracking-widest text-primary-foreground/70">Cédula Federal</p>
-                        <p className="text-sm font-bold font-mono">11009616</p>
+                        <p className="text-sm font-bold font-mono">{CEDULA}</p>
                       </div>
                     </div>
 
@@ -1045,7 +1032,7 @@ export default function TDAHNinosFunnel() {
                       ].map((stat) => (
                         <div key={stat.label} className="bg-secondary/60 border border-border rounded-xl p-3 text-center">
                           <p className="text-base font-serif font-bold text-primary">{stat.valor}</p>
-                          <p className="text-[10px] text-muted-foreground font-light leading-tight mt-0.5">{stat.label}</p>
+                          <p className="text-xs text-muted-foreground font-light leading-tight mt-0.5">{stat.label}</p>
                         </div>
                       ))}
                     </div>
@@ -1087,15 +1074,15 @@ export default function TDAHNinosFunnel() {
           <section className="py-14 sm:py-20 bg-secondary border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Después de la valoración</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">¿Qué pasa con los resultados?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Después de la valoración</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">¿Qué pasa con los resultados?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-10">Sin importar el resultado, siempre obtienes información valiosa sobre tu hijo. Estos son los tres escenarios posibles:</p>
               </SectionReveal>
 
               <div className="space-y-4">
                 {[
                   { titulo: 'TDAH confirmado', desc: 'Recibes un plan de acción concreto: recomendaciones terapéuticas, adecuaciones curriculares para la escuela y estrategias específicas para casa. El informe tiene validez oficial para que la escuela implemente los cambios.', color: 'border-primary/30 bg-primary/5', iconColor: 'text-primary bg-primary/10 border-primary/20' },
-                  { titulo: 'No es TDAH — diagnóstico diferencial', desc: 'El informe identifica qué sí está pasando: ansiedad, trastorno del aprendizaje, altas capacidades u otra condición. Saber qué no es TDAH es igual de valioso porque evita intervenciones equivocadas.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
+                  { titulo: 'No es TDAH: diagnóstico diferencial', desc: 'El informe identifica qué sí está pasando: ansiedad, trastorno del aprendizaje, altas capacidades u otra condición. Saber qué no es TDAH es igual de valioso porque evita intervenciones equivocadas.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
                   { titulo: 'Perfil mixto o subclínico', desc: 'Algunos niños muestran rasgos de TDAH sin cumplir todos los criterios. En ese caso, recibes orientación sobre qué monitorear, cuándo revaluar y qué apoyos preventivos implementar desde ahora.', color: 'border-success/30 bg-success/5', iconColor: 'text-success bg-success/10 border-success/20' },
                 ].map((item, i) => (
                   <SectionReveal key={item.titulo} delay={i * 0.1}>
@@ -1126,27 +1113,34 @@ export default function TDAHNinosFunnel() {
           <section className="py-14 sm:py-20 bg-card">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
+                <h2 className="text-headline font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                       <button
+                        id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-answer-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#5b4e7f')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = openFaq === i ? '#5b4e7f' : '#382f51')}
                       >
-                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}>
-                          <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} />
-                        </div>
+                        <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 transition-transform duration-250"
+                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        />
                       </button>
                       <div
                         id={`faq-answer-${i}`}
                         role="region"
+                        aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
                         style={{
                           gridTemplateRows: openFaq === i ? '1fr' : '0fr',
@@ -1155,9 +1149,9 @@ export default function TDAHNinosFunnel() {
                         }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
-                            <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                          </div>
+                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                            {faq.a}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1178,16 +1172,16 @@ export default function TDAHNinosFunnel() {
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 rounded-full border border-success/20 mb-6">
                     <CalendarCheck className="w-4 h-4 text-success" />
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-success">Agenda en línea · Confirma en minutos</span>
+                    <span className="text-xs uppercase tracking-widest font-bold text-success">Agenda en línea · Confirma en minutos</span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4">Reserva tu valoración ahora</h2>
+                  <h2 className="text-headline font-serif font-bold text-primary mb-4">Reserva tu valoración ahora</h2>
                   <p className="text-muted-foreground font-light max-w-2xl mx-auto">Elige el horario que mejor te funcione. Tu lugar queda confirmado al completar el anticipo.</p>
                 </div>
               </SectionReveal>
 
               <SectionReveal delay={0.1}>
                 <div className="mb-8 max-w-2xl mx-auto">
-                  <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/12 border border-primary/20">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/12 border border-primary/20">
                     <div className="bg-gradient-primary px-8 py-5 flex items-center justify-between">
                       <div>
                         <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-0.5">Servicio</p>
@@ -1201,14 +1195,14 @@ export default function TDAHNinosFunnel() {
 
                     <div className="bg-card px-8 py-10 text-center relative overflow-hidden">
                       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, currentColor 39px, currentColor 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, currentColor 39px, currentColor 40px)', backgroundSize: '40px 40px' }} />
-                      <p className="text-[10px] uppercase tracking-[0.25em] font-bold text-muted-foreground/50 mb-4 relative">Inversión total</p>
+                      <p className="text-xs uppercase tracking-[0.25em] font-bold text-muted-foreground/50 mb-4 relative">Inversión total</p>
                       <div className="flex items-end justify-center gap-3 mb-4 relative">
                         <span className="text-[80px] sm:text-[96px] font-serif font-bold text-primary leading-none tracking-tight">$8,300</span>
                         <span className="text-lg font-semibold text-muted-foreground/60 pb-3 tracking-widest">MXN</span>
                       </div>
                       <div className="flex flex-wrap justify-center gap-2 relative">
                         {['4-5 sesiones', 'CONNERS-3 · WISC-V · BRIEF-2 · CPT-3', 'Informe oficial', 'Sesión de devolución'].map((chip) => (
-                          <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary border border-border rounded-full text-[10px] text-muted-foreground font-medium">
+                          <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary border border-border rounded-full text-xs text-muted-foreground font-medium">
                             <CheckCircle2 className="w-3 h-3 text-primary/50 shrink-0" />
                             {chip}
                           </span>
@@ -1245,12 +1239,12 @@ export default function TDAHNinosFunnel() {
                     </div>
                   </div>
 
-                  <p className="text-center text-[10px] text-muted-foreground/50 mt-4">Tu anticipo se descuenta del costo total. Sin costos ocultos.</p>
+                  <p className="text-center text-xs text-muted-foreground/50 mt-4">Tu anticipo se descuenta del costo total. Sin costos ocultos.</p>
                 </div>
               </SectionReveal>
 
               <SectionReveal delay={0.2}>
-                <div className="bg-card border-2 border-border rounded-3xl overflow-hidden shadow-lg shadow-primary/5">
+                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg shadow-primary/5">
                   <div className="p-5 border-b border-border flex items-center justify-between bg-secondary/30">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center">
@@ -1258,7 +1252,7 @@ export default function TDAHNinosFunnel() {
                       </div>
                       <div>
                         <p className="font-bold text-primary text-sm">Selecciona fecha y hora</p>
-                        <p className="text-[10px] text-muted-foreground">Cancún, Quintana Roo · Horario local</p>
+                        <p className="text-xs text-muted-foreground">Cancún, Quintana Roo · Horario local</p>
                       </div>
                     </div>
                     {!calLoaded && (
@@ -1295,7 +1289,7 @@ export default function TDAHNinosFunnel() {
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
                   <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><Shield className="w-3.5 h-3.5 text-primary/50" /> Pago seguro</span>
                   <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><Clock className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs de anticipación</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Cédula 11009616</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Cédula {CEDULA}</span>
                 </div>
               </SectionReveal>
 
@@ -1303,39 +1297,69 @@ export default function TDAHNinosFunnel() {
                 <div className="mt-10 pt-8 border-t border-border">
                   <p className="text-center text-sm text-muted-foreground font-light mb-5">¿Prefieres hablar antes de agendar?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página de valoración TDAH infantil y tengo algunas dudas antes de agendar. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página de valoración TDAH infantil y tengo algunas dudas antes de agendar. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
-                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`tel:${PHONE_E164}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <Phone className="w-4 h-4" />
                       Llamar
                     </a>
                   </div>
-                  <p className="text-[10px] text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
+                  <p className="text-xs text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
                 </div>
               </SectionReveal>
             </div>
           </section>
 
 
+          {/* ── Blog hub-and-spoke ── */}
+          <section className="py-10 sm:py-12 border-t border-border">
+            <div className="max-w-2xl mx-auto px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Artículos relacionados</p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                <Link href="/blog/senales-tdah-ninos" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">Señales de TDAH en niños</span>
+                    <span className="text-xs text-muted-foreground font-light">Guía para padres</span>
+                  </div>
+                </Link>
+                <Link href="/blog/tdah-en-ninas-sintomas" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">TDAH en niñas: síntomas</span>
+                    <span className="text-xs text-muted-foreground font-light">Por qué se detecta tan tarde</span>
+                  </div>
+                </Link>
+                <Link href="/blog/tdah-inatento-sintomas" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">TDAH Inatento</span>
+                    <span className="text-xs text-muted-foreground font-light">El tipo que casi nadie detecta</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* ── Internal linking for topical authority ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Otros servicios disponibles en Cancún</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Otros servicios disponibles en Cancún</p>
               <div className="grid sm:grid-cols-2 gap-3">
                 <Link href="/evaluacion-tdah-adultos" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH en Adultos</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Valoración neuropsicológica +18 años</span>
+                    <span className="text-xs text-muted-foreground font-light">Valoración neuropsicológica +18 años</span>
                   </div>
                 </Link>
                 <Link href="/evaluacion-autismo-cancun" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">Autismo (TEA)</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Diagnóstico con ADOS-2 y M-CHAT</span>
+                    <span className="text-xs text-muted-foreground font-light">Diagnóstico con ADOS-2 y M-CHAT</span>
                   </div>
                 </Link>
               </div>
@@ -1354,7 +1378,7 @@ export default function TDAHNinosFunnel() {
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
         >
           <a href="#agendar" onClick={scrollToBooking} className="flex items-center justify-center w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-bold text-[11px] uppercase tracking-widest shadow-2xl shadow-primary/35 active:scale-[0.98] transition-transform">
-            {symptomCount > 4 ? 'Tu hijo muestra señales — Agendar' : 'Agendar valoración'}
+            {symptomCount > 4 ? 'Tu hijo muestra señales. Agendar' : 'Agendar valoración'}
           </a>
         </div>
       </div>

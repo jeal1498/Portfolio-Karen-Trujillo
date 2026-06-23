@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TDAH en adultos: por qué miles llegan al diagnóstico después de los 30 | Karen Trujillo Neuropsicóloga</title>
+  <meta name="description" content="Te compensaste con inteligencia, te diagnosticaron ansiedad, o simplemente nadie lo vio. Las razones por las que el TDAH adulto se detecta tarde y qué hacer al respecto." />
+  <meta name="author" content="Karen Trujillo, Neuropsicóloga — Cédula 11009616" />
+  <link rel="canonical" href="https://karentrujillo.com/blog/tdah-adultos-diagnostico-tardio" />
+  <meta property="og:title" content="TDAH en adultos: por qué miles llegan al diagnóstico después de los 30" />
+  <meta property="og:description" content="Te compensaste con inteligencia, te diagnosticaron ansiedad, o simplemente nadie lo vio. Las razones por las que el TDAH adulto se detecta tarde y qué hacer al respecto." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN Play -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'plum-deep':  '#2b1f47',
+            'plum-ink':   '#382f51',
+            'plum-mid':   '#5b4e7f',
+            'lavender':   '#d0d0e7',
+            'blush':      '#fbdbe0',
+            'sand':       '#f5dfc5',
+            'surface':    '#f8f7fc',
+            'ink2':       '#515e71',
+            'wa':         '#25d366',
+          },
+          fontFamily: {
+            display: ['Gloock', 'Georgia', 'serif'],
+            body:    ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            card: '16px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background: #ffffff;
+      color: #515e71;
+    }
+
+    /* ── Reading Progress Bar ── */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: #5b4e7f;
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #progress-bar { transition: none; }
+    }
+
+    /* ── Navbar ── */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 1.5rem;
+      transition: background 0.25s ease, backdrop-filter 0.25s ease, box-shadow 0.25s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 16px rgba(56, 47, 81, 0.10);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #navbar { transition: none; }
+    }
+
+    .nav-logo {
+      font-family: 'Gloock', serif;
+      font-size: 1.125rem;
+      color: #382f51;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    #navbar.scrolled .nav-logo { color: #382f51; }
+
+    .nav-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(56, 47, 81, 0.75);
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+    .nav-link:hover { color: #382f51; }
+    #navbar:not(.scrolled) .nav-link { color: rgba(255,255,255,0.82); }
+    #navbar:not(.scrolled) .nav-link:hover { color: #ffffff; }
+
+    .nav-cta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #382f51;
+      color: #ffffff;
+      padding: 0.5rem 1.125rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+    .nav-cta:hover { background: #2b1f47; transform: translateY(-1px); }
+    #navbar:not(.scrolled) .nav-cta { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); }
+    #navbar:not(.scrolled) .nav-cta:hover { background: rgba(255,255,255,0.28); }
+
+    /* ── Mobile Nav ── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    /* ── Article Header (dark plum) ── */
+    .article-header {
+      background: #2b1f47;
+      padding-top: 7rem;
+      padding-bottom: 3rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: rgba(208, 208, 231, 0.7);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: rgba(208, 208, 231, 0.85); text-decoration: none; }
+    .breadcrumb a:hover { color: #d0d0e7; }
+    .breadcrumb-sep { opacity: 0.5; }
+
+    .category-badge {
+      display: inline-block;
+      background: #f5dfc5;
+      color: #382f51;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3125rem 0.875rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-headline {
+      font-family: 'Gloock', serif;
+      font-size: clamp(2rem, 4.5vw, 3.125rem);
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.125rem;
+      max-width: 820px;
+    }
+
+    .article-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.0625rem;
+      color: rgba(208, 208, 231, 0.9);
+      line-height: 1.65;
+      max-width: 680px;
+      margin-bottom: 1.75rem;
+    }
+
+    .author-row {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(208, 208, 231, 0.75);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.375rem 0.75rem;
+    }
+    .author-row strong { color: rgba(208,208,231,0.95); }
+    .author-dot { opacity: 0.45; }
+
+    /* ── Hero Image ── */
+    .hero-image-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      margin-top: 2.5rem;
+      box-shadow: 0 12px 48px rgba(43, 31, 71, 0.35);
+    }
+
+    /* ── Layout ── */
+    .layout-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      align-items: start;
+    }
+    @media (min-width: 1024px) {
+      .two-col {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        gap: 3.5rem;
+      }
+    }
+
+    /* ── Article Body Prose ── */
+    .prose {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #515e71;
+      max-width: 65ch;
+    }
+
+    .prose p { margin-bottom: 1.5rem; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    .prose h2 {
+      font-family: 'Gloock', serif;
+      font-size: clamp(1.4375rem, 2.5vw, 1.875rem);
+      color: #2b1f47;
+      line-height: 1.2;
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .prose h3 {
+      font-family: 'Gloock', serif;
+      font-size: 1.25rem;
+      color: #382f51;
+      line-height: 1.25;
+      margin-top: 2rem;
+      margin-bottom: 0.625rem;
+    }
+
+    .prose ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .prose ul li {
+      padding-left: 1.625rem;
+      position: relative;
+    }
+    .prose ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #5b4e7f;
+      flex-shrink: 0;
+    }
+
+    .prose strong { color: #382f51; font-weight: 700; }
+
+    /* Inline image in prose */
+    .prose-img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      margin: 2rem 0;
+    }
+
+    /* ── Callout Box ── */
+    .callout {
+      background: rgba(56, 47, 81, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #382f51;
+      font-weight: 500;
+    }
+
+    /* ── Evaluation Table ── */
+    .eval-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1.25rem 0 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(91, 78, 127, 0.15);
+    }
+    .eval-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.875rem 1.125rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9375rem;
+      color: #515e71;
+      line-height: 1.55;
+    }
+    .eval-list li:not(:last-child) { border-bottom: 1px solid rgba(91, 78, 127, 0.10); }
+    .eval-list li:nth-child(odd) { background: rgba(248, 247, 252, 0.8); }
+    .eval-list li:nth-child(even) { background: #ffffff; }
+    .eval-check {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      color: #5b4e7f;
+    }
+
+    /* ── Social Share ── */
+    .social-share {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(91, 78, 127, 0.12);
+    }
+    .social-share-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #5b4e7f;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4375rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .share-btn:hover { transform: translateY(-1px); }
+    .share-wa { background: #e6faf1; color: #128c4c; }
+    .share-wa:hover { background: #d1f5e4; }
+    .share-fb { background: #e8eeff; color: #1877f2; }
+    .share-fb:hover { background: #d9e5ff; }
+
+    /* ── Sidebar ── */
+    .sidebar { position: static; }
+    @media (min-width: 1024px) {
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+      }
+    }
+
+    /* Sidebar Cards */
+    .sidebar-card {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    /* CTA Card */
+    .cta-card {
+      background: #382f51;
+      padding: 1.75rem;
+    }
+    .cta-card-title {
+      font-family: 'Gloock', serif;
+      font-size: 1.1875rem;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 0.375rem;
+    }
+    .cta-card-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: #f5dfc5;
+      margin-bottom: 1rem;
+    }
+    .cta-features {
+      list-style: none;
+      margin-bottom: 1.375rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cta-features li {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      color: rgba(208, 208, 231, 0.85);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .cta-features li::before {
+      content: '✓';
+      color: #f5dfc5;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #25d366;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      padding: 0.8125rem 1.25rem;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+      transition: background 0.18s ease, transform 0.18s ease;
+      width: 100%;
+      text-align: center;
+    }
+    .btn-wa:hover { background: #1da854; transform: translateY(-1px); }
+
+    .btn-phone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      color: rgba(208, 208, 231, 0.9);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.625rem 1rem;
+      border-radius: 8px;
+      transition: background 0.18s ease;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(208,208,231,0.2);
+    }
+    .btn-phone:hover { background: rgba(255,255,255,0.15); }
+
+    /* TOC Card */
+    .toc-card {
+      background: #f8f7fc;
+      padding: 1.5rem;
+      border: 1px solid rgba(91, 78, 127, 0.12);
+    }
+    .toc-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5b4e7f;
+      margin-bottom: 0.875rem;
+    }
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+    .toc-list li a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #515e71;
+      text-decoration: none;
+      display: block;
+      padding: 0.375rem 0.5rem;
+      border-radius: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
+      line-height: 1.45;
+    }
+    .toc-list li a:hover {
+      background: rgba(91, 78, 127, 0.08);
+      color: #382f51;
+    }
+    .toc-list li a.active {
+      background: rgba(91, 78, 127, 0.1);
+      color: #382f51;
+      font-weight: 600;
+    }
+
+    /* Related mini-cards in sidebar */
+    .related-card-mini {
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid rgba(91, 78, 127, 0.12);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+    .related-card-mini:hover {
+      box-shadow: 0 4px 20px rgba(56, 47, 81, 0.12);
+    }
+    .related-card-mini-inner {
+      padding: 0.875rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .related-tag-mini {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #5b4e7f;
+    }
+    .related-title-mini {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #2b1f47;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+    .related-meta-mini {
+      font-size: 0.75rem;
+      color: rgba(81, 94, 113, 0.65);
+    }
+
+    /* ── End Article CTA ── */
+    .end-cta {
+      background: #2b1f47;
+      padding: 4rem 1.5rem;
+    }
+    .end-cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .end-cta h2 {
+      font-family: 'Gloock', serif;
+      font-size: clamp(1.625rem, 3.5vw, 2.375rem);
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .end-cta p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: rgba(208, 208, 231, 0.88);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+    .author-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255,255,255,0.08);
+      border-radius: 100px;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #5b4e7f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Gloock', serif;
+      font-size: 1rem;
+      color: #d0d0e7;
+      flex-shrink: 0;
+    }
+    .author-badge-info {
+      text-align: left;
+    }
+    .author-badge-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #ffffff;
+      display: block;
+    }
+    .author-badge-cred {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(208,208,231,0.7);
+    }
+    .end-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.875rem;
+      margin-bottom: 2rem;
+    }
+    .btn-wa-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25d366;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.9375rem 1.875rem;
+      border-radius: 10px;
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+    .btn-wa-lg:hover { background: #1da854; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.9375rem 1.875rem;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.55);
+    }
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 1.75rem;
+    }
+    .trust-item {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      color: rgba(208,208,231,0.7);
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    .trust-item .stars { color: #f5dfc5; letter-spacing: -0.03em; }
+
+    /* ── Related Articles ── */
+    .related-section {
+      background: #f8f7fc;
+      padding: 3.5rem 1.5rem;
+    }
+    .related-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .related-headline {
+      font-family: 'Gloock', serif;
+      font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+      color: #2b1f47;
+      margin-bottom: 2rem;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .related-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .related-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(91, 78, 127, 0.1);
+      transition: box-shadow 0.22s ease, transform 0.22s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .related-card:hover {
+      box-shadow: 0 8px 32px rgba(56, 47, 81, 0.13);
+      transform: translateY(-3px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .related-card:hover { transform: none; }
+    }
+    .related-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .related-card-body {
+      padding: 1.25rem 1.375rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+    .related-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5b4e7f;
+    }
+    .related-title {
+      font-family: 'Gloock', serif;
+      font-size: 1.0625rem;
+      color: #2b1f47;
+      line-height: 1.35;
+      margin-top: 0.125rem;
+    }
+    .related-meta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      color: rgba(81,94,113,0.6);
+      margin-top: 0.25rem;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #2b1f47;
+      padding: 3.5rem 1.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .footer-top { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    }
+    .footer-logo {
+      font-family: 'Gloock', serif;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 0.625rem;
+    }
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(208,208,231,0.65);
+      line-height: 1.65;
+      max-width: 300px;
+    }
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(208,208,231,0.5);
+      margin-bottom: 0.875rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(208,208,231,0.75);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-links a:hover { color: #d0d0e7; }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(208,208,231,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      color: rgba(208,208,231,0.45);
+    }
+    .footer-cedula {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8125rem;
+      color: rgba(208,208,231,0.45);
+    }
+
+    /* ── Floating WhatsApp ── */
+    .fab-wa {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .fab-wa:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fab-wa:hover { transform: none; }
+    }
+    .fab-wa svg { width: 26px; height: 26px; }
+
+    /* ── Reading Mode ── */
+    .reading-mode-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4375rem;
+      background: transparent;
+      border: 1px solid rgba(91, 78, 127, 0.22);
+      color: #5b4e7f;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8125rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.02em;
+    }
+    .reading-mode-btn:hover { background: rgba(91,78,127,0.07); border-color: rgba(91,78,127,0.4); color: #382f51; }
+    .reading-mode-btn svg { flex-shrink: 0; }
+
+    @media (min-width: 1024px) {
+      body.reading-mode .two-col {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 740px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body.reading-mode .sidebar { display: none; }
+      body.reading-mode .prose { max-width: 100%; }
+    }
+
+    /* ── Utility ── */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Reading Progress Bar -->
+<div id="progress-bar" role="progressbar" aria-label="Progreso de lectura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav id="navbar" aria-label="Navegación principal">
+  <div class="layout-wrapper flex items-center justify-between" style="padding-top:0;padding-bottom:0;">
+    <!-- Logo -->
+    <a href="/" class="nav-logo" aria-label="Karen Trujillo Neuropsicóloga — Inicio">Karen Trujillo</a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-6 lg:gap-8">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/#servicios" class="nav-link">Servicios</a>
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20una%20evaluación%20de%20TDAH%20adultos" target="_blank" rel="noopener noreferrer" class="nav-cta">Agendar</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú" class="md:hidden flex flex-col gap-1.5 p-2">
+      <span class="block w-5 h-0.5 bg-plum-ink transition-all" id="ham-1"></span>
+      <span class="block w-5 h-0.5 bg-plum-ink transition-all" id="ham-2"></span>
+      <span class="block w-5 h-0.5 bg-plum-ink transition-all" id="ham-3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden flex-col px-6 pb-4 pt-2 gap-1 bg-white border-t border-lavender/30 shadow-sm" style="display:none;">
+    <a href="/" class="block py-2.5 font-body font-medium text-sm text-ink2">Inicio</a>
+    <a href="/#servicios" class="block py-2.5 font-body font-medium text-sm text-ink2">Servicios</a>
+    <a href="/blog" class="block py-2.5 font-body font-medium text-sm text-ink2">Blog</a>
+    <a href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20una%20evaluación%20de%20TDAH%20adultos" target="_blank" rel="noopener noreferrer" class="mt-2 block text-center nav-cta">Agendar</a>
+  </div>
+</nav>
+
+<!-- ══════════════ ARTICLE HEADER ══════════════ -->
+<header class="article-header">
+  <div class="layout-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/blog">Blog</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">TDAH Adultos</span>
+    </nav>
+
+    <!-- Category badge -->
+    <div class="category-badge">TDAH Adultos</div>
+
+    <!-- Headline -->
+    <h1 class="article-headline">TDAH en adultos: por qué miles llegan al diagnóstico después de los 30</h1>
+
+    <!-- Subtitle -->
+    <p class="article-sub">Te compensaste con inteligencia, te diagnosticaron ansiedad, o simplemente nadie lo vio. Las razones por las que el TDAH adulto se detecta tarde y qué hacer al respecto.</p>
+
+    <!-- Author row -->
+    <div class="author-row">
+      <span>Por <strong>Karen Trujillo</strong>, Neuropsicóloga</span>
+      <span class="author-dot" aria-hidden="true">·</span>
+      <span>Cédula 11009616</span>
+      <span class="author-dot" aria-hidden="true">·</span>
+      <span>10 min de lectura</span>
+      <span class="author-dot" aria-hidden="true">·</span>
+      <span>Actualizado junio 2025</span>
+    </div>
+  </div>
+
+  <!-- Hero image -->
+  <div class="hero-image-wrap">
+    <img
+      src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1600&q=80"
+      alt="Persona adulta en sesión de evaluación neuropsicológica"
+      width="1200"
+      height="500"
+      loading="eager"
+    />
+  </div>
+</header>
+
+<!-- ══════════════ TWO-COLUMN LAYOUT ══════════════ -->
+<div class="layout-wrapper">
+  <div class="two-col">
+
+    <!-- ── LEFT: Article content ── -->
+    <main id="article-content" aria-label="Contenido del artículo">
+
+      <!-- Reading Mode Toggle -->
+      <button
+        id="reading-mode-btn"
+        class="reading-mode-btn"
+        aria-pressed="false"
+        title="Alternar modo lectura"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span class="rm-label">Modo lectura</span>
+      </button>
+
+      <!-- Intro -->
+      <div class="prose">
+        <p>Si llegaste a este artículo con más de 30 años y la sospecha de que algo siempre funcionó diferente en ti, no estás solo. El TDAH adulto es una de las condiciones más subdiagnosticadas en México, y no por falta de síntomas, sino por exceso de compensación.</p>
+      </div>
+
+      <!-- SECTION 1 -->
+      <article class="prose">
+        <h2 id="por-que-tarde">¿Por qué el TDAH adulto se detecta tarde?</h2>
+
+        <img
+          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80"
+          alt="Adulto con dificultades de concentración — compensación cognitiva en TDAH"
+          class="prose-img"
+          width="700"
+          height="380"
+          loading="lazy"
+        />
+
+        <h3>1. Compensación con inteligencia</h3>
+        <p>Muchos adultos con TDAH tienen CI por encima del promedio. Eso les permitió sostenerse académicamente hasta que la demanda cognitiva superó su capacidad de compensación: maestría, trabajo corporativo, hijos. La inteligencia puede enmascarar el trastorno durante décadas, pero no lo elimina. Cuando el entorno se vuelve más exigente, el sistema de compensación se agota.</p>
+
+        <h3>2. Diagnóstico erróneo de ansiedad o depresión</h3>
+        <p>El TDAH adulto coexiste con ansiedad en el 50% de los casos, y sus síntomas se superponen. La persona llega al psicólogo con insomnio, preocupación crónica y dificultad para concentrarse — y se va con un diagnóstico de TAG. La ansiedad existe, sí, pero a veces es consecuencia de años de intentar funcionar con un cerebro que procesa el mundo de manera diferente, sin que nadie lo sepa.</p>
+
+        <h3>3. El mito del niño hiperactivo</h3>
+        <p>La imagen cultural del TDAH es un niño varón que no se queda en su silla. El TDAH inatento no tiene ese perfil. El adulto inatento parece distraído, olvidadizo, procrastinador — pero nadie lo llama hiperactivo. Esta representación dominante excluye a millones de personas, especialmente mujeres, que pasaron toda su infancia siendo catalogadas como "soñadoras", "despistadas" o "flojas".</p>
+
+        <!-- SECTION 2 -->
+        <h2 id="senales">Señales de TDAH adulto que sí son específicas</h2>
+
+        <ul>
+          <li><strong>Dificultad para sostener la atención en tareas sin estimulación inmediata</strong> (pero hiperfoco en actividades que te enganchan)</li>
+          <li><strong>Procrastinación crónica que no cedes sobre tareas importantes</strong> — no por pereza, sino porque el cerebro no genera la activación necesaria sin urgencia real o interés genuino</li>
+          <li><strong>Olvidar compromisos, citas y conversaciones recientes con frecuencia</strong> — no como descuido, sino como un patrón sistemático a lo largo de los años</li>
+          <li><strong>Sensación de que el tiempo pasa de forma distinta:</strong> los plazos no se perciben como reales hasta el último momento, lo que genera ciclos de crisis y alivio</li>
+          <li><strong>Dificultad para regular emociones:</strong> irritabilidad breve e intensa, frustración desproporcionada ante obstáculos pequeños</li>
+          <li><strong>Historial de múltiples proyectos empezados y abandonados</strong> — el interés inicial es genuino, pero sostenerse sin novedad es estructuralmente difícil</li>
+        </ul>
+
+        <!-- Callout -->
+        <aside class="callout" role="note">
+          El TDAH no es falta de voluntad. Es una diferencia neurofisiológica en la regulación del neurotransmisor dopamina que afecta el sistema de motivación y la función ejecutiva del cerebro.
+        </aside>
+
+        <!-- SECTION 3 -->
+        <h2 id="cuando-buscar">¿Cuándo buscar una evaluación?</h2>
+
+        <p>Si varios de los puntos anteriores te describen con consistencia a lo largo de tu vida (no solo en periodos de estrés), una evaluación neuropsicológica puede darte claridad. El diagnóstico diferencial — distinguir TDAH de ansiedad, burnout o depresión — requiere pruebas estandarizadas, no solo un cuestionario. La diferencia entre "tengo TDAH" y "estoy en burnout" no es semántica: el tratamiento y las estrategias son distintos.</p>
+
+        <!-- SECTION 4 -->
+        <h2 id="evaluacion">Qué incluye la evaluación de TDAH adulto con Karen Trujillo</h2>
+
+        <p>La valoración neuropsicológica de TDAH en adultos incluye un conjunto de instrumentos estandarizados que permiten obtener un diagnóstico diferencial preciso:</p>
+
+        <ul class="eval-list" role="list">
+          <li>
+            <svg class="eval-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#5b4e7f" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#5b4e7f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Entrevista clínica estructurada (DIVA 2.0)</strong> — diagnóstico retrospectivo de TDAH con criterios DSM-5</span>
+          </li>
+          <li>
+            <svg class="eval-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#5b4e7f" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#5b4e7f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>CAARS-2</strong> — Conners' Adult ADHD Rating Scales (evaluación de síntomas de inatención, hiperactividad e impulsividad)</span>
+          </li>
+          <li>
+            <svg class="eval-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#5b4e7f" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#5b4e7f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>WAIS-IV</strong> — inteligencia general y velocidad de procesamiento para descartar déficits cognitivos</span>
+          </li>
+          <li>
+            <svg class="eval-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#5b4e7f" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#5b4e7f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>BRIEF-2A</strong> — evaluación de funciones ejecutivas en adultos (planificación, monitoreo, flexibilidad)</span>
+          </li>
+          <li>
+            <svg class="eval-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#5b4e7f" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#5b4e7f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>CPT-3</strong> — atención sostenida y control inhibitorio (prueba computarizada objetiva)</span>
+          </li>
+          <li>
+            <svg class="eval-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#5b4e7f" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#5b4e7f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Informe clínico completo</strong> con validez ante IMSS, empleadores e instituciones educativas</span>
+          </li>
+        </ul>
+
+        <!-- Closing paragraph -->
+        <p>La evaluación neuropsicológica no te pone una etiqueta. Te devuelve contexto: entiende por qué ciertas cosas han sido difíciles, y qué estrategias concretas pueden funcionar para ti. El diagnóstico correcto es el primer paso del tratamiento correcto.</p>
+
+        <!-- Social Share -->
+        <div class="social-share">
+          <span class="social-share-label">Compartir:</span>
+          <a
+            href="https://wa.me/?text=TDAH%20en%20adultos%3A%20por%20qué%20miles%20llegan%20al%20diagnóstico%20después%20de%20los%2030%20https%3A%2F%2Fkarentrujillo.com%2Fblog%2Ftdah-adultos-diagnostico-tardio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn share-wa"
+            aria-label="Compartir en WhatsApp"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+            WhatsApp
+          </a>
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkarentrujillo.com%2Fblog%2Ftdah-adultos-diagnostico-tardio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="share-btn share-fb"
+            aria-label="Compartir en Facebook"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <!-- ── RIGHT: Sidebar ── -->
+    <aside class="sidebar" aria-label="Información adicional y recursos">
+
+      <!-- CTA Card -->
+      <div class="sidebar-card cta-card">
+        <p class="cta-card-title">Valoración TDAH Adultos</p>
+        <p class="cta-card-price">$8,300 MXN</p>
+        <ul class="cta-features" aria-label="Incluye">
+          <li>CAARS-2, WAIS-IV, BRIEF-2A, CPT-3</li>
+          <li>Entrevista estructurada DIVA 2.0</li>
+          <li>Informe con validez oficial</li>
+          <li>Entrega en 2–3 semanas</li>
+          <li>Todo incluido, sin costos extras</li>
+        </ul>
+        <a
+          href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20una%20evaluación%20de%20TDAH%20adultos"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-wa"
+          aria-label="Escribir por WhatsApp para agendar evaluación"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+          Escribir por WhatsApp
+        </a>
+        <a href="tel:+529983211547" class="btn-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Llamar: +52 998 321 1547
+        </a>
+      </div>
+
+      <!-- Table of Contents Card -->
+      <div class="sidebar-card toc-card">
+        <p class="toc-title" id="toc-label">En este artículo</p>
+        <nav aria-labelledby="toc-label">
+          <ul class="toc-list" role="list">
+            <li><a href="#por-que-tarde" class="toc-link">¿Por qué el TDAH adulto se detecta tarde?</a></li>
+            <li><a href="#senales" class="toc-link">Señales específicas de TDAH adulto</a></li>
+            <li><a href="#cuando-buscar" class="toc-link">¿Cuándo buscar una evaluación?</a></li>
+            <li><a href="#evaluacion" class="toc-link">Qué incluye la evaluación</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Also interested card -->
+      <div class="sidebar-card" style="border-radius:16px; overflow:hidden;">
+        <div style="padding: 1rem 1.25rem 0.75rem; background:#f8f7fc; border-bottom:1px solid rgba(91,78,127,0.1);">
+          <p class="toc-title" style="margin-bottom:0;">También te puede interesar</p>
+        </div>
+        <div style="background:#ffffff; padding:1rem; display:flex; flex-direction:column; gap:0.875rem;">
+          <a href="/blog/tdah-o-ansiedad" class="related-card-mini" style="display:block; text-decoration:none;">
+            <div class="related-card-mini-inner">
+              <span class="related-tag-mini">Diagnóstico diferencial</span>
+              <span class="related-title-mini">¿TDAH o ansiedad? Cómo saber cuál es cuál</span>
+              <span class="related-meta-mini">9 min de lectura</span>
+            </div>
+          </a>
+          <a href="/blog/burnout-vs-tdah" class="related-card-mini" style="display:block; text-decoration:none;">
+            <div class="related-card-mini-inner">
+              <span class="related-tag-mini">Salud mental</span>
+              <span class="related-title-mini">Burnout vs. TDAH: ¿por qué te sientes así?</span>
+              <span class="related-meta-mini">9 min de lectura</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ══════════════ END-OF-ARTICLE CTA ══════════════ -->
+<section class="end-cta" aria-labelledby="end-cta-heading">
+  <div class="end-cta-inner">
+    <div class="author-badge" style="margin: 0 auto 1.75rem;">
+      <div class="author-avatar" aria-hidden="true">KT</div>
+      <div class="author-badge-info">
+        <span class="author-badge-name">Karen Trujillo</span>
+        <span class="author-badge-cred">Neuropsicóloga · Cédula 11009616</span>
+      </div>
+    </div>
+
+    <h2 id="end-cta-heading">¿Te identificaste con algo de lo que leíste?</h2>
+
+    <p>Una evaluación neuropsicológica puede darte respuestas concretas. No un cuestionario de internet — pruebas estandarizadas internacionales con un informe que tiene validez oficial.</p>
+
+    <div class="end-cta-btns">
+      <a
+        href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20una%20evaluación%20de%20TDAH%20adultos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-wa-lg"
+        aria-label="Agendar evaluación por WhatsApp"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+        Agendar por WhatsApp
+      </a>
+      <a href="/#servicios" class="btn-ghost">
+        Ver todos los servicios
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+
+    <div class="trust-signals">
+      <div class="trust-item">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span>47+ reseñas verificadas</span>
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        7+ años de experiencia
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Cancún, Q. Roo
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ RELATED ARTICLES ══════════════ -->
+<section class="related-section" aria-labelledby="related-heading">
+  <div class="related-inner">
+    <h2 class="related-headline" id="related-heading">Artículos relacionados</h2>
+    <div class="related-grid">
+
+      <!-- Card 1 -->
+      <a href="/blog/senales-tdah-ninos" class="related-card" aria-label="¿Tu hijo no pone atención? Señales reales de TDAH en niños — 12 minutos de lectura">
+        <img
+          src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=800&q=80"
+          alt="Niño en actividad de aprendizaje — señales de TDAH infantil"
+          width="500"
+          height="280"
+          loading="lazy"
+        />
+        <div class="related-card-body">
+          <span class="related-tag">TDAH Infantil</span>
+          <h3 class="related-title">¿Tu hijo no pone atención? Señales reales de TDAH en niños</h3>
+          <p class="related-meta">12 min de lectura</p>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="/blog/tdah-inatento" class="related-card" aria-label="TDAH inatento: el tipo que casi nadie detecta — 8 minutos de lectura">
+        <img
+          src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+          alt="Persona adulta concentrada — TDAH inatento"
+          width="500"
+          height="280"
+          loading="lazy"
+        />
+        <div class="related-card-body">
+          <span class="related-tag">TDAH Inatento</span>
+          <h3 class="related-title">TDAH inatento: el tipo que casi nadie detecta</h3>
+          <p class="related-meta">8 min de lectura</p>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="/blog/costo-valoracion-tdah-cancun" class="related-card" aria-label="¿Cuánto cuesta una valoración de TDAH en Cancún? — 7 minutos de lectura">
+        <img
+          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80"
+          alt="Evaluación neuropsicológica — proceso y costo en Cancún"
+          width="500"
+          height="280"
+          loading="lazy"
+        />
+        <div class="related-card-body">
+          <span class="related-tag">Precios</span>
+          <h3 class="related-title">¿Cuánto cuesta una valoración de TDAH en Cancún?</h3>
+          <p class="related-meta">7 min de lectura</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="site-footer" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Pie de página</h2>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <!-- Brand col -->
+      <div>
+        <p class="footer-logo">Karen Trujillo</p>
+        <p class="footer-desc">Neuropsicóloga especializada en diagnóstico de TDAH y autismo en Cancún. Evaluaciones con instrumentos estandarizados internacionales e informes con validez oficial.</p>
+      </div>
+
+      <!-- Services col -->
+      <div>
+        <p class="footer-col-title">Servicios</p>
+        <ul class="footer-links">
+          <li><a href="/evaluacion-tdah-ninos">TDAH en Niños</a></li>
+          <li><a href="/evaluacion-tdah-adultos">TDAH en Adultos</a></li>
+          <li><a href="/evaluacion-autismo-cancun">Evaluación Autismo</a></li>
+          <li><a href="/para-escuelas">Para Escuelas</a></li>
+        </ul>
+      </div>
+
+      <!-- Info col -->
+      <div>
+        <p class="footer-col-title">Información</p>
+        <ul class="footer-links">
+          <li><a href="/#sobre-karen">Sobre Karen</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/neuropsicologia-cancun">Neuropsicología en Cancún</a></li>
+          <li><a href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20una%20evaluación%20de%20TDAH%20adultos" target="_blank" rel="noopener noreferrer">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Karen Trujillo — Neuropsicóloga. Cancún, Quintana Roo.</p>
+      <p class="footer-cedula">Cédula Profesional 11009616 · SEP México</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ FLOATING WHATSAPP ══════════════ -->
+<a
+  href="https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20una%20evaluación%20de%20TDAH%20adultos"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fab-wa"
+  aria-label="Escribir por WhatsApp a Karen Trujillo"
+>
+  <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.543a.75.75 0 00.9.9l5.698-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75A9.75 9.75 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/>
+  </svg>
+</a>
+
+<!-- ══════════════ SCRIPTS ══════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Reading Progress Bar ── */
+  var bar = document.getElementById('progress-bar');
+
+  function updateProgress() {
+    var docEl = document.documentElement;
+    var scrollTop = window.scrollY || docEl.scrollTop;
+    var scrollHeight = docEl.scrollHeight - docEl.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    bar.style.width = pct.toFixed(2) + '%';
+    bar.setAttribute('aria-valuenow', Math.round(pct));
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  /* ── Navbar Scroll Behavior ── */
+  var navbar = document.getElementById('navbar');
+
+  function updateNavbar() {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  /* ── Mobile Menu Toggle ── */
+  var toggle = document.getElementById('nav-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var ham1 = document.getElementById('ham-1');
+  var ham2 = document.getElementById('ham-2');
+  var ham3 = document.getElementById('ham-3');
+
+  toggle.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.contains('open');
+    if (isOpen) {
+      mobileMenu.classList.remove('open');
+      mobileMenu.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menú');
+      ham1.style.transform = '';
+      ham2.style.opacity = '';
+      ham3.style.transform = '';
+    } else {
+      mobileMenu.classList.add('open');
+      mobileMenu.style.display = 'flex';
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Cerrar menú');
+      if (!prefersReducedMotion) {
+        ham1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+        ham2.style.opacity = '0';
+        ham3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+      }
+    }
+  });
+
+  /* ── Smooth Scroll for TOC links ── */
+  var tocLinks = document.querySelectorAll('.toc-link');
+
+  tocLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        var target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          var offset = 110;
+          var top = target.getBoundingClientRect().top + window.scrollY - offset;
+          if (prefersReducedMotion) {
+            window.scrollTo(0, top);
+          } else {
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        }
+      }
+    });
+  });
+
+  /* ── TOC Active Link Highlighting ── */
+  var sections = [
+    { id: 'por-que-tarde' },
+    { id: 'senales' },
+    { id: 'cuando-buscar' },
+    { id: 'evaluacion' },
+  ];
+
+  function updateTocActive() {
+    var scrollY = window.scrollY;
+    var offset = 130;
+    var current = null;
+
+    sections.forEach(function (s) {
+      var el = document.getElementById(s.id);
+      if (el) {
+        var top = el.getBoundingClientRect().top + window.scrollY;
+        if (scrollY >= top - offset) {
+          current = s.id;
+        }
+      }
+    });
+
+    tocLinks.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href === '#' + current) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateTocActive, { passive: true });
+  updateTocActive();
+
+  /* ── Reading Mode Toggle ── */
+  var readingBtn = document.getElementById('reading-mode-btn');
+  if (readingBtn) {
+    readingBtn.addEventListener('click', function () {
+      var isReading = document.body.classList.toggle('reading-mode');
+      readingBtn.querySelector('.rm-label').textContent = isReading ? 'Vista normal' : 'Modo lectura';
+      readingBtn.setAttribute('aria-pressed', isReading ? 'true' : 'false');
+    });
+  }
+
+})();
+</script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "TDAH en adultos: por qué miles llegan al diagnóstico después de los 30",
+      "description": "Te compensaste con inteligencia, te diagnosticaron ansiedad, o simplemente nadie lo vio. Las razones por las que el TDAH adulto se detecta tarde y qué hacer al respecto.",
+      "image": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Karen Trujillo",
+        "jobTitle": "Neuropsicóloga",
+        "identifier": "Cédula Profesional 11009616"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Karen Trujillo Neuropsicóloga",
+        "url": "https://karentrujillo.com"
+      },
+      "datePublished": "2025-06-01",
+      "dateModified": "2025-06-15",
+      "url": "https://karentrujillo.com/blog/tdah-adultos-diagnostico-tardio",
+      "inLanguage": "es-MX",
+      "about": {
+        "@type": "MedicalCondition",
+        "name": "TDAH en adultos",
+        "alternateName": "Trastorno por Déficit de Atención e Hiperactividad en adultos"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Karen Trujillo — Neuropsicóloga",
+      "description": "Evaluación neuropsicológica de TDAH y autismo en Cancún",
+      "telephone": "+529983211547",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cancún",
+        "addressRegion": "Quintana Roo",
+        "addressCountry": "MX"
+      },
+      "url": "https://karentrujillo.com",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Por qué el TDAH adulto se detecta tarde?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El TDAH adulto se detecta tarde por tres razones principales: compensación con inteligencia, diagnóstico erróneo de ansiedad o depresión, y el mito del niño hiperactivo que ignora el perfil inatento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pruebas incluye la evaluación de TDAH adulto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La evaluación incluye entrevista DIVA 2.0, CAARS-2, WAIS-IV, BRIEF-2A y CPT-3, con informe clínico completo con validez oficial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la evaluación de TDAH adulto en Cancún?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La valoración de TDAH adultos tiene un costo de $8,300 MXN todo incluido, con entrega de informe en 2-3 semanas."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, Brain, AlertTriangle, CheckCircle2, HelpCircle } from 'lucide-react';
+import { ArrowRight, Brain, AlertTriangle, CheckCircle2, HelpCircle, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20autismo%20nivel%201%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20autismo%20nivel%201%20y%20quisiera%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n`;
 
 const sintomasCotidianos = [
   {
@@ -92,7 +95,7 @@ const faqItems = [
   },
   {
     q: '¿Cómo se diagnostica el autismo nivel 1 en adultos en Cancún?',
-    a: 'La neuropsicóloga Karen Trujillo (cédula 11009616) realiza evaluaciones de TEA en Cancún usando el ADOS-2 (el estándar de oro mundial para diagnóstico de autismo), junto con ADI-R, WISC-V o WAIS-IV, Vineland-3 y SRS-2. El proceso dura 3-4 semanas (5-6 sesiones). El informe incluye diagnóstico formal según DSM-5, nivel de apoyo requerido y recomendaciones de intervención con validez oficial ante instituciones.',
+    a: 'La neuropsicóloga Karen Trujillo (cédula ' + CEDULA + ') realiza evaluaciones de TEA en Cancún usando el ADOS-2 (el estándar de oro mundial para diagnóstico de autismo), junto con ADI-R, WISC-V o WAIS-IV, Vineland-3 y SRS-2. El proceso dura 3-4 semanas (5-6 sesiones). El informe incluye diagnóstico formal según DSM-5, nivel de apoyo requerido y recomendaciones de intervención con validez oficial ante instituciones.',
   },
   {
     q: '¿Tiene sentido diagnosticarse como adulto?',
@@ -113,26 +116,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos/#article',
+      '@id': `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos/#article`,
       headline: 'Autismo nivel 1: cuando no pareces autista pero lo eres',
       description: 'El autismo nivel 1 (antes Asperger) en adultos tiene síntomas distintos al autismo clásico. Sin diagnóstico previo, muchos adultos llevan años sintiéndose diferentes sin saber por qué. Evaluación en Cancún.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2026-06-02',
       dateModified: '2026-06-02',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos',
+      mainEntityOfPage: `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos`,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -147,9 +150,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'Autismo nivel 1: síntomas en adultos', item: 'https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'Autismo nivel 1: síntomas en adultos', item: `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos` },
       ],
     },
     {
@@ -159,27 +162,34 @@ const schema = {
   ],
 };
 
+const CANONICAL_URL = `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos`;
+const HEADLINE = 'Autismo nivel 1: cuando no pareces autista pero lo eres';
+
 export default function AutismoNivel1SintomasAdultos() {
+  const [linkCopied, setLinkCopied] = useState(false);
+
   return (
     <>
       <Head>
-        <title>Autismo Nivel 1 en Adultos: síntomas y diagnóstico tardío | Karen Trujillo Cancún</title>
+        <title>Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío</title>
         <meta name="description" content="El autismo nivel 1 (antes Asperger) en adultos tiene síntomas distintos al autismo clásico. Sin diagnóstico previo, muchos adultos llevan años sintiéndose diferentes sin saber por qué. Evaluación en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío" />
         <meta property="og:description" content="No hay discapacidad intelectual. Hay lenguaje fluido. Hay personas que funcionan — y se agotan en el intento. El TEA nivel 1 es el perfil que más tarda en diagnosticarse." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/autismo-nivel-1-sintomas-adultos" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — autismo nivel 1 adultos diagnóstico" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-02" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Autismo Nivel 1 en adultos: síntomas y diagnóstico tardío | Karen Trujillo" />
         <meta name="twitter:description" content="El TEA nivel 1 (antes Asperger) es el perfil autista que más tarda en diagnosticarse. Señales en adultos y cómo evaluarlo en Cancún." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -188,33 +198,54 @@ export default function AutismoNivel1SintomasAdultos() {
         <main>
 
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 animate-pulse" />
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
-                <ol className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
-                  <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
+                <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                  <li><Link href="/" className="hover:text-[#d0d0e7] transition-colors">Inicio</Link></li>
                   <li>/</li>
-                  <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+                  <li><Link href="/blog" className="hover:text-[#d0d0e7] transition-colors">Blog</Link></li>
                   <li>/</li>
-                  <li className="text-primary font-medium">Autismo nivel 1</li>
+                  <li className="font-medium" style={{ color: '#d0d0e7' }}>Autismo nivel 1</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full mb-4 text-xs font-bold uppercase tracking-widest text-white" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
                   Autismo / TEA — Diagnóstico tardío
                 </span>
-                <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
+                <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
                   Autismo nivel 1: cuando no pareces autista pero lo eres
                 </h1>
-                <p className="text-muted-foreground text-lg font-light leading-relaxed mb-6">
+                <p className="text-lg font-light leading-relaxed mb-6" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   No hay discapacidad intelectual. Hay lenguaje fluido. Hay personas que funcionan — y se agotan en el intento. El TEA nivel 1 es el perfil que más tarda en diagnosticarse.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-t border-border pt-4">
-                  <span>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2026-06-02">2 jun 2026</time>
                   <span>Cancún, Quintana Roo</span>
                   <span>10 min de lectura</span>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen destacada (placeholder) ── */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg"
+                    alt="Autismo nivel 1: cuando no pareces autista pero lo eres — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -263,6 +294,25 @@ export default function AutismoNivel1SintomasAdultos() {
                     </p>
                   </div>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen inline 1 (placeholder) ── */}
+          <section className="py-12 px-6 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/sand-enmascaramiento-social-960x540.svg"
+                    alt="Adulto con TEA nivel 1 procesando interacciones sociales — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -317,6 +367,25 @@ export default function AutismoNivel1SintomasAdultos() {
             </div>
           </section>
 
+          {/* ── Imagen inline 2 (placeholder) ── */}
+          <section className="py-12 px-6 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/lavender-evaluacion-de-tea-con-ados-2-960x540.svg"
+                    alt="Sesión de evaluación de TEA nivel 1 en adultos — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </motion.div>
+            </div>
+          </section>
+
           {/* ── Diferencias TEA vs TDAH ── */}
           <section id="diferencias-tdah" className="py-16 px-6 bg-card">
             <div className="max-w-3xl mx-auto">
@@ -364,16 +433,56 @@ export default function AutismoNivel1SintomasAdultos() {
                 <HelpCircle className="w-6 h-6 text-accent-blue" />
                 Preguntas frecuentes
               </h2>
-              <div className="space-y-3">
+              <div role="list">
                 {faqItems.map((faq, i) => (
-                  <details key={i} className="group bg-card border-2 border-border hover:border-accent-blue rounded-xl transition-all open:border-primary open:shadow-lg">
-                    <summary className="p-5 font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4 text-sm">
+                  <details key={i} className="group" role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }}>
+                    <summary className="w-full py-5 sm:py-6 font-bold text-primary text-sm sm:text-base cursor-pointer list-none flex justify-between items-center gap-4 text-left">
                       <span>{faq.q}</span>
-                      <span className="text-muted-foreground shrink-0 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                      <ChevronDown className="w-3.5 h-3.5 text-muted-foreground shrink-0 transition-transform duration-300 group-open:rotate-180" />
                     </summary>
-                    <p className="px-5 pb-5 text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
+                    <p className="pb-5 sm:pb-6 text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
                   </details>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Compartir ── */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir en Facebook"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${HEADLINE} — ${CANONICAL_URL}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir por WhatsApp"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(CANONICAL_URL);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  aria-label="Copiar enlace"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Link2 className="w-4 h-4" />
+                </button>
+                {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
               </div>
             </div>
           </section>
@@ -383,8 +492,20 @@ export default function AutismoNivel1SintomasAdultos() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Crees que puede ser TEA nivel 1?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Si llevas años sintiéndote diferente sin saber por qué, una evaluación neuropsicológica puede darte por fin una respuesta. Karen Trujillo realiza evaluaciones de TEA en Cancún con el ADOS-2, el estándar de oro mundial, y cédula federal 11009616.
+                Si llevas años sintiéndote diferente sin saber por qué, una evaluación neuropsicológica puede darte por fin una respuesta. Karen Trujillo realiza evaluaciones de TEA en Cancún con el ADOS-2, el estándar de oro mundial, y cédula federal {CEDULA}.
               </p>
+              <div className="flex items-center justify-center gap-3 mb-6 text-xs text-primary-foreground/80">
+                <img
+                  src={KAREN_IMAGE}
+                  alt="Neuropsicóloga Karen Trujillo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover object-top"
+                  loading="lazy"
+                />
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
+                <span>★ 47+ reseñas · 5.0</span>
+              </div>
               <div className="flex justify-center">
                 <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-lg hover:opacity-90 transition-all">
@@ -399,20 +520,50 @@ export default function AutismoNivel1SintomasAdultos() {
             <div className="max-w-5xl mx-auto">
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/evaluacion-autismo-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Evaluación de Autismo en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">ADOS-2 · Diagnóstico formal DSM-5 · $8,500 MXN</span>
+                <Link href="/evaluacion-autismo-cancun" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/blush-servicio-640x400.svg"
+                    alt="Evaluación de Autismo en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Evaluación de Autismo en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">ADOS-2 · Diagnóstico formal DSM-5 · $8,500 MXN</span>
+                  </div>
                 </Link>
-                <Link href="/blog/que-es-ados-2-autismo" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">¿Qué es el ADOS-2 y por qué importa?</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">El estándar de oro del diagnóstico de autismo</span>
+                <Link href="/blog/que-es-ados-2-autismo" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/blush-articulo-640x400.svg"
+                    alt="¿Qué es el ADOS-2 y por qué importa?"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">¿Qué es el ADOS-2 y por qué importa?</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">El estándar de oro del diagnóstico de autismo</span>
+                  </div>
                 </Link>
-                <Link href="/blog/tdah-vs-ansiedad-diferencias" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">TDAH vs. ansiedad: cómo diferenciarlos</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas que se parecen pero tienen causas distintas</span>
+                <Link href="/blog/tdah-vs-ansiedad-diferencias" className="bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/lavender-articulo-640x400.svg"
+                    alt="TDAH vs. ansiedad: cómo diferenciarlos"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">TDAH vs. ansiedad: cómo diferenciarlos</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Síntomas que se parecen pero tienen causas distintas</span>
+                  </div>
                 </Link>
               </div>
             </div>

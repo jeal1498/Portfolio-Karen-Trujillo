@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, AlertTriangle, HelpCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, AlertTriangle, HelpCircle, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20le%C3%AD%20tu%20gu%C3%ADa%20sobre%20evaluaci%C3%B3n%20de%20TDAH%20en%20Canc%C3%BAn%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20le%C3%AD%20tu%20gu%C3%ADa%20sobre%20evaluaci%C3%B3n%20de%20TDAH%20en%20Canc%C3%BAn%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n`;
+const CANONICAL_URL = `${SITE_URL}/blog/donde-evaluar-tdah-cancun`;
+const ARTICLE_HEADLINE = 'Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)';
 
 const criteriosCalidad = [
   {
@@ -76,7 +81,7 @@ const procesoKaren = [
 const faqItems = [
   {
     q: '¿Dónde se puede evaluar TDAH en Cancún?',
-    a: 'La neuropsicóloga Karen Trujillo (cédula 11009616) realiza evaluaciones neuropsicológicas de TDAH en su consultorio ubicado en SM200 M49 L2, Hacienda de Chinconcuac, Cancún, Quintana Roo. Atiende niños de 5-17 años y adultos de 18 en adelante. El proceso toma 2-3 semanas (4-5 sesiones) y el informe tiene validez oficial ante SEP, IMSS e instituciones.',
+    a: `La neuropsicóloga Karen Trujillo (cédula ${CEDULA}) realiza evaluaciones neuropsicológicas de TDAH en su consultorio ubicado en SM200 M49 L2, Hacienda de Chinconcuac, Cancún, Quintana Roo. Atiende niños de 5-17 años y adultos de 18 en adelante. El proceso toma 2-3 semanas (4-5 sesiones) y el informe tiene validez oficial ante SEP, IMSS e instituciones.`,
   },
   {
     q: '¿Cuánto cuesta una evaluación de TDAH en Cancún?',
@@ -105,26 +110,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun/#article',
+      '@id': `${CANONICAL_URL}/#article`,
       headline: 'Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)',
-      description: 'Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula 11009616).',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      description: `Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula ${CEDULA}).`,
+      image: KAREN_IMAGE,
       datePublished: '2026-06-03',
       dateModified: '2026-06-03',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -139,9 +144,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'Dónde evaluar TDAH en Cancún', item: 'https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'Dónde evaluar TDAH en Cancún', item: CANONICAL_URL },
       ],
     },
     {
@@ -152,26 +157,29 @@ const schema = {
 };
 
 export default function DondeEvaluarTDAHCancun() {
+  const [linkCopied, setLinkCopied] = useState(false);
   return (
     <>
       <Head>
-        <title>Dónde evaluar TDAH en Cancún: guía para elegir bien | Karen Trujillo</title>
-        <meta name="description" content="Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula 11009616)." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun" />
+        <title>Dónde evaluar TDAH en Cancún: guía para elegir bien</title>
+        <meta name="description" content={`Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula ${CEDULA}).`} />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)" />
+        <meta property="og:title" content="Dónde evaluar TDAH en Cancún: guía para elegir bien" />
         <meta property="og:description" content="Ya decidiste que quieres una evaluación. Ahora la pregunta es: ¿cómo elegir bien? Criterios concretos, señales de alerta y el proceso paso a paso." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/donde-evaluar-tdah-cancun" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-donde-evaluar-tdah-en-cancun-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — guía evaluación TDAH" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2026-06-03" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dónde evaluar TDAH en Cancún: guía para elegir bien | Karen Trujillo" />
         <meta name="twitter:description" content="Criterios concretos, señales de alerta y el proceso paso a paso para elegir bien dónde evaluar TDAH en Cancún." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-donde-evaluar-tdah-en-cancun-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
@@ -180,33 +188,54 @@ export default function DondeEvaluarTDAHCancun() {
         <main>
 
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 animate-pulse" />
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
-                <ol className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
-                  <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
+                <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                  <li><Link href="/" className="hover:text-[#d0d0e7] transition-colors">Inicio</Link></li>
                   <li>/</li>
-                  <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+                  <li><Link href="/blog" className="hover:text-[#d0d0e7] transition-colors">Blog</Link></li>
                   <li>/</li>
-                  <li className="text-primary font-medium">Dónde evaluar TDAH en Cancún</li>
+                  <li className="font-medium" style={{ color: '#d0d0e7' }}>Dónde evaluar TDAH en Cancún</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-blue/20 bg-accent-blue/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#f5dfc5', color: '#382f51' }}>
                   Guía local · Cancún
                 </span>
-                <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
+                <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
                   Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar)
                 </h1>
-                <p className="text-muted-foreground text-lg font-light leading-relaxed mb-6">
+                <p className="text-lg font-light leading-relaxed mb-6" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Ya decidiste que quieres una evaluación. Ahora la pregunta es: ¿cómo elegir bien? Esta guía te da los criterios concretos.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-t border-border pt-4">
-                  <span>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(208,208,231,0.18)' }}>
+                  <span><strong style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</strong> · Cédula {CEDULA}</span>
+                  <time dateTime="2026-06-03">3 jun 2026</time>
                   <span>Cancún, Quintana Roo</span>
                   <span>7 min de lectura</span>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen destacada (placeholder) ── */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="/blog/dark-donde-evaluar-tdah-en-cancun-1200x675.svg"
+                    alt="Dónde evaluar TDAH en Cancún: qué buscar (y qué evitar) — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -233,8 +262,27 @@ export default function DondeEvaluarTDAHCancun() {
             </div>
           </section>
 
+          {/* ── Imagen inline 1 (placeholder) ── */}
+          <section className="py-12 px-6 bg-secondary">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/sand-como-elegir-bien-960x540.svg"
+                    alt="Cómo elegir un consultorio confiable para evaluar TDAH en Cancún — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </motion.div>
+            </div>
+          </section>
+
           {/* ── Señales de alerta ── */}
-          <section className="py-16 px-6 bg-secondary">
+          <section className="py-16 px-6 bg-secondary border-t border-border">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl font-serif font-bold text-primary mb-4">Señales de alerta: qué evitar</h2>
@@ -297,10 +345,29 @@ export default function DondeEvaluarTDAHCancun() {
                     <p className="text-xs text-muted-foreground font-light">Duración del proceso completo</p>
                   </div>
                   <div className="bg-secondary border border-border rounded-xl p-5 text-center">
-                    <p className="text-xl font-bold text-primary mb-1">Cédula 11009616</p>
+                    <p className="text-xl font-bold text-primary mb-1">Cédula {CEDULA}</p>
                     <p className="text-xs text-muted-foreground font-light">Habilitación federal SEP</p>
                   </div>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen inline 2 (placeholder) ── */}
+          <section className="py-12 px-6 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/lavender-consultorio-en-cancun-960x540.svg"
+                    alt="Consultorio de evaluación de TDAH de Karen Trujillo en Cancún — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -312,16 +379,56 @@ export default function DondeEvaluarTDAHCancun() {
                 <HelpCircle className="w-6 h-6 text-accent-blue" />
                 Preguntas frecuentes
               </h2>
-              <div className="space-y-3">
+              <div role="list">
                 {faqItems.map((faq, i) => (
-                  <details key={i} className="group bg-card border-2 border-border hover:border-accent-blue rounded-xl transition-all open:border-primary open:shadow-lg">
-                    <summary className="p-5 font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4 text-sm">
+                  <details key={i} className="group" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }} role="listitem">
+                    <summary className="w-full py-5 sm:py-6 font-bold text-primary text-sm sm:text-base cursor-pointer list-none flex justify-between items-center gap-4 text-left">
                       <span>{faq.q}</span>
-                      <span className="text-muted-foreground shrink-0 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                      <ChevronDown className="w-5 h-5 shrink-0 transition-transform duration-300 group-open:rotate-180" />
                     </summary>
-                    <p className="px-5 pb-5 text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
+                    <p className="pb-5 text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
                   </details>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── Compartir ── */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir en Facebook"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${ARTICLE_HEADLINE} — ${CANONICAL_URL}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir por WhatsApp"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(CANONICAL_URL);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  aria-label="Copiar enlace"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Link2 className="w-4 h-4" />
+                </button>
+                {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
               </div>
             </div>
           </section>
@@ -331,8 +438,19 @@ export default function DondeEvaluarTDAHCancun() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Listo para agendar?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Karen Trujillo es neuropsicóloga clínica con cédula federal 11009616, especializada en evaluación de TDAH en Cancún. Atiende niños de 5-17 años y adultos. El informe tiene validez oficial ante SEP, IMSS e instituciones.
+                Karen Trujillo es neuropsicóloga clínica con cédula federal {CEDULA}, especializada en evaluación de TDAH en Cancún. Atiende niños de 5-17 años y adultos. El informe tiene validez oficial ante SEP, IMSS e instituciones.
               </p>
+              <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
+                <img
+                  src={KAREN_IMAGE}
+                  alt="Neuropsicóloga Karen Trujillo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
+                />
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
+                <span>★ 47+ reseñas · 5.0</span>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-lg hover:opacity-90 transition-all">
@@ -355,20 +473,50 @@ export default function DondeEvaluarTDAHCancun() {
             <div className="max-w-5xl mx-auto">
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
+                <Link href="/evaluacion-tdah-ninos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/lavender-valoracion-tdah-infantil-640x400.svg"
+                    alt="Valoración TDAH Infantil en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Niños de 5 a 17 años · $8,300 MXN</span>
+                  </div>
                 </Link>
-                <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
+                <Link href="/evaluacion-tdah-adultos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/lavender-valoracion-tdah-adultos-640x400.svg"
+                    alt="Valoración TDAH Adultos en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Desde 18 años · $8,300 MXN</span>
+                  </div>
                 </Link>
-                <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">¿Cuánto cuesta la valoración de TDAH en Cancún?</span>
-                  <span className="block text-xs text-muted-foreground mt-1 font-light">Precios, qué incluye y cómo pagarlo</span>
+                <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/sand-costo-de-la-valoracion-640x400.svg"
+                    alt="¿Cuánto cuesta la valoración de TDAH en Cancún?"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Artículo</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">¿Cuánto cuesta la valoración de TDAH en Cancún?</span>
+                    <span className="block text-xs text-muted-foreground mt-1 font-light">Precios, qué incluye y cómo pagarlo</span>
+                  </div>
                 </Link>
               </div>
             </div>

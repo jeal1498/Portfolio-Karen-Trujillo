@@ -9,11 +9,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, GEO } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20soy%20docente%2Forientador%20y%20quisiera%20referir%20a%20un%20alumno%20para%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica';
+const CANONICAL_URL = `${SITE_URL}/para-escuelas`;
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20soy%20docente%2Forientador%20y%20quisiera%20referir%20a%20un%20alumno%20para%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -43,7 +46,7 @@ const queIncluye = [
   {
     titulo: 'Validez oficial SEP',
     descripcion:
-      'El informe está emitido por la psic. Karen Trujillo (cédula federal 11009616), miembro del Colegio de Psicólogos de Quintana Roo. Tiene plena validez ante la SEP y es suficiente para implementar adecuaciones curriculares.',
+      `El informe está emitido por la psic. Karen Trujillo (cédula federal ${CEDULA}), miembro del Colegio de Psicólogos de Quintana Roo. Tiene plena validez ante la SEP y es suficiente para implementar adecuaciones curriculares.`,
   },
   {
     titulo: 'Sesión de orientación disponible',
@@ -103,7 +106,7 @@ const faqItems = [
   },
   {
     q: '¿El informe sirve para implementar adecuaciones curriculares?',
-    a: 'Sí. El informe neuropsicológico de Karen Trujillo (cédula federal 11009616) tiene validez oficial ante la SEP y es el documento que permite a las escuelas implementar adecuaciones curriculares formales. Incluye diagnóstico DSM-5, perfil cognitivo completo y recomendaciones pedagógicas específicas — no genéricas.',
+    a: `Sí. El informe neuropsicológico de Karen Trujillo (cédula federal ${CEDULA}) tiene validez oficial ante la SEP y es el documento que permite a las escuelas implementar adecuaciones curriculares formales. Incluye diagnóstico DSM-5, perfil cognitivo completo y recomendaciones pedagógicas específicas — no genéricas.`,
   },
   {
     q: '¿Cuánto tiempo tarda el proceso de evaluación?',
@@ -131,11 +134,11 @@ const schema = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/para-escuelas/#page',
+      '@id': `${CANONICAL_URL}/#page`,
       name: 'Evaluaciones Neuropsicológicas para Escuelas en Cancún',
       description:
         'Karen Trujillo ofrece evaluaciones de TDAH y autismo para alumnos en Cancún con informe válido ante SEP. Referidos desde escuelas bienvenidos.',
-      url: 'https://www.psicologakarentrujillo.com.mx/para-escuelas',
+      url: CANONICAL_URL,
       inLanguage: 'es-MX',
       speakable: {
         '@type': 'SpeakableSpecification',
@@ -149,13 +152,13 @@ const schema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Inicio',
-          item: 'https://www.psicologakarentrujillo.com.mx',
+          item: SITE_URL,
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Para Escuelas',
-          item: 'https://www.psicologakarentrujillo.com.mx/para-escuelas',
+          item: CANONICAL_URL,
         },
       ],
     },
@@ -229,14 +232,14 @@ export default function ParaEscuelas() {
         <title>Evaluaciones Neuropsicológicas para Escuelas en Cancún | Karen Trujillo</title>
         <meta
           name="description"
-          content="Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas. Cédula 11009616."
+          content={`Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas. Cédula ${CEDULA}.`}
         />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/para-escuelas" />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
@@ -249,8 +252,11 @@ export default function ParaEscuelas() {
           property="og:description"
           content="Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas."
         />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/para-escuelas" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -259,8 +265,9 @@ export default function ParaEscuelas() {
         />
         <meta
           name="twitter:description"
-          content="Informe neuropsicológico con validez SEP, cuestionarios para maestros y recomendaciones pedagógicas específicas. Cédula 11009616."
+          content={`Informe neuropsicológico con validez SEP, cuestionarios para maestros y recomendaciones pedagógicas específicas. Cédula ${CEDULA}.`}
         />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script
           type="application/ld+json"
@@ -285,51 +292,39 @@ export default function ParaEscuelas() {
           {/* ══════════════════════════════════════════════════════
               1 · HERO
               ══════════════════════════════════════════════════════ */}
-          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div
-              className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse"
-              style={{ animationDelay: '1.5s' }}
-            />
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-            <div
-              className="absolute inset-0 opacity-[0.025]"
-              style={{
-                backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-                backgroundSize: '32px 32px',
-              }}
-            />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
 
               <nav aria-label="Breadcrumb" className="mb-6 animate-[fadeIn_0.6s_ease-out_both]">
-                <ol className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <ol className="flex items-center justify-center gap-2 text-xs" style={{ color: 'rgba(208,208,231,0.6)' }}>
                   <li>
-                    <Link href="/" className="hover:text-primary transition-colors">
+                    <Link href="/" className="hover:text-white transition-colors">
                       Inicio
                     </Link>
                   </li>
-                  <li className="text-border">/</li>
-                  <li className="text-primary font-medium">Para Escuelas</li>
+                  <li style={{ color: 'rgba(208,208,231,0.3)' }}>/</li>
+                  <li className="text-white font-medium">Para Escuelas</li>
                 </ol>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/10 max-w-full">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 max-w-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}>
                   <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-sm shadow-success shrink-0" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground text-center leading-snug">
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(208,208,231,0.8)' }}>
                     Para docentes y orientadores · Cancún
                   </span>
                 </div>
 
-                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-[1.1] mb-6 text-balance">
+                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-6 text-balance">
                   Evaluaciones neuropsicológicas<br className="hidden sm:block" /> para escuelas en Cancún
                 </h1>
 
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Informes con diagnóstico formal, perfil cognitivo y recomendaciones pedagógicas específicas.{' '}
-                  <strong className="text-primary font-semibold">Validez oficial SEP.</strong>{' '}
+                  <strong className="text-white font-semibold">Validez oficial SEP.</strong>{' '}
                   Referidos bienvenidos.
                 </p>
               </div>
@@ -337,14 +332,15 @@ export default function ParaEscuelas() {
               {/* Trust stat chips */}
               <div className="animate-[fadeInUp_0.8s_ease-out_0.2s_both] flex flex-wrap justify-center gap-3 mb-10">
                 {[
-                  { icon: BadgeCheck, text: 'Cédula 11009616' },
+                  { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Award, text: 'Colegio de Psicólogos de Q.Roo' },
                 ].map((chip) => (
                   <span
                     key={chip.text}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-card border border-border rounded-full text-xs font-medium text-foreground shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 border rounded-full text-xs font-medium"
+                    style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(208,208,231,0.18)', color: 'rgba(208,208,231,0.85)' }}
                   >
-                    <chip.icon className="w-3.5 h-3.5 text-primary/60 shrink-0" />
+                    <chip.icon className="w-3.5 h-3.5 shrink-0" style={{ color: 'rgba(208,208,231,0.6)' }} />
                     {chip.text}
                   </span>
                 ))}
@@ -355,7 +351,7 @@ export default function ParaEscuelas() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Referir a un alumno
@@ -367,15 +363,13 @@ export default function ParaEscuelas() {
                     e.preventDefault();
                     document.getElementById('que-incluye-informe')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-primary/15 text-primary/70 hover:border-primary/30 hover:text-primary transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/30 text-white/85 hover:bg-white/10 transition-all duration-300"
                 >
                   Ver qué incluye el informe
                   <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5 shrink-0" />
                 </a>
               </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </section>
 
 
@@ -385,7 +379,7 @@ export default function ParaEscuelas() {
           <section className="py-14 sm:py-20 bg-card scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Confianza institucional
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center text-balance">
@@ -398,7 +392,7 @@ export default function ParaEscuelas() {
                   {
                     icon: ShieldCheck,
                     title: 'Informe con validez SEP',
-                    desc: 'El informe neuropsicológico lleva la cédula federal 11009616 y es suficiente para que la escuela implemente adecuaciones curriculares formales sin trámites adicionales.',
+                    desc: `El informe neuropsicológico lleva la cédula federal ${CEDULA} y es suficiente para que la escuela implemente adecuaciones curriculares formales sin trámites adicionales.`,
                   },
                   {
                     icon: ClipboardList,
@@ -435,7 +429,7 @@ export default function ParaEscuelas() {
           <section id="que-incluye-informe" className="py-14 sm:py-20 bg-secondary scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   El informe
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -472,7 +466,7 @@ export default function ParaEscuelas() {
           <section id="condiciones" className="py-14 sm:py-20 bg-card border-t border-border scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Especialidades
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -510,7 +504,7 @@ export default function ParaEscuelas() {
           <section id="proceso-referencia" className="py-14 sm:py-20 bg-secondary border-t border-border scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Derivación escolar
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -566,7 +560,7 @@ export default function ParaEscuelas() {
           <section className="py-14 sm:py-20 bg-card border-t border-border scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Preguntas frecuentes
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">
@@ -574,49 +568,36 @@ export default function ParaEscuelas() {
                 </h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div
-                      className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${
-                        openFaq === i
-                          ? 'border-primary/50 shadow-lg shadow-primary/8'
-                          : 'border-border hover:border-accent-blue/30 hover:shadow-sm'
-                      }`}
-                    >
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                       <button
+                        id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-answer-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
                       >
-                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div
-                          className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${
-                            openFaq === i ? 'border-primary bg-primary/10' : 'border-border'
-                          }`}
-                        >
-                          <ChevronDown
-                            className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${
-                              openFaq === i ? 'rotate-180 text-primary' : ''
-                            }`}
-                          />
-                        </div>
+                        <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 transition-transform duration-250"
+                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        />
                       </button>
                       <div
                         id={`faq-answer-${i}`}
                         role="region"
+                        aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
-                        style={{
-                          gridTemplateRows: openFaq === i ? '1fr' : '0fr',
-                          opacity: openFaq === i ? 1 : 0,
-                          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
-                        }}
+                        style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
-                            <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                          </div>
+                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                            {faq.a}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -645,7 +626,7 @@ export default function ParaEscuelas() {
                 </h2>
 
                 <p className="text-primary-foreground/75 font-light leading-relaxed max-w-xl mx-auto mb-10">
-                  Escribe por WhatsApp para describir el caso. La psic. Karen Trujillo (cédula federal 11009616),
+                  Escribe por WhatsApp para describir el caso. La psic. Karen Trujillo (cédula federal {CEDULA}),
                   miembro del Colegio de Psicólogos de Quintana Roo, responde directamente y orienta
                   sobre si la evaluación neuropsicológica es adecuada para el alumno. La referencia desde
                   la escuela es bienvenida — el proceso continúa con la familia.
@@ -655,14 +636,14 @@ export default function ParaEscuelas() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 font-bold text-[10px] uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 font-bold text-xs uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Referir a un alumno por WhatsApp
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
 
-                <p className="mt-6 text-[10px] text-primary-foreground/45 font-light">
+                <p className="mt-6 text-xs text-primary-foreground/45 font-light">
                   Lunes a Viernes 9:00 – 7:00 PM · Sábados 9:00 – 2:00 PM
                 </p>
               </SectionReveal>

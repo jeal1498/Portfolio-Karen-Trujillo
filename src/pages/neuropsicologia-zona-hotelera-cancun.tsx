@@ -7,12 +7,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER, PHONE_E164 } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, ADDRESS, REVIEWS, GEO } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA =
-  'https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica%20y%20vengo%20desde%20fuera%20de%20Canc%C3%BAn';
+const CANONICAL_URL = `${SITE_URL}/neuropsicologia-zona-hotelera-cancun`;
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica%20y%20vengo%20desde%20fuera%20de%20Canc%C3%BAn`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -109,7 +111,7 @@ const faqItems = [
   },
   {
     q: '¿El informe es válido en toda la República Mexicana?',
-    a: 'Sí. El informe neuropsicológico emitido por la psic. Karen Trujillo (cédula federal 11009616) tiene validez oficial en toda la República Mexicana ante escuelas, SEP, IMSS, ISSSTE, y empleadores.',
+    a: `Sí. El informe neuropsicológico emitido por la psic. Karen Trujillo (cédula federal ${CEDULA}) tiene validez oficial en toda la República Mexicana ante escuelas, SEP, IMSS, ISSSTE, y empleadores.`,
   },
   {
     q: '¿Por qué no hay más neuropsicólogos con ADOS-2 en la Riviera Maya?',
@@ -125,12 +127,10 @@ const schema = {
   '@graph': [
     {
       '@type': 'LandingPage',
-      '@id':
-        'https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun/#page',
+      '@id': `${CANONICAL_URL}/#page`,
       name: 'Neuropsicóloga para la Zona Hotelera y Riviera Maya — Karen Trujillo',
-      description:
-        'Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para pacientes de la Zona Hotelera, Playa del Carmen, Tulum y Riviera Maya. Karen Trujillo, cédula 11009616.',
-      url: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun',
+      description: `Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para pacientes de la Zona Hotelera, Playa del Carmen, Tulum y Riviera Maya. Karen Trujillo, cédula ${CEDULA}.`,
+      url: CANONICAL_URL,
       inLanguage: 'es-MX',
       speakable: {
         '@type': 'SpeakableSpecification',
@@ -144,30 +144,32 @@ const schema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Inicio',
-          item: 'https://www.psicologakarentrujillo.com.mx',
+          item: SITE_URL,
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Neuropsicóloga Zona Hotelera y Riviera Maya',
-          item: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun',
+          item: CANONICAL_URL,
         },
       ],
     },
     {
-      '@type': 'LocalBusiness',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#localbusiness',
+      '@type': ['MedicalBusiness', 'MedicalClinic'],
+      '@id': `${SITE_URL}/#localbusiness`,
       name: 'Karen Trujillo — Neuropsicóloga Clínica en Cancún',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-      telephone: '+529983211547',
-      url: 'https://www.psicologakarentrujillo.com.mx',
+      image: KAREN_IMAGE,
+      telephone: PHONE_E164,
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: GEO.latitude,
+        longitude: GEO.longitude,
+      },
+      hasMap: 'https://maps.google.com/?cid=4630406520710891531',
+      url: SITE_URL,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac',
-        addressLocality: 'Cancún',
-        addressRegion: 'Quintana Roo',
-        postalCode: '77539',
-        addressCountry: 'MX',
+        ...ADDRESS,
       },
       openingHoursSpecification: [
         {
@@ -198,8 +200,8 @@ const schema = {
       priceRange: '$8,300–$8,500 MXN',
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '47',
+        ratingValue: REVIEWS.ratingValue,
+        reviewCount: REVIEWS.reviewCount,
         bestRating: '5',
         worstRating: '1',
       },
@@ -274,17 +276,17 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
         <title>Neuropsicóloga para Zona Hotelera y Riviera Maya | Karen Trujillo Cancún</title>
         <meta
           name="description"
-          content="Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula 11009616."
+          content={`Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula ${CEDULA}.`}
         />
         <link
           rel="canonical"
-          href="https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun"
+          href={CANONICAL_URL}
         />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
@@ -295,16 +297,19 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
         />
         <meta
           property="og:description"
-          content="Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula 11009616."
+          content={`Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. ADOS-2, WISC-V, CONNERS-3. Karen Trujillo, cédula ${CEDULA}.`}
         />
         <meta
           property="og:url"
-          content="https://www.psicologakarentrujillo.com.mx/neuropsicologia-zona-hotelera-cancun"
+          content={CANONICAL_URL}
         />
         <meta
           property="og:image"
-          content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+          content={KAREN_IMAGE}
         />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -313,8 +318,9 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
         />
         <meta
           name="twitter:description"
-          content="Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. Karen Trujillo, cédula 11009616."
+          content={`Evaluaciones neuropsicológicas de TDAH y autismo en Cancún para familias de la Zona Hotelera, Playa del Carmen, Tulum y Mérida. Karen Trujillo, cédula ${CEDULA}.`}
         />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script
           type="application/ld+json"
@@ -339,52 +345,40 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           {/* ══════════════════════════════════════════════════════
               1 · HERO
               ══════════════════════════════════════════════════════ */}
-          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div
-              className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse"
-              style={{ animationDelay: '1.5s' }}
-            />
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-            <div
-              className="absolute inset-0 opacity-[0.025]"
-              style={{
-                backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-                backgroundSize: '32px 32px',
-              }}
-            />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
 
               <nav aria-label="Breadcrumb" className="mb-6 animate-[fadeIn_0.6s_ease-out_both]">
-                <ol className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <ol className="flex items-center justify-center gap-2 text-xs" style={{ color: 'rgba(208,208,231,0.6)' }}>
                   <li>
-                    <Link href="/" className="hover:text-primary transition-colors">
+                    <Link href="/" className="hover:text-white transition-colors">
                       Inicio
                     </Link>
                   </li>
-                  <li className="text-border">/</li>
-                  <li className="text-primary font-medium">Neuropsicóloga Zona Hotelera y Riviera Maya</li>
+                  <li style={{ color: 'rgba(208,208,231,0.3)' }}>/</li>
+                  <li className="text-white font-medium">Neuropsicóloga Zona Hotelera y Riviera Maya</li>
                 </ol>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/10 max-w-full">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 max-w-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}>
                   <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-sm shadow-success shrink-0" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground text-center leading-snug">
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(208,208,231,0.8)' }}>
                     Riviera Maya · Quintana Roo
                   </span>
                 </div>
 
-                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-[1.1] mb-6 text-balance">
+                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-6 text-balance">
                   Neuropsicóloga para la Zona Hotelera y Riviera Maya
                 </h1>
 
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Si estás en Playa del Carmen, Tulum, la Zona Hotelera o cualquier ciudad de la Riviera Maya — la
                   evaluación neuropsicológica de Karen Trujillo en Cancún está a{' '}
-                  <strong className="text-primary font-semibold">
+                  <strong className="text-white font-semibold">
                     menos distancia de lo que crees.
                   </strong>
                 </p>
@@ -395,7 +389,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Coordinar desde mi ciudad
@@ -403,15 +397,13 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                 </a>
                 <Link
                   href="/evaluacion-autismo-cancun"
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-primary/15 text-primary/70 hover:border-primary/30 hover:text-primary transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/30 text-white/85 hover:bg-white/10 transition-all duration-300"
                 >
                   Ver evaluación de autismo (ADOS-2)
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 shrink-0" />
                 </Link>
               </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </section>
 
 
@@ -421,7 +413,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           <section id="ciudades" className="py-14 sm:py-20 bg-card scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Distancias desde tu ciudad
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -466,7 +458,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           <section id="logistica" className="py-14 sm:py-20 bg-secondary border-t border-border scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Cómo funciona
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -518,7 +510,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           <section className="py-14 sm:py-20 bg-card border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Evaluaciones disponibles
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -544,7 +536,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                       <p className="text-xs text-muted-foreground font-light">{item.edad}</p>
                       <div className="mt-auto pt-4 border-t border-border">
                         <p className="text-lg font-serif font-bold text-primary">{item.precio}</p>
-                        <p className="text-[10px] text-muted-foreground font-light mt-0.5">Incluye informe + devolución</p>
+                        <p className="text-xs text-muted-foreground font-light mt-0.5">Incluye informe + devolución</p>
                       </div>
                     </Link>
                   </SectionReveal>
@@ -557,7 +549,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                     href={WA}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                    className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Consultar por mi caso
@@ -575,7 +567,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           <section className="py-14 sm:py-20 bg-secondary border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Cómo llegar
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center text-balance">
@@ -636,7 +628,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                       href={WA}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group w-full inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-xl bg-gradient-primary text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                      className="group w-full inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl bg-gradient-primary text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
                     >
                       <MessageCircle className="w-4 h-4" />
                       Recibir ubicación por WhatsApp
@@ -649,13 +641,34 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           </section>
 
 
+          {/* ── Mapa — ubicación del consultorio ── */}
+          <section className="py-10 sm:py-12 border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Ubicación del consultorio</p>
+              <div className="rounded-2xl overflow-hidden border border-border shadow-md" style={{ height: 320 }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.9838296344037!2d-86.89585439999999!3d21.1530418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b10d813a9c7%3A0x4042823298a0080b!2sPsic%C3%B3loga%20Karen%20Trujillo%20%7C%20Neuropsicolog%C3%ADa%3A%20TDAH%20y%20Autismo!5e0!3m2!1ses-419!2smx!4v1772120174668!5m2!1ses-419!2smx"
+                  width="100%"
+                  height="320"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Consultorio Neuropsicóloga Karen Trujillo en Cancún"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground/70 text-center mt-3">SM200 M49 L2, Hacienda de Chinconcuac, Cancún · A 20 min de la Zona Hotelera</p>
+            </div>
+          </section>
+
+
           {/* ══════════════════════════════════════════════════════
               6 · FAQ
               ══════════════════════════════════════════════════════ */}
           <section id="preguntas-frecuentes" className="py-14 sm:py-20 bg-secondary border-t border-border scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Preguntas frecuentes
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center text-balance">
@@ -663,38 +676,29 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                 </h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div
-                      className={`bg-card border-2 rounded-2xl transition-all duration-300 overflow-hidden ${
-                        openFaq === i
-                          ? 'border-primary/50 shadow-lg shadow-primary/8'
-                          : 'border-border hover:border-accent-blue/30 hover:shadow-sm'
-                      }`}
-                    >
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                       <button
+                        id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-answer-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
                       >
-                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div
-                          className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${
-                            openFaq === i ? 'border-primary bg-primary/10' : 'border-border'
-                          }`}
-                        >
-                          <ChevronDown
-                            className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${
-                              openFaq === i ? 'rotate-180 text-primary' : ''
-                            }`}
-                          />
-                        </div>
+                        <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 transition-transform duration-250"
+                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        />
                       </button>
                       <div
                         id={`faq-answer-${i}`}
                         role="region"
+                        aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
                         style={{
                           gridTemplateRows: openFaq === i ? '1fr' : '0fr',
@@ -703,9 +707,9 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                         }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
-                            <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                          </div>
+                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                            {faq.a}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -748,14 +752,14 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 font-bold text-[10px] uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 font-bold text-xs uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Escribir por WhatsApp
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
 
-                <p className="mt-6 text-[10px] text-primary-foreground/45 font-light">
+                <p className="mt-6 text-xs text-primary-foreground/45 font-light">
                   Lunes a Viernes 9:00 – 7:00 PM · Sábados 9:00 – 2:00 PM
                 </p>
               </SectionReveal>
@@ -766,7 +770,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
           {/* ── Internal linking ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">
                 Evaluaciones disponibles en Cancún
               </p>
               <div className="grid sm:grid-cols-3 gap-3">
@@ -777,7 +781,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH Infantil</span>
-                    <span className="text-[10px] text-muted-foreground font-light">5-17 años</span>
+                    <span className="text-xs text-muted-foreground font-light">5-17 años</span>
                   </div>
                 </Link>
                 <Link
@@ -787,7 +791,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH Adultos</span>
-                    <span className="text-[10px] text-muted-foreground font-light">18+ años</span>
+                    <span className="text-xs text-muted-foreground font-light">18+ años</span>
                   </div>
                 </Link>
                 <Link
@@ -797,7 +801,7 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">Autismo (TEA)</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Diagnóstico ADOS-2</span>
+                    <span className="text-xs text-muted-foreground font-light">Diagnóstico ADOS-2</span>
                   </div>
                 </Link>
               </div>

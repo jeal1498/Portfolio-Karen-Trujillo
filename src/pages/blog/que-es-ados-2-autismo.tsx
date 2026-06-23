@@ -9,12 +9,14 @@ import {
   ChevronDown, AlertTriangle, Eye,
   BookOpen, ArrowLeft, ListChecks, HelpCircle,
   Lightbulb, XCircle, Stethoscope,
-  Activity, Shield, Layers,
+  Activity, Shield, Layers, Facebook, Link2,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
 
-const WA_NUMBER = '529983211547';
+const CANONICAL_URL = `${SITE_URL}/blog/que-es-ados-2-autismo`;
 
 const adosModules = [
   { module: 'Módulo 1', target: 'Niños sin lenguaje o con palabras sueltas', age: 'Desde 31 meses', method: 'Juego libre, respuesta al nombre, burbujas, juguetes de causa-efecto. El evaluador observa cómo el niño inicia interacción, señala, hace contacto visual y comparte interés.', accent: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
@@ -69,15 +71,15 @@ const faqItems = [
 ];
 
 const relatedResources = [
-  { href: '/blog/senales-tdah-ninos', icon: Users, category: 'TDAH Infantil', title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico', color: 'from-accent-blue/10 to-accent-blue/5' },
-  { href: '/blog/tdah-adultos-diagnostico-tardio', icon: Briefcase, category: 'TDAH Adultos', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', color: 'from-primary/10 to-primary/5' },
+  { href: '/blog/senales-tdah-ninos', icon: Users, category: 'TDAH Infantil', title: '¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico', img: '/blog/lavender-tdah-infantil-640x400.svg' },
+  { href: '/blog/tdah-adultos-diagnostico-tardio', icon: Briefcase, category: 'TDAH Adultos', title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30', img: '/blog/lavender-tdah-adultos-640x400.svg' },
 ];
 
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'Article', '@id': 'https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo/#article', headline: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', description: 'Guía completa sobre el ADOS-2: qué evalúa, cómo se aplica, sus 4 módulos, y por qué supera cualquier otro método diagnóstico para TEA.', image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp', datePublished: '2025-06-29', dateModified: '2025-06-29', author: { '@type': 'Person', '@id': 'https://www.psicologakarentrujillo.com.mx/#physician', name: 'Karen Trujillo', jobTitle: 'Neuropsicóloga Clínica', url: 'https://www.psicologakarentrujillo.com.mx' }, publisher: { '@type': 'Organization', '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic', name: 'Neuropsicóloga Karen Trujillo', url: 'https://www.psicologakarentrujillo.com.mx' }, mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo', inLanguage: 'es-MX', about: { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' } },
-    { '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' }, { '@type': 'ListItem', position: 3, name: 'ADOS-2 y autismo', item: 'https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo' } ] },
+    { '@type': 'Article', '@id': `${CANONICAL_URL}/#article`, headline: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?', description: 'Guía completa sobre el ADOS-2: qué evalúa, cómo se aplica, sus 4 módulos, y por qué supera cualquier otro método diagnóstico para TEA.', image: KAREN_IMAGE, datePublished: '2025-06-29', dateModified: '2025-06-29', author: { '@type': 'Person', '@id': `${SITE_URL}/#physician`, name: 'Karen Trujillo', jobTitle: 'Neuropsicóloga Clínica', url: SITE_URL }, publisher: { '@type': 'Organization', '@id': `${SITE_URL}/#clinic`, name: 'Neuropsicóloga Karen Trujillo', url: SITE_URL }, mainEntityOfPage: CANONICAL_URL, inLanguage: 'es-MX', about: { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' } },
+    { '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` }, { '@type': 'ListItem', position: 3, name: 'ADOS-2 y autismo', item: CANONICAL_URL } ] },
     { '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 };
@@ -92,26 +94,31 @@ function SectionReveal({ children, className = '', delay = 0 }: { children: Reac
 export default function QueEsAdos2Autismo() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showStickyCta, setShowStickyCta] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   useEffect(() => { const handleScroll = () => { const heroHeight = 500; const ctaFinal = document.getElementById('cta-evaluacion'); const ctaTop = ctaFinal?.getBoundingClientRect().top ?? Infinity; setShowStickyCta(window.scrollY > heroHeight && ctaTop > window.innerHeight); }; window.addEventListener('scroll', handleScroll, { passive: true }); handleScroll(); return () => window.removeEventListener('scroll', handleScroll); }, []);
 
   return (
     <>
       <Head>
-        <title>¿Qué es el ADOS-2? Estándar de oro para diagnosticar autismo | Neuropsicóloga Karen Trujillo</title>
+        <title>¿Qué es el ADOS-2? La prueba estándar para autismo</title>
         <meta name="description" content="El ADOS-2 es la prueba más confiable del mundo para diagnosticar autismo (TEA). Conoce qué evalúa, cómo se aplica y por qué supera a los cuestionarios y entrevistas. Evaluación con ADOS-2 en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?" />
+        <meta property="og:title" content="¿Qué es el ADOS-2? La prueba estándar para autismo" />
         <meta property="og:description" content="Guía completa sobre el ADOS-2: qué evalúa, sus 4 módulos, y por qué es el instrumento más confiable para diagnosticar Trastorno del Espectro Autista." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/que-es-ados-2-autismo" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-que-es-el-ados-2-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-29" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="¿Qué es el ADOS-2? Estándar de oro para autismo | Karen Trujillo" />
         <meta name="twitter:description" content="Guía completa sobre la prueba más confiable del mundo para diagnosticar autismo. Qué evalúa, cómo se aplica y por qué importa." />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-que-es-el-ados-2-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         <style dangerouslySetInnerHTML={{ __html: `@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }` }} />
       </Head>
@@ -121,27 +128,45 @@ export default function QueEsAdos2Autismo() {
         <main className="w-full min-w-0 overflow-x-hidden">
 
           {/* HERO */}
-          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-pink/15 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
-              <nav className="flex items-center gap-2 text-xs text-muted-foreground mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1"><ArrowLeft className="w-3 h-3" />Inicio</Link>
-                <span className="text-muted-foreground/40">/</span><span className="text-muted-foreground/40">Blog</span><span className="text-muted-foreground/40">/</span><span className="text-primary font-medium">Autismo (TEA)</span>
+              <nav className="flex items-center gap-2 text-xs mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                <Link href="/" className="hover:text-[#d0d0e7] transition-colors flex items-center gap-1"><ArrowLeft className="w-3 h-3" />Inicio</Link>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span><span style={{ color: 'rgba(208,208,231,0.4)' }}>Blog</span><span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span><span className="font-medium" style={{ color: '#d0d0e7' }}>Autismo (TEA)</span>
               </nav>
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-accent-pink/15">
-                  <BookOpen className="w-3.5 h-3.5 text-accent-pink" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground">Guía clínica · Basada en evidencia</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <BookOpen className="w-3.5 h-3.5" style={{ color: '#d0d0e7' }} />
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-white">Guía clínica · Basada en evidencia</span>
                 </div>
-                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-primary leading-[1.15] mb-5 text-balance">¿Qué es el ADOS-2?<br /><span className="text-primary/60">El estándar de oro para diagnosticar autismo</span></h1>
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl">Si buscas un diagnóstico confiable de Trastorno del Espectro Autista para tu hijo, necesitas entender por qué el ADOS-2 es el instrumento más respaldado por la ciencia — y por qué una evaluación sin él es incompleta.</p>
-                <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
-                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md"><Image src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" priority unoptimized /></div>
-                  <div><p className="font-bold text-primary text-sm">Neuropsicóloga Karen Trujillo</p><div className="flex items-center gap-3 text-xs text-muted-foreground"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-primary/40" /> 13 min de lectura</span></div></div>
+                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-[1.15] mb-5 text-balance">¿Qué es el ADOS-2?<br /><span style={{ color: 'rgba(208,208,231,0.72)' }}>El estándar de oro para diagnosticar autismo</span></h1>
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(208,208,231,0.82)' }}>Si buscas un diagnóstico confiable de Trastorno del Espectro Autista para tu hijo, necesitas entender por qué el ADOS-2 es el instrumento más respaldado por la ciencia — y por qué una evaluación sin él es incompleta.</p>
+                <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both] rounded-2xl p-4" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md"><Image src={KAREN_IMAGE} alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" priority unoptimized /></div>
+                  <div><p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p><div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><time dateTime="2025-06-29">29 jun 2025</time><span className="flex items-center gap-1"><Clock className="w-3 h-3 text-white/40" /> 13 min de lectura</span></div></div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* IMAGEN DESTACADA — Hero image (placeholder) */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="/blog/dark-que-es-el-ados-2-1200x675.svg"
+                    alt="¿Qué es el ADOS-2? El estándar de oro para diagnosticar autismo — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
             </div>
           </section>
 
@@ -174,11 +199,30 @@ export default function QueEsAdos2Autismo() {
             </div>
           </section>
 
+          {/* IMAGEN INLINE 1 (placeholder) */}
+          <section className="pb-12 sm:pb-16 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/sand-evaluacion-ados-2-960x540.svg"
+                    alt="Sesión de evaluación con ADOS-2 para diagnóstico de autismo — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
+            </div>
+          </section>
+
           {/* MÓDULOS */}
           <section id="modulos" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Adaptado a cada persona</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Adaptado a cada persona</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">Los 4 módulos del ADOS-2</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">El evaluador selecciona el módulo según la edad y el nivel de lenguaje. No es un test único — es un sistema que se adapta a la persona.</p>
               </SectionReveal>
@@ -208,7 +252,7 @@ export default function QueEsAdos2Autismo() {
           <section id="por-que-gold" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">La evidencia</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">La evidencia</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Por qué el ADOS-2 es el estándar de oro?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">No es marketing — es el consenso de la comunidad científica internacional. Estas son las 5 razones.</p>
               </SectionReveal>
@@ -229,7 +273,7 @@ export default function QueEsAdos2Autismo() {
           <section id="vs-otros" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Comparativa</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Comparativa</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">ADOS-2 vs. otros métodos de diagnóstico</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">No todos los caminos al diagnóstico son iguales. Esta es la diferencia entre métodos.</p>
               </SectionReveal>
@@ -260,7 +304,7 @@ export default function QueEsAdos2Autismo() {
           <section id="bateria" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Evaluación integral</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Evaluación integral</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">La batería completa: no solo ADOS-2</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">El ADOS-2 es el eje central, pero un diagnóstico completo de autismo requiere complementarlo con estos instrumentos.</p>
               </SectionReveal>
@@ -287,7 +331,7 @@ export default function QueEsAdos2Autismo() {
           <section id="niveles" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">El espectro</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">El espectro</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">Los 3 niveles de apoyo en autismo</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">Desde 2013, el DSM-5 clasifica el autismo por nivel de apoyo necesario — no por &ldquo;tipo&rdquo; o gravedad. El informe especifica cuál aplica.</p>
               </SectionReveal>
@@ -295,9 +339,9 @@ export default function QueEsAdos2Autismo() {
                 {supportLevels.map((item, i) => (
                   <SectionReveal key={item.level} delay={i * 0.1}>
                     <div className={`border-2 rounded-2xl p-5 sm:p-6 h-full flex flex-col ${item.accent}`}>
-                      <div className="mb-4"><p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.level}</p><h3 className="font-bold text-primary text-base">{item.name}</h3></div>
+                      <div className="mb-4"><p className="text-xs font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.level}</p><h3 className="font-bold text-primary text-base">{item.name}</h3></div>
                       <p className="text-sm text-muted-foreground font-light leading-relaxed mb-4 flex-1">{item.desc}</p>
-                      <div className="pt-3 border-t border-border/50"><p className="text-[10px] text-muted-foreground/60 italic">{item.formerly}</p></div>
+                      <div className="pt-3 border-t border-border/50"><p className="text-xs text-muted-foreground/60 italic">{item.formerly}</p></div>
                     </div>
                   </SectionReveal>
                 ))}
@@ -308,11 +352,30 @@ export default function QueEsAdos2Autismo() {
             </div>
           </section>
 
+          {/* IMAGEN INLINE 2 (placeholder) */}
+          <section className="py-12 sm:py-16 bg-secondary border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/lavender-niveles-de-apoyo-tea-960x540.svg"
+                    alt="Niveles de apoyo en autismo según el DSM-5 — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
+            </div>
+          </section>
+
           {/* MITOS */}
           <section id="mitos" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Derribando mitos</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Derribando mitos</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center">5 mitos sobre autismo y diagnóstico</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-12">Creencias que retrasan el diagnóstico o generan falsas expectativas.</p>
               </SectionReveal>
@@ -336,7 +399,7 @@ export default function QueEsAdos2Autismo() {
           <section className="py-14 sm:py-20 bg-gradient-primary text-primary-foreground">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-3 text-center">El siguiente paso</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/50 mb-3 text-center">El siguiente paso</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4 text-center">¿Tu hijo se relaciona de forma diferente?</h2>
                 <p className="text-primary-foreground/70 font-light text-center max-w-xl mx-auto mb-10">Si las preocupaciones son sobre comunicación social, contacto visual, juego repetitivo o intereses muy focalizados — una evaluación con ADOS-2 te da respuestas concretas.</p>
               </SectionReveal>
@@ -349,7 +412,7 @@ export default function QueEsAdos2Autismo() {
               </SectionReveal>
               <SectionReveal delay={0.2}>
                 <div className="text-center">
-                  <Link href="/evaluacion-autismo-cancun" className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-8 py-4 rounded-2xl bg-white text-primary shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300">Ver evaluación de autismo<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></Link>
+                  <Link href="/evaluacion-autismo-cancun" className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-2xl bg-white text-primary shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300">Ver evaluación de autismo<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></Link>
                   <p className="text-primary-foreground/50 text-xs font-light mt-4">$8,500 MXN · 5-6 sesiones · ADOS-2 + batería completa</p>
                 </div>
               </SectionReveal>
@@ -360,16 +423,16 @@ export default function QueEsAdos2Autismo() {
           <section id="faq-blog" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal><h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2></SectionReveal>
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
-                      <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} aria-controls={`faq-blog-${i}`} className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer">
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }}>
+                      <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} aria-controls={`faq-blog-${i}`} className="w-full py-5 sm:py-6 flex justify-between items-center gap-4 text-left cursor-pointer">
                         <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}><ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} /></div>
+                        <ChevronDown className="w-3.5 h-3.5 text-muted-foreground shrink-0" style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }} />
                       </button>
                       <div id={`faq-blog-${i}`} role="region" className="grid transition-all duration-300" style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
-                        <div className="overflow-hidden"><div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4"><p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p></div></div>
+                        <div className="overflow-hidden"><div className="pb-5 sm:pb-6"><p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p></div></div>
                       </div>
                     </div>
                   </SectionReveal>
@@ -378,19 +441,68 @@ export default function QueEsAdos2Autismo() {
             </div>
           </section>
 
+          {/* COMPARTIR — Social share */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir en Facebook"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(`¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo? — ${CANONICAL_URL}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir por WhatsApp"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText(CANONICAL_URL);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                    aria-label="Copiar enlace"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Link2 className="w-4 h-4" />
+                  </button>
+                  {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+                </div>
+              </SectionReveal>
+            </div>
+          </section>
+
           {/* RELATED */}
           <section className="py-12 sm:py-16 bg-secondary/50 border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
-              <SectionReveal><p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Sigue aprendiendo</p><h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-8 text-center">Recursos relacionados</h2></SectionReveal>
+              <SectionReveal><p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Sigue aprendiendo</p><h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-8 text-center">Recursos relacionados</h2></SectionReveal>
               <div className="grid sm:grid-cols-2 gap-4">
                 {relatedResources.map((resource, i) => (
                   <SectionReveal key={resource.href} delay={i * 0.08}>
                     <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
-                      <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
+                      <img
+                        src={resource.img}
+                        alt={resource.title}
+                        width={640}
+                        height={400}
+                        className="w-full h-auto aspect-video object-cover"
+                        loading="lazy"
+                      />
                       <div className="p-5 sm:p-6">
                         <div className="flex items-center gap-2 mb-3"><resource.icon className="w-3.5 h-3.5 text-primary/40" /><span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/60">{resource.category}</span></div>
                         <h3 className="font-bold text-primary text-sm leading-snug mb-3 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
-                        <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">Leer más <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" /></span>
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">Leer más <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" /></span>
                       </div>
                     </Link>
                   </SectionReveal>
@@ -400,33 +512,33 @@ export default function QueEsAdos2Autismo() {
           </section>
 
           {/* CTA FINAL */}
-          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-card border-t border-border">
+          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-plum-deep border-t border-white/10">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <div className="text-center mb-8"><h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">Un diagnóstico claro cambia todo</h2><p className="text-muted-foreground font-light max-w-xl mx-auto">Saber el nivel de apoyo exacto, las fortalezas y las necesidades de tu hijo te da una hoja de ruta concreta. La evaluación con ADOS-2 es el primer paso.</p></div>
+                <div className="text-center mb-8"><h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">Un diagnóstico claro cambia todo</h2><p className="text-white/70 font-light max-w-xl mx-auto">Saber el nivel de apoyo exacto, las fortalezas y las necesidades de tu hijo te da una hoja de ruta concreta. La evaluación con ADOS-2 es el primer paso.</p></div>
               </SectionReveal>
               <SectionReveal delay={0.1}>
-                <div className="bg-secondary/50 border-2 border-border rounded-2xl p-6 sm:p-8 mb-8">
+                <div className="bg-white/8 border border-white/15 rounded-2xl p-6 sm:p-8 mb-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md shrink-0"><Image src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" loading="lazy" unoptimized /></div>
-                    <div><p className="font-bold text-primary">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span></div></div>
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0"><Image src={KAREN_IMAGE} alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" loading="lazy" unoptimized /></div>
+                    <div><p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span></div></div>
                   </div>
                   <div className="grid sm:grid-cols-3 gap-3 mb-6">
                     {[{ label: 'Pruebas', value: 'ADOS-2, ADI-R, WISC-V, Vineland-3, SRS-2' },{ label: 'Duración', value: '5-6 sesiones · 3-4 semanas' },{ label: 'Inversión', value: '$8,500 MXN todo incluido' }].map((item) => (
-                      <div key={item.label} className="bg-card border border-border rounded-xl p-3 text-center"><p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.label}</p><p className="text-xs font-medium text-primary">{item.value}</p></div>
+                      <div key={item.label} className="bg-white/8 border border-white/15 rounded-xl p-3 text-center"><p className="text-[9px] font-bold uppercase tracking-widest text-white/50 mb-1">{item.label}</p><p className="text-xs font-medium text-white">{item.value}</p></div>
                     ))}
                   </div>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Link href="/evaluacion-autismo-cancun" className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-primary text-primary-foreground font-bold text-[10px] uppercase tracking-widest rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"><Stethoscope className="w-4 h-4" />Ver evaluación completa<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></Link>
-                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre el ADOS-2 y me gustaría agendar una evaluación de autismo para mi hijo.')}`} target="_blank" rel="noopener noreferrer" className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"><MessageCircle className="w-4 h-4" />Agendar por WhatsApp</a>
+                    <Link href="/evaluacion-autismo-cancun" className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"><Stethoscope className="w-4 h-4" />Ver evaluación completa<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></Link>
+                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre el ADOS-2 y me gustaría agendar una evaluación de autismo para mi hijo.')}`} target="_blank" rel="noopener noreferrer" className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"><MessageCircle className="w-4 h-4" />Agendar por WhatsApp</a>
                   </div>
                 </div>
               </SectionReveal>
               <SectionReveal delay={0.2}>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Reembolso del anticipo</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Validez oficial SEP e IMSS</span>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-white/70">
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Cancelación con 48 hrs</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Reembolso del anticipo</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><BadgeCheck className="w-3.5 h-3.5 text-white/50" /> Validez oficial SEP e IMSS</span>
                 </div>
               </SectionReveal>
             </div>
@@ -440,8 +552,8 @@ export default function QueEsAdos2Autismo() {
         <div className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${showStickyCta ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
           <div className="bg-card/95 backdrop-blur-lg border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-3">
             <div className="flex gap-2.5 max-w-lg mx-auto">
-              <Link href="/evaluacion-autismo-cancun" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-[10px] uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"><Puzzle className="w-4 h-4" />Evaluar TEA</Link>
-              <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre ADOS-2 y me gustaría orientación sobre la evaluación de autismo.')}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-[10px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"><MessageCircle className="w-4 h-4" />WhatsApp</a>
+              <Link href="/evaluacion-autismo-cancun" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"><Puzzle className="w-4 h-4" />Evaluar TEA</Link>
+              <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre ADOS-2 y me gustaría orientación sobre la evaluación de autismo.')}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"><MessageCircle className="w-4 h-4" />WhatsApp</a>
             </div>
           </div>
         </div>

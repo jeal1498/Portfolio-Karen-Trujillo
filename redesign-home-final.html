@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karen Trujillo — Neuropsicóloga en Cancún | TDAH y Autismo</title>
+  <meta name="description" content="Evaluaciones neuropsicológicas de TDAH y Autismo (TEA) en Cancún con instrumentos internacionales. Cédula 11009616. Informes con validez oficial ante SEP, IMSS e instituciones educativas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'plum-deep':  '#2b1f47',
+            'plum-ink':   '#382f51',
+            'plum-mid':   '#5b4e7f',
+            'lavender':   '#d0d0e7',
+            'blush':      '#fbdbe0',
+            'sand':       '#f5dfc5',
+            'surface':    '#f8f7fc',
+            'ink2':       '#515e71',
+            'wa':         '#25d366',
+          },
+          fontFamily: {
+            display: ['Gloock', 'Georgia', 'serif'],
+            body:    ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --plum-deep: #2b1f47;
+      --plum-ink:  #382f51;
+      --plum-mid:  #5b4e7f;
+      --lavender:  #d0d0e7;
+      --blush:     #fbdbe0;
+      --sand:      #f5dfc5;
+      --surface:   #f8f7fc;
+      --ink2:      #515e71;
+      --wa:        #25d366;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      color: var(--plum-ink);
+      background: #fff;
+      margin: 0;
+    }
+
+    h1, h2, h3 { font-family: 'Gloock', Georgia, serif; }
+    p { max-width: 70ch; line-height: 1.75; }
+
+    /* ── Scroll anchors ──────────────────────────── */
+    #servicios, #proceso, #sobre-mi, #testimonios, #faq, #blog, #contacto {
+      scroll-margin-top: 72px;
+    }
+
+    /* ── Scroll reveal ───────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── Navbar ──────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s;
+      background: transparent;
+    }
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 16px rgba(56,47,81,0.09);
+    }
+    #navbar.scrolled .nav-link       { color: var(--plum-ink); }
+    #navbar.scrolled .nav-link:hover { color: var(--plum-mid); }
+    #navbar.scrolled .logo-name      { color: var(--plum-ink); }
+    #navbar.scrolled .logo-label     { color: var(--ink2); }
+    #navbar.scrolled .nav-cta {
+      background: var(--plum-ink);
+      color: #fff;
+      border-color: var(--plum-ink);
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.88);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 0.875rem;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--lavender); }
+
+    .logo-name {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 1.25rem;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .logo-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.675rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .nav-cta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.38);
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .nav-cta:hover {
+      background: #fff;
+      color: var(--plum-ink);
+      border-color: #fff;
+    }
+
+    /* ── Mobile menu ─────────────────────────────── */
+    #mobile-menu {
+      display: none;
+      background: rgba(255,255,255,0.98);
+      border-top: 1px solid var(--lavender);
+    }
+    #mobile-menu.open { display: block; }
+    #mobile-menu a {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      color: var(--plum-ink);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(56,47,81,0.06);
+    }
+    #mobile-menu a:hover { background: var(--surface); }
+
+    /* ── Hero ────────────────────────────────────── */
+    #hero {
+      background: var(--plum-deep);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -80px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-credential-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.25rem;
+      align-items: center;
+    }
+    .hero-credential-item {
+      font-size: 0.77rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(208,208,231,0.8);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .hero-credential-item::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--lavender);
+      opacity: 0.6;
+    }
+    .hero-credential-item:first-child::before { display: none; }
+
+    /* ── Routing cards ───────────────────────────── */
+    .routing-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(208,208,231,0.18);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s, border-color 0.2s, transform 0.22s;
+    }
+    .routing-card:hover {
+      background: rgba(255,255,255,0.11);
+      border-color: rgba(208,208,231,0.45);
+      transform: translateX(4px);
+    }
+    .routing-card .rc-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      opacity: 0.65;
+      margin-bottom: 0.2rem;
+    }
+    .routing-card .rc-text {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.45;
+    }
+    .routing-card .rc-arrow {
+      margin-top: 0.45rem;
+      font-size: 0.75rem;
+      color: var(--lavender);
+      opacity: 0.6;
+    }
+
+    /* ── Buttons ─────────────────────────────────── */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--plum-ink) 0%, var(--plum-mid) 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.85rem 1.75rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 24px rgba(56,47,81,0.28);
+      transition: filter 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(56,47,81,0.38);
+    }
+
+    .btn-wa {
+      background: var(--wa);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.85rem 1.75rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-wa:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.88);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 1.75rem;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.65);
+    }
+
+    .btn-outline-plum {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--plum-ink);
+      border: 1.5px solid var(--plum-ink);
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+    }
+    .btn-outline-plum:hover {
+      background: var(--plum-ink);
+      color: #fff;
+    }
+
+    /* ── Photo container / badge ─────────────────── */
+    .photo-container {
+      position: relative;
+      display: inline-block;
+    }
+    .photo-container img {
+      border-radius: 20px 20px 80px 20px;
+      display: block;
+      width: 100%;
+      max-width: 440px;
+    }
+    .photo-badge {
+      position: absolute;
+      bottom: 24px;
+      left: -20px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      box-shadow: 0 8px 32px rgba(56,47,81,0.22);
+      min-width: 210px;
+    }
+    .photo-badge .pb-cedula {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--plum-ink);
+      letter-spacing: 0.04em;
+    }
+    .photo-badge .pb-stars {
+      color: #f59e0b;
+      font-size: 0.85rem;
+      margin-top: 3px;
+    }
+    .photo-badge .pb-reviews {
+      font-size: 0.7rem;
+      color: var(--ink2);
+      margin-top: 2px;
+    }
+
+    /* ── Stats bar ───────────────────────────────── */
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .stat-number {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 2.25rem;
+      color: var(--plum-ink);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.77rem;
+      font-weight: 600;
+      color: var(--ink2);
+      letter-spacing: 0.04em;
+      margin-top: 0.35rem;
+    }
+
+    /* ── Service cards ───────────────────────────── */
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid rgba(56,47,81,0.07);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(56,47,81,0.13);
+    }
+    .service-card.hover-lavender:hover { border-color: rgba(208,208,231,0.8); }
+    .service-card.hover-sand:hover     { border-color: rgba(245,223,197,0.9); }
+    .service-card.hover-blush:hover    { border-color: rgba(251,219,224,0.9); }
+
+    .badge-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .badge-lavender { background: var(--lavender); color: var(--plum-ink); }
+    .badge-sand     { background: var(--sand);     color: #6b4e1a; }
+    .badge-blush    { background: var(--blush);    color: #7a3040; }
+
+    .test-pill {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.22rem 0.6rem;
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--plum-mid);
+      border: 1px solid rgba(91,78,127,0.15);
+    }
+
+    /* ── Process timeline ────────────────────────── */
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 1.5rem;
+      position: relative;
+    }
+    .timeline-number {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 3rem;
+      color: var(--lavender);
+      line-height: 1;
+      padding-top: 0.1rem;
+      position: relative;
+    }
+    .timeline-connector {
+      position: absolute;
+      left: 36px;
+      top: 58px;
+      bottom: -2rem;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(208,208,231,0.55), transparent);
+    }
+    .duration-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--plum-mid);
+      background: var(--surface);
+      border: 1px solid var(--lavender);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-top: 0.6rem;
+    }
+
+    /* ── About credentials ───────────────────────── */
+    .cred-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .cred-check {
+      width: 20px;
+      height: 20px;
+      background: rgba(208,208,231,0.14);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .cred-check svg { width: 11px; height: 11px; }
+
+    /* ── Testimonials ────────────────────────────── */
+    .featured-quote {
+      position: relative;
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.5rem 2.5rem 2rem;
+      box-shadow: 0 4px 40px rgba(56,47,81,0.08);
+    }
+    .featured-quote::before {
+      content: '\201C';
+      font-family: 'Gloock', Georgia, serif;
+      font-size: 7rem;
+      line-height: 1;
+      color: var(--lavender);
+      position: absolute;
+      top: 0.25rem;
+      left: 1.5rem;
+      opacity: 0.65;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(56,47,81,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(56,47,81,0.1);
+    }
+
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq-item { border-bottom: 1px solid rgba(56,47,81,0.08); }
+    .faq-btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--plum-ink);
+    }
+    .faq-btn:hover { color: var(--plum-mid); }
+    .faq-chevron {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+      color: var(--plum-mid);
+    }
+    .faq-btn[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      display: none;
+      padding: 0 0 1.25rem;
+      font-size: 0.9rem;
+      color: var(--ink2);
+      line-height: 1.75;
+      max-width: 70ch;
+    }
+    .faq-answer.open { display: block; }
+
+    /* ── Blog cards ──────────────────────────────── */
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(56,47,81,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 36px rgba(56,47,81,0.11);
+    }
+    .blog-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .blog-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--plum-mid);
+    }
+
+    /* ── Floating WA ─────────────────────────────── */
+    .floating-wa {
+      position: fixed;
+      bottom: 1.75rem; right: 1.75rem;
+      z-index: 200;
+      width: 56px; height: 56px;
+      background: var(--wa);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .floating-wa svg { width: 30px; height: 30px; fill: #fff; }
+    @media (prefers-reduced-motion: no-preference) {
+      .floating-wa { animation: wa-pulse 2.8s ease-in-out infinite; }
+      @keyframes wa-pulse {
+        0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+        50%       { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 10px rgba(37,211,102,0.12); }
+      }
+    }
+    .floating-wa:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.6) !important;
+    }
+
+    /* ── Section headings ────────────────────────── */
+    .section-heading {
+      font-family: 'Gloock', Georgia, serif;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      color: var(--plum-ink);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .section-heading-light { color: #fff; }
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--plum-mid);
+      margin-bottom: 0.65rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--ink2);
+      line-height: 1.7;
+      margin-top: 0.75rem;
+    }
+    .section-sub-light { color: rgba(208,208,231,0.78); }
+
+    .divider-plum {
+      width: 40px; height: 3px;
+      background: var(--plum-mid);
+      border-radius: 999px;
+      margin: 1rem 0 1.5rem;
+    }
+    .divider-light { background: rgba(208,208,231,0.4); }
+
+    /* ── Contact icons ───────────────────────────── */
+    .contact-icon-box {
+      width: 42px; height: 42px;
+      background: var(--surface);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--lavender);
+    }
+
+    @media (max-width: 640px) {
+      .photo-badge { left: 8px; min-width: 180px; }
+      .photo-container img { border-radius: 16px 16px 60px 16px; }
+      .featured-quote { padding: 2rem 1.5rem 1.5rem; }
+      .featured-quote::before { font-size: 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 sm:h-[72px]">
+
+      <a href="/" style="text-decoration:none;" class="flex flex-col">
+        <span class="logo-name">Karen Trujillo</span>
+        <span class="logo-label">Neuropsicóloga</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#servicios"   class="nav-link">Servicios</a>
+        <a href="#proceso"     class="nav-link">Proceso</a>
+        <a href="#sobre-mi"    class="nav-link">Sobre mí</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+        <a href="#blog"        class="nav-link">Blog</a>
+        <a href="#contacto"    class="nav-link">Contacto</a>
+        <a href="https://wa.me/529983211547" class="nav-cta" aria-label="Agendar cita">Agendar cita</a>
+      </div>
+
+      <button id="hamburger-btn" class="md:hidden p-2 rounded-lg" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" style="background:rgba(255,255,255,0.1); border:none; cursor:pointer;">
+        <svg id="icon-open"  width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" role="menu" aria-label="Menú móvil">
+    <a href="#servicios"   role="menuitem">Servicios</a>
+    <a href="#proceso"     role="menuitem">Proceso</a>
+    <a href="#sobre-mi"    role="menuitem">Sobre mí</a>
+    <a href="#testimonios" role="menuitem">Testimonios</a>
+    <a href="#blog"        role="menuitem">Blog</a>
+    <a href="#contacto"    role="menuitem">Contacto</a>
+    <a href="https://wa.me/529983211547" role="menuitem" style="color:var(--wa); font-weight:700;">Agendar cita →</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<main>
+<section id="hero" aria-label="Presentación principal">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20" style="position:relative; z-index:1;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left: text -->
+      <div>
+        <!-- Credential bar -->
+        <div class="hero-credential-bar mb-6">
+          <span class="hero-credential-item">Cédula Federal 11009616</span>
+          <span class="hero-credential-item">47+ reseñas&nbsp;★ 5.0</span>
+          <span class="hero-credential-item">7+ años de experiencia</span>
+        </div>
+
+        <h1 style="font-family:'Gloock',Georgia,serif; font-size:clamp(2.2rem,5vw,3.6rem); color:#fff; line-height:1.15; margin:0 0 1.25rem;">
+          Diagnósticos que cambian trayectorias de vida
+        </h1>
+
+        <p style="color:rgba(208,208,231,0.82); font-size:1rem; line-height:1.75; margin:0 0 2rem; max-width:54ch;">
+          Evaluaciones neuropsicológicas de TDAH y Autismo (TEA) con pruebas estandarizadas internacionales. Informes con validez oficial ante SEP, IMSS e instituciones educativas.
+        </p>
+
+        <!-- Routing cards -->
+        <div style="display:flex; flex-direction:column; gap:0.65rem; margin-bottom:2rem;">
+          <a href="/evaluacion-tdah-ninos" class="routing-card">
+            <div class="rc-label">Para padres y madres</div>
+            <div class="rc-text">Mi hijo tiene dificultades de atención o conducta</div>
+            <div class="rc-arrow">Ver evaluación TDAH Infantil →</div>
+          </a>
+          <a href="/evaluacion-tdah-adultos" class="routing-card">
+            <div class="rc-label">Para adultos</div>
+            <div class="rc-text">Sospecho que tengo TDAH no diagnosticado</div>
+            <div class="rc-arrow">Ver evaluación TDAH Adultos →</div>
+          </a>
+          <a href="/evaluacion-autismo-cancun" class="routing-card">
+            <div class="rc-label">Diagnóstico TEA</div>
+            <div class="rc-text">Mi hijo se relaciona de forma diferente — busco diagnóstico de autismo</div>
+            <div class="rc-arrow">Ver evaluación Autismo (TEA) →</div>
+          </a>
+        </div>
+
+        <!-- CTAs -->
+        <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+          <a href="https://wa.me/529983211547" class="btn-wa" aria-label="Agendar cita por WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.563 4.14 1.537 5.875L0 24l6.29-1.518A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.213-3.733.902.938-3.627-.234-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.431 0 9.818 4.388 9.818 9.818 0 5.43-4.387 9.818-9.818 9.818z"/></svg>
+            Agendar por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-ghost">Ver servicios</a>
+        </div>
+      </div>
+
+      <!-- Right: photo -->
+      <div class="flex justify-center lg:justify-end">
+        <div class="photo-container">
+          <img src="https://placehold.co/480x640/382f51/d0d0e7?text=Karen+Trujillo" alt="Karen Trujillo, Neuropsicóloga en Cancún" width="440" height="587" />
+          <div class="photo-badge">
+            <div class="pb-cedula">Cédula 11009616 · SEP</div>
+            <div class="pb-stars">★★★★★</div>
+            <div class="pb-reviews">47 reseñas verificadas · 5.0/5</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<section aria-label="Estadísticas" style="background:#fff; border-bottom:1px solid rgba(56,47,81,0.07);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4" style="border-color:rgba(56,47,81,0.07);">
+      <div class="stat-item" style="border-right:1px solid rgba(56,47,81,0.07);">
+        <div class="stat-number">7+</div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div class="stat-item" style="border-right:1px solid rgba(56,47,81,0.07);">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Evaluaciones completadas</div>
+      </div>
+      <div class="stat-item" style="border-right:1px solid rgba(56,47,81,0.07);">
+        <div class="stat-number">47+</div>
+        <div class="stat-label">Reseñas con 5 estrellas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" style="font-size:1.55rem;">11009616</div>
+        <div class="stat-label">Cédula Federal SEP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="servicios" aria-labelledby="servicios-heading" style="background:var(--surface); padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="section-eyebrow" style="text-align:center;">Lo que evaluamos</div>
+      <h2 id="servicios-heading" class="section-heading" style="text-align:center;">Evaluaciones especializadas</h2>
+      <div class="divider-plum mx-auto"></div>
+      <p class="section-sub mx-auto" style="text-align:center;">Cada evaluación usa instrumentos estandarizados internacionales y genera un informe con validez oficial.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Card 1: TDAH Infantil -->
+      <div class="service-card hover-lavender reveal">
+        <span class="badge-pill badge-lavender">TDAH Infantil</span>
+        <h3 style="font-size:1.2rem; color:var(--plum-ink); margin:0 0 0.4rem;">Valoración TDAH Infantil</h3>
+        <p style="font-size:0.8rem; font-weight:600; color:var(--ink2); margin:0 0 1rem; letter-spacing:0.02em;">5–17 años&nbsp;&nbsp;·&nbsp;&nbsp;$8,300 MXN</p>
+        <p style="font-size:0.875rem; color:var(--ink2); line-height:1.7; margin:0 0 1.25rem; flex-grow:1;">
+          Evaluación con CONNERS-3, WISC-V, BRIEF-2 y CPT-3. Informe con adecuaciones curriculares y validez oficial ante la escuela.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem;">
+          <span class="test-pill">CONNERS-3</span>
+          <span class="test-pill">WISC-V</span>
+          <span class="test-pill">BRIEF-2</span>
+          <span class="test-pill">CPT-3</span>
+        </div>
+        <a href="/evaluacion-tdah-ninos" class="btn-outline-plum">Ver evaluación</a>
+      </div>
+
+      <!-- Card 2: TDAH Adultos -->
+      <div class="service-card hover-sand reveal reveal-delay-1">
+        <span class="badge-pill badge-sand">TDAH Adultos</span>
+        <h3 style="font-size:1.2rem; color:var(--plum-ink); margin:0 0 0.4rem;">Valoración TDAH Adultos</h3>
+        <p style="font-size:0.8rem; font-weight:600; color:var(--ink2); margin:0 0 1rem; letter-spacing:0.02em;">+18 años&nbsp;&nbsp;·&nbsp;&nbsp;$8,300 MXN</p>
+        <p style="font-size:0.875rem; color:var(--ink2); line-height:1.7; margin:0 0 1.25rem; flex-grow:1;">
+          Evaluación con CAARS-2, WAIS-IV, BRIEF-2A y CPT-3. Diagnóstico diferencial frente a ansiedad, depresión y burnout.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem;">
+          <span class="test-pill">CAARS-2</span>
+          <span class="test-pill">WAIS-IV</span>
+          <span class="test-pill">BRIEF-2A</span>
+          <span class="test-pill">CPT-3</span>
+        </div>
+        <a href="/evaluacion-tdah-adultos" class="btn-outline-plum">Ver evaluación</a>
+      </div>
+
+      <!-- Card 3: Autismo TEA -->
+      <div class="service-card hover-blush reveal reveal-delay-2">
+        <span class="badge-pill badge-blush">Autismo / TEA</span>
+        <h3 style="font-size:1.2rem; color:var(--plum-ink); margin:0 0 0.4rem;">Evaluación de Autismo (TEA)</h3>
+        <p style="font-size:0.8rem; font-weight:600; color:var(--ink2); margin:0 0 1rem; letter-spacing:0.02em;">Niños y adolescentes&nbsp;&nbsp;·&nbsp;&nbsp;$8,500 MXN</p>
+        <p style="font-size:0.875rem; color:var(--ink2); line-height:1.7; margin:0 0 1.25rem; flex-grow:1;">
+          Diagnóstico con ADOS-2 (estándar de oro), ADI-R, WISC-V, Vineland-3 y SRS-2. Nivel de apoyo especificado.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem;">
+          <span class="test-pill">ADOS-2</span>
+          <span class="test-pill">ADI-R</span>
+          <span class="test-pill">WISC-V</span>
+          <span class="test-pill">Vineland-3</span>
+          <span class="test-pill">SRS-2</span>
+        </div>
+        <a href="/evaluacion-autismo-cancun" class="btn-outline-plum">Ver evaluación</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="proceso" aria-labelledby="proceso-heading" style="background:#fff; padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-12 reveal">
+      <div class="section-eyebrow">Paso a paso</div>
+      <h2 id="proceso-heading" class="section-heading">¿Cómo es el proceso?</h2>
+      <div class="divider-plum"></div>
+      <p class="section-sub" style="max-width:52ch;">Un proceso claro en cuatro pasos, desde la primera consulta hasta el informe final.</p>
+    </div>
+
+    <div style="max-width:680px; display:flex; flex-direction:column; gap:0;">
+
+      <div class="timeline-item reveal" style="padding-bottom:2.5rem;">
+        <div style="position:relative;">
+          <div class="timeline-number">01</div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div style="padding-top:0.25rem;">
+          <h3 style="font-size:1.1rem; color:var(--plum-ink); margin:0 0 0.5rem;">Entrevista inicial <span style="font-family:'Montserrat',sans-serif; font-weight:400; font-size:0.85rem; color:var(--ink2);">(online o presencial)</span></h3>
+          <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7; margin:0;">Primera sesión para conocer el motivo de consulta, historia clínica y contexto del paciente.</p>
+          <span class="duration-tag">60–90 min</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1" style="padding-bottom:2.5rem;">
+        <div style="position:relative;">
+          <div class="timeline-number">02</div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div style="padding-top:0.25rem;">
+          <h3 style="font-size:1.1rem; color:var(--plum-ink); margin:0 0 0.5rem;">Aplicación de pruebas neuropsicológicas</h3>
+          <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7; margin:0;">Sesiones presenciales de evaluación con instrumentos estandarizados internacionales.</p>
+          <span class="duration-tag">TDAH: 2–3 sesiones &nbsp;·&nbsp; Autismo: 3–4 sesiones</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-2" style="padding-bottom:2.5rem;">
+        <div style="position:relative;">
+          <div class="timeline-number">03</div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div style="padding-top:0.25rem;">
+          <h3 style="font-size:1.1rem; color:var(--plum-ink); margin:0 0 0.5rem;">Análisis e interpretación de resultados</h3>
+          <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7; margin:0;">Karen integra los datos de todas las pruebas en un informe clínico completo con diagnóstico diferencial.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-3">
+        <div>
+          <div class="timeline-number">04</div>
+        </div>
+        <div style="padding-top:0.25rem;">
+          <h3 style="font-size:1.1rem; color:var(--plum-ink); margin:0 0 0.5rem;">Sesión de devolución</h3>
+          <p style="font-size:0.9rem; color:var(--ink2); line-height:1.7; margin:0;">Se explica el informe en detalle, se responden preguntas y se entregan recomendaciones concretas y plan terapéutico.</p>
+          <span class="duration-tag">Presencial u online</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="sobre-mi" aria-labelledby="sobre-heading" style="background:var(--plum-deep); padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <div class="flex justify-center lg:justify-start reveal">
+        <img src="https://placehold.co/480x560/5b4e7f/d0d0e7?text=Karen+Trujillo" alt="Karen Trujillo, Neuropsicóloga" width="440" height="513"
+          style="border-radius:20px 80px 20px 20px; display:block; width:100%; max-width:400px; box-shadow: 0 24px 64px rgba(0,0,0,0.28);" />
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="section-eyebrow" style="color:rgba(208,208,231,0.6);">Neuropsicóloga certificada</div>
+        <h2 id="sobre-heading" class="section-heading section-heading-light">Conoce a Karen Trujillo</h2>
+        <div class="divider-plum divider-light"></div>
+
+        <p style="color:rgba(255,255,255,0.8); font-size:0.95rem; line-height:1.8; margin-bottom:1.25rem;">
+          Soy Neuropsicóloga Karen Trujillo (Cédula Federal: 11009616), especializada en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
+        </p>
+        <p style="color:rgba(255,255,255,0.8); font-size:0.95rem; line-height:1.8; margin-bottom:2rem;">
+          Me especializo exclusivamente en evaluación neuropsicológica porque creo que un diagnóstico preciso cambia trayectorias de vida. Un niño con TDAH no diagnosticado es etiquetado como "flojo" o "difícil"; un adulto sin diagnóstico lleva décadas creyendo que el problema es su carácter. El diagnóstico correcto es el primer paso del tratamiento correcto.
+        </p>
+
+        <div style="margin-bottom:2rem;">
+          <div class="cred-item">
+            <div class="cred-check"><svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <span style="font-size:0.85rem; color:rgba(255,255,255,0.78);">Cédula Profesional Federal: 11009616 (SEP)</span>
+          </div>
+          <div class="cred-item">
+            <div class="cred-check"><svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <span style="font-size:0.85rem; color:rgba(255,255,255,0.78);">Licenciada en Psicología — Universidad Modelo, Quintana Roo</span>
+          </div>
+          <div class="cred-item">
+            <div class="cred-check"><svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <span style="font-size:0.85rem; color:rgba(255,255,255,0.78);">Especialización en TDAH infantil: CONNERS-3, WISC-V, BRIEF-2</span>
+          </div>
+          <div class="cred-item">
+            <div class="cred-check"><svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <span style="font-size:0.85rem; color:rgba(255,255,255,0.78);">Especialización en TDAH adultos: CAARS-2, DIVA 2.0, CPT-3</span>
+          </div>
+          <div class="cred-item">
+            <div class="cred-check"><svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <span style="font-size:0.85rem; color:rgba(255,255,255,0.78);">Especialización en TEA: ADOS-2, M-CHAT-R/F, ADI-R, Vineland-3</span>
+          </div>
+          <div class="cred-item" style="border-bottom:none;">
+            <div class="cred-check"><svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <span style="font-size:0.85rem; color:rgba(255,255,255,0.78);">Miembro del Colegio de Psicólogos de Quintana Roo</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.1);">
+          <div>
+            <div style="font-family:'Gloock',Georgia,serif; font-size:1.8rem; color:#fff;">7+</div>
+            <div style="font-size:0.72rem; font-weight:600; color:rgba(208,208,231,0.65); letter-spacing:0.06em; text-transform:uppercase;">Años</div>
+          </div>
+          <div>
+            <div style="font-family:'Gloock',Georgia,serif; font-size:1.8rem; color:#fff;">500+</div>
+            <div style="font-size:0.72rem; font-weight:600; color:rgba(208,208,231,0.65); letter-spacing:0.06em; text-transform:uppercase;">Evaluaciones</div>
+          </div>
+          <div>
+            <div style="font-family:'Gloock',Georgia,serif; font-size:1.8rem; color:#fff;">47+</div>
+            <div style="font-size:0.72rem; font-weight:600; color:rgba(208,208,231,0.65); letter-spacing:0.06em; text-transform:uppercase;">Reseñas 5★</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonios" aria-labelledby="testimonios-heading" style="background:var(--surface); padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="section-eyebrow" style="text-align:center;">Familias reales</div>
+      <h2 id="testimonios-heading" class="section-heading" style="text-align:center;">Lo que dicen las familias</h2>
+      <div class="divider-plum mx-auto"></div>
+    </div>
+
+    <!-- Featured quote -->
+    <div class="featured-quote reveal" style="max-width:780px; margin:0 auto 2.5rem;">
+      <blockquote style="margin:0; padding-top:1rem;">
+        <p style="font-family:'Gloock',Georgia,serif; font-size:clamp(1.15rem,2.5vw,1.4rem); font-style:italic; color:var(--plum-ink); line-height:1.65; margin:0 0 1.25rem;">
+          Por fin entendí por qué mi hijo tenía tantas dificultades en la escuela. Karen nos explicó todo con claridad y el informe nos abrió las puertas a los apoyos que necesitaba.
+        </p>
+        <footer style="display:flex; align-items:center; gap:0.75rem;">
+          <div>
+            <cite style="font-style:normal; font-weight:700; font-size:0.9rem; color:var(--plum-ink);">Sofía M.</cite>
+            <span style="font-size:0.8rem; color:var(--ink2);">&nbsp;·&nbsp;Valoración TDAH Infantil</span>
+            <div style="color:#f59e0b; font-size:0.9rem; margin-top:2px;">★★★★★</div>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+
+    <!-- 3 cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <article class="testimonial-card reveal">
+        <div style="color:#f59e0b; font-size:0.85rem; margin-bottom:0.75rem;">★★★★★</div>
+        <p style="font-size:0.875rem; color:var(--ink2); line-height:1.7; margin:0 0 1rem; font-style:italic;">
+          "La evaluación neuropsicológica fue muy completa y profesional. Por fin entendí mi diagnóstico de TDAH y qué pasos seguir. Karen es excelente en su trato y conocimiento."
+        </p>
+        <div style="font-weight:700; font-size:0.85rem; color:var(--plum-ink);">Carlos L.</div>
+        <div style="font-size:0.75rem; color:var(--ink2); margin-top:2px;">Evaluación TDAH Adultos</div>
+      </article>
+
+      <article class="testimonial-card reveal reveal-delay-1">
+        <div style="color:#f59e0b; font-size:0.85rem; margin-bottom:0.75rem;">★★★★★</div>
+        <p style="font-size:0.875rem; color:var(--ink2); line-height:1.7; margin:0 0 1rem; font-style:italic;">
+          "Nos dijeron que solo era 'tímida'. El diagnóstico de TEA nivel 1 nos dio claridad total y un camino concreto a seguir."
+        </p>
+        <div style="font-weight:700; font-size:0.85rem; color:var(--plum-ink);">Mamá de Emilia, 6 años</div>
+        <div style="font-size:0.75rem; color:var(--ink2); margin-top:2px;">Evaluación de Autismo (TEA)</div>
+      </article>
+
+      <article class="testimonial-card reveal reveal-delay-2">
+        <div style="color:#f59e0b; font-size:0.85rem; margin-bottom:0.75rem;">★★★★★</div>
+        <p style="font-size:0.875rem; color:var(--ink2); line-height:1.7; margin:0 0 1rem; font-style:italic;">
+          "Me diagnosticaron ansiedad dos veces antes de llegar aquí. Resultó ser TDAH inatento. Karen fue la primera en ver el cuadro completo."
+        </p>
+        <div style="font-weight:700; font-size:0.85rem; color:var(--plum-ink);">Mariana, 28 años</div>
+        <div style="font-size:0.75rem; color:var(--ink2); margin-top:2px;">Evaluación TDAH Adultos</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" aria-labelledby="faq-heading" style="background:#fff; padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10 reveal">
+      <div class="section-eyebrow">Dudas frecuentes</div>
+      <h2 id="faq-heading" class="section-heading">Preguntas frecuentes</h2>
+      <div class="divider-plum"></div>
+    </div>
+
+    <div style="max-width:720px;" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-a1">
+          <span>¿Cuánto cuesta una evaluación neuropsicológica en Cancún?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-a1" class="faq-answer" role="region">
+          La valoración de TDAH (infantil o adulto) tiene un costo de $8,300 MXN. La evaluación de autismo (TEA) tiene un costo de $8,500 MXN. Ambos procesos incluyen todas las sesiones, pruebas estandarizadas, informe clínico completo y sesión de devolución. Se solicita un anticipo al agendar que forma parte del costo total.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-a2">
+          <span>¿Cuánto tiempo toma el proceso completo?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-a2" class="faq-answer" role="region">
+          La valoración de TDAH toma entre 2 y 3 semanas (4–5 citas presenciales). La evaluación de autismo toma entre 3 y 4 semanas (5–6 citas presenciales). Ambos procesos incluyen entrevista inicial, aplicación de pruebas, análisis de resultados y sesión de devolución con informe.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-a3">
+          <span>¿Los informes tienen validez oficial?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-a3" class="faq-answer" role="region">
+          Sí. Todos los informes clínicos están respaldados por cédula profesional federal 11009616 emitida por la SEP. Tienen validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS, empleadores y dependencias gubernamentales en todo México.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-a4">
+          <span>¿La evaluación se puede hacer en línea?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-a4" class="faq-answer" role="region">
+          Las entrevistas iniciales y las sesiones de devolución pueden realizarse en línea. Sin embargo, las pruebas neuropsicológicas estandarizadas requieren aplicación presencial en el consultorio de Cancún, Quintana Roo, para garantizar la validez de los resultados.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem" style="border-bottom:none;">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-a5">
+          <span>¿Cuál es la diferencia entre un neuropsicólogo y un psicólogo?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="faq-a5" class="faq-answer" role="region">
+          Un psicólogo clínico evalúa conducta y emociones mediante entrevista y observación. Un neuropsicólogo aplica pruebas estandarizadas que miden funciones cognitivas del cerebro (atención, memoria de trabajo, velocidad de procesamiento) de forma cuantificable. Para TDAH y autismo, la evaluación neuropsicológica es el estándar clínico porque permite diagnóstico diferencial con datos objetivos.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG PREVIEW ===== -->
+<section id="blog" aria-labelledby="blog-heading" style="background:var(--surface); padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-end justify-between mb-10 flex-wrap gap-4 reveal">
+      <div>
+        <div class="section-eyebrow">Recursos y artículos</div>
+        <h2 id="blog-heading" class="section-heading">Del blog</h2>
+        <div class="divider-plum" style="margin-bottom:0;"></div>
+      </div>
+      <a href="/blog" style="font-size:0.85rem; font-weight:600; color:var(--plum-mid); text-decoration:none; letter-spacing:0.04em;">Ver todos los artículos →</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <article class="blog-card reveal">
+        <img src="https://placehold.co/400x240/d0d0e7/382f51?text=TDAH+Infantil" alt="TDAH en niños — artículo del blog" width="400" height="240" loading="lazy" />
+        <div style="padding:1.25rem; display:flex; flex-direction:column; flex-grow:1;">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+            <span class="blog-tag">TDAH Infantil</span>
+            <span style="font-size:0.72rem; color:var(--ink2);">12 min</span>
+          </div>
+          <h3 style="font-family:'Gloock',Georgia,serif; font-size:1.05rem; color:var(--plum-ink); line-height:1.4; margin:0; flex-grow:1;">¿Tu hijo no pone atención? Señales reales de TDAH en niños</h3>
+          <a href="/blog/senales-tdah-ninos" style="margin-top:1rem; font-size:0.8rem; font-weight:600; color:var(--plum-mid); text-decoration:none; letter-spacing:0.03em;">Leer artículo →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal reveal-delay-1">
+        <img src="https://placehold.co/400x240/f5dfc5/382f51?text=TDAH+Adultos" alt="TDAH en adultos — artículo del blog" width="400" height="240" loading="lazy" />
+        <div style="padding:1.25rem; display:flex; flex-direction:column; flex-grow:1;">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+            <span class="blog-tag">TDAH Adultos</span>
+            <span style="font-size:0.72rem; color:var(--ink2);">10 min</span>
+          </div>
+          <h3 style="font-family:'Gloock',Georgia,serif; font-size:1.05rem; color:var(--plum-ink); line-height:1.4; margin:0; flex-grow:1;">TDAH en adultos: por qué miles llegan al diagnóstico después de los 30</h3>
+          <a href="/blog/tdah-adultos-diagnostico" style="margin-top:1rem; font-size:0.8rem; font-weight:600; color:var(--plum-mid); text-decoration:none; letter-spacing:0.03em;">Leer artículo →</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal reveal-delay-2">
+        <img src="https://placehold.co/400x240/fbdbe0/382f51?text=Autismo+TEA" alt="ADOS-2 y autismo — artículo del blog" width="400" height="240" loading="lazy" />
+        <div style="padding:1.25rem; display:flex; flex-direction:column; flex-grow:1;">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">
+            <span class="blog-tag">Autismo / TEA</span>
+            <span style="font-size:0.72rem; color:var(--ink2);">11 min</span>
+          </div>
+          <h3 style="font-family:'Gloock',Georgia,serif; font-size:1.05rem; color:var(--plum-ink); line-height:1.4; margin:0; flex-grow:1;">¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?</h3>
+          <a href="/blog/que-es-el-ados-2" style="margin-top:1rem; font-size:0.8rem; font-weight:600; color:var(--plum-mid); text-decoration:none; letter-spacing:0.03em;">Leer artículo →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATION / CONTACT ===== -->
+<section id="contacto" aria-labelledby="contacto-heading" style="background:#fff; padding: 5rem 0;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10 reveal">
+      <div class="section-eyebrow">Dónde encontrarnos</div>
+      <h2 id="contacto-heading" class="section-heading">Consultorio en Cancún</h2>
+      <div class="divider-plum"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+      <!-- Map -->
+      <div class="reveal">
+        <img src="https://placehold.co/600x450/e8e6f0/515e71?text=Mapa+Cancún" alt="Mapa del consultorio de Karen Trujillo en Cancún"
+          width="600" height="450"
+          style="width:100%; border-radius:16px; display:block; box-shadow:0 4px 24px rgba(56,47,81,0.1);" loading="lazy" />
+      </div>
+
+      <!-- Info -->
+      <div style="padding-top:0.5rem;" class="reveal reveal-delay-1">
+        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div class="contact-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--plum-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:var(--plum-mid); margin-bottom:0.3rem;">Dirección</div>
+              <div style="font-size:0.9rem; color:var(--plum-ink); line-height:1.6;">SM200 M49 L2, Hacienda de Chinconcuac,<br/>Supermanzana Circuito,<br/>Cancún, Quintana Roo</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div class="contact-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--plum-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:var(--plum-mid); margin-bottom:0.3rem;">Horario</div>
+              <div style="font-size:0.9rem; color:var(--plum-ink); line-height:1.7;">
+                Lunes–Viernes &nbsp;9:00 – 19:00<br/>
+                Sábados &nbsp;9:00 – 14:00<br/>
+                Domingos: cerrado
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; align-items:flex-start;">
+            <div class="contact-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--plum-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.25 1.23 2 2 0 012.25 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.09 17.9l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:var(--plum-mid); margin-bottom:0.3rem;">Teléfono</div>
+              <a href="tel:+529983211547" style="font-size:0.9rem; color:var(--plum-ink); text-decoration:none; font-weight:500;">+52 998 321 1547</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:2rem;">
+          <a href="https://wa.me/529983211547" class="btn-wa" aria-label="Agendar cita por WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.563 4.14 1.537 5.875L0 24l6.29-1.518A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.213-3.733.902.938-3.627-.234-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.431 0 9.818 4.388 9.818 9.818 0 5.43-4.387 9.818-9.818 9.818z"/></svg>
+            Agendar cita por WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:var(--plum-deep); padding: 4rem 0 2rem;" role="contentinfo">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10" style="border-bottom:1px solid rgba(255,255,255,0.09);">
+
+      <div class="lg:col-span-1">
+        <div style="font-family:'Gloock',Georgia,serif; font-size:1.35rem; color:#fff; margin-bottom:0.4rem;">Karen Trujillo</div>
+        <div style="font-size:0.72rem; font-weight:600; letter-spacing:0.1em; color:rgba(208,208,231,0.5); text-transform:uppercase; margin-bottom:1rem;">Neuropsicóloga en Cancún</div>
+        <div style="font-size:0.8rem; color:rgba(208,208,231,0.5);">Cédula Federal 11009616</div>
+        <div style="color:#f59e0b; font-size:0.85rem; margin-top:0.4rem; letter-spacing:0.05em;">★★★★★ 5.0</div>
+      </div>
+
+      <div>
+        <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(208,208,231,0.45); margin-bottom:1rem;">Servicios</div>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+          <li><a href="/evaluacion-tdah-ninos"     style="font-size:0.875rem; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">TDAH Infantil</a></li>
+          <li><a href="/evaluacion-tdah-adultos"   style="font-size:0.875rem; color:rgba(255,255,255,0.7); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">TDAH Adultos</a></li>
+          <li><a href="/evaluacion-autismo-cancun" style="font-size:0.875rem; color:rgba(255,255,255,0.7); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Autismo (TEA)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(208,208,231,0.45); margin-bottom:1rem;">Información</div>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+          <li><a href="/blog"    style="font-size:0.875rem; color:rgba(255,255,255,0.7); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Blog</a></li>
+          <li><a href="#proceso" style="font-size:0.875rem; color:rgba(255,255,255,0.7); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Proceso de evaluación</a></li>
+          <li><a href="#faq"     style="font-size:0.875rem; color:rgba(255,255,255,0.7); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(208,208,231,0.45); margin-bottom:1rem;">Contacto</div>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.6rem;">
+          <li><a href="tel:+529983211547"              style="font-size:0.875rem; color:rgba(255,255,255,0.7); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">+52 998 321 1547</a></li>
+          <li><a href="https://wa.me/529983211547"     style="font-size:0.875rem; color:var(--wa); text-decoration:none; font-weight:600;">WhatsApp</a></li>
+          <li><span style="font-size:0.875rem; color:rgba(255,255,255,0.45);">Cancún, Quintana Roo</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="padding-top:1.5rem; display:flex; align-items:center; justify-content:center;">
+      <p style="font-size:0.78rem; color:rgba(208,208,231,0.35); text-align:center; margin:0; max-width:none;">
+        © 2025 Karen Trujillo. Todos los derechos reservados.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===== FLOATING WA BUTTON ===== -->
+<a href="https://wa.me/529983211547" class="floating-wa" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.563 4.14 1.537 5.875L0 24l6.29-1.518A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.36-.213-3.733.902.938-3.627-.234-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.431 0 9.818 4.388 9.818 9.818 0 5.43-4.387 9.818-9.818 9.818z"/>
+  </svg>
+</a>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // --- Navbar scroll ---
+  (function () {
+    var navbar  = document.getElementById('navbar');
+    var iconOpen  = document.getElementById('icon-open');
+    var iconClose = document.getElementById('icon-close');
+
+    function updateNavbar() {
+      if (window.scrollY > 48) {
+        navbar.classList.add('scrolled');
+        iconOpen.setAttribute('stroke', '#382f51');
+        iconClose.setAttribute('stroke', '#382f51');
+      } else {
+        navbar.classList.remove('scrolled');
+        iconOpen.setAttribute('stroke', 'white');
+        iconClose.setAttribute('stroke', 'white');
+      }
+    }
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    updateNavbar();
+  })();
+
+  // --- Mobile hamburger ---
+  (function () {
+    var btn   = document.getElementById('hamburger-btn');
+    var menu  = document.getElementById('mobile-menu');
+    var iconOpen  = document.getElementById('icon-open');
+    var iconClose = document.getElementById('icon-close');
+    var isOpen = false;
+
+    btn.addEventListener('click', function () {
+      isOpen = !isOpen;
+      menu.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', String(isOpen));
+      iconOpen.style.display  = isOpen ? 'none'  : 'block';
+      iconClose.style.display = isOpen ? 'block' : 'none';
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        isOpen = false;
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        iconOpen.style.display  = 'block';
+        iconClose.style.display = 'none';
+      });
+    });
+  })();
+
+  // --- FAQ accordion ---
+  (function () {
+    var buttons = document.querySelectorAll('.faq-btn');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        var answer   = document.getElementById(btn.getAttribute('aria-controls'));
+
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          var el = document.getElementById(b.getAttribute('aria-controls'));
+          if (el) el.classList.remove('open');
+        });
+
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          if (answer) answer.classList.add('open');
+        }
+      });
+    });
+  })();
+
+  // --- Scroll reveal (Intersection Observer) ---
+  (function () {
+    var query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (query.matches) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+
+</body>
+</html>

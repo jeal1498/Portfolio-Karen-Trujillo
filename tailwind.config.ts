@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        serif: ['Gloock', 'Georgia', 'serif'],
       },
       fontWeight: {
         light: '400',    // Montserrat 300 es demasiado delgada en pantalla
@@ -44,6 +44,7 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        'plum-deep': '#2b1f47',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

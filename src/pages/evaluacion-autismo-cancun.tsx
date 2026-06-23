@@ -10,13 +10,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SOCIAL_PROFILES, WA_NUMBER, PHONE_NUMBER, PHONE_E164 } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG — Cal.com URL (cambiar al URL real de Karen)
    ═══════════════════════════════════════════════════════════════ */
 const CAL_URL = 'https://cal.com/psicologa-karen-trujillo/valoracion-autismo-infantil-presencial';
-const WA_NUMBER = '529983211547';
-const PHONE_NUMBER = '529983211547';
+const CANONICAL_URL = `${SITE_URL}/evaluacion-autismo-cancun`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -26,7 +27,7 @@ const painPoints = [
   { icon: Users, text: 'Su manera de relacionarse es diferente y te preocupa que no logre conectar con otros niños' },
   { icon: BookOpen, text: 'La escuela te dice que "algo pasa" pero nadie te da un nombre claro ni un camino a seguir' },
   { icon: Puzzle, text: 'Tiene intereses muy intensos, rutinas rígidas o reacciones que otros no entienden' },
-  { icon: Heart, text: 'Quieres entenderlo, no etiquetarlo — pero necesitas una respuesta profesional para poder ayudarlo' },
+  { icon: Heart, text: 'Quieres entenderlo, no etiquetarlo, pero necesitas una respuesta profesional para poder ayudarlo' },
 ];
 
 const symptoms = [
@@ -49,11 +50,11 @@ const proceso = [
 ];
 
 const instrumentos = [
-  { nombre: 'ADOS-2', desc: 'Escala de observación diagnóstica del autismo — estándar de oro internacional' },
-  { nombre: 'ADI-R', desc: 'Entrevista diagnóstica revisada para autismo — con padres o cuidadores' },
+  { nombre: 'ADOS-2', desc: 'Escala de observación diagnóstica del autismo: estándar de oro internacional' },
+  { nombre: 'ADI-R', desc: 'Entrevista diagnóstica revisada para autismo: con padres o cuidadores' },
   { nombre: 'WISC-V', desc: 'Perfil cognitivo: inteligencia, atención, memoria de trabajo' },
   { nombre: 'Vineland-3', desc: 'Conducta adaptativa: comunicación, socialización, autonomía' },
-  { nombre: 'SRS-2', desc: 'Escala de responsividad social — padres y maestros' },
+  { nombre: 'SRS-2', desc: 'Escala de responsividad social: padres y maestros' },
 ];
 
 const informeIncludes = [
@@ -109,11 +110,11 @@ const faqItems = [
   },
   {
     q: '¿Qué pruebas se aplican para diagnosticar autismo?',
-    a: 'Se aplican cinco instrumentos estandarizados internacionales: ADOS-2 (observación directa del niño — estándar de oro para autismo), ADI-R (entrevista estructurada con padres), WISC-V (perfil cognitivo), Vineland-3 (conducta adaptativa) y SRS-2 (escala de responsividad social con formas para padres y maestros). Todos los instrumentos están validados para población hispanohablante.',
+    a: 'Se aplican cinco instrumentos estandarizados internacionales: ADOS-2 (observación directa del niño, estándar de oro para autismo), ADI-R (entrevista estructurada con padres), WISC-V (perfil cognitivo), Vineland-3 (conducta adaptativa) y SRS-2 (escala de responsividad social con formas para padres y maestros). Todos los instrumentos están validados para población hispanohablante.',
   },
   {
     q: '¿El informe de autismo tiene validez oficial ante la escuela?',
-    a: 'Sí. El informe clínico está respaldado por cédula profesional federal 11009616 emitida por la SEP y tiene validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS y dependencias gubernamentales en todo México. Incluye nivel de apoyo, recomendaciones de adecuaciones curriculares y orientación para el equipo escolar.',
+    a: `Sí. El informe clínico está respaldado por cédula profesional federal ${CEDULA} emitida por la SEP y tiene validez oficial ante instituciones educativas, la Secretaría de Educación Pública, IMSS y dependencias gubernamentales en todo México. Incluye nivel de apoyo, recomendaciones de adecuaciones curriculares y orientación para el equipo escolar.`,
   },
   {
     q: '¿Cuál es la diferencia entre autismo y TDAH?',
@@ -162,16 +163,16 @@ const reviews = [
 /* ── Physician entity (reused across schemas) ── */
 const physicianEntity = {
   '@type': 'Physician',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+  '@id': `${SITE_URL}/#physician`,
   name: 'Karen Trujillo',
   jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-  telephone: '+529983211547',
+  url: SITE_URL,
+  image: KAREN_IMAGE,
+  telephone: PHONE_E164,
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'Cédula Profesional Federal',
-    credentialId: '11009616',
+    credentialId: CEDULA,
     issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
   },
   medicalSpecialty: 'Neuropsychiatry',
@@ -185,17 +186,13 @@ const physicianEntity = {
     sameAs: 'https://www.wikidata.org/wiki/Q8969',
     containedInPlace: { '@type': 'State', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
   },
-  sameAs: [
-    'https://www.facebook.com/share/1Bs93MjeKt/',
-    'https://www.instagram.com/psicologakarentrujillo',
-    'https://www.tiktok.com/@psic.karentrujillo',
-  ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 /* ── MedicalCondition entity ── */
 const teaCondition = {
   '@type': 'MedicalCondition',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#tea',
+  '@id': `${SITE_URL}/#tea`,
   name: 'Trastorno del Espectro Autista (TEA)',
   alternateName: ['Autismo', 'TEA', 'Autism Spectrum Disorder', 'Espectro autista', 'Asperger'],
   code: [
@@ -237,11 +234,11 @@ const teaCondition = {
 /* ── MedicalClinic entity (local SEO + GEO) ── */
 const clinicEntity = {
   '@type': 'MedicalClinic',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+  '@id': `${SITE_URL}/#clinic`,
   name: 'Consultorio Neuropsicóloga Karen Trujillo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  telephone: '+529983211547',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  url: SITE_URL,
+  telephone: PHONE_E164,
+  image: KAREN_IMAGE,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac Supermanzana Circuito casa 1587B',
@@ -252,8 +249,8 @@ const clinicEntity = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 21.1619,
-    longitude: -86.8515,
+    latitude: GEO.latitude,
+    longitude: GEO.longitude,
   },
   openingHoursSpecification: [
     {
@@ -270,8 +267,8 @@ const clinicEntity = {
     },
   ],
   medicalSpecialty: 'Neuropsychiatry',
-  availableService: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea-service' },
-  member: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+  availableService: { '@id': `${SITE_URL}/#tea-service` },
+  member: { '@id': `${SITE_URL}/#physician` },
 };
 
 const schema = {
@@ -281,23 +278,23 @@ const schema = {
     {
       '@type': 'MedicalWebPage',
       name: 'Evaluación y Diagnóstico de Autismo (TEA) en Cancún',
-      url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
-      description: 'Evaluación neuropsicológica de Autismo (TEA) en Cancún con ADOS-2 y ADI-R. Diagnóstico con nivel de apoyo, perfil cognitivo y conducta adaptativa. Informe con cédula federal 11009616.',
+      url: CANONICAL_URL,
+      description: `Evaluación neuropsicológica de Autismo (TEA) en Cancún con ADOS-2 y ADI-R. Diagnóstico con nivel de apoyo, perfil cognitivo y conducta adaptativa. Informe con cédula federal ${CEDULA}.`,
       inLanguage: 'es-MX',
-      about: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
+      about: { '@id': `${SITE_URL}/#tea` },
       mentions: [
         { '@type': 'MedicalCondition', name: 'Trastorno del espectro autista', sameAs: 'https://www.wikidata.org/wiki/Q38404' },
         { '@type': 'MedicalCondition', name: 'TDAH', sameAs: 'https://www.wikidata.org/wiki/Q206811' },
         { '@type': 'MedicalTest', name: 'ADOS-2' },
         { '@type': 'MedicalTest', name: 'ADI-R' },
       ],
-      reviewedBy: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      reviewedBy: { '@id': `${SITE_URL}/#physician` },
       lastReviewed: '2026-06-02',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-          { '@type': 'ListItem', position: 2, name: 'Evaluación Autismo (TEA)', item: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun' },
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Evaluación Autismo (TEA)', item: CANONICAL_URL },
         ],
       },
     },
@@ -313,14 +310,14 @@ const schema = {
       name: 'ADOS-2',
       alternateName: 'Autism Diagnostic Observation Schedule — 2nd Edition',
       description: 'Escala de observación semiestructurada considerada el estándar de oro internacional para el diagnóstico del autismo. Evalúa comunicación, interacción social y conducta directamente con el niño.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tea` },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'ADI-R',
       alternateName: 'Autism Diagnostic Interview — Revised',
       description: 'Entrevista diagnóstica estructurada aplicada a padres o cuidadores principales. Explora la historia del desarrollo, comunicación, interacción social y patrones de conducta restringidos y repetitivos.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tea` },
     },
     {
       '@type': 'DiagnosticProcedure',
@@ -328,26 +325,26 @@ const schema = {
       alternateName: 'Escala Wechsler de Inteligencia para Niños — 5ª edición',
       description: 'Evaluación de inteligencia y perfil cognitivo que mide atención, memoria de trabajo, velocidad de procesamiento y razonamiento.',
       sameAs: 'https://www.wikidata.org/wiki/Q2551426',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tea` },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'Vineland-3',
       alternateName: 'Vineland Adaptive Behavior Scales — 3rd Edition',
       description: 'Evaluación de conducta adaptativa que mide comunicación, socialización, habilidades de la vida diaria y habilidades motoras.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tea` },
     },
     {
       '@type': 'DiagnosticProcedure',
       name: 'SRS-2',
       alternateName: 'Social Responsiveness Scale — 2nd Edition',
       description: 'Escala que mide la severidad de los déficits en interacción social recíproca asociados al autismo, con formas para padres y maestros.',
-      usedToDiagnose: { '@id': 'https://www.psicologakarentrujillo.com.mx/#tea' },
+      usedToDiagnose: { '@id': `${SITE_URL}/#tea` },
     },
     /* ── Service + Offer ── */
     {
       '@type': 'MedicalProcedure',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#tea-service',
+      '@id': `${SITE_URL}/#tea-service`,
       name: 'Evaluación Neuropsicológica de Autismo (TEA)',
       procedureType: 'Diagnostic',
       howPerformed: 'Aplicación de ADOS-2 (observación directa), ADI-R (entrevista con padres), WISC-V (perfil cognitivo), Vineland-3 (conducta adaptativa) y SRS-2 (responsividad social). Elaboración de informe y sesión de devolución.',
@@ -355,8 +352,8 @@ const schema = {
       followup: 'Sesión de devolución con explicación del diagnóstico, nivel de apoyo, recomendaciones terapéuticas y adecuaciones escolares.',
       bodyLocation: 'Sistema nervioso central — comunicación social y conducta',
       status: 'EventScheduled',
-      provider: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      location: { '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic' },
+      provider: { '@id': `${SITE_URL}/#physician` },
+      location: { '@id': `${SITE_URL}/#clinic` },
       offers: {
         '@type': 'Offer',
         price: '8500',
@@ -367,30 +364,21 @@ const schema = {
         areaServed: { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
       },
     },
-    /* ── HowTo ── */
-    {
-      '@type': 'HowTo',
-      name: 'Proceso de evaluación neuropsicológica de autismo (TEA) en Cancún',
-      description: 'Protocolo clínico de 5 fases para diagnosticar autismo con ADOS-2 y ADI-R. Duración total: 3 a 4 semanas.',
-      totalTime: 'P4W',
-      estimatedCost: { '@type': 'MonetaryAmount', currency: 'MXN', value: '8500' },
-      step: proceso.map((p, i) => ({ '@type': 'HowToStep', name: p.titulo, text: p.desc, position: i + 1 })),
-    },
     /* ── Individual Reviews ── */
     ...reviews.map((r, i) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: r.name },
       reviewRating: { '@type': 'Rating', ratingValue: r.stars, bestRating: 5 },
       reviewBody: r.text,
-      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      itemReviewed: { '@id': `${SITE_URL}/#physician` },
       datePublished: `2025-0${i + 1}-15`,
     })),
     /* ── AggregateRating ── */
     {
       '@type': 'AggregateRating',
-      itemReviewed: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      ratingValue: '5.0',
-      reviewCount: '47',
+      itemReviewed: { '@id': `${SITE_URL}/#physician` },
+      ratingValue: REVIEWS.ratingValue,
+      reviewCount: REVIEWS.reviewCount,
       bestRating: '5',
       worstRating: '1',
     },
@@ -442,7 +430,7 @@ function CtaButton({ variant = 'primary', children, className = '' }: { variant?
     <a
       href="#agendar"
       onClick={scrollToBooking}
-      className={`group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl transition-all duration-300 text-center ${
+      className={`group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl transition-all duration-300 text-center ${
         variant === 'primary'
           ? 'bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0'
           : 'border-2 border-primary/25 text-primary hover:border-primary/60 hover:bg-primary/5 hover:-translate-y-0.5'
@@ -480,13 +468,13 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
   const result = getResult();
 
   return (
-    <div className="bg-card rounded-3xl border-2 border-border overflow-hidden shadow-xl shadow-primary/5">
+    <div className="bg-card rounded-2xl border-2 border-border overflow-hidden shadow-xl shadow-primary/5">
       {showHeader && (
         <div className="p-6 sm:p-8 border-b border-border bg-gradient-to-br from-secondary/80 to-secondary/30 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/10 rounded-full blur-2xl" />
           <div className="flex items-center gap-3 mb-3 relative">
             <AlertCircle className="w-5 h-5 text-accent-blue shrink-0" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
               Herramienta orientativa · No es diagnóstico
             </span>
           </div>
@@ -549,7 +537,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
 
         <div className="flex flex-col sm:flex-row gap-3">
           <CtaButton className="flex-1 justify-center">
-            {count > 4 ? 'Tu hijo merece claridad — Agendar' : 'Reservar mi lugar'}
+            {count > 4 ? 'Tu hijo merece claridad. Agendar' : 'Reservar mi lugar'}
           </CtaButton>
           {count > 0 && (
             <button
@@ -560,7 +548,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
             </button>
           )}
         </div>
-        <p className="text-[10px] text-muted-foreground/50 text-center mt-4">Solo una evaluación neuropsicológica formal con ADOS-2 puede establecer un diagnóstico de autismo.</p>
+        <p className="text-xs text-muted-foreground/50 text-center mt-4">Solo una evaluación neuropsicológica formal con ADOS-2 puede establecer un diagnóstico de autismo.</p>
       </div>
     </div>
   );
@@ -608,25 +596,29 @@ export default function AutismoCancunFunnel() {
     <>
       <Head>
         <title>Evaluación Autismo (TEA) en Cancún · ADOS-2 | Karen Trujillo</title>
-        <meta name="description" content="¿Tu hijo muestra señales de autismo? Evaluación neuropsicológica de TEA en Cancún con ADOS-2 y ADI-R. Diagnóstico con nivel de apoyo. Informe oficial con cédula 11009616. $8,500 MXN. Agenda en línea." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun" />
+        <meta name="description" content={`¿Tu hijo muestra señales de autismo? Evaluación neuropsicológica de TEA en Cancún con ADOS-2 y ADI-R. Diagnóstico con nivel de apoyo. Informe oficial con cédula ${CEDULA}. $8,500 MXN. Agenda en línea.`} />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo — Neuropsicología" />
         <meta property="og:title" content="Evaluación Autismo (TEA) en Cancún · ADOS-2 y ADI-R" />
         <meta property="og:description" content="Evaluación neuropsicológica de autismo con ADOS-2 — estándar de oro internacional. Informe con validez oficial. $8,500 MXN. Agenda en línea." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Evaluación Autismo (TEA) en Cancún | ADOS-2 y ADI-R" />
         <meta name="twitter:description" content="Evaluación neuropsicológica de autismo con instrumentos estandarizados. Informe oficial. Agenda en línea. Cancún, Q. Roo." />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         {/* AEO: Speakable */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -636,7 +628,7 @@ export default function AutismoCancunFunnel() {
             '@type': 'SpeakableSpecification',
             cssSelector: ['#definicion-tea', '#proceso-evaluacion', '#que-incluye-informe', '#diferenciador-neuropsicologia'],
           },
-          url: 'https://www.psicologakarentrujillo.com.mx/evaluacion-autismo-cancun',
+          url: CANONICAL_URL,
         }) }} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -656,72 +648,67 @@ export default function AutismoCancunFunnel() {
           {/* ══════════════════════════════════════════════════════
               1 · HERO — H1 SEO + subtítulo emocional + outcome-first copy
               ══════════════════════════════════════════════════════ */}
-          <section className="relative flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section className="relative flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
 
               <nav aria-label="Breadcrumb" className="mb-6 animate-[fadeIn_0.6s_ease-out_both]">
-                <ol className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                  <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
-                  <li className="text-border">/</li>
-                  <li className="text-primary font-medium">Evaluación Autismo (TEA)</li>
+                <ol className="flex items-center justify-center gap-2 text-xs" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                  <li><Link href="/" className="hover:text-white transition-colors">Inicio</Link></li>
+                  <li style={{ color: 'rgba(208,208,231,0.3)' }}>/</li>
+                  <li className="text-white font-medium">Evaluación Autismo (TEA)</li>
                 </ol>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/10 max-w-full">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 max-w-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}>
                   <span className="w-2 h-2 rounded-full bg-warning animate-pulse shadow-sm shadow-warning shrink-0" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground text-center leading-snug">Disponibilidad limitada · Cancún · Diagnóstico con ADOS-2</span>
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(208,208,231,0.8)' }}>Disponibilidad limitada · Cancún · Diagnóstico con ADOS-2</span>
                 </div>
 
                 {/* H1 — keyword-rich for SEO */}
-                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-[1.1] mb-4 text-balance">
+                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-4 text-balance">
                   Evaluación de Autismo<br className="hidden sm:block" /> en Cancún
                 </h1>
 
                 {/* Emotional hook */}
-                <p className="text-lg sm:text-2xl font-serif text-primary/80 italic mb-6 max-w-2xl mx-auto">
+                <p className="text-lg sm:text-2xl font-serif italic mb-6 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.72)' }}>
                   Entender cómo ve el mundo tu hijo cambia todo
                 </p>
 
                 {/* Subheadline — outcome first, features second */}
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto">
-                  Un diagnóstico formal con el <strong className="text-primary font-semibold">estándar de oro internacional (ADOS-2)</strong> que te da claridad, un nivel de apoyo específico y un camino concreto para acompañarlo. Evaluación con pruebas estandarizadas (ADOS-2, ADI-R, WISC-V, Vineland-3) e informe clínico con <strong className="text-primary font-semibold">validez oficial</strong> ante escuelas, SEP e IMSS.
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
+                  Un diagnóstico formal con el <strong className="text-white font-semibold">estándar de oro internacional (ADOS-2)</strong> que te da claridad, un nivel de apoyo específico y un camino concreto para acompañarlo. Evaluación con pruebas estandarizadas (ADOS-2, ADI-R, WISC-V, Vineland-3) e informe clínico con <strong className="text-white font-semibold">validez oficial</strong> ante escuelas, SEP e IMSS.
                 </p>
 
-                <p className="text-xs sm:text-sm text-muted-foreground/70 mb-8">
-                  <strong className="text-primary">Neuropsicóloga Karen Trujillo</strong> · Cédula Federal 11009616 · 7+ años de experiencia
+                <p className="text-xs sm:text-sm mb-8" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                  <strong className="text-white">Neuropsicóloga Karen Trujillo</strong> · Cédula Federal {CEDULA} · 7+ años de experiencia
                 </p>
               </div>
 
               <div ref={heroCTARef} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
                 <CtaButton>Agendar evaluación</CtaButton>
-                <a href="#sintomas" onClick={(e) => { e.preventDefault(); document.getElementById('sintomas')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-primary/15 text-primary/70 hover:border-primary/30 hover:text-primary transition-all duration-300">
+                <a href="#sintomas" onClick={(e) => { e.preventDefault(); document.getElementById('sintomas')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/25 text-white/80 hover:border-white/50 hover:text-white transition-all duration-300">
                   ¿Mi hijo podría tener autismo?
                   <ArrowDown className="w-3 h-3 transition-transform group-hover:translate-y-0.5 shrink-0" />
                 </a>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground animate-[fadeIn_0.8s_ease-out_0.6s_both]">
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs animate-[fadeIn_0.8s_ease-out_0.6s_both]">
                 {[
-                  { icon: BadgeCheck, text: 'Cédula 11009616' },
+                  { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Stethoscope, text: 'ADOS-2 · Estándar de oro' },
                   { icon: CalendarCheck, text: 'Agenda en línea' },
                 ].map((badge) => (
-                  <span key={badge.text} className="flex items-center gap-1.5">
-                    <badge.icon className="w-3.5 h-3.5 text-primary/50" />
+                  <span key={badge.text} className="flex items-center gap-1.5 border rounded-full px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(208,208,231,0.18)', color: 'rgba(208,208,231,0.85)' }}>
+                    <badge.icon className="w-3.5 h-3.5" style={{ color: 'rgba(208,208,231,0.6)' }} />
                     <span className="font-medium">{badge.text}</span>
                   </span>
                 ))}
               </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </section>
 
 
@@ -731,8 +718,8 @@ export default function AutismoCancunFunnel() {
           <section id="sintomas" className="py-14 sm:py-20 bg-secondary scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Muchas familias llegan con esta historia</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Te suena familiar?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Muchas familias llegan con esta historia</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center text-balance">¿Te suena familiar?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-10">Las señales de autismo pueden ser sutiles o confundirse con timidez, TDAH o &ldquo;cada niño tiene su ritmo&rdquo;. Selecciona las que reconoces en tu hijo para saber si una evaluación es recomendable.</p>
               </SectionReveal>
 
@@ -792,13 +779,13 @@ export default function AutismoCancunFunnel() {
 
                 <div className="flex flex-wrap justify-center gap-3 mb-8">
                   {[
-                    { label: 'Nivel 1', desc: '"Necesita apoyo" — antes llamado Asperger' },
+                    { label: 'Nivel 1', desc: '"Necesita apoyo", antes llamado Asperger' },
                     { label: 'Nivel 2', desc: '"Necesita apoyo sustancial"' },
                     { label: 'Nivel 3', desc: '"Necesita apoyo muy sustancial"' },
                   ].map((tipo) => (
                     <div key={tipo.label} className="flex flex-col gap-0.5 px-4 py-3 bg-card border border-border rounded-2xl text-center min-w-[140px]">
                       <span className="text-xs font-bold text-primary">{tipo.label}</span>
-                      <span className="text-[10px] text-muted-foreground font-light">{tipo.desc}</span>
+                      <span className="text-xs text-muted-foreground font-light">{tipo.desc}</span>
                     </div>
                   ))}
                 </div>
@@ -806,7 +793,7 @@ export default function AutismoCancunFunnel() {
                 <div className="p-5 bg-card rounded-2xl border border-border shadow-sm relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent-blue/60 to-primary/40 rounded-l-2xl" />
                   <p className="text-sm text-muted-foreground font-light leading-relaxed pl-2">
-                    <strong className="text-primary font-semibold">En Cancún, Quintana Roo</strong>, la neuropsicóloga Karen Trujillo (cédula 11009616) aplica el <strong className="text-primary font-semibold">ADOS-2</strong> — estándar de oro internacional para el diagnóstico de autismo — junto con ADI-R, WISC-V, Vineland-3 y SRS-2 para emitir un informe clínico con validez oficial ante la SEP, IMSS e instituciones educativas.
+                    <strong className="text-primary font-semibold">En Cancún, Quintana Roo</strong>, la neuropsicóloga Karen Trujillo (cédula {CEDULA}) aplica el <strong className="text-primary font-semibold">ADOS-2</strong>, estándar de oro internacional para el diagnóstico de autismo, junto con ADI-R, WISC-V, Vineland-3 y SRS-2 para emitir un informe clínico con validez oficial ante la SEP, IMSS e instituciones educativas.
                   </p>
                 </div>
               </SectionReveal>
@@ -820,13 +807,13 @@ export default function AutismoCancunFunnel() {
           <section id="proceso-evaluacion" className="py-14 sm:py-20 bg-card">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Proceso clínico estructurado</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">¿Cómo funciona la evaluación de autismo?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Proceso clínico estructurado</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">¿Cómo funciona la evaluación de autismo?</h2>
                 {/* AEO: Direct answer */}
                 <p className="text-muted-foreground font-light mb-4 text-center max-w-2xl mx-auto">
                   La evaluación neuropsicológica de autismo en Cancún tiene un costo de <strong className="text-primary font-semibold">$8,500 MXN</strong> e incluye 5-6 sesiones presenciales distribuidas en 3 a 4 semanas. El proceso combina observación directa con ADOS-2, entrevista ADI-R con padres, pruebas cognitivas, evaluación adaptativa y sesión de devolución.
                 </p>
-                <p className="text-sm text-primary/70 font-medium text-center mb-10">No es un proceso largo — son 5 pasos que te dan claridad para acompañarlo toda la vida.</p>
+                <p className="text-sm text-primary/70 font-medium text-center mb-10">No es un proceso largo: son 5 pasos que te dan claridad para acompañarlo toda la vida.</p>
               </SectionReveal>
 
               <div className="space-y-0 relative">
@@ -842,7 +829,7 @@ export default function AutismoCancunFunnel() {
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 mb-1">
                           <h3 className="font-bold text-primary">{p.titulo}</h3>
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 shrink-0 bg-secondary px-2 py-1 rounded-full">{p.duracion}</span>
+                          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60 shrink-0 bg-secondary px-2 py-1 rounded-full">{p.duracion}</span>
                         </div>
                         <p className="text-sm text-muted-foreground font-light leading-relaxed">{p.desc}</p>
                       </div>
@@ -882,7 +869,7 @@ export default function AutismoCancunFunnel() {
 
               <SectionReveal delay={0.3}>
                 <div className="bg-white/8 border border-white/15 rounded-2xl p-5 sm:p-8">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-6">Pruebas estandarizadas utilizadas</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/50 mb-6">Pruebas estandarizadas utilizadas</p>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {instrumentos.map((inst) => (
                       <div key={inst.nombre} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 w-full">
@@ -908,8 +895,8 @@ export default function AutismoCancunFunnel() {
           <section id="diferenciador-neuropsicologia" className="py-14 sm:py-20 bg-card border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué ADOS-2 y no solo observación clínica?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué ADOS-2 y no solo observación clínica?</h2>
 
                 <div className="max-w-2xl mx-auto space-y-4 mb-10">
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
@@ -919,20 +906,20 @@ export default function AutismoCancunFunnel() {
                     Para el autismo, esta diferencia es crucial. Las señales del TEA se solapan con TDAH, ansiedad social, trastornos del lenguaje y retraso del desarrollo. <strong className="text-primary font-semibold">Solo una evaluación con ADOS-2 + ADI-R + perfil cognitivo y adaptativo permite un diagnóstico diferencial preciso</strong> con nivel de apoyo especificado.
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    En la práctica, esto significa que el informe no dice solo &ldquo;tiene autismo&rdquo; o &ldquo;no tiene autismo&rdquo;. Revela exactamente <strong className="text-primary font-semibold">qué áreas de comunicación social están comprometidas, qué nivel de apoyo necesita y qué intervenciones específicas</strong> son prioritarias — tanto en terapia como en la escuela y en casa.
+                    En la práctica, esto significa que el informe no dice solo &ldquo;tiene autismo&rdquo; o &ldquo;no tiene autismo&rdquo;. Revela exactamente <strong className="text-primary font-semibold">qué áreas de comunicación social están comprometidas, qué nivel de apoyo necesita y qué intervenciones específicas</strong> son prioritarias, tanto en terapia como en la escuela y en casa.
                   </p>
                 </div>
               </SectionReveal>
 
               {/* Comparative table */}
               <SectionReveal delay={0.15}>
-                <div className="max-w-3xl mx-auto bg-secondary/50 rounded-3xl border border-border overflow-hidden">
+                <div className="max-w-3xl mx-auto bg-secondary/50 rounded-2xl border border-border overflow-hidden">
                   <div className="grid grid-cols-2">
                     <div className="p-3 sm:p-4 bg-secondary/80 border-b border-r border-border text-center">
-                      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
                     </div>
                     <div className="p-3 sm:p-4 bg-primary/8 border-b border-border text-center">
-                      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
                     </div>
                   </div>
 
@@ -971,8 +958,8 @@ export default function AutismoCancunFunnel() {
           <section className="py-14 sm:py-20 bg-secondary">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen las familias</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">Familias que por fin entienden a su hijo</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen las familias</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">Familias que por fin entienden a su hijo</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Destacan la claridad del diagnóstico y las recomendaciones concretas para la escuela y el hogar.</p>
               </SectionReveal>
 
@@ -989,7 +976,7 @@ export default function AutismoCancunFunnel() {
                       <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6 flex-1 relative z-10">&ldquo;{review.text}&rdquo;</p>
                       <div className="flex items-center gap-2 pt-4 border-t border-border">
                         <div className="w-7 h-7 rounded-full bg-gradient-to-br from-accent-blue/20 to-primary/15 flex items-center justify-center shrink-0">
-                          <span className="text-[10px] font-bold text-primary/60">{review.name.charAt(0)}</span>
+                          <span className="text-xs font-bold text-primary/60">{review.name.charAt(0)}</span>
                         </div>
                         <p className="text-xs font-bold text-primary">{review.name}</p>
                       </div>
@@ -1013,7 +1000,7 @@ export default function AutismoCancunFunnel() {
           <section className="py-14 sm:py-20 bg-card border-t border-border relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 relative">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La especialista detrás del proceso</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La especialista detrás del proceso</p>
                 <h2 className="font-serif font-bold text-primary mb-14 text-center">
                   <span className="block text-sm sm:text-base font-normal text-muted-foreground/70 uppercase tracking-[0.2em] mb-2">Conoce a</span>
                   <span className="block text-5xl sm:text-6xl lg:text-7xl">Karen Trujillo</span>
@@ -1024,9 +1011,9 @@ export default function AutismoCancunFunnel() {
                 <SectionReveal>
                   <div className="flex flex-col items-center md:items-start gap-5">
                     <div className="relative">
-                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
+                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
                         <Image
-                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                          src={KAREN_IMAGE}
                           alt="Neuropsicóloga Karen Trujillo — especialista en autismo y TDAH en Cancún"
                           width={256}
                           height={256}
@@ -1037,7 +1024,7 @@ export default function AutismoCancunFunnel() {
                       </div>
                       <div className="absolute -bottom-4 -right-4 bg-gradient-primary text-primary-foreground rounded-2xl px-4 py-2 shadow-xl shadow-primary/25">
                         <p className="text-[9px] font-bold uppercase tracking-widest text-primary-foreground/70">Cédula Federal</p>
-                        <p className="text-sm font-bold font-mono">11009616</p>
+                        <p className="text-sm font-bold font-mono">{CEDULA}</p>
                       </div>
                     </div>
 
@@ -1056,7 +1043,7 @@ export default function AutismoCancunFunnel() {
                       ].map((stat) => (
                         <div key={stat.label} className="bg-secondary/60 border border-border rounded-xl p-3 text-center">
                           <p className="text-base font-serif font-bold text-primary">{stat.valor}</p>
-                          <p className="text-[10px] text-muted-foreground font-light leading-tight mt-0.5">{stat.label}</p>
+                          <p className="text-xs text-muted-foreground font-light leading-tight mt-0.5">{stat.label}</p>
                         </div>
                       ))}
                     </div>
@@ -1067,7 +1054,7 @@ export default function AutismoCancunFunnel() {
                   <div className="space-y-6">
                     <div className="space-y-4 text-muted-foreground font-light leading-relaxed">
                       <p>La <strong className="text-primary font-semibold">neuropsicóloga Karen Trujillo</strong> es especialista clínica con más de 7 años de experiencia en la evaluación y diagnóstico de Trastorno del Espectro Autista, TDAH y dificultades del aprendizaje en niños, adolescentes y adultos en Cancún, Quintana Roo.</p>
-                      <p>Su formación incluye especialización en neuropsicología clínica y certificación en la aplicación del <strong className="text-primary font-semibold">ADOS-2 y ADI-R</strong> — los instrumentos considerados estándar de oro mundial para el diagnóstico del autismo. Complementa cada evaluación con WISC-V, Vineland-3 y SRS-2 para ofrecer un perfil integral.</p>
+                      <p>Su formación incluye especialización en neuropsicología clínica y certificación en la aplicación del <strong className="text-primary font-semibold">ADOS-2 y ADI-R</strong>, los instrumentos considerados estándar de oro mundial para el diagnóstico del autismo. Complementa cada evaluación con WISC-V, Vineland-3 y SRS-2 para ofrecer un perfil integral.</p>
                       <p>Lo que distingue su práctica es la combinación de rigor clínico con calidez humana: las familias no solo reciben un diagnóstico, sino una <strong className="text-primary font-semibold">hoja de ruta concreta</strong> para entender a su hijo y acompañarlo de forma efectiva en casa, en la escuela y en la terapia.</p>
                     </div>
 
@@ -1098,15 +1085,15 @@ export default function AutismoCancunFunnel() {
           <section className="py-14 sm:py-20 bg-secondary border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Después de la evaluación</p>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center">¿Qué pasa con los resultados?</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Después de la evaluación</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">¿Qué pasa con los resultados?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-10">Sin importar el resultado, siempre obtienes información valiosa sobre tu hijo. Estos son los tres escenarios posibles:</p>
               </SectionReveal>
 
               <div className="space-y-4">
                 {[
                   { titulo: 'TEA confirmado', desc: 'Recibes un diagnóstico formal con nivel de apoyo especificado (1, 2 o 3), recomendaciones terapéuticas prioritarias (terapia de lenguaje, ocupacional, habilidades sociales), adecuaciones curriculares para la escuela y orientación familiar. El informe tiene validez oficial.', color: 'border-primary/30 bg-primary/5', iconColor: 'text-primary bg-primary/10 border-primary/20' },
-                  { titulo: 'No es TEA — diagnóstico diferencial', desc: 'El informe identifica qué sí está pasando: TDAH, ansiedad social, trastorno del lenguaje, trastorno de la comunicación social u otra condición. Saber qué no es autismo es igual de valioso porque evita intervenciones equivocadas y dirige al tratamiento correcto.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
+                  { titulo: 'No es TEA: diagnóstico diferencial', desc: 'El informe identifica qué sí está pasando: TDAH, ansiedad social, trastorno del lenguaje, trastorno de la comunicación social u otra condición. Saber qué no es autismo es igual de valioso porque evita intervenciones equivocadas y dirige al tratamiento correcto.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
                   { titulo: 'Rasgos subclínicos o perfil mixto', desc: 'Algunos niños muestran rasgos del espectro sin cumplir todos los criterios. En ese caso, recibes orientación sobre qué áreas fortalecer, qué terapias preventivas iniciar y cuándo revaluar si las señales se intensifican.', color: 'border-success/30 bg-success/5', iconColor: 'text-success bg-success/10 border-success/20' },
                 ].map((item, i) => (
                   <SectionReveal key={item.titulo} delay={i * 0.1}>
@@ -1137,38 +1124,39 @@ export default function AutismoCancunFunnel() {
           <section className="py-14 sm:py-20 bg-card">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
+                <h2 className="text-headline font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                       <button
+                        id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-answer-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
                       >
-                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}>
-                          <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} />
-                        </div>
+                        <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 transition-transform duration-250"
+                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        />
                       </button>
                       <div
                         id={`faq-answer-${i}`}
                         role="region"
+                        aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
-                        style={{
-                          gridTemplateRows: openFaq === i ? '1fr' : '0fr',
-                          opacity: openFaq === i ? 1 : 0,
-                          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
-                        }}
+                        style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
-                            <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                          </div>
+                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                            {faq.a}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1188,16 +1176,16 @@ export default function AutismoCancunFunnel() {
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 rounded-full border border-success/20 mb-6">
                     <CalendarCheck className="w-4 h-4 text-success" />
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-success">Agenda en línea · Confirma en minutos</span>
+                    <span className="text-xs uppercase tracking-widest font-bold text-success">Agenda en línea · Confirma en minutos</span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4">Reserva tu evaluación ahora</h2>
+                  <h2 className="text-headline font-serif font-bold text-primary mb-4">Reserva tu evaluación ahora</h2>
                   <p className="text-muted-foreground font-light max-w-2xl mx-auto">Elige el horario que mejor te funcione. Tu lugar queda confirmado al completar el anticipo.</p>
                 </div>
               </SectionReveal>
 
               <SectionReveal delay={0.1}>
                 <div className="mb-8 max-w-2xl mx-auto">
-                  <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/12 border border-primary/20">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/12 border border-primary/20">
                     <div className="bg-gradient-primary px-8 py-5 flex items-center justify-between">
                       <div>
                         <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-0.5">Servicio</p>
@@ -1211,14 +1199,14 @@ export default function AutismoCancunFunnel() {
 
                     <div className="bg-card px-8 py-10 text-center relative overflow-hidden">
                       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, currentColor 39px, currentColor 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, currentColor 39px, currentColor 40px)', backgroundSize: '40px 40px' }} />
-                      <p className="text-[10px] uppercase tracking-[0.25em] font-bold text-muted-foreground/50 mb-4 relative">Inversión total</p>
+                      <p className="text-xs uppercase tracking-[0.25em] font-bold text-muted-foreground/50 mb-4 relative">Inversión total</p>
                       <div className="flex items-end justify-center gap-3 mb-4 relative">
                         <span className="text-[80px] sm:text-[96px] font-serif font-bold text-primary leading-none tracking-tight">$8,500</span>
                         <span className="text-lg font-semibold text-muted-foreground/60 pb-3 tracking-widest">MXN</span>
                       </div>
                       <div className="flex flex-wrap justify-center gap-2 relative">
                         {['5-6 sesiones', 'ADOS-2 · ADI-R · WISC-V · Vineland-3 · SRS-2', 'Informe oficial', 'Sesión de devolución'].map((chip) => (
-                          <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary border border-border rounded-full text-[10px] text-muted-foreground font-medium">
+                          <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary border border-border rounded-full text-xs text-muted-foreground font-medium">
                             <CheckCircle2 className="w-3 h-3 text-primary/50 shrink-0" />
                             {chip}
                           </span>
@@ -1255,12 +1243,12 @@ export default function AutismoCancunFunnel() {
                     </div>
                   </div>
 
-                  <p className="text-center text-[10px] text-muted-foreground/50 mt-4">Tu anticipo se descuenta del costo total. Sin costos ocultos.</p>
+                  <p className="text-center text-xs text-muted-foreground/50 mt-4">Tu anticipo se descuenta del costo total. Sin costos ocultos.</p>
                 </div>
               </SectionReveal>
 
               <SectionReveal delay={0.2}>
-                <div className="bg-card border-2 border-border rounded-3xl overflow-hidden shadow-lg shadow-primary/5">
+                <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg shadow-primary/5">
                   <div className="p-5 border-b border-border flex items-center justify-between bg-secondary/30">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center">
@@ -1268,7 +1256,7 @@ export default function AutismoCancunFunnel() {
                       </div>
                       <div>
                         <p className="font-bold text-primary text-sm">Selecciona fecha y hora</p>
-                        <p className="text-[10px] text-muted-foreground">Cancún, Quintana Roo · Horario local</p>
+                        <p className="text-xs text-muted-foreground">Cancún, Quintana Roo · Horario local</p>
                       </div>
                     </div>
                     {!calLoaded && (
@@ -1305,7 +1293,7 @@ export default function AutismoCancunFunnel() {
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
                   <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><Shield className="w-3.5 h-3.5 text-primary/50" /> Pago seguro</span>
                   <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><Clock className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs de anticipación</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Cédula 11009616</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Cédula {CEDULA}</span>
                 </div>
               </SectionReveal>
 
@@ -1313,39 +1301,69 @@ export default function AutismoCancunFunnel() {
                 <div className="mt-10 pt-8 border-t border-border">
                   <p className="text-center text-sm text-muted-foreground font-light mb-5">¿Prefieres hablar antes de agendar?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página de evaluación de autismo y tengo algunas dudas antes de agendar. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, vi tu página de evaluación de autismo y tengo algunas dudas antes de agendar. ¿Podrías orientarme?')}`} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
-                    <a href={`tel:${PHONE_NUMBER}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
+                    <a href={`tel:${PHONE_E164}`} className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]">
                       <Phone className="w-4 h-4" />
                       Llamar
                     </a>
                   </div>
-                  <p className="text-[10px] text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
+                  <p className="text-xs text-muted-foreground/50 text-center mt-4">Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM</p>
                 </div>
               </SectionReveal>
             </div>
           </section>
 
 
+          {/* ── Blog hub-and-spoke ── */}
+          <section className="py-10 sm:py-12 border-t border-border">
+            <div className="max-w-2xl mx-auto px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Artículos relacionados</p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                <Link href="/blog/que-es-ados-2-autismo" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">¿Qué es el ADOS-2?</span>
+                    <span className="text-xs text-muted-foreground font-light">La prueba estándar de oro para TEA</span>
+                  </div>
+                </Link>
+                <Link href="/blog/cuanto-cuesta-evaluacion-autismo-mexico" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">Costo de la evaluación TEA</span>
+                    <span className="text-xs text-muted-foreground font-light">Precios en México</span>
+                  </div>
+                </Link>
+                <Link href="/blog/autismo-nivel-1-sintomas-adultos" className="flex items-start gap-3 p-4 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <BookOpen className="w-4 h-4 text-primary/50 shrink-0 mt-0.5 transition-transform group-hover:scale-110" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block leading-snug">Autismo Nivel 1 en adultos</span>
+                    <span className="text-xs text-muted-foreground font-light">Síntomas y diagnóstico tardío</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* ── Internal linking for topical authority ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Otros servicios disponibles en Cancún</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Otros servicios disponibles en Cancún</p>
               <div className="grid sm:grid-cols-2 gap-3">
                 <Link href="/evaluacion-tdah-ninos" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH en Niños</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Valoración neuropsicológica 5-17 años</span>
+                    <span className="text-xs text-muted-foreground font-light">Valoración neuropsicológica 5-17 años</span>
                   </div>
                 </Link>
                 <Link href="/evaluacion-tdah-adultos" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH en Adultos</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Valoración neuropsicológica +18 años</span>
+                    <span className="text-xs text-muted-foreground font-light">Valoración neuropsicológica +18 años</span>
                   </div>
                 </Link>
               </div>
@@ -1364,7 +1382,7 @@ export default function AutismoCancunFunnel() {
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
         >
           <a href="#agendar" onClick={scrollToBooking} className="flex items-center justify-center w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-bold text-[11px] uppercase tracking-widest shadow-2xl shadow-primary/35 active:scale-[0.98] transition-transform">
-            {symptomCount > 4 ? 'Muchas señales — Agendar evaluación' : 'Agendar evaluación'}
+            {symptomCount > 4 ? 'Muchas señales. Agendar evaluación' : 'Agendar evaluación'}
           </a>
         </div>
       </div>

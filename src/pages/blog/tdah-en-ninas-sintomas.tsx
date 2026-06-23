@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ArrowRight, Brain, AlertCircle, CheckCircle2, Heart, Eye } from 'lucide-react';
+import { ArrowRight, Brain, AlertCircle, CheckCircle2, Heart, Eye, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
+
+const CANONICAL_URL = `${SITE_URL}/blog/tdah-en-ninas-sintomas`;
+const ARTICLE_HEADLINE = 'TDAH en niñas: síntomas que casi nadie detecta';
 
 const diferencias = [
   { aspecto: 'Presentación predominante', ninos: 'Hiperactivo-impulsivo: se mueve, interrumpe, no puede esperar', ninas: 'Inatento: "está en las nubes", dispersa, se distrae en silencio' },
@@ -74,26 +80,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas/#article',
+      '@id': `${SITE_URL}/blog/tdah-en-ninas-sintomas/#article`,
       headline: 'TDAH en niñas: síntomas que casi nadie detecta',
       description: 'El TDAH femenino es invisible al sistema educativo. No genera disrupción, se enmascara con esfuerzo y durante años se confunde con ansiedad, perfeccionismo o simplemente "ser despistada".',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2025-06-01',
       dateModified: '2026-06-02',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -104,9 +110,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'TDAH en niñas: síntomas que casi nadie detecta', item: 'https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'TDAH en niñas: síntomas que casi nadie detecta', item: CANONICAL_URL },
       ],
     },
     {
@@ -117,56 +123,80 @@ const schema = {
 };
 
 export default function TDAHNinas() {
+  const [linkCopied, setLinkCopied] = useState(false);
   return (
     <>
       <Head>
-        <title>TDAH en Niñas: Síntomas que Casi Nadie Detecta | Neuropsicóloga Karen Trujillo Cancún</title>
+        <title>TDAH en niñas: síntomas que casi nadie detecta</title>
         <meta name="description" content="El TDAH en niñas se diagnostica años más tarde que en niños porque los síntomas son distintos. Inatención sin hiperactividad, hipersensibilidad emocional, agotamiento por compensación. Valoración en Cancún." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
+        <link rel="canonical" href={CANONICAL_URL} />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="TDAH en Niñas: Por Qué Se Detecta Tan Tarde y Cómo Identificarlo" />
+        <meta property="og:title" content="TDAH en niñas: síntomas que casi nadie detecta" />
         <meta property="og:description" content="El TDAH femenino es invisible al sistema: no genera disrupción, se compensa con esfuerzo, se confunde con ansiedad. Señales, consecuencias y cómo evaluar a tu hija en Cancún." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/tdah-en-ninas-sintomas" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — TDAH en niñas" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-01" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TDAH en niñas: síntomas que casi nadie detecta | Karen Trujillo" />
         <meta name="twitter:description" content="El TDAH femenino se enmascara con esfuerzo y durante años se confunde con ansiedad. Señales y cómo evaluar a tu hija en Cancún." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-1200x675.svg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">
         <Navbar />
         <main>
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-pink/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 animate-pulse" />
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
-                <ol className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
-                  <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
+                <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
+                  <li><Link href="/" className="transition-colors hover:text-white" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
                   <li>/</li>
-                  <li className="text-primary font-medium">TDAH en niñas: síntomas que casi nadie detecta</li>
+                  <li className="font-medium" style={{ color: '#d0d0e7' }}>TDAH en niñas: síntomas que casi nadie detecta</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full border border-accent-pink/20 bg-accent-pink/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-primary">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#f5dfc5', color: '#382f51' }}>
                   TDAH Femenino
                 </span>
-                <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary leading-[1.15] mb-4">
+                <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
                   TDAH en niñas: síntomas que casi nadie detecta
                 </h1>
-                <p className="text-muted-foreground text-lg font-light leading-relaxed mb-6">
+                <p className="text-lg font-light leading-relaxed mb-6" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   El TDAH femenino es invisible al sistema educativo. No genera disrupción, se enmascara con esfuerzo y durante años se confunde con ansiedad, perfeccionismo o simplemente "ser despistada".
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground border-t border-border pt-4">
-                  <span>Neuropsicóloga Karen Trujillo — Cédula 11009616</span>
+                <div className="flex flex-wrap items-center gap-4 text-xs pt-4" style={{ color: 'rgba(208,208,231,0.75)', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+                  <span style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga · Cédula {CEDULA}</span>
+                  <time dateTime="2025-06-01">1 jun 2025</time>
                   <span>Cancún, Quintana Roo</span>
                 </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── Imagen destacada (placeholder) ── */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="/blog/dark-tdah-en-ninas-1200x675.svg"
+                    alt="TDAH en niñas: síntomas que casi nadie detecta — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
               </motion.div>
             </div>
           </section>
@@ -197,6 +227,21 @@ export default function TDAHNinas() {
                       ))}
                     </tbody>
                   </table>
+                </div>
+
+                {/* Imagen inline 1 (placeholder) */}
+                <div className="mb-12">
+                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                    <img
+                      src="/blog/blush-tdah-femenino-960x540.svg"
+                      alt="Niña con TDAH inatento en el ámbito escolar — imagen ilustrativa"
+                      width={960}
+                      height={540}
+                      className="w-full h-auto aspect-video object-cover"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
                 </div>
 
                 {/* Señales */}
@@ -231,20 +276,75 @@ export default function TDAHNinas() {
                   ))}
                 </div>
 
+                {/* Imagen inline 2 (placeholder) */}
+                <div className="mb-12">
+                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                    <img
+                      src="/blog/lavender-diagnostico-a-tiempo-960x540.svg"
+                      alt="Evaluación neuropsicológica oportuna para niñas con TDAH — imagen ilustrativa"
+                      width={960}
+                      height={540}
+                      className="w-full h-auto aspect-video object-cover"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+                </div>
+
                 {/* FAQ */}
                 <h2 className="text-2xl font-serif font-bold text-primary mb-6">Preguntas frecuentes sobre TDAH en niñas</h2>
-                <div className="space-y-4">
+                <div role="list">
                   {faqItems.map((faq, i) => (
-                    <details key={i} className="group bg-card border-2 border-border hover:border-accent-pink rounded-xl transition-all open:border-primary open:shadow-lg">
-                      <summary className="p-6 font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                    <details key={i} role="listitem" className="group transition-all" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(91,78,127,0.15)' : 'none' }}>
+                      <summary className="w-full py-5 sm:py-6 font-bold text-primary text-sm sm:text-base cursor-pointer list-none flex justify-between items-center gap-4 text-left">
                         <span>{faq.q}</span>
-                        <span className="text-muted-foreground shrink-0 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                        <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-300 group-open:rotate-180" aria-hidden="true" />
                       </summary>
-                      <p className="px-6 pb-6 text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
+                      <p className="pb-6 text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
                     </details>
                   ))}
                 </div>
               </motion.div>
+            </div>
+          </section>
+
+          {/* ── Compartir ── */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir en Facebook"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`${ARTICLE_HEADLINE} — ${CANONICAL_URL}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Compartir por WhatsApp"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(CANONICAL_URL);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  aria-label="Copiar enlace"
+                  className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                >
+                  <Link2 className="w-4 h-4" />
+                </button>
+                {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+              </div>
             </div>
           </section>
 
@@ -253,10 +353,21 @@ export default function TDAHNinas() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Sospechas que tu hija podría tener TDAH?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Una valoración neuropsicológica formal es la única forma de saberlo con certeza. La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal 11009616.
+                Una valoración neuropsicológica formal es la única forma de saberlo con certeza. La Neuropsicóloga Karen Trujillo atiende en Cancún con cédula federal {CEDULA}.
               </p>
+              <div className="flex items-center gap-3 justify-center mb-6 text-xs text-primary-foreground/80">
+                <img
+                  src={KAREN_IMAGE}
+                  alt="Neuropsicóloga Karen Trujillo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
+                />
+                <span>Karen Trujillo · Cédula {CEDULA}</span>
+                <span>★ 47+ reseñas · 5.0</span>
+              </div>
               <a
-                href="https://wa.me/529983211547?text=Hola%20Karen,%20leí%20tu%20artículo%20sobre%20TDAH%20en%20niñas%20y%20quiero%20información"
+                href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20leí%20tu%20artículo%20sobre%20TDAH%20en%20niñas%20y%20quiero%20información`}
                 target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-10 py-4 rounded-lg hover:opacity-90 transition-all shadow-lg"
               >
@@ -270,20 +381,50 @@ export default function TDAHNinas() {
             <div className="max-w-5xl mx-auto">
               <h2 className="text-xl font-serif font-bold text-primary mb-8 text-center">También puede interesarte</h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                <Link href="/evaluacion-tdah-ninos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1">Niños y niñas de 5 a 17 años</span>
+                <Link href="/evaluacion-tdah-ninos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/lavender-valoracion-tdah-infantil-640x400.svg"
+                    alt="Valoración TDAH Infantil en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Infantil en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1">Niños y niñas de 5 a 17 años</span>
+                  </div>
                 </Link>
-                <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Blog</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">¿Cuánto cuesta una valoración de TDAH en Cancún?</span>
-                  <span className="block text-xs text-muted-foreground mt-1">Precios y qué incluye</span>
+                <Link href="/blog/cuanto-cuesta-valoracion-tdah-cancun" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/sand-costo-de-la-valoracion-640x400.svg"
+                    alt="¿Cuánto cuesta una valoración de TDAH en Cancún?"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Blog</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">¿Cuánto cuesta una valoración de TDAH en Cancún?</span>
+                    <span className="block text-xs text-muted-foreground mt-1">Precios y qué incluye</span>
+                  </div>
                 </Link>
-                <Link href="/evaluacion-tdah-adultos" className="p-5 bg-card border border-border rounded-xl hover:border-primary hover:shadow-md transition-all group">
-                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
-                  <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
-                  <span className="block text-xs text-muted-foreground mt-1">Desde 18 años</span>
+                <Link href="/evaluacion-tdah-adultos" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
+                  <img
+                    src="/blog/lavender-valoracion-tdah-adultos-640x400.svg"
+                    alt="Valoración TDAH Adultos en Cancún"
+                    width={640}
+                    height={400}
+                    className="w-full h-auto aspect-video object-cover rounded-t-xl"
+                    loading="lazy"
+                  />
+                  <div className="p-5">
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold block mb-2">Servicio</span>
+                    <span className="font-bold text-primary text-sm group-hover:underline">Valoración TDAH Adultos en Cancún</span>
+                    <span className="block text-xs text-muted-foreground mt-1">Desde 18 años</span>
+                  </div>
                 </Link>
               </div>
             </div>
