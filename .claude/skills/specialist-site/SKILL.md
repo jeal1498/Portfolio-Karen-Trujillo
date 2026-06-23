@@ -9,11 +9,16 @@ description: >
 
 # Specialist Site — Skill de replicación
 
-Codifica el proceso completo que se usó para construir el sitio de Karen Trujillo
-(neuropsicóloga, Cancún) y lo aplica a cualquier nuevo especialista.
+Construye un sitio web profesional completo para cualquier especialista o profesional
+independiente, partiendo de cero hasta tener el proyecto listo para deploy.
 
-**Stack asumido:** Next.js 14 (Pages Router) · TypeScript · Tailwind CSS v3 · shadcn/ui ·
+El repo de Karen Trujillo actúa como **plantilla base** — tiene el stack completo
+configurado y probado. Cada cliente nuevo parte de esa base y se personaliza completamente.
+
+**Stack:** Next.js 14 (Pages Router) · TypeScript · Tailwind CSS v3 · shadcn/ui ·
 Framer Motion · Lucide React · `lib/contact.ts` + `lib/site.ts` + `lib/seo.ts` como SSOT.
+
+**Template base:** `https://github.com/jeal1498/Portfolio-Karen-Trujillo`
 
 ---
 
@@ -21,6 +26,7 @@ Framer Motion · Lucide React · `lib/contact.ts` + `lib/site.ts` + `lib/seo.ts`
 
 Crea este to-do al inicio y táchalo conforme avanzas:
 
+- [ ] Fase 0 — Scaffold: clonar template, limpiar contenido de Karen, nuevo repo
 - [ ] Fase 1 — Intake: recopilar todos los datos del especialista
 - [ ] Fase 2 — Briefing: generar `SPECIALIST.md` (product brief)
 - [ ] Fase 3 — Config: actualizar `lib/site.ts` y `lib/contact.ts`
@@ -29,6 +35,114 @@ Crea este to-do al inicio y táchalo conforme avanzas:
 - [ ] Fase 6 — Blog: generar 3–5 artículos SEO relevantes
 - [ ] Fase 7 — Assets estáticos: `sitemap.xml`, `robots.txt`, `nap.json`, `llms.txt`
 - [ ] Fase 8 — Verificar: `npx tsc --noEmit` sin errores + checklist SEO
+
+---
+
+## Fase 0 — Scaffold del proyecto
+
+Esta fase crea el proyecto desde cero. Solo se ejecuta una vez por cliente.
+
+### Paso 0.1 — Pedir nombre del proyecto
+
+Antes de clonar, preguntar:
+- **Slug del proyecto** — nombre de carpeta y repo (ej: `portfolio-dr-garcia`, `sitio-nutriologa-lopez`)
+- **Dónde crear la carpeta** — ruta local donde vivirá el proyecto
+
+### Paso 0.2 — Clonar el template de Karen
+
+```bash
+# Clonar el repo de Karen como punto de partida
+git clone https://github.com/jeal1498/Portfolio-Karen-Trujillo.git [slug-del-proyecto]
+cd [slug-del-proyecto]
+
+# Desconectar del repo de Karen y empezar historial limpio
+rm -rf .git
+git init
+git add .
+git commit -m "chore: scaffold inicial desde template specialist-site"
+```
+
+### Paso 0.3 — Limpiar contenido específico de Karen
+
+Eliminar o vaciar todo lo que es exclusivo de Karen. El stack y la estructura se conservan.
+
+**Archivos a eliminar:**
+```bash
+# Foto de Karen
+rm public/Psicologa_Karen_Trujillo.webp
+
+# Imágenes del blog de Karen (se generarán nuevas para el cliente)
+rm -rf public/blog/
+
+# Archivos de auditoría y reportes previos
+rm -f public/seo-audit-report.html
+
+# Brief del proyecto anterior
+rm -f SPECIALIST.md
+```
+
+**Archivos a vaciar (mantener estructura, borrar datos de Karen):**
+
+`public/sitemap.xml` → dejar solo el esqueleto XML sin URLs
+`public/nap.json` → dejar `{}` vacío
+`public/robots.txt` → conservar (es genérico, solo cambiar dominio después)
+`public/llms.txt` → vaciar contenido
+
+**Archivos a resetear a placeholder:**
+
+`lib/site.ts` → reemplazar todos los valores por `'[PENDIENTE]'`
+`lib/contact.ts` → reemplazar todos los valores por `'[PENDIENTE]'`
+
+**Páginas a eliminar** (se regenerarán con contenido del nuevo cliente):
+```bash
+# Páginas de servicio específicas de Karen
+rm src/pages/evaluacion-tdah-ninos.tsx
+rm src/pages/evaluacion-tdah-adultos.tsx
+rm src/pages/evaluacion-autismo-cancun.tsx
+rm src/pages/neuropsicologia-cancun.tsx
+rm src/pages/neuropsicologia-zona-hotelera-cancun.tsx
+rm src/pages/para-escuelas.tsx
+rm src/pages/precios.tsx
+
+# Artículos del blog de Karen
+rm src/pages/blog/*.tsx   # mantener blog/index.tsx como base
+
+# Datos hardcodeados en index.tsx y componentes
+# NO borrar los archivos — solo limpiar las constantes SERVICES, REVIEWS, FAQ
+# dejando arrays vacíos: export const SERVICES: Service[] = []
+```
+
+**Archivos a conservar intactos** (son genéricos, no tienen datos de Karen):
+- `next.config.mjs` — headers de seguridad, configuración base
+- `tailwind.config.ts` — sistema de colores (se actualizará en Fase 3)
+- `src/pages/_app.tsx` — wrapper genérico
+- `src/pages/_document.tsx` — estructura HTML base
+- `src/pages/404.tsx` — página de error genérica
+- `src/pages/blog/index.tsx` — índice del blog (vaciar artículos)
+- `src/components/*.tsx` — todos los componentes (Hero, ServicesSection, etc.)
+- `src/components/ui/*.tsx` — shadcn/ui sin tocar
+- `src/lib/seo.ts` — funciones genéricas, no tienen datos de Karen
+- `src/hooks/` — hooks genéricos
+- `package.json`, `tsconfig.json` — configuración del proyecto
+
+### Paso 0.4 — Confirmar que el proyecto compila limpio
+
+```bash
+npm install
+npx tsc --noEmit
+```
+
+Si hay errores por los arrays vacíos o referencias eliminadas, corregirlos antes de continuar.
+
+### Paso 0.5 — Commit del scaffold limpio
+
+```bash
+git add .
+git commit -m "chore: limpiar contenido de Karen — proyecto listo para nuevo especialista"
+```
+
+El proyecto ahora tiene toda la infraestructura lista y cero contenido del cliente anterior.
+Continuar con Fase 1.
 
 ---
 
