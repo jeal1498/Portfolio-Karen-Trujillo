@@ -1,11 +1,12 @@
 import { MapPin, Clock, Video } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { HOURS, ADDRESS } from '@/lib/site';
 
 const LocationSection = () => {
   return (
-    <section id="ubicacion" className="py-32 bg-secondary px-6">
+    <section id="ubicacion" className="py-16 md:py-24 lg:py-32 bg-secondary px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           <motion.div 
             className="space-y-8"
             initial={{ opacity: 0, x: -30 }}
@@ -14,7 +15,7 @@ const LocationSection = () => {
             transition={{ duration: 0.8 }}
           >
             <div>
-              <span className="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mb-2 block">Ubicación</span>
+              <span className="text-primary font-bold uppercase tracking-[0.2em] text-xs mb-2 block">Ubicación</span>
               <h2 className="text-4xl font-serif font-bold text-primary mb-6">Encuentra mi Consultorio</h2>
               <p className="text-muted-foreground font-light mb-8">
                 Ubicado en el corazón de Cancún, en un espacio privado, cómodo y diseñado específicamente para tu bienestar físico y emocional. Atención presencial y sesiones en línea disponibles.
@@ -29,9 +30,9 @@ const LocationSection = () => {
                 <div>
                   <p className="text-sm font-bold text-primary mb-1">Dirección</p>
                   <address className="text-xs text-muted-foreground leading-relaxed not-italic">
-                    SM200 M49 L2, Hacienda de Chinconcuac,<br />
-                    Circuito casa 1587B, C.P. 77539<br />
-                    Cancún, Quintana Roo, México.
+                    {ADDRESS.streetAddress},<br />
+                    C.P. {ADDRESS.postalCode}<br />
+                    {ADDRESS.addressLocality}, {ADDRESS.addressRegion}, México.
                   </address>
                 </div>
               </div>
@@ -42,8 +43,8 @@ const LocationSection = () => {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-primary mb-1">Horarios de Atención</p>
-                  <p className="text-xs text-muted-foreground"><strong>Lunes a Viernes:</strong> 9:00 AM - 8:00 PM</p>
-                  <p className="text-xs text-muted-foreground"><strong>Sábados:</strong> 9:00 AM - 2:00 PM</p>
+                  <p className="text-xs text-muted-foreground"><strong>Lunes a Viernes:</strong> {HOURS.weekdays.display}</p>
+                  <p className="text-xs text-muted-foreground"><strong>Sábados:</strong> {HOURS.saturday.display}</p>
                 </div>
               </div>
 

@@ -8,15 +8,17 @@ import {
   Star, Users, BadgeCheck, Puzzle, Briefcase,
   ChevronDown, AlertTriangle, Eye, Zap,
   BookOpen, ArrowLeft, ListChecks, HelpCircle,
-  Lightbulb, XCircle, Stethoscope,
+  Lightbulb, XCircle, Stethoscope, Facebook, Link2,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { WA_NUMBER } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA_NUMBER = '529983211547';
+const CANONICAL_URL = `${SITE_URL}/blog/senales-tdah-ninos`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -29,7 +31,7 @@ const signals = [
     accent: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20',
     items: [
       { signal: 'Se distrae con cualquier estímulo durante tareas escolares', example: 'Un ruido mínimo lo desconecta completamente de la tarea que estaba haciendo.' },
-      { signal: 'Pierde útiles, juguetes o materiales constantemente', example: 'Cada semana pierde lápices, borradores o cuadernos. No es descuido "normal" — es un patrón.' },
+      { signal: 'Pierde útiles, juguetes o materiales constantemente', example: 'Cada semana pierde lápices, borradores o cuadernos. No es descuido "normal", es un patrón.' },
       { signal: 'Parece no escuchar cuando le hablas directamente', example: 'Le dices algo mirándolo a los ojos y a los 10 segundos no recuerda qué le dijiste.' },
       { signal: 'No termina tareas o actividades que inició', example: 'Empieza la tarea con buena actitud, pero a los 5 minutos ya está haciendo otra cosa.' },
       { signal: 'Evita actividades que requieren esfuerzo mental sostenido', example: 'Leer un párrafo completo o resolver problemas de matemáticas genera resistencia desproporcionada.' },
@@ -41,9 +43,9 @@ const signals = [
     icon: Zap,
     accent: 'text-warning bg-warning/10 border-warning/20',
     items: [
-      { signal: 'No puede permanecer sentado cuando se espera que lo esté', example: 'En clase, en restaurantes o en la iglesia — se levanta repetidamente sin motivo aparente.' },
+      { signal: 'No puede permanecer sentado cuando se espera que lo esté', example: 'En clase, en restaurantes o en la iglesia: se levanta repetidamente sin motivo aparente.' },
       { signal: 'Mueve manos, pies o se retuerce en el asiento', example: 'Balancea la silla, golpetea la mesa, mueve las piernas de forma constante.' },
-      { signal: 'Corre o trepa en situaciones inapropiadas', example: 'En la sala de espera del doctor o en el supermercado — la energía no se adapta al contexto.' },
+      { signal: 'Corre o trepa en situaciones inapropiadas', example: 'En la sala de espera del doctor o en el supermercado: la energía no se adapta al contexto.' },
       { signal: 'Habla excesivamente o tiene dificultad para jugar en silencio', example: 'No puede estar en una actividad tranquila sin narrar, hacer ruidos o buscar estímulo.' },
     ],
   },
@@ -53,7 +55,7 @@ const signals = [
     accent: 'text-rose-500 bg-rose-50 dark:bg-rose-500/10 border-rose-200 dark:border-rose-500/20',
     items: [
       { signal: 'Responde antes de que terminen la pregunta', example: 'En clase o en casa, interrumpe con la respuesta sin esperar a que terminen de hablar.' },
-      { signal: 'Dificultad para esperar su turno', example: 'En juegos, filas o conversaciones — la espera genera frustración desproporcionada.' },
+      { signal: 'Dificultad para esperar su turno', example: 'En juegos, filas o conversaciones: la espera genera frustración desproporcionada.' },
       { signal: 'Interrumpe conversaciones o actividades de otros', example: 'Se mete en conversaciones ajenas o toma cosas de otros niños sin pedir permiso.' },
       { signal: 'Actúa sin pensar en las consecuencias', example: 'Dice cosas inapropiadas, toma decisiones arriesgadas o reacciona de forma exagerada sin procesarlo.' },
     ],
@@ -61,10 +63,10 @@ const signals = [
 ];
 
 const myths = [
-  { myth: '"Es flojo, si quisiera podría poner atención"', reality: 'El TDAH es una condición neurológica, no un problema de voluntad. Las funciones ejecutivas del cerebro — atención, inhibición, memoria de trabajo — operan de forma diferente.' },
+  { myth: '"Es flojo, si quisiera podría poner atención"', reality: 'El TDAH es una condición neurológica, no un problema de voluntad. Las funciones ejecutivas del cerebro, atención, inhibición, memoria de trabajo, operan de forma diferente.' },
   { myth: '"Solo los niños hiperactivos tienen TDAH"', reality: 'Existe el TDAH predominantemente inatento (antes "TDA"), donde no hay hiperactividad visible. Es más difícil de detectar y muy común en niñas.' },
-  { myth: '"Se le va a quitar cuando crezca"', reality: 'Sin intervención, el TDAH no desaparece — se transforma. Muchos adultos descubren que lo han tenido toda la vida sin saberlo.' },
-  { myth: '"Saca buenas calificaciones, no puede tener TDAH"', reality: 'Niños con alto CI pueden compensar el TDAH durante años. El esfuerzo que les cuesta es invisible — hasta que la exigencia supera su capacidad de compensar.' },
+  { myth: '"Se le va a quitar cuando crezca"', reality: 'Sin intervención, el TDAH no desaparece: se transforma. Muchos adultos descubren que lo han tenido toda la vida sin saberlo.' },
+  { myth: '"Saca buenas calificaciones, no puede tener TDAH"', reality: 'Niños con alto CI pueden compensar el TDAH durante años. El esfuerzo que les cuesta es invisible, hasta que la exigencia supera su capacidad de compensar.' },
   { myth: '"Es un invento de las farmacéuticas"', reality: 'El TDAH es una de las condiciones más estudiadas en neurociencia. Hay décadas de investigación con resonancias magnéticas, estudios genéticos y ensayos clínicos que confirman su base neurológica.' },
 ];
 
@@ -78,13 +80,13 @@ const ageRanges = [
   {
     range: '6 – 11 años (primaria)',
     desc: 'La etapa donde más se detecta el TDAH, porque la escuela exige atención sostenida y autocontrol.',
-    signs: ['Rendimiento escolar inconsistente — "puede pero no quiere"', 'Olvida tareas, pierde materiales, no anota instrucciones', 'Dificultad para organizar su mochila, cuarto o tiempo', 'Problemas sociales: interrumpe, no respeta turnos, reacciona de más'],
+    signs: ['Rendimiento escolar inconsistente: "puede pero no quiere"', 'Olvida tareas, pierde materiales, no anota instrucciones', 'Dificultad para organizar su mochila, cuarto o tiempo', 'Problemas sociales: interrumpe, no respeta turnos, reacciona de más'],
     note: 'Si la maestra te dice repetidamente que "puede más pero no se esfuerza", vale la pena evaluar.',
   },
   {
     range: '12 – 17 años (secundaria y prepa)',
     desc: 'En la adolescencia, la hiperactividad disminuye pero la inatención y la impulsividad persisten o se intensifican.',
-    signs: ['Procrastinación crónica y dificultad para iniciar tareas', 'Problemas con la planeación a mediano plazo (proyectos, exámenes)', 'Impulsividad emocional — reacciones exageradas, frustración rápida', 'Uso excesivo de pantallas como autoestimulación'],
+    signs: ['Procrastinación crónica y dificultad para iniciar tareas', 'Problemas con la planeación a mediano plazo (proyectos, exámenes)', 'Impulsividad emocional: reacciones exageradas, frustración rápida', 'Uso excesivo de pantallas como autoestimulación'],
     note: 'Muchos adolescentes compensan con inteligencia hasta que la exigencia académica o social los supera. El "burnout escolar" puede ser TDAH no diagnosticado.',
   },
 ];
@@ -96,7 +98,7 @@ const faqItems = [
   },
   {
     q: '¿Cuántas señales necesita tener mi hijo para que sea TDAH?',
-    a: 'Según los criterios del DSM-5, se necesitan al menos 6 síntomas de inatención y/o 6 de hiperactividad-impulsividad, presentes por más de 6 meses, en al menos 2 contextos (por ejemplo, casa y escuela). Sin embargo, la cantidad de señales no es suficiente — se necesita una evaluación neuropsicológica que mida el impacto real en las funciones ejecutivas.',
+    a: 'Según los criterios del DSM-5, se necesitan al menos 6 síntomas de inatención y/o 6 de hiperactividad-impulsividad, presentes por más de 6 meses, en al menos 2 contextos (por ejemplo, casa y escuela). Sin embargo, la cantidad de señales no es suficiente: se necesita una evaluación neuropsicológica que mida el impacto real en las funciones ejecutivas.',
   },
   {
     q: '¿La escuela puede diagnosticar TDAH?',
@@ -104,11 +106,11 @@ const faqItems = [
   },
   {
     q: '¿Es lo mismo TDAH que TDA?',
-    a: 'TDA (Trastorno por Déficit de Atención sin hiperactividad) era el término anterior. Actualmente, el DSM-5 lo clasifica como TDAH con presentación predominantemente inatenta. Es el mismo trastorno con diferente presentación — y es el más difícil de detectar porque no hay conductas disruptivas visibles.',
+    a: 'TDA (Trastorno por Déficit de Atención sin hiperactividad) era el término anterior. Actualmente, el DSM-5 lo clasifica como TDAH con presentación predominantemente inatenta. Es el mismo trastorno con diferente presentación, y es el más difícil de detectar porque no hay conductas disruptivas visibles.',
   },
   {
     q: '¿Si mi hijo tiene TDAH necesita medicamento?',
-    a: 'No necesariamente. El tratamiento del TDAH es multimodal: puede incluir intervención conductual, adecuaciones escolares, terapia y, en algunos casos, medicación. La evaluación neuropsicológica no prescribe medicamento — genera un informe con recomendaciones concretas para cada área afectada. La decisión sobre medicación la toma un neurólogo o psiquiatra con base en la evaluación.',
+    a: 'No necesariamente. El tratamiento del TDAH es multimodal: puede incluir intervención conductual, adecuaciones escolares, terapia y, en algunos casos, medicación. La evaluación neuropsicológica no prescribe medicamento; genera un informe con recomendaciones concretas para cada área afectada. La decisión sobre medicación la toma un neurólogo o psiquiatra con base en la evaluación.',
   },
   {
     q: '¿Cuánto cuesta evaluar a mi hijo por TDAH en Cancún?',
@@ -122,14 +124,14 @@ const relatedResources = [
     icon: Briefcase,
     category: 'TDAH Adultos',
     title: 'TDAH en adultos: por qué miles llegan al diagnóstico después de los 30',
-    color: 'from-primary/10 to-primary/5',
+    img: '/blog/lavender-tdah-adultos-640x400.svg',
   },
   {
     href: '/blog/que-es-ados-2-autismo',
     icon: Puzzle,
     category: 'Autismo (TEA)',
     title: '¿Qué es el ADOS-2 y por qué es el estándar de oro para diagnosticar autismo?',
-    color: 'from-accent-pink/10 to-accent-pink/5',
+    img: '/blog/blush-autismo-tea-640x400.svg',
   },
 ];
 
@@ -142,26 +144,26 @@ const schema = {
   '@graph': [
     {
       '@type': ['Article', 'BlogPosting'],
-      '@id': 'https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos/#article',
+      '@id': `${CANONICAL_URL}/#article`,
       headline: 'Señales de TDAH en niños: guía para padres que sospechan',
       description: 'Guía completa para identificar señales reales de TDAH en niños de 3 a 17 años. Diferencia entre comportamiento típico y síntomas que justifican una evaluación neuropsicológica.',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+      image: KAREN_IMAGE,
       datePublished: '2025-06-15',
       dateModified: '2025-06-15',
       author: {
         '@type': 'Person',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+        '@id': `${SITE_URL}/#physician`,
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+        '@id': `${SITE_URL}/#clinic`,
         name: 'Neuropsicóloga Karen Trujillo',
-        url: 'https://www.psicologakarentrujillo.com.mx',
+        url: SITE_URL,
       },
-      mainEntityOfPage: 'https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos',
+      mainEntityOfPage: CANONICAL_URL,
       inLanguage: 'es-MX',
       about: {
         '@type': 'MedicalCondition',
@@ -172,9 +174,9 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.psicologakarentrujillo.com.mx/blog' },
-        { '@type': 'ListItem', position: 3, name: 'Señales de TDAH en niños', item: 'https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: 'Señales de TDAH en niños', item: CANONICAL_URL },
       ],
     },
     {
@@ -228,6 +230,7 @@ export default function SenalesTDAHNinos() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [expandedSignal, setExpandedSignal] = useState<string | null>(null);
   const [showStickyCta, setShowStickyCta] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -246,24 +249,27 @@ export default function SenalesTDAHNinos() {
   return (
     <>
       <Head>
-        <title>Señales de TDAH en niños: guía para padres | Neuropsicóloga Karen Trujillo</title>
-        <meta name="description" content="¿Tu hijo no pone atención, pierde cosas o no se queda quieto? Conoce las señales reales de TDAH en niños de 3 a 17 años. Guía basada en evidencia por neuropsicóloga con cédula 11009616." />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos" />
+        <title>Señales de TDAH en niños: guía para padres</title>
+        <meta name="description" content={`¿Tu hijo no pone atención, pierde cosas o no se queda quieto? Conoce las señales reales de TDAH en niños de 3 a 17 años. Guía basada en evidencia por neuropsicóloga con cédula ${CEDULA}.`} />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
-        <meta property="og:title" content="Señales de TDAH en niños: guía para padres que sospechan" />
+        <meta property="og:title" content="Señales de TDAH en niños: guía para padres" />
         <meta property="og:description" content="Guía completa para identificar señales reales de TDAH en niños. Diferencia entre comportamiento típico y síntomas que justifican una evaluación neuropsicológica." />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/blog/senales-tdah-ninos" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-senales-de-tdah-en-ninos-1200x675.svg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="675" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
         <meta property="article:author" content="Karen Trujillo" />
         <meta property="article:published_time" content="2025-06-15" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Señales de TDAH en niños: guía para padres | Karen Trujillo" />
         <meta name="twitter:description" content="¿Tu hijo no pone atención? Conoce las señales reales de TDAH vs. comportamiento típico. Guía basada en evidencia." />
-        <meta name="twitter:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-senales-de-tdah-en-ninos-1200x675.svg`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -281,44 +287,43 @@ export default function SenalesTDAHNinos() {
           {/* ══════════════════════════════════════════════════════
               HERO — Article header
               ══════════════════════════════════════════════════════ */}
-          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-blue/15 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-pink/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-3xl mx-auto relative z-10">
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-xs text-muted-foreground mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
+              <nav className="flex items-center gap-2 text-xs mb-8 animate-[fadeIn_0.8s_ease-out_both]" style={{ color: 'rgba(208,208,231,0.7)' }} aria-label="Breadcrumb">
+                <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
                   <ArrowLeft className="w-3 h-3" />
                   Inicio
                 </Link>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-muted-foreground/40">Blog</span>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-primary font-medium">TDAH Infantil</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>Blog</span>
+                <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
+                <span className="font-medium" style={{ color: '#d0d0e7' }}>TDAH Infantil</span>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-accent-blue/15">
-                  <BookOpen className="w-3.5 h-3.5 text-accent-blue" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground">Guía para padres · Basada en evidencia</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(208,208,231,0.1)', border: '1px solid rgba(208,208,231,0.18)' }}>
+                  <BookOpen className="w-3.5 h-3.5" style={{ color: '#d0d0e7' }} />
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold" style={{ color: 'rgba(208,208,231,0.82)' }}>Guía para padres · Basada en evidencia</span>
                 </div>
 
-                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-primary leading-[1.15] mb-5 text-balance">
+                <h1 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-[1.15] mb-5 text-balance">
                   ¿Tu hijo no pone atención?<br />
-                  <span className="text-primary/60">Señales reales de TDAH vs. comportamiento típico</span>
+                  <span style={{ color: 'rgba(208,208,231,0.7)' }}>Señales reales de TDAH vs. comportamiento típico</span>
                 </h1>
 
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl">
-                  Guía completa para padres que sospechan que su hijo podría tener TDAH. Aprende a identificar las señales que justifican una evaluación neuropsicológica — por edad, por tipo de presentación y con ejemplos concretos.
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(208,208,231,0.82)' }}>
+                  Guía completa para padres que sospechan que su hijo podría tener TDAH. Aprende a identificar las señales que justifican una evaluación neuropsicológica, por edad, por tipo de presentación y con ejemplos concretos.
                 </p>
 
                 {/* Author card */}
                 <div className="flex items-center gap-4 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
-                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md">
+                  <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/15 shadow-md">
                     <Image
-                      src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                      src={KAREN_IMAGE}
                       alt="Neuropsicóloga Karen Trujillo"
                       width={48}
                       height={48}
@@ -328,14 +333,37 @@ export default function SenalesTDAHNinos() {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-primary text-sm">Neuropsicóloga Karen Trujillo</p>
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span>
-                      <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-primary/40" /> 12 min de lectura</span>
+                    <p className="font-bold text-sm" style={{ color: 'rgba(208,208,231,0.95)' }}>Revisado por Karen Trujillo, Neuropsicóloga</p>
+                    <div className="flex items-center gap-3 text-xs" style={{ color: 'rgba(208,208,231,0.75)' }}>
+                      <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3" /> Cédula {CEDULA}</span>
+                      <time dateTime="2025-06-15">15 jun 2025</time>
+                      <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 12 min de lectura</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              IMAGEN DESTACADA — Hero image (placeholder)
+              ══════════════════════════════════════════════════════ */}
+          <section className="px-6 -mt-8 relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                  <img
+                    src="/blog/dark-senales-de-tdah-en-ninos-1200x675.svg"
+                    alt="¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico — imagen ilustrativa"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="eager"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
             </div>
           </section>
 
@@ -390,7 +418,7 @@ export default function SenalesTDAHNinos() {
                     Como neuropsicóloga, una de las frases que más escucho de los padres que llegan a mi consultorio es: <em className="text-primary font-medium">&ldquo;No sé si es normal o si ya debería preocuparme.&rdquo;</em>
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm sm:text-base mb-6">
-                    Y tiene sentido — todos los niños son distraídos en algún momento. Todos se mueven, todos interrumpen. La diferencia entre un comportamiento típico de la infancia y una señal real de TDAH está en tres factores: <strong className="text-primary font-semibold">la intensidad</strong> (qué tan fuerte es), <strong className="text-primary font-semibold">la frecuencia</strong> (qué tan seguido ocurre) y <strong className="text-primary font-semibold">el impacto</strong> (cuánto afecta su vida escolar, social o familiar).
+                    Y tiene sentido, todos los niños son distraídos en algún momento. Todos se mueven, todos interrumpen. La diferencia entre un comportamiento típico de la infancia y una señal real de TDAH está en tres factores: <strong className="text-primary font-semibold">la intensidad</strong> (qué tan fuerte es), <strong className="text-primary font-semibold">la frecuencia</strong> (qué tan seguido ocurre) y <strong className="text-primary font-semibold">el impacto</strong> (cuánto afecta su vida escolar, social o familiar).
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm sm:text-base">
                     Esta guía te va a ayudar a identificar las señales que justifican una evaluación profesional. No para que diagnostiques a tu hijo en casa — sino para que sepas cuándo buscar ayuda con datos, no con dudas.
@@ -402,12 +430,34 @@ export default function SenalesTDAHNinos() {
 
 
           {/* ══════════════════════════════════════════════════════
+              IMAGEN INLINE 1 (placeholder)
+              ══════════════════════════════════════════════════════ */}
+          <section className="pb-12 sm:pb-16 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/sand-nino-en-el-aula-960x540.svg"
+                    alt="Niño en el aula mostrando dificultad para mantener la atención — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
               SEÑALES — 14 signals by category
               ══════════════════════════════════════════════════════ */}
           <section id="senales" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por categoría</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por categoría</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">14 señales de TDAH en niños que no debes ignorar</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">El TDAH tiene tres presentaciones: inatenta, hiperactiva-impulsiva, y combinada. Estas son las señales más frecuentes de cada una.</p>
               </SectionReveal>
@@ -415,7 +465,7 @@ export default function SenalesTDAHNinos() {
               <div className="space-y-8">
                 {signals.map((group, gi) => (
                   <SectionReveal key={group.category} delay={gi * 0.1}>
-                    <div className="bg-card border border-border rounded-3xl overflow-hidden">
+                    <div className="bg-card border border-border rounded-2xl overflow-hidden">
                       {/* Category header */}
                       <div className="px-6 py-5 border-b border-border flex items-center gap-3">
                         <div className={`w-10 h-10 rounded-xl border-2 ${group.accent} flex items-center justify-center`}>
@@ -452,7 +502,7 @@ export default function SenalesTDAHNinos() {
                                   >
                                     <div className="overflow-hidden">
                                       <p className="text-xs text-muted-foreground font-light leading-relaxed mt-2 pl-0 sm:pl-0 bg-secondary/50 p-3 rounded-xl border border-border/50">
-                                        <span className="font-bold text-primary/60 text-[10px] uppercase tracking-widest">Ejemplo: </span>
+                                        <span className="font-bold text-primary/60 text-xs uppercase tracking-widest">Ejemplo: </span>
                                         {item.example}
                                       </p>
                                     </div>
@@ -478,7 +528,7 @@ export default function SenalesTDAHNinos() {
           <section id="edad" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por edad</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por edad</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Cómo se ve el TDAH según la edad de tu hijo?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">El TDAH no se ve igual a los 4 años que a los 14. Estas son las señales más comunes en cada etapa.</p>
               </SectionReveal>
@@ -526,7 +576,7 @@ export default function SenalesTDAHNinos() {
           <section id="normal-vs-tdah" className="py-14 sm:py-20 bg-secondary scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">La pregunta clave</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">La pregunta clave</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">¿Cuándo es &ldquo;cosa de niños&rdquo; y cuándo es TDAH?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">La diferencia no está en qué hace tu hijo, sino en cómo, cuánto y cuánto le afecta.</p>
               </SectionReveal>
@@ -587,7 +637,7 @@ export default function SenalesTDAHNinos() {
           <section id="mitos" className="py-14 sm:py-20 bg-card scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Derribando mitos</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Derribando mitos</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center">5 mitos sobre TDAH en niños</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-12">Creencias que retrasan el diagnóstico y causan sufrimiento innecesario.</p>
               </SectionReveal>
@@ -617,12 +667,34 @@ export default function SenalesTDAHNinos() {
 
 
           {/* ══════════════════════════════════════════════════════
+              IMAGEN INLINE 2 (placeholder)
+              ══════════════════════════════════════════════════════ */}
+          <section className="py-12 sm:py-16 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <img
+                    src="/blog/lavender-evaluacion-neuropsicologica-infantil-960x540.svg"
+                    alt="Evaluación neuropsicológica infantil para diagnóstico de TDAH — imagen ilustrativa"
+                    width={960}
+                    height={540}
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <p className="text-[10px] text-muted-foreground/60 font-light italic mt-2 text-center">Foto ilustrativa — pendiente de fotografía real.</p>
+              </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
               QUÉ HACER — Actionable next steps
               ══════════════════════════════════════════════════════ */}
           <section id="que-hacer" className="py-14 sm:py-20 bg-gradient-primary text-primary-foreground scroll-mt-20">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-primary-foreground/50 mb-3 text-center">El siguiente paso</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/50 mb-3 text-center">El siguiente paso</p>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4 text-center">¿Reconoces estas señales en tu hijo?</h2>
                 <p className="text-primary-foreground/70 font-light text-center max-w-xl mx-auto mb-10">No necesitas tener certeza para buscar ayuda. Lo que necesitas es una evaluación que te dé respuestas claras.</p>
               </SectionReveal>
@@ -648,7 +720,7 @@ export default function SenalesTDAHNinos() {
                 <div className="text-center">
                   <Link
                     href="/evaluacion-tdah-ninos"
-                    className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-8 py-4 rounded-2xl bg-white text-primary shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                    className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-2xl bg-white text-primary shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                   >
                     Ver evaluación TDAH infantil
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -669,20 +741,21 @@ export default function SenalesTDAHNinos() {
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${openFaq === i ? 'border-primary/50 shadow-lg shadow-primary/8' : 'border-border hover:border-accent-blue/30 hover:shadow-sm'}`}>
+                    <div role="listitem" style={{ borderBottom: '1px solid rgba(91,78,127,0.15)' }}>
                       <button
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-blog-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full py-5 flex justify-between items-center gap-4 text-left cursor-pointer"
                       >
                         <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'border-primary bg-primary/10' : 'border-border'}`}>
-                          <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary' : ''}`} />
-                        </div>
+                        <ChevronDown
+                          className="w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-300"
+                          style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                        />
                       </button>
                       <div
                         id={`faq-blog-${i}`}
@@ -695,7 +768,7 @@ export default function SenalesTDAHNinos() {
                         }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
+                          <div className="pb-5">
                             <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
                           </div>
                         </div>
@@ -709,12 +782,57 @@ export default function SenalesTDAHNinos() {
 
 
           {/* ══════════════════════════════════════════════════════
+              COMPARTIR — Social share
+              ══════════════════════════════════════════════════════ */}
+          <section className="py-8 bg-card border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">Comparte esta guía</span>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_URL)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir en Facebook"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(`¿Tu hijo no pone atención? Señales reales de TDAH vs. comportamiento típico — ${CANONICAL_URL}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Compartir por WhatsApp"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText(CANONICAL_URL);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                    aria-label="Copiar enlace"
+                    className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Link2 className="w-4 h-4" />
+                  </button>
+                  {linkCopied && <span className="text-xs text-success font-medium">¡Enlace copiado!</span>}
+                </div>
+              </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
               RELATED — Internal linking to other blog posts
               ══════════════════════════════════════════════════════ */}
           <section className="py-12 sm:py-16 bg-secondary/50 border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Sigue aprendiendo</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Sigue aprendiendo</p>
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-8 text-center">Recursos relacionados</h2>
               </SectionReveal>
 
@@ -722,14 +840,21 @@ export default function SenalesTDAHNinos() {
                 {relatedResources.map((resource, i) => (
                   <SectionReveal key={resource.href} delay={i * 0.08}>
                     <Link href={resource.href} className="group block bg-card border border-border rounded-2xl overflow-hidden hover:border-accent-blue/40 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full">
-                      <div className={`h-1.5 bg-gradient-to-r ${resource.color}`} />
+                      <img
+                        src={resource.img}
+                        alt={resource.title}
+                        width={640}
+                        height={400}
+                        className="w-full h-auto aspect-video object-cover"
+                        loading="lazy"
+                      />
                       <div className="p-5 sm:p-6">
                         <div className="flex items-center gap-2 mb-3">
                           <resource.icon className="w-3.5 h-3.5 text-primary/40" />
                           <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/60">{resource.category}</span>
                         </div>
                         <h3 className="font-bold text-primary text-sm leading-snug mb-3 group-hover:text-primary/80 transition-colors">{resource.title}</h3>
-                        <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary group-hover:gap-2 transition-all">
                           Leer más <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                         </span>
                       </div>
@@ -744,21 +869,21 @@ export default function SenalesTDAHNinos() {
           {/* ══════════════════════════════════════════════════════
               CTA FINAL — Conversion bridge to funnel
               ══════════════════════════════════════════════════════ */}
-          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-card border-t border-border">
+          <section id="cta-evaluacion" className="py-14 sm:py-20 bg-plum-deep border-t border-white/10">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">Las dudas no se resuelven con más dudas</h2>
-                  <p className="text-muted-foreground font-light max-w-xl mx-auto">Una evaluación neuropsicológica te da respuestas concretas en semanas. Si llegaste hasta aquí, probablemente es momento de dar el paso.</p>
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">Las dudas no se resuelven con más dudas</h2>
+                  <p className="text-white/70 font-light max-w-xl mx-auto">Una evaluación neuropsicológica te da respuestas concretas en semanas. Si llegaste hasta aquí, probablemente es momento de dar el paso.</p>
                 </div>
               </SectionReveal>
 
               <SectionReveal delay={0.1}>
-                <div className="bg-secondary/50 border-2 border-border rounded-2xl p-6 sm:p-8 mb-8">
+                <div className="bg-white/8 border border-white/15 rounded-2xl p-6 sm:p-8 mb-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-border shadow-md shrink-0">
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0">
                       <Image
-                        src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                        src={KAREN_IMAGE}
                         alt="Neuropsicóloga Karen Trujillo"
                         width={48}
                         height={48}
@@ -768,9 +893,9 @@ export default function SenalesTDAHNinos() {
                       />
                     </div>
                     <div>
-                      <p className="font-bold text-primary">Neuropsicóloga Karen Trujillo</p>
-                      <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-1">
-                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-primary/40" /> Cédula 11009616</span>
+                      <p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p>
+                      <div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1">
+                        <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span>
                         <span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span>
                       </div>
                     </div>
@@ -782,9 +907,9 @@ export default function SenalesTDAHNinos() {
                       { label: 'Duración', value: '4-5 sesiones · 2-3 semanas' },
                       { label: 'Inversión', value: '$8,300 MXN todo incluido' },
                     ].map((item) => (
-                      <div key={item.label} className="bg-card border border-border rounded-xl p-3 text-center">
-                        <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/50 mb-1">{item.label}</p>
-                        <p className="text-xs font-medium text-primary">{item.value}</p>
+                      <div key={item.label} className="bg-white/8 border border-white/15 rounded-xl p-3 text-center">
+                        <p className="text-[9px] font-bold uppercase tracking-widest text-white/50 mb-1">{item.label}</p>
+                        <p className="text-xs font-medium text-white">{item.value}</p>
                       </div>
                     ))}
                   </div>
@@ -792,7 +917,7 @@ export default function SenalesTDAHNinos() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href="/evaluacion-tdah-ninos"
-                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-primary text-primary-foreground font-bold text-[10px] uppercase tracking-widest rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-bold text-xs uppercase tracking-widest rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
                     >
                       <Stethoscope className="w-4 h-4" />
                       Ver evaluación completa
@@ -802,7 +927,7 @@ export default function SenalesTDAHNinos() {
                       href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre señales de TDAH en niños y me gustaría agendar una evaluación para mi hijo.')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-[10px] uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
+                      className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
                     >
                       <MessageCircle className="w-4 h-4" />
                       Agendar por WhatsApp
@@ -812,10 +937,10 @@ export default function SenalesTDAHNinos() {
               </SectionReveal>
 
               <SectionReveal delay={0.2}>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Cancelación con 48 hrs</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><ShieldCheck className="w-3.5 h-3.5 text-primary/50" /> Reembolso del anticipo</span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-secondary rounded-full border border-border"><BadgeCheck className="w-3.5 h-3.5 text-primary/50" /> Validez oficial SEP e IMSS</span>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-white/70">
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Cancelación con 48 hrs</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><ShieldCheck className="w-3.5 h-3.5 text-white/50" /> Reembolso del anticipo</span>
+                  <span className="flex items-center gap-2 px-3 py-1.5 bg-white/8 rounded-full border border-white/15"><BadgeCheck className="w-3.5 h-3.5 text-white/50" /> Validez oficial SEP e IMSS</span>
                 </div>
               </SectionReveal>
             </div>
@@ -836,7 +961,7 @@ export default function SenalesTDAHNinos() {
             <div className="flex gap-2.5 max-w-lg mx-auto">
               <Link
                 href="/evaluacion-tdah-ninos"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-[10px] uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"
               >
                 <Brain className="w-4 h-4" />
                 Evaluar TDAH
@@ -845,7 +970,7 @@ export default function SenalesTDAHNinos() {
                 href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre TDAH en niños y me gustaría orientación.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-[10px] uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp

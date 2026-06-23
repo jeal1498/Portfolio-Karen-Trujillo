@@ -1,0 +1,52 @@
+{
+  "_comment": "Datos NAP para enviar a directorios clínicos (T-12). Copia exacta de src/lib/site.ts y contact.ts.",
+  "businessName": "Neuropsicóloga Karen Trujillo",
+  "legalName": "Karen Trujillo",
+  "title": "Neuropsicóloga Clínica",
+  "cedula": "11009616",
+  "specialty": "Neuropsicología Clínica — Diagnóstico de TDAH y Autismo (TEA)",
+  "phone": "+52 998 321 1547",
+  "whatsapp": "+52 998 321 1547",
+  "email": "karentrujillopsic@gmail.com",
+  "website": "https://www.psicologakarentrujillo.com.mx",
+  "address": {
+    "street": "SM200 M49 L2, Hacienda de Chinconcuac, Circuito casa 1587B",
+    "city": "Cancún",
+    "state": "Quintana Roo",
+    "postalCode": "77539",
+    "country": "México"
+  },
+  "geo": {
+    "latitude": 21.1530418,
+    "longitude": -86.8958544
+  },
+  "hours": {
+    "monday_friday": "9:00 AM – 7:00 PM",
+    "saturday": "9:00 AM – 2:00 PM",
+    "sunday": "Cerrado"
+  },
+  "services": [
+    "Valoración Neuropsicológica TDAH Infantil (5–17 años)",
+    "Valoración Neuropsicológica TDAH Adultos (+18 años)",
+    "Diagnóstico Autismo TEA (desde 2 años)",
+    "Certificados Clínicos para trámites escolares e institucionales"
+  ],
+  "instruments": ["CONNERS-3", "WISC-V", "BRIEF-2", "CAARS", "DIVA 2.0", "CPT-3", "ADOS-2", "M-CHAT-R/F", "ADI-R", "Vineland-3"],
+  "languages": ["Español"],
+  "googleBusinessProfile": "https://maps.google.com/?cid=4630406520710891531",
+  "directories": {
+    "Doctoralia": {
+      "createAt": "https://www.doctoralia.com.mx/",
+      "status": "PENDIENTE — Karen debe crear perfil"
+    },
+    "Psychology Today": {
+      "createAt": "https://therapists.psychologytoday.com/",
+      "status": "PENDIENTE — Karen debe crear perfil"
+    },
+    "Top Doctors": {
+      "createAt": "https://www.topdoctors.mx/",
+      "status": "PENDIENTE — Karen debe crear perfil"
+    }
+  },
+  "_instructions": "Una vez creado cada perfil, añadir la URL en src/lib/contact.ts > DIRECTORY_PROFILES. La URL se propagará automáticamente a sameAs en todos los schemas JSON-LD del sitio."
+}

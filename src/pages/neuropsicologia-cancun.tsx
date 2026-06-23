@@ -9,11 +9,14 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { SOCIAL, SOCIAL_PROFILES, INSTAGRAM_HANDLE, WA_NUMBER, PHONE_E164 } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO } from '@/lib/site';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const WA = 'https://wa.me/529983211547?text=Hola%20Karen%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica';
+const WA = `https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20evaluaci%C3%B3n%20neuropsicol%C3%B3gica`;
+const CANONICAL_URL = `${SITE_URL}/neuropsicologia-cancun`;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -30,7 +33,7 @@ const diferenciadores = [
   },
   {
     title: 'Informe con validez oficial',
-    desc: 'El informe neuropsicológico emitido con cédula federal (11009616) tiene validez ante escuelas, SEP, IMSS, ISSSTE y empleadores. Es el documento que abre puertas a adecuaciones curriculares, apoyos escolares y planes de intervención.',
+    desc: `El informe neuropsicológico emitido con cédula federal (${CEDULA}) tiene validez ante escuelas, SEP, IMSS, ISSSTE y empleadores. Es el documento que abre puertas a adecuaciones curriculares, apoyos escolares y planes de intervención.`,
   },
   {
     title: 'Recomendaciones concretas y accionables',
@@ -81,7 +84,7 @@ const faqItems = [
   },
   {
     q: '¿Es Karen Trujillo neuropsicóloga certificada?',
-    a: 'Sí. Karen Trujillo es neuropsicóloga clínica con cédula federal 11009616, egresada de la Universidad Modelo (Mérida, Yucatán), con más de 7 años de experiencia y 500+ evaluaciones realizadas. Es miembro activa del Colegio de Psicólogos de Quintana Roo. Su consultorio está ubicado en Cancún, Quintana Roo.',
+    a: `Sí. Karen Trujillo es neuropsicóloga clínica con cédula federal ${CEDULA}, egresada de la Universidad Modelo (Mérida, Yucatán), con más de 7 años de experiencia y 500+ evaluaciones realizadas. Es miembro activa del Colegio de Psicólogos de Quintana Roo. Su consultorio está ubicado en Cancún, Quintana Roo.`,
   },
   {
     q: '¿Dónde está el consultorio en Cancún?',
@@ -101,14 +104,14 @@ const schema = {
   '@graph': [
     {
       '@type': 'AboutPage',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun/#page',
+      '@id': `${CANONICAL_URL}/#page`,
       name: 'Neuropsicóloga en Cancún — Karen Trujillo',
       description:
-        'Conoce a Karen Trujillo, neuropsicóloga clínica en Cancún con cédula 11009616, especializada en evaluación de TDAH y autismo. Miembro del Colegio de Psicólogos de Quintana Roo.',
-      url: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun',
+        `Conoce a Karen Trujillo, neuropsicóloga clínica en Cancún con cédula ${CEDULA}, especializada en evaluación de TDAH y autismo. Miembro del Colegio de Psicólogos de Quintana Roo.`,
+      url: CANONICAL_URL,
       inLanguage: 'es-MX',
-      about: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
-      mainEntity: { '@id': 'https://www.psicologakarentrujillo.com.mx/#physician' },
+      about: { '@id': `${SITE_URL}/#physician` },
+      mainEntity: { '@id': `${SITE_URL}/#physician` },
       speakable: {
         '@type': 'SpeakableSpecification',
         cssSelector: ['#que-es-neuropsicologia', '#diferenciadores', '#karen-perfil', '#preguntas-frecuentes'],
@@ -117,27 +120,27 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.psicologakarentrujillo.com.mx' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Neuropsicóloga en Cancún',
-          item: 'https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun',
+          item: CANONICAL_URL,
         },
       ],
     },
     {
       '@type': 'Physician',
-      '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+      '@id': `${SITE_URL}/#physician`,
       name: 'Karen Trujillo',
       jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-      url: 'https://www.psicologakarentrujillo.com.mx',
-      image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-      telephone: '+529983211547',
+      url: SITE_URL,
+      image: KAREN_IMAGE,
+      telephone: PHONE_E164,
       hasCredential: {
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'Cédula Profesional Federal',
-        credentialId: '11009616',
+        credentialId: CEDULA,
         issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
       },
       alumniOf: { '@type': 'EducationalOrganization', name: 'Universidad Modelo', addressLocality: 'Mérida', addressRegion: 'Yucatán' },
@@ -155,16 +158,12 @@ const schema = {
       },
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '47',
+        ratingValue: REVIEWS.ratingValue,
+        reviewCount: REVIEWS.reviewCount,
         bestRating: '5',
         worstRating: '1',
       },
-      sameAs: [
-        'https://www.facebook.com/share/1Bs93MjeKt/',
-        'https://www.instagram.com/psicologakarentrujillo',
-        'https://www.tiktok.com/@psic.karentrujillo',
-      ],
+      sameAs: SOCIAL_PROFILES,
     },
     {
       '@type': 'FAQPage',
@@ -233,17 +232,17 @@ export default function NeuropsicologiaCancun() {
   return (
     <>
       <Head>
-        <title>Neuropsicóloga en Cancún — Karen Trujillo | Cédula 11009616</title>
+        <title>{`Neuropsicóloga en Cancún — Karen Trujillo | Cédula ${CEDULA}`}</title>
         <meta
           name="description"
-          content="Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal 11009616. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales. Miembro del Colegio de Psicólogos de Quintana Roo."
+          content={`Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal ${CEDULA}. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales. Miembro del Colegio de Psicólogos de Quintana Roo.`}
         />
-        <link rel="canonical" href="https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun" />
+        <link rel="canonical" href={CANONICAL_URL} />
 
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Cancún, Quintana Roo" />
-        <meta name="geo.position" content="21.1619;-86.8515" />
-        <meta name="ICBM" content="21.1619, -86.8515" />
+        <meta name="geo.position" content={`${GEO.latitude};${GEO.longitude}`} />
+        <meta name="ICBM" content={`${GEO.latitude}, ${GEO.longitude}`} />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
@@ -251,17 +250,21 @@ export default function NeuropsicologiaCancun() {
         <meta property="og:title" content="Neuropsicóloga en Cancún — Karen Trujillo | Especialista TDAH y TEA" />
         <meta
           property="og:description"
-          content="Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal 11009616. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales."
+          content={`Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal ${CEDULA}. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales.`}
         />
-        <meta property="og:url" content="https://www.psicologakarentrujillo.com.mx/neuropsicologia-cancun" />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={KAREN_IMAGE} />
+        <meta property="og:image:width" content="465" />
+        <meta property="og:image:height" content="533" />
+        <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Neuropsicóloga en Cancún — Karen Trujillo | Cédula 11009616" />
+        <meta name="twitter:title" content={`Neuropsicóloga en Cancún — Karen Trujillo | Cédula ${CEDULA}`} />
         <meta
           name="twitter:description"
-          content="Neuropsicóloga clínica en Cancún especializada en TDAH y autismo. Evaluaciones con pruebas estandarizadas internacionales. Cédula federal 11009616."
+          content={`Neuropsicóloga clínica en Cancún especializada en TDAH y autismo. Evaluaciones con pruebas estandarizadas internacionales. Cédula federal ${CEDULA}.`}
         />
+        <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script
           type="application/ld+json"
@@ -286,68 +289,57 @@ export default function NeuropsicologiaCancun() {
           {/* ══════════════════════════════════════════════════════
               1 · HERO
               ══════════════════════════════════════════════════════ */}
-          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden bg-soft-gradient">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-blue/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 animate-pulse" />
-            <div
-              className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-pink/25 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 animate-pulse"
-              style={{ animationDelay: '1.5s' }}
-            />
-            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-            <div
-              className="absolute inset-0 opacity-[0.025]"
-              style={{
-                backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-                backgroundSize: '32px 32px',
-              }}
-            />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <section className="relative flex items-center justify-center pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
+            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-4xl mx-auto relative z-10 text-center">
 
               <nav aria-label="Breadcrumb" className="mb-6 animate-[fadeIn_0.6s_ease-out_both]">
-                <ol className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <ol className="flex items-center justify-center gap-2 text-xs" style={{ color: 'rgba(208,208,231,0.6)' }}>
                   <li>
-                    <Link href="/" className="hover:text-primary transition-colors">
+                    <Link href="/" className="hover:text-white transition-colors">
                       Inicio
                     </Link>
                   </li>
-                  <li className="text-border">/</li>
-                  <li className="text-primary font-medium">Neuropsicóloga en Cancún</li>
+                  <li style={{ color: 'rgba(208,208,231,0.3)' }}>/</li>
+                  <li className="text-white font-medium">Neuropsicóloga en Cancún</li>
                 </ol>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full border border-border shadow-lg shadow-primary/5 mb-6 ring-1 ring-primary/10 max-w-full">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 max-w-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}>
                   <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-sm shadow-success shrink-0" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-muted-foreground text-center leading-snug">
+                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(208,208,231,0.8)' }}>
                     Cancún · Quintana Roo
                   </span>
                 </div>
 
-                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-[1.1] mb-6 text-balance">
+                <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-6 text-balance">
                   Neuropsicóloga en Cancún<br className="hidden sm:block" /> — Karen Trujillo
                 </h1>
 
-                <p className="text-muted-foreground text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   Neuropsicóloga clínica especializada en la evaluación objetiva de TDAH, autismo y dificultades del
                   aprendizaje mediante pruebas estandarizadas internacionales. Diagnósticos precisos con{' '}
-                  <strong className="text-primary font-semibold">validez oficial</strong> ante escuelas, SEP e IMSS.
+                  <strong className="text-white font-semibold">validez oficial</strong> ante escuelas, SEP e IMSS.
                 </p>
               </div>
 
               {/* Trust stat chips */}
               <div className="animate-[fadeInUp_0.8s_ease-out_0.2s_both] flex flex-wrap justify-center gap-3 mb-10">
                 {[
-                  { icon: BadgeCheck, text: 'Cédula 11009616' },
+                  { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Clock, text: '7+ años de experiencia' },
                   { icon: Users, text: '500+ evaluaciones' },
                   { icon: Award, text: 'Colegio de Psicólogos de Q.Roo' },
                 ].map((chip) => (
                   <span
                     key={chip.text}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-card border border-border rounded-full text-xs font-medium text-foreground shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 border rounded-full text-xs font-medium"
+                    style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(208,208,231,0.18)', color: 'rgba(208,208,231,0.85)' }}
                   >
-                    <chip.icon className="w-3.5 h-3.5 text-primary/60 shrink-0" />
+                    <chip.icon className="w-3.5 h-3.5 shrink-0" style={{ color: 'rgba(208,208,231,0.6)' }} />
                     {chip.text}
                   </span>
                 ))}
@@ -358,7 +350,7 @@ export default function NeuropsicologiaCancun() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Agendar por WhatsApp
@@ -370,15 +362,13 @@ export default function NeuropsicologiaCancun() {
                     e.preventDefault();
                     document.getElementById('que-es-neuropsicologia')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-primary/15 text-primary/70 hover:border-primary/30 hover:text-primary transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/30 text-white/85 hover:bg-white/10 transition-all duration-300"
                 >
                   ¿Qué hace una neuropsicóloga?
                   <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5 shrink-0" />
                 </a>
               </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </section>
 
 
@@ -388,7 +378,7 @@ export default function NeuropsicologiaCancun() {
           <section id="que-es-neuropsicologia" className="py-14 sm:py-20 bg-card scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Neuropsicología clínica
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-8 text-center text-balance">
@@ -439,7 +429,7 @@ export default function NeuropsicologiaCancun() {
           <section id="diferenciadores" className="py-14 sm:py-20 bg-secondary scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   La diferencia importa
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -477,7 +467,7 @@ export default function NeuropsicologiaCancun() {
           <section id="karen-perfil" className="py-14 sm:py-20 bg-card border-t border-border relative overflow-hidden scroll-mt-24">
             <div className="max-w-4xl mx-auto px-6 relative">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   La especialista
                 </p>
                 <h2 className="font-serif font-bold text-primary mb-14 text-center">
@@ -497,9 +487,9 @@ export default function NeuropsicologiaCancun() {
                 <SectionReveal>
                   <div className="flex flex-col items-center md:items-start gap-5">
                     <div className="relative">
-                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
+                      <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border shadow-2xl shadow-primary/10">
                         <Image
-                          src="https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp"
+                          src={KAREN_IMAGE}
                           alt="Neuropsicóloga Karen Trujillo en Cancún — especialista en TDAH y autismo"
                           width={256}
                           height={256}
@@ -512,7 +502,7 @@ export default function NeuropsicologiaCancun() {
                         <p className="text-[9px] font-bold uppercase tracking-widest text-primary-foreground/70">
                           Cédula Federal
                         </p>
-                        <p className="text-sm font-bold font-mono">11009616</p>
+                        <p className="text-sm font-bold font-mono">{CEDULA}</p>
                       </div>
                     </div>
 
@@ -522,14 +512,14 @@ export default function NeuropsicologiaCancun() {
                         { valor: '7+', label: 'años de experiencia' },
                         { valor: '500+', label: 'evaluaciones' },
                         { valor: '47+', label: 'reseñas 5 estrellas' },
-                        { valor: '5.0', label: 'calificación promedio' },
+                        { valor: REVIEWS.ratingValue, label: 'calificación promedio' },
                       ].map((stat) => (
                         <div
                           key={stat.label}
                           className="bg-secondary/60 border border-border rounded-xl p-3 text-center"
                         >
                           <p className="text-base font-serif font-bold text-primary">{stat.valor}</p>
-                          <p className="text-[10px] text-muted-foreground font-light leading-tight mt-0.5">
+                          <p className="text-xs text-muted-foreground font-light leading-tight mt-0.5">
                             {stat.label}
                           </p>
                         </div>
@@ -544,20 +534,20 @@ export default function NeuropsicologiaCancun() {
                         ))}
                       </div>
                       <div>
-                        <p className="text-sm font-bold text-primary">5.0 · 47 reseñas</p>
-                        <p className="text-[10px] text-muted-foreground font-light">Verificadas en Google</p>
+                        <p className="text-sm font-bold text-primary">{REVIEWS.ratingValue} · {REVIEWS.reviewCount} reseñas</p>
+                        <p className="text-xs text-muted-foreground font-light">Verificadas en Google</p>
                       </div>
                     </div>
 
                     {/* Instagram */}
                     <a
-                      href="https://www.instagram.com/psicologakarentrujillo"
+                      href={SOCIAL.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Instagram className="w-4 h-4 shrink-0" />
-                      @psicologakarentrujillo
+                      {INSTAGRAM_HANDLE}
                     </a>
                   </div>
                 </SectionReveal>
@@ -573,7 +563,7 @@ export default function NeuropsicologiaCancun() {
                           Universidad Modelo (Mérida, Yucatán)
                         </strong>
                         , con cédula profesional federal{' '}
-                        <strong className="text-primary font-semibold">11009616</strong> emitida por la SEP.
+                        <strong className="text-primary font-semibold">{CEDULA}</strong> emitida por la SEP.
                         Cuenta con más de 7 años de experiencia clínica y más de 500 evaluaciones realizadas en
                         Cancún, Quintana Roo.
                       </p>
@@ -597,7 +587,7 @@ export default function NeuropsicologiaCancun() {
                     {/* Credentials list */}
                     <div className="space-y-2">
                       {[
-                        { icon: BadgeCheck, label: 'Cédula Federal 11009616 — SEP' },
+                        { icon: BadgeCheck, label: `Cédula Federal ${CEDULA} — SEP` },
                         { icon: Award, label: 'Universidad Modelo, Mérida, Yucatán' },
                         { icon: Stethoscope, label: '7+ años de experiencia clínica' },
                         { icon: Users, label: '500+ evaluaciones realizadas' },
@@ -638,7 +628,7 @@ export default function NeuropsicologiaCancun() {
           <section className="py-14 sm:py-20 bg-secondary border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Especialidades
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
@@ -673,7 +663,7 @@ export default function NeuropsicologiaCancun() {
                     href={WA}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 font-bold text-[10px] uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                    className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-2xl bg-gradient-primary text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Consultar por mi caso
@@ -691,7 +681,7 @@ export default function NeuropsicologiaCancun() {
           <section id="preguntas-frecuentes" className="py-14 sm:py-20 bg-card border-t border-border scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">
                   Preguntas frecuentes
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-10 text-center">
@@ -699,55 +689,63 @@ export default function NeuropsicologiaCancun() {
                 </h2>
               </SectionReveal>
 
-              <div className="space-y-2">
+              <div role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.05}>
-                    <div
-                      className={`bg-secondary/50 border-2 rounded-2xl transition-all duration-300 overflow-hidden ${
-                        openFaq === i
-                          ? 'border-primary/50 shadow-lg shadow-primary/8'
-                          : 'border-border hover:border-accent-blue/30 hover:shadow-sm'
-                      }`}
-                    >
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
                       <button
+                        id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-answer-${i}`}
-                        className="w-full p-5 sm:p-6 flex justify-between items-center gap-4 text-left cursor-pointer"
+                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
                       >
-                        <span className="font-bold text-primary text-sm sm:text-base">{faq.q}</span>
-                        <div
-                          className={`w-7 h-7 rounded-full border-2 flex items-center justify-center shrink-0 transition-all duration-300 ${
-                            openFaq === i ? 'border-primary bg-primary/10' : 'border-border'
-                          }`}
-                        >
-                          <ChevronDown
-                            className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-300 ${
-                              openFaq === i ? 'rotate-180 text-primary' : ''
-                            }`}
-                          />
-                        </div>
+                        <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                        <ChevronDown
+                          className="w-5 h-5 shrink-0 transition-transform duration-250"
+                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          aria-hidden="true"
+                        />
                       </button>
                       <div
                         id={`faq-answer-${i}`}
                         role="region"
+                        aria-labelledby={`faq-btn-${i}`}
                         className="grid transition-all duration-300"
-                        style={{
-                          gridTemplateRows: openFaq === i ? '1fr' : '0fr',
-                          opacity: openFaq === i ? 1 : 0,
-                          transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
-                        }}
+                        style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                       >
                         <div className="overflow-hidden">
-                          <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/50 pt-4">
-                            <p className="text-muted-foreground text-sm font-light leading-relaxed">{faq.a}</p>
-                          </div>
+                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                            {faq.a}
+                          </p>
                         </div>
                       </div>
                     </div>
                   </SectionReveal>
                 ))}
               </div>
+            </div>
+          </section>
+
+
+          {/* ── Mapa — ubicación del consultorio ── */}
+          <section className="py-10 sm:py-12 border-t border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Ubicación del consultorio</p>
+              <div className="rounded-2xl overflow-hidden border border-border shadow-md" style={{ height: 320 }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.9838296344037!2d-86.89585439999999!3d21.1530418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b10d813a9c7%3A0x4042823298a0080b!2sPsic%C3%B3loga%20Karen%20Trujillo%20%7C%20Neuropsicolog%C3%ADa%3A%20TDAH%20y%20Autismo!5e0!3m2!1ses-419!2smx!4v1772120174668!5m2!1ses-419!2smx"
+                  width="100%"
+                  height="320"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Consultorio Neuropsicóloga Karen Trujillo en Cancún"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground/70 text-center mt-3">SM200 M49 L2, Hacienda de Chinconcuac, Cancún · A 20 min de la Zona Hotelera</p>
             </div>
           </section>
 
@@ -783,14 +781,14 @@ export default function NeuropsicologiaCancun() {
                   href={WA}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 font-bold text-[10px] uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-3 font-bold text-xs uppercase tracking-widest px-8 py-5 rounded-2xl bg-white text-primary shadow-2xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Escribir por WhatsApp
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
 
-                <p className="mt-6 text-[10px] text-primary-foreground/45 font-light">
+                <p className="mt-6 text-xs text-primary-foreground/45 font-light">
                   Lunes a Viernes 9:00 – 7:00 PM · Sábados 9:00 – 2:00 PM
                 </p>
               </SectionReveal>
@@ -801,7 +799,7 @@ export default function NeuropsicologiaCancun() {
           {/* ── Internal linking for topical authority ── */}
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">
                 Evaluaciones disponibles en Cancún
               </p>
               <div className="grid sm:grid-cols-3 gap-3">
@@ -812,7 +810,7 @@ export default function NeuropsicologiaCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH Infantil</span>
-                    <span className="text-[10px] text-muted-foreground font-light">5-17 años</span>
+                    <span className="text-xs text-muted-foreground font-light">5-17 años</span>
                   </div>
                 </Link>
                 <Link
@@ -822,7 +820,7 @@ export default function NeuropsicologiaCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">TDAH Adultos</span>
-                    <span className="text-[10px] text-muted-foreground font-light">18+ años</span>
+                    <span className="text-xs text-muted-foreground font-light">18+ años</span>
                   </div>
                 </Link>
                 <Link
@@ -832,7 +830,7 @@ export default function NeuropsicologiaCancun() {
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
                     <span className="text-sm font-bold text-primary block">Autismo (TEA)</span>
-                    <span className="text-[10px] text-muted-foreground font-light">Diagnóstico ADOS-2</span>
+                    <span className="text-xs text-muted-foreground font-light">Diagnóstico ADOS-2</span>
                   </div>
                 </Link>
               </div>

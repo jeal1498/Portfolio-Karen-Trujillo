@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, CheckCircle2, Circle, AlertCircle, ShieldCheck, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { WA_NUMBER } from '@/lib/contact';
 
 interface SymptomCheckerProps {
   title?: string;
@@ -68,7 +69,7 @@ export default function SymptomChecker({
       <div className="p-8 border-b border-border">
         <div className="flex items-center gap-3 mb-3">
           <AlertCircle className="w-5 h-5 text-accent-blue shrink-0" />
-          <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
             Herramienta orientativa — No es diagnóstico
           </span>
         </div>
@@ -134,7 +135,7 @@ export default function SymptomChecker({
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-3">
           <a
-            href={`https://wa.me/529983211547?text=${waMessage}`}
+            href={`https://wa.me/${WA_NUMBER}?text=${waMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest py-4 px-6 rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5"
@@ -152,7 +153,7 @@ export default function SymptomChecker({
           )}
         </div>
 
-        <p className="text-[10px] text-muted-foreground/50 text-center mt-4">
+        <p className="text-xs text-muted-foreground/50 text-center mt-4">
           Esta herramienta es orientativa. Solo una valoración neuropsicológica formal puede establecer un diagnóstico.
         </p>
       </div>

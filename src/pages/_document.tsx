@@ -1,24 +1,45 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { PHONE_E164, SOCIAL_PROFILES } from '@/lib/contact';
+import { SITE_URL, CEDULA, KAREN_IMAGE, ADDRESS, GEO, HOURS, REVIEWS } from '@/lib/site';
 
 const medicalBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalBusiness',
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#clinic',
+  '@type': ['MedicalBusiness', 'MedicalClinic'],
+  '@id': `${SITE_URL}/#clinic`,
   name: 'Psic. Karen Trujillo — Valoraciones TDAH y Autismo en Cancún',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
+  alternateName: 'Neuropsicóloga Karen Trujillo Cancún',
+  image: KAREN_IMAGE,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'SM200 M49 L2, Hacienda de Chinconcuac',
-    addressLocality: 'Cancún',
-    addressRegion: 'Quintana Roo',
-    postalCode: '77539',
-    addressCountry: 'MX',
+    ...ADDRESS,
   },
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  telephone: '+529983211547',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: GEO.latitude,
+    longitude: GEO.longitude,
+  },
+  url: SITE_URL,
+  telephone: PHONE_E164,
   email: 'karentrujillopsic@gmail.com',
   priceRange: '$$',
   medicalSpecialty: 'Neuropsychiatry',
+  currenciesAccepted: 'MXN',
+  paymentAccepted: 'Efectivo, Transferencia bancaria, Tarjeta',
+  hasMap: 'https://maps.google.com/?cid=4630406520710891531',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: HOURS.weekdays.opens,
+      closes: HOURS.weekdays.closes,
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: HOURS.saturday.opens,
+      closes: HOURS.saturday.closes,
+    },
+  ],
   areaServed: [
     { '@type': 'City', name: 'Cancún', sameAs: 'https://www.wikidata.org/wiki/Q8969' },
     { '@type': 'City', name: 'Playa del Carmen', sameAs: 'https://www.wikidata.org/wiki/Q505403' },
@@ -28,21 +49,22 @@ const medicalBusinessSchema = {
     { '@type': 'AdministrativeArea', name: 'Quintana Roo', sameAs: 'https://www.wikidata.org/wiki/Q10507' },
     { '@type': 'AdministrativeArea', name: 'Riviera Maya' },
   ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 const professionalSchema = {
   '@context': 'https://schema.org',
   '@type': ['Physician', 'HealthcareProfessional'],
-  '@id': 'https://www.psicologakarentrujillo.com.mx/#physician',
+  '@id': `${SITE_URL}/#physician`,
   name: 'Karen Trujillo',
   jobTitle: 'Neuropsicóloga Clínica — Especialista en TDAH y Autismo',
-  url: 'https://www.psicologakarentrujillo.com.mx',
-  image: 'https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp',
-  description: 'Neuropsicóloga especializada en valoración de TDAH (infantil y adultos) y diagnóstico de Autismo (TEA) en Cancún. Cédula Federal 11009616. 7+ años de experiencia. Miembro del Colegio de Psicólogos de Quintana Roo.',
+  url: SITE_URL,
+  image: KAREN_IMAGE,
+  description: `Neuropsicóloga especializada en valoración de TDAH (infantil y adultos) y diagnóstico de Autismo (TEA) en Cancún. Cédula Federal ${CEDULA}. 7+ años de experiencia. Miembro del Colegio de Psicólogos de Quintana Roo.`,
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'Cédula Profesional Federal',
-    credentialId: '11009616',
+    credentialId: CEDULA,
     issuedBy: { '@type': 'Organization', name: 'Secretaría de Educación Pública, México' },
   },
   alumniOf: {
@@ -61,23 +83,21 @@ const professionalSchema = {
   },
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '47',
+    ratingValue: REVIEWS.ratingValue,
+    reviewCount: REVIEWS.reviewCount,
     bestRating: '5',
     worstRating: '1',
   },
-  sameAs: [
-    'https://www.facebook.com/share/1Bs93MjeKt/',
-    'https://www.instagram.com/psicologakarentrujillo',
-    'https://www.tiktok.com/@psic.karentrujillo',
-  ],
+  sameAs: SOCIAL_PROFILES,
 };
 
 export default function Document() {
   return (
-    <Html lang="es" className="scroll-smooth">
+    <Html lang="es-MX" className="scroll-smooth">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
