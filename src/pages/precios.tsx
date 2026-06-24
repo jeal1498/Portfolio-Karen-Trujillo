@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {
   CheckCircle2, ChevronDown, MessageCircle, ArrowRight,
   Shield, BadgeCheck, Clock, CreditCard,
-  Brain, Puzzle, Users, Briefcase, FileText,
+  Brain, Puzzle, Users, Briefcase, FileText, Heart, Monitor,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -27,9 +27,9 @@ const evaluaciones = [
     title: 'Valoración TDAH en Niños',
     edad: 'Niños de 5 a 17 años',
     precio: '$8,300 MXN',
-    duracion: '2–3 semanas · 4 sesiones',
+    duracion: '2–3 semanas · 5 sesiones',
     href: '/evaluacion-tdah-ninos',
-    instrumentos: ['CONNERS-3', 'WISC-V', 'BRIEF-2', 'CPT-3', 'Escalas de comportamiento'],
+    instrumentos: ['CONNERS', 'EDAH', 'WISC-V', 'CUMANIN', 'CDI y Spence'],
     incluye: [
       'Entrevista clínica con padres y/o tutores',
       'Evaluación directa con el niño (múltiples sesiones)',
@@ -47,9 +47,9 @@ const evaluaciones = [
     title: 'Valoración TDAH en Adultos',
     edad: 'Desde 18 años',
     precio: '$8,300 MXN',
-    duracion: '2–3 semanas · 4 sesiones',
+    duracion: '2–3 semanas · 5 sesiones',
     href: '/evaluacion-tdah-adultos',
-    instrumentos: ['CAARS-2', 'WAIS-IV', 'BRIEF-2A', 'CPT-3', 'DIVA 2.0'],
+    instrumentos: ['DIVA 2.0', 'Conners Adultos', 'Cribado TDAH', 'IDARE', 'Inventario Depresión'],
     incluye: [
       'Entrevista clínica estructurada (historia de vida y síntomas)',
       'Aplicación de batería de pruebas neuropsicológicas',
@@ -66,10 +66,10 @@ const evaluaciones = [
     badgeColor: 'bg-accent-pink/25 text-primary',
     title: 'Evaluación de Autismo (TEA)',
     edad: 'Niños y adolescentes',
-    precio: '$8,500 MXN',
-    duracion: '3–4 semanas · 5–6 sesiones',
+    precio: '$8,300 MXN',
+    duracion: '2–3 semanas · 5 sesiones',
     href: '/evaluacion-autismo-cancun',
-    instrumentos: ['ADOS-2', 'ADI-R', 'M-CHAT-R/F', 'WISC-V', 'Vineland-3', 'SRS-2'],
+    instrumentos: ['ADOS-2', 'ADI-R', 'AQ-10', 'WISC-V'],
     incluye: [
       'Observación estructurada directa (ADOS-2 — estándar de oro)',
       'Entrevista diagnóstica a padres/tutores (ADI-R)',
@@ -78,6 +78,26 @@ const evaluaciones = [
       'Informe con nivel de apoyo según criterios DSM-5',
       'Sesión de devolución con plan de acompañamiento familiar',
       'Validez ante SEP, IMSS e instituciones de apoyo',
+    ],
+  },
+  {
+    id: 'combo',
+    icon: Brain,
+    badge: 'Paquete Completo',
+    badgeColor: 'bg-primary/10 text-primary',
+    title: 'Valoración Completa TDAH + Autismo',
+    edad: 'Evaluación integral combinada',
+    precio: '$10,500 MXN',
+    duracion: '3–4 semanas · 7 sesiones',
+    href: '/evaluacion-autismo-cancun',
+    instrumentos: ['ADOS-2', 'ADI-R', 'CONNERS', 'WISC-V', 'DIVA 2.0', 'AQ-10'],
+    incluye: [
+      'Proceso completo de valoración TDAH (infantil o adultos)',
+      'Proceso completo de diagnóstico de Autismo (TEA)',
+      'Informe neuropsicológico integrado con ambos diagnósticos',
+      'Diagnóstico diferencial y de comorbilidades',
+      'Sesión de devolución ampliada con plan de intervención',
+      'Ahorro de $6,100 MXN vs. contratar ambas valoraciones por separado',
     ],
   },
 ];
@@ -122,7 +142,7 @@ const faqPrecios = [
   },
   {
     q: '¿Se puede pagar en parcialidades?',
-    a: 'El esquema es dos pagos: un anticipo de $1,000 MXN (TDAH) o $1,500 MXN (TEA) al agendar, y el saldo restante al entregar el informe. No se ofrecen más parcialidades. Este esquema está diseñado para proteger tanto al paciente como el proceso clínico.',
+    a: 'Para valoraciones neuropsicológicas el esquema es dos pagos: un anticipo de $1,000 MXN (TDAH) o $1,500 MXN (TEA) al agendar, y el saldo restante al entregar el informe. Para sesiones psicológicas individuales se requiere pago total 2 días antes de la cita. En ningún caso se ofrecen más parcialidades.',
   },
   {
     q: '¿El informe tiene vigencia para usarse?',
@@ -137,8 +157,8 @@ const faqPrecios = [
     a: 'En casos de vulnerabilidad económica comprobable, puedo evaluar opciones. Escríbeme directamente por WhatsApp para hablar sobre tu situación. El proceso de selección es personal y limitado.',
   },
   {
-    q: '¿Por qué cuesta más la evaluación de autismo?',
-    a: 'La evaluación de TEA requiere el ADOS-2 (instrumento de observación directa de alta complejidad), más sesiones de aplicación (5-6 vs. 4) y mayor tiempo de análisis e integración clínica. El ADOS-2 es el estándar de oro para diagnóstico de autismo y su aplicación requiere formación especializada certificada.',
+    q: '¿Cuál es la diferencia entre la valoración de TDAH y la de Autismo?',
+    a: 'Aunque ambas tienen el mismo costo ($8,300 MXN), el proceso difiere. La valoración de TDAH evalúa atención, hiperactividad e impulsividad con instrumentos como CONNERS, EDAH y WISC-V. La de Autismo incluye la observación estructurada ADOS-2 (estándar de oro internacional), entrevista diagnóstica ADI-R y cribado AQ-10. Pueden realizarse de forma combinada con descuento en el Paquete Completo.',
   },
 ];
 
@@ -229,7 +249,7 @@ export default function Precios() {
           {/* ── Pricing cards ── */}
           <section className="py-16 sm:py-20 px-6 bg-secondary">
             <div className="max-w-5xl mx-auto">
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
                 {evaluaciones.map((ev) => (
                   <div key={ev.id} className="bg-card rounded-2xl border border-border overflow-hidden flex flex-col shadow-sm hover:shadow-[0_16px_48px_-12px_rgba(56,47,81,0.14)] hover:-translate-y-1 transition-all duration-300">
                     {/* Card header */}
@@ -296,11 +316,137 @@ export default function Precios() {
             </div>
           </section>
 
+          {/* ── Sesiones psicológicas ── */}
+          <section className="py-16 sm:py-20 px-6 bg-card border-t border-border">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">Sesiones Psicológicas</h2>
+              <p className="text-muted-foreground font-light text-center mb-12">Ansiedad, depresión, duelo, estrés, autoestima y manejo emocional. Presencial y virtual.</p>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                {/* Primera Consulta */}
+                <div className="bg-secondary rounded-2xl border border-border p-6 flex flex-col gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-accent-blue/15 flex items-center justify-center">
+                      <Brain className="w-5 h-5 text-primary/70" />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Primera consulta</span>
+                  </div>
+                  <p className="text-3xl font-serif font-bold text-primary">$800 <span className="text-base font-sans font-normal text-muted-foreground">MXN</span></p>
+                  <p className="text-xs text-muted-foreground font-light">Sesión de evaluación inicial. Identificación de motivo de consulta y plan de tratamiento.</p>
+                </div>
+
+                {/* Sesión Presencial */}
+                <div className="bg-secondary rounded-2xl border border-border p-6 flex flex-col gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-accent-sand flex items-center justify-center">
+                      <Users className="w-5 h-5 text-primary/70" />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Presencial</span>
+                  </div>
+                  <p className="text-3xl font-serif font-bold text-primary">$650 <span className="text-base font-sans font-normal text-muted-foreground">MXN</span></p>
+                  <p className="text-xs text-muted-foreground font-light">Sesión individual en consultorio. Duración: 50–60 minutos.</p>
+                </div>
+
+                {/* Sesión Virtual */}
+                <div className="bg-secondary rounded-2xl border border-border p-6 flex flex-col gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-accent-pink/15 flex items-center justify-center">
+                      <Monitor className="w-5 h-5 text-primary/70" />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Virtual</span>
+                  </div>
+                  <p className="text-3xl font-serif font-bold text-primary">$400 <span className="text-base font-sans font-normal text-muted-foreground">MXN</span></p>
+                  <p className="text-xs text-muted-foreground font-light">Sesión individual por videollamada. Duración: 50–60 minutos.</p>
+                </div>
+              </div>
+
+              {/* Paquetes */}
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                <div className="bg-gradient-to-br from-accent-blue/10 to-accent-blue/5 rounded-2xl border border-accent-blue/20 p-6">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-2">Paquete presencial</p>
+                  <p className="text-2xl font-serif font-bold text-primary mb-1">$2,470 <span className="text-sm font-sans font-normal text-muted-foreground">MXN</span></p>
+                  <p className="text-xs text-muted-foreground font-light mb-3">4 sesiones presenciales — pago total en una exhibición.</p>
+                  <p className="text-xs text-success font-semibold">Ahorro de $130 vs. sesiones individuales</p>
+                </div>
+                <div className="bg-gradient-to-br from-accent-pink/10 to-accent-pink/5 rounded-2xl border border-accent-pink/20 p-6">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-2">Paquete virtual</p>
+                  <p className="text-2xl font-serif font-bold text-primary mb-1">$1,520 <span className="text-sm font-sans font-normal text-muted-foreground">MXN</span></p>
+                  <p className="text-xs text-muted-foreground font-light mb-3">4 sesiones virtuales — pago total en una exhibición.</p>
+                  <p className="text-xs text-success font-semibold">Ahorro de $80 vs. sesiones individuales</p>
+                </div>
+              </div>
+
+              {/* Certificado mascota */}
+              <div className="bg-secondary rounded-2xl border border-border p-6 flex flex-col sm:flex-row items-center gap-5">
+                <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center shrink-0">
+                  <Heart className="w-6 h-6 text-success" />
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <p className="font-bold text-primary mb-1">Certificado de Mascota de Apoyo Emocional</p>
+                  <p className="text-xs text-muted-foreground font-light">Evaluación y emisión de certificado oficial. <strong className="text-primary">$2,500 MXN</strong> individual · <strong className="text-primary">$2,000 MXN</strong> en paquete.</p>
+                </div>
+                <a
+                  href={`https://wa.me/529983211547?text=${encodeURIComponent('Hola Karen, me interesa el certificado de mascota de apoyo emocional.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"
+                >
+                  Consultar <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+
+              {/* Política para sesiones */}
+              <div className="mt-8 p-6 rounded-xl border border-border bg-accent-sand/30">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4">Política de pago — sesiones psicológicas</p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="flex gap-3">
+                    <CreditCard className="w-4 h-4 text-primary/50 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-bold text-primary mb-0.5">Pago total anticipado</p>
+                      <p className="text-xs text-muted-foreground font-light">Se requiere pago completo con 2 días de anticipación vía transferencia o depósito.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <Clock className="w-4 h-4 text-primary/50 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-bold text-primary mb-0.5">Reagendación</p>
+                      <p className="text-xs text-muted-foreground font-light">Solo con 24 horas de anticipación. La cita reagendada vence en 7 días.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <BadgeCheck className="w-4 h-4 text-primary/50 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-bold text-primary mb-0.5">Tolerancia</p>
+                      <p className="text-xs text-muted-foreground font-light">Máximo 15 minutos de retraso. Fuera de este lapso la sesión se cancela sin reembolso.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <Shield className="w-4 h-4 text-primary/50 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-bold text-primary mb-0.5">Comprobante</p>
+                      <p className="text-xs text-muted-foreground font-light">Enviar captura del pago al WhatsApp <strong>998 321 1547</strong> para confirmar la cita.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Descuento por reseña */}
+              <div className="mt-4 p-6 rounded-xl border border-accent-blue/20 bg-accent-blue/5 flex flex-col sm:flex-row items-center gap-4">
+                <div className="text-3xl shrink-0">⭐</div>
+                <div className="flex-1 text-center sm:text-left">
+                  <p className="font-bold text-primary mb-1">10% de descuento en tu tercera consulta</p>
+                  <p className="text-xs text-muted-foreground font-light">Deja una reseña en Facebook buscando <strong className="text-primary">&quot;Psicóloga Karen Trujillo&quot;</strong>, ve a Información → Recomendaciones, responde Sí y escribe tu comentario. Envía captura al WhatsApp para aplicar el beneficio (válido una sola vez).</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* ── Política de pago ── */}
           <section className="py-16 sm:py-20 px-6 bg-card border-t border-border">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">Política de pago</h2>
-              <p className="text-muted-foreground font-light text-center mb-12">Sin sorpresas. Sin letra pequeña.</p>
+              <p className="text-muted-foreground font-light text-center mb-2">Para valoraciones neuropsicológicas (TDAH y Autismo).</p>
+              <p className="text-xs text-muted-foreground/60 font-light text-center mb-12">Para sesiones psicológicas individuales ver sección anterior.</p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {politicasPago.map((pol) => (
