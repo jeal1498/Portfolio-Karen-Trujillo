@@ -1,4 +1,4 @@
-import { Zap, Network, FileCheck, ArrowRight, CheckCircle2, UserCheck } from 'lucide-react';
+import { Zap, Network, FileCheck, ArrowRight, CheckCircle2, UserCheck, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { WA_NUMBER } from '@/lib/contact';
@@ -11,7 +11,7 @@ const evaluaciones = [
     slug: '/evaluacion-tdah-ninos',
     edad: 'Niños de 5 a 17 años',
     description: 'Evaluación de atención, hiperactividad, impulsividad y funciones ejecutivas mediante pruebas estandarizadas. Detecta TDAH con o sin comorbilidades y orienta el tratamiento escolar y clínico.',
-    instruments: ['CONNERS-3', 'WISC-V', 'BRIEF-2', 'Escalas de comportamiento'],
+    instruments: ['CONNERS', 'EDAH', 'WISC-V', 'CUMANIN'],
     bgColor: 'bg-accent-blue/20',
     accentBar: 'bg-accent-blue/50',
     message: 'Hola%20Karen,%20me%20interesa%20la%20valoración%20de%20TDAH%20infantil',
@@ -22,7 +22,7 @@ const evaluaciones = [
     slug: '/evaluacion-tdah-adultos',
     edad: 'Adultos desde 18 años',
     description: 'Diagnóstico de TDAH en adultos que sospechan tener el trastorno no diagnosticado o buscan confirmación clínica. Evaluación de funciones ejecutivas, memoria de trabajo y autorregulación.',
-    instruments: ['CAARS', 'DIVA 2.0', 'CPT-3', 'Entrevista estructurada'],
+    instruments: ['DIVA 2.0', 'Conners Adultos', 'Cribado TDAH', 'IDARE'],
     bgColor: 'bg-accent-sand',
     accentBar: 'bg-accent-sand',
     message: 'Hola%20Karen,%20me%20interesa%20la%20valoración%20de%20TDAH%20en%20adultos',
@@ -33,7 +33,7 @@ const evaluaciones = [
     slug: '/evaluacion-autismo-cancun',
     edad: 'Niños desde 2 años',
     description: 'Evaluación diferencial del Trastorno del Espectro Autista mediante observación estructurada y pruebas validadas. El informe tiene validez ante SEP, IMSS e instituciones de apoyo.',
-    instruments: ['ADOS-2', 'M-CHAT-R/F', 'ADI-R', 'Vineland-3'],
+    instruments: ['ADOS-2', 'ADI-R', 'AQ-10', 'WISC-V'],
     bgColor: 'bg-accent-pink/30',
     accentBar: 'bg-accent-pink/60',
     message: 'Hola%20Karen,%20me%20interesa%20el%20diagnóstico%20de%20Autismo%20TEA',
@@ -166,32 +166,62 @@ const ServicesSection = () => {
           </div>
         </motion.div>
 
-        {/* Certificados — servicio secundario */}
-        <motion.div
-          className="mt-8 p-6 md:p-8 bg-card rounded-xl border border-border flex flex-col md:flex-row items-center gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="flex-shrink-0">
-            <div className="w-14 h-14 rounded-xl bg-success/10 flex items-center justify-center">
-              <FileCheck className="w-6 h-6 text-success" aria-hidden="true" />
-            </div>
-          </div>
-          <div className="flex-1 text-center md:text-left">
-            <h3 className="font-bold text-lg text-primary mb-1">Certificados Clínicos</h3>
-            <p className="text-muted-foreground text-sm font-light">Valoraciones clínicas con cédula federal {CEDULA} para trámites escolares, laborales, legales e institucionales. Requieren evaluación previa.</p>
-          </div>
-          <a
-            href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20necesito%20un%20certificado%20clínico`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"
+        {/* Servicios secundarios */}
+        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+          {/* Psicoterapia */}
+          <motion.div
+            className="p-6 md:p-8 bg-card rounded-xl border border-border flex flex-col md:flex-row items-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            Consultar <ArrowRight className="w-4 h-4" aria-hidden="true" />
-          </a>
-        </motion.div>
+            <div className="flex-shrink-0">
+              <div className="w-14 h-14 rounded-xl bg-accent-pink/10 flex items-center justify-center">
+                <Heart className="w-6 h-6 text-primary/70" aria-hidden="true" />
+              </div>
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="font-bold text-lg text-primary mb-1">Psicoterapia Individual</h3>
+              <p className="text-muted-foreground text-sm font-light">Atención psicológica para ansiedad, depresión, duelo, estrés y manejo emocional. Sesiones de 50–60 min, presenciales y virtuales.</p>
+            </div>
+            <a
+              href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20me%20interesa%20una%20sesión%20de%20psicoterapia`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"
+            >
+              Consultar <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
+          </motion.div>
+
+          {/* Certificados */}
+          <motion.div
+            className="p-6 md:p-8 bg-card rounded-xl border border-border flex flex-col md:flex-row items-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="flex-shrink-0">
+              <div className="w-14 h-14 rounded-xl bg-success/10 flex items-center justify-center">
+                <FileCheck className="w-6 h-6 text-success" aria-hidden="true" />
+              </div>
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="font-bold text-lg text-primary mb-1">Certificados Clínicos</h3>
+              <p className="text-muted-foreground text-sm font-light">Valoraciones clínicas con cédula federal {CEDULA} para trámites escolares, laborales, legales e institucionales. Incluye certificado de mascota de apoyo emocional.</p>
+            </div>
+            <a
+              href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20necesito%20un%20certificado%20clínico`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"
+            >
+              Consultar <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

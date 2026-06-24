@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { CEDULA, KAREN_IMAGE_PATH } from '@/lib/site';
 
 const instrumentos = [
-  { grupo: 'TDAH Infantil', items: 'CONNERS-3, WISC-V, BRIEF-2' },
-  { grupo: 'TDAH Adultos', items: 'CAARS, DIVA 2.0, CPT-3' },
-  { grupo: 'Autismo (TEA)', items: 'ADOS-2, M-CHAT-R/F, ADI-R, Vineland-3' },
+  { grupo: 'TDAH Infantil', items: 'CONNERS, EDAH, WISC-V, CUMANIN, CDI, Spence' },
+  { grupo: 'TDAH Adultos', items: 'DIVA 2.0, Conners Adultos, Cribado TDAH, IDARE' },
+  { grupo: 'Autismo (TEA)', items: 'ADOS-2, ADI-R, AQ-10, WISC-V' },
 ];
 
 const AboutSection = () => {
@@ -33,9 +33,9 @@ const AboutSection = () => {
 
             <div className="px-6 py-5 bg-accent-blue/10 rounded-xl text-base leading-relaxed text-foreground font-medium mb-6">
               <p>
-                Soy <strong>Neuropsicóloga Karen Trujillo</strong> (Cédula Federal: {CEDULA}), especializada
-                en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años
-                de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
+                Soy <strong>Karen Amayrani Gómez Trujillo</strong> (Cédula Federal: {CEDULA}), Neuropsicóloga,
+                Tanatóloga y especialista en Psicooncología, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años
+                de experiencia clínica en Cancún, me especializo en valoraciones neuropsicológicas de TDAH y autismo.
               </p>
             </div>
 

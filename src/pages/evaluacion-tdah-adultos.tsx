@@ -43,17 +43,19 @@ const symptoms = [
 
 const proceso = [
   { n: '01', titulo: 'Entrevista clínica inicial', desc: 'Historia de vida, trayectoria académica-laboral, síntomas actuales y retrospectiva de la infancia.', duracion: '60-90 min' },
-  { n: '02', titulo: 'Aplicación de pruebas neuropsicológicas', desc: 'Sesiones con CAARS-2, WAIS-IV, BRIEF-2A y CPT-3.', duracion: '2-3 sesiones' },
+  { n: '02', titulo: 'Aplicación de pruebas neuropsicológicas', desc: 'Sesiones con DIVA 2.0, Escala de Conners adultos, Cribado de TDAH, IDARE e Inventario de Depresión.', duracion: '2-3 sesiones' },
   { n: '03', titulo: 'Cuestionarios a pareja o familiar cercano', desc: 'Escalas de conducta y funcionamiento cotidiano completadas por un observador externo.', duracion: 'Remoto' },
   { n: '04', titulo: 'Análisis e informe clínico', desc: 'Integración de datos, diagnóstico diferencial y perfil neuropsicológico completo.', duracion: '5-7 días' },
   { n: '05', titulo: 'Sesión de devolución', desc: 'Explicación del diagnóstico, recomendaciones terapéuticas y estrategias para la vida diaria.', duracion: '60 min' },
 ];
 
 const instrumentos = [
-  { nombre: 'CAARS-2', desc: 'Escala de síntomas TDAH en adultos: autorreporte y observador externo' },
-  { nombre: 'WAIS-IV', desc: 'Inteligencia y perfil cognitivo: atención, memoria de trabajo, velocidad de procesamiento' },
-  { nombre: 'BRIEF-2A', desc: 'Funciones ejecutivas en contexto cotidiano, versión adultos' },
-  { nombre: 'CPT-3', desc: 'Prueba computarizada de atención sostenida e impulsividad' },
+  { nombre: 'DIVA 2.0', desc: 'Entrevista diagnóstica del TDAH en adultos: síntomas en infancia y actualidad' },
+  { nombre: 'Conners Adultos', desc: 'Escala de síntomas TDAH: autorreporte y evaluación por observador' },
+  { nombre: 'Cribado TDAH', desc: 'Escala de cribado de TDAH en adultos para detección inicial' },
+  { nombre: 'IDARE', desc: 'Inventario de ansiedad rasgo-estado para diagnóstico diferencial' },
+  { nombre: 'Inventario Depresión', desc: 'Detección de síntomas depresivos comórbidos con TDAH' },
+  { nombre: '16 Factores', desc: 'Evaluación de personalidad: perfil psicológico completo' },
 ];
 
 const informeIncludes = [
