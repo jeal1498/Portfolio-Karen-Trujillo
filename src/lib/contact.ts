@@ -1,5 +1,6 @@
 export const WA_NUMBER = '529983211547';
 export const PHONE_NUMBER = '529983211547';
+export const EMAIL = 'karentrujillopsic@gmail.com';
 /** Teléfono en formato E.164, para `telephone` en JSON-LD. */
 export const PHONE_E164 = '+529983211547';
 
