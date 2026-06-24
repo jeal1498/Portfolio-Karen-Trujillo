@@ -44,7 +44,7 @@ const symptoms = [
 const proceso = [
   { n: '01', titulo: 'Entrevista clínica con padres (ADI-R)', desc: 'Historia del desarrollo, hitos comunicativos, patrones de conducta y contexto familiar. Entrevista estructurada ADI-R.', duracion: '90-120 min' },
   { n: '02', titulo: 'Observación clínica estructurada (ADOS-2)', desc: 'Sesión de juego y tareas semiestructuradas con el niño. Evaluación directa de comunicación, interacción social y conducta.', duracion: '60-90 min' },
-  { n: '03', titulo: 'Pruebas complementarias', desc: 'Evaluación cognitiva (WISC-V), conducta adaptativa (Vineland-3) y cuestionarios a padres y maestros (SRS-2).', duracion: '2-3 sesiones' },
+  { n: '03', titulo: 'Pruebas complementarias', desc: 'Evaluación cognitiva (WISC-V), cuestionarios de cribado (AQ-10) y escalas complementarias para padres, maestros y cuidadores.', duracion: '2-3 sesiones' },
   { n: '04', titulo: 'Análisis e informe clínico', desc: 'Integración de datos, diagnóstico diferencial, nivel de apoyo y perfil de fortalezas y necesidades.', duracion: '5-7 días' },
   { n: '05', titulo: 'Sesión de devolución', desc: 'Explicación del diagnóstico, recomendaciones terapéuticas, adecuaciones escolares y orientación familiar.', duracion: '60-90 min' },
 ];
@@ -52,9 +52,8 @@ const proceso = [
 const instrumentos = [
   { nombre: 'ADOS-2', desc: 'Escala de observación diagnóstica del autismo: estándar de oro internacional' },
   { nombre: 'ADI-R', desc: 'Entrevista diagnóstica revisada para autismo: con padres o cuidadores' },
+  { nombre: 'AQ-10', desc: 'Cuestionario de cribado de autismo: detección inicial' },
   { nombre: 'WISC-V', desc: 'Perfil cognitivo: inteligencia, atención, memoria de trabajo' },
-  { nombre: 'Vineland-3', desc: 'Conducta adaptativa: comunicación, socialización, autonomía' },
-  { nombre: 'SRS-2', desc: 'Escala de responsividad social: padres y maestros' },
 ];
 
 const informeIncludes = [

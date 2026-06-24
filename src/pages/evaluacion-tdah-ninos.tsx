@@ -43,17 +43,19 @@ const symptoms = [
 
 const proceso = [
   { n: '01', titulo: 'Entrevista inicial con padres', desc: 'Anamnesis clínica, historial de desarrollo, contexto escolar y familiar.', duracion: '60-90 min' },
-  { n: '02', titulo: 'Aplicación de pruebas al niño', desc: 'Sesiones con CONNERS-3, WISC-V, BRIEF-2 y CPT-3.', duracion: '2-3 sesiones' },
+  { n: '02', titulo: 'Aplicación de pruebas al niño', desc: 'Sesiones con CONNERS, EDAH, WISC-V, CUMANIN y escalas complementarias (CDI, Spence).', duracion: '2-3 sesiones' },
   { n: '03', titulo: 'Cuestionarios a maestros', desc: 'Escalas de conducta y atención completadas por docentes.', duracion: 'Remoto' },
   { n: '04', titulo: 'Análisis e informe clínico', desc: 'Integración de datos, diagnóstico diferencial y perfil neuropsicológico.', duracion: '5-7 días' },
   { n: '05', titulo: 'Sesión de devolución', desc: 'Explicación del diagnóstico, recomendaciones terapéuticas y adecuaciones.', duracion: '60 min' },
 ];
 
 const instrumentos = [
-  { nombre: 'CONNERS-3', desc: 'Escala de síntomas TDAH: padres, maestros y el propio niño' },
+  { nombre: 'CONNERS', desc: 'Escala de síntomas TDAH: padres, maestros y el propio niño' },
+  { nombre: 'EDAH', desc: 'Evaluación del déficit de atención con hiperactividad' },
   { nombre: 'WISC-V', desc: 'Inteligencia y perfil cognitivo: atención, memoria de trabajo' },
-  { nombre: 'BRIEF-2', desc: 'Funciones ejecutivas en contexto cotidiano' },
-  { nombre: 'CPT-3', desc: 'Prueba computarizada de atención sostenida' },
+  { nombre: 'CUMANIN', desc: 'Madurez neuropsicológica infantil' },
+  { nombre: 'CDI', desc: 'Detección de síntomas depresivos infantiles comórbidos' },
+  { nombre: 'Spence', desc: 'Escala de ansiedad infantil para diagnóstico diferencial' },
 ];
 
 const informeIncludes = [

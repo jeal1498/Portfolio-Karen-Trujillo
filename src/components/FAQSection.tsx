@@ -12,7 +12,7 @@ import { CEDULA } from '@/lib/site';
 const faqData = [
   {
     question: '¿Cuántas sesiones dura una valoración de TDAH en Cancún?',
-    answer: 'La valoración de TDAH incluye 4 sesiones: entrevista inicial y anamnesis, aplicación de pruebas neuropsicológicas estandarizadas (CONNERS, WISC-V, BRIEF-2 para niños; CAARS y DIVA 2.0 para adultos), análisis de resultados y sesión de devolución con informe clínico y recomendaciones. El proceso completo toma entre 2 y 3 semanas.',
+    answer: 'La valoración de TDAH incluye 5 sesiones: entrevista inicial con padres o el propio paciente, aplicación de pruebas neuropsicológicas estandarizadas (CONNERS, EDAH y WISC-V para niños; DIVA 2.0 y Escala de Conners para adultos), sesiones complementarias, análisis de resultados y sesión de devolución con informe clínico. El informe se entrega una semana después de finalizar las pruebas.',
   },
   {
     question: '¿A partir de qué edad se puede hacer la valoración de TDAH?',
@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: '¿Qué incluye el diagnóstico de Autismo (TEA) para niños en Cancún?',
-    answer: `El diagnóstico de TEA incluye evaluación con instrumentos estandarizados como ADOS-2, M-CHAT-R/F, ADI-R y Vineland-3, entrevista a padres/tutores, observación conductual estructurada y elaboración de informe clínico con cédula federal ${CEDULA}, válido ante escuelas, IMSS e instituciones de apoyo. El proceso es aplicable desde los 2 años.`,
+    answer: `El diagnóstico de TEA incluye evaluación con instrumentos estandarizados como ADOS-2, ADI-R y AQ-10, entrevista a padres/tutores, observación conductual estructurada, evaluación cognitiva con WISC-V y elaboración de informe clínico con cédula federal ${CEDULA}, válido ante escuelas, IMSS e instituciones de apoyo.`,
   },
   {
     question: '¿El diagnóstico tiene validez oficial ante la escuela o el IMSS?',
