@@ -182,11 +182,11 @@ Se diseñó un blueprint completo para el módulo de baterías de evaluación ne
 
 ## Skills de Marketing Instalados (2026-06-27)
 
-Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` con symlinks en `.claude/skills/`. Estos son los únicos relevantes para un sitio clínico de consulta — los 35 restantes (ads, paywalls, sms, aso, revops, etc.) no aplican y no se instalaron.
+Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` con symlinks en `.claude/skills/`. Estos son los únicos relevantes para un sitio clínico de consulta.
 
 | Skill instalado | Para qué sirve en este repo |
 |---|---|
-| `product-marketing` | Base — todos los demás skills la leen primero. Perfil del producto, audiencia y posicionamiento |
+| `product-marketing` | Base — SSOT de producto. Lee `.agents/product-marketing.md` |
 | `copywriting` | Escribir/mejorar copy de páginas de servicio y landing principal |
 | `cro` | Optimizar conversiones: que la mamá ansiosa agende consulta |
 | `seo-audit` | Auditar gaps de SEO on-page en todas las rutas |
@@ -197,110 +197,128 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 | `customer-research` | Entender mejor la persona "mamá con años de incertidumbre" |
 | `marketing-psychology` | Aplicar principios de reducción de ansiedad y prueba social al copy |
 
-**Comando usado:**
-```bash
-npx skills add coreyhaines31/marketingskills --skill product-marketing copywriting cro seo-audit ai-seo schema content-strategy copy-editing customer-research marketing-psychology
-```
+---
+
+## Auditoría de Marketing — Resultados (2026-06-27)
+
+**Archivos de referencia:**
+- `.agents/product-marketing.md` — SSOT del producto (228 líneas)
+- `.agents/marketing-audit-2026-06-27.md` — Auditoría completa con 5 entregables (617 líneas)
+- `.agents/marketing-audit-report.html` — Reporte visual interactivo
+
+**Método:** Análisis de archivos fuente (el sitio live devuelve 403 Cloudflare). Se leyeron 21 URLs + 11 artículos de blog + componentes React + schemas JSON-LD.
 
 ---
 
-## Plan de Auditoría de Marketing — Trigger: "auditoría marketing"
+### Issues P0 — Críticos (corregir primero)
 
-> Este plan se activa cuando el usuario inicia una conversación nueva con "auditoría marketing".
-> Se ejecuta en orden; cada paso usa el skill indicado.
+| ID | Archivo | Problema | Fix |
+|----|---------|----------|-----|
+| P0-01 | `src/pages/precios.tsx` | Precio TEA: $8,300 MXN (correcto: $8,500 MXN) | Cambiar el valor en precios.tsx |
+| P0-02 | `src/pages/evaluacion-tdah-adultos.tsx` | Sección `proceso` lista DIVA 2.0/IDARE (el FAQ de la misma página lista CAARS-2/WAIS-IV) | Alinear array `proceso` con CAARS-2, WAIS-IV, BRIEF-2A, CPT-3 |
+| P0-03 | `src/pages/index.tsx` | `injectSchema()` es client-side (`useEffect`) — AI crawlers (GPTBot, ClaudeBot) no ejecutan JS y nunca ven el schema | Migrar a `<script dangerouslySetInnerHTML>` en `<Head>` igual que neuropsicologia-cancun.tsx |
+| P0-04 | `src/pages/index.tsx` | Título homepage: 68 chars (se trunca en móvil a ~60) | Opción B recomendada: "Neuropsicóloga Cancún — TDAH y Autismo · Cédula 11009616" (59 chars) |
 
-### Contexto del sitio (para la conversación nueva)
+**Esfuerzo total P0: ~1.5 horas.**
 
-- **Sitio:** `psicologakarentrujillo.com.mx` — consultorio de neuropsicología en Cancún
-- **Stack:** Next.js 14 Pages Router + TypeScript + Tailwind + shadcn/ui + Framer Motion
-- **Objetivo de conversión:** mamá/papá con hijo 5–17 años → agenda consulta vía WhatsApp
-- **Rutas:** 9 páginas principales + blog con 11 artículos (ver lista completa en la sesión anterior)
-- **SEO base:** `lib/seo.ts` con `applySeo()` + `injectSchema()`, canonical y OG tags en cada ruta
-- **Contacto:** único punto de verdad en `lib/contact.ts`
-- **Skills disponibles:** `.claude/skills/` — product-marketing, copywriting, cro, seo-audit, ai-seo, schema, content-strategy, copy-editing, customer-research, marketing-psychology
+---
 
-### Paso 1 — Perfil de producto base (`product-marketing`)
+### Issues P1 — Importantes (próximo sprint)
 
-**Acción:** Crear o validar el documento de contexto de producto que todos los demás skills leerán primero.
+| ID | Problema | Archivo(s) |
+|----|----------|-----------|
+| P1-01 | og:image en páginas de servicio es retrato 465×533 (redes sociales esperan 1200×630 landscape) | Homepage + 7 páginas servicio |
+| P1-02 | Article schema `image` apunta a KAREN_IMAGE en vez del hero SVG del artículo | 11 archivos blog (ver tabla en `.agents/marketing-audit-2026-06-27.md` → Entregable 2) |
+| P1-03 | `/valoracion-chetumal` en sitemap pero sin enlace interno — página huérfana | `public/sitemap.xml`, `Navbar.tsx` |
+| P1-04 | Speakable schema con CSS selectors sin verificar en neuropsicologia-cancun | `src/pages/neuropsicologia-cancun.tsx` |
+| P1-05 | `REVIEWS.reviewCount` debe actualizarse mensualmente con el conteo real de GBP | `lib/site.ts` |
+| P1-06 | `dateModified` igual a `datePublished` en artículos tocados en junio 2026 | 5 artículos de blog (los de fecha 2025) |
+| P1-07 | Falta `sameAs` de Doctoralia/PsychologyToday en Physician schema | `lib/site.ts` → `DIRECTORY_PROFILES` |
 
-- Audiencia primaria: padres con hijos 5–17 años con dificultades de atención/comunicación social
-- Audiencia secundaria: adultos 25–45 con TDAH no diagnosticado
-- Propuesta de valor: instrumentos estandarizados específicos (ADOS-2, WISC-V, CAARS-2, CONNERS-3, BRIEF-2, CPT-3) + cédula profesional real (11009616) + calidez humana
-- Diferenciador clave: especificidad clínica (no "evaluación completa", sino "ADOS-2 módulo 2, 3 sesiones de 90 min")
-- CTA único: WhatsApp → agendar → primera cita
+---
 
-### Paso 2 — Auditoría SEO on-page (`seo-audit`)
+### Issues P2 — Mediano plazo
 
-**Acción:** Revisar cada ruta del sitio contra las mejores prácticas SEO.
+| ID | Problema |
+|----|----------|
+| P2-01 | H1 de homepage sin keywords TDAH/Autismo |
+| P2-02 | Blog index sin CollectionPage schema estático |
+| P2-03 | FloatingButtons sin `prefers-reduced-motion` (WCAG 2.1) |
+| P2-04 | Dos páginas SEO locales con contenido superpuesto — verificar diferenciación |
+| P2-05 | Falta `priceRange` en MedicalBusiness schema del homepage |
+| P2-06 | Artículos de blog sin enlace contextual interno hacia páginas de conversión |
+| P2-07 | `/valoracion-chetumal` sin schema LocalBusiness si tiene contenido local |
 
-Archivos a auditar:
-- `src/pages/index.tsx` — landing principal
-- `src/pages/evaluacion-tdah-ninos.tsx`
-- `src/pages/evaluacion-tdah-adultos.tsx`
-- `src/pages/evaluacion-autismo-cancun.tsx`
-- `src/pages/neuropsicologia-cancun.tsx`
-- `src/pages/neuropsicologia-zona-hotelera-cancun.tsx`
-- `src/pages/para-escuelas.tsx`
-- `src/pages/precios.tsx`
-- `src/pages/valoracion-chetumal.tsx`
-- `src/pages/blog/index.tsx` + 11 artículos
+---
 
-Verificar: title tags, meta descriptions, H1/H2 únicos, keywords primarias en primeros 100 palabras, internal linking entre rutas de servicio y blog.
+### Correcciones JSON-LD — 11 artículos de blog (Entregable 2)
 
-### Paso 3 — Auditoría de Schema / JSON-LD (`schema`)
+El único campo a cambiar en cada `Article` schema es `image: KAREN_IMAGE` → hero SVG propio del artículo:
 
-**Acción:** Validar y completar el structured data en todas las rutas.
+| Archivo | Imagen correcta |
+|---------|----------------|
+| `cuanto-cuesta-valoracion-tdah-cancun.tsx` | `/blog/dark-costo-de-la-valoracion-de-tdah-1200x675.svg` |
+| `tdah-en-ninas-sintomas.tsx` | `/blog/dark-tdah-en-ninas-1200x675.svg` |
+| `senales-tdah-ninos.tsx` | `/blog/dark-senales-de-tdah-en-ninos-1200x675.svg` |
+| `tdah-adultos-diagnostico-tardio.tsx` | `/blog/dark-tdah-en-adultos-1200x675.svg` |
+| `que-es-ados-2-autismo.tsx` | `/blog/dark-que-es-el-ados-2-1200x675.svg` |
+| `autismo-nivel-1-sintomas-adultos.tsx` | `/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg` |
+| `cuanto-cuesta-evaluacion-autismo-mexico.tsx` | `/blog/dark-costo-evaluacion-de-autismo-1200x675.svg` |
+| `tdah-inatento-sintomas.tsx` | `/blog/dark-tdah-inatento-1200x675.svg` |
+| `tdah-vs-ansiedad-diferencias.tsx` | `/blog/dark-tdah-o-ansiedad-1200x675.svg` |
+| `burnout-o-tdah-diferencias.tsx` | `/blog/dark-burnout-vs-tdah-1200x675.svg` |
+| `donde-evaluar-tdah-cancun.tsx` | `/blog/dark-donde-evaluar-tdah-en-cancun-1200x675.svg` |
 
-Gaps conocidos (de sesión anterior, 2026-06-18):
-- Las páginas de servicio tienen LocalBusiness pero pueden necesitar `MedicalBusiness` + `MedicalSpecialty`
-- Los 11 artículos de blog tienen `og:image` apuntando a foto de Karen en vez de imagen hero del artículo — pendiente desde 2026-06-18
-- Verificar que `FAQPage` esté presente en rutas con accordions
+También actualizar `dateModified: '2026-06-17'` en artículos con fechas 2025 que recibieron el batch de imágenes.
 
-### Paso 4 — Optimización para IA Search (`ai-seo`)
+---
 
-**Acción:** Verificar y mejorar la citabilidad del sitio en respuestas de LLMs.
+### Mejoras CRO (Entregable 3)
 
-Verificar: llms.txt, passages responderables directamente, menciones de marca en contenido del blog, estructura de respuesta a preguntas tipo "¿cuánto cuesta una evaluación de TDAH en Cancún?".
+| ID | Componente:línea | Fix | Impacto |
+|----|-----------------|-----|---------|
+| CRO-01 | `index.tsx:~461` | Micro-copy bajo CTA WA: "Respuesta en menos de 2 horas · Lun–Sáb" | Alto |
+| CRO-02 | `SymptomChecker.tsx` | CTA inline después del resultado del cuestionario | Alto |
+| CRO-03 | `FloatingButtons.tsx:8` | Añadir variante desktop (`hidden lg:flex`) en esquina inferior derecha | Medio |
+| CRO-04 | `para-escuelas.tsx` | Importar y renderizar `<FloatingButtons />` | Medio |
+| CRO-05 | `index.tsx:~436–453` | Añadir precio en routing cards del hero ("Desde $8,300 MXN") | Alto |
+| CRO-06 | `index.tsx` / `AboutSection.tsx` | Envolver el bloque de 47 reseñas en enlace clickeable a Google Maps | Medio |
+| CRO-07 | `evaluacion-tdah-ninos.tsx:~724` | Mejorar callout "costo de no actuar" con timeframe concreto (3–4 semanas) | Medio |
 
-### Paso 5 — CRO: auditoría de conversión (`cro`)
+---
 
-**Acción:** Revisar el flujo de conversión en la landing principal y páginas de servicio.
+### Copy mejorado — páginas prioritarias (Entregable 4)
 
-Revisar en código:
-- `src/components/Hero.tsx` — CTA principal, claridad de propuesta de valor above the fold
-- `src/components/ServicesSection.tsx` — precio visible, instrumentos, fricción percibida
-- `src/components/FAQSection.tsx` — ¿responde las objeciones reales de la mamá ansiosa?
-- `src/components/FloatingButtons.tsx` — visibilidad y timing de CTAs flotantes
+Ver `.agents/marketing-audit-2026-06-27.md` → Entregable 4 para el texto exacto. Resumen:
 
-### Paso 6 — Auditoría de Copy (`copy-editing`)
+- **Homepage:** H1 añadir "Especialista en TDAH y Autismo" + subtítulo empático + micro-copy en CTA + precio en routing cards
+- **evaluacion-tdah-adultos:** Sección `proceso` con 2 bloques (entrevista diagnóstica: DIVA 2.0 / pruebas cognitivas: CAARS-2, WAIS-IV, BRIEF-2A, CPT-3) + badge de diagnóstico tardío
+- **evaluacion-autismo-cancun:** Bloque nuevo "¿Por qué familias viajan a Cancún?" (escasez regional del ADOS-2) + callout de intervención temprana mejorado
 
-**Acción:** Revisar los textos de las 3 páginas de mayor tráfico potencial.
+---
 
-Prioridad: `evaluacion-tdah-ninos.tsx`, `evaluacion-autismo-cancun.tsx`, `index.tsx`
+### Calendario editorial — próximos 5 artículos (Entregable 5)
 
-Criterio: claridad > jerga clínica, especificidad > promesas genéricas, calidez sin cursilería.
+| Mes | Slug | Keyword primaria | Intención |
+|-----|------|-----------------|-----------|
+| Julio | `como-es-una-evaluacion-neuropsicologica-ninos` | evaluación neuropsicológica niños cancún | Informacional |
+| Julio | `tdah-ninas-diagnostico-tardio-cancun` | TDAH niñas diagnóstico | Informacional |
+| Agosto | `diferencia-tdah-trastorno-aprendizaje` | diferencia TDAH trastorno aprendizaje | Informacional |
+| Agosto | `resultado-positivo-autismo-que-sigue` | qué sigue después diagnóstico autismo | Navegacional |
+| Septiembre | `evaluacion-neuropsicologica-adultos-cancun` | evaluación neuropsicológica adultos Cancún | Transaccional |
 
-### Paso 7 — Psicología de Conversión (`marketing-psychology`)
+Ver `.agents/marketing-audit-2026-06-27.md` → Entregable 5 para estructura completa de cada artículo.
 
-**Acción:** Identificar qué principios psicológicos ya están aplicados y cuáles faltan.
+---
 
-Revisar: prueba social (TestimonialsSection), autoridad (credenciales en Hero), reducción de incertidumbre (FAQSection + proceso explicado en pasos), urgencia/escasez (¿existe o no?).
+### Fortalezas del sitio (no tocar)
 
-### Paso 8 — Estrategia de Contenido de Blog (`content-strategy`)
-
-**Acción:** Evaluar los 11 artículos existentes y proponer los próximos 5 con criterio de demanda.
-
-Blog actual (11 artículos): señales TDAH niños, TDAH niñas, TDAH inatento, TDAH vs ansiedad, TDAH adultos diagnóstico tardío, burnout vs TDAH, autismo nivel 1 adultos, qué es ADOS-2, dónde evaluar TDAH Cancún, costo valoración TDAH Cancún, costo evaluación autismo México.
-
-Gaps a identificar: keywords de volumen medio sin cubrir, intención informacional vs transaccional, pillar pages vs cluster articles.
-
-### Entregables esperados al final de la auditoría
-
-1. Lista priorizada de fixes SEO (P0 / P1 / P2)
-2. JSON-LD corregido para las rutas con gaps
-3. Recomendaciones CRO específicas con código (qué cambiar en qué componente)
-4. Copy mejorado de las 3 páginas prioritarias
-5. Calendario de los próximos 5 artículos de blog con keyword primaria y secundaria
+1. Schema JSON-LD más completo de la categoría local (MedicalBusiness + Physician + Reviews + FAQPage)
+2. AI bots correctamente permitidos: GPTBot, ClaudeBot, PerplexityBot — `robots.txt` y `llms.txt` correctos
+3. Copy emocional específico: "No es falta de voluntad. Puede ser tu cerebro"
+4. 47 reseñas con nombres propios — prueba social verificable
+5. Precios publicados — diferenciador de transparencia vs competencia
+6. Blog con 11 artículos, hero images propias 1200×675, og:image corregidas en meta tags
 
 ---
 
