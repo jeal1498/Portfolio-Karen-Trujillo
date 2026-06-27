@@ -13,10 +13,11 @@ import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
 /* ═══════════════════════════════════════════════════════════════
    CONFIG ⚠️ PENDIENTE — confirmar con Karen antes de publicar
    ═══════════════════════════════════════════════════════════════ */
-const CAMPAIGN_START = '[FECHA INICIO — pendiente]';
-const CAMPAIGN_END = '[FECHA FIN — pendiente]';
+const CAMPAIGN_START = '21 de julio';
+const CAMPAIGN_END = '3 de agosto';
 const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';
 const CANONICAL_URL = `${SITE_URL}/valoracion-chetumal`;
+const MAX_SLOTS = 10;
 
 /* ═══════════════════════════════════════════════════════════════
    DATA
@@ -44,53 +45,35 @@ interface Tier {
 const TIERS: Record<TierKey, Tier[]> = {
   tdahNinos: [
     {
-      name: 'Básico',
-      price: 2800,
-      sessions: '3 sesiones (2 presenciales · 1 virtual)',
-      devolucion: 'Devolución virtual — videollamada 30–45 min',
-      instruments: ['CONNERS', 'EDAH'],
-      report: 'Resumen clínico digital',
-      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH infantil nivel Básico ($2,800 MXN). ¿Cuál es la disponibilidad?',
-    },
-    {
       name: 'Estándar',
-      price: 3800,
+      price: 3900,
       sessions: '3 sesiones (3 presenciales)',
       devolucion: 'Devolución presencial en Chetumal · 1.5 h',
       instruments: ['CONNERS', 'EDAH', 'CDI'],
       report: 'Informe completo con recomendaciones',
       recommended: true,
-      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH infantil nivel Estándar ($3,800 MXN). ¿Cuál es la disponibilidad?',
+      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH infantil nivel Estándar ($3,900 MXN). ¿Cuál es la disponibilidad?',
     },
     {
       name: 'Completo',
       price: 5000,
       sessions: '4 sesiones (4 presenciales)',
       devolucion: 'Devolución presencial en Chetumal · 1.5 h',
-      instruments: ['CONNERS', 'EDAH', 'CDI', 'Spence', 'WISC-V'],
+      instruments: ['CONNERS', 'EDAH', 'CDI', 'CUMANES', 'Masking', 'IDARE'],
       report: 'Informe neuropsicológico + perfil cognitivo',
-      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH infantil nivel Completo ($5,000 MXN, incluye WISC-V). ¿Cuál es la disponibilidad?',
+      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH infantil nivel Completo ($5,000 MXN). ¿Cuál es la disponibilidad?',
     },
   ],
   tdahAdultos: [
     {
-      name: 'Básico',
-      price: 2800,
-      sessions: '3 sesiones (2 presenciales · 1 virtual)',
-      devolucion: 'Devolución virtual — videollamada 30–45 min',
-      instruments: ['DIVA 2.0', 'Cribado TDAH'],
-      report: 'Resumen clínico digital',
-      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH adultos nivel Básico ($2,800 MXN). ¿Cuál es la disponibilidad?',
-    },
-    {
       name: 'Estándar',
-      price: 3800,
+      price: 3900,
       sessions: '3 sesiones (3 presenciales)',
       devolucion: 'Devolución presencial en Chetumal · 1.5 h',
       instruments: ['DIVA 2.0', 'CONNERS Adultos', 'IDARE'],
       report: 'Informe con diagnóstico diferencial',
       recommended: true,
-      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH adultos nivel Estándar ($3,800 MXN). ¿Cuál es la disponibilidad?',
+      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de TDAH adultos nivel Estándar ($3,900 MXN). ¿Cuál es la disponibilidad?',
     },
     {
       name: 'Completo',
@@ -103,15 +86,6 @@ const TIERS: Record<TierKey, Tier[]> = {
     },
   ],
   tea: [
-    {
-      name: 'Básico',
-      price: 3200,
-      sessions: '3 sesiones (2 presenciales · 1 virtual)',
-      devolucion: 'Devolución virtual — videollamada 30–45 min',
-      instruments: ['ADOS-2', 'AQ-10'],
-      report: 'Orientación diagnóstica (cribado estructurado)',
-      waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de Autismo/TEA nivel Básico ($3,200 MXN). ¿Cuál es la disponibilidad?',
-    },
     {
       name: 'Estándar',
       price: 4500,
@@ -127,7 +101,7 @@ const TIERS: Record<TierKey, Tier[]> = {
       price: 5800,
       sessions: '4 sesiones (4 presenciales)',
       devolucion: 'Presencial + plan de acompañamiento · 1.5 h',
-      instruments: ['ADOS-2', 'ADI-R', 'WISC-V'],
+      instruments: ['ADOS-2', 'ADI-R', 'CUMANES'],
       report: 'Informe neuropsicológico integrado',
       waMessage: 'Hola Karen, vi la campaña de valoraciones en Chetumal. Me interesa reservar una valoración de Autismo/TEA nivel Completo ($5,800 MXN). ¿Cuál es la disponibilidad?',
     },
@@ -153,7 +127,7 @@ const faqItems = [
   },
   {
     q: '¿Cómo funciona el anticipo?',
-    a: 'El anticipo es de $1,000 MXN para todos los niveles — forma parte del precio total, no es adicional. Es reembolsable si cancelas con al menos 48 horas de anticipación.',
+    a: 'Al reservar se paga el 50% del nivel elegido — forma parte del precio total, no es adicional. El 50% restante se liquida en la primera sesión. El anticipo es reembolsable si cancelas con al menos 48 horas de anticipación.',
   },
   {
     q: '¿Puedo cambiar de nivel después de reservar?',
@@ -192,7 +166,7 @@ const schema = {
       '@type': 'MedicalWebPage',
       name: 'Valoración TDAH y Autismo en Chetumal — Campaña Temporal',
       url: CANONICAL_URL,
-      description: `Campaña temporal de valoraciones neuropsicológicas de TDAH y Autismo en Chetumal. Karen Trujillo · Cédula ${CEDULA}. Desde $2,800 MXN.`,
+      description: `Campaña temporal de valoraciones neuropsicológicas de TDAH y Autismo en Chetumal. Karen Trujillo · Cédula ${CEDULA}. Desde $3,900 MXN.`,
       inLanguage: 'es-MX',
       breadcrumb: {
         '@type': 'BreadcrumbList',
@@ -207,6 +181,8 @@ const schema = {
       name: 'Campaña de Valoraciones TDAH y Autismo en Chetumal',
       description: 'La neuropsicóloga Karen Trujillo realiza valoraciones de TDAH y Autismo en Chetumal por tiempo limitado. Cupos disponibles para niños, adolescentes y adultos.',
       eventStatus: 'https://schema.org/EventScheduled',
+      startDate: '2026-07-21',
+      endDate: '2026-08-03',
       location: {
         '@type': 'Place',
         name: 'Consultorio temporal Chetumal',
@@ -228,10 +204,8 @@ const schema = {
         },
       },
       offers: [
-        { '@type': 'Offer', name: 'TDAH Básico', price: '2800', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
-        { '@type': 'Offer', name: 'TDAH Estándar', price: '3800', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
+        { '@type': 'Offer', name: 'TDAH Estándar', price: '3900', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
         { '@type': 'Offer', name: 'TDAH Completo', price: '5000', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
-        { '@type': 'Offer', name: 'TEA Básico', price: '3200', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
         { '@type': 'Offer', name: 'TEA Estándar', price: '4500', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
         { '@type': 'Offer', name: 'TEA Completo', price: '5800', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
       ],
@@ -295,7 +269,7 @@ export default function ValoracionChetumal() {
         <title>Valoración TDAH y Autismo en Chetumal · Karen Trujillo</title>
         <meta
           name="description"
-          content={`Campaña temporal de valoraciones neuropsicológicas de TDAH y Autismo en Chetumal. Neuropsicóloga Karen Trujillo (Cédula ${CEDULA}) · cupos limitados · desde $2,800 MXN.`}
+          content={`Campaña temporal de valoraciones neuropsicológicas de TDAH y Autismo en Chetumal. Neuropsicóloga Karen Trujillo (Cédula ${CEDULA}) · ${MAX_SLOTS} cupos · desde $3,900 MXN.`}
         />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta name="geo.region" content="MX-ROO" />
@@ -305,7 +279,7 @@ export default function ValoracionChetumal() {
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Neuropsicóloga Karen Trujillo" />
         <meta property="og:title" content="Valoración TDAH y Autismo en Chetumal · Campaña Temporal" />
-        <meta property="og:description" content={`Cupos limitados. La neuropsicóloga Karen Trujillo estará en Chetumal. Desde $2,800 MXN. Cédula ${CEDULA}.`} />
+        <meta property="og:description" content={`${MAX_SLOTS} cupos. La neuropsicóloga Karen Trujillo estará en Chetumal. Desde $3,900 MXN. Cédula ${CEDULA}.`} />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={KAREN_IMAGE} />
         <meta property="og:image:width" content="465" />
@@ -313,7 +287,7 @@ export default function ValoracionChetumal() {
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Valoración TDAH y Autismo en Chetumal · Campaña Temporal" />
-        <meta name="twitter:description" content={`Cupos limitados · Karen Trujillo · Cédula ${CEDULA} · desde $2,800 MXN`} />
+        <meta name="twitter:description" content={`${MAX_SLOTS} cupos · Karen Trujillo · Cédula ${CEDULA} · desde $3,900 MXN`} />
         <meta name="twitter:image" content={KAREN_IMAGE} />
 
         <script
@@ -365,10 +339,6 @@ export default function ValoracionChetumal() {
                   Valoración TDAH y Autismo<br className="hidden sm:block" /> en Chetumal
                 </h1>
 
-                <p className="text-lg sm:text-xl font-serif italic mb-5 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.72)' }}>
-                  La distancia no debería ser el motivo por el que tu hijo sigue sin diagnóstico
-                </p>
-
                 <p className="text-sm sm:text-base font-light leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
                   La neuropsicóloga Karen Trujillo estará en Chetumal por tiempo limitado. El mismo diagnóstico neuropsicológico con instrumentos estandarizados internacionales que en su consultorio de Cancún.
                 </p>
@@ -410,7 +380,7 @@ export default function ValoracionChetumal() {
                   {[
                     { Icon: MapPin, title: 'Consultorio en Chetumal', body: CHETUMAL_ADDRESS },
                     { Icon: Calendar, title: 'Periodo de campaña', body: `Del ${CAMPAIGN_START} al ${CAMPAIGN_END}` },
-                    { Icon: Lock, title: 'Cupos limitados', body: 'Las sesiones se asignan por orden de reserva — primer llegado, primer servido.' },
+                    { Icon: Lock, title: 'Cupos limitados', body: `Solo ${MAX_SLOTS} cupos disponibles — se asignan por orden de reserva.` },
                   ].map(({ Icon, title, body }) => (
                     <div key={title} className="flex flex-col items-center text-center gap-3 p-6 rounded-2xl bg-secondary/50 border border-border">
                       <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center">
@@ -456,7 +426,7 @@ export default function ValoracionChetumal() {
                 </div>
 
                 {/* Tier cards */}
-                <div className="grid sm:grid-cols-3 gap-5" role="tabpanel">
+                <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto" role="tabpanel">
                   {TIERS[activeTab].map((tier) => (
                     <div
                       key={tier.name}
@@ -476,7 +446,7 @@ export default function ValoracionChetumal() {
                       <p className="text-3xl font-serif font-bold text-primary mb-1">
                         ${tier.price.toLocaleString('es-MX')}
                       </p>
-                      <p className="text-xs text-muted-foreground font-light mb-5">MXN · Anticipo $1,000 al reservar</p>
+                      <p className="text-xs text-muted-foreground font-light mb-5">MXN · Anticipo 50% al reservar</p>
 
                       <div className="space-y-3 mb-6 flex-1">
                         <div className="flex items-start gap-2">
@@ -523,7 +493,7 @@ export default function ValoracionChetumal() {
                 </div>
 
                 <p className="text-xs text-muted-foreground/60 text-center mt-6">
-                  Sin costos ocultos. El anticipo de $1,000 MXN forma parte del precio total — no es adicional.
+                  Sin costos ocultos. El anticipo (50% del total) se paga al reservar — el 50% restante en la primera sesión.
                 </p>
               </SectionReveal>
             </div>
@@ -636,7 +606,7 @@ export default function ValoracionChetumal() {
                 </a>
 
                 <p className="text-xs text-primary-foreground/40 mt-6">
-                  Anticipo de $1,000 MXN reembolsable si cancelas con 48 horas de anticipación.
+                  Anticipo del 50% reembolsable si cancelas con 48 horas de anticipación.
                 </p>
 
                 <div className="flex items-center justify-center gap-2 mt-8">

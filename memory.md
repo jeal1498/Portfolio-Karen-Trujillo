@@ -26,22 +26,26 @@
 ## Campaña Pop-Up Chetumal — Estado actual
 
 **Archivo de propuesta:** `propuesta-campana-chetumal.md` (en la raíz del repo)  
-**Estado:** Implementación parcial completa — pendiente respuestas de Karen para publicar
+**Estado:** ✅ Landing lista — solo falta la dirección del consultorio en Chetumal
 
-### Lo que está listo (no bloquea respuestas de Karen)
+### Implementación completada (2026-06-27)
 
-- ✅ `src/pages/valoracion-chetumal.tsx` — landing page skeleton con placeholders para fechas y dirección
+- ✅ `src/pages/valoracion-chetumal.tsx` — landing page completa con precios, instrumentos y fechas
+- ✅ Tiers: solo Estándar + Completo (Básico eliminado)
+- ✅ Precios actualizados y confirmados por Karen
+- ✅ Batería de instrumentos corregida (CUMANES, Masking, IDARE en lugar de WISC-V)
+- ✅ Anticipo: 50% al reservar + 50% en primera sesión
+- ✅ Cupos: 10 (constante `MAX_SLOTS`)
+- ✅ Fechas: 21 de julio al 3 de agosto (tentativas, fácil cambiar)
+- ✅ Copy hero: versión A clínica
 - ✅ 3 scripts de video para Facebook (sección 5 del doc) — listos para grabar
 - ✅ Brief visual de campaña (sección 6 del doc) — paleta, tipografía, estructura visual
-- ✅ Propuesta completa en `propuesta-campana-chetumal.md` con preguntas inline para Karen
 
-### Para publicar la landing solo se necesita cambiar 3 líneas en el código
+### Para publicar la landing solo falta 1 dato
 
 ```typescript
-// src/pages/valoracion-chetumal.tsx — líneas 16-18
-const CAMPAIGN_START = '[FECHA INICIO — pendiente]';
-const CAMPAIGN_END   = '[FECHA FIN — pendiente]';
-const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';
+// src/pages/valoracion-chetumal.tsx — línea 18
+const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';  // → dirección real del consultorio
 ```
 
 ### Canal de redes sociales recomendado
@@ -50,38 +54,45 @@ const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';
 - **TikTok** — canal secundario. Para adultos 25–35 con TDAH no diagnosticado.
 - **Formato:** Video vertical (Reels) > imagen estática. Karen a cámara, sin setup elaborado.
 
-### Precios recomendados (propuestos, no confirmados por Karen)
+### Precios confirmados por Karen (2026-06-27)
 
-| Tier | TDAH (niños/adultos) | Autismo/TEA |
+| Tier | TDAH Niños/Adultos | Autismo/TEA |
 |---|---|---|
-| Básico | $2,800 MXN | $3,200 MXN |
-| Estándar ★ ancla | $3,800 MXN | $4,500 MXN |
+| ~~Básico~~ | ~~eliminado~~ | ~~eliminado~~ |
+| Estándar ★ ancla | $3,900 MXN | $4,500 MXN |
 | Completo | $5,000 MXN | $5,800 MXN |
 
-- Anticipo propuesto: $1,000 MXN fijo para todos los tiers
-- Metodología: 60% sesiones × 75% ajuste mercado Chetumal vs. Cancún ($8,300)
-- TEA más caro que TDAH por tiempo de administración del ADOS-2 + ADI-R
+### Estructura de tiers — DECISIÓN FINAL
 
-### Sesiones recomendadas (propuestas, no confirmadas)
+**Solo Estándar + Completo** (Básico eliminado de la campaña). Decisión tomada por el equipo técnico a solicitud de Karen: con 10 cupos en formato pop-up, 2 opciones convierten mejor y la diferencia de precio entre Básico y Estándar ($400) no justifica la complejidad.
 
-| Tipo | Básico | Estándar | Completo |
-|---|---|---|---|
-| TDAH Niños | 3 (2P + 1V) | 3 (3P) | 4 (4P) |
-| TDAH Adultos | 3 (2P + 1V) | 3 (3P) | 4 (3P + 1V) |
-| TEA | 3 (2P + 1V) | 3 (3P) | 4 (4P) |
+### Batería de instrumentos — CONFIRMADA
 
-### Decisiones pendientes de Karen (registradas en el doc como preguntas inline)
+| Tipo | Estándar | Completo |
+|---|---|---|
+| TDAH Niños | CONNERS, EDAH, CDI | CONNERS, EDAH, CDI, **CUMANES**, **Masking**, **IDARE** |
+| TDAH Adultos | DIVA 2.0, CONNERS Adultos, IDARE | DIVA 2.0, CONNERS Adultos, IDARE, Inv. Depresión |
+| TEA | ADOS-2, ADI-R | ADOS-2, ADI-R, **CUMANES** |
 
-1. Validación de precios
-2. Viabilidad clínica de la estructura de sesiones (esp. Básico con devolución virtual)
-3. Anticipo: $1,000 fijo para todos los tiers
-4. ¿Ofrecer Básico desde inicio o solo Estándar + Completo?
-5. Fechas exactas de la campaña → **desbloquea la publicación**
-6. Dirección del consultorio en Chetumal → **desbloquea la publicación**
-7. Cupo máximo de pacientes
-8. Flujo de reserva: solo WhatsApp o + Google Form
-9. Versión de copy para el Hero (clínica vs. emocional)
-10. Aprobación de los 3 scripts de video → **desbloquea la grabación**
+**Notas clínicas:**
+- CONNERS y EDAH son escalas para padres y maestros (no aplicadas directamente al niño)
+- WISC-V **eliminado** de todos los tiers (era para inteligencia — no aplica en este formato)
+- CUMANES aplica tanto en TDAH como en TEA: mide función ejecutiva, flexibilidad mental, inhibición de respuestas y focalización de la atención (marcador neuropsicológico del TDAH)
+- AQ-10 ya no aparece en la landing (estaba en el Básico TEA, que fue eliminado)
+
+### Decisiones de Karen — RESPONDIDAS
+
+| # | Pregunta | Respuesta |
+|---|---|---|
+| P1 | Precios | Confirmados (con ajustes en P2) |
+| P2 | Instrumentos/sesiones | Quita WISC-V, agrega CUMANES (TDAH+TEA) + Masking + IDARE (TDAH Niños). AQ-10 correcto. |
+| P3 | Anticipo | 50% al reservar + 50% en la primera sesión |
+| P4 | Tiers | Delegado al equipo → Estándar + Completo (sin Básico) |
+| P5 | Fechas | **21 de julio al 3 de agosto** (tentativo) — implementado en código |
+| P6 | Dirección | Sin confirmar — **placeholder activo en código** |
+| P7 | Cupos | 10 máximo → `MAX_SLOTS = 10` en código |
+| P8 | Flujo de reserva | Solo WhatsApp |
+| P9 | Copy hero | Versión A (clínica) — italic emocional eliminado |
 
 ---
 
