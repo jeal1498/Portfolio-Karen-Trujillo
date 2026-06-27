@@ -3,7 +3,7 @@
 
 **Para:** Psicóloga Karen Trujillo  
 **Fecha:** Junio 2026  
-**Estado:** En revisión — pendiente respuestas de Karen (ver sección final)
+**Estado:** ✅ DECISIONES CONFIRMADAS — pendiente solo fechas y dirección del consultorio
 
 ---
 
@@ -518,43 +518,37 @@ Anotar respuestas directamente en este archivo antes de aprobar la implementaci�
 
 **P1. ¿Los precios recomendados te parecen correctos?**
 
-| | Básico | Estándar | Completo |
-|---|---|---|---|
-| TDAH (niños y adultos) | $2,800 | $3,800 | $5,000 |
-| Autismo / TEA | $3,200 | $4,500 | $5,800 |
-
-> *Respuesta de Karen:*
+> ✅ **Karen:** Sí (con ajustes confirmados en P2)
+>
+> **Precios finales (solo Estándar + Completo):**
+> | | Estándar | Completo |
+> |---|---|---|
+> | TDAH (niños y adultos) | $3,900 | $5,000 |
+> | Autismo / TEA | $4,500 | $5,800 |
 
 ---
 
 **P2. ¿La estructura de sesiones propuesta es clínicamente viable?**
 
-| | Básico | Estándar | Completo |
-|---|---|---|---|
-| TDAH Niños | 3 (2 presenciales + 1 virtual) | 3 (3 presenciales) | 4 (4 presenciales) |
-| TDAH Adultos | 3 (2 presenciales + 1 virtual) | 3 (3 presenciales) | 4 (3 presenciales + 1 virtual de seguimiento) |
-| TEA | 3 (2 presenciales + 1 virtual) | 3 (3 presenciales) | 4 (4 presenciales) |
-
-Preguntas específicas:
-- ¿Es viable en el Básico hacer la devolución virtual en lugar de presencial?
-- ¿El WISC-V en el Completo realmente ocupa sesión propia, o hay algún caso en que pueda combinarse?
-- Para el Básico TEA: ¿el AQ-10 es suficiente como complemento del ADOS-2, o prefieres otro instrumento de cribado?
-
-> *Respuesta de Karen:*
+> ✅ **Karen:** Confirmada con las siguientes correcciones de instrumentos:
+> - **WISC-V eliminado** de todos los tiers (es prueba de inteligencia — no aplica en este formato)
+> - **TDAH Niños Completo:** CONNERS, EDAH, CDI, CUMANES, Masking, IDARE
+> - **TEA Completo:** ADOS-2, ADI-R, CUMANES (CUMANES reemplaza WISC-V)
+> - **CUMANES** aplica tanto en TDAH como en TEA: mide función ejecutiva, flexibilidad mental, inhibición de respuestas y focalización de la atención
+> - **CONNERS y EDAH** son escalas para padres y maestros (no aplicadas directamente al niño)
+> - **AQ-10:** confirmado correcto (estaba en Básico TEA — eliminado con el tier Básico)
 
 ---
 
 **P3. ¿El anticipo fijo de $1,000 MXN para todos los tiers te parece correcto?**
 
-> *Respuesta de Karen:*
+> ✅ **Karen:** No el fijo de $1,000 — **50% al reservar + 50% en la primera sesión**
 
 ---
 
 **P4. ¿Ofreces los 3 tiers desde el inicio, o prefieres lanzar solo Estándar + Completo?**
 
-El Básico baja la barrera de entrada, pero puede hacer más difícil la decisión. Si la mayoría de familias que llegan tienen urgencia de diagnóstico formal, el Básico quizás no es necesario.
-
-> *Respuesta de Karen:*
+> ✅ **Decisión del equipo (delegada por Karen):** **Solo Estándar + Completo** — el Básico fue eliminado. Con 10 cupos, 2 opciones convierten mejor y la diferencia de $400 entre Básico y Estándar no justifica la complejidad de la elección para las familias.
 
 ---
 
@@ -562,23 +556,19 @@ El Básico baja la barrera de entrada, pero puede hacer más difícil la decisi�
 
 **P5. ¿Cuáles son las fechas exactas?**
 
-*Fecha de inicio:*
-
-*Fecha de cierre:*
+> ⏳ **Karen:** Tentativo 3ra semana de julio — **pendiente confirmar fechas exactas para publicar**
 
 ---
 
 **P6. ¿Tienes confirmado el espacio en Chetumal? ¿Cuál es la dirección?**
 
-> *Respuesta de Karen:*
+> ⏳ **Karen:** Sin confirmar — **pendiente dirección exacta para publicar**
 
 ---
 
 **P7. ¿Cuántos pacientes puedes atender en las 2 semanas?**
 
-Esto determina si ponemos un contador visible de cupos o solo mencionamos la disponibilidad limitada de forma genérica.
-
-> *Respuesta de Karen:*
+> ✅ **Karen:** **10 cupos** → implementado como `MAX_SLOTS = 10` en la landing
 
 ---
 
@@ -586,16 +576,13 @@ Esto determina si ponemos un contador visible de cupos o solo mencionamos la dis
 
 **P8. ¿Prefieres manejar todo por WhatsApp o quieres el Google Form adicional?**
 
-> *Respuesta de Karen:*
+> ✅ **Karen:** Solo WhatsApp — Google Form descartado
 
 ---
 
 **P9. ¿Cuál versión del subtítulo del Hero prefieres?**
 
-- **A — Clínica:** *"La Neuropsicóloga Karen Trujillo estará en Chetumal por tiempo limitado. El mismo diagnóstico neuropsicológico con instrumentos estandarizados que en su consultorio de Cancún."*
-- **B — Emocional:** *"Para muchas familias de Chetumal, trasladarse a Cancún para una valoración es un obstáculo real. Esta campaña es para que la distancia no sea la razón por la que tu hijo siga sin diagnóstico."*
-
-> *Respuesta de Karen:*
+> ✅ **Karen:** **Versión A (clínica)** — la línea emocional fue eliminada del hero
 
 ---
 
