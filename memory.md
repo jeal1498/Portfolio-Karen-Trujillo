@@ -178,6 +178,132 @@ Se diseñó un blueprint completo para el módulo de baterías de evaluación ne
 
 ---
 
+---
+
+## Skills de Marketing Instalados (2026-06-27)
+
+Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` con symlinks en `.claude/skills/`. Estos son los únicos relevantes para un sitio clínico de consulta — los 35 restantes (ads, paywalls, sms, aso, revops, etc.) no aplican y no se instalaron.
+
+| Skill instalado | Para qué sirve en este repo |
+|---|---|
+| `product-marketing` | Base — todos los demás skills la leen primero. Perfil del producto, audiencia y posicionamiento |
+| `copywriting` | Escribir/mejorar copy de páginas de servicio y landing principal |
+| `cro` | Optimizar conversiones: que la mamá ansiosa agende consulta |
+| `seo-audit` | Auditar gaps de SEO on-page en todas las rutas |
+| `ai-seo` | Optimizar para aparecer en respuestas de ChatGPT/Perplexity/Google AI |
+| `schema` | Reforzar y completar JSON-LD (LocalBusiness, FAQPage, MedicalBusiness, etc.) |
+| `content-strategy` | Planificar próximos artículos del blog con criterio de demanda real |
+| `copy-editing` | Revisar y pulir textos existentes en páginas y blog |
+| `customer-research` | Entender mejor la persona "mamá con años de incertidumbre" |
+| `marketing-psychology` | Aplicar principios de reducción de ansiedad y prueba social al copy |
+
+**Comando usado:**
+```bash
+npx skills add coreyhaines31/marketingskills --skill product-marketing copywriting cro seo-audit ai-seo schema content-strategy copy-editing customer-research marketing-psychology
+```
+
+---
+
+## Plan de Auditoría de Marketing — Trigger: "auditoría marketing"
+
+> Este plan se activa cuando el usuario inicia una conversación nueva con "auditoría marketing".
+> Se ejecuta en orden; cada paso usa el skill indicado.
+
+### Contexto del sitio (para la conversación nueva)
+
+- **Sitio:** `psicologakarentrujillo.com.mx` — consultorio de neuropsicología en Cancún
+- **Stack:** Next.js 14 Pages Router + TypeScript + Tailwind + shadcn/ui + Framer Motion
+- **Objetivo de conversión:** mamá/papá con hijo 5–17 años → agenda consulta vía WhatsApp
+- **Rutas:** 9 páginas principales + blog con 11 artículos (ver lista completa en la sesión anterior)
+- **SEO base:** `lib/seo.ts` con `applySeo()` + `injectSchema()`, canonical y OG tags en cada ruta
+- **Contacto:** único punto de verdad en `lib/contact.ts`
+- **Skills disponibles:** `.claude/skills/` — product-marketing, copywriting, cro, seo-audit, ai-seo, schema, content-strategy, copy-editing, customer-research, marketing-psychology
+
+### Paso 1 — Perfil de producto base (`product-marketing`)
+
+**Acción:** Crear o validar el documento de contexto de producto que todos los demás skills leerán primero.
+
+- Audiencia primaria: padres con hijos 5–17 años con dificultades de atención/comunicación social
+- Audiencia secundaria: adultos 25–45 con TDAH no diagnosticado
+- Propuesta de valor: instrumentos estandarizados específicos (ADOS-2, WISC-V, CAARS-2, CONNERS-3, BRIEF-2, CPT-3) + cédula profesional real (11009616) + calidez humana
+- Diferenciador clave: especificidad clínica (no "evaluación completa", sino "ADOS-2 módulo 2, 3 sesiones de 90 min")
+- CTA único: WhatsApp → agendar → primera cita
+
+### Paso 2 — Auditoría SEO on-page (`seo-audit`)
+
+**Acción:** Revisar cada ruta del sitio contra las mejores prácticas SEO.
+
+Archivos a auditar:
+- `src/pages/index.tsx` — landing principal
+- `src/pages/evaluacion-tdah-ninos.tsx`
+- `src/pages/evaluacion-tdah-adultos.tsx`
+- `src/pages/evaluacion-autismo-cancun.tsx`
+- `src/pages/neuropsicologia-cancun.tsx`
+- `src/pages/neuropsicologia-zona-hotelera-cancun.tsx`
+- `src/pages/para-escuelas.tsx`
+- `src/pages/precios.tsx`
+- `src/pages/valoracion-chetumal.tsx`
+- `src/pages/blog/index.tsx` + 11 artículos
+
+Verificar: title tags, meta descriptions, H1/H2 únicos, keywords primarias en primeros 100 palabras, internal linking entre rutas de servicio y blog.
+
+### Paso 3 — Auditoría de Schema / JSON-LD (`schema`)
+
+**Acción:** Validar y completar el structured data en todas las rutas.
+
+Gaps conocidos (de sesión anterior, 2026-06-18):
+- Las páginas de servicio tienen LocalBusiness pero pueden necesitar `MedicalBusiness` + `MedicalSpecialty`
+- Los 11 artículos de blog tienen `og:image` apuntando a foto de Karen en vez de imagen hero del artículo — pendiente desde 2026-06-18
+- Verificar que `FAQPage` esté presente en rutas con accordions
+
+### Paso 4 — Optimización para IA Search (`ai-seo`)
+
+**Acción:** Verificar y mejorar la citabilidad del sitio en respuestas de LLMs.
+
+Verificar: llms.txt, passages responderables directamente, menciones de marca en contenido del blog, estructura de respuesta a preguntas tipo "¿cuánto cuesta una evaluación de TDAH en Cancún?".
+
+### Paso 5 — CRO: auditoría de conversión (`cro`)
+
+**Acción:** Revisar el flujo de conversión en la landing principal y páginas de servicio.
+
+Revisar en código:
+- `src/components/Hero.tsx` — CTA principal, claridad de propuesta de valor above the fold
+- `src/components/ServicesSection.tsx` — precio visible, instrumentos, fricción percibida
+- `src/components/FAQSection.tsx` — ¿responde las objeciones reales de la mamá ansiosa?
+- `src/components/FloatingButtons.tsx` — visibilidad y timing de CTAs flotantes
+
+### Paso 6 — Auditoría de Copy (`copy-editing`)
+
+**Acción:** Revisar los textos de las 3 páginas de mayor tráfico potencial.
+
+Prioridad: `evaluacion-tdah-ninos.tsx`, `evaluacion-autismo-cancun.tsx`, `index.tsx`
+
+Criterio: claridad > jerga clínica, especificidad > promesas genéricas, calidez sin cursilería.
+
+### Paso 7 — Psicología de Conversión (`marketing-psychology`)
+
+**Acción:** Identificar qué principios psicológicos ya están aplicados y cuáles faltan.
+
+Revisar: prueba social (TestimonialsSection), autoridad (credenciales en Hero), reducción de incertidumbre (FAQSection + proceso explicado en pasos), urgencia/escasez (¿existe o no?).
+
+### Paso 8 — Estrategia de Contenido de Blog (`content-strategy`)
+
+**Acción:** Evaluar los 11 artículos existentes y proponer los próximos 5 con criterio de demanda.
+
+Blog actual (11 artículos): señales TDAH niños, TDAH niñas, TDAH inatento, TDAH vs ansiedad, TDAH adultos diagnóstico tardío, burnout vs TDAH, autismo nivel 1 adultos, qué es ADOS-2, dónde evaluar TDAH Cancún, costo valoración TDAH Cancún, costo evaluación autismo México.
+
+Gaps a identificar: keywords de volumen medio sin cubrir, intención informacional vs transaccional, pillar pages vs cluster articles.
+
+### Entregables esperados al final de la auditoría
+
+1. Lista priorizada de fixes SEO (P0 / P1 / P2)
+2. JSON-LD corregido para las rutas con gaps
+3. Recomendaciones CRO específicas con código (qué cambiar en qué componente)
+4. Copy mejorado de las 3 páginas prioritarias
+5. Calendario de los próximos 5 artículos de blog con keyword primaria y secundaria
+
+---
+
 ## Protocolo para Trabajo entre Conversaciones
 
 Cuando el usuario pide generar instrucciones para otra conversación:
