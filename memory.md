@@ -26,22 +26,26 @@
 ## Campaña Pop-Up Chetumal — Estado actual
 
 **Archivo de propuesta:** `propuesta-campana-chetumal.md` (en la raíz del repo)  
-**Estado:** Implementación parcial completa — pendiente respuestas de Karen para publicar
+**Estado:** ✅ Landing lista — solo falta la dirección del consultorio en Chetumal
 
-### Lo que está listo (no bloquea respuestas de Karen)
+### Implementación completada (2026-06-27)
 
-- ✅ `src/pages/valoracion-chetumal.tsx` — landing page skeleton con placeholders para fechas y dirección
+- ✅ `src/pages/valoracion-chetumal.tsx` — landing page completa con precios, instrumentos y fechas
+- ✅ Tiers: solo Estándar + Completo (Básico eliminado)
+- ✅ Precios actualizados y confirmados por Karen
+- ✅ Batería de instrumentos corregida (CUMANES, Masking, IDARE en lugar de WISC-V)
+- ✅ Anticipo: 50% al reservar + 50% en primera sesión
+- ✅ Cupos: 10 (constante `MAX_SLOTS`)
+- ✅ Fechas: 21 de julio al 3 de agosto (tentativas, fácil cambiar)
+- ✅ Copy hero: versión A clínica
 - ✅ 3 scripts de video para Facebook (sección 5 del doc) — listos para grabar
 - ✅ Brief visual de campaña (sección 6 del doc) — paleta, tipografía, estructura visual
-- ✅ Propuesta completa en `propuesta-campana-chetumal.md` con preguntas inline para Karen
 
-### Para publicar la landing solo se necesita cambiar 3 líneas en el código
+### Para publicar la landing solo falta 1 dato
 
 ```typescript
-// src/pages/valoracion-chetumal.tsx — líneas 16-18
-const CAMPAIGN_START = '[FECHA INICIO — pendiente]';
-const CAMPAIGN_END   = '[FECHA FIN — pendiente]';
-const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';
+// src/pages/valoracion-chetumal.tsx — línea 18
+const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';  // → dirección real del consultorio
 ```
 
 ### Canal de redes sociales recomendado
