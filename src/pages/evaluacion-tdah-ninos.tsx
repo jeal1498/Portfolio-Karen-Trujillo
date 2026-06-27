@@ -725,7 +725,7 @@ export default function TDAHNinosFunnel() {
               <SectionReveal delay={0.35}>
                 <div className="relative mb-10 p-5 rounded-2xl bg-card border-l-4 border-l-primary/60 border border-border">
                   <p className="text-sm text-muted-foreground font-light leading-relaxed italic">
-                    <strong className="text-primary font-semibold not-italic">Cada semestre sin diagnóstico</strong> es un semestre de frustración acumulada, etiquetas informales que se adhieren y oportunidades de intervención que se pierden. Actuar hoy le da a tu hijo la ventaja que necesita.
+                    <strong className="text-primary font-semibold not-italic">Cada año sin diagnóstico</strong> es un año de trabajo escolar más difícil, más tensión familiar, más estrategias de compensación que desgastan. La evaluación tarda 3-4 semanas. La claridad dura toda la vida.
                   </p>
                 </div>
               </SectionReveal>

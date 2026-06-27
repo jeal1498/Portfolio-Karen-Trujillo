@@ -83,9 +83,9 @@ const schema = {
       '@id': `${SITE_URL}/blog/tdah-en-ninas-sintomas/#article`,
       headline: 'TDAH en niñas: síntomas que casi nadie detecta',
       description: 'El TDAH femenino es invisible al sistema educativo. No genera disrupción, se enmascara con esfuerzo y durante años se confunde con ansiedad, perfeccionismo o simplemente "ser despistada".',
-      image: KAREN_IMAGE,
+      image: `${SITE_URL}/blog/dark-tdah-en-ninas-1200x675.svg`,
       datePublished: '2025-06-01',
-      dateModified: '2026-06-02',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,

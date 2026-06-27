@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, CheckCircle2, Circle, AlertCircle, ShieldCheck, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { WA_NUMBER } from '@/lib/contact';
+import { WA_NUMBER, waUrl } from '@/lib/contact';
 
 interface SymptomCheckerProps {
   title?: string;
@@ -128,6 +128,15 @@ export default function SymptomChecker({
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">{result.description}</p>
                 </div>
               </div>
+              <a
+                href={waUrl('Hola Karen, acabo de completar el cuestionario y me gustaría saber más sobre la evaluación')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Hablar con Karen sobre los resultados
+              </a>
             </motion.div>
           )}
         </AnimatePresence>

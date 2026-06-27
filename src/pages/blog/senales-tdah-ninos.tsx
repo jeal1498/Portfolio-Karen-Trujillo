@@ -147,9 +147,9 @@ const schema = {
       '@id': `${CANONICAL_URL}/#article`,
       headline: 'Señales de TDAH en niños: guía para padres que sospechan',
       description: 'Guía completa para identificar señales reales de TDAH en niños de 3 a 17 años. Diferencia entre comportamiento típico y síntomas que justifican una evaluación neuropsicológica.',
-      image: KAREN_IMAGE,
+      image: `${SITE_URL}/blog/dark-senales-de-tdah-en-ninos-1200x675.svg`,
       datePublished: '2025-06-15',
-      dateModified: '2025-06-15',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,

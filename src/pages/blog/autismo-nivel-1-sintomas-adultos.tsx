@@ -119,7 +119,7 @@ const schema = {
       '@id': `${SITE_URL}/blog/autismo-nivel-1-sintomas-adultos/#article`,
       headline: 'Autismo nivel 1: cuando no pareces autista pero lo eres',
       description: 'El autismo nivel 1 (antes Asperger) en adultos tiene síntomas distintos al autismo clásico. Sin diagnóstico previo, muchos adultos llevan años sintiéndose diferentes sin saber por qué. Evaluación en Cancún.',
-      image: KAREN_IMAGE,
+      image: `${SITE_URL}/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg`,
       datePublished: '2026-06-02',
       dateModified: '2026-06-02',
       author: {

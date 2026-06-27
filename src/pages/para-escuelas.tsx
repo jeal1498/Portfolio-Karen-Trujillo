@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FloatingButtons from '@/components/FloatingButtons';
 import { WA_NUMBER } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE, GEO } from '@/lib/site';
 
@@ -653,6 +654,7 @@ export default function ParaEscuelas() {
         </main>
 
         <Footer />
+        <FloatingButtons />
       </div>
     </>
   );
