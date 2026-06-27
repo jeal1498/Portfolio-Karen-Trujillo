@@ -84,7 +84,7 @@ const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';
 | P2 | Instrumentos/sesiones | Quita WISC-V, agrega CUMANES (TDAH+TEA) + Masking + IDARE (TDAH Niños). AQ-10 correcto. |
 | P3 | Anticipo | 50% al reservar + 50% en la primera sesión |
 | P4 | Tiers | Delegado al equipo → Estándar + Completo (sin Básico) |
-| P5 | Fechas | Tentativo 3ra semana de julio — **placeholder activo en código** |
+| P5 | Fechas | **21 de julio al 3 de agosto** (tentativo) — implementado en código |
 | P6 | Dirección | Sin confirmar — **placeholder activo en código** |
 | P7 | Cupos | 10 máximo → `MAX_SLOTS = 10` en código |
 | P8 | Flujo de reserva | Solo WhatsApp |

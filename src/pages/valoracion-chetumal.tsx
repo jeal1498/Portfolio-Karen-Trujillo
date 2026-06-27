@@ -13,8 +13,8 @@ import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS } from '@/lib/site';
 /* ═══════════════════════════════════════════════════════════════
    CONFIG ⚠️ PENDIENTE — confirmar con Karen antes de publicar
    ═══════════════════════════════════════════════════════════════ */
-const CAMPAIGN_START = '[FECHA INICIO — pendiente]';
-const CAMPAIGN_END = '[FECHA FIN — pendiente]';
+const CAMPAIGN_START = '21 de julio';
+const CAMPAIGN_END = '3 de agosto';
 const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';
 const CANONICAL_URL = `${SITE_URL}/valoracion-chetumal`;
 const MAX_SLOTS = 10;
@@ -181,6 +181,8 @@ const schema = {
       name: 'Campaña de Valoraciones TDAH y Autismo en Chetumal',
       description: 'La neuropsicóloga Karen Trujillo realiza valoraciones de TDAH y Autismo en Chetumal por tiempo limitado. Cupos disponibles para niños, adolescentes y adultos.',
       eventStatus: 'https://schema.org/EventScheduled',
+      startDate: '2026-07-21',
+      endDate: '2026-08-03',
       location: {
         '@type': 'Place',
         name: 'Consultorio temporal Chetumal',

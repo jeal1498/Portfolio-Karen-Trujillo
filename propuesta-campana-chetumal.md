@@ -556,7 +556,7 @@ Anotar respuestas directamente en este archivo antes de aprobar la implementaci�
 
 **P5. ¿Cuáles son las fechas exactas?**
 
-> ⏳ **Karen:** Tentativo 3ra semana de julio — **pendiente confirmar fechas exactas para publicar**
+> ✅ **Karen:** **21 de julio al 3 de agosto** (tentativo) — implementado en código. Confirmar si cambia.
 
 ---
 
