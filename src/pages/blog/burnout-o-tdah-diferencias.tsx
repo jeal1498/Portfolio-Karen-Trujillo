@@ -109,7 +109,7 @@ const schema = {
       '@id': `${SITE_URL}/blog/burnout-o-tdah-diferencias/#article`,
       headline: 'Burnout vs. TDAH: cómo saber cuál tienes (o si son los dos)',
       description: 'El burnout y el TDAH comparten síntomas pero tienen causas distintas. La diferencia clave: en el burnout hubo un antes. En el TDAH, siempre fue así. Diagnóstico diferencial en Cancún.',
-      image: KAREN_IMAGE,
+      image: `${SITE_URL}/blog/dark-burnout-vs-tdah-1200x675.svg`,
       datePublished: '2026-06-03',
       dateModified: '2026-06-03',
       author: {

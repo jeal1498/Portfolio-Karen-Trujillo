@@ -185,9 +185,9 @@ const schema = {
       '@id': `${CANONICAL_URL}/#article`,
       headline: 'TDAH en adultos: por qué miles de personas llegan al diagnóstico después de los 30',
       description: 'Guía completa sobre TDAH en adultos no diagnosticados. Señales en el trabajo, relaciones y vida diaria. Diagnóstico diferencial con ansiedad, depresión y burnout.',
-      image: KAREN_IMAGE,
+      image: `${SITE_URL}/blog/dark-tdah-en-adultos-1200x675.svg`,
       datePublished: '2025-06-22',
-      dateModified: '2025-06-22',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,

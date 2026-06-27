@@ -45,9 +45,9 @@ const schema = {
       '@id': `${CANONICAL_URL}/#article`,
       headline: '¿Cuánto cuesta una valoración de TDAH en Cancún?',
       description: `La valoración neuropsicológica de TDAH en Cancún cuesta $8,300 MXN. Incluye 4-5 sesiones, instrumentos estandarizados e informe con cédula federal ${CEDULA} válido ante SEP e IMSS.`,
-      image: KAREN_IMAGE,
+      image: `${SITE_URL}/blog/dark-costo-de-la-valoracion-de-tdah-1200x675.svg`,
       datePublished: '2025-06-01',
-      dateModified: '2026-06-02',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,

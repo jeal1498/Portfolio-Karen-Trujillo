@@ -66,7 +66,7 @@ const evaluaciones = [
     badgeColor: 'bg-accent-pink/25 text-primary',
     title: 'Evaluación de Autismo (TEA)',
     edad: 'Niños y adolescentes',
-    precio: '$8,300 MXN',
+    precio: '$8,500 MXN',
     duracion: '2–3 semanas · 5 sesiones',
     href: '/evaluacion-autismo-cancun',
     instrumentos: ['ADOS-2', 'ADI-R', 'AQ-10', 'WISC-V'],

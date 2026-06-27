@@ -344,7 +344,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{`Neuropsicóloga en Cancún — TDAH y Autismo | Karen Trujillo · Cédula ${CEDULA}`}</title>
+        <title>{`Neuropsicóloga Cancún — TDAH y Autismo · Cédula ${CEDULA}`}</title>
         <meta name="description" content="Evaluaciones neuropsicológicas de TDAH en niños y adultos, y diagnóstico de autismo (TEA) con ADOS-2 en Cancún. Pruebas estandarizadas internacionales. Informes con validez oficial. Agenda en línea." />
         <link rel="canonical" href={`${SITE_URL}/`} />
 
@@ -433,9 +433,9 @@ export default function Home() {
                   {/* Routing cards — vertical column */}
                   <div className="flex flex-col gap-2.5 mb-8 animate-[fadeIn_0.8s_ease-out_0.35s_both]">
                     {[
-                      { href: '/evaluacion-tdah-ninos',     label: 'Para padres y madres', text: 'Mi hijo tiene problemas de atención o conducta' },
-                      { href: '/evaluacion-tdah-adultos',   label: 'Para adultos',          text: 'Sospecho que tengo TDAH no diagnosticado' },
-                      { href: '/evaluacion-autismo-cancun', label: 'Diagnóstico TEA',       text: 'Mi hijo se relaciona de forma diferente — busco diagnóstico de autismo' },
+                      { href: '/evaluacion-tdah-ninos',     label: 'Para padres y madres', text: 'Mi hijo tiene problemas de atención o conducta',              price: 'Desde $8,300 MXN' },
+                      { href: '/evaluacion-tdah-adultos',   label: 'Para adultos',          text: 'Sospecho que tengo TDAH no diagnosticado',                    price: 'Desde $8,300 MXN' },
+                      { href: '/evaluacion-autismo-cancun', label: 'Diagnóstico TEA',       text: 'Mi hijo se relaciona de forma diferente — busco diagnóstico de autismo', price: 'Desde $8,500 MXN' },
                     ].map((card) => (
                       <Link
                         key={card.href}
@@ -446,6 +446,7 @@ export default function Home() {
                         <div className="flex-1 min-w-0">
                           <span className="block text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgba(208,208,231,0.65)' }}>{card.label}</span>
                           <span className="block text-sm font-medium leading-snug" style={{ color: 'rgba(255,255,255,0.88)' }}>{card.text}</span>
+                          <span className="block text-xs mt-0.5" style={{ color: 'rgba(208,208,231,0.5)' }}>{card.price}</span>
                         </div>
                         <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: 'rgba(208,208,231,0.5)' }} aria-hidden="true" />
                       </Link>
@@ -454,17 +455,20 @@ export default function Home() {
 
                   {/* CTAs */}
                   <div className="flex flex-wrap gap-3 animate-[fadeIn_0.8s_ease-out_0.5s_both]">
-                    <a
-                      href={waUrl('Hola Karen, vi tu página y me gustaría agendar una valoración')}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-xl text-white transition-all hover:-translate-y-0.5 hover:brightness-110"
-                      style={{ background: '#25d366' }}
-                      aria-label="Agendar cita por WhatsApp"
-                    >
-                      <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                      Agendar por WhatsApp
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href={waUrl('Hola Karen, vi tu página y me gustaría agendar una valoración')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-xl text-white transition-all hover:-translate-y-0.5 hover:brightness-110"
+                        style={{ background: '#25d366' }}
+                        aria-label="Agendar cita por WhatsApp"
+                      >
+                        <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                        Agendar por WhatsApp
+                      </a>
+                      <p className="text-xs text-center" style={{ color: 'rgba(208,208,231,0.55)' }}>Respuesta habitual en menos de 2 horas · Lun–Sáb</p>
+                    </div>
                     <a
                       href="#servicios"
                       onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
@@ -498,7 +502,15 @@ export default function Home() {
                       <div className="flex gap-0.5 mb-1" aria-label="5 estrellas">
                         {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
                       </div>
-                      <p className="text-[11px]" style={{ color: '#515e71' }}>47 reseñas verificadas · 5.0/5</p>
+                      <a
+                        href="https://maps.google.com/?cid=4630406520710891531"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] hover:underline"
+                        style={{ color: '#515e71' }}
+                      >
+                        47 reseñas verificadas · 5.0/5
+                      </a>
                     </div>
                   </div>
                 </div>

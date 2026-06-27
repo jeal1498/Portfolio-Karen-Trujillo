@@ -108,7 +108,7 @@ const schema = {
       '@id': `${SITE_URL}/blog/cuanto-cuesta-evaluacion-autismo-mexico/#article`,
       headline: '¿Cuánto cuesta una evaluación de autismo en México?',
       description: 'La evaluación de autismo (TEA) con ADOS-2 en Cancún cuesta $8,500 MXN e incluye 5-6 sesiones, informe clínico completo y validez ante SEP e IMSS. Precio transparente, sin letra chica.',
-      image: KAREN_IMAGE,
+      image: `${SITE_URL}/blog/dark-costo-evaluacion-de-autismo-1200x675.svg`,
       datePublished: '2026-06-02',
       dateModified: '2026-06-02',
       author: {
