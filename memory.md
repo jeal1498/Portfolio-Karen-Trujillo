@@ -26,9 +26,31 @@
 ## Campaña Pop-Up Chetumal — Estado actual
 
 **Archivo de propuesta:** `propuesta-campana-chetumal.md` (en la raíz del repo)  
-**Estado:** En revisión — pendiente respuestas de Karen
+**Estado:** Implementación parcial completa — pendiente respuestas de Karen para publicar
 
-### Precios recomendados (propuestos, no confirmados)
+### Lo que está listo (no bloquea respuestas de Karen)
+
+- ✅ `src/pages/valoracion-chetumal.tsx` — landing page skeleton con placeholders para fechas y dirección
+- ✅ 3 scripts de video para Facebook (sección 5 del doc) — listos para grabar
+- ✅ Brief visual de campaña (sección 6 del doc) — paleta, tipografía, estructura visual
+- ✅ Propuesta completa en `propuesta-campana-chetumal.md` con preguntas inline para Karen
+
+### Para publicar la landing solo se necesita cambiar 3 líneas en el código
+
+```typescript
+// src/pages/valoracion-chetumal.tsx — líneas 16-18
+const CAMPAIGN_START = '[FECHA INICIO — pendiente]';
+const CAMPAIGN_END   = '[FECHA FIN — pendiente]';
+const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';
+```
+
+### Canal de redes sociales recomendado
+
+- **Facebook** — canal principal. Padres 30–50 años que toman la decisión están en Facebook, no en TikTok. Grupos locales de Chetumal son canal orgánico de alto impacto.
+- **TikTok** — canal secundario. Para adultos 25–35 con TDAH no diagnosticado.
+- **Formato:** Video vertical (Reels) > imagen estática. Karen a cámara, sin setup elaborado.
+
+### Precios recomendados (propuestos, no confirmados por Karen)
 
 | Tier | TDAH (niños/adultos) | Autismo/TEA |
 |---|---|---|
@@ -38,18 +60,28 @@
 
 - Anticipo propuesto: $1,000 MXN fijo para todos los tiers
 - Metodología: 60% sesiones × 75% ajuste mercado Chetumal vs. Cancún ($8,300)
-- TEA más caro que TDAH por tiempo de administración del ADOS-2
+- TEA más caro que TDAH por tiempo de administración del ADOS-2 + ADI-R
 
-### Decisiones pendientes de Karen (registradas en el doc)
+### Sesiones recomendadas (propuestas, no confirmadas)
+
+| Tipo | Básico | Estándar | Completo |
+|---|---|---|---|
+| TDAH Niños | 3 (2P + 1V) | 3 (3P) | 4 (4P) |
+| TDAH Adultos | 3 (2P + 1V) | 3 (3P) | 4 (3P + 1V) |
+| TEA | 3 (2P + 1V) | 3 (3P) | 4 (4P) |
+
+### Decisiones pendientes de Karen (registradas en el doc como preguntas inline)
 
 1. Validación de precios
-2. Viabilidad clínica del nivel Básico (2 sesiones sin devolución presencial)
-3. Fechas exactas de la campaña
-4. Dirección del consultorio en Chetumal
-5. Cupo máximo de pacientes
-6. Flujo de reserva: solo WhatsApp o + Google Form
-7. Versión de copy para el Hero (clínica vs. emocional)
-8. Anticipo: $1,000 fijo o porcentaje variable
+2. Viabilidad clínica de la estructura de sesiones (esp. Básico con devolución virtual)
+3. Anticipo: $1,000 fijo para todos los tiers
+4. ¿Ofrecer Básico desde inicio o solo Estándar + Completo?
+5. Fechas exactas de la campaña → **desbloquea la publicación**
+6. Dirección del consultorio en Chetumal → **desbloquea la publicación**
+7. Cupo máximo de pacientes
+8. Flujo de reserva: solo WhatsApp o + Google Form
+9. Versión de copy para el Hero (clínica vs. emocional)
+10. Aprobación de los 3 scripts de video → **desbloquea la grabación**
 
 ---
 

@@ -316,12 +316,195 @@ Caption:
 
 ---
 
-## 5. Implementación Web — Qué habría que hacer
+## 5. Scripts de Video para Facebook
 
-1. **Nueva página** `src/pages/valoracion-chetumal.tsx` — estructura similar a las páginas de servicio, con schema JSON-LD tipo `Event` + `Offer`.
-2. **Banner opcional** en todas las páginas — activable con flag en `lib/site.ts`.
-3. **Redirect post-campaña** en `next.config.mjs`: `/valoracion-chetumal` → `/precios`.
-4. **Dirección de Chetumal** como constante `CHETUMAL_ADDRESS` en `lib/site.ts`.
+**Canal principal:** Facebook (Reels + Feed). El público que toma la decisión son padres de 30–50 años — ese segmento vive en Facebook en ciudades medianas de México. TikTok aplica como canal secundario para adultos 25–35 con TDAH no diagnosticado.
+
+**Formato recomendado:** Video vertical (9:16) grabado con teléfono. Karen a cámara, sin fondo clínico genérico — su consultorio de Cancún o cualquier espacio limpio con luz natural es suficiente. Duración target en negrita abajo.
+
+---
+
+### Script 1 — Anuncio de llegada · **60–75 seg** · Karen a cámara
+
+> *Instrucciones de producción: Karen habla directamente a cámara, ligera sonrisa al inicio. Plano medio. Sin música o muy baja. Subtítulos automáticos obligatorios (Facebook los genera en edición).*
+
+---
+
+**[TOMA ABIERTA — Karen mira a cámara]**
+
+"Hola, soy Karen Trujillo, neuropsicóloga especialista en TDAH y autismo.
+
+Este mes voy a estar en Chetumal por dos semanas para hacer valoraciones neuropsicológicas.
+
+Si tienes un hijo que en la escuela te dicen que no pone atención, que es muy inquieto, o que tiene dificultades para relacionarse con otros niños — o si tú mismo llevas tiempo preguntándote si tienes TDAH — esta es la oportunidad de tener una respuesta con respaldo clínico real.
+
+**[Pausa breve — tono más directo]**
+
+¿Qué significa eso? Una evaluación con instrumentos estandarizados internacionales, un informe clínico con mi cédula federal — que tiene validez ante escuelas, el IMSS y cualquier institución — y la orientación concreta sobre qué hacer después.
+
+Lo mismo que ofrezco en Cancún, ahora en Chetumal, sin que tengan que hacer el viaje.
+
+Tengo cupos disponibles del [FECHA] al [FECHA]. Se asignan por orden de reserva.
+
+Si te interesa, escríbeme por WhatsApp — el número está en mi perfil. Respondo yo personalmente."
+
+**[FIN — mantener en cámara 1-2 seg antes de cortar]**
+
+---
+
+### Script 2 — ¿Cómo funciona? · **50–60 seg** · Karen a cámara
+
+> *Instrucciones de producción: mismo formato que Script 1. Puede grabarse el mismo día. Este video responde la segunda duda más frecuente después del anuncio: "¿y cómo es el proceso?"*
+
+---
+
+**[TOMA ABIERTA]**
+
+"Me han preguntado cómo funciona la valoración en Chetumal, así que lo explico rápido.
+
+Son tres sesiones de hora y media cada una — programadas dentro del periodo que voy a estar aquí, para que el proceso completo quede terminado antes de que me vaya.
+
+**[Cuenta con los dedos, natural, no robótico]**
+
+Primera sesión: yo hablo con los papás — o con el adulto que viene a valorarse — y tomamos toda la historia clínica.
+
+Segunda sesión: aplicamos las pruebas directamente con el niño o el adulto. Instrumentos estandarizados internacionales: CONNERS, WISC-V, ADOS-2 según el caso.
+
+Tercera sesión: te entrego el informe y te explico exactamente qué encontré, qué significa y qué sigue.
+
+**[Tono más cálido]**
+
+El informe tiene mi cédula profesional federal — tiene validez ante la escuela, el IMSS, cualquier institución.
+
+Si quieres un proceso más completo, hay una opción de cuatro sesiones que incluye el perfil cognitivo completo con el WISC-V.
+
+Los precios están en mi perfil. Si tienes dudas, escríbeme."
+
+**[FIN]**
+
+---
+
+### Script 3 — Objeción: "¿Es igual que en Cancún?" · **30–40 seg** · Karen a cámara
+
+> *Instrucciones de producción: más corto y directo. Perfecto para Stories o para responder en comentarios. Puede usarse como video de remarketing para quienes ya vieron los anteriores.*
+
+---
+
+**[DIRECTO, sin introducción larga]**
+
+"Me han preguntado si la valoración en Chetumal es igual a la de Cancún.
+
+Sí.
+
+Soy la misma especialista, uso los mismos instrumentos, el informe lleva la misma cédula federal. Lo que cambia es que en lugar de que ustedes vengan a Cancún, yo voy a Chetumal.
+
+La diferencia real es que en la campaña hacemos el proceso en tres o cuatro sesiones en lugar de cinco — adaptado al formato temporal. Pero el rigor clínico es el mismo.
+
+**[Pausa — cierre directo]**
+
+Si llevas tiempo aplazando la valoración porque el traslado era el obstáculo, este es el momento. Cupos del [FECHA] al [FECHA]. WhatsApp en mi perfil."
+
+**[FIN]**
+
+---
+
+### Notas de publicación
+
+| Video | Cuándo publicar | Plataforma | Formato |
+|---|---|---|---|
+| Script 1 (Anuncio) | 2 semanas antes de iniciar | Facebook + Instagram + TikTok | Reel/Video |
+| Script 2 (Proceso) | 1 semana antes o al iniciar | Facebook + Instagram | Reel/Video |
+| Script 3 (Objeción) | Durante la campaña (semana 1) | Facebook Stories + Instagram Stories | Story/Reel corto |
+
+**Hashtags para todos:** `#ChetumalMX #TDAHMéxico #AutismoMéxico #TEAMéxico #NeuropsicologíaMéxico #DiagnósticoTDAH #KarenTrujilloNeuropsicóloga #QuintanaRoo`
+
+---
+
+## 6. Brief Visual de la Campaña
+
+**Principio:** No crear identidad visual nueva. Usar la misma paleta del sitio web para mantener coherencia de marca. El público que verá los videos en Facebook conoce o conocerá el sitio — la consistencia visual genera confianza.
+
+---
+
+### Paleta de la campaña
+
+| Elemento | Color | Uso |
+|---|---|---|
+| Fondo oscuro (hero) | `#2b1f47` (Plum Ink profundo) | Backgrounds de imagen/gráfica |
+| Acento principal | `#382f51` (Plum Ink) | Texto destacado, bordes |
+| Lavanda suave | `#d0d0e7` | Subtítulos sobre fondo oscuro |
+| Blanco puro | `#ffffff` | CTA buttons, texto sobre plum |
+| Verde urgencia | `#4ade80` | El punto pulsante de "disponible" |
+
+*Prohibido en esta campaña:* celeste genérico, verde "salud", rojo urgencia, gradientes decorativos. La campaña debe verse como una extensión del sitio, no como publicidad de farmacia.
+
+---
+
+### Tipografía en gráficas
+
+- **Titulares:** Playfair Display 700 — cursiva para contraste visual
+- **Copy secundario y datos:** Montserrat 600 o 400
+- **Precios y números:** Montserrat 700, tamaño grande — los números anclan la atención
+
+---
+
+### Estructura visual de imagen de campaña (para carrusel o post de imagen)
+
+```
+┌─────────────────────────────────────┐
+│  [fondo: #2b1f47]                   │
+│                                     │
+│  ● Disponible del [fecha] al [fecha]│  ← pequeño, verde pulsante
+│                                     │
+│  Valoración TDAH                    │  ← Playfair Display, grande
+│  y Autismo                          │
+│  en Chetumal                        │
+│                                     │
+│  Desde $2,800 MXN                   │  ← Montserrat 700, blanco
+│                                     │
+│  [Foto de Karen — fondo recortado]  │
+│                                     │
+│  Karen Trujillo · Cédula 11009616   │  ← Montserrat 400, lavanda/60%
+│  ★ 5.0 · 47 reseñas Google          │
+└─────────────────────────────────────┘
+```
+
+---
+
+### Tono visual por formato
+
+| Formato | Tono | Referencia |
+|---|---|---|
+| Reels / TikTok | Cálido, conversacional — Karen en persona | Sin teleprompter visible, luz natural |
+| Carrusel Facebook | Profesional + información clara — datos y proceso | Fondo oscuro plum, tipografía limpia |
+| Stories | Urgencia honesta — cuenta regresiva, cupos restantes | Sticker de WhatsApp obligatorio |
+| Post de imagen | Credenciales + precio visible — sin rodeos | No usar foto de stock |
+
+---
+
+## 7. Implementación Web — Estado
+
+✅ **Landing page esqueleto construida:** `src/pages/valoracion-chetumal.tsx`
+
+La página está funcional y lista en el código. Incluye:
+- Hero con urgencia (badge pulsante + fechas — con placeholders hasta que Karen confirme)
+- Sección "Por qué ahora" (dirección, fechas, cupos limitados)
+- Pricing tabs: TDAH Niños / TDAH Adultos / TEA — 3 tarjetas por tab con precios, sesiones, instrumentos y CTA de WhatsApp prellenado
+- Testimonios (los 3 existentes del sitio)
+- FAQ de la campaña (6 preguntas)
+- CTA final con WhatsApp
+
+**Para publicar, solo se necesita reemplazar las 3 constantes en el archivo:**
+```typescript
+// src/pages/valoracion-chetumal.tsx — líneas 16-18
+const CAMPAIGN_START = '[FECHA INICIO — pendiente]';   // → ej: '14 de julio'
+const CAMPAIGN_END = '[FECHA FIN — pendiente]';         // → ej: '27 de julio'
+const CHETUMAL_ADDRESS = '[DIRECCIÓN — pendiente]';     // → dirección real
+```
+
+**Pendiente (no implementado hasta confirmar con Karen):**
+- Banner sticky en todas las páginas anunciando la campaña
+- Redirect post-campaña en `next.config.mjs`: `/valoracion-chetumal` → `/precios`
 
 ---
 
