@@ -23,6 +23,36 @@
 
 ---
 
+## Campaña Pop-Up Chetumal — Estado actual
+
+**Archivo de propuesta:** `propuesta-campana-chetumal.md` (en la raíz del repo)  
+**Estado:** En revisión — pendiente respuestas de Karen
+
+### Precios recomendados (propuestos, no confirmados)
+
+| Tier | TDAH (niños/adultos) | Autismo/TEA |
+|---|---|---|
+| Básico | $2,800 MXN | $3,200 MXN |
+| Estándar ★ ancla | $3,800 MXN | $4,500 MXN |
+| Completo | $5,000 MXN | $5,800 MXN |
+
+- Anticipo propuesto: $1,000 MXN fijo para todos los tiers
+- Metodología: 60% sesiones × 75% ajuste mercado Chetumal vs. Cancún ($8,300)
+- TEA más caro que TDAH por tiempo de administración del ADOS-2
+
+### Decisiones pendientes de Karen (registradas en el doc)
+
+1. Validación de precios
+2. Viabilidad clínica del nivel Básico (2 sesiones sin devolución presencial)
+3. Fechas exactas de la campaña
+4. Dirección del consultorio en Chetumal
+5. Cupo máximo de pacientes
+6. Flujo de reserva: solo WhatsApp o + Google Form
+7. Versión de copy para el Hero (clínica vs. emocional)
+8. Anticipo: $1,000 fijo o porcentaje variable
+
+---
+
 ## Software Clínico que el usuario está construyendo para Karen
 
 El usuario está desarrollando **dos productos separados** para la Psicóloga Karen Trujillo:
