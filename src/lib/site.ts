@@ -37,5 +37,5 @@ export const HOURS = {
 /** Calificación agregada (Google). Valores como string para JSON-LD. */
 export const REVIEWS = {
   ratingValue: '5.0',
-  reviewCount: '47',
+  reviewCount: '18',
 } as const;

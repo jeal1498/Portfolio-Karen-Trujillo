@@ -408,7 +408,7 @@ export default function Home() {
                   <div className="text-center">
                     {/* Credential bar */}
                     <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 mb-6">
-                      {[`Cédula Federal ${CEDULA}`, '47+ reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
+                      {[`Cédula Federal ${CEDULA}`, '18 reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
                         <span key={item} className="flex items-center gap-1.5 text-xs font-semibold tracking-wide" style={{ color: 'rgba(208,208,231,0.8)' }}>
                           {i > 0 && <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full" style={{ background: 'rgba(208,208,231,0.45)' }} />}
                           {item}
@@ -418,14 +418,12 @@ export default function Home() {
 
                     <h1 className="font-serif font-bold text-white leading-[1.08] mb-3" style={{ fontSize: 'clamp(1.9rem, 9vw, 5rem)' }}>
                       Neuropsicóloga<br />en Cancún
+                      <span className="block text-[0.45em] font-normal tracking-widest uppercase mt-2" style={{ color: 'rgba(208,208,231,0.55)', fontSize: 'clamp(0.7rem, 2vw, 1rem)' }}>Especialista en TDAH y Autismo</span>
                     </h1>
 
-                    <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'rgba(208,208,231,0.6)' }}>
-                      Especialista en diagnóstico de TDAH y Autismo
-                    </h2>
-
                     <p className="font-serif font-normal italic leading-snug mb-5" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', color: 'rgba(208,208,231,0.72)' }}>
-                      Respuestas donde antes había incertidumbre
+                      Llegan con años de incertidumbre.<br />
+                      <span style={{ fontSize: '0.75em', fontStyle: 'normal', color: 'rgba(208,208,231,0.55)' }}>Se van con un diagnóstico claro, un informe válido y un plan concreto.</span>
                     </p>
 
                     <p className="text-base leading-relaxed mb-8 max-w-[54ch] mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>

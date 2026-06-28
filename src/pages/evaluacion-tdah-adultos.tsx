@@ -51,11 +51,11 @@ const proceso = [
 ];
 
 const instrumentos = [
-  { nombre: 'DIVA 2.0', desc: 'Entrevista diagnóstica del TDAH en adultos: síntomas en infancia y actualidad' },
-  { nombre: 'CAARS-2', desc: 'Escalas de TDAH para Adultos (Conners): autorreporte y observador externo' },
-  { nombre: 'WAIS-IV', desc: 'Escala de Inteligencia de Wechsler para Adultos: perfil cognitivo completo' },
-  { nombre: 'BRIEF-2A', desc: 'Inventario de Evaluación Conductual de Funciones Ejecutivas — versión adultos' },
-  { nombre: 'CPT-3', desc: 'Test de Ejecución Continua: atención sostenida e impulsividad de forma objetiva' },
+  { nombre: 'DIVA 2.0', desc: 'Entrevista diagnóstica de TDAH en adultos, única validada en español. Rastrea síntomas actuales e infancia. Es el punto de partida del diagnóstico diferencial.' },
+  { nombre: 'CAARS-2', desc: 'Escalas de TDAH para Adultos (Conners): mide inatención e hiperactividad desde la perspectiva del propio paciente y de un informante externo (pareja, familiar, jefe). Diferencia TDAH de ansiedad y depresión con alta precisión.' },
+  { nombre: 'WAIS-IV', desc: 'Perfil cognitivo completo: comprensión verbal, razonamiento perceptivo, memoria de trabajo y velocidad de procesamiento. Identifica discrepancias que explican el rendimiento inconsistente.' },
+  { nombre: 'BRIEF-2A', desc: 'Evalúa cómo se manifiesta el TDAH en la vida real: organización del tiempo, regulación emocional, flexibilidad cognitiva, planificación. Es el vínculo entre el diagnóstico y las recomendaciones concretas.' },
+  { nombre: 'CPT-3', desc: 'Medición objetiva de la atención sostenida durante 14 minutos. El cerebro no puede "fingir" atención — los datos son independientes del autoinforme.' },
 ];
 
 const informeIncludes = [
