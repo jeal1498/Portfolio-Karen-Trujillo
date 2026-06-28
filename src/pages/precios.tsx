@@ -49,7 +49,7 @@ const evaluaciones = [
     precio: '$8,300 MXN',
     duracion: '2–3 semanas · 5 sesiones',
     href: '/evaluacion-tdah-adultos',
-    instrumentos: ['DIVA 2.0', 'Conners Adultos', 'Cribado TDAH', 'IDARE', 'Inventario Depresión'],
+    instrumentos: ['CAARS-2', 'WAIS-IV', 'BRIEF-2A', 'CPT-3', 'DIVA 2.0'],
     incluye: [
       'Entrevista clínica estructurada (historia de vida y síntomas)',
       'Aplicación de batería de pruebas neuropsicológicas',

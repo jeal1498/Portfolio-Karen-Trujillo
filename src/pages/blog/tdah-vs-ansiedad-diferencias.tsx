@@ -94,7 +94,7 @@ const schema = {
       description: 'La diferencia entre TDAH y ansiedad es crucial para el tratamiento correcto. Conoce los síntomas compartidos, las diferencias clave, y por qué pueden coexistir. Guía clínica en español.',
       image: `${SITE_URL}/blog/dark-tdah-o-ansiedad-1200x675.svg`,
       datePublished: '2026-06-02',
-      dateModified: '2026-06-02',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,

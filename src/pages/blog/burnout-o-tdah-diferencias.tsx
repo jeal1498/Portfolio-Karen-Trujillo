@@ -111,7 +111,7 @@ const schema = {
       description: 'El burnout y el TDAH comparten síntomas pero tienen causas distintas. La diferencia clave: en el burnout hubo un antes. En el TDAH, siempre fue así. Diagnóstico diferencial en Cancún.',
       image: `${SITE_URL}/blog/dark-burnout-vs-tdah-1200x675.svg`,
       datePublished: '2026-06-03',
-      dateModified: '2026-06-03',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,
