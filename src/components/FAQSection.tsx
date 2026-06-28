@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { WA_NUMBER } from '@/lib/contact';
+import { waUrl } from '@/lib/contact';
 import { CEDULA } from '@/lib/site';
 
 const faqData = [
@@ -92,7 +92,7 @@ const FAQSection = () => {
         >
           <p className="text-primary font-serif italic text-lg mb-4">"¿Tienes más preguntas sobre el proceso de valoración? Escríbeme sin compromiso."</p>
           <a
-            href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20tengo%20preguntas%20sobre%20la%20valoración`}
+            href={waUrl('Hola Karen, acabo de leer las preguntas frecuentes y me gustaría agendar una valoración. ¿Cuál es la disponibilidad?')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"

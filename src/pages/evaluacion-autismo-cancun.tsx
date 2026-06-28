@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FloatingButtons from '@/components/FloatingButtons';
 import { SOCIAL_PROFILES, WA_NUMBER, PHONE_NUMBER, PHONE_E164 } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO } from '@/lib/site';
 
@@ -1371,6 +1372,7 @@ export default function AutismoCancunFunnel() {
 
         </main>
 
+        <FloatingButtons />
         <Footer />
 
         {/* ── Mobile sticky CTA — CSS transitions ── */}

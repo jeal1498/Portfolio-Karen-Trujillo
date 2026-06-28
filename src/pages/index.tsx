@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FloatingButtons from '@/components/FloatingButtons';
 import SymptomCheckerHome from '@/components/SymptomCheckerHome';
 import { WA_NUMBER, PHONE_NUMBER, PHONE_E164, waUrl, SOCIAL_PROFILES } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO, ADDRESS } from '@/lib/site';
@@ -1261,6 +1262,7 @@ export default function Home() {
 
         </main>
 
+        <FloatingButtons />
         <Footer />
 
         {/* ── Sticky CTA — mobile only, appears after hero ── */}
