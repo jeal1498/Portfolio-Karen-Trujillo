@@ -273,11 +273,11 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 | ID | Problema | Estado | Notas |
 |----|----------|--------|-------|
-| P1-01 | og:image en páginas de servicio (retrato 465×533 vs 1200×630) | ⏳ Pendiente | Requiere crear 8 imágenes landscape — trabajo futuro |
+| P1-01 | og:image en páginas de servicio (retrato 465×533 vs 1200×630) | ⏳ Pendiente | HTML con 14 prompts Gemini generado (`prompts-gemini-imagenes.html`). Karen generará las imágenes; cuando las entregue, colocar en `/public/` (9 OG 1200×630) y `/public/blog/` (5 hero 1200×675) y actualizar meta tags. |
 | P1-02 | Article schema `image` → hero SVG del artículo | ✅ Hecho | 11 artículos actualizados; `dateModified: '2026-06-17'` corregido en artículos con fechas 2025 |
 | P1-03 | `/valoracion-chetumal` página huérfana | ✅ Parcial | Añadida a `sitemap.xml` (priority 0.85, changefreq weekly). Falta enlace en Navbar. Dirección real aún pendiente de Karen (línea 18 de valoracion-chetumal.tsx) |
 | P1-04 | Speakable schema — IDs verificados | ✅ Verificado | Los 4 IDs existen en JSX: `que-es-neuropsicologia`, `diferenciadores`, `karen-perfil`, `preguntas-frecuentes` — sin cambios requeridos |
-| P1-05 | `REVIEWS.reviewCount` actualización mensual | ⏳ Pendiente | Tarea recurrente manual — recordar revisar GBP mensualmente |
+| P1-05 | `REVIEWS.reviewCount` actualización mensual | ✅ Hecho | Actualizado a 18 (confirmado con GBP real). Tarea recurrente: revisar GBP mensualmente. |
 | P1-06 | `dateModified` en artículos tocados junio 2026 | ✅ Hecho | Cubierto en P1-02 |
 | P1-07 | `sameAs` Doctoralia/PsychologyToday/LinkedIn | ⏳ Pendiente | Karen aún no ha creado los perfiles de directorios |
 
@@ -290,9 +290,9 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 | P2-01 | H1 homepage sin keywords TDAH/Autismo | ✅ Hecho | Añadido `<h2>` "Especialista en diagnóstico de TDAH y Autismo" sobre H1 |
 | P2-02 | Blog index sin CollectionPage schema | ⏳ Pendiente | Trabajo futuro |
 | P2-03 | FloatingButtons sin `prefers-reduced-motion` | ✅ Hecho | Reescrito con `useReducedMotion()` de Framer Motion |
-| P2-04 | Páginas SEO locales superpuestas | ⏳ Pendiente | Requiere análisis de diferenciación de contenido |
+| P2-04 | Páginas SEO locales superpuestas | ✅ Verificado | Ambas páginas tienen diferenciación suficiente — sin cambios requeridos |
 | P2-05 | Falta `priceRange` en MedicalBusiness | ✅ Ya estaba | `priceRange: '$8,300 - $8,500 MXN'` ya existía en index.tsx |
-| P2-06 | Blog sin enlace contextual a conversión | ⏳ Pendiente | Trabajo futuro |
+| P2-06 | Blog sin enlace contextual a conversión | ✅ Hecho | Los 11 artículos recibieron ≥1 `<Link>` contextual hacia página de servicio correspondiente |
 | P2-07 | `/valoracion-chetumal` sin schema LocalBusiness | ⏳ Pendiente | La landing ya tiene Event schema; LocalBusiness es complementario |
 
 ---
@@ -313,11 +313,30 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 ### Tareas pendientes para próxima sesión
 
-1. **P1-07 perfiles de directorio** — Karen debe crear Doctoralia / PsychologyToday / LinkedIn y compartir URLs
-2. **P1-03 Navbar** — añadir enlace a `/valoracion-chetumal` cuando Karen confirme la dirección
-3. **CHETUMAL_ADDRESS** — Karen debe proveer la dirección real del consultorio en Chetumal (`valoracion-chetumal.tsx:18`) — mientras llega, la tarjeta muestra "Se confirma al reservar vía WhatsApp"
-4. **P1-01 og:image landscape** — crear 8 imágenes 1200×630 para páginas de servicio
-5. **P2-06 enlaces internos en blog** — enlace contextual en cada artículo hacia la página de evaluación correspondiente
+1. **P1-01 og:image** — Karen generará 14 imágenes con Gemini (HTML de prompts listo). Al recibirlas: colocar en `/public/` y `/public/blog/`, actualizar meta tags `og:image`, `og:image:width: "1200"`, `og:image:height: "630"` en 9 páginas.
+2. **P1-07 perfiles de directorio** — Karen debe crear Doctoralia / PsychologyToday / LinkedIn y compartir URLs para añadir a `sameAs` en schema Physician
+3. **P1-03 Navbar** — añadir enlace a `/valoracion-chetumal` cuando Karen confirme la dirección
+4. **CHETUMAL_ADDRESS** — Karen debe proveer la dirección real del consultorio en Chetumal (`valoracion-chetumal.tsx:18`)
+5. **P2-02 CollectionPage schema** — añadir schema al índice del blog
+6. **P2-07 LocalBusiness schema** — añadir a `/valoracion-chetumal` como complemento al Event schema existente
+
+### Entregables de la auditoría 2026-06-27 — COMPLETADOS ✅
+
+| Entregable | Estado |
+|---|---|
+| E1: Correcciones P0+P1 | ✅ Commiteado |
+| E2: P2-01 keywords H1 | ✅ Commiteado |
+| E3: CRO WhatsApp (7 componentes) | ✅ Commiteado |
+| E4 Copy 1: evaluacion-tdah-adultos.tsx (instrumentos detallados) | ✅ Commiteado |
+| E4 Copy 2: index.tsx (H1 + subtítulo hero) | ✅ Commiteado |
+| E4 Copy 3: evaluacion-autismo-cancun.tsx (sección #por-que-cancun) | ✅ Commiteado |
+| E5 Artículo 1: como-es-una-evaluacion-neuropsicologica-ninos | ✅ Commiteado |
+| E5 Artículo 2: tdah-ninas-diagnostico-tardio-cancun | ✅ Commiteado |
+| E5 Artículo 3: diferencia-tdah-trastorno-aprendizaje | ✅ Commiteado |
+| E5 Artículo 4: resultado-positivo-autismo-que-sigue | ✅ Commiteado |
+| E5 Artículo 5: evaluacion-neuropsicologica-adultos-cancun | ✅ Commiteado |
+| P2-06: 11 artículos con internal links | ✅ Commiteado |
+| prompts-gemini-imagenes.html (14 prompts) | ✅ Commiteado |
 
 ---
 
@@ -326,9 +345,9 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 1. Schema JSON-LD más completo de la categoría local (MedicalBusiness + Physician + Reviews + FAQPage)
 2. AI bots correctamente permitidos: GPTBot, ClaudeBot, PerplexityBot — `robots.txt` y `llms.txt` correctos
 3. Copy emocional específico: "No es falta de voluntad. Puede ser tu cerebro"
-4. 47 reseñas con nombres propios — prueba social verificable
+4. 18 reseñas con nombres propios — prueba social verificable (GBP real confirmado 2026-06-28)
 5. Precios publicados — diferenciador de transparencia vs competencia
-6. Blog con 11 artículos, hero images propias 1200×675, og:image corregidas en Article schema
+6. Blog con 16 artículos (11 existentes + 5 nuevos de Entregable 5), hero images propias 1200×675, og:image corregidas en Article schema, internal links en todos los artículos
 
 ---
 
