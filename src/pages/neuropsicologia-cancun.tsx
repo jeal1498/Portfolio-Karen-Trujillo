@@ -254,9 +254,9 @@ export default function NeuropsicologiaCancun() {
           content={`Karen Trujillo es neuropsicóloga clínica en Cancún con cédula federal ${CEDULA}. Evaluaciones de TDAH y autismo con pruebas estandarizadas internacionales.`}
         />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={KAREN_IMAGE} />
-        <meta property="og:image:width" content="465" />
-        <meta property="og:image:height" content="533" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/og-neuropsicologia-cancun.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />
 
         <meta name="twitter:card" content="summary_large_image" />
