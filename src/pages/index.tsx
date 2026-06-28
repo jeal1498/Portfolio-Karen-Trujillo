@@ -415,9 +415,13 @@ export default function Home() {
                       ))}
                     </div>
 
-                    <h1 className="font-serif font-bold text-white leading-[1.08] mb-4" style={{ fontSize: 'clamp(1.9rem, 9vw, 5rem)' }}>
+                    <h1 className="font-serif font-bold text-white leading-[1.08] mb-3" style={{ fontSize: 'clamp(1.9rem, 9vw, 5rem)' }}>
                       Neuropsicóloga<br />en Cancún
                     </h1>
+
+                    <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                      Especialista en diagnóstico de TDAH y Autismo
+                    </h2>
 
                     <p className="font-serif font-normal italic leading-snug mb-5" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', color: 'rgba(208,208,231,0.72)' }}>
                       Respuestas donde antes había incertidumbre
