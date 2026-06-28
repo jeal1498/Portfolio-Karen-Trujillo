@@ -118,8 +118,8 @@ const faqItems = [
     a: `Sí. El informe lleva la cédula profesional federal ${CEDULA}, emitida por la SEP. Tiene validez ante instituciones educativas, IMSS y dependencias gubernamentales en todo México.`,
   },
   {
-    q: '¿Por qué Básico y Estándar tienen el mismo número de sesiones pero diferente precio?',
-    a: 'Una valoración clínica responsable requiere mínimo 3 sesiones: historia clínica, pruebas y devolución. La diferencia entre Básico y Estándar no es el número de sesiones sino el tipo de devolución (virtual vs. presencial) y la batería de instrumentos aplicados.',
+    q: '¿Por qué Estándar y Completo tienen diferente precio?',
+    a: 'Ambos incluyen la misma especialista y el mismo rigor clínico. La diferencia está en los instrumentos aplicados: el Completo agrega pruebas de función ejecutiva (CUMANES) y produce un informe neuropsicológico más completo. Para la mayoría de las familias, el Estándar cubre todo lo necesario para obtener un diagnóstico con validez formal.',
   },
   {
     q: '¿Qué pasa si mis sesiones no terminan antes de que Karen se vaya?',
@@ -127,7 +127,11 @@ const faqItems = [
   },
   {
     q: '¿Cómo funciona el anticipo?',
-    a: 'Al reservar se paga el 50% del nivel elegido — forma parte del precio total, no es adicional. El 50% restante se liquida en la primera sesión. El anticipo es reembolsable si cancelas con al menos 48 horas de anticipación.',
+    a: 'Al reservar se paga el 50% del nivel elegido. El 50% restante se liquida en la primera sesión presencial. El anticipo es reembolsable si cancelas con al menos 48 horas de anticipación.',
+  },
+  {
+    q: '¿Cuándo recibo el informe?',
+    a: `El informe se entrega en la sesión de devolución, que se agenda dentro del periodo de campaña (${CAMPAIGN_START}–${CAMPAIGN_END}). Al confirmar la reserva, Karen asigna el calendario completo de sesiones para garantizar que el proceso termina antes de que regrese a Cancún.`,
   },
   {
     q: '¿Puedo cambiar de nivel después de reservar?',
@@ -194,9 +198,10 @@ const schema = {
         },
       },
       organizer: {
-        '@type': 'Person',
+        '@type': ['Person', 'Physician'],
         name: 'Karen Trujillo',
         jobTitle: 'Neuropsicóloga Clínica',
+        medicalSpecialty: 'Neurological',
         hasCredential: {
           '@type': 'EducationalOccupationalCredential',
           credentialId: CEDULA,
@@ -204,10 +209,10 @@ const schema = {
         },
       },
       offers: [
-        { '@type': 'Offer', name: 'TDAH Estándar', price: '3900', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
-        { '@type': 'Offer', name: 'TDAH Completo', price: '5000', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
-        { '@type': 'Offer', name: 'TEA Estándar', price: '4500', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
-        { '@type': 'Offer', name: 'TEA Completo', price: '5800', priceCurrency: 'MXN', availability: 'https://schema.org/InStock' },
+        { '@type': 'Offer', name: 'TDAH Niños Estándar', price: '3900', priceCurrency: 'MXN', availability: 'https://schema.org/InStock', url: CANONICAL_URL, validFrom: '2026-07-21', validThrough: '2026-08-03' },
+        { '@type': 'Offer', name: 'TDAH Niños Completo', price: '5000', priceCurrency: 'MXN', availability: 'https://schema.org/InStock', url: CANONICAL_URL, validFrom: '2026-07-21', validThrough: '2026-08-03' },
+        { '@type': 'Offer', name: 'TEA Estándar', price: '4500', priceCurrency: 'MXN', availability: 'https://schema.org/InStock', url: CANONICAL_URL, validFrom: '2026-07-21', validThrough: '2026-08-03' },
+        { '@type': 'Offer', name: 'TEA Completo', price: '5800', priceCurrency: 'MXN', availability: 'https://schema.org/InStock', url: CANONICAL_URL, validFrom: '2026-07-21', validThrough: '2026-08-03' },
       ],
     },
     {
@@ -274,6 +279,8 @@ export default function ValoracionChetumal() {
         <link rel="canonical" href={CANONICAL_URL} />
         <meta name="geo.region" content="MX-ROO" />
         <meta name="geo.placename" content="Chetumal, Quintana Roo" />
+        <meta name="geo.position" content="18.5001;-88.3000" />
+        <meta name="ICBM" content="18.5001, -88.3000" />
 
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_MX" />
@@ -330,7 +337,7 @@ export default function ValoracionChetumal() {
                   style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}
                 >
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" aria-hidden="true" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold" style={{ color: 'rgba(208,208,231,0.8)' }}>
+                  <span className="text-[10px] sm:text-xs uppercase tracking-[0.10em] font-bold" style={{ color: 'rgba(208,208,231,0.8)' }}>
                     Disponible solo del {CAMPAIGN_START} al {CAMPAIGN_END}
                   </span>
                 </div>
@@ -340,7 +347,7 @@ export default function ValoracionChetumal() {
                 </h1>
 
                 <p className="text-sm sm:text-base font-light leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
-                  La neuropsicóloga Karen Trujillo estará en Chetumal por tiempo limitado. El mismo diagnóstico neuropsicológico con instrumentos estandarizados internacionales que en su consultorio de Cancún.
+                  La neuropsicóloga Karen Trujillo estará en Chetumal del {CAMPAIGN_START} al {CAMPAIGN_END}. El mismo proceso diagnóstico con instrumentos estandarizados que en Cancún — sin necesidad de hacer el viaje.
                 </p>
 
                 <p className="text-xs mb-8" style={{ color: 'rgba(208,208,231,0.6)' }}>
@@ -362,7 +369,7 @@ export default function ValoracionChetumal() {
                 <a
                   href="#paquetes"
                   onClick={(e) => { e.preventDefault(); document.getElementById('paquetes')?.scrollIntoView({ behavior: 'smooth' }); }}
-                  className="inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-widest px-6 py-4 rounded-xl border-2 border-white/25 text-white/80 hover:border-white/50 hover:text-white transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-widest px-6 py-4 rounded-xl border-2 border-white/25 text-white/80 hover:border-white/50 hover:text-white transition-all duration-300"
                 >
                   Ver paquetes y precios
                   <ChevronDown className="w-3 h-3" aria-hidden="true" />
@@ -378,7 +385,7 @@ export default function ValoracionChetumal() {
               <SectionReveal>
                 <div className="grid sm:grid-cols-3 gap-5">
                   {[
-                    { Icon: MapPin, title: 'Consultorio en Chetumal', body: CHETUMAL_ADDRESS },
+                    { Icon: MapPin, title: 'Consultorio en Chetumal', body: CHETUMAL_ADDRESS.startsWith('[') ? 'Se confirma al reservar vía WhatsApp' : CHETUMAL_ADDRESS },
                     { Icon: Calendar, title: 'Periodo de campaña', body: `Del ${CAMPAIGN_START} al ${CAMPAIGN_END}` },
                     { Icon: Lock, title: 'Cupos limitados', body: `Solo ${MAX_SLOTS} cupos disponibles — se asignan por orden de reserva.` },
                   ].map(({ Icon, title, body }) => (
@@ -403,7 +410,7 @@ export default function ValoracionChetumal() {
                 <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Precios de campaña</p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-3 text-center">¿Qué nivel necesitas?</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">
-                  Los tres niveles incluyen la misma especialista y el mismo rigor clínico. Se diferencian por los instrumentos aplicados, el tipo de informe y el formato de devolución.
+                  Ambos niveles incluyen la misma especialista y el mismo rigor clínico. Se diferencian por la batería de instrumentos aplicados y el alcance del informe.
                 </p>
 
                 {/* Tabs */}
@@ -442,11 +449,14 @@ export default function ValoracionChetumal() {
                         </div>
                       )}
 
-                      <p className="font-bold text-primary uppercase tracking-wider text-xs mb-2">{tier.name}</p>
+                      <p className="font-bold text-primary uppercase tracking-wider text-xs mb-1">{tier.name}</p>
+                      {!tier.recommended && (
+                        <p className="text-[9px] text-muted-foreground font-medium uppercase tracking-wider mb-2">Máximo alcance diagnóstico</p>
+                      )}
                       <p className="text-3xl font-serif font-bold text-primary mb-1">
                         ${tier.price.toLocaleString('es-MX')}
                       </p>
-                      <p className="text-xs text-muted-foreground font-light mb-5">MXN · Anticipo 50% al reservar</p>
+                      <p className="text-xs text-muted-foreground font-light mb-5">MXN · 50% al reservar · 50% en la primera sesión</p>
 
                       <div className="space-y-3 mb-6 flex-1">
                         <div className="flex items-start gap-2">

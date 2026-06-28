@@ -276,7 +276,7 @@ Caption:
 
 - Slide 1: `¿Cuántas sesiones necesito? Todo lo que necesitas saber.`
 - Slides 2–4: una sesión por slide (qué pasa en cada una, para cada tipo)
-- Slide 5: `3 niveles según lo que necesites. Desde $2,800 MXN.`
+- Slide 5: `2 niveles según lo que necesites. Desde $3,900 MXN.`
 - Slide 6: `Cupos solo del [fecha] al [fecha]. WhatsApp en bio. ↗`
 
 ---
@@ -368,7 +368,7 @@ Son tres sesiones de hora y media cada una — programadas dentro del periodo qu
 
 Primera sesión: yo hablo con los papás — o con el adulto que viene a valorarse — y tomamos toda la historia clínica.
 
-Segunda sesión: aplicamos las pruebas directamente con el niño o el adulto. Instrumentos estandarizados internacionales: CONNERS, WISC-V, ADOS-2 según el caso.
+Segunda sesión: aplicamos las pruebas directamente con el niño o el adulto. Instrumentos estandarizados internacionales: CONNERS, ADOS-2, CUMANES — dependiendo de si es TDAH o autismo.
 
 Tercera sesión: te entrego el informe y te explico exactamente qué encontré, qué significa y qué sigue.
 
@@ -392,7 +392,9 @@ Los precios están en mi perfil. Si tienes dudas, escríbeme."
 
 **[DIRECTO, sin introducción larga]**
 
-"Me han preguntado si la valoración en Chetumal es igual a la de Cancún.
+"Este mes estoy en Chetumal haciendo valoraciones de TDAH y Autismo.
+
+Me han preguntado si es igual a la de Cancún.
 
 Sí.
 
