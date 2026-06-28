@@ -420,7 +420,7 @@ export default function CuantoCuestaEvaluacionAutismo() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl font-serif font-bold text-primary mb-4">¿Cómo se paga?</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-6">
-                  El pago no es de golpe. Los $8,500 MXN se distribuyen a lo largo de las sesiones del proceso de evaluación. Para apartar la primera cita se solicita un depósito inicial de <strong className="text-primary">$1,500 MXN</strong>. El resto se divide en los pagos correspondientes a cada sesión.
+                  El pago no es de golpe. Los $8,500 MXN se distribuyen a lo largo de las sesiones del proceso de evaluación. Para apartar la primera cita se solicita un depósito inicial de <strong className="text-primary">$1,500 MXN</strong>. El resto se divide en los pagos correspondientes a cada sesión. Puedes ver todos los detalles del proceso en la página de <Link href="/evaluacion-autismo-cancun" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">evaluación de autismo en Cancún</Link>.
                 </p>
                 <div className="bg-secondary border border-border rounded-xl p-6 mb-8">
                   <p className="text-sm text-foreground leading-relaxed mb-3">

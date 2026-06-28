@@ -181,7 +181,10 @@ export default function CuantoCuestaValoracionTDAH() {
                   </a>
                 </div>
 
-                <h2 className="text-2xl font-serif font-bold text-primary mb-6">¿Qué incluye el precio de la valoración?</h2>
+                <h2 className="text-2xl font-serif font-bold text-primary mb-4">¿Qué incluye el precio de la valoración?</h2>
+                <p className="text-muted-foreground font-light leading-relaxed text-sm mb-6">
+                  El proceso completo de la <Link href="/evaluacion-tdah-ninos" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">evaluación neuropsicológica de TDAH</Link> incluye todas las sesiones, los instrumentos estandarizados y la sesión de devolución de resultados. No hay costos adicionales.
+                </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-12">
                   {loQueIncluye.map((item) => (
                     <div key={item.label} className="flex gap-4 p-4 bg-secondary rounded-xl border border-border">

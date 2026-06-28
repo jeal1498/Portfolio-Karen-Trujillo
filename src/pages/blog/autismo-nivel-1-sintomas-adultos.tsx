@@ -492,7 +492,7 @@ export default function AutismoNivel1SintomasAdultos() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-serif font-bold italic mb-4">¿Crees que puede ser TEA nivel 1?</h2>
               <p className="text-primary-foreground/80 font-light mb-8 max-w-xl mx-auto">
-                Si llevas años sintiéndote diferente sin saber por qué, una evaluación neuropsicológica puede darte por fin una respuesta. Karen Trujillo realiza evaluaciones de TEA en Cancún con el ADOS-2, el estándar de oro mundial, y cédula federal {CEDULA}.
+                Si llevas años sintiéndote diferente sin saber por qué, una evaluación neuropsicológica puede darte por fin una respuesta. Karen Trujillo realiza <Link href="/evaluacion-autismo-cancun" className="text-primary-foreground font-semibold underline decoration-primary-foreground/30 hover:decoration-primary-foreground transition-all">evaluaciones de autismo en Cancún</Link> con el ADOS-2, el estándar de oro mundial, y cédula federal {CEDULA}.
               </p>
               <div className="flex items-center justify-center gap-3 mb-6 text-xs text-primary-foreground/80">
                 <img

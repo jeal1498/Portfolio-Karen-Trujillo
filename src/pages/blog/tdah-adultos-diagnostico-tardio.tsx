@@ -753,7 +753,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
                   {[
                     { step: '1', text: 'Revisa si estas dificultades han estado presentes desde antes de los 12 años — en la escuela, en casa o con amigos.' },
                     { step: '2', text: 'Identifica si afectan más de un área de tu vida: trabajo, relaciones, finanzas, autoestima.' },
-                    { step: '3', text: 'Agenda una evaluación neuropsicológica de TDAH adulto. Es el único método que mide objetivamente tus funciones ejecutivas con pruebas estandarizadas.' },
+                    { step: '3', text: <>Agenda una <Link href="/evaluacion-tdah-adultos" className="text-primary-foreground font-semibold underline decoration-primary-foreground/30 hover:decoration-primary-foreground transition-all">evaluación neuropsicológica de TDAH adulto</Link>. Es el único método que mide objetivamente tus funciones ejecutivas con pruebas estandarizadas.</> },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-4 bg-white/8 border border-white/12 rounded-xl p-4">
                       <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center shrink-0">
