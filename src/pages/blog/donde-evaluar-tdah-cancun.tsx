@@ -115,7 +115,7 @@ const schema = {
       description: `Guía completa para elegir dónde evaluar TDAH en Cancún. Qué instrumentos debe incluir, qué señales de alerta evitar y cómo es el proceso en el consultorio de Karen Trujillo (cédula ${CEDULA}).`,
       image: `${SITE_URL}/blog/dark-donde-evaluar-tdah-en-cancun-1200x675.svg`,
       datePublished: '2026-06-03',
-      dateModified: '2026-06-03',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,

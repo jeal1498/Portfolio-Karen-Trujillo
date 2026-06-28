@@ -47,6 +47,13 @@ const ciudades = [
     distancia: 'Ferry + traslado',
     nota: 'Coordinar las sesiones durante viajes programados a Cancún hace el proceso más manejable. Karen ayuda a organizar el calendario con flexibilidad.',
   },
+  {
+    ciudad: 'Chetumal',
+    distancia: '~3.5 hrs por carretera',
+    nota: 'Karen realiza valoraciones presenciales en Chetumal en fechas específicas.',
+    href: '/valoracion-chetumal',
+    hrefLabel: 'Ver fechas disponibles →',
+  },
 ];
 
 const logistica = [
@@ -445,6 +452,11 @@ export default function NeuropsicologiaZonaHoteleraCancun() {
                       <p className="text-xs text-muted-foreground font-light leading-relaxed flex-1">
                         {item.nota}
                       </p>
+                      {'href' in item && (
+                        <Link href={item.href as string} className="text-xs font-bold text-primary hover:underline mt-1">
+                          {(item as { hrefLabel: string }).hrefLabel}
+                        </Link>
+                      )}
                     </div>
                   </SectionReveal>
                 ))}

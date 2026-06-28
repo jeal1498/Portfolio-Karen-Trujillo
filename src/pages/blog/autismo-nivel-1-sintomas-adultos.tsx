@@ -121,7 +121,7 @@ const schema = {
       description: 'El autismo nivel 1 (antes Asperger) en adultos tiene síntomas distintos al autismo clásico. Sin diagnóstico previo, muchos adultos llevan años sintiéndose diferentes sin saber por qué. Evaluación en Cancún.',
       image: `${SITE_URL}/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg`,
       datePublished: '2026-06-02',
-      dateModified: '2026-06-02',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,

@@ -129,7 +129,7 @@ const schema = {
       description: 'El TDAH inatento (antes llamado TDA) es el subtipo más subdiagnosticado. Sin hiperactividad visible, se confunde con pereza o falta de motivación. Aprende a identificarlo en niños y adultos.',
       image: `${SITE_URL}/blog/dark-tdah-inatento-1200x675.svg`,
       datePublished: '2026-06-02',
-      dateModified: '2026-06-02',
+      dateModified: '2026-06-17',
       author: {
         '@type': 'Person',
         '@id': `${SITE_URL}/#physician`,
