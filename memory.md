@@ -199,115 +199,77 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 ---
 
-## Auditoría de Marketing — Resultados (2026-06-27)
+## Auditoría de Marketing — Estado de implementación (actualizado 2026-06-28)
 
 **Archivos de referencia:**
 - `.agents/product-marketing.md` — SSOT del producto (228 líneas)
 - `.agents/marketing-audit-2026-06-27.md` — Auditoría completa con 5 entregables (617 líneas)
-- `.agents/marketing-audit-report.html` — Reporte visual interactivo
+- `.agents/implementacion-correcciones-auditoria.md` — Plan de implementación ejecutado
 
-**Método:** Análisis de archivos fuente (el sitio live devuelve 403 Cloudflare). Se leyeron 21 URLs + 11 artículos de blog + componentes React + schemas JSON-LD.
-
----
-
-### Issues P0 — Críticos (corregir primero)
-
-| ID | Archivo | Problema | Fix |
-|----|---------|----------|-----|
-| P0-01 | `src/pages/precios.tsx` | Precio TEA: $8,300 MXN (correcto: $8,500 MXN) | Cambiar el valor en precios.tsx |
-| P0-02 | `src/pages/evaluacion-tdah-adultos.tsx` | Sección `proceso` lista DIVA 2.0/IDARE (el FAQ de la misma página lista CAARS-2/WAIS-IV) | Alinear array `proceso` con CAARS-2, WAIS-IV, BRIEF-2A, CPT-3 |
-| P0-03 | `src/pages/index.tsx` | `injectSchema()` es client-side (`useEffect`) — AI crawlers (GPTBot, ClaudeBot) no ejecutan JS y nunca ven el schema | Migrar a `<script dangerouslySetInnerHTML>` en `<Head>` igual que neuropsicologia-cancun.tsx |
-| P0-04 | `src/pages/index.tsx` | Título homepage: 68 chars (se trunca en móvil a ~60) | Opción B recomendada: "Neuropsicóloga Cancún — TDAH y Autismo · Cédula 11009616" (59 chars) |
-
-**Esfuerzo total P0: ~1.5 horas.**
+**Branch de implementación:** `claude/audit-corrections-implementation-1yrwnz` (mergeado a `main` el 2026-06-28)
 
 ---
 
-### Issues P1 — Importantes (próximo sprint)
+### Issues P0 — TODOS COMPLETADOS ✅
 
-| ID | Problema | Archivo(s) |
-|----|----------|-----------|
-| P1-01 | og:image en páginas de servicio es retrato 465×533 (redes sociales esperan 1200×630 landscape) | Homepage + 7 páginas servicio |
-| P1-02 | Article schema `image` apunta a KAREN_IMAGE en vez del hero SVG del artículo | 11 archivos blog (ver tabla en `.agents/marketing-audit-2026-06-27.md` → Entregable 2) |
-| P1-03 | `/valoracion-chetumal` en sitemap pero sin enlace interno — página huérfana | `public/sitemap.xml`, `Navbar.tsx` |
-| P1-04 | Speakable schema con CSS selectors sin verificar en neuropsicologia-cancun | `src/pages/neuropsicologia-cancun.tsx` |
-| P1-05 | `REVIEWS.reviewCount` debe actualizarse mensualmente con el conteo real de GBP | `lib/site.ts` |
-| P1-06 | `dateModified` igual a `datePublished` en artículos tocados en junio 2026 | 5 artículos de blog (los de fecha 2025) |
-| P1-07 | Falta `sameAs` de Doctoralia/PsychologyToday en Physician schema | `lib/site.ts` → `DIRECTORY_PROFILES` |
+| ID | Archivo | Estado | Notas |
+|----|---------|--------|-------|
+| P0-01 | `src/pages/precios.tsx` | ✅ Hecho | Precio TEA corregido: $8,300 → $8,500 MXN |
+| P0-02 | `src/pages/evaluacion-tdah-adultos.tsx` | ✅ Hecho | `proceso[1].desc` + `instrumentos[]` actualizados con CAARS-2, WAIS-IV, BRIEF-2A, CPT-3 |
+| P0-03 | `src/pages/index.tsx` | ✅ Ya estaba | Schema ya usaba `dangerouslySetInnerHTML` en `<Head>` — no requirió cambios |
+| P0-04 | `src/pages/index.tsx` | ✅ Hecho | Título reducido a 59 chars: "Neuropsicóloga Cancún — TDAH y Autismo · Cédula 11009616" |
 
 ---
 
-### Issues P2 — Mediano plazo
+### Issues P1 — Estado mixto
 
-| ID | Problema |
-|----|----------|
-| P2-01 | H1 de homepage sin keywords TDAH/Autismo |
-| P2-02 | Blog index sin CollectionPage schema estático |
-| P2-03 | FloatingButtons sin `prefers-reduced-motion` (WCAG 2.1) |
-| P2-04 | Dos páginas SEO locales con contenido superpuesto — verificar diferenciación |
-| P2-05 | Falta `priceRange` en MedicalBusiness schema del homepage |
-| P2-06 | Artículos de blog sin enlace contextual interno hacia páginas de conversión |
-| P2-07 | `/valoracion-chetumal` sin schema LocalBusiness si tiene contenido local |
-
----
-
-### Correcciones JSON-LD — 11 artículos de blog (Entregable 2)
-
-El único campo a cambiar en cada `Article` schema es `image: KAREN_IMAGE` → hero SVG propio del artículo:
-
-| Archivo | Imagen correcta |
-|---------|----------------|
-| `cuanto-cuesta-valoracion-tdah-cancun.tsx` | `/blog/dark-costo-de-la-valoracion-de-tdah-1200x675.svg` |
-| `tdah-en-ninas-sintomas.tsx` | `/blog/dark-tdah-en-ninas-1200x675.svg` |
-| `senales-tdah-ninos.tsx` | `/blog/dark-senales-de-tdah-en-ninos-1200x675.svg` |
-| `tdah-adultos-diagnostico-tardio.tsx` | `/blog/dark-tdah-en-adultos-1200x675.svg` |
-| `que-es-ados-2-autismo.tsx` | `/blog/dark-que-es-el-ados-2-1200x675.svg` |
-| `autismo-nivel-1-sintomas-adultos.tsx` | `/blog/dark-autismo-nivel-1-en-adultos-1200x675.svg` |
-| `cuanto-cuesta-evaluacion-autismo-mexico.tsx` | `/blog/dark-costo-evaluacion-de-autismo-1200x675.svg` |
-| `tdah-inatento-sintomas.tsx` | `/blog/dark-tdah-inatento-1200x675.svg` |
-| `tdah-vs-ansiedad-diferencias.tsx` | `/blog/dark-tdah-o-ansiedad-1200x675.svg` |
-| `burnout-o-tdah-diferencias.tsx` | `/blog/dark-burnout-vs-tdah-1200x675.svg` |
-| `donde-evaluar-tdah-cancun.tsx` | `/blog/dark-donde-evaluar-tdah-en-cancun-1200x675.svg` |
-
-También actualizar `dateModified: '2026-06-17'` en artículos con fechas 2025 que recibieron el batch de imágenes.
+| ID | Problema | Estado | Notas |
+|----|----------|--------|-------|
+| P1-01 | og:image en páginas de servicio (retrato 465×533 vs 1200×630) | ⏳ Pendiente | Requiere crear 8 imágenes landscape — trabajo futuro |
+| P1-02 | Article schema `image` → hero SVG del artículo | ✅ Hecho | 11 artículos actualizados; `dateModified: '2026-06-17'` corregido en artículos con fechas 2025 |
+| P1-03 | `/valoracion-chetumal` página huérfana | ✅ Parcial | Añadida a `sitemap.xml` (priority 0.85, changefreq weekly). Falta enlace en Navbar. Dirección real aún pendiente de Karen (línea 18 de valoracion-chetumal.tsx) |
+| P1-04 | Speakable schema — IDs verificados | ✅ Verificado | Los 4 IDs existen en JSX: `que-es-neuropsicologia`, `diferenciadores`, `karen-perfil`, `preguntas-frecuentes` — sin cambios requeridos |
+| P1-05 | `REVIEWS.reviewCount` actualización mensual | ⏳ Pendiente | Tarea recurrente manual — recordar revisar GBP mensualmente |
+| P1-06 | `dateModified` en artículos tocados junio 2026 | ✅ Hecho | Cubierto en P1-02 |
+| P1-07 | `sameAs` Doctoralia/PsychologyToday/LinkedIn | ⏳ Pendiente | Karen aún no ha creado los perfiles de directorios |
 
 ---
 
-### Mejoras CRO (Entregable 3)
+### Issues P2 — Estado mixto
 
-| ID | Componente:línea | Fix | Impacto |
-|----|-----------------|-----|---------|
-| CRO-01 | `index.tsx:~461` | Micro-copy bajo CTA WA: "Respuesta en menos de 2 horas · Lun–Sáb" | Alto |
-| CRO-02 | `SymptomChecker.tsx` | CTA inline después del resultado del cuestionario | Alto |
-| CRO-03 | `FloatingButtons.tsx:8` | Añadir variante desktop (`hidden lg:flex`) en esquina inferior derecha | Medio |
-| CRO-04 | `para-escuelas.tsx` | Importar y renderizar `<FloatingButtons />` | Medio |
-| CRO-05 | `index.tsx:~436–453` | Añadir precio en routing cards del hero ("Desde $8,300 MXN") | Alto |
-| CRO-06 | `index.tsx` / `AboutSection.tsx` | Envolver el bloque de 47 reseñas en enlace clickeable a Google Maps | Medio |
-| CRO-07 | `evaluacion-tdah-ninos.tsx:~724` | Mejorar callout "costo de no actuar" con timeframe concreto (3–4 semanas) | Medio |
-
----
-
-### Copy mejorado — páginas prioritarias (Entregable 4)
-
-Ver `.agents/marketing-audit-2026-06-27.md` → Entregable 4 para el texto exacto. Resumen:
-
-- **Homepage:** H1 añadir "Especialista en TDAH y Autismo" + subtítulo empático + micro-copy en CTA + precio en routing cards
-- **evaluacion-tdah-adultos:** Sección `proceso` con 2 bloques (entrevista diagnóstica: DIVA 2.0 / pruebas cognitivas: CAARS-2, WAIS-IV, BRIEF-2A, CPT-3) + badge de diagnóstico tardío
-- **evaluacion-autismo-cancun:** Bloque nuevo "¿Por qué familias viajan a Cancún?" (escasez regional del ADOS-2) + callout de intervención temprana mejorado
+| ID | Problema | Estado | Notas |
+|----|----------|--------|-------|
+| P2-01 | H1 homepage sin keywords TDAH/Autismo | ✅ Hecho | Añadido `<h2>` "Especialista en diagnóstico de TDAH y Autismo" sobre H1 |
+| P2-02 | Blog index sin CollectionPage schema | ⏳ Pendiente | Trabajo futuro |
+| P2-03 | FloatingButtons sin `prefers-reduced-motion` | ✅ Hecho | Reescrito con `useReducedMotion()` de Framer Motion |
+| P2-04 | Páginas SEO locales superpuestas | ⏳ Pendiente | Requiere análisis de diferenciación de contenido |
+| P2-05 | Falta `priceRange` en MedicalBusiness | ✅ Ya estaba | `priceRange: '$8,300 - $8,500 MXN'` ya existía en index.tsx |
+| P2-06 | Blog sin enlace contextual a conversión | ⏳ Pendiente | Trabajo futuro |
+| P2-07 | `/valoracion-chetumal` sin schema LocalBusiness | ⏳ Pendiente | La landing ya tiene Event schema; LocalBusiness es complementario |
 
 ---
 
-### Calendario editorial — próximos 5 artículos (Entregable 5)
+### Mejoras CRO — TODAS COMPLETADAS ✅
 
-| Mes | Slug | Keyword primaria | Intención |
-|-----|------|-----------------|-----------|
-| Julio | `como-es-una-evaluacion-neuropsicologica-ninos` | evaluación neuropsicológica niños cancún | Informacional |
-| Julio | `tdah-ninas-diagnostico-tardio-cancun` | TDAH niñas diagnóstico | Informacional |
-| Agosto | `diferencia-tdah-trastorno-aprendizaje` | diferencia TDAH trastorno aprendizaje | Informacional |
-| Agosto | `resultado-positivo-autismo-que-sigue` | qué sigue después diagnóstico autismo | Navegacional |
-| Septiembre | `evaluacion-neuropsicologica-adultos-cancun` | evaluación neuropsicológica adultos Cancún | Transaccional |
+| ID | Componente | Estado | Notas |
+|----|-----------|--------|-------|
+| CRO-01 | `index.tsx` | ✅ Hecho | Micro-copy bajo CTA WA: "Respuesta habitual en menos de 2 horas · Lun–Sáb" |
+| CRO-02 | `SymptomChecker.tsx` | ✅ Hecho | CTA WA inline tras resultado del cuestionario |
+| CRO-03 | `FloatingButtons.tsx` | ✅ Hecho | Desktop button (`hidden lg:flex`) + `useReducedMotion` |
+| CRO-04 | `para-escuelas.tsx` | ✅ Hecho | `<FloatingButtons />` importado y renderizado |
+| CRO-05 | `index.tsx` routing cards | ✅ Hecho | Precios visibles: TDAH $8,300 · TEA $8,500 |
+| CRO-06 | `index.tsx` reseñas | ✅ Hecho | Bloque "47 reseñas" enlazado a Google Maps CID |
+| CRO-07 | `evaluacion-tdah-ninos.tsx` callout | ✅ Hecho | Reescrito con timeframe "3-4 semanas" y "claridad dura toda la vida" |
 
-Ver `.agents/marketing-audit-2026-06-27.md` → Entregable 5 para estructura completa de cada artículo.
+---
+
+### Tareas pendientes para próxima sesión
+
+1. **P1-07 perfiles de directorio** — Karen debe crear Doctoralia / PsychologyToday / LinkedIn y compartir URLs
+2. **P1-03 Navbar** — añadir enlace a `/valoracion-chetumal` cuando Karen confirme la dirección
+3. **CHETUMAL_ADDRESS** — Karen debe proveer la dirección real del consultorio en Chetumal (`valoracion-chetumal.tsx:18`)
+4. **P1-01 og:image landscape** — crear 8 imágenes 1200×630 para páginas de servicio
+5. **P2-06 enlaces internos en blog** — enlace contextual en cada artículo hacia la página de evaluación correspondiente
 
 ---
 
@@ -318,7 +280,7 @@ Ver `.agents/marketing-audit-2026-06-27.md` → Entregable 5 para estructura com
 3. Copy emocional específico: "No es falta de voluntad. Puede ser tu cerebro"
 4. 47 reseñas con nombres propios — prueba social verificable
 5. Precios publicados — diferenciador de transparencia vs competencia
-6. Blog con 11 artículos, hero images propias 1200×675, og:image corregidas en meta tags
+6. Blog con 11 artículos, hero images propias 1200×675, og:image corregidas en Article schema
 
 ---
 
