@@ -273,7 +273,7 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 | ID | Problema | Estado | Notas |
 |----|----------|--------|-------|
-| P1-01 | og:image en páginas de servicio (retrato 465×533 vs 1200×630) | ⏳ Pendiente | HTML con 14 prompts Gemini generado (`prompts-gemini-imagenes.html`). Karen generará las imágenes; cuando las entregue, colocar en `/public/` (9 OG 1200×630) y `/public/blog/` (5 hero 1200×675) y actualizar meta tags. |
+| P1-01 | og:image en páginas de servicio (retrato 465×533 vs 1200×630) | ✅ Hecho | 9 OG images (1200×630) en `/public/`, 5 blog hero SVGs (1200×675) en `/public/blog/`. Meta tags actualizados en las 9 páginas. Referencia rota `lavender-para-escuelas-640x400.svg` corregida → `lavender-servicio-640x400.svg`. |
 | P1-02 | Article schema `image` → hero SVG del artículo | ✅ Hecho | 11 artículos actualizados; `dateModified: '2026-06-17'` corregido en artículos con fechas 2025 |
 | P1-03 | `/valoracion-chetumal` página huérfana | ✅ Parcial | Añadida a `sitemap.xml` (priority 0.85, changefreq weekly). Falta enlace en Navbar. Dirección real aún pendiente de Karen (línea 18 de valoracion-chetumal.tsx) |
 | P1-04 | Speakable schema — IDs verificados | ✅ Verificado | Los 4 IDs existen en JSX: `que-es-neuropsicologia`, `diferenciadores`, `karen-perfil`, `preguntas-frecuentes` — sin cambios requeridos |
@@ -313,7 +313,14 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 ### Tareas pendientes para próxima sesión
 
-1. **P1-01 og:image** — Karen generará 14 imágenes con Gemini (HTML de prompts listo). Al recibirlas: colocar en `/public/` y `/public/blog/`, actualizar meta tags `og:image`, `og:image:width: "1200"`, `og:image:height: "630"` en 9 páginas.
+1. **LIMPIEZA DEL REPO** — eliminar archivos y carpetas que no son necesarios. Candidatos identificados:
+   - 14 imágenes huérfanas en `public/blog/` (versiones antiguas, nunca referenciadas en código):
+     `2b1f47-autismo-nivel-1-600x340.svg`, `5b4e7f-burnout-vs-tdah-600x340.svg`, `5b4e7f-tdah-adultos-600x340.svg`,
+     `blush-ados-2-600x340.svg`, `blush-autismo-tea-640x400.svg`, `blush-costo-autismo-600x340.svg`,
+     `dark-cancun-600x340.svg`, `f8f7fc-tdah-vs-ansiedad-600x340.svg`, `lavender-tdah-adultos-640x400.svg`,
+     `lavender-tdah-en-ninas-600x340.svg`, `lavender-tdah-en-ninos-900x500.svg`, `lavender-tdah-inatento-600x340.svg`,
+     `lavender-tdah-infantil-640x400.svg`, `sand-costo-tdah-600x340.svg`
+   - Revisar si hay otras carpetas o archivos raíz innecesarios (scripts temporales, docs de planificación, etc.)
 2. **P1-07 perfiles de directorio** — Karen debe crear Doctoralia / PsychologyToday / LinkedIn y compartir URLs para añadir a `sameAs` en schema Physician
 3. **P1-03 Navbar** — añadir enlace a `/valoracion-chetumal` cuando Karen confirme la dirección
 4. **CHETUMAL_ADDRESS** — Karen debe proveer la dirección real del consultorio en Chetumal (`valoracion-chetumal.tsx:18`)
