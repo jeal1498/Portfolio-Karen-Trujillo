@@ -462,7 +462,7 @@ export default function DiferenciaTDAHTrastornoAprendizaje() {
                 </Link>
                 <Link href="/para-escuelas" className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-md transition-all group">
                   <img
-                    src="/blog/lavender-para-escuelas-640x400.svg"
+                    src="/blog/lavender-servicio-640x400.svg"
                     alt="Información para escuelas — evaluación neuropsicológica"
                     width={640}
                     height={400}
