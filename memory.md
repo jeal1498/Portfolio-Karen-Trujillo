@@ -41,6 +41,24 @@
 - ✅ 3 scripts de video para Facebook (sección 5 del doc) — listos para grabar
 - ✅ Brief visual de campaña (sección 6 del doc) — paleta, tipografía, estructura visual
 
+### Auditoría completa aplicada (2026-06-28)
+
+Todos los issues P0 de la campaña fueron corregidos y pusheados a `main`:
+
+- ✅ FAQ item 3 reescrito — eliminada mención a tier Básico (el schema FAQPage también quedó limpio)
+- ✅ "Los tres niveles" → "Ambos niveles" en intro de pricing
+- ✅ Subtítulo hero menciona fecha y "sin necesidad de hacer el viaje"
+- ✅ Anticipo en tarjeta: "50% al reservar · 50% en la primera sesión"
+- ✅ Badge de urgencia más visible (text-[9px] → text-[10px] sm:text-xs)
+- ✅ CTA secundario hero legible (text-[9px] → text-xs)
+- ✅ Dirección placeholder ya no se expone al usuario — muestra "Se confirma al reservar vía WhatsApp"
+- ✅ Label "Máximo alcance diagnóstico" en tarjetas Completo de los 3 tabs
+- ✅ Nueva FAQ: "¿Cuándo recibo el informe?" (total: 7 items)
+- ✅ Schema: organizer tipado como ['Person','Physician'] + medicalSpecialty
+- ✅ Schema: offers con url, validFrom, validThrough
+- ✅ Meta tags geo.position e ICBM para localidad Chetumal
+- ✅ propuesta-campana-chetumal.md: Script 2 corregido (WISC-V → CUMANES), carrusel slide 5 ($2,800 → $3,900), Script 3 con apertura de contexto para Facebook
+
 ### Para publicar la landing solo falta 1 dato
 
 ```typescript
@@ -267,7 +285,7 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 1. **P1-07 perfiles de directorio** — Karen debe crear Doctoralia / PsychologyToday / LinkedIn y compartir URLs
 2. **P1-03 Navbar** — añadir enlace a `/valoracion-chetumal` cuando Karen confirme la dirección
-3. **CHETUMAL_ADDRESS** — Karen debe proveer la dirección real del consultorio en Chetumal (`valoracion-chetumal.tsx:18`)
+3. **CHETUMAL_ADDRESS** — Karen debe proveer la dirección real del consultorio en Chetumal (`valoracion-chetumal.tsx:18`) — mientras llega, la tarjeta muestra "Se confirma al reservar vía WhatsApp"
 4. **P1-01 og:image landscape** — crear 8 imágenes 1200×630 para páginas de servicio
 5. **P2-06 enlaces internos en blog** — enlace contextual en cada artículo hacia la página de evaluación correspondiente
 
