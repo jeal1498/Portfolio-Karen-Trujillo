@@ -804,6 +804,47 @@ export default function AutismoCancunFunnel() {
           {/* ══════════════════════════════════════════════════════
               4 · PROCESO — 5 phases
               ══════════════════════════════════════════════════════ */}
+          {/* ══════════════════════════════════════════════════════
+              ¿Por qué viajar a Cancún? — ADOS-2 disponibilidad
+              ══════════════════════════════════════════════════════ */}
+          <section id="por-que-cancun" className="py-14 sm:py-16 bg-secondary border-y border-border scroll-mt-24">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Disponibilidad regional</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-6 text-center text-balance">
+                  ¿Por qué muchas familias viajan a Cancún para esta evaluación?
+                </h2>
+                <div className="space-y-4 text-muted-foreground font-light leading-relaxed">
+                  <p>
+                    El <strong className="text-primary font-semibold">ADOS-2</strong> —el instrumento de mayor precisión diagnóstica para autismo en el mundo— requiere entrenamiento certificado específico y materiales propietarios de alto costo.
+                  </p>
+                  <p>
+                    No está disponible en todas las clínicas ni con todos los psicólogos. En la Riviera Maya y la Península de Yucatán, la oferta es muy limitada.
+                  </p>
+                  <p>
+                    Karen Trujillo es una de las pocas neuropsicólogas de la región con formación específica en la aplicación del ADOS-2. Familias de{' '}
+                    <strong className="text-primary font-semibold">Playa del Carmen, Tulum, Mérida</strong> y otras ciudades coordinan sus visitas a Cancún para acceder a esta evaluación.
+                  </p>
+                  <p>
+                    El diagnóstico obtenido aquí tiene la misma validez clínica que el de cualquier clínica especializada de CDMX o Monterrey.
+                  </p>
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3 justify-center">
+                  <a
+                    href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20me%20interesa%20la%20evaluaci%C3%B3n%20de%20autismo%20con%20ADOS-2.%20%C2%BFTienen%20disponibilidad%3F`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl hover:opacity-90 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Consultar disponibilidad
+                  </a>
+                  <p className="w-full text-center text-xs text-muted-foreground/60 mt-1">Respuesta por WhatsApp en menos de 2 horas</p>
+                </div>
+              </SectionReveal>
+            </div>
+          </section>
+
           <section id="proceso-evaluacion" className="py-14 sm:py-20 bg-card">
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
