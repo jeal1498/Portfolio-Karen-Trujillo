@@ -100,7 +100,7 @@ const Footer = () => (
             </li>
             <li>
               <a
-                href={waUrl('Hola Karen, me interesa agendar una valoración')}
+                href={waUrl('Hola Karen, me interesa agendar una valoración neuropsicológica. ¿Cuál es la disponibilidad?')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-sans text-[0.875rem] font-bold text-[#25d366]"

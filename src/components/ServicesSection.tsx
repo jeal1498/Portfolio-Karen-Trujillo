@@ -1,7 +1,7 @@
 import { Zap, Network, FileCheck, ArrowRight, CheckCircle2, UserCheck, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { WA_NUMBER } from '@/lib/contact';
+import { waUrl } from '@/lib/contact';
 import { CEDULA } from '@/lib/site';
 
 const evaluaciones = [
@@ -14,7 +14,7 @@ const evaluaciones = [
     instruments: ['CONNERS', 'EDAH', 'WISC-V', 'CUMANIN'],
     bgColor: 'bg-accent-blue/20',
     accentBar: 'bg-accent-blue/50',
-    message: 'Hola%20Karen,%20me%20interesa%20la%20valoración%20de%20TDAH%20infantil',
+    message: 'Hola Karen, me interesa la valoración de TDAH infantil para mi hijo/a. ¿Cuál es la disponibilidad?',
   },
   {
     icon: UserCheck,
@@ -25,7 +25,7 @@ const evaluaciones = [
     instruments: ['DIVA 2.0', 'Conners Adultos', 'Cribado TDAH', 'IDARE'],
     bgColor: 'bg-accent-sand',
     accentBar: 'bg-accent-sand',
-    message: 'Hola%20Karen,%20me%20interesa%20la%20valoración%20de%20TDAH%20en%20adultos',
+    message: 'Hola Karen, me interesa la valoración de TDAH adultos para mí. ¿Cuál es la disponibilidad?',
   },
   {
     icon: Network,
@@ -36,7 +36,7 @@ const evaluaciones = [
     instruments: ['ADOS-2', 'ADI-R', 'AQ-10', 'WISC-V'],
     bgColor: 'bg-accent-pink/30',
     accentBar: 'bg-accent-pink/60',
-    message: 'Hola%20Karen,%20me%20interesa%20el%20diagnóstico%20de%20Autismo%20TEA',
+    message: 'Hola Karen, me interesa la evaluación de Autismo (TEA). ¿Cuál es la disponibilidad?',
   },
 ];
 
@@ -107,7 +107,7 @@ const ServicesSection = () => {
                     Ver proceso completo
                   </Link>
                   <a
-                    href={`https://wa.me/${WA_NUMBER}?text=${ev.message}`}
+                    href={waUrl(ev.message)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-3 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all text-center"
@@ -155,7 +155,7 @@ const ServicesSection = () => {
 
             <div className="text-center mt-10">
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20quiero%20información%20sobre%20el%20proceso%20de%20valoración`}
+                href={waUrl('Hola Karen, me interesa agendar una valoración neuropsicológica. ¿Cuál es la disponibilidad?')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-2xl hover:opacity-90 transition-all shadow-lg"
@@ -186,7 +186,7 @@ const ServicesSection = () => {
               <p className="text-muted-foreground text-sm font-light">Atención psicológica para ansiedad, depresión, duelo, estrés y manejo emocional. Sesiones de 50–60 min, presenciales y virtuales.</p>
             </div>
             <a
-              href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20me%20interesa%20una%20sesión%20de%20psicoterapia`}
+              href={waUrl('Hola Karen, me interesa agendar una sesión de psicoterapia. ¿Cuál es la disponibilidad?')}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"
@@ -213,7 +213,7 @@ const ServicesSection = () => {
               <p className="text-muted-foreground text-sm font-light">Valoraciones clínicas con cédula federal {CEDULA} para trámites escolares, laborales, legales e institucionales. Incluye certificado de mascota de apoyo emocional.</p>
             </div>
             <a
-              href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20necesito%20un%20certificado%20clínico`}
+              href={waUrl('Hola Karen, necesito un certificado clínico. ¿Podrías orientarme sobre el proceso?')}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-dark transition-colors"

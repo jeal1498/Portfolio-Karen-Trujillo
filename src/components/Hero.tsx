@@ -1,6 +1,6 @@
 import { ArrowRight, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { WA_NUMBER } from '@/lib/contact';
+import { waUrl } from '@/lib/contact';
 import { CEDULA, KAREN_IMAGE_PATH, REVIEWS } from '@/lib/site';
 
 const Hero = () => {
@@ -88,7 +88,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
             <a
-              href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20me%20interesa%20agendar%20una%20valoración`}
+              href={waUrl('Hola Karen, vi tu página y me interesa agendar una valoración neuropsicológica. ¿Podrías orientarme sobre el proceso y la disponibilidad?')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-primary hover:opacity-90 text-primary-foreground py-4 px-10 rounded-2xl font-bold text-xs shadow-xl shadow-primary/25 hover:shadow-2xl hover:-translate-y-1 transition-all uppercase tracking-widest flex items-center justify-center gap-2"

@@ -7,7 +7,7 @@ import FloatingButtons from '@/components/FloatingButtons';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import TableOfContents from '@/components/TableOfContents';
 import { motion } from 'framer-motion';
-import { WA_NUMBER } from '@/lib/contact';
+import { waUrl, WA_NUMBER } from '@/lib/contact';
 import { CEDULA, KAREN_IMAGE_PATH } from '@/lib/site';
 
 interface RelatedArticle {
@@ -42,7 +42,7 @@ const BlogLayout = ({
   children,
   relatedArticles = [],
   ctaText = 'Agendar Valoración',
-  ctaMessage = 'Hola%20Karen,%20le%C3%AD%20tu%20blog%20y%20me%20gustar%C3%ADa%20agendar%20una%20valoraci%C3%B3n',
+  ctaMessage = encodeURIComponent('Hola Karen, leí tu blog y me gustaría agendar una valoración neuropsicológica. ¿Cuál es la disponibilidad?'),
   accentColor = 'blue',
 }: BlogLayoutProps) => {
   const [readingMode, setReadingMode] = useState(false);

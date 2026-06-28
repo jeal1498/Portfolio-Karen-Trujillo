@@ -82,7 +82,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href={waUrl('Hola Karen, me interesa agendar una valoración')}
+              href={waUrl('Hola Karen, me interesa agendar una valoración neuropsicológica. ¿Cuál es la disponibilidad?')}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Agendar cita por WhatsApp"
@@ -146,7 +146,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href={waUrl('Hola Karen, me interesa agendar una valoración')}
+              href={waUrl('Hola Karen, me interesa agendar una valoración neuropsicológica. ¿Cuál es la disponibilidad?')}
               target="_blank"
               rel="noopener noreferrer"
               role="menuitem"

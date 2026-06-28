@@ -1,6 +1,6 @@
 import { Phone, MessageCircle } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { PHONE_E164, WA_NUMBER } from '@/lib/contact';
+import { PHONE_E164, waUrl } from '@/lib/contact';
 
 const FloatingButtons = () => {
   const shouldReduce = useReducedMotion();
@@ -21,7 +21,7 @@ const FloatingButtons = () => {
           <Phone className="w-4 h-4" /> Llamar
         </a>
         <a
-          href={`https://wa.me/${WA_NUMBER}?text=Hola%20Psicóloga%20Karen,%20vengo%20de%20tu%20web%20y%20me%20gustaría%20agendar%20una%20sesión`}
+          href={waUrl('Hola Karen, vi tu página y me interesa agendar una valoración neuropsicológica. ¿Cuál es la disponibilidad?')}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-[1.5] bg-whatsapp hover:opacity-90 text-primary-foreground py-4 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl flex items-center justify-center gap-2 whatsapp-pulse active:scale-95"
@@ -32,7 +32,7 @@ const FloatingButtons = () => {
 
       {/* Desktop floating WhatsApp button */}
       <a
-        href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta`}
+        href={waUrl('Hola Karen, vi tu página y me interesa agendar una valoración neuropsicológica. ¿Cuál es la disponibilidad?')}
         target="_blank"
         rel="noopener noreferrer"
         className="hidden lg:flex fixed bottom-8 right-8 z-[100] w-14 h-14 bg-[#25D366] rounded-full items-center justify-center shadow-xl hover:scale-110 transition-transform"
