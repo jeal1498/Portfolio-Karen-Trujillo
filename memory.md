@@ -198,6 +198,36 @@ Se diseñó un blueprint completo para el módulo de baterías de evaluación ne
 
 ---
 
+## Optimización CRO — WhatsApp (2026-06-28)
+
+### Mensajes optimizados en componentes compartidos
+
+| Componente | Problema | Fix |
+|---|---|---|
+| `FloatingButtons.tsx` | "sesión"/"consulta" — terminología de terapia | "valoración neuropsicológica. ¿Cuál es la disponibilidad?" + migrado a `waUrl()` |
+| `Hero.tsx` | Genérico sin siguiente paso | Añade "¿Podrías orientarme sobre el proceso y la disponibilidad?" + migrado a `waUrl()` |
+| `Navbar.tsx` (x2) | Sin llamada a acción | Añade "¿Cuál es la disponibilidad?" |
+| `Footer.tsx` | Genérico | Añade "¿Cuál es la disponibilidad?" |
+| `FAQSection.tsx` | URL hardcodeada con encoding manual | `waUrl()` + contexto "acabo de leer las preguntas frecuentes" |
+| `ServicesSection.tsx` | Sin contexto de paciente, encoding inconsistente | TDAH niños → "para mi hijo/a", TDAH adultos → "para mí", todo a `waUrl()` |
+| `BlogLayout.tsx` | Encoding incompleto en default | `encodeURIComponent()` completo + "¿Cuál es la disponibilidad?" |
+
+### FloatingButtons añadido a 9 páginas que no lo tenían
+
+`index.tsx` · `evaluacion-tdah-ninos.tsx` · `evaluacion-tdah-adultos.tsx` · `evaluacion-autismo-cancun.tsx` · `neuropsicologia-cancun.tsx` · `neuropsicologia-zona-hotelera-cancun.tsx` · `blog/tdah-adultos-diagnostico-tardio.tsx` · `blog/que-es-ados-2-autismo.tsx` · `blog/senales-tdah-ninos.tsx`
+
+### Patrón de mensaje correcto (respetar en futuros CTAs)
+
+```
+"Hola Karen, [contexto de dónde vienen o qué leyeron]. [Qué quieren + para quién]. ¿Cuál es la disponibilidad?"
+```
+
+- Siempre usar `waUrl()` de `@/lib/contact` — nunca URLs hardcodeadas con `%20`
+- Nunca usar "sesión" o "consulta" para las evaluaciones neuropsicológicas
+- Incluir contexto de paciente cuando se conoce (hijo/a vs adulto vs TEA)
+
+---
+
 ## Skills de Marketing Instalados (2026-06-27)
 
 Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` con symlinks en `.claude/skills/`. Estos son los únicos relevantes para un sitio clínico de consulta.
