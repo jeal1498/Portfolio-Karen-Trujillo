@@ -312,7 +312,7 @@ export default function DondeEvaluarTDAHCancun() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl font-serif font-bold text-primary mb-4">Cómo es el proceso en el consultorio de Karen Trujillo</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-8">
-                  El consultorio está ubicado en SM200 M49 L2, Hacienda de Chinconcuac, Cancún, Quintana Roo. Karen atiende niños de 5-17 años y adultos de 18 en adelante. El proceso completo se organiza en 5 pasos:
+                  El consultorio está ubicado en SM200 M49 L2, Hacienda de Chinconcuac, Cancún, Quintana Roo. Karen atiende niños de 5-17 años con la <Link href="/evaluacion-tdah-ninos" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">evaluación neuropsicológica de TDAH infantil</Link> y adultos de 18 en adelante con la <Link href="/evaluacion-tdah-adultos" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">evaluación de TDAH para adultos</Link>. El proceso completo se organiza en 5 pasos:
                 </p>
                 <div className="space-y-4 mb-10">
                   {procesoKaren.map((item, i) => (

@@ -427,7 +427,7 @@ export default function TDAHInatento() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl font-serif font-bold text-primary mb-4">¿Cómo se diagnostica el TDAH inatento?</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-6">
-                  El diagnóstico de TDAH inatento requiere una evaluación neuropsicológica completa — no basta con una entrevista ni con cuestionarios aislados. La neuropsicóloga Karen Trujillo (cédula {CEDULA}) utiliza instrumentos estandarizados internacionales que miden objetivamente la atención, la memoria de trabajo y las funciones ejecutivas.
+                  El diagnóstico de TDAH inatento requiere una evaluación neuropsicológica completa — no basta con una entrevista ni con cuestionarios aislados. La neuropsicóloga Karen Trujillo (cédula {CEDULA}) utiliza instrumentos estandarizados internacionales que miden objetivamente la atención, la memoria de trabajo y las funciones ejecutivas. Puedes ver el proceso completo en la página de <Link href="/evaluacion-tdah-ninos" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">evaluación de TDAH infantil</Link> (5–17 años) o en la de <Link href="/evaluacion-tdah-adultos" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">evaluación de TDAH adulto</Link> (18+).
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   <div className="bg-card border border-border rounded-xl p-5">

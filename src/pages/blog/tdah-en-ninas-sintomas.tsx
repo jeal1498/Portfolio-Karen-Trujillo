@@ -263,7 +263,10 @@ export default function TDAHNinas() {
                 </div>
 
                 {/* Consecuencias */}
-                <h2 className="text-2xl font-serif font-bold text-primary mb-6">¿Qué pasa cuando no se diagnostica a tiempo?</h2>
+                <h2 className="text-2xl font-serif font-bold text-primary mb-4">¿Qué pasa cuando no se diagnostica a tiempo?</h2>
+                <p className="text-muted-foreground font-light leading-relaxed text-sm mb-6">
+                  El diagnóstico temprano cambia la trayectoria. Si reconoces estas señales en tu hija, considera <Link href="/evaluacion-tdah-ninos" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">solicitar una evaluación neuropsicológica de TDAH</Link> — es el único método que puede confirmar o descartar el diagnóstico con instrumentos estandarizados.
+                </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-12">
                   {consecuencias.map((c) => (
                     <div key={c.titulo} className="p-5 bg-secondary rounded-xl border border-border">

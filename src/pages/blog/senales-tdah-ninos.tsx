@@ -422,7 +422,7 @@ export default function SenalesTDAHNinos() {
                     Y tiene sentido, todos los niños son distraídos en algún momento. Todos se mueven, todos interrumpen. La diferencia entre un comportamiento típico de la infancia y una señal real de TDAH está en tres factores: <strong className="text-primary font-semibold">la intensidad</strong> (qué tan fuerte es), <strong className="text-primary font-semibold">la frecuencia</strong> (qué tan seguido ocurre) y <strong className="text-primary font-semibold">el impacto</strong> (cuánto afecta su vida escolar, social o familiar).
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm sm:text-base">
-                    Esta guía te va a ayudar a identificar las señales que justifican una evaluación profesional. No para que diagnostiques a tu hijo en casa — sino para que sepas cuándo buscar ayuda con datos, no con dudas.
+                    Esta guía te va a ayudar a identificar las señales que justifican una evaluación profesional. No para que diagnostiques a tu hijo en casa — sino para que sepas cuándo buscar ayuda con datos, no con dudas. Si las señales te resultan familiares, el siguiente paso es <Link href="/evaluacion-tdah-ninos" className="text-primary font-semibold underline decoration-primary/30 hover:decoration-primary transition-all">agendar una evaluación neuropsicológica de TDAH infantil</Link>.
                   </p>
                 </div>
               </SectionReveal>
