@@ -553,9 +553,8 @@ export default function QueEsAdos2Autismo() {
         {/* STICKY CTA — Mobile */}
         <div data-sticky-cta="" className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${showStickyCta ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
           <div className="bg-card/95 backdrop-blur-lg border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-3">
-            <div className="flex gap-2.5 max-w-lg mx-auto">
-              <Link href="/evaluacion-autismo-cancun" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"><Puzzle className="w-4 h-4" />Evaluar TEA</Link>
-              <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola Karen, leí tu guía sobre ADOS-2 y me gustaría orientación sobre la evaluación de autismo.')}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-whatsapp text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"><MessageCircle className="w-4 h-4" />WhatsApp</a>
+            <div className="max-w-lg mx-auto">
+              <Link href="/evaluacion-autismo-cancun" className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest rounded-xl shadow-md active:scale-[0.97] transition-all"><Puzzle className="w-4 h-4" />Evaluar TEA</Link>
             </div>
           </div>
         </div>
