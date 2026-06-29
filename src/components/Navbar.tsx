@@ -55,13 +55,15 @@ const Navbar = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none" style={{ textDecoration: 'none' }}>
-            <span className={`font-serif text-xl leading-none transition-colors duration-300 ${dark ? 'text-white' : 'text-[#433860]'}`}>
-              Karen Trujillo
-            </span>
-            <span className={`font-sans text-[0.625rem] font-bold tracking-[0.12em] uppercase mt-0.5 transition-colors duration-300 ${dark ? 'text-white/65' : 'text-[#515e71]'}`}>
-              Neuropsicóloga
-            </span>
+          <Link href="/" aria-label="Karen Trujillo — Neuropsicóloga Clínica" style={{ textDecoration: 'none' }}>
+            <img
+              src="/logo-karen-trujillo.svg"
+              alt="Karen Trujillo"
+              width={180}
+              height={68}
+              className="transition-all duration-300"
+              style={{ filter: dark ? 'brightness(0) invert(1)' : 'none' }}
+            />
           </Link>
 
           {/* Desktop nav */}
