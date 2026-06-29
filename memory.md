@@ -311,6 +311,10 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 ---
 
+### Tareas completadas recientemente
+
+- ✅ **README.md** — generado con 12 secciones: título, demo, stack, estructura, páginas, componentes, local dev, variables de entorno, guías de contribución, design system, SEO y docs relacionados. Mergeado a `main` el 2026-06-29.
+
 ### Tareas pendientes para próxima sesión
 
 1. **LIMPIEZA DEL REPO** — eliminar archivos y carpetas que no son necesarios. Candidatos identificados:
