@@ -205,7 +205,7 @@ export default function Precios() {
         <meta property="og:title" content="Precios — Neuropsicóloga Karen Trujillo Cancún" />
         <meta property="og:description" content="Valoración TDAH $8,300 MXN · Evaluación TEA $8,500 MXN. Precio todo incluido: sesiones, pruebas e informe oficial." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/og-precios.jpg" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/og-precios.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />

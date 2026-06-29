@@ -288,7 +288,7 @@ export default function ValoracionChetumal() {
         <meta property="og:title" content="Valoración TDAH y Autismo en Chetumal · Campaña Temporal" />
         <meta property="og:description" content={`${MAX_SLOTS} cupos. La neuropsicóloga Karen Trujillo estará en Chetumal. Desde $3,900 MXN. Cédula ${CEDULA}.`} />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/og-chetumal.jpg" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/og-chetumal.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
