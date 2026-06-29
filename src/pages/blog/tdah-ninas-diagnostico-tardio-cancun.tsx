@@ -120,7 +120,7 @@ const schema = {
       '@id': `${CANONICAL_URL}/#article`,
       headline: ARTICLE_HEADLINE,
       description: 'Las niñas con TDAH suelen pasar desapercibidas porque sus síntomas son diferentes. Aprende a reconocer el TDAH inatento en niñas y por qué el diagnóstico temprano cambia su trayectoria.',
-      image: `${SITE_URL}/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.svg`,
+      image: `${SITE_URL}/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.png`,
       datePublished: '2026-07-14',
       dateModified: '2026-07-14',
       author: {
@@ -229,7 +229,7 @@ export default function TDAHNinasDiagnosticoTardio() {
         <meta property="og:title" content={ARTICLE_HEADLINE} />
         <meta property="og:description" content="Las niñas con TDAH pasan años desapercibidas. Sus síntomas son diferentes: más internos, más compensados. Guía clínica para reconocer el TDAH inatento en niñas." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="TDAH en niñas: diagnóstico tardío y señales de alerta" />
@@ -239,7 +239,7 @@ export default function TDAHNinasDiagnosticoTardio() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${ARTICLE_HEADLINE} | Karen Trujillo`} />
         <meta name="twitter:description" content="Las niñas con TDAH llevan años siendo catalogadas de distraídas o ansiosas. Sus síntomas son reales — solo son diferentes. Guía clínica para reconocerlos." />
-        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.png`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -322,7 +322,7 @@ export default function TDAHNinasDiagnosticoTardio() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.svg"
+                    src="/blog/dark-tdah-en-ninas-diagnostico-tardio-1200x675.png"
                     alt="TDAH en niñas: por qué se diagnostica tarde — imagen ilustrativa"
                     width={1200}
                     height={675}
