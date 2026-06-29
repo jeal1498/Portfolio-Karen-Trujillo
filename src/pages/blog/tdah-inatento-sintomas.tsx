@@ -203,17 +203,17 @@ export default function TDAHInatento() {
         <main>
 
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2e2545' }}>
             <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
             <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
-                  <li><Link href="/" className="hover:text-[#d0d0e7] transition-colors">Inicio</Link></li>
+                  <li><Link href="/" className="hover:text-[#c6bce2] transition-colors">Inicio</Link></li>
                   <li>/</li>
-                  <li><Link href="/blog" className="hover:text-[#d0d0e7] transition-colors">Blog</Link></li>
+                  <li><Link href="/blog" className="hover:text-[#c6bce2] transition-colors">Blog</Link></li>
                   <li>/</li>
-                  <li className="font-medium" style={{ color: '#d0d0e7' }}>TDAH inatento</li>
+                  <li className="font-medium" style={{ color: '#c6bce2' }}>TDAH inatento</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -240,7 +240,7 @@ export default function TDAHInatento() {
           <section className="px-6 -mt-8 relative z-10">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(67,56,96,0.25)]">
                   <img
                     src="/blog/dark-tdah-inatento-1200x675.svg"
                     alt="TDAH inatento: el tipo que casi nadie detecta — imagen ilustrativa"
@@ -312,7 +312,7 @@ export default function TDAHInatento() {
           <section className="py-12 px-6 bg-card">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                   <img
                     src="/blog/sand-tdah-en-ninos-960x540.svg"
                     alt="Niño con TDAH inatento en el salón de clases — imagen ilustrativa"
@@ -386,7 +386,7 @@ export default function TDAHInatento() {
           <section className="py-12 px-6 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                   <img
                     src="/blog/lavender-diagnostico-tardio-960x540.svg"
                     alt="Por qué el TDAH inatento se detecta tan tarde — imagen ilustrativa"

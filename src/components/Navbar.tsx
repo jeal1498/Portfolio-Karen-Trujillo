@@ -48,20 +48,22 @@ const Navbar = () => {
       <div
         className={`transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/96 backdrop-blur-md shadow-[0_1px_16px_rgba(56,47,81,0.09)]'
+            ? 'bg-white/96 backdrop-blur-md shadow-[0_1px_16px_rgba(67,56,96,0.09)]'
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none" style={{ textDecoration: 'none' }}>
-            <span className={`font-serif text-xl leading-none transition-colors duration-300 ${dark ? 'text-white' : 'text-[#382f51]'}`}>
-              Karen Trujillo
-            </span>
-            <span className={`font-sans text-[0.625rem] font-bold tracking-[0.12em] uppercase mt-0.5 transition-colors duration-300 ${dark ? 'text-white/65' : 'text-[#515e71]'}`}>
-              Neuropsicóloga
-            </span>
+          <Link href="/" aria-label="Karen Trujillo — Neuropsicóloga Clínica" style={{ textDecoration: 'none' }}>
+            <img
+              src="/logo-karen-trujillo.svg"
+              alt="Karen Trujillo"
+              width={180}
+              height={68}
+              className="transition-all duration-300"
+              style={{ filter: dark ? 'brightness(0) invert(1)' : 'none' }}
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -73,8 +75,8 @@ const Navbar = () => {
                 onClick={(e) => handleAnchorClick(e, link.href)}
                 className={`font-sans font-medium text-sm transition-colors duration-200 ${
                   dark
-                    ? 'text-white/88 hover:text-[#d0d0e7]'
-                    : 'text-[#382f51] hover:text-[#5b4e7f]'
+                    ? 'text-white/88 hover:text-[#c6bce2]'
+                    : 'text-[#433860] hover:text-[#6b5f8a]'
                 }`}
                 style={{ textDecoration: 'none' }}
               >
@@ -88,8 +90,8 @@ const Navbar = () => {
               aria-label="Agendar cita por WhatsApp"
               className={`font-sans text-[0.8rem] font-bold tracking-[0.08em] uppercase px-5 py-2 rounded-lg border transition-all duration-200 ${
                 dark
-                  ? 'bg-white/15 text-white border-white/40 hover:bg-white hover:text-[#382f51] hover:border-white'
-                  : 'bg-[#382f51] text-white border-[#382f51] hover:bg-[#5b4e7f] hover:border-[#5b4e7f]'
+                  ? 'bg-white/15 text-white border-white/40 hover:bg-white hover:text-[#433860] hover:border-white'
+                  : 'bg-[#433860] text-white border-[#433860] hover:bg-[#6b5f8a] hover:border-[#6b5f8a]'
               }`}
               style={{ textDecoration: 'none' }}
             >
@@ -104,15 +106,15 @@ const Navbar = () => {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             className={`md:hidden p-2.5 rounded-xl border-0 cursor-pointer transition-colors ${
-              dark ? 'bg-white/10' : 'bg-[#382f51]/10'
+              dark ? 'bg-white/10' : 'bg-[#433860]/10'
             }`}
           >
             {isMenuOpen ? (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={dark ? 'white' : '#382f51'} strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={dark ? 'white' : '#433860'} strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                 <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={dark ? 'white' : '#382f51'} strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={dark ? 'white' : '#433860'} strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                 <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             )}
@@ -131,7 +133,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: prefersReduced ? 1 : 0 }}
             transition={{ duration: 0.18 }}
-            className="md:hidden border-t border-[#d0d0e7] bg-white/[0.98]"
+            className="md:hidden border-t border-[#c6bce2] bg-white/[0.98]"
           >
             {NAV_LINKS.map((link) => (
               <a
@@ -139,7 +141,7 @@ const Navbar = () => {
                 href={resolveHref(link.href)}
                 role="menuitem"
                 onClick={(e) => handleAnchorClick(e, link.href)}
-                className="block px-6 py-4 font-sans font-medium text-[0.9rem] text-[#382f51] border-b border-[#382f51]/[0.06] hover:bg-[#f8f7fc] transition-colors"
+                className="block px-6 py-4 font-sans font-medium text-[0.9rem] text-[#433860] border-b border-[#433860]/[0.06] hover:bg-[#f8f7fc] transition-colors"
                 style={{ textDecoration: 'none' }}
               >
                 {link.label}

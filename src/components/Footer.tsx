@@ -31,7 +31,7 @@ const SOCIAL_LINKS: { href: string; label: string; Icon: ComponentType<{ classNa
 
 const FooterCol = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div>
-    <p className="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-[#d0d0e7]/50 mb-4">
+    <p className="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-[#c6bce2]/50 mb-4">
       {title}
     </p>
     {children}
@@ -49,7 +49,7 @@ const FooterLink = ({ href, className = '', children }: { href: string; classNam
 );
 
 const Footer = () => (
-  <footer style={{ background: '#2b1f47' }} role="contentinfo">
+  <footer style={{ background: '#2e2545' }} role="contentinfo">
     <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-14 border-b border-white/10">
@@ -57,10 +57,10 @@ const Footer = () => (
         {/* Brand */}
         <div>
           <p className="font-serif text-[1.35rem] text-white mb-1 leading-none">Karen Trujillo</p>
-          <p className="font-sans text-[0.75rem] font-bold tracking-[0.06em] uppercase text-[#d0d0e7]/60 mb-3 mt-1">
+          <p className="font-sans text-[0.75rem] font-bold tracking-[0.06em] uppercase text-[#c6bce2]/60 mb-3 mt-1">
             Neuropsicóloga en Cancún
           </p>
-          <p className="font-sans text-[0.8rem] text-[#d0d0e7]/55">Cédula Federal {CEDULA}</p>
+          <p className="font-sans text-[0.8rem] text-[#c6bce2]/55">Cédula Federal {CEDULA}</p>
           <p className="text-amber-400 text-[0.85rem] tracking-[0.05em] mt-1">★★★★★ {REVIEWS.ratingValue}</p>
         </div>
 
@@ -121,7 +121,7 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${label} de Karen Trujillo`}
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-[#d0d0e7]/70 hover:text-white hover:bg-white/10 transition-colors"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-[#c6bce2]/70 hover:text-white hover:bg-white/10 transition-colors"
                   >
                     <Icon className="w-[18px] h-[18px]" />
                   </a>
@@ -135,7 +135,7 @@ const Footer = () => (
 
       {/* Copyright */}
       <div className="py-5 text-center">
-        <p className="font-sans text-[0.78rem] text-[#d0d0e7]/40 m-0">
+        <p className="font-sans text-[0.78rem] text-[#c6bce2]/40 m-0">
           © 2025 Karen Trujillo. Todos los derechos reservados.
         </p>
       </div>
