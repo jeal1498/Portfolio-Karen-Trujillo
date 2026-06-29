@@ -20,7 +20,7 @@ const FloatingButtons = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-4 z-[100] flex flex-col items-end gap-2.5 lg:bottom-8 lg:right-8">
+    <div className="fixed bottom-6 right-4 z-[60] flex flex-col items-end gap-2.5 lg:bottom-8 lg:right-8">
       {/* WhatsApp bubble */}
       <motion.a
         href={waUrl(WA_MSG)}
