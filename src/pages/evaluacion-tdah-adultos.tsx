@@ -1375,7 +1375,7 @@ export default function TDAHAdultosFunnel() {
 
         {/* ── Mobile sticky CTA — CSS transitions instead of Framer Motion ── */}
         <div
-          className={`fixed bottom-0 left-0 right-0 z-[100] px-4 pb-5 lg:hidden bg-gradient-to-t from-background via-background/95 to-transparent pt-8 transition-all duration-350 ${
+          data-sticky-cta="" className={`fixed bottom-0 left-0 right-0 z-[100] px-4 pb-5 lg:hidden bg-gradient-to-t from-background via-background/95 to-transparent pt-8 transition-all duration-350 ${
             heroCTAInView ? 'opacity-0 translate-y-12 pointer-events-none' : 'opacity-100 translate-y-0'
           }`}
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}

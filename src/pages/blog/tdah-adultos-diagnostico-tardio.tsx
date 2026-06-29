@@ -1004,7 +1004,7 @@ export default function TDAHAdultosDiagnosticoTardio() {
             STICKY CTA — Mobile only
             ══════════════════════════════════════════════════════ */}
         <div
-          className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${showStickyCta ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
+          data-sticky-cta="" className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${showStickyCta ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
         >
           <div className="bg-card/95 backdrop-blur-lg border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-3">
