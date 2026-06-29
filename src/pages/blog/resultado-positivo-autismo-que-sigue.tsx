@@ -117,7 +117,7 @@ const schema = {
       '@id': `${CANONICAL_URL}/#article`,
       headline: ARTICLE_HEADLINE,
       description: 'Recibir el diagnóstico de autismo puede generar alivio y angustia al mismo tiempo. Conoce los pasos concretos que siguen: qué significa el nivel de apoyo, qué terapias existen y cómo explicárselo a tu hijo.',
-      image: `${SITE_URL}/blog/dark-despues-del-diagnostico-autismo-1200x675.svg`,
+      image: `${SITE_URL}/blog/dark-despues-del-diagnostico-autismo-1200x675.png`,
       datePublished: '2026-08-11',
       dateModified: '2026-08-11',
       author: {
@@ -183,7 +183,7 @@ export default function ResultadoPositivoAutismoQueSigue() {
         <meta property="og:title" content="Mi hijo tiene autismo: ¿qué sigue después del diagnóstico TEA?" />
         <meta property="og:description" content="Recibir el diagnóstico de autismo puede generar alivio y angustia al mismo tiempo. Conoce los pasos concretos que siguen: niveles de apoyo, terapias, escuela y cómo hablar con tu hijo." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={`${SITE_URL}/blog/dark-despues-del-diagnostico-autismo-1200x675.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-despues-del-diagnostico-autismo-1200x675.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Karen Trujillo, neuropsicóloga en Cancún — qué sigue después del diagnóstico de autismo" />
@@ -192,7 +192,7 @@ export default function ResultadoPositivoAutismoQueSigue() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Mi hijo tiene autismo: ¿qué sigue después del diagnóstico TEA? | Karen Trujillo" />
         <meta name="twitter:description" content="Diagnóstico de autismo: qué significan los niveles de apoyo, qué terapias existen y cómo hablar con tu hijo. Guía práctica de Karen Trujillo, Cancún." />
-        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-despues-del-diagnostico-autismo-1200x675.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-despues-del-diagnostico-autismo-1200x675.png`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
       <div className="antialiased selection:bg-accent-blue selection:text-primary pb-24 lg:pb-0">
@@ -237,7 +237,7 @@ export default function ResultadoPositivoAutismoQueSigue() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="/blog/dark-despues-del-diagnostico-autismo-1200x675.svg"
+                    src="/blog/dark-despues-del-diagnostico-autismo-1200x675.png"
                     alt="Qué sigue después del diagnóstico de autismo — imagen ilustrativa"
                     width={1200}
                     height={675}

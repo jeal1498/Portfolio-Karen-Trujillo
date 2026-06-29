@@ -254,7 +254,7 @@ export default function ParaEscuelas() {
           content="Evaluaciones de TDAH, autismo para alumnos en Cancún. Informe con validez SEP, cuestionarios para maestros incluidos y recomendaciones pedagógicas específicas."
         />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/og-para-escuelas.jpg" />
+        <meta property="og:image" content="https://www.psicologakarentrujillo.com.mx/og-para-escuelas.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Neuropsicóloga Karen Trujillo — Especialista en TDAH y Autismo en Cancún" />

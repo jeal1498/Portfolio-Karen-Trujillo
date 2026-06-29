@@ -166,7 +166,7 @@ const schema = {
       '@id': `${CANONICAL_URL}/#article`,
       headline: 'Evaluación neuropsicológica para adultos en Cancún: qué incluye y cómo agendarla',
       description: 'Si crees que puedes tener TDAH, autismo o simplemente quieres entender mejor cómo funciona tu cerebro, una evaluación neuropsicológica para adultos te da respuestas con evidencia. Karen Trujillo, Cancún.',
-      image: `${SITE_URL}/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.svg`,
+      image: `${SITE_URL}/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.png`,
       datePublished: '2026-09-01',
       dateModified: '2026-09-01',
       author: {
@@ -278,7 +278,7 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
         <meta property="og:title" content="Evaluación neuropsicológica para adultos en Cancún: qué incluye y cómo agendarla" />
         <meta property="og:description" content="Si crees que puedes tener TDAH, autismo o simplemente quieres entender mejor cómo funciona tu cerebro, una evaluación neuropsicológica para adultos te da respuestas con evidencia. Karen Trujillo, Cancún." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={`${SITE_URL}/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Evaluación neuropsicológica para adultos en Cancún — Karen Trujillo, Neuropsicóloga" />
@@ -288,7 +288,7 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Evaluación neuropsicológica adultos Cancún | Karen Trujillo" />
         <meta name="twitter:description" content="¿Crees que puedes tener TDAH? Una evaluación neuropsicológica para adultos te da respuestas con evidencia. Proceso, instrumentos y precio en Cancún." />
-        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.png`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -373,7 +373,7 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.svg"
+                    src="/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.png"
                     alt="Evaluación neuropsicológica para adultos en Cancún — imagen ilustrativa"
                     width={1200}
                     height={675}
