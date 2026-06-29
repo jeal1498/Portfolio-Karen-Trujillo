@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="100%" height="100%">
+  <defs>
+    <path id="textArcTop" d="M 202,64 A 38,38 0 0,1 278,64" fill="none" />
+  </defs>
+
+  <g font-family="'Outfit', 'Helvetica Neue', sans-serif" fill="#433860">
+    <text x="25" y="56" font-weight="700" font-size="26" letter-spacing="0.5">KAREN</text>
+    <text x="25" y="86" font-weight="700" font-size="26" letter-spacing="0.5">TRUJILLO</text>
+  </g>
+
+  <g transform="translate(0, 0)">
+    <text font-family="'Outfit', 'Helvetica Neue', sans-serif" font-weight="400" font-size="6.8" fill="#433860" letter-spacing="1.2">
+      <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+        NEUROPSICÓLOGA CLÍNICA
+      </textPath>
+    </text>
+
+    <circle cx="240" cy="64" r="38" fill="none" stroke="#433860" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
+
+    <path d="M 222,98 C 225,90 230,83 236,79 C 237.5,78 238.5,79 237.5,81 C 233,86 229,92 227,98" fill="none" stroke="#433860" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 231,83 C 233,82 235.5,83 237.5,85" fill="none" stroke="#433860" stroke-width="1" stroke-linecap="round"/>
+
+    <path d="M 237,80 Q 238.5,67 241,52" fill="none" stroke="#433860" stroke-width="1.2" stroke-linecap="round"/>
+    <circle cx="241" cy="52" r="1.8" fill="#433860"/>
+
+    <g stroke="#433860" stroke-width="0.8" stroke-linecap="round">
+      <path d="M 241,52 L 234,45" />
+      <path d="M 241,52 L 232,52" />
+      <path d="M 241,52 L 235,59" />
+      <path d="M 241,52 L 241,43" />
+      <path d="M 241,52 L 248,45" />
+      <path d="M 241,52 L 250,52" />
+      <path d="M 241,52 L 247,59" />
+
+      <path d="M 232,44 L 234,45 L 235,42" fill="none" />
+      <path d="M 230,52 L 232,52 L 231,50" fill="none" />
+      <path d="M 233,61 L 235,59 L 237,61" fill="none" />
+      <path d="M 239,41 L 241,43 L 243,41" fill="none" />
+      <path d="M 250,43 L 248,45 L 247,42" fill="none" />
+      <path d="M 252,52 L 250,52 L 251,54" fill="none" />
+      <path d="M 249,61 L 247,59 L 245,61" fill="none" />
+    </g>
+
+    <g stroke="#433860" stroke-width="0.7" stroke-linecap="round" fill="none">
+      <path d="M 256,38 L 260,34" />
+      <path d="M 258,32 L 260,34 L 262,33" />
+      <path d="M 265,45 L 269,42" />
+      <path d="M 268,39 L 269,42 L 271,41" />
+      <path d="M 259,25 L 262,21" />
+      <path d="M 260,19 L 262,21 L 264,20" />
+    </g>
+
+    <g fill="#433860">
+      <path d="M 216,42 Q 216,45 213,45 Q 216,45 216,48 Q 216,45 219,45 Q 216,45 216,42 Z" />
+      <path d="M 264,70 Q 264,72 262,72 Q 264,72 264,74 Q 264,72 266,72 Q 264,72 264,70 Z" />
+      <path d="M 226,28 Q 226,29 225,29 Q 226,29 226,30 Q 226,29 227,29 Q 226,29 226,28 Z" />
+    </g>
+  </g>
+</svg>
