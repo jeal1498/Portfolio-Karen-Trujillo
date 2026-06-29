@@ -1,45 +1,58 @@
 ---
 name: Karen Trujillo — Neuropsicóloga en Cancún
 description: Sitio clínico de consultoría neuropsicológica para diagnóstico de TDAH y autismo en Cancún
+brandbook:
+  version: "1.0"
+  tagline: "Neuropsicóloga Clínica"
+  pantone-primary: "P 97-15 C"
 colors:
-  plum-ink: "#382f51"
-  plum-medium: "#5b4e7f"
-  plum-deep: "#2b1f47"
+  # Color primario de marca (Pantone P 97-15 C)
+  plum-ink: "#433860"
+  plum-medium: "#6b5f8a"
+  plum-deep: "#2e2545"
+  # Colores secundarios del brandbook
+  lavender-mist: "#c6bce2"
+  blush: "#f9dee3"
+  warm-sand: "#f5e7d6"
+  blue-gray: "#e1e9ea"
+  # Tonos logo (variantes de identidad)
+  logo-lavender: "#b4abd6"
+  logo-blush: "#eac7ce"
+  logo-sand: "#ead0b5"
+  logo-teal: "#bfd6d8"
+  # Neutros
   quiet-white: "#fafafa"
   surface: "#ffffff"
   surface-muted: "#f1f5f9"
-  lavender-mist: "#d0d0e7"
-  blush: "#fbdbe0"
-  warm-sand: "#f5dfc5"
   ink-secondary: "#515e71"
   border-subtle: "#e2e8f0"
   success-teal: "#10b77f"
   whatsapp-green: "#25d366"
 typography:
   display:
-    fontFamily: "Playfair Display, Georgia, serif"
+    fontFamily: "Outfit, sans-serif"
     fontSize: "clamp(2rem, 5vw, 3.75rem)"
     fontWeight: 700
     lineHeight: 1.05
     letterSpacing: "-0.01em"
   headline:
-    fontFamily: "Playfair Display, Georgia, serif"
+    fontFamily: "Outfit, sans-serif"
     fontSize: "clamp(1.875rem, 4vw, 2.25rem)"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.01em"
   title:
-    fontFamily: "Montserrat, sans-serif"
+    fontFamily: "Maven Pro, sans-serif"
     fontSize: "1.25rem"
     fontWeight: 700
     lineHeight: 1.5
   body:
-    fontFamily: "Montserrat, sans-serif"
+    fontFamily: "Maven Pro, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.7
   label:
-    fontFamily: "Montserrat, sans-serif"
+    fontFamily: "Maven Pro, sans-serif"
     fontSize: "0.625rem"
     fontWeight: 700
     lineHeight: 1.5
@@ -113,17 +126,25 @@ Este sistema rechaza explícitamente: las clínicas genéricas con fotos de stoc
 
 ## 2. Colors
 
-La paleta está construida sobre un único ancla cromática, el ciruela oscuro, con superficies neutras y acentos muy desaturados para las categorías de servicio.
+La paleta está definida por el brandbook oficial de Karen Trujillo (Pantone P 97-15 C como color primario). Está construida sobre un único ancla cromática violeta profunda, con cuatro colores secundarios pastel y cuatro tonos adicionales del logo.
 
 ### Primary
-- **Plum Ink** (`#382f51`): Color de marca principal. Headings, texto de cuerpo en sobre-fondo oscuro, fondo de la sección bio, CTAs principales. Es el color que transmite autoridad clínica.
-- **Plum Medium** (`#5b4e7f`): Extremo claro del gradiente primario. Usado exclusivamente en el gradiente del botón principal y el fondo de la sección "Sobre Karen". No se usa como color sólido de fondo en superficies grandes.
-- **Plum Deep** (`#2b1f47`): Variante de mayor contraste, reservada para el estado hover del botón primario y elementos que requieren máximo peso visual.
+- **Plum Ink** (`#433860`): Color primario de marca — Pantone P 97-15 C / CMYK C85 M94 Y21 K8. Headings, texto sobre fondos oscuros, CTAs principales, fondo de sección bio. Es el único color saturado del sistema.
+- **Plum Medium** (`#6b5f8a`): Extremo claro del gradiente primario. Usado exclusivamente en gradientes de botón y sección "Sobre Karen". No se usa como color sólido en superficies grandes.
+- **Plum Deep** (`#2e2545`): Variante de máximo contraste, reservada para hover de botón primario y elementos de máximo peso visual.
 
-### Secondary
-- **Lavender Mist** (`#d0d0e7`): Tinta de acento para la categoría TDAH infantil. Muy desaturada — funciona como tono de fondo, nunca como color de texto sobre blanco.
-- **Blush** (`#fbdbe0`): Tinta de acento para la categoría Autismo (TEA). Mismo nivel de desaturación que Lavender Mist.
-- **Warm Sand** (`#f5dfc5`): Tinta de acento para la categoría TDAH Adultos en variantes secundarias. Más cálido que los otros dos acentos.
+### Secondary (brandbook oficial)
+- **Lavender Mist** (`#c6bce2`): Acento para la categoría TDAH infantil. CMYK C19 M26 Y0 K0. Solo como tono de fondo — nunca como texto sobre blanco.
+- **Blush** (`#f9dee3`): Acento para la categoría Autismo (TEA). CMYK C0 M16 Y3 K0. Mismo uso restringido que Lavender Mist.
+- **Warm Sand** (`#f5e7d6`): Acento para la categoría TDAH Adultos. CMYK C2 M9 Y15 K0. Más cálido que los otros dos acentos.
+- **Blue Gray** (`#e1e9ea`): Cuarto acento. CMYK C12 M3 Y6 K0. Uso en fondos de secciones informativas neutras.
+
+### Logo Tones (variantes de identidad de marca)
+Estos cuatro tonos son las variaciones del logo en el brandbook. No se usan como colores de fondo del sitio, solo en el logo y material de marca:
+- **Logo Lavender** (`#b4abd6`)
+- **Logo Blush** (`#eac7ce`)
+- **Logo Sand** (`#ead0b5`)
+- **Logo Teal** (`#bfd6d8`)
 
 ### Neutral
 - **Quiet White** (`#fafafa`): Fondo base de todo el sitio. No es blanco puro — tiene una calidez imperceptible que evita la frialdad clínica.
@@ -140,22 +161,27 @@ La paleta está construida sobre un único ancla cromática, el ciruela oscuro, 
 
 ## 3. Typography
 
-**Display Font:** Playfair Display (con Georgia, serif como fallback)
-**Body Font:** Montserrat (con sans-serif como fallback)
+**Display/Headline Font:** Outfit (sans-serif — brandbook oficial)
+**Body/UI Font:** Maven Pro (sans-serif — brandbook oficial)
 
-**Character:** Playfair Display trae autoridad editorial y calidez humana — el tipo de fuente que uno asocia con publicaciones médicas serias, no con apps. Montserrat es moderna, geométrica y completamente legible, incluso en tamaños pequeños y pesos ligeros. Juntas comunican "especialista que también es persona".
+**Character:** Outfit es geométrica y moderna con personalidad propia — más cálida que Montserrat, menos formal que una serif, perfecta para una especialista que quiere ser accesible sin perder autoridad. Maven Pro tiene excelente legibilidad en cuerpo de texto y combina naturalmente con Outfit al compartir su ADN geométrico. Juntas comunican "profesional contemporánea y cercana".
+
+**Google Fonts import:**
+```
+https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Maven+Pro:wght@400;500;700&display=swap
+```
 
 ### Hierarchy
 
-- **Display** (Playfair 700, `clamp(2rem, 5vw, 3.75rem)`, lh 1.05, ls -0.01em): Hero h1 únicamente. Máximo 6rem absoluto — por encima de eso el sitio grita.
-- **Headline** (Playfair 700, `clamp(1.875rem, 4vw, 2.25rem)`, lh 1.2, ls -0.01em): Titulares de sección (h2). Siempre con `text-wrap: balance`.
-- **Title** (Montserrat 700, `1.25rem`, lh 1.5): Títulos de tarjeta y subtítulos de componente (h3). Sans deliberado — crea contraste con los h2 serif.
-- **Body** (Montserrat 400, `1rem` sobre base 17px = ~17px efectivos, lh 1.7): Todo el texto descriptivo. Máximo 75ch de ancho. `text-wrap: pretty` para párrafos largos.
-- **Label** (Montserrat 700, `0.625rem`, lh 1.5, ls 0.12em, uppercase): Eyebrows de sección, badges de categoría, etiquetas de CTA. Uso muy restringido — máximo una instancia por sección.
+- **Display** (Outfit 700, `clamp(2rem, 5vw, 3.75rem)`, lh 1.05, ls -0.01em): Hero h1 únicamente. Máximo 6rem absoluto.
+- **Headline** (Outfit 700, `clamp(1.875rem, 4vw, 2.25rem)`, lh 1.2, ls -0.01em): Titulares de sección (h2). Siempre con `text-wrap: balance`.
+- **Title** (Maven Pro 700, `1.25rem`, lh 1.5): Títulos de tarjeta y subtítulos de componente (h3).
+- **Body** (Maven Pro 400, `1rem` sobre base 17px, lh 1.7): Todo el texto descriptivo. Máximo 75ch de ancho. `text-wrap: pretty` para párrafos largos.
+- **Label** (Maven Pro 700, `0.625rem`, lh 1.5, ls 0.12em, uppercase): Eyebrows de sección, badges de categoría, etiquetas de CTA. Uso muy restringido — máximo una instancia por sección.
 
 ### Named Rules
 
-**La Regla del Serif para lo Importante.** Playfair Display se reserva para h1 y h2 de sección. Nunca para body copy, labels, ni botones. Su rareza en el sistema es lo que le da peso.
+**La Regla de Outfit para Headings.** Outfit se reserva para h1 y h2 de sección. Su rareza en el sistema es lo que le da peso.
 
 **La Regla del Weight Contrast.** El único size step válido entre niveles adyacentes de jerarquía es ≥1.25x. Si dos niveles de heading se ven similares, uno de ellos sobra.
 
