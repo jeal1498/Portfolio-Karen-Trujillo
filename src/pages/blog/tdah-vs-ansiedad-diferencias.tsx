@@ -168,21 +168,21 @@ export default function TDAHvsAnsiedad() {
         <main>
 
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2e2545' }}>
             <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
             <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
-                  <li><Link href="/" className="transition-colors hover:text-[#d0d0e7]" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
+                  <li><Link href="/" className="transition-colors hover:text-[#c6bce2]" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
                   <li>/</li>
-                  <li><Link href="/blog" className="transition-colors hover:text-[#d0d0e7]" style={{ color: 'rgba(208,208,231,0.7)' }}>Blog</Link></li>
+                  <li><Link href="/blog" className="transition-colors hover:text-[#c6bce2]" style={{ color: 'rgba(208,208,231,0.7)' }}>Blog</Link></li>
                   <li>/</li>
-                  <li className="font-medium" style={{ color: '#d0d0e7' }}>TDAH vs Ansiedad</li>
+                  <li className="font-medium" style={{ color: '#c6bce2' }}>TDAH vs Ansiedad</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full mb-4 text-xs font-bold uppercase tracking-widest" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#d0d0e7' }}>
+                <span className="inline-flex items-center px-3 py-1 rounded-full mb-4 text-xs font-bold uppercase tracking-widest" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#c6bce2' }}>
                   Diagnóstico diferencial
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
@@ -205,7 +205,7 @@ export default function TDAHvsAnsiedad() {
           <section className="px-6 -mt-8 relative z-10">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(67,56,96,0.25)]">
                   <img
                     src="/blog/dark-tdah-o-ansiedad-1200x675.svg"
                     alt="¿TDAH o ansiedad? Cómo saber cuál es cuál — o si son los dos — imagen ilustrativa"
@@ -293,7 +293,7 @@ export default function TDAHvsAnsiedad() {
           <section className="py-12 px-6 bg-secondary border-t border-border">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                   <img
                     src="/blog/sand-sintomas-compartidos-960x540.svg"
                     alt="Síntomas compartidos entre TDAH y ansiedad — imagen ilustrativa"
@@ -368,7 +368,7 @@ export default function TDAHvsAnsiedad() {
           <section className="py-12 px-6 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                   <img
                     src="/blog/lavender-evaluacion-neuropsicologica-960x540.svg"
                     alt="Evaluación neuropsicológica para diagnóstico diferencial de TDAH y ansiedad — imagen ilustrativa"

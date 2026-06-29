@@ -307,9 +307,9 @@ function SectionReveal({ children, className = '', delay = 0 }: { children: Reac
 
 /* ─── service badge colours (match HTML prototype) ─── */
 const svcBadge = [
-  { bg: '#d0d0e7', color: '#382f51', hoverBorder: '#d0d0e7cc' },
-  { bg: '#f5dfc5', color: '#6b4e1a', hoverBorder: '#f5dfc5cc' },
-  { bg: '#fbdbe0', color: '#7a3040', hoverBorder: '#fbdbe0cc' },
+  { bg: '#c6bce2', color: '#433860', hoverBorder: '#c6bce2cc' },
+  { bg: '#f5e7d6', color: '#6b4e1a', hoverBorder: '#f5e7d6cc' },
+  { bg: '#f9dee3', color: '#7a3040', hoverBorder: '#f9dee3cc' },
 ];
 
 /* ─── about section credential list ─── */
@@ -379,7 +379,7 @@ export default function Home() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
-      <div className="antialiased w-full min-w-0 overflow-x-hidden" style={{ color: '#382f51', background: '#fff' }}>
+      <div className="antialiased w-full min-w-0 overflow-x-hidden" style={{ color: '#433860', background: '#fff' }}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:font-bold focus:text-sm">
           Saltar al contenido principal
         </a>
@@ -394,7 +394,7 @@ export default function Home() {
             id="inicio"
             aria-label="Presentación principal"
             className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-            style={{ background: '#2b1f47', paddingTop: '72px' }}
+            style={{ background: '#2e2545', paddingTop: '72px' }}
           >
             {/* Radial glow decorations */}
             <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
@@ -499,9 +499,9 @@ export default function Home() {
                     {/* Photo badge */}
                     <div
                       className="absolute bg-white rounded-2xl"
-                      style={{ bottom: '24px', left: '-20px', padding: '14px 18px', minWidth: '210px', boxShadow: '0 8px 32px rgba(56,47,81,0.22)' }}
+                      style={{ bottom: '24px', left: '-20px', padding: '14px 18px', minWidth: '210px', boxShadow: '0 8px 32px rgba(67,56,96,0.22)' }}
                     >
-                      <p className="text-[11px] font-bold tracking-wide mb-1" style={{ color: '#5b4e7f' }}>Cédula {CEDULA} · SEP</p>
+                      <p className="text-[11px] font-bold tracking-wide mb-1" style={{ color: '#6b5f8a' }}>Cédula {CEDULA} · SEP</p>
                       <div className="flex gap-0.5 mb-1" aria-label="5 estrellas">
                         {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
                       </div>
@@ -536,7 +536,7 @@ export default function Home() {
                   { number: CEDULA,     label: 'Cédula Federal SEP',        mono: true  },
                 ].map((stat) => (
                   <div key={stat.label} className="flex flex-col items-center justify-center py-5 px-4 text-center">
-                    <span className={`font-serif font-bold leading-none ${stat.mono ? 'text-lg sm:text-2xl' : 'text-[2.25rem]'}`} style={{ color: '#382f51' }}>
+                    <span className={`font-serif font-bold leading-none ${stat.mono ? 'text-lg sm:text-2xl' : 'text-[2.25rem]'}`} style={{ color: '#433860' }}>
                       {stat.number}
                     </span>
                     <span className="text-[10px] font-semibold tracking-widest mt-2 uppercase" style={{ color: '#515e71' }}>
@@ -571,11 +571,11 @@ export default function Home() {
           <section id="servicios" aria-labelledby="servicios-heading" className="py-20 scroll-mt-20" style={{ background: '#f8f7fc' }}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-center mb-2" style={{ color: '#5b4e7f' }}>Evaluaciones disponibles</p>
-                <h2 id="servicios-heading" className="font-serif font-bold text-center leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center mb-2" style={{ color: '#6b5f8a' }}>Evaluaciones disponibles</p>
+                <h2 id="servicios-heading" className="font-serif font-bold text-center leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
                   Evaluaciones especializadas
                 </h2>
-                <div className="w-10 h-0.5 rounded-full mx-auto mb-5" style={{ background: '#5b4e7f' }} />
+                <div className="w-10 h-0.5 rounded-full mx-auto mb-5" style={{ background: '#6b5f8a' }} />
                 <p className="text-base font-light text-center max-w-xl mx-auto mb-12" style={{ color: '#515e71' }}>
                   Cada evaluación usa instrumentos estandarizados internacionales y genera un informe con validez oficial.
                 </p>
@@ -586,9 +586,9 @@ export default function Home() {
                   <SectionReveal key={service.slug} delay={i * 0.1}>
                     <div
                       className="bg-white rounded-2xl p-7 flex flex-col transition-all duration-250 hover:-translate-y-1 group"
-                      style={{ border: '1px solid rgba(56,47,81,0.07)', '--hover-border': svcBadge[i].hoverBorder } as React.CSSProperties}
+                      style={{ border: '1px solid rgba(67,56,96,0.07)', '--hover-border': svcBadge[i].hoverBorder } as React.CSSProperties}
                       onMouseEnter={(e) => (e.currentTarget.style.border = `1px solid ${svcBadge[i].hoverBorder}`)}
-                      onMouseLeave={(e) => (e.currentTarget.style.border = '1px solid rgba(56,47,81,0.07)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.border = '1px solid rgba(67,56,96,0.07)')}
                     >
                       <span
                         className="inline-block text-[11px] font-bold tracking-widest uppercase rounded-full px-3 py-1.5 mb-4 w-fit"
@@ -596,7 +596,7 @@ export default function Home() {
                       >
                         {service.label}
                       </span>
-                      <h3 className="font-serif font-bold text-xl mb-1" style={{ color: '#382f51' }}>{service.title}</h3>
+                      <h3 className="font-serif font-bold text-xl mb-1" style={{ color: '#433860' }}>{service.title}</h3>
                       <p className="text-xs font-bold mb-4" style={{ color: '#515e71', letterSpacing: '0.02em' }}>
                         {service.age}&nbsp;&nbsp;·&nbsp;&nbsp;{service.price}
                       </p>
@@ -608,7 +608,7 @@ export default function Home() {
                           <span
                             key={test}
                             className="text-[11px] font-bold px-2.5 py-1 rounded-md"
-                            style={{ background: '#f8f7fc', color: '#5b4e7f', border: '1px solid rgba(91,78,127,0.15)' }}
+                            style={{ background: '#f8f7fc', color: '#6b5f8a', border: '1px solid rgba(91,78,127,0.15)' }}
                           >
                             {test}
                           </span>
@@ -617,9 +617,9 @@ export default function Home() {
                       <Link
                         href={service.slug}
                         className="block text-center text-xs font-bold uppercase tracking-widest py-2.5 px-5 rounded-lg transition-all hover:text-white"
-                        style={{ color: '#382f51', border: '1.5px solid #382f51' }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#382f51'; (e.currentTarget as HTMLElement).style.color = '#fff'; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#382f51'; }}
+                        style={{ color: '#433860', border: '1.5px solid #433860' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#433860'; (e.currentTarget as HTMLElement).style.color = '#fff'; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#433860'; }}
                       >
                         Ver evaluación
                       </Link>
@@ -636,9 +636,9 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-xl transition-all"
-                    style={{ border: '2px solid rgba(56,47,81,0.2)', color: '#382f51' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.5)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.2)')}
+                    style={{ border: '2px solid rgba(67,56,96,0.2)', color: '#433860' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(67,56,96,0.5)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(67,56,96,0.2)')}
                   >
                     <MessageCircle className="w-4 h-4" aria-hidden="true" />
                     Orientación gratuita por WhatsApp
@@ -655,11 +655,11 @@ export default function Home() {
           <section id="proceso" aria-labelledby="proceso-heading" className="py-20 bg-white">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Paso a paso</p>
-                <h2 id="proceso-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Paso a paso</p>
+                <h2 id="proceso-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
                   ¿Cómo es el proceso?
                 </h2>
-                <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: '#5b4e7f' }} />
+                <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: '#6b5f8a' }} />
                 <p className="text-base font-light max-w-[52ch] mb-14" style={{ color: '#515e71', lineHeight: '1.7' }}>
                   Un proceso claro en cuatro pasos, desde la primera consulta hasta el informe final.
                 </p>
@@ -700,7 +700,7 @@ export default function Home() {
                     <div className="grid" style={{ gridTemplateColumns: '72px 1fr', gap: '1.5rem', paddingBottom: i < arr.length - 1 ? '2.5rem' : 0 }}>
                       {/* Number + connector */}
                       <div style={{ position: 'relative' }}>
-                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#d0d0e7', lineHeight: '1' }}>{step.n}</div>
+                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#c6bce2', lineHeight: '1' }}>{step.n}</div>
                         {i < arr.length - 1 && (
                           <div
                             style={{
@@ -716,7 +716,7 @@ export default function Home() {
                       </div>
                       {/* Content */}
                       <div style={{ paddingTop: '0.25rem' }}>
-                        <h3 className="font-bold mb-2" style={{ fontSize: '1.1rem', color: '#382f51' }}>
+                        <h3 className="font-bold mb-2" style={{ fontSize: '1.1rem', color: '#433860' }}>
                           {step.title}{' '}
                           {step.subtitle && <span className="font-normal text-sm" style={{ color: '#515e71' }}>{step.subtitle}</span>}
                         </h3>
@@ -724,7 +724,7 @@ export default function Home() {
                         {step.duration && (
                           <span
                             className="inline-block text-xs font-semibold rounded-full mt-2.5"
-                            style={{ color: '#5b4e7f', background: '#f8f7fc', border: '1px solid #d0d0e7', padding: '4px 12px', letterSpacing: '0.06em' }}
+                            style={{ color: '#6b5f8a', background: '#f8f7fc', border: '1px solid #c6bce2', padding: '4px 12px', letterSpacing: '0.06em' }}
                           >
                             {step.duration}
                           </span>
@@ -773,7 +773,7 @@ export default function Home() {
           {/* ══════════════════════════════════════════════════════
               7 · ABOUT — dark plum, photo + credentials list
               ══════════════════════════════════════════════════════ */}
-          <section id="sobre-mi" aria-labelledby="sobre-heading" className="py-20 scroll-mt-20" style={{ background: '#2b1f47' }}>
+          <section id="sobre-mi" aria-labelledby="sobre-heading" className="py-20 scroll-mt-20" style={{ background: '#2e2545' }}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
@@ -820,7 +820,7 @@ export default function Home() {
                           className="flex items-center justify-center shrink-0 mt-0.5 rounded-full"
                           style={{ width: '20px', height: '20px', background: 'rgba(208,208,231,0.14)' }}
                         >
-                          <svg viewBox="0 0 12 12" fill="none" stroke="#d0d0e7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '11px', height: '11px' }} aria-hidden="true">
+                          <svg viewBox="0 0 12 12" fill="none" stroke="#c6bce2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '11px', height: '11px' }} aria-hidden="true">
                             <polyline points="2,6 5,9 10,3" />
                           </svg>
                         </div>
@@ -851,33 +851,33 @@ export default function Home() {
           <section id="testimonios" aria-labelledby="testimonios-heading" className="py-20" style={{ background: '#f8f7fc' }}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-center mb-2" style={{ color: '#5b4e7f' }}>Familias reales</p>
-                <h2 id="testimonios-heading" className="font-serif font-bold text-center leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-center mb-2" style={{ color: '#6b5f8a' }}>Familias reales</p>
+                <h2 id="testimonios-heading" className="font-serif font-bold text-center leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
                   Lo que dicen las familias
                 </h2>
-                <div className="w-10 h-0.5 rounded-full mx-auto mb-12" style={{ background: '#5b4e7f' }} />
+                <div className="w-10 h-0.5 rounded-full mx-auto mb-12" style={{ background: '#6b5f8a' }} />
               </SectionReveal>
 
               {/* Featured quote */}
               <SectionReveal>
                 <div
                   className="relative bg-white rounded-2xl overflow-hidden mx-auto mb-8"
-                  style={{ maxWidth: '780px', padding: '2.5rem 2.5rem 2rem', boxShadow: '0 4px 40px rgba(56,47,81,0.08)' }}
+                  style={{ maxWidth: '780px', padding: '2.5rem 2.5rem 2rem', boxShadow: '0 4px 40px rgba(67,56,96,0.08)' }}
                 >
                   <div
                     aria-hidden="true"
                     className="absolute font-serif select-none pointer-events-none leading-none"
-                    style={{ top: '0.25rem', left: '1.5rem', fontSize: '7rem', lineHeight: '1', color: '#d0d0e7', opacity: 0.65 }}
+                    style={{ top: '0.25rem', left: '1.5rem', fontSize: '7rem', lineHeight: '1', color: '#c6bce2', opacity: 0.65 }}
                   >
                     &ldquo;
                   </div>
                   <blockquote className="relative z-10" style={{ paddingTop: '1.25rem', margin: 0 }}>
-                    <p className="font-serif italic leading-relaxed mb-5" style={{ fontSize: 'clamp(1.1rem,2.5vw,1.35rem)', color: '#382f51', lineHeight: '1.65' }}>
+                    <p className="font-serif italic leading-relaxed mb-5" style={{ fontSize: 'clamp(1.1rem,2.5vw,1.35rem)', color: '#433860', lineHeight: '1.65' }}>
                       {reviews[0].text}
                     </p>
                     <footer className="flex items-center gap-3">
                       <div>
-                        <cite className="not-italic font-bold text-sm" style={{ color: '#382f51' }}>{reviews[0].name}</cite>
+                        <cite className="not-italic font-bold text-sm" style={{ color: '#433860' }}>{reviews[0].name}</cite>
                         <span className="text-sm" style={{ color: '#515e71' }}>&nbsp;·&nbsp;{reviews[0].service}</span>
                         <div className="flex gap-0.5 mt-1" aria-label="5 estrellas">
                           {[...Array(reviews[0].stars)].map((_, j) => (
@@ -896,9 +896,9 @@ export default function Home() {
                   <SectionReveal key={i} delay={i * 0.1}>
                     <article
                       className="bg-white rounded-2xl p-6 flex flex-col h-full transition-all hover:-translate-y-0.5"
-                      style={{ border: '1px solid rgba(56,47,81,0.07)', boxShadow: '0 2px 12px rgba(56,47,81,0.04)' }}
-                      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 10px 32px rgba(56,47,81,0.1)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '0 2px 12px rgba(56,47,81,0.04)')}
+                      style={{ border: '1px solid rgba(67,56,96,0.07)', boxShadow: '0 2px 12px rgba(67,56,96,0.04)' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 10px 32px rgba(67,56,96,0.1)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '0 2px 12px rgba(67,56,96,0.04)')}
                     >
                       <div className="flex gap-0.5 mb-3" aria-label={`${review.stars} estrellas`}>
                         {[...Array(review.stars)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
@@ -906,8 +906,8 @@ export default function Home() {
                       <p className="text-sm leading-relaxed mb-6 flex-1 italic" style={{ color: '#515e71', lineHeight: '1.7' }}>
                         &ldquo;{review.text}&rdquo;
                       </p>
-                      <div className="border-t pt-4" style={{ borderColor: 'rgba(56,47,81,0.07)' }}>
-                        <p className="font-bold text-sm" style={{ color: '#382f51' }}>{review.name}</p>
+                      <div className="border-t pt-4" style={{ borderColor: 'rgba(67,56,96,0.07)' }}>
+                        <p className="font-bold text-sm" style={{ color: '#433860' }}>{review.name}</p>
                         <p className="text-xs mt-0.5" style={{ color: '#515e71' }}>{review.service}</p>
                       </div>
                     </article>
@@ -925,9 +925,9 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full transition-all"
-                    style={{ color: '#382f51', border: '1px solid rgba(56,47,81,0.2)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.5)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(56,47,81,0.2)')}
+                    style={{ color: '#433860', border: '1px solid rgba(67,56,96,0.2)' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(67,56,96,0.5)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(67,56,96,0.2)')}
                   >
                     <Star className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />
                     Dejar reseña en Google
@@ -944,31 +944,31 @@ export default function Home() {
           <section id="faq" aria-labelledby="faq-heading" className="py-20 bg-white">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Dudas frecuentes</p>
-                <h2 id="faq-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Dudas frecuentes</p>
+                <h2 id="faq-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
                   Preguntas frecuentes
                 </h2>
-                <div className="w-10 h-0.5 rounded-full mb-10" style={{ background: '#5b4e7f' }} />
+                <div className="w-10 h-0.5 rounded-full mb-10" style={{ background: '#6b5f8a' }} />
               </SectionReveal>
 
               <div style={{ maxWidth: '720px' }} role="list">
                 {faqItems.map((faq, i) => (
                   <SectionReveal key={i} delay={i * 0.04}>
-                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
+                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(67,56,96,0.09)' : 'none' }}>
                       <button
                         id={`faq-btn-${i}`}
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         aria-expanded={openFaq === i}
                         aria-controls={`faq-ans-${i}`}
                         className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
-                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = '#5b4e7f')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = openFaq === i ? '#5b4e7f' : '#382f51')}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#6b5f8a' : '#433860' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#6b5f8a')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = openFaq === i ? '#6b5f8a' : '#433860')}
                       >
                         <span className="font-semibold text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>{faq.q}</span>
                         <ChevronDown
                           className="w-5 h-5 shrink-0 transition-transform duration-250"
-                          style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                          style={{ color: '#6b5f8a', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
                           aria-hidden="true"
                         />
                       </button>
@@ -1001,16 +1001,16 @@ export default function Home() {
               <SectionReveal>
                 <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Recursos y artículos</p>
-                    <h2 id="blog-heading" className="font-serif font-bold leading-tight" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                    <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Recursos y artículos</p>
+                    <h2 id="blog-heading" className="font-serif font-bold leading-tight" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
                       Del blog
                     </h2>
-                    <div className="w-10 h-0.5 rounded-full mt-3" style={{ background: '#5b4e7f' }} />
+                    <div className="w-10 h-0.5 rounded-full mt-3" style={{ background: '#6b5f8a' }} />
                   </div>
                   <Link
                     href="/blog"
                     className="text-sm font-semibold transition-opacity hover:opacity-70"
-                    style={{ color: '#5b4e7f', letterSpacing: '0.04em' }}
+                    style={{ color: '#6b5f8a', letterSpacing: '0.04em' }}
                   >
                     Ver todos los artículos →
                   </Link>
@@ -1026,8 +1026,8 @@ export default function Home() {
                   <SectionReveal key={post.href} delay={i * 0.1}>
                     <article
                       className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 group"
-                      style={{ border: '1px solid rgba(56,47,81,0.07)' }}
-                      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 10px 36px rgba(56,47,81,0.11)')}
+                      style={{ border: '1px solid rgba(67,56,96,0.07)' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 10px 36px rgba(67,56,96,0.11)')}
                       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -1044,19 +1044,19 @@ export default function Home() {
                         <div className="flex items-center gap-2 mb-3">
                           <span
                             className="text-[10px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1"
-                            style={{ background: '#f8f7fc', color: '#5b4e7f' }}
+                            style={{ background: '#f8f7fc', color: '#6b5f8a' }}
                           >
                             {post.tag}
                           </span>
                           <span className="text-xs" style={{ color: '#515e71' }}>{post.mins} min</span>
                         </div>
-                        <h3 className="font-serif font-bold leading-snug mb-4 flex-1" style={{ fontSize: '1.05rem', color: '#382f51', lineHeight: '1.4' }}>
+                        <h3 className="font-serif font-bold leading-snug mb-4 flex-1" style={{ fontSize: '1.05rem', color: '#433860', lineHeight: '1.4' }}>
                           {post.title}
                         </h3>
                         <Link
                           href={post.href}
                           className="text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70"
-                          style={{ color: '#5b4e7f', letterSpacing: '0.03em' }}
+                          style={{ color: '#6b5f8a', letterSpacing: '0.03em' }}
                         >
                           Leer artículo →
                         </Link>
@@ -1075,11 +1075,11 @@ export default function Home() {
           <section id="ubicacion" aria-labelledby="ubicacion-heading" className="py-20 bg-white border-t border-border scroll-mt-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5b4e7f' }}>Dónde encontrarnos</p>
-                <h2 id="ubicacion-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#382f51' }}>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Dónde encontrarnos</p>
+                <h2 id="ubicacion-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
                   Consultorio en Cancún
                 </h2>
-                <div className="w-10 h-0.5 rounded-full mb-10" style={{ background: '#5b4e7f' }} />
+                <div className="w-10 h-0.5 rounded-full mb-10" style={{ background: '#6b5f8a' }} />
               </SectionReveal>
 
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
@@ -1106,7 +1106,7 @@ export default function Home() {
                         Icon: MapPin,
                         label: 'Dirección',
                         content: (
-                          <p className="text-sm leading-relaxed" style={{ color: '#382f51', lineHeight: '1.6' }}>
+                          <p className="text-sm leading-relaxed" style={{ color: '#433860', lineHeight: '1.6' }}>
                             SM200 M49 L2, Hacienda de Chinconcuac<br />
                             Supermanzana Circuito casa 1587B<br />
                             Cancún, Quintana Roo · C.P. 77539
@@ -1117,7 +1117,7 @@ export default function Home() {
                         Icon: Clock,
                         label: 'Horario',
                         content: (
-                          <div className="text-sm" style={{ color: '#382f51', lineHeight: '1.65' }}>
+                          <div className="text-sm" style={{ color: '#433860', lineHeight: '1.65' }}>
                             <p>Lunes–Viernes &nbsp;9:00 – 19:00</p>
                             <p>Sábados &nbsp;9:00 – 14:00</p>
                             <p style={{ color: '#515e71' }}>Domingos: cerrado</p>
@@ -1128,7 +1128,7 @@ export default function Home() {
                         Icon: Phone,
                         label: 'Teléfono',
                         content: (
-                          <a href={`tel:${PHONE_E164}`} className="text-sm font-medium hover:underline" style={{ color: '#382f51' }}>
+                          <a href={`tel:${PHONE_E164}`} className="text-sm font-medium hover:underline" style={{ color: '#433860' }}>
                             +52 998 321 1547
                           </a>
                         ),
@@ -1137,12 +1137,12 @@ export default function Home() {
                       <div key={label} className="flex gap-4 items-start">
                         <div
                           className="flex items-center justify-center shrink-0 rounded-xl"
-                          style={{ width: '42px', height: '42px', background: '#f8f7fc', border: '1px solid #d0d0e7' }}
+                          style={{ width: '42px', height: '42px', background: '#f8f7fc', border: '1px solid #c6bce2' }}
                         >
-                          <Icon className="w-4 h-4" style={{ color: '#5b4e7f' }} aria-hidden="true" />
+                          <Icon className="w-4 h-4" style={{ color: '#6b5f8a' }} aria-hidden="true" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: '#5b4e7f' }}>{label}</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: '#6b5f8a' }}>{label}</p>
                           {content}
                         </div>
                       </div>
@@ -1154,7 +1154,7 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition-all border-2 border-border hover:border-primary/50"
-                        style={{ color: '#382f51', background: '#fff' }}
+                        style={{ color: '#433860', background: '#fff' }}
                       >
                         <Navigation className="w-4 h-4" aria-hidden="true" />
                         Cómo llegar

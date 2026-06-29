@@ -200,7 +200,7 @@ const BlogLayout = ({
                   <Link
                     key={article.href}
                     href={article.href}
-                    className="group bg-card p-5 rounded-2xl border border-border hover:border-primary/30 hover:shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)] transition-all"
+                    className="group bg-card p-5 rounded-2xl border border-border hover:border-primary/30 hover:shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)] transition-all"
                   >
                     <p className="font-bold text-sm text-primary mb-1 group-hover:underline">
                       {article.label}

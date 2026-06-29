@@ -26,7 +26,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Mobile: compact circular crop */}
-          <div className="mx-auto w-44 h-44 rounded-full overflow-hidden shadow-[0_12px_40px_-8px_rgba(56,47,81,0.25)] md:hidden">
+          <div className="mx-auto w-44 h-44 rounded-full overflow-hidden shadow-[0_12px_40px_-8px_rgba(67,56,96,0.25)] md:hidden">
             <img
               src={KAREN_IMAGE_PATH}
               alt="Neuropsicóloga Karen Trujillo, especialista en TDAH y autismo en Cancún"
@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
 
           {/* Desktop: full photo with credential overlay card */}
-          <div className="hidden md:block relative z-10 w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(56,47,81,0.30)]">
+          <div className="hidden md:block relative z-10 w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(67,56,96,0.30)]">
             <img
               src={KAREN_IMAGE_PATH}
               alt="Neuropsicóloga Karen Trujillo, especialista en valoración de TDAH y Autismo en Cancún, Quintana Roo"

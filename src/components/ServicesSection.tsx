@@ -72,7 +72,7 @@ const ServicesSection = () => {
           {evaluaciones.map((ev, index) => (
             <motion.article
               key={ev.title}
-              className="group bg-card rounded-2xl shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(56,47,81,0.15)] transition-all duration-300 hover:-translate-y-2 border border-border overflow-hidden flex flex-col h-full"
+              className="group bg-card rounded-2xl shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(67,56,96,0.15)] transition-all duration-300 hover:-translate-y-2 border border-border overflow-hidden flex flex-col h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
