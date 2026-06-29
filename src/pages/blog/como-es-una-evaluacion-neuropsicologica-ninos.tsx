@@ -121,7 +121,7 @@ const schema = {
       '@id': `${CANONICAL_URL}/#article`,
       headline: ARTICLE_HEADLINE,
       description: 'Descubre exactamente cómo es una evaluación neuropsicológica infantil: cuántas sesiones, qué hacen en cada cita, qué sienten los niños y qué reciben los padres al final.',
-      image: `${SITE_URL}/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.svg`,
+      image: `${SITE_URL}/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.png`,
       datePublished: '2026-07-07',
       dateModified: '2026-07-07',
       author: {
@@ -239,7 +239,7 @@ export default function ComoEsEvaluacionNeuropsicologicaNinos() {
         <meta property="og:title" content={ARTICLE_HEADLINE} />
         <meta property="og:description" content="Guía paso a paso de la evaluación neuropsicológica infantil: sesiones, pruebas, qué sienten los niños y qué reciben los padres al final." />
         <meta property="og:url" content={CANONICAL_URL} />
-        <meta property="og:image" content={`${SITE_URL}/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.svg`} />
+        <meta property="og:image" content={`${SITE_URL}/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:alt" content="Evaluación neuropsicológica para niños — proceso paso a paso" />
@@ -249,7 +249,7 @@ export default function ComoEsEvaluacionNeuropsicologicaNinos() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${ARTICLE_HEADLINE} | Karen Trujillo`} />
         <meta name="twitter:description" content="Guía completa: qué pasa en cada sesión de la evaluación neuropsicológica infantil, qué sienten los niños y qué incluye el informe final." />
-        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.svg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.png`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -332,7 +332,7 @@ export default function ComoEsEvaluacionNeuropsicologicaNinos() {
               <SectionReveal>
                 <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
                   <img
-                    src="/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.svg"
+                    src="/blog/dark-proceso-evaluacion-neuropsicologica-1200x675.png"
                     alt="Evaluación neuropsicológica para niños paso a paso — imagen ilustrativa"
                     width={1200}
                     height={675}
