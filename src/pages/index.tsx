@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  ArrowRight, Brain, FileText, CheckCircle2,
+  ArrowRight, FileText, CheckCircle2,
   ShieldCheck, MessageCircle, Phone, Clock, Award,
   Star, Users, CalendarCheck, Stethoscope, ChevronDown,
   Shield, BadgeCheck, Puzzle, Briefcase,
@@ -328,19 +328,6 @@ const aboutCreds = [
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [showStickyCta, setShowStickyCta] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = 600;
-      const footerCta = document.getElementById('cta-final');
-      const footerCtaTop = footerCta?.getBoundingClientRect().top ?? Infinity;
-      setShowStickyCta(window.scrollY > heroHeight && footerCtaTop > window.innerHeight);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <>
@@ -1262,35 +1249,6 @@ export default function Home() {
 
         <FloatingButtons />
         <Footer />
-
-        {/* ── Sticky CTA — mobile only, appears after hero ── */}
-        <div
-          className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${showStickyCta ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
-          style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-        >
-          <div className="bg-card/95 backdrop-blur-lg border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-3">
-            <div className="flex gap-2.5 max-w-lg mx-auto">
-              <a
-                href="#servicios"
-                onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-primary/25 text-primary font-bold text-xs uppercase tracking-widest rounded-xl hover:border-primary/60 transition-all active:scale-[0.97]"
-              >
-                <Brain className="w-4 h-4" aria-hidden="true" />
-                Servicios
-              </a>
-              <a
-                href={waUrl('Hola Karen, vi tu página y me gustaría orientación sobre qué evaluación necesito.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:opacity-90 transition-all active:scale-[0.97]"
-                style={{ background: '#25d366' }}
-              >
-                <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
 
       </div>
     </>
