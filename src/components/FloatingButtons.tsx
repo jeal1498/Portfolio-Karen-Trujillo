@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { PHONE_E164, waUrl } from '@/lib/contact';
@@ -6,6 +7,28 @@ const WA_MSG = 'Hola Karen, vi tu página y me interesa agendar una valoración 
 
 const FloatingButtons = () => {
   const shouldReduce = useReducedMotion();
+  const [ctaHeight, setCtaHeight] = useState(0);
+
+  useEffect(() => {
+    const update = () => {
+      const el = document.querySelector<HTMLElement>('[data-sticky-cta]');
+      if (!el) { setCtaHeight(0); return; }
+      // Only count height when the bar is actually translated into view
+      const transform = getComputedStyle(el).transform;
+      const isHidden = transform.includes('matrix') && transform !== 'none'
+        ? new DOMMatrix(transform).m42 > 0
+        : false;
+      setCtaHeight(isHidden ? 0 : el.offsetHeight);
+    };
+
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['class', 'style'] });
+    window.addEventListener('scroll', update, { passive: true });
+    return () => { observer.disconnect(); window.removeEventListener('scroll', update); };
+  }, []);
+
+  const bottomOffset = ctaHeight > 0 ? `calc(0.75rem + ${ctaHeight}px)` : '1.5rem';
 
   const bubbleVariants = {
     hidden: { opacity: 0, x: 24, scale: 0.85 },
@@ -20,7 +43,10 @@ const FloatingButtons = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-4 z-[60] flex flex-col items-end gap-2.5 lg:bottom-8 lg:right-8">
+    <div
+      className="fixed right-4 z-[60] flex flex-col items-end gap-2.5 lg:bottom-8 lg:right-8"
+      style={{ bottom: bottomOffset, transition: 'bottom 0.3s cubic-bezier(0.22, 1, 0.36, 1)' }}
+    >
       {/* WhatsApp bubble */}
       <motion.a
         href={waUrl(WA_MSG)}
