@@ -306,26 +306,26 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
           {/* ══════════════════════════════════════════════════════
               HERO — Article header
               ══════════════════════════════════════════════════════ */}
-          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+          <section className="relative pt-28 pb-14 sm:pb-20 px-6 overflow-hidden" style={{ background: '#2e2545' }}>
             <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
             <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
 
             <div className="max-w-3xl mx-auto relative z-10">
               {/* Breadcrumb */}
               <nav className="flex items-center gap-2 text-xs mb-8 animate-[fadeIn_0.8s_ease-out_both]" aria-label="Breadcrumb" style={{ color: 'rgba(208,208,231,0.7)' }}>
-                <Link href="/" className="hover:text-[#d0d0e7] transition-colors flex items-center gap-1">
+                <Link href="/" className="hover:text-[#c6bce2] transition-colors flex items-center gap-1">
                   <ArrowLeft className="w-3 h-3" />
                   Inicio
                 </Link>
                 <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
                 <span style={{ color: 'rgba(208,208,231,0.4)' }}>Blog</span>
                 <span style={{ color: 'rgba(208,208,231,0.4)' }}>/</span>
-                <span className="font-medium" style={{ color: '#d0d0e7' }}>Evaluación adultos Cancún</span>
+                <span className="font-medium" style={{ color: '#c6bce2' }}>Evaluación adultos Cancún</span>
               </nav>
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
-                  <BookOpen className="w-3.5 h-3.5" style={{ color: '#d0d0e7' }} />
+                  <BookOpen className="w-3.5 h-3.5" style={{ color: '#c6bce2' }} />
                   <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-white">Guía para adultos · Evaluación neuropsicológica</span>
                 </div>
 
@@ -371,7 +371,7 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
           <section className="px-6 -mt-8 relative z-10">
             <div className="max-w-3xl mx-auto">
               <SectionReveal>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(67,56,96,0.25)]">
                   <img
                     src="/blog/dark-evaluacion-neuropsicologica-adultos-1200x675.png"
                     alt="Evaluación neuropsicológica para adultos en Cancún — imagen ilustrativa"
@@ -550,7 +550,7 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
           <section className="py-12 sm:py-16 bg-card border-t border-border">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                   <img
                     src="/blog/lavender-evaluacion-neuropsicologica-960x540.svg"
                     alt="Sesión de evaluación neuropsicológica para adultos — imagen ilustrativa"
@@ -682,7 +682,7 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
           <section className="py-12 sm:py-16 bg-secondary">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                   <img
                     src="/blog/sand-vida-diaria-con-tdah-960x540.svg"
                     alt="Adulto revisando informe de evaluación neuropsicológica — imagen ilustrativa"

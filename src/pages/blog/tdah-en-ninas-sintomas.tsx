@@ -152,7 +152,7 @@ export default function TDAHNinas() {
         <Navbar />
         <main>
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2e2545' }}>
             <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
             <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
@@ -160,11 +160,11 @@ export default function TDAHNinas() {
                 <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
                   <li><Link href="/" className="transition-colors hover:text-white" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
                   <li>/</li>
-                  <li className="font-medium" style={{ color: '#d0d0e7' }}>TDAH en niñas: síntomas que casi nadie detecta</li>
+                  <li className="font-medium" style={{ color: '#c6bce2' }}>TDAH en niñas: síntomas que casi nadie detecta</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#f5dfc5', color: '#382f51' }}>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4" style={{ background: '#f5e7d6', color: '#433860' }}>
                   TDAH Femenino
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
@@ -186,7 +186,7 @@ export default function TDAHNinas() {
           <section className="px-6 -mt-8 relative z-10">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(67,56,96,0.25)]">
                   <img
                     src="/blog/dark-tdah-en-ninas-1200x675.svg"
                     alt="TDAH en niñas: síntomas que casi nadie detecta — imagen ilustrativa"
@@ -231,7 +231,7 @@ export default function TDAHNinas() {
 
                 {/* Imagen inline 1 (placeholder) */}
                 <div className="mb-12">
-                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                     <img
                       src="/blog/blush-tdah-femenino-960x540.svg"
                       alt="Niña con TDAH inatento en el ámbito escolar — imagen ilustrativa"
@@ -281,7 +281,7 @@ export default function TDAHNinas() {
 
                 {/* Imagen inline 2 (placeholder) */}
                 <div className="mb-12">
-                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(56,47,81,0.12)]">
+                  <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_24px_-6px_rgba(67,56,96,0.12)]">
                     <img
                       src="/blog/lavender-diagnostico-a-tiempo-960x540.svg"
                       alt="Evaluación neuropsicológica oportuna para niñas con TDAH — imagen ilustrativa"

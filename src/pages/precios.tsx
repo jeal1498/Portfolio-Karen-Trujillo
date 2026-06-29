@@ -219,7 +219,7 @@ export default function Precios() {
         <main>
 
           {/* ── Header ── */}
-          <section className="pt-32 pb-16 px-6" style={{ backgroundColor: '#2b1f47' }}>
+          <section className="pt-32 pb-16 px-6" style={{ backgroundColor: '#2e2545' }}>
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] mb-4" style={{ color: 'rgba(208,208,231,0.65)' }}>
                 Neuropsicóloga Karen Trujillo · Cancún · Cédula {CEDULA}
@@ -251,7 +251,7 @@ export default function Precios() {
             <div className="max-w-5xl mx-auto">
               <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
                 {evaluaciones.map((ev) => (
-                  <div key={ev.id} className="bg-card rounded-2xl border border-border overflow-hidden flex flex-col shadow-sm hover:shadow-[0_16px_48px_-12px_rgba(56,47,81,0.14)] hover:-translate-y-1 transition-all duration-300">
+                  <div key={ev.id} className="bg-card rounded-2xl border border-border overflow-hidden flex flex-col shadow-sm hover:shadow-[0_16px_48px_-12px_rgba(67,56,96,0.14)] hover:-translate-y-1 transition-all duration-300">
                     {/* Card header */}
                     <div className="p-7 border-b border-border">
                       <span className={`inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 ${ev.badgeColor}`}>{ev.badge}</span>
@@ -469,19 +469,19 @@ export default function Precios() {
 
               <div role="list">
                 {faqPrecios.map((faq, i) => (
-                  <div key={i} role="listitem" style={{ borderBottom: i < faqPrecios.length - 1 ? '1px solid rgba(56,47,81,0.09)' : 'none' }}>
+                  <div key={i} role="listitem" style={{ borderBottom: i < faqPrecios.length - 1 ? '1px solid rgba(67,56,96,0.09)' : 'none' }}>
                     <button
                       id={`faq-btn-${i}`}
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
                       aria-expanded={openFaq === i}
                       aria-controls={`faq-answer-${i}`}
                       className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
-                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#5b4e7f' : '#382f51' }}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#6b5f8a' : '#433860' }}
                     >
                       <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
                       <ChevronDown
                         className="w-5 h-5 shrink-0 transition-transform duration-250"
-                        style={{ color: '#5b4e7f', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                        style={{ color: '#6b5f8a', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
                         aria-hidden="true"
                       />
                     </button>
