@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Maven+Pro:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,18 +7,18 @@
 @layer base {
   :root {
     --background: 0 0% 98%;
-    --foreground: 256 27% 25%;
+    --foreground: 256 26% 30%;
 
     --card: 0 0% 100%;
-    --card-foreground: 256 27% 25%;
+    --card-foreground: 256 26% 30%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 256 27% 25%;
+    --popover-foreground: 256 26% 30%;
 
-    --primary: 256 27% 25%;
+    --primary: 256 26% 30%;
     --primary-foreground: 210 40% 98%;
-    --primary-light: 256 24% 40%;
-    --primary-dark: 258 40% 20%;
+    --primary-light: 257 18% 46%;
+    --primary-dark: 257 30% 21%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 256 27% 25%;
@@ -29,9 +29,9 @@
     --accent: 240 33% 86%;
     --accent-foreground: 256 27% 25%;
     
-    --accent-blue: 240 33% 86%;
-    --accent-pink: 349 79% 92%;
-    --accent-sand: 30 53% 90%;
+    --accent-blue: 256 40% 81%;
+    --accent-pink: 349 69% 92%;
+    --accent-sand: 33 61% 90%;
     --accent-green: 120 52% 89%;
     --whatsapp: 142 70% 49%;
     --success: 160 84% 39%;

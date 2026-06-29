@@ -316,7 +316,7 @@ export default function ValoracionChetumal() {
           {/* ── HERO ── */}
           <section
             className="relative flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden"
-            style={{ background: '#2b1f47' }}
+            style={{ background: '#2e2545' }}
           >
             <div aria-hidden="true" className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.08) 0%, transparent 70%)' }} />
             <div aria-hidden="true" className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.15) 0%, transparent 70%)' }} />

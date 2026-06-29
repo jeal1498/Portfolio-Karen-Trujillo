@@ -281,7 +281,7 @@ export default function BlogIndex() {
                 aria-label="Artículo destacado"
               >
                 <Link href={featured.slug} className="group block">
-                  <article className="relative rounded-2xl bg-card border border-border/60 overflow-hidden flex flex-col lg:flex-row hover:border-primary/30 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(56,47,81,0.12)]">
+                  <article className="relative rounded-2xl bg-card border border-border/60 overflow-hidden flex flex-col lg:flex-row hover:border-primary/30 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(67,56,96,0.12)]">
                     <div className="lg:w-2/5 shrink-0">
                       <img
                         src={featured.img}

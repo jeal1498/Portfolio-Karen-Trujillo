@@ -40,19 +40,19 @@ const nivelesApoyo = [
     nivel: 'Nivel 1',
     antes: '"Asperger" o autismo de alto funcionamiento',
     desc: 'Necesita apoyo. La persona puede comunicarse con frases completas y funcionar en muchos contextos, pero enfrenta dificultades en situaciones sociales no estructuradas, cambios de rutina o transiciones. Los apoyos son más sutiles pero igualmente necesarios.',
-    color: '#d0d0e7',
+    color: '#c6bce2',
   },
   {
     nivel: 'Nivel 2',
     antes: 'Autismo moderado',
     desc: 'Necesita apoyo sustancial. Las dificultades en comunicación e interacción social son evidentes incluso con apoyos. Los comportamientos repetitivos o la resistencia al cambio afectan el funcionamiento en varios contextos. Requiere intervención más estructurada.',
-    color: '#fbdbe0',
+    color: '#f9dee3',
   },
   {
     nivel: 'Nivel 3',
     antes: 'Autismo severo',
     desc: 'Necesita apoyo muy sustancial. Las dificultades en comunicación son marcadas y los comportamientos inflexibles interfieren significativamente con el funcionamiento en todos los contextos. Puede requerir apoyo intensivo y sistemas de comunicación aumentativa.',
-    color: '#f5dfc5',
+    color: '#f5e7d6',
   },
 ];
 
@@ -199,21 +199,21 @@ export default function ResultadoPositivoAutismoQueSigue() {
         <Navbar />
         <main>
           {/* ── Hero ── */}
-          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2b1f47' }}>
+          <section className="relative pt-36 pb-16 px-6 overflow-hidden" style={{ background: '#2e2545' }}>
             <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
             <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
             <div className="max-w-3xl mx-auto relative z-10">
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex items-center gap-2 text-xs flex-wrap" style={{ color: 'rgba(208,208,231,0.7)' }}>
-                  <li><Link href="/" className="hover:text-[#d0d0e7] transition-colors" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
+                  <li><Link href="/" className="hover:text-[#c6bce2] transition-colors" style={{ color: 'rgba(208,208,231,0.7)' }}>Inicio</Link></li>
                   <li>/</li>
-                  <li><Link href="/blog" className="hover:text-[#d0d0e7] transition-colors" style={{ color: 'rgba(208,208,231,0.7)' }}>Blog</Link></li>
+                  <li><Link href="/blog" className="hover:text-[#c6bce2] transition-colors" style={{ color: 'rgba(208,208,231,0.7)' }}>Blog</Link></li>
                   <li>/</li>
-                  <li className="font-medium" style={{ color: '#d0d0e7' }}>Después del diagnóstico de autismo</li>
+                  <li className="font-medium" style={{ color: '#c6bce2' }}>Después del diagnóstico de autismo</li>
                 </ol>
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                <span className="inline-flex items-center px-3 py-1 rounded-full mb-4 text-xs font-bold uppercase tracking-widest" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#d0d0e7' }}>
+                <span className="inline-flex items-center px-3 py-1 rounded-full mb-4 text-xs font-bold uppercase tracking-widest" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#c6bce2' }}>
                   Guía Post-Diagnóstico
                 </span>
                 <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-[1.15] mb-4">
@@ -235,7 +235,7 @@ export default function ResultadoPositivoAutismoQueSigue() {
           <section className="px-6 -mt-8 relative z-10">
             <div className="max-w-3xl mx-auto">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(56,47,81,0.25)]">
+                <figure className="rounded-2xl overflow-hidden border border-border shadow-[0_20px_60px_-15px_rgba(67,56,96,0.25)]">
                   <img
                     src="/blog/dark-despues-del-diagnostico-autismo-1200x675.png"
                     alt="Qué sigue después del diagnóstico de autismo — imagen ilustrativa"
