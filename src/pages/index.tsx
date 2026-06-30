@@ -434,9 +434,9 @@ export default function Home() {
                         style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}
                       >
                         <div className="flex-1 min-w-0">
-                          <span className="block text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgba(208,208,231,0.65)' }}>{card.label}</span>
+                          <span className="block text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgba(208,208,231,0.90)' }}>{card.label}</span>
                           <span className="block text-sm font-medium leading-snug" style={{ color: 'rgba(255,255,255,0.88)' }}>{card.text}</span>
-                          <span className="block text-xs mt-0.5" style={{ color: 'rgba(208,208,231,0.5)' }}>{card.price}</span>
+                          <span className="block text-xs mt-0.5" style={{ color: 'rgba(208,208,231,0.80)' }}>{card.price}</span>
                         </div>
                         <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: 'rgba(208,208,231,0.5)' }} aria-hidden="true" />
                       </Link>
@@ -489,9 +489,9 @@ export default function Home() {
                       style={{ bottom: '24px', left: '-20px', padding: '14px 18px', minWidth: '210px', boxShadow: '0 8px 32px rgba(67,56,96,0.22)' }}
                     >
                       <p className="text-[11px] font-bold tracking-wide mb-1" style={{ color: '#6b5f8a' }}>Cédula {CEDULA} · SEP</p>
-                      <div className="flex gap-0.5 mb-1" aria-label="5 estrellas">
+                      <span role="img" aria-label="5 estrellas" className="flex gap-0.5 mb-1">
                         {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
-                      </div>
+                      </span>
                       <a
                         href="https://maps.google.com/?cid=4630406520710891531"
                         target="_blank"
@@ -687,7 +687,7 @@ export default function Home() {
                     <div className="grid" style={{ gridTemplateColumns: '72px 1fr', gap: '1.5rem', paddingBottom: i < arr.length - 1 ? '2.5rem' : 0 }}>
                       {/* Number + connector */}
                       <div style={{ position: 'relative' }}>
-                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#c6bce2', lineHeight: '1' }}>{step.n}</div>
+                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#7a6fa0', lineHeight: '1' }}>{step.n}</div>
                         {i < arr.length - 1 && (
                           <div
                             style={{
@@ -780,7 +780,7 @@ export default function Home() {
 
                 {/* Content */}
                 <SectionReveal delay={0.1}>
-                  <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                  <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(208,208,231,0.85)' }}>
                     Neuropsicóloga certificada
                   </p>
                   <h2 id="sobre-heading" className="font-serif font-bold text-white leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)' }}>
@@ -866,11 +866,11 @@ export default function Home() {
                       <div>
                         <cite className="not-italic font-bold text-sm" style={{ color: '#433860' }}>{reviews[0].name}</cite>
                         <span className="text-sm" style={{ color: '#515e71' }}>&nbsp;·&nbsp;{reviews[0].service}</span>
-                        <div className="flex gap-0.5 mt-1" aria-label="5 estrellas">
+                        <span role="img" aria-label="5 estrellas" className="flex gap-0.5 mt-1">
                           {[...Array(reviews[0].stars)].map((_, j) => (
                             <Star key={j} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />
                           ))}
-                        </div>
+                        </span>
                       </div>
                     </footer>
                   </blockquote>
@@ -887,9 +887,9 @@ export default function Home() {
                       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 10px 32px rgba(67,56,96,0.1)')}
                       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '0 2px 12px rgba(67,56,96,0.04)')}
                     >
-                      <div className="flex gap-0.5 mb-3" aria-label={`${review.stars} estrellas`}>
+                      <span role="img" aria-label={`${review.stars} estrellas`} className="flex gap-0.5 mb-3">
                         {[...Array(review.stars)].map((_, j) => <Star key={j} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
-                      </div>
+                      </span>
                       <p className="text-sm leading-relaxed mb-6 flex-1 italic" style={{ color: '#515e71', lineHeight: '1.7' }}>
                         &ldquo;{review.text}&rdquo;
                       </p>
@@ -1193,7 +1193,7 @@ export default function Home() {
                         <p className="font-bold text-primary text-sm mb-0.5">{service.label}</p>
                         <p className="text-xs text-muted-foreground font-light">{service.age} · {service.price}</p>
                       </div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-primary/50 flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span className="text-xs font-bold uppercase tracking-widest text-primary/75 flex items-center gap-1 group-hover:gap-2 transition-all">
                         Agendar <ArrowRight className="w-3 h-3" aria-hidden="true" />
                       </span>
                     </Link>

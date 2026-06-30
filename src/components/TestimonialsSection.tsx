@@ -52,11 +52,11 @@ const TestimonialsSection = () => {
 
           {/* Aggregate Rating */}
           <div className="flex items-center justify-center gap-3 mt-6">
-            <div className="flex gap-1" aria-label="5 estrellas">
+            <span role="img" aria-label="5 estrellas" className="flex gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 text-warning fill-warning" aria-hidden="true" />
               ))}
-            </div>
+            </span>
             <span className="text-2xl font-bold text-primary-foreground">5.0</span>
             <span className="text-sm text-primary-foreground/60 font-medium">(47 pacientes en Google)</span>
           </div>
@@ -89,11 +89,11 @@ const TestimonialsSection = () => {
                   <p className="font-bold text-primary-foreground text-sm">{testimonial.name}</p>
                   <p className="text-xs text-primary-foreground/55">{testimonial.service}</p>
                 </div>
-                <div className="ml-auto flex gap-0.5" aria-label={`${testimonial.rating} estrellas`}>
+                <span role="img" aria-label={`${testimonial.rating} estrellas`} className="ml-auto flex gap-0.5">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 text-warning fill-warning" aria-hidden="true" />
                   ))}
-                </div>
+                </span>
               </div>
             </motion.article>
           ))}
