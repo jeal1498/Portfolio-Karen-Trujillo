@@ -13,6 +13,7 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import LeadMagnetForm from '@/components/LeadMagnetForm';
 import { WA_NUMBER } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
@@ -948,6 +949,13 @@ export default function SenalesTDAHNinos() {
             </div>
           </section>
 
+        <section className="max-w-2xl mx-auto px-4 pb-12">
+          <LeadMagnetForm
+            lead="tdah-ninos"
+            headline="Descarga el checklist gratuito"
+            description="Para llevar a la próxima consulta con el médico de tu hijo."
+          />
+        </section>
         </main>
 
         <FloatingButtons />
