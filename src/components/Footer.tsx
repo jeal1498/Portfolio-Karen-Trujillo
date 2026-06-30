@@ -31,7 +31,7 @@ const SOCIAL_LINKS: { href: string; label: string; Icon: ComponentType<{ classNa
 
 const FooterCol = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div>
-    <p className="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-[#c6bce2]/50 mb-4">
+    <p className="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-[#c6bce2]/75 mb-4">
       {title}
     </p>
     {children}
@@ -131,6 +131,19 @@ const Footer = () => (
           </ul>
         </FooterCol>
 
+      </div>
+
+      {/* Micro-CTA de conversión */}
+      <div className="py-4 text-center border-t border-white/10">
+        <p className="font-sans text-sm text-white/70 mb-2">¿Lista para dar el primer paso?</p>
+        <a
+          href={waUrl('Hola Karen, quiero agendar una valoración neuropsicológica.')}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-sans text-sm font-bold text-[#25d366]"
+        >
+          Agendar por WhatsApp →
+        </a>
       </div>
 
       {/* Copyright */}

@@ -877,74 +877,7 @@ export default function TDAHNinosFunnel() {
 
 
           {/* ══════════════════════════════════════════════════════
-              6 · DIFERENCIADOR — ¿Por qué neuropsicología?
-              NEW SECTION — AEO + objection resolution
-              ══════════════════════════════════════════════════════ */}
-          <section id="diferenciador-neuropsicologia" className="py-14 sm:py-20 bg-card border-t border-border">
-            <div className="max-w-4xl mx-auto px-6">
-              <SectionReveal>
-                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
-                <h2 className="text-headline font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué neuropsicología y no solo psicología?</h2>
-
-                <div className="max-w-2xl mx-auto space-y-4 mb-10">
-                  <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    Una consulta psicológica evalúa conducta y emociones a través de entrevista clínica. La valoración neuropsicológica va más allá: <strong className="text-primary font-semibold">mide las funciones ejecutivas del cerebro</strong> (atención sostenida, memoria de trabajo, velocidad de procesamiento y control inhibitorio) mediante pruebas estandarizadas con normas internacionales.
-                  </p>
-                  <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    Para el TDAH, esta diferencia es crucial. Los síntomas del TDAH se solapan con ansiedad, trastornos del aprendizaje y altas capacidades. <strong className="text-primary font-semibold">Solo un perfil neuropsicológico completo permite un diagnóstico diferencial preciso</strong> que descarte condiciones similares y evite intervenciones equivocadas.
-                  </p>
-                  <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    En la práctica, esto significa que el informe no dice solo &ldquo;tiene TDAH&rdquo; o &ldquo;no tiene TDAH&rdquo;. Revela exactamente <strong className="text-primary font-semibold">qué funciones están comprometidas, en qué grado y qué intervenciones específicas</strong> necesita tu hijo, tanto en terapia como en la escuela.
-                  </p>
-                </div>
-              </SectionReveal>
-
-              {/* Comparative table — unified 2-column layout for all screens */}
-              <SectionReveal delay={0.15}>
-                <div className="max-w-3xl mx-auto bg-secondary/50 rounded-2xl border border-border overflow-hidden">
-                  {/* Column headers — always 2 cols */}
-                  <div className="grid grid-cols-2">
-                    <div className="p-3 sm:p-4 bg-secondary/80 border-b border-r border-border text-center">
-                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
-                    </div>
-                    <div className="p-3 sm:p-4 bg-primary/8 border-b border-border text-center">
-                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
-                    </div>
-                  </div>
-
-                  {comparativaItems.map((item, i) => (
-                    <div key={item.aspecto} className={i !== comparativaItems.length - 1 ? 'border-b border-border' : ''}>
-                      {/* Aspect label — full-width spanning row */}
-                      <div className="px-3 sm:px-4 pt-3 pb-2 bg-secondary/40 border-b border-border/50">
-                        <p className="text-[11px] sm:text-xs font-bold text-primary">{item.aspecto}</p>
-                      </div>
-                      {/* Side-by-side comparison — always 2 columns */}
-                      <div className="grid grid-cols-2">
-                        <div className="border-r border-border p-3 sm:p-4 flex items-start gap-1.5 sm:gap-2">
-                          <XCircle className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-muted-foreground/40 shrink-0 mt-0.5" />
-                          <p className="text-[11px] sm:text-xs text-muted-foreground font-light leading-relaxed">{item.psicologia}</p>
-                        </div>
-                        <div className="p-3 sm:p-4 bg-primary/3 flex items-start gap-1.5 sm:gap-2">
-                          <CheckCircle2 className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-primary/60 shrink-0 mt-0.5" />
-                          <p className="text-[11px] sm:text-xs text-foreground font-medium leading-relaxed">{item.neuropsicologia}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </SectionReveal>
-
-              <SectionReveal delay={0.3}>
-                <div className="mt-10 text-center">
-                  <CtaButton>Agendar valoración</CtaButton>
-                </div>
-              </SectionReveal>
-            </div>
-          </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              7 · SOCIAL PROOF — Reviews
+              6 · SOCIAL PROOF — Reviews
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-secondary">
             <div className="max-w-4xl mx-auto px-6">
@@ -1161,6 +1094,72 @@ export default function TDAHNinosFunnel() {
                   </SectionReveal>
                 ))}
               </div>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              10b · DIFERENCIADOR — Tabla comparativa (confirma decisión)
+              ══════════════════════════════════════════════════════ */}
+          <section id="diferenciador-neuropsicologia" className="py-14 sm:py-20 bg-card border-t border-border">
+            <div className="max-w-4xl mx-auto px-6">
+              <SectionReveal>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
+                <h2 className="text-headline font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué neuropsicología y no solo psicología?</h2>
+
+                <div className="max-w-2xl mx-auto space-y-4 mb-10">
+                  <p className="text-muted-foreground font-light leading-relaxed text-center">
+                    Una consulta psicológica evalúa conducta y emociones a través de entrevista clínica. La valoración neuropsicológica va más allá: <strong className="text-primary font-semibold">mide las funciones ejecutivas del cerebro</strong> (atención sostenida, memoria de trabajo, velocidad de procesamiento y control inhibitorio) mediante pruebas estandarizadas con normas internacionales.
+                  </p>
+                  <p className="text-muted-foreground font-light leading-relaxed text-center">
+                    Para el TDAH, esta diferencia es crucial. Los síntomas del TDAH se solapan con ansiedad, trastornos del aprendizaje y altas capacidades. <strong className="text-primary font-semibold">Solo un perfil neuropsicológico completo permite un diagnóstico diferencial preciso</strong> que descarte condiciones similares y evite intervenciones equivocadas.
+                  </p>
+                  <p className="text-muted-foreground font-light leading-relaxed text-center">
+                    En la práctica, esto significa que el informe no dice solo &ldquo;tiene TDAH&rdquo; o &ldquo;no tiene TDAH&rdquo;. Revela exactamente <strong className="text-primary font-semibold">qué funciones están comprometidas, en qué grado y qué intervenciones específicas</strong> necesita tu hijo, tanto en terapia como en la escuela.
+                  </p>
+                </div>
+              </SectionReveal>
+
+              {/* Comparative table — unified 2-column layout for all screens */}
+              <SectionReveal delay={0.15}>
+                <div className="max-w-3xl mx-auto bg-secondary/50 rounded-2xl border border-border overflow-hidden">
+                  {/* Column headers — always 2 cols */}
+                  <div className="grid grid-cols-2">
+                    <div className="p-3 sm:p-4 bg-secondary/80 border-b border-r border-border text-center">
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
+                    </div>
+                    <div className="p-3 sm:p-4 bg-primary/8 border-b border-border text-center">
+                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
+                    </div>
+                  </div>
+
+                  {comparativaItems.map((item, i) => (
+                    <div key={item.aspecto} className={i !== comparativaItems.length - 1 ? 'border-b border-border' : ''}>
+                      {/* Aspect label — full-width spanning row */}
+                      <div className="px-3 sm:px-4 pt-3 pb-2 bg-secondary/40 border-b border-border/50">
+                        <p className="text-[11px] sm:text-xs font-bold text-primary">{item.aspecto}</p>
+                      </div>
+                      {/* Side-by-side comparison — always 2 columns */}
+                      <div className="grid grid-cols-2">
+                        <div className="border-r border-border p-3 sm:p-4 flex items-start gap-1.5 sm:gap-2">
+                          <XCircle className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-muted-foreground/40 shrink-0 mt-0.5" />
+                          <p className="text-[11px] sm:text-xs text-muted-foreground font-light leading-relaxed">{item.psicologia}</p>
+                        </div>
+                        <div className="p-3 sm:p-4 bg-primary/3 flex items-start gap-1.5 sm:gap-2">
+                          <CheckCircle2 className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-primary/60 shrink-0 mt-0.5" />
+                          <p className="text-[11px] sm:text-xs text-foreground font-medium leading-relaxed">{item.neuropsicologia}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </SectionReveal>
+
+              <SectionReveal delay={0.3}>
+                <div className="mt-10 text-center">
+                  <CtaButton>Agendar valoración</CtaButton>
+                </div>
+              </SectionReveal>
             </div>
           </section>
 
