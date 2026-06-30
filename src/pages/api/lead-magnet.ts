@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Resend } from 'resend';
-import path from 'path';
-import fs from 'fs';
 
 type LeadType = 'tdah-ninos' | 'tdah-adultos';
+
+const SITE_URL = 'https://www.psicologakarentrujillo.com.mx';
 
 const PDF_MAP: Record<LeadType, { filename: string; subject: string; heading: string }> = {
   'tdah-ninos': {
@@ -43,21 +43,23 @@ export default async function handler(
     return res.status(400).json({ error: 'Tipo de lead inválido' });
   }
 
-  const pdfPath = path.join(process.cwd(), 'public', 'downloads', meta.filename);
-
-  if (!fs.existsSync(pdfPath)) {
-    // PDF aún no generado — igual registra el lead y notifica
-    console.warn(`[lead-magnet] PDF no encontrado: ${pdfPath}`);
-    return res.status(503).json({ error: 'PDF no disponible aún' });
-  }
-
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     throw new Error('RESEND_API_KEY no configurada');
   }
 
+  const pdfUrl = `${SITE_URL}/downloads/${meta.filename}`;
+
+  // Descargar el PDF desde la URL pública (funciona en Vercel serverless)
+  const pdfResponse = await fetch(pdfUrl);
+  if (!pdfResponse.ok) {
+    console.warn(`[lead-magnet] PDF no disponible: ${pdfUrl}`);
+    return res.status(503).json({ error: 'PDF no disponible aún' });
+  }
+
+  const pdfBuffer = Buffer.from(await pdfResponse.arrayBuffer());
+
   const resend = new Resend(apiKey);
-  const pdfBuffer = fs.readFileSync(pdfPath);
 
   await resend.emails.send({
     from: 'Karen Trujillo <hola@psicologakarentrujillo.com.mx>',
