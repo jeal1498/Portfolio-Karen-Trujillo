@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  ArrowRight, FileText, CheckCircle2,
+  ArrowRight, FileText,
   ShieldCheck, MessageCircle, Phone, Clock, Award,
   Star, Users, CalendarCheck, Stethoscope, ChevronDown,
   Shield, BadgeCheck, Puzzle, Briefcase,
@@ -72,12 +72,6 @@ const credentials: Credential[] = [
   { icon: CalendarCheck,text: 'Agenda en línea · Resultados en semanas' },
 ];
 
-const whyNeuropsychology = [
-  { title: 'Pruebas estandarizadas, no solo entrevista', desc: 'Instrumentos con normas internacionales que miden funciones cognitivas de forma objetiva y cuantificable.' },
-  { title: 'Diagnóstico diferencial preciso', desc: 'Diferencia TDAH de ansiedad, autismo de timidez, burnout de déficit atencional: datos objetivos, no impresiones.' },
-  { title: 'Informe con validez oficial', desc: 'Documento respaldado por cédula profesional federal, aceptado por escuelas, SEP, IMSS y empleadores.' },
-  { title: 'Recomendaciones accionables', desc: 'No solo un diagnóstico: un plan concreto de intervención para la escuela, el trabajo y la vida diaria.' },
-];
 
 const reviews: Review[] = [
   { name: 'Mamá de Sofía, 7 años',   text: 'Por fin alguien nos explicó qué pasaba con nuestra hija. El informe fue tan claro que la escuela implementó las adecuaciones de inmediato.', stars: 5, service: 'TDAH Infantil' },
@@ -443,7 +437,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* CTAs */}
+                  {/* CTA principal */}
                   <div className="flex flex-wrap gap-3 animate-[fadeIn_0.8s_ease-out_0.5s_both]">
                     <div className="flex flex-col gap-1">
                       <a
@@ -459,14 +453,6 @@ export default function Home() {
                       </a>
                       <p className="text-xs text-center" style={{ color: 'rgba(208,208,231,0.55)' }}>Respuesta habitual en menos de 2 horas · Lun–Sáb</p>
                     </div>
-                    <a
-                      href="#servicios"
-                      onClick={(e) => { e.preventDefault(); document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' }); }}
-                      className="inline-flex items-center gap-2 font-semibold text-sm px-7 py-3.5 rounded-xl transition-all hover:bg-white/10"
-                      style={{ color: 'rgba(255,255,255,0.88)', border: '1.5px solid rgba(255,255,255,0.32)' }}
-                    >
-                      Ver servicios
-                    </a>
                   </div>
                 </div>
 
@@ -511,33 +497,7 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              2 · STATS BAR — social proof strip
-              ══════════════════════════════════════════════════════ */}
-          <section aria-label="Métricas de experiencia" className="bg-white border-b border-border">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x divide-border">
-                {[
-                  { number: '7+',       label: 'Años de experiencia',      mono: false },
-                  { number: '500+',     label: 'Evaluaciones completadas', mono: false },
-                  { number: '47+',      label: 'Reseñas con 5 estrellas',  mono: false },
-                  { number: CEDULA,     label: 'Cédula Federal SEP',        mono: true  },
-                ].map((stat) => (
-                  <div key={stat.label} className="flex flex-col items-center justify-center py-5 px-4 text-center">
-                    <span className={`font-serif font-bold leading-none ${stat.mono ? 'text-lg sm:text-2xl' : 'text-[2.25rem]'}`} style={{ color: '#433860' }}>
-                      {stat.number}
-                    </span>
-                    <span className="text-[10px] font-semibold tracking-widest mt-2 uppercase" style={{ color: '#515e71' }}>
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              3 · SYMPTOM CHECKER — interactive 3-tab tool
+              2 · SYMPTOM CHECKER — interactive 3-tab tool
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-card border-b border-border">
             <div className="max-w-3xl mx-auto px-6">
@@ -637,203 +597,7 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              5 · PROCESS — numbered timeline 01-04
-              ══════════════════════════════════════════════════════ */}
-          <section id="proceso" aria-labelledby="proceso-heading" className="py-20 bg-white">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
-              <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Paso a paso</p>
-                <h2 id="proceso-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
-                  ¿Cómo es el proceso?
-                </h2>
-                <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: '#6b5f8a' }} />
-                <p className="text-base font-light max-w-[52ch] mb-14" style={{ color: '#515e71', lineHeight: '1.7' }}>
-                  Un proceso claro en cuatro pasos, desde la primera consulta hasta el informe final.
-                </p>
-              </SectionReveal>
-
-              <div className="flex flex-col max-w-[680px]" style={{ gap: 0 }}>
-                {[
-                  {
-                    n: '01',
-                    title: 'Entrevista inicial',
-                    subtitle: '(online o presencial)',
-                    desc: 'Primera sesión para conocer el motivo de consulta, historia clínica y contexto del paciente.',
-                    duration: '60–90 min',
-                  },
-                  {
-                    n: '02',
-                    title: 'Aplicación de pruebas neuropsicológicas',
-                    subtitle: '',
-                    desc: 'Sesiones presenciales de evaluación con instrumentos estandarizados internacionales.',
-                    duration: 'TDAH: 2–3 sesiones · Autismo: 3–4 sesiones',
-                  },
-                  {
-                    n: '03',
-                    title: 'Análisis e interpretación de resultados',
-                    subtitle: '',
-                    desc: 'Karen integra los datos de todas las pruebas en un informe clínico completo con diagnóstico diferencial.',
-                    duration: '',
-                  },
-                  {
-                    n: '04',
-                    title: 'Sesión de devolución',
-                    subtitle: '',
-                    desc: 'Se explica el informe en detalle, se responden preguntas y se entregan recomendaciones concretas y plan terapéutico.',
-                    duration: 'Presencial u online',
-                  },
-                ].map((step, i, arr) => (
-                  <SectionReveal key={step.n} delay={i * 0.1}>
-                    <div className="grid" style={{ gridTemplateColumns: '72px 1fr', gap: '1.5rem', paddingBottom: i < arr.length - 1 ? '2.5rem' : 0 }}>
-                      {/* Number + connector */}
-                      <div style={{ position: 'relative' }}>
-                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#7a6fa0', lineHeight: '1' }}>{step.n}</div>
-                        {i < arr.length - 1 && (
-                          <div
-                            style={{
-                              position: 'absolute',
-                              left: '36px',
-                              top: '58px',
-                              bottom: '-2rem',
-                              width: '1px',
-                              background: 'linear-gradient(to bottom, rgba(208,208,231,0.55), transparent)',
-                            }}
-                          />
-                        )}
-                      </div>
-                      {/* Content */}
-                      <div style={{ paddingTop: '0.25rem' }}>
-                        <h3 className="font-bold mb-2" style={{ fontSize: '1.1rem', color: '#433860' }}>
-                          {step.title}{' '}
-                          {step.subtitle && <span className="font-normal text-sm" style={{ color: '#515e71' }}>{step.subtitle}</span>}
-                        </h3>
-                        <p className="text-sm leading-relaxed" style={{ color: '#515e71', lineHeight: '1.7' }}>{step.desc}</p>
-                        {step.duration && (
-                          <span
-                            className="inline-block text-xs font-semibold rounded-full mt-2.5"
-                            style={{ color: '#6b5f8a', background: '#f8f7fc', border: '1px solid #c6bce2', padding: '4px 12px', letterSpacing: '0.06em' }}
-                          >
-                            {step.duration}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </SectionReveal>
-                ))}
-              </div>
-            </div>
-          </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              6 · WHY NEUROPSYCHOLOGY — differentiator
-              ══════════════════════════════════════════════════════ */}
-          <section id="que-es-neuropsicologia" className="py-14 sm:py-20 bg-card">
-            <div className="max-w-4xl mx-auto px-6">
-              <SectionReveal>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4 text-center text-balance">
-                  No es lo mismo una consulta que una evaluación neuropsicológica
-                </h2>
-                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">
-                  La neuropsicología mide cómo funciona el cerebro con instrumentos estandarizados. Los resultados son percentiles y diagnósticos verificables, no impresiones clínicas.
-                </p>
-              </SectionReveal>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {whyNeuropsychology.map((item, i) => (
-                  <SectionReveal key={item.title} delay={i * 0.08}>
-                    <div className="flex gap-4 p-5 sm:p-6 bg-secondary/50 rounded-2xl border border-border hover:border-accent-blue/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group h-full">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue/30 to-primary/20 border border-primary/25 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <CheckCircle2 className="w-4 h-4 text-primary/60" aria-hidden="true" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-primary mb-1 text-sm">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground font-light leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  </SectionReveal>
-                ))}
-              </div>
-            </div>
-          </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              7 · ABOUT — dark plum, photo + credentials list
-              ══════════════════════════════════════════════════════ */}
-          <section id="sobre-mi" aria-labelledby="sobre-heading" className="py-20 scroll-mt-20" style={{ background: '#2e2545' }}>
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-
-                {/* Photo */}
-                <SectionReveal className="flex justify-center lg:justify-start">
-                  <Image
-                    src={KAREN_IMAGE}
-                    alt="Neuropsicóloga Karen Trujillo — Cancún"
-                    width={400}
-                    height={467}
-                    className="block w-full object-cover object-top"
-                    style={{ maxWidth: '380px', borderRadius: '20px 80px 20px 20px', boxShadow: '0 24px 64px rgba(0,0,0,0.28)' }}
-                    loading="lazy"
-                    unoptimized
-                  />
-                </SectionReveal>
-
-                {/* Content */}
-                <SectionReveal delay={0.1}>
-                  <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(208,208,231,0.85)' }}>
-                    Neuropsicóloga certificada
-                  </p>
-                  <h2 id="sobre-heading" className="font-serif font-bold text-white leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)' }}>
-                    Conoce a Karen Trujillo
-                  </h2>
-                  <div className="w-10 h-0.5 rounded-full mb-6" style={{ background: 'rgba(208,208,231,0.4)' }} />
-
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
-                    Soy Neuropsicóloga Karen Trujillo (Cédula Federal: {CEDULA}), especializada en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
-                  </p>
-                  <p className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
-                    Me especializo exclusivamente en evaluación neuropsicológica porque creo que un diagnóstico preciso cambia trayectorias de vida. Un niño con TDAH no diagnosticado es etiquetado como "flojo"; un adulto sin diagnóstico lleva décadas creyendo que el problema es su carácter. El diagnóstico correcto es el primer paso del tratamiento correcto.
-                  </p>
-
-                  {/* Credentials list */}
-                  <div className="mb-8">
-                    {aboutCreds.map((cred, i) => (
-                      <div
-                        key={i}
-                        className="flex items-start gap-3 py-2.5"
-                        style={{ borderBottom: i < aboutCreds.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
-                      >
-                        <div
-                          className="flex items-center justify-center shrink-0 mt-0.5 rounded-full"
-                          style={{ width: '20px', height: '20px', background: 'rgba(208,208,231,0.14)' }}
-                        >
-                          <svg viewBox="0 0 12 12" fill="none" stroke="#c6bce2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '11px', height: '11px' }} aria-hidden="true">
-                            <polyline points="2,6 5,9 10,3" />
-                          </svg>
-                        </div>
-                        <span className="text-sm" style={{ color: 'rgba(255,255,255,0.78)' }}>{cred}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Mini stats */}
-                  <div className="flex flex-wrap gap-6 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                    {[{ v: '7+', l: 'Años' }, { v: '500+', l: 'Evaluaciones' }, { v: '47+', l: 'Reseñas 5★' }].map((s) => (
-                      <div key={s.l}>
-                        <p className="font-serif font-bold text-white" style={{ fontSize: '1.8rem', lineHeight: '1' }}>{s.v}</p>
-                        <p className="text-[11px] font-semibold uppercase tracking-widest mt-1" style={{ color: 'rgba(208,208,231,0.65)' }}>{s.l}</p>
-                      </div>
-                    ))}
-                  </div>
-                </SectionReveal>
-
-              </div>
-            </div>
-          </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              8 · TESTIMONIALS — featured quote + 3 cards
+              4 · TESTIMONIALS — featured quote + 3 cards
               ══════════════════════════════════════════════════════ */}
           <section id="testimonios" aria-labelledby="testimonios-heading" className="py-20" style={{ background: '#f8f7fc' }}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -921,6 +685,170 @@ export default function Home() {
                   </a>
                 </div>
               </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              5 · ABOUT — dark plum, photo + credentials list
+              ══════════════════════════════════════════════════════ */}
+          <section id="sobre-mi" aria-labelledby="sobre-heading" className="py-20 scroll-mt-20" style={{ background: '#2e2545' }}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+                {/* Photo */}
+                <SectionReveal className="flex justify-center lg:justify-start">
+                  <Image
+                    src={KAREN_IMAGE}
+                    alt="Neuropsicóloga Karen Trujillo — Cancún"
+                    width={400}
+                    height={467}
+                    className="block w-full object-cover object-top"
+                    style={{ maxWidth: '380px', borderRadius: '20px 80px 20px 20px', boxShadow: '0 24px 64px rgba(0,0,0,0.28)' }}
+                    loading="lazy"
+                    unoptimized
+                  />
+                </SectionReveal>
+
+                {/* Content */}
+                <SectionReveal delay={0.1}>
+                  <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(208,208,231,0.85)' }}>
+                    Neuropsicóloga certificada
+                  </p>
+                  <h2 id="sobre-heading" className="font-serif font-bold text-white leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)' }}>
+                    Conoce a Karen Trujillo
+                  </h2>
+                  <div className="w-10 h-0.5 rounded-full mb-6" style={{ background: 'rgba(208,208,231,0.4)' }} />
+
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
+                    Soy Neuropsicóloga Karen Trujillo (Cédula Federal: {CEDULA}), especializada en valoración de TDAH y Autismo, egresada de la Universidad Modelo de Quintana Roo. Con más de 7 años de experiencia en Cancún, mis diagnósticos combinan rigor científico con instrumentos estandarizados internacionales.
+                  </p>
+                  <p className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.8' }}>
+                    Me especializo exclusivamente en evaluación neuropsicológica porque creo que un diagnóstico preciso cambia trayectorias de vida. Un niño con TDAH no diagnosticado es etiquetado como "flojo"; un adulto sin diagnóstico lleva décadas creyendo que el problema es su carácter. El diagnóstico correcto es el primer paso del tratamiento correcto.
+                  </p>
+
+                  {/* Credentials list */}
+                  <div className="mb-8">
+                    {aboutCreds.map((cred, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-3 py-2.5"
+                        style={{ borderBottom: i < aboutCreds.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+                      >
+                        <div
+                          className="flex items-center justify-center shrink-0 mt-0.5 rounded-full"
+                          style={{ width: '20px', height: '20px', background: 'rgba(208,208,231,0.14)' }}
+                        >
+                          <svg viewBox="0 0 12 12" fill="none" stroke="#c6bce2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '11px', height: '11px' }} aria-hidden="true">
+                            <polyline points="2,6 5,9 10,3" />
+                          </svg>
+                        </div>
+                        <span className="text-sm" style={{ color: 'rgba(255,255,255,0.78)' }}>{cred}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Mini stats */}
+                  <div className="flex flex-wrap gap-6 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                    {[{ v: '7+', l: 'Años' }, { v: '500+', l: 'Evaluaciones' }, { v: '47+', l: 'Reseñas 5★' }].map((s) => (
+                      <div key={s.l}>
+                        <p className="font-serif font-bold text-white" style={{ fontSize: '1.8rem', lineHeight: '1' }}>{s.v}</p>
+                        <p className="text-[11px] font-semibold uppercase tracking-widest mt-1" style={{ color: 'rgba(208,208,231,0.65)' }}>{s.l}</p>
+                      </div>
+                    ))}
+                  </div>
+                </SectionReveal>
+
+              </div>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              6 · PROCESS — numbered timeline 01-04
+              ══════════════════════════════════════════════════════ */}
+          <section id="proceso" aria-labelledby="proceso-heading" className="py-20 bg-white">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+              <SectionReveal>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Paso a paso</p>
+                <h2 id="proceso-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
+                  ¿Cómo es el proceso?
+                </h2>
+                <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: '#6b5f8a' }} />
+                <p className="text-base font-light max-w-[52ch] mb-14" style={{ color: '#515e71', lineHeight: '1.7' }}>
+                  Un proceso claro en cuatro pasos, desde la primera consulta hasta el informe final.
+                </p>
+              </SectionReveal>
+
+              <div className="flex flex-col max-w-[680px]" style={{ gap: 0 }}>
+                {[
+                  {
+                    n: '01',
+                    title: 'Entrevista inicial',
+                    subtitle: '(online o presencial)',
+                    desc: 'Primera sesión para conocer el motivo de consulta, historia clínica y contexto del paciente.',
+                    duration: '60–90 min',
+                  },
+                  {
+                    n: '02',
+                    title: 'Aplicación de pruebas neuropsicológicas',
+                    subtitle: '',
+                    desc: 'Sesiones presenciales de evaluación con instrumentos estandarizados internacionales.',
+                    duration: 'TDAH: 2–3 sesiones · Autismo: 3–4 sesiones',
+                  },
+                  {
+                    n: '03',
+                    title: 'Análisis e interpretación de resultados',
+                    subtitle: '',
+                    desc: 'Karen integra los datos de todas las pruebas en un informe clínico completo con diagnóstico diferencial.',
+                    duration: '',
+                  },
+                  {
+                    n: '04',
+                    title: 'Sesión de devolución',
+                    subtitle: '',
+                    desc: 'Se explica el informe en detalle, se responden preguntas y se entregan recomendaciones concretas y plan terapéutico.',
+                    duration: 'Presencial u online',
+                  },
+                ].map((step, i, arr) => (
+                  <SectionReveal key={step.n} delay={i * 0.1}>
+                    <div className="grid" style={{ gridTemplateColumns: '72px 1fr', gap: '1.5rem', paddingBottom: i < arr.length - 1 ? '2.5rem' : 0 }}>
+                      {/* Number + connector */}
+                      <div style={{ position: 'relative' }}>
+                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#7a6fa0', lineHeight: '1' }}>{step.n}</div>
+                        {i < arr.length - 1 && (
+                          <div
+                            style={{
+                              position: 'absolute',
+                              left: '36px',
+                              top: '58px',
+                              bottom: '-2rem',
+                              width: '1px',
+                              background: 'linear-gradient(to bottom, rgba(208,208,231,0.55), transparent)',
+                            }}
+                          />
+                        )}
+                      </div>
+                      {/* Content */}
+                      <div style={{ paddingTop: '0.25rem' }}>
+                        <h3 className="font-bold mb-2" style={{ fontSize: '1.1rem', color: '#433860' }}>
+                          {step.title}{' '}
+                          {step.subtitle && <span className="font-normal text-sm" style={{ color: '#515e71' }}>{step.subtitle}</span>}
+                        </h3>
+                        <p className="text-sm leading-relaxed" style={{ color: '#515e71', lineHeight: '1.7' }}>{step.desc}</p>
+                        {step.duration && (
+                          <span
+                            className="inline-block text-xs font-semibold rounded-full mt-2.5"
+                            style={{ color: '#6b5f8a', background: '#f8f7fc', border: '1px solid #c6bce2', padding: '4px 12px', letterSpacing: '0.06em' }}
+                          >
+                            {step.duration}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </SectionReveal>
+                ))}
+              </div>
             </div>
           </section>
 
