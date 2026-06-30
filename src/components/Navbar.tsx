@@ -63,6 +63,7 @@ const Navbar = () => {
               height={68}
               className="transition-all duration-300"
               style={{ filter: dark ? 'brightness(0) invert(1)' : 'none' }}
+              fetchPriority="high"
             />
           </Link>
 
