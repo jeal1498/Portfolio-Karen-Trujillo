@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist TDAH Adultos — Karen Trujillo · Neuropsicóloga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm 18mm 14mm 18mm;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      border-bottom: 3px solid #382f51;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 17pt;
+      font-weight: 700;
+      color: #382f51;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .pdf-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #382f51;
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    .pdf-subtitle {
+      font-size: 9.5pt;
+      color: #515e71;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #382f51;
+      background-color: #ede9f8;
+      padding: 4px 8px;
+      margin-bottom: 7px;
+      border-left: 3px solid #382f51;
+    }
+
+    .items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 3px 0;
+      font-size: 10pt;
+      line-height: 1.5;
+      border-bottom: 1px solid #f0eef7;
+    }
+
+    .items li:last-child {
+      border-bottom: none;
+    }
+
+    .checkbox {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      min-width: 13px;
+      border: 1.5px solid #382f51;
+      margin-top: 2px;
+      border-radius: 2px;
+      background: #fff;
+    }
+
+    /* ── IMPACT SECTION (horizontal) ── */
+    .impact-items {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 4px 0;
+    }
+
+    .impact-items span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10pt;
+    }
+
+    /* ── REFLECTION ── */
+    .reflection-block {
+      margin-bottom: 12px;
+    }
+
+    .reflection-label {
+      font-size: 9pt;
+      font-style: italic;
+      color: #515e71;
+      margin-bottom: 6px;
+    }
+
+    .note-line {
+      border-bottom: 1px solid #c6bce2;
+      height: 22px;
+      margin-bottom: 6px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 2px solid #c6bce2;
+      padding-top: 9px;
+    }
+
+    .footer-note {
+      font-size: 8.5pt;
+      color: #515e71;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .footer-contact {
+      font-size: 8pt;
+      color: #382f51;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 16mm 18mm 14mm 18mm;
+      }
+      a { text-decoration: none; color: inherit; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">Karen Trujillo · Neuropsicóloga</div>
+    <div class="pdf-title">Checklist: Patrones que reconozco en mí</div>
+    <div class="pdf-subtitle">El TDAH en adultos se ve diferente que en niños. Marca lo que te describe. No es diagnóstico — es el primer paso para tener claridad.</div>
+  </header>
+
+  <!-- SECCIÓN 1 -->
+  <section class="section">
+    <div class="section-title">Sección 1 — Trabajo y productividad</div>
+    <ul class="items">
+      <li><span class="checkbox"></span> Procrastino tareas importantes hasta el último momento, aunque quiera hacerlas antes</li>
+      <li><span class="checkbox"></span> Empiezo proyectos con energía y los abandono a medias</li>
+      <li><span class="checkbox"></span> Me cuesta mantener el orden en mi espacio de trabajo o casa</li>
+      <li><span class="checkbox"></span> Las reuniones largas o lecturas extensas me agotan más que a otros</li>
+      <li><span class="checkbox"></span> Olvido compromisos, fechas límite o citas importantes</li>
+    </ul>
+  </section>
+
+  <!-- SECCIÓN 2 -->
+  <section class="section">
+    <div class="section-title">Sección 2 — Vida cotidiana</div>
+    <ul class="items">
+      <li><span class="checkbox"></span> Pierdo objetos (llaves, celular, documentos) constantemente</li>
+      <li><span class="checkbox"></span> Me distraigo en medio de conversaciones o al leer</li>
+      <li><span class="checkbox"></span> Cuando me engancho en algo que me interesa, pierdo la noción del tiempo</li>
+      <li><span class="checkbox"></span> Tengo dificultad para dormir porque mi mente no para</li>
+      <li><span class="checkbox"></span> Cambio de tema abruptamente en conversaciones o pensamientos</li>
+    </ul>
+  </section>
+
+  <!-- SECCIÓN 3 -->
+  <section class="section">
+    <div class="section-title">Sección 3 — Impacto</div>
+    <div class="impact-items">
+      <span><span class="checkbox"></span> Afecta mi rendimiento laboral</span>
+      <span><span class="checkbox"></span> Afecta mis relaciones personales</span>
+      <span><span class="checkbox"></span> Ha generado baja autoestima o sensación de "no estar a mi altura"</span>
+    </div>
+  </section>
+
+  <!-- REFLEXIÓN -->
+  <div class="reflection-block">
+    <div class="reflection-label">¿Desde cuándo lo notas? ¿Lo describías como parte de tu personalidad?</div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-note">
+      El TDAH adulto es frecuentemente subdiagnosticado. Si reconoces estos patrones desde la infancia y en más de un área de tu vida, una evaluación formal puede cambiarlo todo.
+    </div>
+    <div class="footer-contact">
+      Karen Trujillo · Cédula 11009616 · +52 998 321 1547 · psicologakarentrujillo.com.mx · @psicologakarentrujillo
+    </div>
+  </footer>
+
+</body>
+</html>
