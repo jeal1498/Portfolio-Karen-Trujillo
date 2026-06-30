@@ -51,6 +51,12 @@ const tabs = [
 
 const THRESHOLD = 3;
 
+function buildWaMsg(tab: typeof tabs[number], count: number): string {
+  if (count === 0) return 'Hola Karen, me interesa agendar una valoración neuropsicológica.';
+  const area = tab.label;
+  return `Hola Karen, identifiqué ${count} ${count === 1 ? 'señal' : 'señales'} de ${area} en tu checklist y quiero saber más.`;
+}
+
 export default function SymptomCheckerHome() {
   const prefersReducedMotion = useReducedMotion();
   const [activeTab, setActiveTab] = useState(0);
@@ -144,13 +150,13 @@ export default function SymptomCheckerHome() {
         </AnimatePresence>
 
         <a
-          href={waUrl(showCta ? currentTab.waMsg : 'Hola Karen, me interesa agendar una valoración neuropsicológica.')}
+          href={waUrl(buildWaMsg(currentTab, count))}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full bg-gradient-primary text-primary-foreground font-bold text-xs uppercase tracking-widest py-4 px-6 rounded-xl hover:opacity-90 transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5"
         >
           <MessageCircle className="w-4 h-4" />
-          {showCta ? 'Consultar con Karen sobre esto' : 'Agendar valoración'}
+          {count > 0 ? 'Consultar con Karen sobre esto' : 'Agendar valoración'}
         </a>
 
         <p className="text-[10px] text-muted-foreground/40 text-center mt-3">

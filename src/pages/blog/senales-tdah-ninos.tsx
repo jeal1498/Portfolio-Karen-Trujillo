@@ -35,8 +35,6 @@ const signals = [
       { signal: 'Pierde útiles, juguetes o materiales constantemente', example: 'Cada semana pierde lápices, borradores o cuadernos. No es descuido "normal", es un patrón.' },
       { signal: 'Parece no escuchar cuando le hablas directamente', example: 'Le dices algo mirándolo a los ojos y a los 10 segundos no recuerda qué le dijiste.' },
       { signal: 'No termina tareas o actividades que inició', example: 'Empieza la tarea con buena actitud, pero a los 5 minutos ya está haciendo otra cosa.' },
-      { signal: 'Evita actividades que requieren esfuerzo mental sostenido', example: 'Leer un párrafo completo o resolver problemas de matemáticas genera resistencia desproporcionada.' },
-      { signal: 'Comete errores por descuido en el trabajo escolar', example: 'Sabe la respuesta pero escribe otra cosa, se salta renglones o no lee las instrucciones completas.' },
     ],
   },
   {
@@ -459,7 +457,7 @@ export default function SenalesTDAHNinos() {
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
                 <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-3 text-center">Señales por categoría</p>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">14 señales de TDAH en niños que no debes ignorar</h2>
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4 text-center text-balance">12 señales de TDAH en niños que no debes ignorar</h2>
                 <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-12">El TDAH tiene tres presentaciones: inatenta, hiperactiva-impulsiva, y combinada. Estas son las señales más frecuentes de cada una.</p>
               </SectionReveal>
 
@@ -875,7 +873,10 @@ export default function SenalesTDAHNinos() {
               <SectionReveal>
                 <div className="text-center mb-8">
                   <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">Las dudas no se resuelven con más dudas</h2>
-                  <p className="text-white/70 font-light max-w-xl mx-auto">Una evaluación neuropsicológica te da respuestas concretas en semanas. Si llegaste hasta aquí, probablemente es momento de dar el paso.</p>
+                  <p className="text-white/70 font-light max-w-xl mx-auto mb-6">Una evaluación neuropsicológica te da respuestas concretas en semanas. Si llegaste hasta aquí, probablemente es momento de dar el paso.</p>
+                  <p className="text-white/60 font-light italic max-w-lg mx-auto text-sm leading-relaxed">
+                    Si reconoces varias de estas señales, no significa que algo esté &ldquo;mal&rdquo;. Significa que tu hijo merece una evaluación que le dé nombre a lo que vive — y a ti, claridad.
+                  </p>
                 </div>
               </SectionReveal>
 
@@ -931,7 +932,7 @@ export default function SenalesTDAHNinos() {
                       className="group flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-whatsapp hover:opacity-90 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all active:scale-[0.98]"
                     >
                       <MessageCircle className="w-4 h-4" />
-                      Agendar por WhatsApp
+                      ¿Reconoces esto? Hablemos →
                     </a>
                   </div>
                 </div>
