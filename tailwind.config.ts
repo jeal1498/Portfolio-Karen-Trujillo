@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Maven Pro', 'sans-serif'],
-        serif: ['Outfit', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Maven Pro', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Outfit', 'sans-serif'],
       },
       fontWeight: {
         light: '400',    // Montserrat 300 es demasiado delgada en pantalla

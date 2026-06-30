@@ -84,7 +84,7 @@ export default function SymptomCheckerHome() {
             }`}
           >
             <span className="block text-xs font-bold uppercase tracking-widest leading-none mb-1">{tab.label}</span>
-            <span className="block text-[10px] text-muted-foreground/70 font-medium">{tab.sub}</span>
+            <span className="block text-[10px] text-muted-foreground font-medium">{tab.sub}</span>
             {activeTab === i && (
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-t-full" />
             )}
