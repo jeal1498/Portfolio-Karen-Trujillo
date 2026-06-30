@@ -362,6 +362,53 @@ Se instalaron 10 skills de `coreyhaines31/marketingskills` en `.agents/skills/` 
 
 ---
 
+## Sesión CRO — Plan por Bloques (2026-06-30)
+
+**Branch:** `claude/plan-goal-loop-execution-8ovtcv`  
+**PR:** #27 mergeado a main
+
+### Cambios implementados
+
+#### Bloque A — Quick wins de fricción
+
+| Item | Archivo | Cambio |
+|------|---------|--------|
+| A1 Contraste footer | `Footer.tsx` | `text-[#c6bce2]/50` → `/75` en `FooterCol` (WCAG AA) |
+| A2 CTA doble Hero | `index.tsx` | Eliminado botón "Ver servicios" — solo queda WhatsApp |
+| A3 Micro-CTA footer | `Footer.tsx` | Nuevo bloque `¿Lista para dar el primer paso? / Agendar por WhatsApp →` antes del copyright |
+
+#### Bloque B — SymptomChecker contextual
+
+| Item | Archivo | Cambio |
+|------|---------|--------|
+| B1 WA personalizado | `SymptomCheckerHome.tsx` | `buildWaMsg()` genera mensaje dinámico según cantidad de síntomas seleccionados (0→genérico, 1+→personalizado con conteo y área) |
+
+#### Bloque C — Reordenamiento de secciones
+
+| Item | Archivo | Cambio |
+|------|---------|--------|
+| C1 Homepage | `index.tsx` | Eliminadas: Stats Bar + "Por qué Neuropsicología". Nuevo orden: Hero → SymptomChecker → Servicios → **Testimonios** → About → Proceso → FAQ → Blog → Ubicación |
+| C2 TDAH niños | `evaluacion-tdah-ninos.tsx` | Tabla comparativa "Diferenciador" movida de sección 6 (mid-page) a posición 10b (post-FAQ, pre-Pricing) |
+
+#### Bloque D — Copy emocional blog
+
+| Item | Archivo | Cambio |
+|------|---------|--------|
+| D1 Señales TDAH | `blog/senales-tdah-ninos.tsx` | 14→12 señales (removidas 2 de inatención); h2 actualizado; párrafo puente emocional antes del CTA; botón "¿Reconoces esto? Hablemos →" |
+
+#### Bloque E — No implementado (requiere infraestructura o decisión de Karen)
+
+- E1: FloatingButtons contextual por sección visible (IntersectionObserver)
+- E2: Lead magnet PDF (requiere email integration)
+
+### PageSpeed Insights — Baseline (2026-06-30)
+
+URL: `https://pagespeed.web.dev/analysis/https-www-psicologakarentrujillo-com-mx/olmi4k7r7m?form_factor=mobile`  
+Resultado: **Sin datos suficientes** — Chrome UX Report no tiene datos reales para esta página al 30-jun-2026.  
+Acción: Re-verificar en 30 días cuando haya más tráfico acumulado.
+
+---
+
 ## Protocolo para Trabajo entre Conversaciones
 
 Cuando el usuario pide generar instrucciones para otra conversación:
