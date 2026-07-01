@@ -14,6 +14,9 @@ const INFORMACION = [
   { href: '/blog', label: 'Blog' },
   { href: '/#proceso', label: 'Proceso de evaluación' },
   { href: '/#faq', label: 'Preguntas frecuentes' },
+  { href: '/neuropsicologia-cancun', label: 'Neuropsicología en Cancún' },
+  { href: '/neuropsicologia-zona-hotelera-cancun', label: 'Zona Hotelera y Riviera Maya' },
+  { href: '/para-escuelas', label: 'Para Escuelas' },
 ];
 
 // Lucide no incluye TikTok; SVG de marca propio (hereda color vía currentColor).
