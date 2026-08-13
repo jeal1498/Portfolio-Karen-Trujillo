@@ -6,6 +6,8 @@
   <title>Evaluación de TDAH en Adultos en Cancún | Karen Trujillo, Neuropsicóloga</title>
   <meta name="description" content="Evaluación y diagnóstico de TDAH en adultos en Cancún con Karen Trujillo, Neuropsicóloga. Claridad, respaldo oficial y un plan a seguir.">
 
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
   <!-- Google Tag Manager (Reemplaza GTM-XXXXXXX con tu ID real) -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -630,13 +632,17 @@
       background: transparent;
       padding: 10px 20px 18px;
       z-index: 999;
-      display: none;
+      display: flex;
       justify-content: center;
       pointer-events: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
     .sticky-whatsapp.is-visible {
-      display: flex;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .sticky-whatsapp .btn-whatsapp {
@@ -645,6 +651,10 @@
       font-size: clamp(1rem, 3vw, 1.1rem);
       padding: 14px 20px;
       box-shadow: 0 4px 20px rgba(32, 176, 88, 0.4);
+      pointer-events: none;
+    }
+
+    .sticky-whatsapp.is-visible .btn-whatsapp {
       pointer-events: auto;
     }
 
