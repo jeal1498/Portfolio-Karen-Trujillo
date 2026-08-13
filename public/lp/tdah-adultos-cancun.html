@@ -630,9 +630,13 @@
       background: transparent;
       padding: 10px 20px 18px;
       z-index: 999;
-      display: flex;
+      display: none;
       justify-content: center;
       pointer-events: none;
+    }
+
+    .sticky-whatsapp.is-visible {
+      display: flex;
     }
 
     .sticky-whatsapp .btn-whatsapp {
@@ -645,8 +649,9 @@
     }
 
     @media (min-width: 1024px) {
-      .sticky-whatsapp {
-        display: none;
+      .sticky-whatsapp,
+      .sticky-whatsapp.is-visible {
+        display: none !important;
       }
     }
 
@@ -855,7 +860,7 @@
           <iframe src="https://www.youtube.com/embed/v6-yMOn32ug?rel=0&modestbranding=1&controls=1" title="Video de la Neuropsicóloga Karen Trujillo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <a class="btn-whatsapp" href="https://wa.me/529983211547?text=Hola%20Neuropsic%C3%B3loga%20Karen%2C%20vengo%20de%20Google%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n%20de%20TDAH%20en%20adultos." target="_blank" rel="noopener" onclick="registrarConversionWhatsApp(event)">
+        <a id="heroWhatsappBtn" class="btn-whatsapp" href="https://wa.me/529983211547?text=Hola%20Neuropsic%C3%B3loga%20Karen%2C%20vengo%20de%20Google%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n%20de%20TDAH%20en%20adultos." target="_blank" rel="noopener" onclick="registrarConversionWhatsApp(event)">
           <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.55 3.7-8.24 8.25-8.24m-4.53 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.2.87 2.35 1 2.51.12.16 1.7 2.72 4.2 3.7 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
           Agendar mi evaluación
         </a>
@@ -1168,6 +1173,26 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') cerrarModal();
     });
+
+    // ---- Sticky WhatsApp: aparece solo después de pasar el botón del hero ----
+    (function () {
+      var heroBtn = document.getElementById('heroWhatsappBtn');
+      var sticky = document.querySelector('.sticky-whatsapp');
+      if (!heroBtn || !sticky) return;
+
+      function toggleSticky() {
+        var heroBtnBottom = heroBtn.getBoundingClientRect().bottom;
+        if (heroBtnBottom < 0) {
+          sticky.classList.add('is-visible');
+        } else {
+          sticky.classList.remove('is-visible');
+        }
+      }
+
+      toggleSticky();
+      window.addEventListener('scroll', toggleSticky, { passive: true });
+      window.addEventListener('resize', toggleSticky);
+    })();
   </script>
 
   <!-- ========================================================= -->
