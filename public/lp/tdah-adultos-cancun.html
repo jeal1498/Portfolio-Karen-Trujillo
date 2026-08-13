@@ -1,510 +1,1196 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación de TDAH en Adultos en Cancún | Karen Trujillo, Neuropsicóloga</title>
-<meta name="description" content="Evaluación y diagnóstico de TDAH en adultos en Cancún con Karen Trujillo, Neuropsicóloga. Claridad, respaldo oficial y un plan a seguir.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Maven+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --plum-deep:#2e2545;
-    --plum:#433960;
-    --plum-light:#6c608a;
-    --lavender:#c6bbe2;
-    --pink:#f9dde2;
-    --sand:#f5e7d6;
-    --mint:#d4f2d4;
-    --whatsapp:#20B058;
-    --whatsapp-dark:#1a9048;
-    --cream:#fdfbf9;
-    --ink:#2e2545;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación de TDAH en Adultos en Cancún | Karen Trujillo, Neuropsicóloga</title>
+  <meta name="description" content="Evaluación y diagnóstico de TDAH en adultos en Cancún con Karen Trujillo, Neuropsicóloga. Claridad, respaldo oficial y un plan a seguir.">
 
-  *{box-sizing:border-box;margin:0;padding:0;}
+  <!-- Google Tag Manager (Reemplaza GTM-XXXXXXX con tu ID real) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
 
-  html{scroll-behavior:smooth;}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Maven+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  body{
-    font-family:'Maven Pro', sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+  <style>
+    /* ======================================================= */
+    /* 1. VARIABLES Y RESET                                    */
+    /* ======================================================= */
+    :root {
+      --plum-deep: #2e2545;
+      --plum: #433960;
+      --plum-light: #6c608a;
+      --lavender: #c6bbe2;
+      --pink: #f9dde2;
+      --sand: #f5e7d6;
+      --mint: #d4f2d4;
+      --whatsapp: #20B058;
+      --whatsapp-dark: #1a9048;
+      --cream: #fdfbf9;
+      --ink: #2e2545;
+    }
 
-  h1,h2,h3{
-    font-family:'Outfit', sans-serif;
-    line-height:1.15;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  img{max-width:100%;display:block;}
+    html {
+      scroll-behavior: smooth;
+    }
 
-  .wrap{
-    max-width:640px;
-    margin:0 auto;
-    padding:0 24px;
-  }
+    body {
+      font-family: 'Maven Pro', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-size: 1rem; /* Base: 16px */
+    }
 
-  /* ---------- WhatsApp buttons ---------- */
-  .btn-whatsapp{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    max-width:100%;
-    box-sizing:border-box;
-    background:var(--whatsapp);
-    color:#fff;
-    font-family:'Outfit', sans-serif;
-    font-weight:600;
-    font-size:clamp(0.82rem, 4vw, 1.05rem);
-    text-decoration:none;
-    padding:16px clamp(16px, 5vw, 28px);
-    border-radius:100px;
-    box-shadow:0 8px 24px rgba(32,176,88,0.3);
-    transition:transform .15s ease, box-shadow .15s ease;
-    white-space:nowrap;
-  }
-  .btn-whatsapp:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 28px rgba(32,176,88,0.4);
-  }
-  .btn-whatsapp svg{width:22px;height:22px;flex-shrink:0;}
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.15;
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-  }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-  /* ---------- BLOQUE 1: HERO ---------- */
-  .hero{
-    background:linear-gradient(160deg, var(--plum-deep) 0%, var(--plum) 65%, var(--plum-light) 100%);
-    color:#fff;
-    padding:56px 0 48px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    top:-120px;
-    right:-100px;
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(198,187,226,0.25) 0%, rgba(198,187,226,0) 70%);
-  }
-  .eyebrow{
-    display:block;
-    width:fit-content;
-    max-width:100%;
-    margin-left:auto;
-    margin-right:auto;
-    box-sizing:border-box;
-    background:rgba(255,255,255,0.1);
-    border:1px solid rgba(255,255,255,0.25);
-    color:var(--lavender);
-    font-size:clamp(0.6rem, 3vw, 0.78rem);
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    padding:6px 14px;
-    border-radius:100px;
-    margin-bottom:20px;
-    white-space:nowrap;
-    text-align:center;
-  }
-  .hero h1{
-    font-size:2.15rem;
-    font-weight:700;
-    margin-bottom:18px;
-    letter-spacing:-0.01em;
-  }
-  .hero h2{
-    font-family:'Maven Pro', sans-serif;
-    font-weight:500;
-    font-size:1.08rem;
-    color:var(--lavender);
-    max-width:520px;
-    margin-bottom:32px;
-  }
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  .video-frame{
-    width:min(340px, 85vw);
-    aspect-ratio:9/16;
-    margin:0 auto 32px;
-    border-radius:20px;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-  }
-  .video-frame .play{
-    width:56px;height:56px;border-radius:50%;
-    background:var(--whatsapp);
-    display:flex;align-items:center;justify-content:center;
-    margin:0 auto 14px;
-  }
-  .video-frame .play svg{width:20px;height:20px;fill:#fff;}
-  .video-frame p{color:rgba(255,255,255,0.6);font-size:0.82rem;}
+    /* ======================================================= */
+    /* 2. BOTONES WHATSAPP                                     */
+    /* ======================================================= */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1rem, 2.5vw, 1.1rem); /* 16-17.6px */
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 100px;
+      box-shadow: 0 8px 24px rgba(32, 176, 88, 0.3);
+      transition: transform .15s ease, box-shadow .15s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+    }
 
-  .hero .cta-row{ text-align:center; }
-  .hero .btn-whatsapp{ display:inline-flex; }
-  .hero .micro{
-    margin-top:14px;
-    font-size:0.82rem;
-    color:rgba(255,255,255,0.55);
-  }
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(32, 176, 88, 0.4);
+    }
 
-  /* ---------- BLOQUE 2: ESPEJO ---------- */
-  .mirror{
-    background:var(--sand);
-    padding:56px 0;
-  }
-  .mirror h2.block-title{
-    font-size:1.55rem;
-    font-weight:700;
-    text-align:center;
-    margin-bottom:32px;
-    color:var(--plum-deep);
-  }
-  .symptom-list{
-    list-style:none;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-bottom:32px;
-  }
-  .symptom-list li{
-    background:#fff;
-    border-radius:14px;
-    padding:16px 18px;
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    box-shadow:0 2px 10px rgba(46,37,69,0.06);
-    font-size:0.97rem;
-  }
-  .symptom-list .mark{
-    flex-shrink:0;
-    width:24px;height:24px;
-    border-radius:50%;
-    background:var(--pink);
-    color:var(--plum);
-    font-size:0.85rem;
-    font-weight:700;
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Outfit', sans-serif;
-  }
-  .relief-note{
-    background:var(--plum);
-    color:#fff;
-    border-radius:16px;
-    padding:22px 24px;
-    text-align:center;
-    font-family:'Outfit', sans-serif;
-    font-weight:500;
-    font-size:1.02rem;
-    line-height:1.5;
-  }
-  .relief-note strong{ color:var(--lavender); }
+    .btn-whatsapp svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      fill: #fff;
+    }
 
-  /* ---------- BLOQUE 3: AUTORIDAD + MAPA ---------- */
-  .authority{
-    padding:56px 0;
-    background:var(--cream);
-  }
-  .doctor-card{
-    background:#fff;
-    border:1px solid var(--pink);
-    border-radius:20px;
-    padding:28px 24px;
-    margin-bottom:44px;
-    text-align:center;
-  }
-  .doctor-card .avatar{
-    width:160px;
-    margin:0 auto 16px;
-    display:block;
-  }
-  .doctor-card h3{
-    font-size:1.15rem;
-    margin-bottom:4px;
-    color:var(--plum-deep);
-  }
-  .doctor-card .cedula{
-    display:inline-block;
-    background:var(--mint);
-    color:#2c5c2c;
-    font-size:0.78rem;
-    font-weight:600;
-    padding:4px 12px;
-    border-radius:100px;
-    margin-bottom:14px;
-  }
-  .doctor-card p{ color:var(--plum); font-size:0.95rem; }
-  .doctor-card .cofepris-notice{
-    color:var(--plum-light);
-    font-size:0.75rem;
-    margin-bottom:14px;
-  }
+    /* ======================================================= */
+    /* 3. HERO (eyebrow centrado + video vertical)             */
+    /* ======================================================= */
+    .hero {
+      background: linear-gradient(160deg, var(--plum-deep) 0%, var(--plum) 65%, var(--plum-light) 100%);
+      color: #fff;
+      padding: 56px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .map-title{
-    font-size:1.4rem;
-    font-weight:700;
-    text-align:center;
-    margin-bottom:28px;
-    color:var(--plum-deep);
-  }
-  .steps{
-    display:flex;
-    flex-direction:column;
-    gap:0;
-    position:relative;
-  }
-  .step{
-    display:flex;
-    gap:18px;
-    padding-bottom:32px;
-    position:relative;
-  }
-  .step:last-child{ padding-bottom:0; }
-  .step::before{
-    content:"";
-    position:absolute;
-    left:23px;
-    top:48px;
-    bottom:0;
-    width:2px;
-    background:var(--pink);
-  }
-  .step:last-child::before{ display:none; }
-  .step-num{
-    flex-shrink:0;
-    width:48px;height:48px;
-    border-radius:50%;
-    background:var(--plum-deep);
-    color:#fff;
-    font-family:'Outfit', sans-serif;
-    font-weight:700;
-    font-size:1.1rem;
-    display:flex;align-items:center;justify-content:center;
-    z-index:1;
-  }
-  .step-content h4{
-    font-family:'Outfit', sans-serif;
-    font-size:1.05rem;
-    font-weight:600;
-    margin-bottom:6px;
-    color:var(--plum-deep);
-  }
-  .step-content p{ font-size:0.94rem; color:#544a6b; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -100px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(198, 187, 226, 0.25) 0%, rgba(198, 187, 226, 0) 70%);
+    }
 
-  /* ---------- BLOQUE 4: TESTIMONIOS + CIERRE ---------- */
-  .closing{
-    background:linear-gradient(180deg, var(--plum-deep) 0%, var(--plum) 100%);
-    color:#fff;
-    padding:56px 0 64px;
-  }
-  .closing h2.block-title{
-    font-size:1.55rem;
-    font-weight:700;
-    text-align:center;
-    margin-bottom:32px;
-  }
-  .testimonials{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-    margin-bottom:40px;
-  }
-  .testimonial{
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.14);
-    border-radius:16px;
-    padding:20px;
-  }
-  .testimonial p.quote{
-    font-size:0.96rem;
-    color:rgba(255,255,255,0.92);
-    margin-bottom:12px;
-    font-style:italic;
-  }
-  .testimonial .who{
-    font-family:'Outfit', sans-serif;
-    font-size:0.82rem;
-    color:var(--lavender);
-    font-weight:500;
-  }
-  .stars{ color:#ffd76a; letter-spacing:2px; margin-bottom:8px; font-size:0.9rem; }
+    .hero-container {
+      display: grid;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
 
-  .final-cta{
-    text-align:center;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:20px;
-    padding:32px 24px;
-  }
-  .urgency{
-    display:inline-block;
-    background:rgba(249,221,226,0.15);
-    color:var(--pink);
-    font-size:0.8rem;
-    font-weight:600;
-    padding:6px 14px;
-    border-radius:100px;
-    margin-bottom:16px;
-    letter-spacing:0.02em;
-  }
-  .final-cta p.lead{
-    font-size:1.05rem;
-    margin-bottom:24px;
-    color:rgba(255,255,255,0.9);
-    max-width:440px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  .final-cta .btn-whatsapp{ display:inline-flex; }
-  .final-cta .micro{
-    margin-top:14px;
-    font-size:0.8rem;
-    color:rgba(255,255,255,0.5);
-  }
+    @media (min-width: 1024px) {
+      .hero-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
-  footer{
-    background:var(--plum-deep);
-    color:rgba(255,255,255,0.4);
-    text-align:center;
-    font-size:0.75rem;
-    padding:20px 24px;
-  }
+    /* ---- TEXTO (todo centrado) ---- */
+    .hero-text {
+      text-align: center;
+    }
 
-  @media (min-width:600px){
-    .wrap{ max-width:600px; }
-    .hero h1{ font-size:2.5rem; }
-  }
-</style>
+    .hero-text .eyebrow {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--lavender);
+      font-size: clamp(0.7rem, 2vw, 0.8rem); /* 11.2-12.8px */
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin: 0 auto 20px auto;
+      font-weight: 600;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.2rem); /* 38-51px */
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-text h2 {
+      font-family: 'Maven Pro', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 2.5vw, 1.4rem); /* 19-22px */
+      color: var(--lavender);
+      margin-bottom: 0;
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ---- VIDEO VERTICAL (9:16) ---- */
+    .hero-video {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+    }
+
+    .hero-video .btn-whatsapp {
+      margin-top: 18px;
+      width: 100%;
+    }
+
+    .hero-video .micro {
+      margin-top: 10px;
+      font-size: 0.8rem; /* 12.8px */
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+
+    /* ======================================================= */
+    /* 4. BLOQUE "ESPEJO" (Síntomas)                          */
+    /* ======================================================= */
+    .mirror {
+      background: var(--sand);
+      padding: 56px 0;
+    }
+
+    .mirror .block-title {
+      font-size: clamp(1.8rem, 4vw, 2.2rem); /* 29-35px */
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--plum-deep);
+    }
+
+    .symptom-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .symptom-list li {
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      box-shadow: 0 2px 10px rgba(46, 37, 69, 0.06);
+      font-size: 1rem; /* 16px */
+    }
+
+    .symptom-list .mark {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: var(--plum);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .relief-note {
+      background: var(--plum);
+      color: #fff;
+      border-radius: 16px;
+      padding: 22px 24px;
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem; /* 16.8px */
+      line-height: 1.5;
+    }
+
+    .relief-note strong {
+      color: var(--lavender);
+    }
+
+    /* ======================================================= */
+    /* 5. AUTORIDAD (DOCTORA + LOGOS)                         */
+    /* ======================================================= */
+    .authority {
+      padding: 56px 0;
+      background: var(--cream);
+    }
+
+    .doctor-card {
+      background: #fff;
+      border: 1px solid var(--pink);
+      border-radius: 20px;
+      padding: 32px 24px;
+      margin-bottom: 40px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(46, 37, 69, 0.06);
+    }
+
+    .doctor-card .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px;
+      display: block;
+      border: 4px solid var(--lavender);
+    }
+
+    .doctor-card h3 {
+      font-size: 1.15rem; /* 18.4px */
+      margin-bottom: 4px;
+      color: var(--plum-deep);
+    }
+
+    .doctor-card .cedula {
+      display: inline-block;
+      background: var(--mint);
+      color: #2c5c2c;
+      font-size: 0.8rem; /* 12.8px */
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+
+    .doctor-card .cofepris-notice {
+      color: var(--plum-light);
+      font-size: 0.8rem; /* 12.8px */
+      margin-bottom: 14px;
+    }
+
+    .doctor-card p {
+      color: var(--plum);
+      font-size: 1rem; /* 16px */
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .authority-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding: 20px 0;
+      border-top: 1px solid #eee;
+    }
+
+    .badge-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.8rem; /* 12.8px */
+      color: var(--plum-light);
+      font-weight: 500;
+    }
+
+    .badge-item img {
+      max-height: 40px;
+      width: auto;
+      margin-bottom: 6px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .badge-item:hover img {
+      opacity: 1;
+    }
+
+    .badge-item .badge-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--lavender);
+      color: var(--plum-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    /* ======================================================= */
+    /* 6. PROCESO (PASOS)                                     */
+    /* ======================================================= */
+    .process {
+      padding: 20px 0 56px;
+    }
+
+    .process .map-title {
+      font-size: clamp(1.8rem, 4vw, 2.2rem); /* 29-35px */
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--plum-deep);
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 32px;
+      position: relative;
+    }
+
+    .step:last-child {
+      padding-bottom: 0;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      bottom: 0;
+      width: 2px;
+      background: var(--pink);
+    }
+
+    .step:last-child::before {
+      display: none;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--plum-deep);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .step-content h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem; /* 18.4px */
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--plum-deep);
+    }
+
+    .step-content p {
+      font-size: 1rem; /* 16px */
+      color: #544a6b;
+    }
+
+    /* ======================================================= */
+    /* 7. TESTIMONIOS Y CIERRE                                */
+    /* ======================================================= */
+    .closing {
+      background: linear-gradient(180deg, var(--plum-deep) 0%, var(--plum) 100%);
+      color: #fff;
+      padding: 56px 0 64px;
+    }
+
+    .closing .block-title {
+      font-size: clamp(1.8rem, 4vw, 2.2rem); /* 29-35px */
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .testimonial .stars {
+      color: #ffd76a;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .testimonial p.quote {
+      font-size: 1rem; /* 16px */
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .testimonial .who {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem; /* 13.6px */
+      color: var(--lavender);
+      font-weight: 500;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 32px 24px;
+    }
+
+    .urgency {
+      display: inline-block;
+      background: rgba(249, 221, 226, 0.15);
+      color: var(--pink);
+      font-size: 0.8rem; /* 12.8px */
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .final-cta p.lead {
+      font-size: 1.05rem; /* 16.8px */
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta .btn-whatsapp {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .final-cta .micro {
+      margin-top: 14px;
+      font-size: 0.8rem; /* 12.8px */
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ======================================================= */
+    /* 8. FAQ                                                 */
+    /* ======================================================= */
+    .faq-section {
+      padding: 56px 0;
+      background: #fff;
+    }
+
+    .faq-section .block-title {
+      font-size: clamp(1.8rem, 4vw, 2.2rem); /* 29-35px */
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--plum-deep);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--cream);
+      border: 1px solid #eae5f0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem; /* 16.8px */
+      color: var(--plum-deep);
+      padding: 18px 24px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .faq-item summary:hover {
+      background: #f5f0fa;
+    }
+
+    .faq-item summary::after {
+      content: "➕";
+      font-size: 1.2rem;
+      color: var(--plum-light);
+      transition: transform 0.3s;
+    }
+
+    .faq-item[open] summary::after {
+      content: "➖";
+    }
+
+    .faq-item .faq-answer {
+      padding: 0 24px 20px;
+      color: #4a405e;
+      font-size: 1rem; /* 16px */
+    }
+
+    /* ======================================================= */
+    /* 9. STICKY CTA (FONDO TRANSPARENTE)                     */
+    /* ======================================================= */
+    .sticky-whatsapp {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      padding: 10px 20px 18px;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .sticky-whatsapp .btn-whatsapp {
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      padding: 14px 20px;
+      box-shadow: 0 4px 20px rgba(32, 176, 88, 0.4);
+      pointer-events: auto;
+    }
+
+    @media (min-width: 1024px) {
+      .sticky-whatsapp {
+        display: none;
+      }
+    }
+
+    /* ======================================================= */
+    /* 10. FOOTER LEGAL                                       */
+    /* ======================================================= */
+    .site-footer {
+      background: var(--plum-deep);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 40px 20px 30px;
+      text-align: center;
+      font-size: 0.85rem; /* 13.6px */
+    }
+
+    .site-footer .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .site-footer .footer-address {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .site-footer .footer-disclaimer {
+      font-size: 0.8rem; /* 12.8px */
+      line-height: 1.6;
+      max-width: 850px;
+      margin: 0 auto 18px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .site-footer .footer-links a {
+      color: var(--lavender);
+      text-decoration: none;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 0.85rem; /* 13.6px */
+    }
+
+    .site-footer .footer-links a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    .site-footer .footer-copy {
+      margin-top: 18px;
+      font-size: 0.75rem; /* 12px */
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ======================================================= */
+    /* 11. RESPONSIVE EXTRA (BOTÓN 1 LÍNEA)                   */
+    /* ======================================================= */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 40px 0 30px;
+      }
+      .hero-video .btn-whatsapp {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        padding: 14px 20px;
+      }
+      .final-cta .btn-whatsapp {
+        font-size: 0.9rem;
+        padding: 12px 18px;
+      }
+      .doctor-card .avatar {
+        width: 110px;
+        height: 110px;
+      }
+      .authority-badges {
+        gap: 16px;
+      }
+      .badge-item img {
+        max-height: 30px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-video .btn-whatsapp {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+        gap: 6px;
+      }
+      .hero-video .btn-whatsapp svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .btn-whatsapp {
+        transition: none;
+      }
+    }
+
+    /* ======================================================= */
+    /* 12. MODAL LEGAL                                        */
+    /* ======================================================= */
+    .legal-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(46, 37, 69, 0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .legal-modal-content {
+      background: #fff;
+      max-width: 820px;
+      width: 100%;
+      max-height: 90vh;
+      border-radius: 24px;
+      padding: 40px 35px;
+      position: relative;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      animation: fadeInModal 0.3s ease;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close {
+      position: sticky;
+      float: right;
+      top: 0;
+      font-size: 2.2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--plum-light);
+      transition: 0.3s;
+      z-index: 10;
+      line-height: 1;
+    }
+    .modal-close:hover {
+      color: var(--plum-deep);
+      transform: rotate(90deg);
+    }
+
+    .legal-modal-body h2 {
+      color: var(--plum-deep);
+      font-size: 1.4rem; /* 22.4px */
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-family: 'Outfit', sans-serif;
+    }
+    .legal-modal-body h2:first-of-type {
+      margin-top: 0;
+    }
+    .legal-modal-body p,
+    .legal-modal-body li {
+      color: #3d3552;
+      font-size: 1rem; /* 16px */
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .legal-modal-body ul {
+      padding-left: 28px;
+      margin-bottom: 16px;
+    }
+    .legal-modal-body strong {
+      color: var(--plum-deep);
+    }
+
+    @media (max-width: 600px) {
+      .legal-modal-content {
+        padding: 25px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ============ BLOQUE 1: EL RESCATE INMEDIATO ============ -->
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Evaluación de TDAH en Adultos · Cancún</span>
-    <h1>Por fin, una explicación a lo que vives cada día</h1>
-    <h2>Un diagnóstico claro, hecho por una especialista certificada — para que dejes de sentir que "algo está mal contigo" y empieces a tener respuestas reales.</h2>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <div class="video-frame">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/v6-yMOn32ug" title="Video de la Neuropsicóloga Karen Trujillo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 20px;"></iframe>
-    </div>
+  <!-- ========================================================= -->
+  <!-- HERO                                                    -->
+  <!-- ========================================================= -->
+  <section class="hero">
+    <div class="wrap hero-container">
+      <div class="hero-text">
+        <span class="eyebrow">Evaluación Neuropsicológica · Cancún</span>
+        <h1>Por fin, una explicación a lo que vives cada día</h1>
+        <h2>Evaluación especializada con respaldo oficial — para que dejes de sentir que "algo está mal contigo" y tengas respuestas reales.</h2>
+      </div>
 
-    <div class="cta-row">
-      <a class="btn-whatsapp" href="https://wa.me/529983211547?text=Hola%20Neuropsic%C3%B3loga%20Karen%2C%20vengo%20de%20Google%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n%20de%20TDAH%20en%20adultos." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.55 3.7-8.24 8.25-8.24m-4.53 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.2.87 2.35 1 2.51.12.16 1.7 2.72 4.2 3.7 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
-        Quiero agendar mi evaluación
-      </a>
-      <p class="micro">Respuesta directa por WhatsApp<br>sin filas, sin esperas</p>
+      <div class="hero-video">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/v6-yMOn32ug?rel=0&modestbranding=1&controls=1" title="Video de la Neuropsicóloga Karen Trujillo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <a class="btn-whatsapp" href="https://wa.me/529983211547?text=Hola%20Neuropsic%C3%B3loga%20Karen%2C%20vengo%20de%20Google%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n%20de%20TDAH%20en%20adultos." target="_blank" rel="noopener" onclick="registrarConversionWhatsApp(event)">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.55 3.7-8.24 8.25-8.24m-4.53 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.2.87 2.35 1 2.51.12.16 1.7 2.72 4.2 3.7 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
+          Agendar mi evaluación
+        </a>
+        <p class="micro">Respuesta directa por WhatsApp · sin filas, sin esperas</p>
+      </div>
     </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- BLOQUE "ESPEJO"                                          -->
+  <!-- ========================================================= -->
+  <section class="mirror">
+    <div class="wrap">
+      <h2 class="block-title">¿Te suena familiar tu día a día?</h2>
+      <ul class="symptom-list">
+        <li><span class="mark">✓</span> Sufres de resaca social: vas a un evento y necesitas aislarte tres días para recargar energía.</li>
+        <li><span class="mark">✓</span> Ciertas texturas, ruidos o luces en la oficina te agotan mentalmente.</li>
+        <li><span class="mark">✓</span> Experimentas parálisis ejecutiva: sabes lo que tienes que hacer, pero procrastinas hasta que la ansiedad te gana.</li>
+        <li><span class="mark">✓</span> Sientes que tu mente nunca se apaga y vives agotado intentando "encajar".</li>
+        <li><span class="mark">✓</span> Cargas con la sensación constante de estar fallando, aunque por fuera nadie lo note.</li>
+      </ul>
+      <div class="relief-note">
+        No es falta de disciplina. No es que "no le eches ganas". <strong>No es un defecto de carácter.</strong><br>
+        Es momento de dejar de adivinar y obtener respuestas reales.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- AUTORIDAD                                                -->
+  <!-- ========================================================= -->
+  <section class="authority">
+    <div class="wrap">
+      <div class="doctor-card">
+        <img class="avatar" src="/Psicologa_Karen_Trujillo.webp" alt="Karen Trujillo, Neuropsicóloga" loading="lazy">
+        <h3>Karen Trujillo</h3>
+        <span class="cedula">Cédula Profesional 11009616</span>
+        <p class="cofepris-notice">Aviso de Publicidad COFEPRIS: 2423022002A00080</p>
+        <p>Neuropsicóloga especializada en evaluación y diagnóstico de TDAH en adultos. Mi trabajo es traducir lo que vives día a día en un diagnóstico preciso, con respaldo oficial, que te dé claridad y un plan real por seguir — no solo una etiqueta.</p>
+      </div>
+
+      <div class="authority-badges">
+        <div class="badge-item">
+          <div class="badge-icon" aria-hidden="true">🎯</div>
+          <span>Escala CAADID</span>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon" aria-hidden="true">📋</div>
+          <span>Escalas Conners</span>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon" aria-hidden="true">🎓</div>
+          <span>Respaldo Académico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- PROCESO                                                  -->
+  <!-- ========================================================= -->
+  <section class="process">
+    <div class="wrap">
+      <h3 class="map-title">Así de sencillo es el proceso</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Contacto inicial</h4>
+            <p>Me escribes por WhatsApp, platicamos brevemente sobre lo que has vivido y te oriento sin compromiso.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Evaluación presencial en Cancún</h4>
+            <p>Aplicamos entrevista clínica estructurada y escalas estandarizadas de validez internacional (como CAADID y escalas Conners para adultos, entre otras). Un proceso tranquilo, hecho a tu ritmo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Resultados y plan a seguir</h4>
+            <p>Recibes un diagnóstico claro, explicado en un lenguaje que entiendes, con un informe de validez oficial para trámites laborales o médicos, más un plan concreto de siguientes pasos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- FAQ                                                      -->
+  <!-- ========================================================= -->
+  <section class="faq-section">
+    <div class="wrap">
+      <h2 class="block-title">Preguntas frecuentes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Qué incluye la evaluación neuropsicológica?</summary>
+          <div class="faq-answer">
+            Incluye una entrevista clínica detallada, la aplicación de pruebas estandarizadas (CAADID, Conners, entre otras), el análisis de resultados y un informe ejecutivo con tu perfil cognitivo, recomendaciones y un plan de acción personalizado.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto dura todo el proceso?</summary>
+          <div class="faq-answer">
+            La evaluación presencial suele durar entre 2 y 3 horas, dependiendo del caso. El informe final lo entregamos en un plazo de 5 a 7 días hábiles, para garantizar un análisis profundo y de calidad.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Necesito una referencia médica para agendar?</summary>
+          <div class="faq-answer">
+            No es necesario. Puedes agendar directamente por WhatsApp. Si ya cuentas con estudios previos o un diagnóstico de otro especialista, tráelos; nos servirán como complemento.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Este estudio sirve para trámites laborales o escolares?</summary>
+          <div class="faq-answer">
+            Sí. El informe que entregamos tiene validez oficial y puede ser utilizado para solicitar ajustes razonables en el trabajo, en instituciones educativas o como respaldo ante el IMSS/ISSSTE.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- TESTIMONIOS Y CIERRE                                     -->
+  <!-- ========================================================= -->
+  <section class="closing">
+    <div class="wrap">
+      <h2 class="block-title">Otros adultos ya salieron de la duda</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Toda mi vida pensé que era desorganizado y ya. Tener por fin un diagnóstico claro me quitó un peso que ni sabía que cargaba."</p>
+          <div class="who">— A.C., paciente de 34 años, Cancún</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"El proceso fue mucho más sencillo de lo que imaginaba. Karen me explicó todo con calma y sin hacerme sentir juzgado."</p>
+          <div class="who">— M.L., paciente de 29 años, Cancún</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"El informe me sirvió para hablar con recursos humanos en mi trabajo y por fin pedir los ajustes que necesitaba."</p>
+          <div class="who">— R.V., paciente de 41 años, Cancún</div>
+        </div>
+      </div>
+
+      <div class="final-cta">
+        <span class="urgency">Cupo limitado al mes</span>
+        <p class="lead">Para garantizar un proceso de calidad, atiendo un número limitado de evaluaciones cada mes. Si estás listo(a) para dejar de adivinar y obtener respuestas reales, este es el momento de dar el primer paso.</p>
+        <a class="btn-whatsapp" href="https://wa.me/529983211547?text=Hola%20Neuropsic%C3%B3loga%20Karen%2C%20vengo%20de%20Google%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n%20de%20TDAH%20en%20adultos." target="_blank" rel="noopener" onclick="registrarConversionWhatsApp(event)">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.55 3.7-8.24 8.25-8.24m-4.53 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.2.87 2.35 1 2.51.12.16 1.7 2.72 4.2 3.7 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
+          Agendar mi evaluación
+        </a>
+        <p class="micro">Karen Trujillo · Neuropsicóloga · Cancún</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- STICKY CTA (FONDO TRANSPARENTE)                          -->
+  <!-- ========================================================= -->
+  <div class="sticky-whatsapp">
+    <a class="btn-whatsapp" href="https://wa.me/529983211547?text=Hola%20Neuropsic%C3%B3loga%20Karen%2C%20vengo%20de%20Google%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n%20de%20TDAH%20en%20adultos." target="_blank" rel="noopener" onclick="registrarConversionWhatsApp(event)">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.55 3.7-8.24 8.25-8.24m-4.53 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.2.87 2.35 1 2.51.12.16 1.7 2.72 4.2 3.7 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
+      Agendar por WhatsApp
+    </a>
   </div>
-</section>
 
-<!-- ============ BLOQUE 2: EL ESPEJO ============ -->
-<section class="mirror">
-  <div class="wrap">
-    <h2 class="block-title">¿Te suena familiar tu día a día?</h2>
-    <ul class="symptom-list">
-      <li><span class="mark">✓</span> Sufres de resaca social: vas a un evento y necesitas aislarte tres días para recargar energía.</li>
-      <li><span class="mark">✓</span> Ciertas texturas, ruidos o luces en la oficina te agotan mentalmente.</li>
-      <li><span class="mark">✓</span> Experimentas parálisis ejecutiva: sabes lo que tienes que hacer, pero procrastinas hasta que la ansiedad te gana.</li>
-      <li><span class="mark">✓</span> Sientes que tu mente nunca se apaga y vives agotado intentando "encajar".</li>
-      <li><span class="mark">✓</span> Cargas con la sensación constante de estar fallando, aunque por fuera nadie lo note.</li>
+  <!-- ========================================================= -->
+  <!-- FOOTER LEGAL (CON LINKS A MODAL)                         -->
+  <!-- ========================================================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-address">
+        📍 <strong>Consultorio:</strong> Cancún, Quintana Roo, México · 📞 +52 998 321 1547
+      </p>
+      <p class="footer-disclaimer">
+        ⚠️ <em>Descargo de responsabilidad: La información presentada en este sitio web tiene fines meramente informativos y educacionales. No sustituye la evaluación, diagnóstico ni tratamiento neuropsicológico o médico profesional. En caso de emergencia, contacta a los servicios de salud de tu localidad.</em>
+      </p>
+      <div class="footer-links">
+        <a onclick="abrirModal('privacidad'); return false;">Aviso de Privacidad</a> |
+        <a onclick="abrirModal('terminos'); return false;">Términos y Condiciones</a>
+      </div>
+      <p class="footer-copy">
+        © 2026 Karen Trujillo · Cédula Profesional 11009616 · COFEPRIS 2423022002A00080
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- CONTENIDO LEGAL OCULTO (PARA EL MODAL)                   -->
+  <!-- ========================================================= -->
+  <div id="content-privacidad" style="display:none;">
+    <h2>Responsable de tus datos</h2>
+    <p><strong>Karen Trujillo</strong>, Neuropsicóloga con Cédula Profesional 11009616, con consultorio ubicado en <strong>Cancún, Quintana Roo, México</strong>, es la responsable del tratamiento de sus datos personales, de conformidad con lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y su Reglamento.</p>
+    <h2>Datos personales que recabamos</h2>
+    <p>Para brindar nuestros servicios de evaluación y atención neuropsicológica, podemos recabar los siguientes datos personales:</p>
+    <ul>
+      <li><strong>Datos de identificación:</strong> Nombre completo, fecha de nacimiento, edad, sexo.</li>
+      <li><strong>Datos de contacto:</strong> Número telefónico (incluyendo WhatsApp), correo electrónico y domicilio (opcional).</li>
+      <li><strong>Datos de salud:</strong> Motivo de consulta, antecedentes clínicos y psicológicos, información relevante para la evaluación neuropsicológica.</li>
+      <li><strong>Datos académicos/laborales:</strong> Ocupación o nivel de estudios, cuando sea necesario para el contexto de la evaluación.</li>
     </ul>
-    <div class="relief-note">
-      No es falta de disciplina. No es que "no le eches ganas". <strong>No es un defecto de carácter.</strong><br>
-      Es momento de dejar de adivinar y obtener respuestas reales.
+    <h2>Finalidades del tratamiento</h2>
+    <p>Sus datos personales serán utilizados para las siguientes finalidades <strong>primarias</strong> (necesarias para el servicio):</p>
+    <ul>
+      <li>Agendar, confirmar y gestionar citas para evaluaciones y consultas.</li>
+      <li>Realizar la evaluación neuropsicológica y el análisis de resultados.</li>
+      <li>Elaborar informes diagnósticos y dar seguimiento a su proceso.</li>
+      <li>Comunicación directa vía telefónica o WhatsApp para cuestiones relacionadas con su atención.</li>
+    </ul>
+    <p><strong>Finalidades secundarias</strong> (no esenciales, puede oponerse):</p>
+    <ul>
+      <li>Enviar información sobre promociones, nuevos servicios o eventos relacionados con la salud mental.</li>
+      <li>Realizar encuestas de satisfacción sobre nuestros servicios.</li>
+    </ul>
+    <h2>Transferencia de datos personales</h2>
+    <p>Sus datos personales <strong>no serán transferidos</strong> a terceros, salvo obligación legal (por ejemplo, requerimiento de autoridad judicial o sanitaria) o cuando sea estrictamente necesario para la referencia con otros especialistas (psiquiatras, neurólogos), siempre con su consentimiento previo y expreso.</p>
+    <h2>Derechos ARCO y revocación del consentimiento</h2>
+    <p>Usted tiene derecho a conocer qué datos tenemos de usted, para qué los utilizamos y las condiciones de su uso (<strong>Acceso</strong>). Así como a solicitar la corrección de sus datos si están incorrectos (<strong>Rectificación</strong>), que los eliminemos de nuestros registros cuando ya no sean necesarios (<strong>Cancelación</strong>) u oponerse al uso de sus datos para finalidades específicas (<strong>Oposición</strong>).</p>
+    <p>Para ejercer sus derechos ARCO, o para revocar su consentimiento, envíe un escrito a través de nuestro correo electrónico: <strong>contacto@karentrujillo.com</strong> (o a través del WhatsApp +52 998 321 1547), indicando su nombre completo y una descripción clara de su solicitud. Atenderemos su petición en un plazo máximo de <strong>15 días hábiles</strong>.</p>
+    <h2>Medios para limitar el uso de sus datos</h2>
+    <p>Puede limitar el uso de sus datos personales para finalidades secundarias (como envío de promociones) enviando un correo a contacto@karentrujillo.com con el asunto "Limitación de datos". En caso de que no desee recibir más comunicaciones, puede solicitarlo en cualquier momento.</p>
+    <h2>Uso de cookies y tecnologías de seguimiento</h2>
+    <p>Nuestro sitio web utiliza Google Analytics y Google Tag Manager para mejorar la experiencia del usuario y medir el rendimiento de la página. Estas herramientas pueden almacenar cookies en su navegador. Usted puede deshabilitarlas desde la configuración de su navegador.</p>
+    <h2>Modificaciones al Aviso de Privacidad</h2>
+    <p>Este Aviso de Privacidad puede ser actualizado en cualquier momento. Le recomendamos revisarlo periódicamente. La fecha de la última actualización es <strong>13 de agosto de 2026</strong>.</p>
+  </div>
+
+  <div id="content-terminos" style="display:none;">
+    <h2>1. Aceptación de los términos</h2>
+    <p>Al acceder y utilizar este sitio web (<a href="/">karentrujillo.com</a>) y los servicios ofrecidos por <strong>Karen Trujillo</strong>, Neuropsicóloga, usted acepta cumplir y quedar sujeto a los presentes Términos y Condiciones. Si no está de acuerdo con alguno de estos términos, le rogamos no utilizar nuestro sitio ni nuestros servicios.</p>
+    <h2>2. Descripción del servicio</h2>
+    <p>Karen Trujillo ofrece servicios de <strong>evaluación y atención neuropsicológica</strong> para adultos, incluyendo (pero no limitado a) la evaluación de TDAH, trastornos del aprendizaje, y otras condiciones cognitivas. Todos los servicios se brindan de manera presencial en nuestro consultorio en Cancún, Quintana Roo. La información proporcionada en este sitio web es de carácter <strong>informativo y educativo</strong> y no sustituye una consulta médica o psicológica profesional.</p>
+    <h2>3. Política de citas y cancelaciones</h2>
+    <ul>
+      <li><strong>Agendamiento:</strong> Las citas se agendan mediante contacto directo vía WhatsApp o correo electrónico. La confirmación de la cita se realiza una vez que el paciente ha recibido la confirmación por parte del consultorio.</li>
+      <li><strong>Cancelaciones:</strong> Si necesita cancelar o reprogramar su cita, solicitamos un aviso con <strong>al menos 24 horas de anticipación</strong>. De lo contrario, la evaluación podrá ser cobrada en su totalidad por concepto de tiempo reservado.</li>
+      <li><strong>Puntualidad:</strong> La evaluación tiene una duración estimada. Si el paciente llega con retraso, el tiempo de la sesión se acortará para no afectar los compromisos posteriores, sin derecho a reembolso por el tiempo no utilizado.</li>
+    </ul>
+    <h2>4. Política de pagos</h2>
+    <p>El costo de la evaluación y/o consulta se acuerda previamente con el paciente. El pago se realiza de forma <strong>anticipada</strong> (para reservar el espacio) o al inicio de la evaluación, según se acuerde. Los métodos de pago aceptados incluyen transferencia bancaria, efectivo y tarjetas de crédito/débito (a través de terminal punto de venta). <strong>No se realizan reembolsos</strong> una vez iniciada la evaluación, salvo casos excepcionales justificados.</p>
+    <h2>5. Confidencialidad</h2>
+    <p>Todos los datos e información compartida durante el proceso de evaluación y consulta son <strong>estrictamente confidenciales</strong> y están protegidos por el secreto profesional. La información solo podrá ser compartida con terceros (como familiares o médicos tratantes) con el consentimiento expreso del paciente, o cuando así lo exija la ley.</p>
+    <h2>6. Descargo de responsabilidad médica</h2>
+    <p>La evaluación neuropsicológica es una herramienta clínica especializada, pero <strong>no constituye un diagnóstico médico</strong> en el sentido de la práctica de la medicina general. Los informes y recomendaciones emitidos por la Neuropsicóloga son orientativos y deben ser interpretados en conjunto con otros profesionales de la salud (como psiquiatras o neurólogos) para un abordaje integral. En caso de una emergencia o crisis de salud mental, contacte a los servicios de emergencia de su localidad (911 en México).</p>
+    <h2>7. Propiedad intelectual</h2>
+    <p>Todo el contenido de este sitio web (textos, imágenes, logotipos, diseño) es propiedad de Karen Trujillo. Queda prohibida la reproducción, distribución o modificación sin el consentimiento previo por escrito.</p>
+    <h2>8. Ley aplicable y jurisdicción</h2>
+    <p>Estos Términos y Condiciones se rigen por las leyes de los <strong>Estados Unidos Mexicanos</strong>. Cualquier controversia derivada del uso de este sitio o de los servicios será resuelta ante los tribunales competentes con sede en <strong>Cancún, Quintana Roo</strong>.</p>
+    <h2>9. Modificaciones</h2>
+    <p>Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios entrarán en vigor a partir de su publicación en este sitio. Le recomendamos revisarlos periódicamente.</p>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- ESTRUCTURA DEL MODAL                                     -->
+  <!-- ========================================================= -->
+  <div id="legalModal" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="modal-close" onclick="cerrarModal()">&times;</button>
+      <div id="legalModalBody" class="legal-modal-body">
+        <!-- Aquí se inyecta el contenido seleccionado -->
+      </div>
     </div>
   </div>
-</section>
 
-<!-- ============ BLOQUE 3: LA AUTORIDAD Y EL MAPA ============ -->
-<section class="authority">
-  <div class="wrap">
-    <div class="doctor-card">
-      <img class="avatar" src="/Psicologa_Karen_Trujillo.webp" alt="Karen Trujillo, Neuropsicóloga">
-      <h3>Karen Trujillo</h3>
-      <span class="cedula">Cédula Profesional 11009616</span>
-      <p class="cofepris-notice">Aviso de Publicidad COFEPRIS: 2423022002A00080</p>
-      <p>Neuropsicóloga especializada en evaluación y diagnóstico de TDAH en adultos. Mi trabajo es traducir lo que vives día a día en un diagnóstico preciso, con respaldo oficial, que te dé claridad y un plan real por seguir — no solo una etiqueta.</p>
-    </div>
+  <!-- ========================================================= -->
+  <!-- SCRIPTS                                                  -->
+  <!-- ========================================================= -->
+  <script>
+    // ---- Conversión WhatsApp ----
+    function registrarConversionWhatsApp(e) {
+      if (typeof window.dataLayer !== 'undefined') {
+        window.dataLayer.push({
+          'event': 'whatsapp_click',
+          'category': 'Lead',
+          'label': 'CTA_WhatsApp_Landing',
+          'value': 1
+        });
+      }
+    }
 
-    <h3 class="map-title">Así de sencillo es el proceso</h3>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>Contacto inicial</h4>
-          <p>Me escribes por WhatsApp, platicamos brevemente sobre lo que has vivido y te oriento sin compromiso.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>Evaluación presencial en Cancún</h4>
-          <p>Aplicamos entrevista clínica estructurada y escalas estandarizadas de validez internacional (como CAADID y escalas Conners para adultos, entre otras). Un proceso tranquilo, hecho a tu ritmo.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>Resultados y plan a seguir</h4>
-          <p>Recibes un diagnóstico claro, explicado en un lenguaje que entiendes, con un informe de validez oficial para trámites laborales o médicos, más un plan concreto de siguientes pasos.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    // ---- Modal Legal ----
+    function abrirModal(tipo) {
+      var modal = document.getElementById('legalModal');
+      var cuerpo = document.getElementById('legalModalBody');
+      var contenido = document.getElementById('content-' + tipo);
 
-<!-- ============ BLOQUE 4: LA PAZ MENTAL Y CIERRE ============ -->
-<section class="closing">
-  <div class="wrap">
-    <h2 class="block-title">Otros adultos ya salieron de la duda</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"Toda mi vida pensé que era desorganizado y ya. Tener por fin un diagnóstico claro me quitó un peso que ni sabía que cargaba."</p>
-        <div class="who">— Paciente de 34 años</div>
-      </div>
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"El proceso fue mucho más sencillo de lo que imaginaba. Karen me explicó todo con calma y sin hacerme sentir juzgado."</p>
-        <div class="who">— Paciente de 29 años</div>
-      </div>
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"El informe me sirvió para hablar con recursos humanos en mi trabajo y por fin pedir los ajustes que necesitaba."</p>
-        <div class="who">— Paciente de 41 años</div>
-      </div>
-    </div>
+      if (contenido) {
+        cuerpo.innerHTML = contenido.innerHTML;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
 
-    <div class="final-cta">
-      <span class="urgency">Cupo limitado al mes</span>
-      <p class="lead">Para garantizar un proceso de calidad, atiendo un número limitado de evaluaciones cada mes. Si estás listo(a) para dejar de adivinar y obtener respuestas reales, este es el momento de dar el primer paso.</p>
-      <a class="btn-whatsapp" href="https://wa.me/529983211547?text=Hola%20Neuropsic%C3%B3loga%20Karen%2C%20vengo%20de%20Google%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20evaluaci%C3%B3n%20de%20TDAH%20en%20adultos." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.37c0-4.55 3.7-8.24 8.25-8.24m-4.53 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.2.87 2.35 1 2.51.12.16 1.7 2.72 4.2 3.7 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
-        Agendar mi evaluación ahora
-      </a>
-      <p class="micro">Karen Trujillo · Neuropsicóloga · Cancún</p>
-    </div>
-  </div>
-</section>
+    function cerrarModal() {
+      document.getElementById('legalModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
 
-<footer>
-  © 2026 Karen Trujillo. Todos los derechos reservados.<br>
-  Cédula Profesional 11009616 · Aviso de Publicidad COFEPRIS: 2423022002A00080
-</footer>
+    // Cerrar al hacer clic en el fondo (fuera del cuadro blanco)
+    document.getElementById('legalModal').addEventListener('click', function(e) {
+      if (e.target === this) cerrarModal();
+    });
+
+    // Cerrar al presionar la tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') cerrarModal();
+    });
+  </script>
+
+  <!-- ========================================================= -->
+  <!-- SCHEMA.ORG (JSON-LD)                                     -->
+  <!-- ========================================================= -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Karen Trujillo - Neuropsicóloga",
+      "image": "https://www.psicologakarentrujillo.com.mx/Psicologa_Karen_Trujillo.webp",
+      "description": "Evaluación y diagnóstico de TDAH en adultos en Cancún. Neuropsicóloga con cédula profesional y aviso COFEPRIS.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cancún",
+        "addressRegion": "Quintana Roo",
+        "addressCountry": "MX"
+      },
+      "telephone": "+529983211547",
+      "priceRange": "$$",
+      "url": "https://www.psicologakarentrujillo.com.mx/lp/tdah-adultos-cancun"
+    }
+  </script>
 
 </body>
 </html>
