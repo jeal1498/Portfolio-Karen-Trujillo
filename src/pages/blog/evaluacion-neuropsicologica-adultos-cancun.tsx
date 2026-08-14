@@ -12,7 +12,6 @@ import {
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
-import LeadMagnetForm from '@/components/LeadMagnetForm';
 import { WA_NUMBER } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
@@ -1019,14 +1018,6 @@ export default function EvaluacionNeuropsicologicaAdultosCancun() {
               </SectionReveal>
             </div>
           </section>
-
-        <section className="max-w-2xl mx-auto px-4 pb-12">
-          <LeadMagnetForm
-            lead="tdah-adultos"
-            headline="Descarga el checklist gratuito"
-            description="Para llevar a tu próxima consulta y tener claridad sobre lo que vives."
-          />
-        </section>
         </main>
 
         <FloatingButtons />

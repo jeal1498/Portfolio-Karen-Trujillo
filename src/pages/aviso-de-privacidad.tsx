@@ -10,7 +10,7 @@ const AvisoDePrivacidad = () => (
   <div className="antialiased selection:bg-accent-blue selection:text-primary">
     <Head>
       <title>Aviso de Privacidad | Karen Trujillo</title>
-      <meta name="description" content="Aviso de privacidad de Karen Amairani Gómez Trujillo, Neuropsicóloga en Cancún, sobre el tratamiento de datos personales." />
+      <meta name="description" content="Aviso de privacidad de Karen Amayrani Gómez Trujillo, Neuropsicóloga en Cancún, sobre el tratamiento de datos personales." />
       <link rel="canonical" href={CANONICAL_URL} />
       <meta name="robots" content="noindex, follow" />
     </Head>
@@ -26,7 +26,7 @@ const AvisoDePrivacidad = () => (
       <div className="prose prose-neutral max-w-none space-y-6 text-primary/80 text-[0.95rem] leading-relaxed">
         <p>
           En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los
-          Particulares (LFPDPPP), <strong>Karen Amairani Gómez Trujillo</strong>, con Cédula Profesional
+          Particulares (LFPDPPP), <strong>Karen Amayrani Gómez Trujillo</strong>, con Cédula Profesional
           Federal {CEDULA}, con domicilio en {ADDRESS.streetAddress}, {ADDRESS.addressLocality},{' '}
           {ADDRESS.addressRegion}, C.P. {ADDRESS.postalCode}, México (en adelante &quot;el Responsable&quot;),
           es responsable del tratamiento de los datos personales que usted proporcione a través de este
@@ -35,22 +35,20 @@ const AvisoDePrivacidad = () => (
 
         <h2 className="text-xl font-serif font-bold text-primary pt-4">1. Datos personales que recabamos</h2>
         <p>
-          A través del formulario de descarga de materiales gratuitos (checklists), recabamos los
-          siguientes datos personales:
-        </p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Nombre</li>
-          <li>Correo electrónico</li>
-        </ul>
-        <p>
-          Si usted nos contacta por WhatsApp o teléfono, el tratamiento de esos datos está sujeto
-          adicionalmente a las políticas de privacidad de la plataforma correspondiente (WhatsApp/Meta).
+          Este sitio web no cuenta con formularios que recaben datos personales de forma directa. El
+          único medio de contacto disponible es a través de los botones de WhatsApp y llamada telefónica,
+          que lo redirigen a dichas plataformas externas. En consecuencia, cualquier dato personal que
+          usted comparta (nombre, número telefónico, motivo de consulta, etc.) es tratado directamente por
+          usted a través de WhatsApp/Meta o de su compañía telefónica, y está sujeto a las políticas de
+          privacidad de dichas plataformas, no a las de este sitio.
         </p>
 
         <h2 className="text-xl font-serif font-bold text-primary pt-4">2. Finalidades del tratamiento</h2>
-        <p>Sus datos personales serán utilizados para las siguientes finalidades:</p>
+        <p>
+          Cuando usted nos contacta voluntariamente por WhatsApp o teléfono, los datos que comparte en
+          esa conversación son utilizados por el Responsable únicamente para:
+        </p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Enviarle el material informativo (checklist) que solicitó.</li>
           <li>Responder sus dudas y darle seguimiento a su solicitud de contacto.</li>
           <li>Agendar y confirmar citas de valoración neuropsicológica.</li>
         </ul>
@@ -58,9 +56,9 @@ const AvisoDePrivacidad = () => (
 
         <h2 className="text-xl font-serif font-bold text-primary pt-4">3. Transferencia de datos</h2>
         <p>
-          Sus datos no serán transferidos a terceros, salvo a los proveedores de servicios estrictamente
-          necesarios para operar este sitio (por ejemplo, el proveedor de envío de correo electrónico que
-          entrega el material solicitado), quienes están obligados a resguardar su confidencialidad.
+          El Responsable no transfiere sus datos personales a terceros. El uso de WhatsApp como canal de
+          contacto implica que la plataforma (Meta) procesa dicha comunicación conforme a sus propias
+          políticas de privacidad, ajenas a este sitio web.
         </p>
 
         <h2 className="text-xl font-serif font-bold text-primary pt-4">4. Derechos ARCO</h2>
