@@ -154,6 +154,15 @@ const Footer = () => (
         <p className="font-sans text-[0.78rem] text-[#c6bce2]/40 m-0">
           © 2025 Karen Trujillo. Todos los derechos reservados.
         </p>
+        <p className="font-sans text-[0.78rem] text-[#c6bce2]/40 mt-2 flex items-center justify-center gap-2">
+          <FooterLink href="/aviso-de-privacidad" className="!text-[#c6bce2]/40 hover:!text-white">
+            Aviso de Privacidad
+          </FooterLink>
+          <span aria-hidden="true">·</span>
+          <FooterLink href="/terminos-y-condiciones" className="!text-[#c6bce2]/40 hover:!text-white">
+            Términos y Condiciones
+          </FooterLink>
+        </p>
       </div>
 
     </div>
