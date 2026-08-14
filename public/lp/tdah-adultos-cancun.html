@@ -183,11 +183,34 @@
       margin-right: auto;
     }
 
+    .hero-summary {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem; /* 13.6px */
+      color: #fff;
+      margin-top: 18px;
+      letter-spacing: 0.01em;
+    }
+
     /* ---- VIDEO VERTICAL (9:16) ---- */
     .hero-video {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .video-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--lavender);
+      font-size: 0.8rem; /* 12.8px */
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 12px;
     }
 
     .video-wrapper {
@@ -338,6 +361,30 @@
       font-size: 1rem; /* 16px */
       max-width: 600px;
       margin: 0 auto;
+    }
+
+    .doctor-card .authority-points {
+      list-style: none;
+      max-width: 460px;
+      margin: 0 auto;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .doctor-card .authority-points li {
+      color: var(--plum);
+      font-size: 1rem; /* 16px */
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .doctor-card .authority-points .mark {
+      flex-shrink: 0;
+      color: var(--plum-deep);
+      font-weight: 700;
     }
 
     .authority-badges {
@@ -501,9 +548,15 @@
 
     .testimonial p.quote {
       font-size: 1rem; /* 16px */
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 10px;
       font-style: italic;
+    }
+
+    .testimonial p.quote strong {
+      color: #fff;
+      font-style: normal;
+      font-weight: 700;
     }
 
     .testimonial .who {
@@ -861,9 +914,11 @@
         <span class="eyebrow">Evaluación Neuropsicológica · Cancún</span>
         <h1>Por fin, una explicación a lo que vives cada día</h1>
         <h2>Evaluación especializada con respaldo oficial — para que dejes de sentir que "algo está mal contigo" y tengas respuestas reales.</h2>
+        <p class="hero-summary">1 contacto por WhatsApp · sin filas · resultados en 5-7 días hábiles</p>
       </div>
 
       <div class="hero-video">
+        <span class="video-badge">▶ 1 min · conóceme antes de escribir</span>
         <div class="video-wrapper">
           <iframe src="https://www.youtube.com/embed/v6-yMOn32ug?rel=0&modestbranding=1&controls=1" title="Video de la Neuropsicóloga Karen Trujillo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -907,20 +962,24 @@
         <h3>Karen Trujillo</h3>
         <span class="cedula">Cédula Profesional 11009616</span>
         <p class="cofepris-notice">Aviso de Publicidad COFEPRIS: 2423022002A00080</p>
-        <p>Neuropsicóloga especializada en evaluación y diagnóstico de TDAH en adultos. Mi trabajo es traducir lo que vives día a día en un diagnóstico preciso, con respaldo oficial, que te dé claridad y un plan real por seguir — no solo una etiqueta.</p>
+        <ul class="authority-points">
+          <li><span class="mark">✓</span> Traduzco lo que vives en un diagnóstico preciso.</li>
+          <li><span class="mark">✓</span> Respaldo oficial: Cédula Profesional y aviso COFEPRIS.</li>
+          <li><span class="mark">✓</span> Un plan real por seguir — no solo una etiqueta.</li>
+        </ul>
       </div>
 
       <div class="authority-badges">
         <div class="badge-item">
-          <div class="badge-icon" aria-hidden="true">🎯</div>
+          <div class="badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
           <span>Escala CAADID</span>
         </div>
         <div class="badge-item">
-          <div class="badge-icon" aria-hidden="true">📋</div>
+          <div class="badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <span>Escalas Conners</span>
         </div>
         <div class="badge-item">
-          <div class="badge-icon" aria-hidden="true">🎓</div>
+          <div class="badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg></div>
           <span>Respaldo Académico</span>
         </div>
       </div>
@@ -1003,17 +1062,17 @@
       <div class="testimonials">
         <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <p class="quote">"Toda mi vida pensé que era desorganizado y ya. Tener por fin un diagnóstico claro me quitó un peso que ni sabía que cargaba."</p>
+          <p class="quote">"Toda mi vida pensé que era desorganizado y ya. <strong>Tener por fin un diagnóstico claro me quitó un peso que ni sabía que cargaba.</strong>"</p>
           <div class="who">— A.C., paciente de 34 años, Cancún</div>
         </div>
         <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <p class="quote">"El proceso fue mucho más sencillo de lo que imaginaba. Karen me explicó todo con calma y sin hacerme sentir juzgado."</p>
+          <p class="quote">"El proceso fue mucho más sencillo de lo que imaginaba. <strong>Karen me explicó todo con calma y sin hacerme sentir juzgado.</strong>"</p>
           <div class="who">— M.L., paciente de 29 años, Cancún</div>
         </div>
         <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <p class="quote">"El informe me sirvió para hablar con recursos humanos en mi trabajo y por fin pedir los ajustes que necesitaba."</p>
+          <p class="quote">"<strong>El informe me sirvió para hablar con recursos humanos en mi trabajo y por fin pedir los ajustes que necesitaba.</strong>"</p>
           <div class="who">— R.V., paciente de 41 años, Cancún</div>
         </div>
       </div>
@@ -1049,7 +1108,7 @@
         📍 <strong>Consultorio:</strong> Cancún, Quintana Roo, México · 📞 +52 998 321 1547
       </p>
       <p class="footer-disclaimer">
-        ⚠️ <em>Descargo de responsabilidad: La información presentada en este sitio web tiene fines meramente informativos y educacionales. No sustituye la evaluación, diagnóstico ni tratamiento neuropsicológico o médico profesional. En caso de emergencia, contacta a los servicios de salud de tu localidad.</em>
+        Descargo de responsabilidad: la información presentada en este sitio web tiene fines meramente informativos y educacionales. No sustituye la evaluación, diagnóstico ni tratamiento neuropsicológico o médico profesional. En caso de emergencia, contacta a los servicios de salud de tu localidad.
       </p>
       <div class="footer-links">
         <a onclick="abrirModal('privacidad'); return false;">Aviso de Privacidad</a> |
