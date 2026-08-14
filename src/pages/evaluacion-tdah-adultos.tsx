@@ -51,11 +51,11 @@ const proceso = [
 ];
 
 const instrumentos = [
-  { nombre: 'DIVA 2.0', desc: 'Entrevista diagnóstica de TDAH en adultos, única validada en español. Rastrea síntomas actuales e infancia. Es el punto de partida del diagnóstico diferencial.' },
-  { nombre: 'CAARS-2', desc: 'Escalas de TDAH para Adultos (Conners): mide inatención e hiperactividad desde la perspectiva del propio paciente y de un informante externo (pareja, familiar, jefe). Diferencia TDAH de ansiedad y depresión con alta precisión.' },
-  { nombre: 'WAIS-IV', desc: 'Perfil cognitivo completo: comprensión verbal, razonamiento perceptivo, memoria de trabajo y velocidad de procesamiento. Identifica discrepancias que explican el rendimiento inconsistente.' },
-  { nombre: 'BRIEF-2A', desc: 'Evalúa cómo se manifiesta el TDAH en la vida real: organización del tiempo, regulación emocional, flexibilidad cognitiva, planificación. Es el vínculo entre el diagnóstico y las recomendaciones concretas.' },
-  { nombre: 'CPT-3', desc: 'Medición objetiva de la atención sostenida durante 14 minutos. El cerebro no puede "fingir" atención — los datos son independientes del autoinforme.' },
+  { nombre: 'DIVA 2.0', desc: 'Entrevista diagnóstica de TDAH en adultos, única validada en español. Es el punto de partida del diagnóstico.' },
+  { nombre: 'CAARS-2', desc: 'Escalas de TDAH (Conners): mide inatención e hiperactividad, desde tu perspectiva y la de un observador cercano.' },
+  { nombre: 'WAIS-IV', desc: 'Perfil cognitivo completo: memoria de trabajo, razonamiento y velocidad de procesamiento.' },
+  { nombre: 'BRIEF-2A', desc: 'Cómo se manifiesta el TDAH en tu día a día: organización, regulación emocional, planificación.' },
+  { nombre: 'CPT-3', desc: 'Medición objetiva de la atención sostenida durante 14 minutos. Los datos no dependen de lo que tú digas de ti mismo.' },
 ];
 
 const informeIncludes = [
@@ -567,7 +567,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
 
 export default function TDAHAdultosFunnel() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [symptomCount, setSymptomCount] = useState(0);
+  const [, setSymptomCount] = useState(0);
   const [calLoaded, setCalLoaded] = useState(false);
   const [calVisible, setCalVisible] = useState(false);
   const heroCTARef = useRef<HTMLDivElement>(null);
@@ -838,11 +838,10 @@ export default function TDAHAdultosFunnel() {
               <SectionReveal>
                 <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Proceso clínico estructurado</p>
                 <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">¿Cómo funciona la valoración de TDAH en adultos?</h2>
-                {/* AEO: Direct answer for "cuánto dura/cuesta valoración TDAH adultos cancún" */}
                 <p className="text-muted-foreground font-light mb-4 text-center max-w-2xl mx-auto">
-                  La valoración neuropsicológica de TDAH en adultos en Cancún tiene un costo de <strong className="text-primary font-semibold">$8,300 MXN</strong> e incluye 4-5 sesiones presenciales distribuidas en 2 a 3 semanas. El proceso completo abarca entrevista clínica, pruebas estandarizadas, cuestionarios a un observador cercano, análisis clínico y sesión de devolución.
+                  <strong className="text-primary font-semibold">$8,300 MXN</strong> · 4-5 sesiones presenciales · 2 a 3 semanas en total.
                 </p>
-                <p className="text-sm text-primary/70 font-medium text-center mb-10">No es un proceso largo: son 5 pasos que te dan años de claridad.</p>
+                <p className="text-sm text-primary/70 font-medium text-center mb-10">5 pasos claros, no un proceso abierto e incierto.</p>
               </SectionReveal>
 
               <div className="space-y-0 relative">
@@ -1090,9 +1089,9 @@ export default function TDAHAdultosFunnel() {
                 <SectionReveal delay={0.15}>
                   <div className="space-y-6">
                     <div className="space-y-4 text-muted-foreground font-light leading-relaxed">
-                      <p>La <strong className="text-primary font-semibold">neuropsicóloga Karen Trujillo</strong> es especialista clínica con más de 7 años de experiencia en la evaluación y diagnóstico de TDAH, Trastorno del Espectro Autista y dificultades del aprendizaje en niños, adolescentes y adultos en Cancún, Quintana Roo.</p>
-                      <p>Su formación incluye especialización en neuropsicología clínica y el dominio de instrumentos estandarizados de clase mundial: <strong className="text-primary font-semibold">CAARS-2, WAIS-IV, BRIEF-2A y CPT-3</strong> para adultos. Cada valoración sigue un protocolo clínico riguroso que garantiza diagnósticos confiables y accionables.</p>
-                      <p>Lo que distingue su práctica es la combinación de rigor clínico con calidez humana: no solo recibes un diagnóstico, sino una <strong className="text-primary font-semibold">hoja de ruta concreta</strong> para entenderte mejor y funcionar de forma más efectiva en tu trabajo, relaciones y vida diaria.</p>
+                      <p><strong className="text-primary font-semibold">Karen Trujillo</strong> es neuropsicóloga clínica con más de 7 años de experiencia evaluando TDAH, autismo y dificultades de aprendizaje en Cancún, Quintana Roo.</p>
+                      <p>Aplica instrumentos estandarizados de clase mundial (CAARS-2, WAIS-IV, BRIEF-2A, CPT-3) siguiendo un protocolo clínico riguroso.</p>
+                      <p>No solo entregas un diagnóstico: te llevas una <strong className="text-primary font-semibold">hoja de ruta concreta</strong> para funcionar mejor en tu trabajo, relaciones y vida diaria.</p>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-3 pt-2">
@@ -1129,9 +1128,9 @@ export default function TDAHAdultosFunnel() {
 
               <div className="space-y-4">
                 {[
-                  { titulo: 'TDAH confirmado', desc: 'Recibes un plan de acción concreto: recomendaciones terapéuticas, estrategias de productividad y organización, y orientación sobre si es necesaria referencia a psiquiatría para tratamiento farmacológico. El informe tiene validez oficial.', color: 'border-primary/30 bg-primary/5', iconColor: 'text-primary bg-primary/10 border-primary/20' },
-                  { titulo: 'No es TDAH: diagnóstico diferencial', desc: 'El informe identifica qué sí está pasando: ansiedad, depresión, burnout, trastorno del aprendizaje u otra condición. Saber qué no es TDAH es igual de valioso porque evita tratamientos equivocados y te dirige a la intervención correcta.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
-                  { titulo: 'Perfil mixto o subclínico', desc: 'Algunos adultos muestran rasgos de TDAH sin cumplir todos los criterios. En ese caso, recibes orientación sobre qué funciones ejecutivas fortalecer, estrategias compensatorias y cuándo revaluar si los síntomas se intensifican.', color: 'border-success/30 bg-success/5', iconColor: 'text-success bg-success/10 border-success/20' },
+                  { titulo: 'TDAH confirmado', desc: 'Recibes un plan de acción concreto: recomendaciones terapéuticas, estrategias de organización y, si aplica, orientación para referencia a psiquiatría. El informe tiene validez oficial.', color: 'border-primary/30 bg-primary/5', iconColor: 'text-primary bg-primary/10 border-primary/20' },
+                  { titulo: 'No es TDAH: diagnóstico diferencial', desc: 'El informe te dice qué sí está pasando (ansiedad, depresión, burnout u otra condición) y te dirige a la intervención correcta.', color: 'border-accent-blue/30 bg-accent-blue/5', iconColor: 'text-accent-blue bg-accent-blue/10 border-accent-blue/20' },
+                  { titulo: 'Perfil mixto o subclínico', desc: 'Si muestras rasgos sin cumplir todos los criterios, recibes orientación sobre qué fortalecer y cuándo revaluar.', color: 'border-success/30 bg-success/5', iconColor: 'text-success bg-success/10 border-success/20' },
                 ].map((item, i) => (
                   <SectionReveal key={item.titulo} delay={i * 0.1}>
                     <div className={`flex gap-5 p-6 rounded-2xl border-2 ${item.color} transition-all duration-300`}>
@@ -1431,7 +1430,7 @@ export default function TDAHAdultosFunnel() {
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
         >
           <a href="#agendar" onClick={scrollToBooking} className="flex items-center justify-center w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest shadow-2xl shadow-primary/35 active:scale-[0.98] transition-transform">
-            {symptomCount > 4 ? 'Muchas señales. Agendar valoración' : 'Agendar valoración'}
+            Agendar mi valoración
           </a>
         </div>
       </div>
