@@ -98,58 +98,73 @@ const comparativaItems = [
 
 const faqItems = [
   {
+    cat: 'Diagnóstico',
     q: '¿Se puede diagnosticar TDAH en la edad adulta?',
-    a: 'Sí. Aunque el TDAH se origina en la infancia, muchos adultos no fueron diagnosticados de niños porque compensaron sus síntomas con inteligencia o esfuerzo. La valoración neuropsicológica en adultos está diseñada para identificar TDAH incluso sin diagnóstico previo, evaluando tanto el funcionamiento actual como la historia de desarrollo.',
+    a: 'Sí. Muchos adultos no fueron diagnosticados de niños porque compensaron sus síntomas con esfuerzo. La valoración evalúa tanto el funcionamiento actual como tu historia de desarrollo.',
   },
   {
-    q: '¿Cuánto tiempo toma una valoración de TDAH en adultos en Cancún?',
-    a: 'La valoración completa de TDAH en adultos toma entre 2 y 3 semanas, repartidas en 4-5 citas presenciales en Cancún. El proceso incluye entrevista clínica (60-90 min), aplicación de pruebas estandarizadas (2-3 sesiones de 60 min), cuestionarios a pareja o familiar, análisis de resultados y sesión de devolución con informe.',
-  },
-  {
-    q: '¿Cuánto cuesta la valoración de TDAH en adultos en Cancún?',
-    a: 'La valoración neuropsicológica de TDAH en adultos tiene un costo total de $8,300 MXN. Incluye todas las sesiones (4-5 citas), pruebas estandarizadas (CAARS-2, WAIS-IV, BRIEF-2A, CPT-3), informe clínico completo y sesión de devolución con recomendaciones. Se solicita un anticipo de $1,000 MXN al agendar, que forma parte del costo total.',
-  },
-  {
-    q: '¿Qué pruebas se aplican para diagnosticar TDAH en adultos?',
-    a: 'En la valoración de TDAH en adultos se aplican cuatro pruebas estandarizadas internacionales: CAARS-2 (escala de síntomas TDAH con formas de autorreporte y observador externo), WAIS-IV (evaluación de inteligencia y perfil cognitivo), BRIEF-2A (inventario de funciones ejecutivas versión adultos) y CPT-3 (prueba computarizada de atención sostenida). Todos los instrumentos están validados para población adulta hispanohablante.',
-  },
-  {
-    q: '¿El informe de TDAH tiene validez oficial?',
-    a: `Sí. El informe clínico está respaldado por cédula profesional federal ${CEDULA} emitida por la SEP y tiene validez oficial ante el IMSS, instituciones de salud, empleadores y dependencias gubernamentales en todo México. Incluye recomendaciones específicas para el ámbito laboral y personal.`,
-  },
-  {
+    cat: 'Diagnóstico',
     q: '¿Cuál es la diferencia entre TDAH y ansiedad o burnout en adultos?',
-    a: 'El TDAH es una condición neurológica con base genética que afecta las funciones ejecutivas del cerebro desde la infancia. La ansiedad y el burnout pueden provocar síntomas similares (dificultad para concentrarse, olvidos, inquietud), pero tienen causas y tratamientos distintos. La valoración neuropsicológica permite diferenciar entre estas condiciones mediante pruebas objetivas, evitando diagnósticos incorrectos y tratamientos ineficaces.',
+    a: 'El TDAH es neurológico y presente desde la infancia. La ansiedad y el burnout pueden dar síntomas parecidos (dificultad para concentrarte, olvidos, inquietud) pero con causas y tratamiento distintos. Las pruebas objetivas permiten diferenciarlos.',
   },
   {
+    cat: 'Diagnóstico',
     q: '¿Cuál es la diferencia entre un neuropsicólogo y un psicólogo para diagnosticar TDAH?',
-    a: 'Un psicólogo clínico evalúa conducta y emociones mediante entrevista y observación. Un neuropsicólogo aplica pruebas estandarizadas que miden funciones ejecutivas del cerebro (atención, memoria de trabajo, planificación) de forma cuantificable. Para TDAH en adultos, la valoración neuropsicológica es el estándar clínico porque permite diagnóstico diferencial objetivo frente a ansiedad, depresión, burnout o trastornos del aprendizaje.',
+    a: 'El psicólogo evalúa conducta mediante entrevista. El neuropsicólogo mide las funciones ejecutivas del cerebro con pruebas estandarizadas y cuantificables — el estándar clínico para TDAH en adultos.',
   },
   {
+    cat: 'Diagnóstico',
     q: '¿Qué pasa si el resultado no indica TDAH?',
-    a: 'El informe igualmente aporta claridad. Identifica fortalezas cognitivas, áreas de oportunidad y posibles diagnósticos diferenciales como ansiedad, depresión, burnout o trastornos del aprendizaje no detectados. La información siempre es valiosa para entender tu perfil neuropsicológico y orientar las intervenciones adecuadas.',
+    a: 'El informe igual aporta claridad: identifica fortalezas, áreas de oportunidad y posibles diagnósticos diferenciales (ansiedad, depresión, burnout, trastorno de aprendizaje).',
   },
   {
+    cat: 'Diagnóstico',
     q: '¿Necesito un diagnóstico previo de la infancia para evaluarme?',
-    a: 'No. Muchos adultos con TDAH nunca fueron diagnosticados de niños. La valoración incluye una revisión retrospectiva de tu historia de desarrollo y trayectoria académica/laboral para identificar patrones consistentes con TDAH a lo largo de la vida, incluso si nunca recibiste un diagnóstico formal.',
+    a: 'No. La valoración incluye una revisión retrospectiva de tu historia de desarrollo para identificar patrones de TDAH a lo largo de tu vida, incluso sin diagnóstico previo.',
   },
   {
-    q: '¿Puedo cancelar o reprogramar mi cita?',
-    a: 'Sí, con al menos 48 horas de anticipación. El anticipo de $1,000 MXN es reembolsable si cancelas dentro de ese plazo. Fuera de plazo, se aplica como crédito para reagendar.',
+    cat: 'Proceso y pruebas',
+    q: '¿Cuánto tiempo toma una valoración de TDAH en adultos en Cancún?',
+    a: 'Entre 2 y 3 semanas, en 4-5 citas presenciales: entrevista clínica, pruebas estandarizadas (2-3 sesiones), cuestionarios a un familiar cercano, análisis y sesión de devolución con informe.',
   },
   {
-    q: '¿El anticipo de $1,000 es adicional al costo total?',
-    a: 'No. El anticipo de $1,000 MXN forma parte del costo total de $8,300 MXN. Al iniciar el proceso, solo quedarían $7,300 MXN por cubrir. Se solicita al agendar para confirmar el compromiso con el proceso clínico y asegurar tu lugar en agenda.',
+    cat: 'Proceso y pruebas',
+    q: '¿Qué pruebas se aplican para diagnosticar TDAH en adultos?',
+    a: 'Cuatro pruebas estandarizadas internacionales: CAARS-2 (síntomas TDAH), WAIS-IV (perfil cognitivo), BRIEF-2A (funciones ejecutivas) y CPT-3 (atención sostenida). Todas validadas para población adulta hispanohablante.',
   },
   {
+    cat: 'Proceso y pruebas',
     q: '¿La valoración de TDAH se puede hacer en línea?',
-    a: 'La entrevista inicial y la sesión de devolución pueden realizarse en línea. Sin embargo, las pruebas neuropsicológicas estandarizadas (CAARS-2, WAIS-IV, BRIEF-2A, CPT-3) requieren aplicación presencial en el consultorio de Cancún, Quintana Roo, para garantizar la validez de los resultados.',
+    a: 'La entrevista inicial y la devolución sí pueden ser en línea. Las pruebas estandarizadas requieren aplicación presencial en Cancún para garantizar la validez de los resultados.',
   },
   {
+    cat: 'Validez del informe',
+    q: '¿El informe de TDAH tiene validez oficial?',
+    a: `Sí. Está respaldado por cédula profesional federal ${CEDULA} (SEP) y tiene validez ante el IMSS, instituciones de salud, empleadores y dependencias gubernamentales en México.`,
+  },
+  {
+    cat: 'Costo y logística',
+    q: '¿Cuánto cuesta la valoración de TDAH en adultos en Cancún?',
+    a: 'El costo total es de $8,300 MXN. Incluye las 4-5 sesiones, las 4 pruebas estandarizadas, el informe clínico y la sesión de devolución. Se pide un anticipo de $1,000 MXN al agendar (parte del total).',
+  },
+  {
+    cat: 'Costo y logística',
+    q: '¿El anticipo de $1,000 es adicional al costo total?',
+    a: 'No, forma parte del total de $8,300 MXN. Al iniciar el proceso solo quedan $7,300 MXN por cubrir. Se pide al agendar para confirmar tu lugar.',
+  },
+  {
+    cat: 'Costo y logística',
     q: '¿Se puede pagar la valoración en parcialidades?',
-    a: 'El proceso está estructurado en dos pagos: un anticipo de $1,000 MXN al agendar (que forma parte del total) y el resto de $7,300 MXN antes de la entrega del informe clínico. Si necesitas una estructura de pago diferente, puedes consultarlo directamente por WhatsApp.',
+    a: 'Sí: un anticipo de $1,000 MXN al agendar y $7,300 MXN antes de la entrega del informe. Si necesitas otra estructura de pago, puedes consultarlo por WhatsApp.',
+  },
+  {
+    cat: 'Costo y logística',
+    q: '¿Puedo cancelar o reprogramar mi cita?',
+    a: 'Sí, con al menos 48 horas de anticipación. El anticipo es reembolsable dentro de ese plazo; fuera de plazo, se aplica como crédito para reagendar.',
   },
 ];
+
+const faqCategories = Array.from(new Set(faqItems.map((f) => f.cat)));
 
 const reviews = [
   { name: 'Alejandro, 34 años — Ingeniero', text: 'Llevaba años pensando que era "flojo". El informe de Karen me mostró exactamente qué funciones ejecutivas estaban afectadas. Fue liberador tener una explicación real.', stars: 5 },
@@ -451,9 +466,9 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
   };
 
   const getResult = () => {
-    if (count <= 2) return { label: 'Pocos indicadores por ahora', description: 'Marcaste pocas señales. Puede ser algo situacional, pero si persisten o te generan malestar significativo, una consulta puede darte claridad.', color: 'border-success bg-success/5', level: 'low' };
-    if (count <= 4) return { label: 'Vale la pena explorar', description: 'Varias de estas señales de forma consistente y desde hace tiempo sugieren que una valoración formal aportaría claridad real. No es diagnóstico, es información.', color: 'border-accent-blue bg-accent-blue/5', level: 'mid' };
-    return { label: 'Una valoración es muy recomendable', description: 'Muchas de estas señales presentes de forma crónica en tu vida laboral, social y personal justifican una evaluación neuropsicológica formal. Es el paso correcto.', color: 'border-primary bg-primary/5', level: 'high' };
+    if (count <= 2) return { label: 'Pocos indicadores por ahora', description: 'Puede ser situacional. Si persiste o te incomoda, una consulta te da claridad.', color: 'border-success bg-success/5', level: 'low' };
+    if (count <= 4) return { label: 'Vale la pena explorar', description: 'Esto sugiere que una valoración formal podría aportarte información útil.', color: 'border-accent-blue bg-accent-blue/5', level: 'mid' };
+    return { label: 'Una valoración es muy recomendable', description: 'Estas señales, si son frecuentes, justifican una evaluación neuropsicológica formal.', color: 'border-primary bg-primary/5', level: 'high' };
   };
 
   const result = getResult();
@@ -528,7 +543,7 @@ function FunnelSymptomChecker({ showHeader = true, onCountChange }: { showHeader
 
         <div className="flex flex-col sm:flex-row gap-3">
           <CtaButton className="flex-1 justify-center">
-            {count > 4 ? 'Mereces una respuesta clara. Agendar' : 'Reservar mi lugar'}
+            Agendar mi valoración
           </CtaButton>
           {count > 0 && (
             <button
@@ -634,6 +649,27 @@ export default function TDAHAdultosFunnel() {
       <div className="antialiased selection:bg-accent-blue selection:text-primary w-full min-w-0 overflow-x-hidden">
         <Navbar />
 
+        {/* ── Quick-jump anchor nav — lets users skip straight to what they need instead of scrolling the whole page ── */}
+        <nav aria-label="Navegación rápida de la página" className="hidden sm:block sticky top-0 z-40 bg-card/95 backdrop-blur border-b border-border">
+          <div className="max-w-4xl mx-auto px-6 py-2.5 flex items-center justify-center gap-1 overflow-x-auto text-xs">
+            {[
+              { href: '#sintomas', label: 'Autoevaluación' },
+              { href: '#proceso-valoracion', label: 'Proceso' },
+              { href: '#agendar', label: 'Precio y agenda' },
+              { href: '#preguntas-frecuentes', label: 'Preguntas' },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => { e.preventDefault(); document.getElementById(item.href.slice(1))?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="px-3 py-1.5 rounded-full font-medium text-muted-foreground hover:text-primary hover:bg-secondary whitespace-nowrap transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </nav>
+
         <main className="w-full min-w-0 overflow-x-hidden">
 
           {/* ══════════════════════════════════════════════════════
@@ -655,8 +691,8 @@ export default function TDAHAdultosFunnel() {
 
               <div className="animate-[fadeInUp_0.8s_ease-out_both]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 max-w-full" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}>
-                  <span className="w-2 h-2 rounded-full bg-warning animate-pulse shadow-sm shadow-warning shrink-0" />
-                  <span className="text-[9px] uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(208,208,231,0.8)' }}>Disponibilidad limitada · Cancún · Adultos +18 años</span>
+                  <span className="w-2 h-2 rounded-full bg-success shrink-0" />
+                  <span className="text-xs uppercase tracking-[0.12em] font-bold text-center leading-snug" style={{ color: 'rgba(220,220,240,0.9)' }}>Cancún · Adultos +18 años · Agenda en línea</span>
                 </div>
 
                 {/* H1 — keyword-rich for SEO */}
@@ -665,29 +701,29 @@ export default function TDAHAdultosFunnel() {
                 </h1>
 
                 {/* Emotional hook — visually prominent subtitle */}
-                <p className="text-lg sm:text-2xl font-serif italic mb-6 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.72)' }}>
+                <p className="text-lg sm:text-2xl font-serif italic mb-6 max-w-2xl mx-auto" style={{ color: 'rgba(222,222,240,0.88)' }}>
                   No es falta de voluntad. Puede ser tu cerebro
                 </p>
 
-                {/* Subheadline — outcome first, features second */}
-                <p className="text-sm sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
-                  Un diagnóstico formal que explica años de frustración y te da un camino concreto para funcionar mejor. Evaluación con pruebas estandarizadas internacionales (CAARS-2, WAIS-IV, BRIEF-2A, CPT-3) e informe clínico con <strong className="text-white font-semibold">validez oficial</strong> ante IMSS, instituciones y empleadores.
+                {/* Subheadline — outcome first, features second, single emphasis point */}
+                <p className="text-sm sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto" style={{ color: 'rgba(230,230,245,0.92)' }}>
+                  Un diagnóstico formal que explica años de frustración y te da un camino concreto para funcionar mejor. Informe clínico con <strong className="text-white font-semibold">validez oficial</strong> ante IMSS, instituciones y empleadores.
                 </p>
 
-                <p className="text-xs sm:text-sm mb-8" style={{ color: 'rgba(208,208,231,0.6)' }}>
+                <p className="text-xs sm:text-sm mb-8" style={{ color: 'rgba(220,220,240,0.75)' }}>
                   <strong className="text-white">Neuropsicóloga Karen Trujillo</strong> · Cédula Federal {CEDULA} · 7+ años de experiencia
                 </p>
               </div>
 
               <div ref={heroCTARef} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-[fadeInUp_0.8s_ease-out_0.3s_both]">
-                <CtaButton>Agendar valoración</CtaButton>
-                <a href="#sintomas" onClick={(e) => { e.preventDefault(); document.getElementById('sintomas')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-[9px] uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/25 text-white/80 hover:border-white/50 hover:text-white transition-all duration-300">
-                  ¿Podría tener TDAH?
+                <CtaButton>Agendar mi valoración</CtaButton>
+                <a href="#sintomas" onClick={(e) => { e.preventDefault(); document.getElementById('sintomas')?.scrollIntoView({ behavior: 'smooth' }); }} className="group inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wide px-6 py-4 rounded-xl border-2 border-white/25 text-white/80 hover:border-white/50 hover:text-white transition-all duration-300">
+                  ¿Podría tener TDAH? Autoevaluación de 2 min
                   <ArrowDown className="w-3 h-3 transition-transform group-hover:translate-y-0.5 shrink-0" />
                 </a>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs animate-[fadeIn_0.8s_ease-out_0.6s_both]" style={{ color: 'rgba(208,208,231,0.85)' }}>
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs animate-[fadeIn_0.8s_ease-out_0.6s_both]" style={{ color: 'rgba(225,225,242,0.9)' }}>
                 {[
                   { icon: BadgeCheck, text: `Cédula ${CEDULA}` },
                   { icon: Stethoscope, text: 'Pruebas estandarizadas internacionales' },
@@ -712,9 +748,23 @@ export default function TDAHAdultosFunnel() {
               <SectionReveal>
                 <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Muchos adultos llegan con esta historia</p>
                 <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center text-balance">¿Te suena familiar?</h2>
-                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-10">El TDAH en adultos suele confundirse con ansiedad, depresión o &ldquo;falta de disciplina&rdquo;. Selecciona las señales que reconoces en ti para saber si una valoración es recomendable.</p>
+                <p className="text-muted-foreground font-light text-center max-w-2xl mx-auto mb-3">El TDAH en adultos suele confundirse con ansiedad, depresión o &ldquo;falta de disciplina&rdquo;.</p>
+                <p className="inline-flex items-center gap-1.5 mx-auto mb-10 justify-center w-full text-sm font-semibold text-primary">
+                  <Clock className="w-4 h-4 text-primary/60" /> Autoevaluación rápida: toma 2 minutos, sin registro.
+                </p>
               </SectionReveal>
 
+              {/* Checklist first — the interactive tool, right after the promise of speed */}
+              <SectionReveal delay={0.1}>
+                <div className="max-w-3xl mx-auto mb-12">
+                  <FunnelSymptomChecker showHeader={false} onCountChange={setSymptomCount} />
+                </div>
+              </SectionReveal>
+
+              {/* Supporting context — comes after the tool, not before, so it doesn't block access to it */}
+              <SectionReveal>
+                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Historias comunes entre quienes se evalúan</p>
+              </SectionReveal>
               <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 {painPoints.map((point, i) => (
                   <SectionReveal key={i} delay={i * 0.08}>
@@ -729,29 +779,12 @@ export default function TDAHAdultosFunnel() {
                 ))}
               </div>
 
-              {/* CRO: "Costo de no actuar" — empathetic urgency */}
+              {/* Calm, non-alarmist supportive note (softened from urgency framing) */}
               <SectionReveal delay={0.35}>
-                <div className="relative mb-10 p-5 rounded-2xl bg-card border-l-4 border-l-primary/60 border border-border">
-                  <p className="text-sm text-muted-foreground font-light leading-relaxed italic">
-                    <strong className="text-primary font-semibold not-italic">Cada año sin diagnóstico</strong> es un año más de estrategias que no funcionan, relaciones que se desgastan y potencial profesional que no se materializa. Saber lo que pasa es el primer paso para funcionar diferente.
+                <div className="relative mb-2 p-5 rounded-2xl bg-card border-l-4 border-l-primary/60 border border-border">
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                    Entender qué te está pasando es el primer paso para encontrar estrategias que sí funcionen para tu forma de pensar.
                   </p>
-                </div>
-              </SectionReveal>
-
-              <SectionReveal>
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="flex-1 h-px bg-border" />
-                  <div className="flex items-center gap-2 px-4 py-1.5 bg-card border border-border rounded-full min-w-0 shrink">
-                    <AlertCircle className="w-3.5 h-3.5 text-accent-blue shrink-0" />
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground text-center">Herramienta orientativa · No es diagnóstico</span>
-                  </div>
-                  <div className="flex-1 h-px bg-border" />
-                </div>
-              </SectionReveal>
-
-              <SectionReveal delay={0.1}>
-                <div className="max-w-3xl mx-auto">
-                  <FunnelSymptomChecker showHeader={false} onCountChange={setSymptomCount} />
                 </div>
               </SectionReveal>
             </div>
@@ -765,8 +798,11 @@ export default function TDAHAdultosFunnel() {
             <div className="max-w-3xl mx-auto px-6 relative">
               <SectionReveal>
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-6 text-center">¿Qué es el TDAH en adultos?</h2>
-                <p className="text-muted-foreground font-light leading-relaxed mb-6 text-center max-w-2xl mx-auto">
-                  El <strong className="text-primary font-semibold">Trastorno por Déficit de Atención e Hiperactividad (TDAH)</strong> es una condición neurológica que afecta la <strong className="text-primary font-semibold">corteza prefrontal</strong>, la zona responsable de planificar, organizarse, regular emociones y sostener la atención. <strong className="text-primary font-semibold">No es falta de voluntad ni de inteligencia.</strong> Se estima que el 60-70% de los niños con TDAH mantienen síntomas significativos en la adultez, y muchos nunca fueron diagnosticados. El diagnóstico requiere síntomas presentes desde la infancia con impacto funcional actual (criterios <strong className="text-primary font-semibold">DSM-5</strong>, código F90 del CIE-10).
+                <p className="text-muted-foreground font-light leading-relaxed mb-2 text-center max-w-2xl mx-auto">
+                  Es una condición neurológica que afecta la corteza prefrontal: la zona que planifica, organiza, regula emociones y sostiene la atención. <strong className="text-primary font-semibold">No es falta de voluntad ni de inteligencia.</strong>
+                </p>
+                <p className="text-muted-foreground font-light leading-relaxed mb-6 text-center max-w-2xl mx-auto text-sm">
+                  6 de cada 10 niños con TDAH siguen con síntomas de adultos, y muchos nunca fueron diagnosticados. (Criterios DSM-5, código F90 del CIE-10.)
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -892,47 +928,51 @@ export default function TDAHAdultosFunnel() {
                 <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">La diferencia importa</p>
                 <h2 className="text-headline font-serif font-bold text-primary mb-6 text-center text-balance">¿Por qué neuropsicología y no solo psicología?</h2>
 
-                <div className="max-w-2xl mx-auto space-y-4 mb-10">
+                <div className="max-w-2xl mx-auto space-y-3 mb-10">
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    Una consulta psicológica evalúa conducta y emociones a través de entrevista clínica. La valoración neuropsicológica va más allá: <strong className="text-primary font-semibold">mide las funciones ejecutivas del cerebro</strong> (atención sostenida, memoria de trabajo, velocidad de procesamiento y control inhibitorio) mediante pruebas estandarizadas con normas internacionales.
+                    La psicología evalúa conducta a través de entrevista. La neuropsicología va más allá: <strong className="text-primary font-semibold">mide las funciones ejecutivas del cerebro</strong> con pruebas estandarizadas.
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    Para el TDAH en adultos, esta diferencia es crucial. Los síntomas del TDAH se solapan con ansiedad, depresión, burnout y trastornos del aprendizaje no diagnosticados. <strong className="text-primary font-semibold">Solo un perfil neuropsicológico completo permite un diagnóstico diferencial preciso</strong> que descarte condiciones similares y evite tratamientos equivocados.
+                    Esto importa porque el TDAH se confunde fácilmente con ansiedad, depresión o burnout. Las pruebas permiten <strong className="text-primary font-semibold">diferenciarlos con precisión</strong> y evitar un tratamiento equivocado.
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed text-center">
-                    En la práctica, esto significa que el informe no dice solo &ldquo;tiene TDAH&rdquo; o &ldquo;no tiene TDAH&rdquo;. Revela exactamente <strong className="text-primary font-semibold">qué funciones están comprometidas, en qué grado y qué intervenciones específicas</strong> necesitas, tanto en terapia como en tu vida laboral y personal.
+                    El resultado no es solo &ldquo;tienes TDAH&rdquo; o &ldquo;no&rdquo;: te dice <strong className="text-primary font-semibold">qué funciones están afectadas</strong> y qué hacer al respecto.
                   </p>
                 </div>
               </SectionReveal>
 
-              {/* Comparative table — unified 2-column layout for all screens */}
+              {/* Comparative table — stacked cards on mobile (readable), 2-col grid from sm+ */}
               <SectionReveal delay={0.15}>
                 <div className="max-w-3xl mx-auto bg-secondary/50 rounded-2xl border border-border overflow-hidden">
-                  {/* Column headers — always 2 cols */}
-                  <div className="grid grid-cols-2">
-                    <div className="p-3 sm:p-4 bg-secondary/80 border-b border-r border-border text-center">
-                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
+                  {/* Column headers — hidden on mobile since each row labels itself */}
+                  <div className="hidden sm:grid grid-cols-2">
+                    <div className="p-4 bg-secondary/80 border-b border-r border-border text-center">
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Psicología clínica</p>
                     </div>
-                    <div className="p-3 sm:p-4 bg-primary/8 border-b border-border text-center">
-                      <p className="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
+                    <div className="p-4 bg-primary/8 border-b border-border text-center">
+                      <p className="text-xs font-bold uppercase tracking-widest text-primary">Neuropsicología</p>
                     </div>
                   </div>
 
                   {comparativaItems.map((item, i) => (
                     <div key={item.aspecto} className={i !== comparativaItems.length - 1 ? 'border-b border-border' : ''}>
                       {/* Aspect label — full-width spanning row */}
-                      <div className="px-3 sm:px-4 pt-3 pb-2 bg-secondary/40 border-b border-border/50">
-                        <p className="text-[11px] sm:text-xs font-bold text-primary">{item.aspecto}</p>
+                      <div className="px-4 pt-3 pb-2 bg-secondary/40 border-b border-border/50">
+                        <p className="text-sm font-bold text-primary">{item.aspecto}</p>
                       </div>
-                      {/* Side-by-side comparison — always 2 columns */}
-                      <div className="grid grid-cols-2">
-                        <div className="border-r border-border p-3 sm:p-4 flex items-start gap-1.5 sm:gap-2">
-                          <XCircle className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-muted-foreground/40 shrink-0 mt-0.5" />
-                          <p className="text-[11px] sm:text-xs text-muted-foreground font-light leading-relaxed">{item.psicologia}</p>
+                      {/* Stacked on mobile, side-by-side from sm+ */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2">
+                        <div className="sm:border-r border-border p-4 flex items-start gap-2">
+                          <XCircle className="w-3.5 h-3.5 text-muted-foreground/40 shrink-0 mt-0.5" />
+                          <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                            <span className="sm:hidden font-semibold text-muted-foreground/70">Psicología: </span>{item.psicologia}
+                          </p>
                         </div>
-                        <div className="p-3 sm:p-4 bg-primary/3 flex items-start gap-1.5 sm:gap-2">
-                          <CheckCircle2 className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-primary/60 shrink-0 mt-0.5" />
-                          <p className="text-[11px] sm:text-xs text-foreground font-medium leading-relaxed">{item.neuropsicologia}</p>
+                        <div className="p-4 bg-primary/3 flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-primary/60 shrink-0 mt-0.5" />
+                          <p className="text-sm text-foreground font-medium leading-relaxed">
+                            <span className="sm:hidden font-semibold text-primary/70">Neuropsicología: </span>{item.neuropsicologia}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -942,7 +982,7 @@ export default function TDAHAdultosFunnel() {
 
               <SectionReveal delay={0.3}>
                 <div className="mt-10 text-center">
-                  <CtaButton>Agendar valoración</CtaButton>
+                  <CtaButton>Agendar mi valoración</CtaButton>
                 </div>
               </SectionReveal>
             </div>
@@ -984,7 +1024,7 @@ export default function TDAHAdultosFunnel() {
 
               <SectionReveal delay={0.3}>
                 <div className="mt-10 text-center">
-                  <CtaButton>Reservar mi valoración</CtaButton>
+                  <CtaButton>Agendar mi valoración</CtaButton>
                 </div>
               </SectionReveal>
             </div>
@@ -1020,7 +1060,7 @@ export default function TDAHAdultosFunnel() {
                         />
                       </div>
                       <div className="absolute -bottom-4 -right-4 bg-gradient-primary text-primary-foreground rounded-2xl px-4 py-2 shadow-xl shadow-primary/25">
-                        <p className="text-[9px] font-bold uppercase tracking-widest text-primary-foreground/70">Cédula Federal</p>
+                        <p className="text-[11px] font-bold uppercase tracking-widest text-primary-foreground/70">Cédula Federal</p>
                         <p className="text-sm font-bold font-mono">{CEDULA}</p>
                       </div>
                     </div>
@@ -1108,7 +1148,7 @@ export default function TDAHAdultosFunnel() {
               </div>
 
               <SectionReveal delay={0.3}>
-                <div className="mt-10 text-center"><CtaButton>Dar el primer paso</CtaButton></div>
+                <div className="mt-10 text-center"><CtaButton>Agendar mi valoración</CtaButton></div>
               </SectionReveal>
             </div>
           </section>
@@ -1118,48 +1158,58 @@ export default function TDAHAdultosFunnel() {
               10 · FAQ — 13 items
               A11Y: aria-expanded + aria-controls
               ══════════════════════════════════════════════════════ */}
-          <section className="py-14 sm:py-20 bg-card">
+          <section id="preguntas-frecuentes" className="py-14 sm:py-20 bg-card scroll-mt-24">
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
-                <h2 className="text-headline font-serif font-bold text-primary mb-10 text-center">Preguntas frecuentes</h2>
+                <h2 className="text-headline font-serif font-bold text-primary mb-3 text-center">Preguntas frecuentes</h2>
+                <p className="text-muted-foreground font-light text-center text-sm mb-10">Agrupadas por tema — busca la que te interese, no hace falta leerlas todas.</p>
               </SectionReveal>
 
-              <div role="list">
-                {faqItems.map((faq, i) => (
-                  <SectionReveal key={i} delay={i * 0.05}>
-                    <div role="listitem" style={{ borderBottom: i < faqItems.length - 1 ? '1px solid rgba(67,56,96,0.09)' : 'none' }}>
-                      <button
-                        id={`faq-btn-${i}`}
-                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                        aria-expanded={openFaq === i}
-                        aria-controls={`faq-answer-${i}`}
-                        className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors"
-                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#6b5f8a' : '#433860' }}
-                      >
-                        <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
-                        <ChevronDown
-                          className="w-5 h-5 shrink-0 transition-transform duration-250"
-                          style={{ color: '#6b5f8a', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                          aria-hidden="true"
-                        />
-                      </button>
-                      <div
-                        id={`faq-answer-${i}`}
-                        role="region"
-                        aria-labelledby={`faq-btn-${i}`}
-                        className="grid transition-all duration-300"
-                        style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-                      >
-                        <div className="overflow-hidden">
-                          <p className="text-sm leading-relaxed pb-5" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
-                            {faq.a}
-                          </p>
-                        </div>
-                      </div>
+              {faqCategories.map((cat, catIdx) => {
+                const itemsInCat = faqItems.filter((f) => f.cat === cat);
+                return (
+                  <SectionReveal key={cat} delay={catIdx * 0.05} className={catIdx > 0 ? 'mt-8' : ''}>
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-2">{cat}</h3>
+                    <div role="list">
+                      {itemsInCat.map((faq) => {
+                        const i = faqItems.indexOf(faq);
+                        return (
+                          <div key={i} role="listitem" style={{ borderBottom: '1px solid rgba(67,56,96,0.09)' }}>
+                            <button
+                              id={`faq-btn-${i}`}
+                              onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                              aria-expanded={openFaq === i}
+                              aria-controls={`faq-answer-${i}`}
+                              className="w-full flex items-center justify-between gap-4 py-4 text-left transition-colors"
+                              style={{ background: 'none', border: 'none', cursor: 'pointer', color: openFaq === i ? '#6b5f8a' : '#433860' }}
+                            >
+                              <span className="font-semibold text-sm sm:text-base">{faq.q}</span>
+                              <ChevronDown
+                                className="w-5 h-5 shrink-0 transition-transform duration-250"
+                                style={{ color: '#6b5f8a', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                                aria-hidden="true"
+                              />
+                            </button>
+                            <div
+                              id={`faq-answer-${i}`}
+                              role="region"
+                              aria-labelledby={`faq-btn-${i}`}
+                              className="grid transition-all duration-300"
+                              style={{ gridTemplateRows: openFaq === i ? '1fr' : '0fr', opacity: openFaq === i ? 1 : 0, transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
+                            >
+                              <div className="overflow-hidden">
+                                <p className="text-sm leading-relaxed pb-4" style={{ color: '#515e71', lineHeight: '1.75', maxWidth: '70ch' }}>
+                                  {faq.a}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </SectionReveal>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </section>
 
@@ -1186,12 +1236,12 @@ export default function TDAHAdultosFunnel() {
                   <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/12 border border-primary/20">
                     <div className="bg-gradient-primary px-8 py-5 flex items-center justify-between">
                       <div>
-                        <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-0.5">Servicio</p>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-0.5">Servicio</p>
                         <p className="text-sm font-bold text-primary-foreground">Valoración TDAH Adultos · Proceso completo</p>
                       </div>
                       <div className="flex items-center gap-1.5 px-3 py-1.5 bg-success/20 border border-success/30 rounded-full">
                         <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
-                        <span className="text-[9px] font-bold uppercase tracking-wider text-success">Disponible</span>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-success">Disponible</span>
                       </div>
                     </div>
 
@@ -1219,7 +1269,7 @@ export default function TDAHAdultosFunnel() {
                             <Shield className="w-5 h-5 text-primary/70" />
                           </div>
                           <div>
-                            <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground/60 mb-0.5">Anticipo al reservar</p>
+                            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground/60 mb-0.5">Anticipo al reservar</p>
                             <div className="flex items-baseline gap-2">
                               <span className="text-2xl font-serif font-bold text-primary">$1,000</span>
                               <span className="text-xs text-muted-foreground/60 font-light">MXN · descontado del total</span>
@@ -1380,7 +1430,7 @@ export default function TDAHAdultosFunnel() {
           }`}
           style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
         >
-          <a href="#agendar" onClick={scrollToBooking} className="flex items-center justify-center w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-bold text-[11px] uppercase tracking-widest shadow-2xl shadow-primary/35 active:scale-[0.98] transition-transform">
+          <a href="#agendar" onClick={scrollToBooking} className="flex items-center justify-center w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest shadow-2xl shadow-primary/35 active:scale-[0.98] transition-transform">
             {symptomCount > 4 ? 'Muchas señales. Agendar valoración' : 'Agendar valoración'}
           </a>
         </div>
