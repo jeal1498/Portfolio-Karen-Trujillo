@@ -8,6 +8,7 @@ const SERVICIOS = [
   { href: '/evaluacion-tdah-ninos', label: 'TDAH Infantil' },
   { href: '/evaluacion-tdah-adultos', label: 'TDAH Adultos' },
   { href: '/evaluacion-autismo-cancun', label: 'Autismo (TEA)' },
+  { href: '/evaluacion-ci-wisc-v-cancun', label: 'Evaluación de CI (WISC-V)' },
 ];
 
 const INFORMACION = [

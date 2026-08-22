@@ -1349,7 +1349,7 @@ export default function TDAHNinosFunnel() {
           <section className="py-10 sm:py-12 bg-card border-t border-border">
             <div className="max-w-2xl mx-auto px-6">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5 text-center">Otros servicios disponibles en Cancún</p>
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-3 gap-3">
                 <Link href="/evaluacion-tdah-adultos" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
@@ -1362,6 +1362,13 @@ export default function TDAHNinosFunnel() {
                   <div>
                     <span className="text-sm font-bold text-primary block">Autismo (TEA)</span>
                     <span className="text-xs text-muted-foreground font-light">Diagnóstico con ADOS-2 y M-CHAT</span>
+                  </div>
+                </Link>
+                <Link href="/evaluacion-ci-wisc-v-cancun" className="flex items-center gap-3 p-4 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <ArrowRight className="w-4 h-4 text-primary/50 shrink-0 transition-transform group-hover:translate-x-1" />
+                  <div>
+                    <span className="text-sm font-bold text-primary block">Evaluación de CI (WISC-V)</span>
+                    <span className="text-xs text-muted-foreground font-light">Perfil cognitivo, sin diagnóstico de TDAH</span>
                   </div>
                 </Link>
               </div>

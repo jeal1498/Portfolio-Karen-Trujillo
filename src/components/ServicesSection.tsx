@@ -1,4 +1,4 @@
-import { Zap, Network, FileCheck, ArrowRight, CheckCircle2, UserCheck, Heart } from 'lucide-react';
+import { Zap, Network, FileCheck, ArrowRight, CheckCircle2, UserCheck, Heart, Brain } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { waUrl } from '@/lib/contact';
@@ -37,6 +37,17 @@ const evaluaciones = [
     bgColor: 'bg-accent-pink/30',
     accentBar: 'bg-accent-pink/60',
     message: 'Hola Karen, me interesa la evaluación de Autismo (TEA). ¿Cuál es la disponibilidad?',
+  },
+  {
+    icon: Brain,
+    title: 'Evaluación de CI (WISC-V)',
+    slug: '/evaluacion-ci-wisc-v-cancun',
+    edad: 'Niños de 6 a 16 años',
+    description: 'Evaluación de coeficiente intelectual con la prueba WISC-V. Útil para admisión escolar, sospecha de aptitudes sobresalientes o entender el perfil cognitivo de tu hijo.',
+    instruments: ['WISC-V'],
+    bgColor: 'bg-accent-blue/20',
+    accentBar: 'bg-accent-blue/50',
+    message: 'Hola Karen, me interesa la evaluación de CI con WISC-V. ¿Cuál es la disponibilidad?',
   },
 ];
 
