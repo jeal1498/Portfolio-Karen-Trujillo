@@ -13,6 +13,8 @@
 
 ## Flujo de Trabajo — Propuestas
 
+- Los cambios aprobados se suben **directo a `main`** (pedido el 14 oct 2026), sin ramas intermedias.
+
 - Antes de implementar cualquier cambio propuesto (nuevo o corregido), explicar el enfoque primero y esperar confirmación explícita del usuario.
 - No ejecutar ediciones de código hasta recibir aprobación.
 
