@@ -52,6 +52,8 @@ export function track(event: string, params: Record<string, string> = {}): void 
  * como "eventos clave" en GA4 y se importan como conversiones en Google Ads.
  */
 export function contactEvent(href: string): { event: string; servicio?: string } | null {
+  // Botón principal de las páginas de servicio: baja al calendario de Cal.com.
+  if (href === '#agendar' || href.endsWith('#agendar')) return { event: 'clic_agendar' };
   if (href.includes('wa.me/') || href.includes('api.whatsapp.com')) return { event: 'contacto_whatsapp' };
   if (href.startsWith('tel:')) return { event: 'contacto_llamada' };
   if (href.startsWith('mailto:')) return { event: 'contacto_correo' };

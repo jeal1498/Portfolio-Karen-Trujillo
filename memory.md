@@ -432,5 +432,5 @@ Para cualquier módulo nuevo en PsychoCore, pedir siempre: stack completo, DDL d
 Plan completo y estado en **`docs/google-ads/PLAN.md`** (leer primero). Guía de cuentas para Karen en `docs/google-ads/GUIA-KAREN.md`.
 - ✅ Fase 1 en código: GA4 con Consent Mode v2 + aviso de cookies + eventos `contacto_whatsapp`, `contacto_llamada`, `contacto_correo`, `agendar_cita`, `cita_agendada`. Se activa con `NEXT_PUBLIC_GA_ID` en Vercel.
 - ⏳ Falta: Karen crea GA4 / Search Console / Google Ads y pone el ID en Vercel.
-- Siguiente: Fase 2 (palabras clave por intención para Cancún, 3 grupos = 3 páginas de servicio, negativas).
+- ✅ Fase 2 en borrador: PALABRAS-CLAVE.md, ANUNCIOS.md, REVISION-PAGINAS.md + evento `clic_agendar`. Falta confirmar volumen/CPC con las cuentas.
 - Regla: pagar por búsquedas con intención de agendar, no por las más buscadas (esas van al blog).

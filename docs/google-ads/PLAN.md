@@ -1,7 +1,8 @@
 # Plan de medición y Google Ads
 
 > Leer esto primero para continuar en una conversación nueva.
-> Creado: 14 oct 2026. Estado actual: **Fase 1 hecha en código, falta que Karen cree sus cuentas** (ver `GUIA-KAREN.md`).
+> Creado: 14 oct 2026. Estado: **Fase 1 en código ✅ · Fase 2 en borrador ✅ · falta lo manual** (ver «Pendientes manuales» abajo).
+> Archivos: `GUIA-KAREN.md` (cuentas), `PALABRAS-CLAVE.md`, `ANUNCIOS.md`, `REVISION-PAGINAS.md`.
 
 ## Objetivo
 Antes de invertir en Google Ads, medir qué trae pacientes. La métrica que importa es el **costo por mensaje de WhatsApp** y luego el **costo por paciente que agenda**, no los clics.
@@ -22,6 +23,7 @@ Hecho en el sitio:
   | `contacto_whatsapp` | clic en cualquier enlace `wa.me` | `pagina`, `boton` |
   | `contacto_llamada` | clic en `tel:` | `pagina`, `boton` |
   | `contacto_correo` | clic en `mailto:` | `pagina`, `boton` |
+  | `clic_agendar` | clic en el botón principal «Agendar…» (`#agendar`, baja al calendario) — micro-conversión | `pagina`, `boton` |
   | `agendar_cita` | clic en un enlace a `cal.com` (hoy Cal.com va en iframe, casi no hay enlaces) | `pagina`, `servicio` |
   | `cita_agendada` | Cal.com (iframe) avisa `bookingSuccessful…` por postMessage — **sin probar con una reserva real** | `pagina` |
 - `src/components/CookieBanner.tsx`: aviso «Aceptar / Solo necesarias» (se guarda en `localStorage` `kt-consent`).
@@ -36,7 +38,11 @@ Falta (lo hace Karen, `GUIA-KAREN.md`):
 - [ ] Cuenta de Google Ads en **modo experto** (no campaña inteligente), vinculada a GA4, con los eventos clave importados como conversiones.
 - [ ] Confirmar `cita_agendada` con una reserva de prueba en Cal.com (si no llega, usar los webhooks de Cal.com).
 
-### Fase 2 · Elegir búsquedas (semana 2)
+### Fase 2 · Elegir búsquedas — ✅ borrador listo (14 oct 2026)
+Hecho: `PALABRAS-CLAVE.md` (3 grupos + opcional WISC-V, lista para blog, negativas), `ANUNCIOS.md` (15 títulos + 4 descripciones por grupo, longitudes verificadas, extensiones), `REVISION-PAGINAS.md` (y se agregó el evento `clic_agendar`).
+Falta: confirmar volumen/CPC en el Planificador y cruzar con Search Console; decidir las recomendaciones de `REVISION-PAGINAS.md`.
+
+Plan original:
 - Lista de palabras clave para Cancún con volumen y CPC (Planificador de palabras clave de Google Ads, ya con la cuenta creada).
 - 3 grupos de anuncios = 3 páginas de servicio: TDAH niños (`/evaluacion-tdah-ninos`), TDAH adultos (`/evaluacion-tdah-adultos`), autismo (`/evaluacion-autismo-cancun`). Posible 4º: WISC-V (`/evaluacion-ci-wisc-v-cancun`).
 - Concordancia de frase/exacta. **Palabras negativas**: gratis, gratuito, test online, curso, diplomado, trabajo, empleo, vacante, qué es, síntomas, pdf, imss, seguro social (revisar), etc.
@@ -53,6 +59,23 @@ Falta (lo hace Karen, `GUIA-KAREN.md`):
 - Panel en **Looker Studio**: gasto → clics → WhatsApp → costo por mensaje, por servicio (fuentes: Google Ads, GA4, Search Console).
 - Apagar lo que no trae mensajes; mover dinero al servicio con menor costo por mensaje.
 - Preguntar en WhatsApp «¿cómo nos encontraste?» para cruzar con los datos.
+
+## Pendientes manuales (no los puede hacer Claude)
+**Karen (cuentas, ~15 min, `GUIA-KAREN.md`):**
+- [ ] Crear GA4 y pasar el ID `G-…` → poner `NEXT_PUBLIC_GA_ID` en Vercel + Redeploy.
+- [ ] Aceptar el aviso de cookies y probar WhatsApp → ver `contacto_whatsapp` en Tiempo real.
+- [ ] Marcar eventos clave: `contacto_whatsapp`, `contacto_llamada`, `cita_agendada`.
+- [ ] Search Console (DNS en Cloudflare o etiqueta HTML) y vincularlo a GA4.
+- [ ] Google Ads en modo experto, moneda MXN, vinculado a GA4, importar las conversiones.
+- [ ] Hacer 1 reserva de prueba en Cal.com y cancelarla → confirmar `cita_agendada`.
+- [ ] Confirmar precios vigentes ($8,300 / $8,300 / $8,500 / $10,500) para la extensión de precios.
+
+**Después, con las cuentas listas (Claude puede guiar o hacerlo con acceso):**
+- [ ] Sacar volumen y CPC del Planificador para `PALABRAS-CLAVE.md` (exportar CSV y pasarlo a Claude).
+- [ ] Exportar consultas de Search Console (últimos 3 meses) para no pagar por lo que ya llega gratis.
+- [ ] Medir las 3 páginas en pagespeed.web.dev.
+- [ ] Crear la campaña en Google Ads copiando `ANUNCIOS.md` y `PALABRAS-CLAVE.md` (Claude no tiene acceso a Google Ads).
+- [ ] Definir presupuesto final y fecha de arranque.
 
 ## Decisiones tomadas
 - No se construye un dashboard propio: GA4 + Looker Studio es lo profesional y gratuito. Un panel propio (citas de Cal.com + agente de WhatsApp) solo cuando el agente esté en producción.
