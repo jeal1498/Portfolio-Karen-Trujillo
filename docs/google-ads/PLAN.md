@@ -2,6 +2,7 @@
 
 > Leer esto primero para continuar en una conversación nueva.
 > Creado: 14 oct 2026. Estado: **Fase 1 en código ✅ · Fase 2 en borrador ✅ · falta lo manual** (ver «Pendientes manuales» abajo).
+> **Quién hace qué: `REPARTO.md`** (Claude Code · Claude en Chrome · ustedes, con instrucciones listas para pegar).
 > Archivos: `GUIA-KAREN.md` (cuentas), `PALABRAS-CLAVE.md`, `ANUNCIOS.md`, `REVISION-PAGINAS.md`.
 
 ## Objetivo
