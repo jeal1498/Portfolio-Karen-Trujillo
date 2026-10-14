@@ -422,3 +422,13 @@ Cuando el usuario pide generar instrucciones para otra conversación:
 ### Preguntas técnicas a solicitar antes de planear (checklist)
 
 Para cualquier módulo nuevo en PsychoCore, pedir siempre: stack completo, DDL de tablas relevantes, rutas exactas de archivos, patrón de código real (copiar el Server Action o componente más complejo), sistema de auth, storage configurado, herramienta de PDF si existe, librería de forms/validación, patrón de errores, y si hay migraciones con tracking o aplicadas directamente.
+
+---
+
+## Medición + Google Ads — Estado (14 oct 2026)
+
+Plan completo y estado en **`docs/google-ads/PLAN.md`** (leer primero). Guía de cuentas para Karen en `docs/google-ads/GUIA-KAREN.md`.
+- ✅ Fase 1 en código: GA4 con Consent Mode v2 + aviso de cookies + eventos `contacto_whatsapp`, `contacto_llamada`, `contacto_correo`, `agendar_cita`, `cita_agendada`. Se activa con `NEXT_PUBLIC_GA_ID` en Vercel.
+- ⏳ Falta: Karen crea GA4 / Search Console / Google Ads y pone el ID en Vercel.
+- Siguiente: Fase 2 (palabras clave por intención para Cancún, 3 grupos = 3 páginas de servicio, negativas).
+- Regla: pagar por búsquedas con intención de agendar, no por las más buscadas (esas van al blog).

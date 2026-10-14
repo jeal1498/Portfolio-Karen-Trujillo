@@ -96,6 +96,9 @@ export default function Document() {
     <Html lang="es-MX" className="scroll-smooth">
       <Head>
         <link rel="dns-prefetch" href="https://wa.me" />
+        {process.env.NEXT_PUBLIC_GSC_VERIFICATION && (
+          <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GSC_VERIFICATION} />
+        )}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <script

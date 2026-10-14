@@ -78,8 +78,12 @@ const AvisoDePrivacidad = () => (
 
         <h2 className="text-xl font-serif font-bold text-primary pt-4">6. Uso de cookies</h2>
         <p>
-          Este sitio no utiliza cookies de rastreo, píxeles de seguimiento ni servicios de analítica de
-          terceros.
+          Este sitio utiliza Google Analytics y, en su caso, la medición de Google Ads, solo si usted lo
+          acepta en el aviso de cookies. Sirven para conocer de forma estadística qué páginas se visitan,
+          desde qué tipo de dispositivo y qué botones de contacto (WhatsApp, llamada, agenda) se utilizan.
+          No se recopilan datos clínicos ni el contenido de sus mensajes. Si elige «Solo necesarias», no se
+          guardan cookies de analítica. Puede cambiar su elección borrando los datos de este sitio en su
+          navegador.
         </p>
 
         <h2 className="text-xl font-serif font-bold text-primary pt-4">7. Cambios al aviso de privacidad</h2>

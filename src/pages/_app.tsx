@@ -4,6 +4,8 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import { Outfit, Maven_Pro } from 'next/font/google';
+import Analytics from '@/components/Analytics';
+import CookieBanner from '@/components/CookieBanner';
 import '@/index.css';
 
 const outfit = Outfit({
@@ -23,11 +25,13 @@ const mavenPro = Maven_Pro({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${outfit.variable} ${mavenPro.variable}`}>
+      <Analytics />
       <MotionConfig reducedMotion="user">
         <TooltipProvider>
           <Toaster />
           <Sonner />
           <Component {...pageProps} />
+          <CookieBanner />
         </TooltipProvider>
       </MotionConfig>
     </div>
