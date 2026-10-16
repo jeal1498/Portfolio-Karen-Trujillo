@@ -15,6 +15,12 @@ Flujo con aprobación por etapa (ver más abajo). Probado con el video 1 (`marke
 - Público: madres y padres de hijos de 5 a 17 años con dudas de atención, conducta o comunicación, y adultos que sospechan TDAH. Ciudad: Cancún. Web: `psicologakarentrujillo.com.mx` (**confirmada por Eduardo el 16 oct 2026**). WhatsApp de ventas: ver `src/components/Footer.tsx`.
 - Es información de ayuda, no diagnóstico: no afirmar que algo «cura» ni diagnosticar por video.
 
+## ⭐ Fuente de los videos (carpeta de Drive)
+Todos los videos grabados por Karen se suben a esta carpeta, que es la **fuente oficial**: https://drive.google.com/drive/folders/1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV (ID `1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV`).
+- Al empezar, listarla con `search_files` (`parentId = '1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV'`) y comparar con los videos ya hechos en `marketing/videos/Marca Personal/` y `marketing/plan/calendario.md` para saber cuáles faltan.
+- Descargar con `curl -L "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"` (el conector limita a 10 MB). Si falla por permisos, pedir que compartan el archivo.
+- Usar siempre el original de la carpeta, no el de WhatsApp. Si un video no dice a qué tema o número corresponde, preguntar antes de asignarle `NN`.
+
 ## ⭐ Antes de editar
 Al empezar una sesión de videos: **`git pull origin main`** y lee la sección «Estado y pendientes» de abajo. Revisa también `marketing/plan/calendario.md` para saber qué número toca.
 
@@ -29,7 +35,7 @@ Todo vive en `marketing/videos/Marca Personal/NN - Nombre del video/` (Checa usa
 - Commit y push directo a `main` (así lo pidió Eduardo). GitHub rechaza archivos de más de 100 MB: la versión que se guarda es la ligera (`-crf 26`, ≈30–45 MB).
 
 ## Antes de empezar
-1. **Pedir el original sin pasar por WhatsApp.** El del chat viene a 386×686 px; el de Drive/galería trae 880×1562. Si lo pasan por la carpeta de Drive de Eduardo/Karen, ver «Drive» abajo.
+1. **Pedir el original sin pasar por WhatsApp.** El del chat viene a 386×686 px; el de Drive/galería trae 880×1562. Viene de la carpeta de Drive: ver «Fuente de los videos».
 2. Confirmar solo lo necesario: nada, si el estilo ya está elegido (sí lo está: **propuesta B** = subtítulos sobrios + tarjetas por idea + extras de «antes → después» y alarma/ejemplo + cierre «Guarda este video»; portada **estilo gancho 1**).
 
 ## ⭐ Flujo con una aprobación por etapa (como en Checa; pedido por Eduardo el 16 oct 2026)
@@ -79,7 +85,7 @@ Preparar 4 min · spec 10 min · componer+verificar 10 min · render 6 min · po
 ## Estado y pendientes (16 oct 2026, al cerrar la conversación)
 - **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas están en `marketing/videos/Marca Personal/`. Ninguno está «Publicado»; cada `copy.md` trae un «Por confirmar con Karen» sin resolver (palabras dudosas de la transcripción y datos de ejemplo).
 - **Numeración:** 01 a 05 **confirmada por Eduardo**; no se renombra. Los nuevos siguen con 06, 07… según el momento de subida.
-- **Origen de los videos:** carpeta de Drive «Videos» (`1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV`, de `karentrujillopsic10@gmail.com`) con `v2.mp4` a `v5.mp4` y el primero (`2026_10_15_12_46_52 (1)~3.mp4`). Si llegan videos nuevos, listar la carpeta y bajarlos con el enlace `drive.usercontent.google.com/download?id=…`. No se puede subir nada a Drive desde aquí.
+- **Origen de los videos:** carpeta de Drive oficial (ver «Fuente de los videos»). Karen sigue subiendo ahí todo lo grabado: al iniciar, listar la carpeta y detectar videos nuevos. No se puede subir nada a Drive desde aquí.
 - **Segunda versión:** otro video con guion diferente sobre el mismo tema (otro número). Todavía no se ha hecho ninguna.
 - **Web del cierre:** `psicologakarentrujillo.com.mx`, confirmada; ya no se pregunta ni se lista como «Por confirmar».
 - **Siguiente paso:** el próximo video pasa por las 6 etapas con aprobación y se guarda como el 06 con `guardar.sh`.
