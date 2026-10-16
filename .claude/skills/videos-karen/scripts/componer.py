@@ -29,7 +29,7 @@ def seq(words, desde):
 sents = []; cur = []
 for w in W:
     cur.append(w)
-    if w['t'].endswith('.'): sents.append(cur); cur = []
+    if w['t'].endswith(('.', '?')): sents.append(cur); cur = []
 if cur: sents.append(cur)
 KEY = {k.lower() for k in spec.get('claves', [])}
 def split(ws):
