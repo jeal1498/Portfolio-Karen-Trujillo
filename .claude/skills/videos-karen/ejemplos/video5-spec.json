@@ -1,0 +1,31 @@
+{
+  "id": "karen-5",
+  "duracion": 67.3,
+  "ajustes": {"37.66": "quizá", "40.36": "quizá", "41.58": "lleve"},
+  "claves": ["tarde","ejercicio","minutos","55","margen","imprevistos","registra","alarma","planificar","guarda","ejemplo","rutina"],
+  "nametag": {"nombre": "Karen Trujillo", "cargo": "Neuropsicóloga Clínica", "ini": 0.5, "fin": 4.1},
+  "pastillas": [
+    {"texto": "Suma tus actividades", "ini": 5.4, "fin": 31.5},
+    {"texto": "Registra tus tiempos reales", "ini": 31.7, "fin": 47.2},
+    {"texto": "Usa una alarma", "ini": 47.6, "fin": 53.4}
+  ],
+  "listas": [
+    {"id": "l1", "ini": 7.5, "fin": 23.3, "titulo": "Para salir a las 9:00", "items": [
+      {"texto": "Vestirte: 10 min", "en": ["vestirte", 8]}, {"texto": "Desayunar: 15 min", "en": ["desayunar", 9]}, {"texto": "Preparar tus cosas: 10 min", "en": ["preparar", 10]},
+      {"texto": "Llegar: 20 min", "en": ["llegar", 12]}, {"texto": "Total: 55 min", "en": ["55", 21]}]},
+    {"id": "l2", "ini": 36.0, "fin": 43.3, "titulo": "Registra cuánto tardas realmente", "items": [
+      {"texto": "Quizá desayunar toma 20 min", "en": ["desayunar", 37]}, {"texto": "Quizá preparar tus cosas toma menos", "en": ["preparar", 40]}]}
+  ],
+  "destacados": [
+    {"id": "d1", "ini": 24.5, "fin": 28.0, "texto": "Tendrías que empezar antes de las 8:05", "en": ["comenzar", 24]},
+    {"id": "d2", "ini": 28.4, "fin": 31.5, "texto": "Y añadir un margen para imprevistos", "en": ["añadir", 28]},
+    {"id": "d3", "ini": 43.6, "fin": 47.2, "texto": "Ajusta tus cálculos a tu propia rutina", "en": ["ajustar", 44]},
+    {"id": "d4", "ini": 54.4, "fin": 61.2, "texto": "Ayuda a planificar, pero no elimina por sí sola todas las dificultades", "en": ["herramienta", 54]}
+  ],
+  "alarma": {"ini": 49.6, "fin": 53.3, "etiqueta": "Alarma", "ejemplo": true, "hora": "8:15", "titulo": "Pasar a desayunar",
+             "detalle_antes": "", "detalle": "Siguiente paso", "subrayar_en": ["siguiente", 51]},
+  "cierre": {"ini": 61.6, "titulo": "Guarda el ejemplo", "chips": ["Suma cada actividad", "Registra tus tiempos", "Añade margen"],
+             "icono_en": ["guarda", 61], "chips_en": ["ejemplo", 61], "chips_anclas": [["ejemplo", 61], ["dime", 62], ["minutos", 63]],
+             "url": "psicologakarentrujillo.com.mx", "url_en": ["casa", 65]},
+  "zooms": [[6.8, 8.3, 1.04], [31.5, 33.0, 1.0], [47.4, 48.9, 1.04], [53.9, 55.4, 1.0], [61.4, 62.9, 1.05]]
+}

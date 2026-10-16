@@ -1,0 +1,31 @@
+{
+  "id": "karen-4",
+  "duracion": 84.2,
+  "ajustes": {"3.68": null, "3.82": "vas"},
+  "claves": ["tdah","tiempo","estrategia","atrás","hacia","planifica","margen","sistema","anticiparlo","comentarios","imprevistos","hora","valoración"],
+  "nametag": {"nombre": "Karen Trujillo", "cargo": "Neuropsicóloga Clínica", "ini": 0.5, "fin": 4.1},
+  "pastillas": [
+    {"texto": "Estimar el tiempo", "ini": 12.2, "fin": 33.6},
+    {"texto": "Planifica hacia atrás", "ini": 34.1, "fin": 64.0},
+    {"texto": "Sin exigirte perfección", "ini": 65.2, "fin": 74.3}
+  ],
+  "listas": [
+    {"id": "l1", "ini": 13.6, "fin": 21.6, "titulo": "A algunas personas con TDAH les cuesta", "items": [
+      {"texto": "Estimar el tiempo", "en": ["estimar", 13]}, {"texto": "Cambiar de tarea", "en": ["cambiar", 16]}, {"texto": "Anticipar los pasos", "en": ["anticipar", 18]}]},
+    {"id": "l2", "ini": 44.0, "fin": 53.2, "titulo": "Para salir a las 8:00, calcula", "items": [
+      {"texto": "Vestirte", "en": ["vestirte", 45]}, {"texto": "Desayunar", "en": ["desayunar", 46]}, {"texto": "Preparar tus cosas", "en": ["preparar", 47]},
+      {"texto": "Llegar a la puerta", "en": ["puerta", 49]}, {"texto": "+ Margen para imprevistos", "en": ["margen", 51]}]}
+  ],
+  "destacados": [
+    {"id": "d1", "ini": 22.0, "fin": 27.0, "texto": "Tener problemas con el tiempo no significa automáticamente tener TDAH", "en": ["ojo", 21]},
+    {"id": "d1b", "ini": 27.9, "fin": 33.6, "texto": "Considera el contexto. Si hay sospecha, busca una valoración adecuada", "en": ["considerar", 27]},
+    {"id": "d2", "ini": 54.3, "fin": 63.6, "texto": "Registra cuánto tardas realmente en tus actividades frecuentes", "en": ["registrar", 54]},
+    {"id": "d3", "ini": 65.2, "fin": 68.7, "texto": "No se trata de ser perfecto con el tiempo", "en": ["trata", 65]},
+    {"id": "d4", "ini": 68.9, "fin": 73.8, "texto": "Un sistema que te ayude a anticiparlo mejor", "en": ["sistema", 69]}
+  ],
+  "cierre": {"ini": 74.6, "titulo": "¿Qué te cuesta más?", "titulo_tam": 56, "icono": "pregunta", "numerados": false,
+             "chips": ["Calcular cuánto tardas", "Dejar una actividad para pasar a otra"], "icono_en": ["cuesta", 76],
+             "chips_en": ["calcular", 77], "chips_anclas": [["calcular", 77], ["dejar", 79]],
+             "url": "psicologakarentrujillo.com.mx", "url_en": ["comentarios", 82]},
+  "zooms": [[12.2, 13.7, 1.04], [33.9, 35.4, 1.0], [41.8, 43.3, 1.04], [64.9, 66.4, 1.0], [74.5, 76.0, 1.05]]
+}
