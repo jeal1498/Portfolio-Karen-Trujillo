@@ -42,4 +42,3 @@ psicologakarentrujillo.com.mx
 
 - {palabras dudosas de la transcripción}
 - {datos de ejemplo que se inventaron para el video}
-- {dirección web / contacto en el cierre}

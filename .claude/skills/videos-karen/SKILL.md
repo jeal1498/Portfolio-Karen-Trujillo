@@ -12,7 +12,7 @@ Flujo con aprobación por etapa (ver más abajo). Probado con el video 1 (`marke
 - Fuentes: **Outfit** (titulares) y **Maven Pro** (texto). Ya están en `assets/fonts/`.
 - Voz: clínica, confiable, cálida. Precisa sin ser fría. **Sin promesas vagas** ni «transformar vidas».
 - Evitar: efectos de startup, emojis en pantalla, textos gigantes sin sentido, fotos de stock, gradientes decorativos, música fuerte.
-- Público: madres y padres de hijos de 5 a 17 años con dudas de atención, conducta o comunicación, y adultos que sospechan TDAH. Ciudad: Cancún. Web: `psicologakarentrujillo.com.mx` (confirmar con ella la primera vez). WhatsApp de ventas: ver `src/components/Footer.tsx`.
+- Público: madres y padres de hijos de 5 a 17 años con dudas de atención, conducta o comunicación, y adultos que sospechan TDAH. Ciudad: Cancún. Web: `psicologakarentrujillo.com.mx` (**confirmada por Eduardo el 16 oct 2026**). WhatsApp de ventas: ver `src/components/Footer.tsx`.
 - Es información de ayuda, no diagnóstico: no afirmar que algo «cura» ni diagnosticar por video.
 
 ## ⭐ Antes de editar
@@ -77,10 +77,10 @@ Si piden cambios en una etapa, se rehace solo esa etapa y no se avanza hasta su 
 Preparar 4 min · spec 10 min · componer+verificar 10 min · render 6 min · portada 5 min · copy 10 min · guardar 2 min.
 
 ## Estado y pendientes (16 oct 2026, al cerrar la conversación)
-- **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas están en `marketing/videos/Marca Personal/`. Ninguno está «Publicado»; cada `copy.md` trae un «Por confirmar con Karen» sin resolver (palabras dudosas de la transcripción, datos de ejemplo y la web del cierre).
+- **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas están en `marketing/videos/Marca Personal/`. Ninguno está «Publicado»; cada `copy.md` trae un «Por confirmar con Karen» sin resolver (palabras dudosas de la transcripción y datos de ejemplo).
 - **Numeración:** 01 a 05 **confirmada por Eduardo**; no se renombra. Los nuevos siguen con 06, 07… según el momento de subida.
 - **Origen de los videos:** carpeta de Drive «Videos» (`1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV`, de `karentrujillopsic10@gmail.com`) con `v2.mp4` a `v5.mp4` y el primero (`2026_10_15_12_46_52 (1)~3.mp4`). Si llegan videos nuevos, listar la carpeta y bajarlos con el enlace `drive.usercontent.google.com/download?id=…`. No se puede subir nada a Drive desde aquí.
 - **Segunda versión:** otro video con guion diferente sobre el mismo tema (otro número). Todavía no se ha hecho ninguna.
-- **Pendiente de confirmar:** que `psicologakarentrujillo.com.mx` sea la web del cierre.
+- **Web del cierre:** `psicologakarentrujillo.com.mx`, confirmada; ya no se pregunta ni se lista como «Por confirmar».
 - **Siguiente paso:** el próximo video pasa por las 6 etapas con aprobación y se guarda como el 06 con `guardar.sh`.
 - **Repo público:** los videos se pueden ver antes de publicarse; si no debe ser así, mover `marketing/videos/` a un repo privado.
