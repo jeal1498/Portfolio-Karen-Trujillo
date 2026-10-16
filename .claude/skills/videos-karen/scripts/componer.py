@@ -18,9 +18,12 @@ def wt(word, after=0, off=0.0):
     raise KeyError(f'palabra no encontrada: {word} (después de {after})')
 anc = lambda a: wt(a[0], a[1], a[2] if len(a) > 2 else 0.0)
 def seq(words, desde):
-    out = []; t = desde
-    for w in words:
-        t = wt(w, t + (0.01 if out else 0)); out.append(t)
+    # busca las palabras en orden (por posición), aunque dos empiecen en el mismo instante
+    i = next(k for k, w in enumerate(W) if w['s'] >= desde); out = []
+    for word in words:
+        j = next((k for k in range(i, len(W)) if norm(W[k]['t']) == word.lower()), None)
+        if j is None: raise KeyError(f'palabra no encontrada: {word} (después de {desde})')
+        out.append(W[j]['s']); i = j + 1
     return out
 # ---- subtítulos por oración, trozos balanceados ----
 sents = []; cur = []
@@ -71,17 +74,20 @@ for pi, p in enumerate(spec.get('pastillas', []), 1):
 for b in spec.get('antes_despues', []):
     c = b['id']
     H.append(f'''<div class="card ba clip" id="{c}" data-start="{b['ini']}" data-duration="{round(b['fin']-b['ini']+0.5,2)}" data-track-index="3">
- <div class="row r1"><span class="tag">Antes</span><span class="tx" id="{c}-a"><span class="t">{esc(b['antes'])}</span><i class="strike"></i></span></div>
+ <div class="row r1"><span class="tag">{esc(b.get("etiquetas",["Antes","Después"])[0])}</span><span class="tx" id="{c}-a"><span class="t">{esc(b['antes'])}</span><i class="strike"></i></span></div>
  <div class="arrow">{ARROW}</div>
- <div class="row r2"><span class="tag ok">Después</span><span class="tx" id="{c}-d">{words(b['despues'])}</span><span class="chk">{CHECK}</span></div>
+ <div class="row r2"><span class="tag ok">{esc(b.get("etiquetas",["Antes","Después"])[1])}</span><span class="tx" id="{c}-d">{words(b['despues'])}</span><span class="chk">{CHECK}</span></div>
 </div>''')
-    ts = seq(b['despues_en'], b['despues_desde']); strike = anc(b['tachar_en']) - 0.1
+    ts = seq(b['despues_en'], b['despues_desde']); strike = anc(b['tachar_en']) - 0.1 if b.get('tachar_en') else 0
     fin(f'#{c}', b['ini']+0.05, 30, 0.5)
     J.append(f"tl.set('#{c} .r1,#{c} .arrow,#{c} .r2',{{opacity:0}},0);")
     fin(f'#{c} .r1', anc(b['antes_en']), 14, 0.4)
-    J.append(f"tl.fromTo('#{c} .strike',{{scaleX:0}},{{scaleX:1,duration:0.35,ease:'power2.inOut',transformOrigin:'0 50%'}},{q(strike)});")
-    J.append(f"tl.to('#{c}-a .t',{{opacity:.45,duration:.3}},{q(strike)});")
-    J.append(f"tl.to('#{c} .arrow',{{opacity:1,duration:.3}},{q(strike+0.3)});")
+    if b.get('tachar', True):
+        J.append(f"tl.fromTo('#{c} .strike',{{scaleX:0}},{{scaleX:1,duration:0.35,ease:'power2.inOut',transformOrigin:'0 50%'}},{q(strike)});")
+        J.append(f"tl.to('#{c}-a .t',{{opacity:.45,duration:.3}},{q(strike)});")
+        J.append(f"tl.to('#{c} .arrow',{{opacity:1,duration:.3}},{q(strike+0.3)});")
+    else:
+        J.append(f"tl.to('#{c} .arrow',{{opacity:1,duration:.3}},{q(ts[0]-0.45)});")
     J.append(f"tl.to('#{c} .r2',{{opacity:1,duration:.25}},{q(ts[0]-0.15)});")
     J.append(f"tl.set('#{c}-d .w',{{opacity:0,y:12}},0);")
     for k, tt in enumerate(ts): J.append(f"tl.to('#{c}-d .w:nth-child({k+1})',{{opacity:1,y:0,duration:0.28,ease:'power2.out'}},{q(tt-0.05)});")
@@ -101,7 +107,7 @@ for D in spec.get('destacados', []):
 a = spec.get('alarma')
 if a:
     H.append(f'''<div class="card alarm clip" id="al" data-start="{a['ini']}" data-duration="{round(a['fin']-a['ini']+0.4,2)}" data-track-index="3">
- <div class="al-top"><span class="ic">{ALARM}</span><span class="lab">Alarma</span><span class="ej">Ejemplo</span></div>
+ <div class="al-top"><span class="ic">{ALARM}</span><span class="lab">{esc(a.get("etiqueta","Alarma"))}</span>{"<span class=\"ej\">Ejemplo</span>" if a.get("ejemplo", True) else ""}</div>
  <div class="al-main"><b class="time">{esc(a['hora'])}</b><div><div class="ttl">{esc(a['titulo'])}</div><div class="sub">{esc(a.get('detalle_antes',''))}<u>{esc(a['detalle'])}</u></div></div></div>
 </div>''')
     fin('#al', a['ini']+0.05, 40, 0.5); J.append("tl.set('#al .al-top,#al .al-main',{opacity:1},0);"); shake('#al .ic', a['ini']+0.25)

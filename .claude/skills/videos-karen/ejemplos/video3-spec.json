@@ -1,0 +1,264 @@
+{
+ "id": "karen-3",
+ "duracion": 72.7,
+ "ajustes": {
+  "16.46": "acercar",
+  "16.72": null,
+  "17.18": "terminarla?",
+  "56.98": "TDAH,",
+  "64.88": "Guarda",
+  "48.24": "qué"
+ },
+ "claves": [
+  "pendientes",
+  "tarea",
+  "empezar",
+  "paso",
+  "acción",
+  "pequeña",
+  "dos",
+  "minutos",
+  "tdah",
+  "iniciar",
+  "guarda",
+  "video"
+ ],
+ "nametag": {
+  "nombre": "Karen Trujillo",
+  "cargo": "Neuropsicóloga Clínica",
+  "ini": 0.5,
+  "fin": 4.1
+ },
+ "pastillas": [
+  {
+   "n": 1,
+   "texto": "Elige una tarea",
+   "ini": 8.3,
+   "fin": 12.6
+  },
+  {
+   "n": 2,
+   "texto": "La acción más pequeña",
+   "ini": 12.8,
+   "fin": 30.4
+  },
+  {
+   "n": 3,
+   "texto": "Dedícale dos minutos",
+   "ini": 30.6,
+   "fin": 41.0
+  },
+  {
+   "texto": "Tú decides cómo seguir",
+   "ini": 41.4,
+   "fin": 50.4
+  },
+  {
+   "texto": "No funciona igual para todos",
+   "ini": 50.6,
+   "fin": 63.9
+  }
+ ],
+ "antes_despues": [
+  {
+   "id": "ba1",
+   "ini": 18.5,
+   "fin": 21.45,
+   "etiquetas": [
+    "Tarea",
+    "Primer paso"
+   ],
+   "tachar": false,
+   "antes": "Estudiar",
+   "despues": "Abrir el documento",
+   "antes_en": [
+    "estudiar",
+    18
+   ],
+   "despues_en": [
+    "abrir",
+    "el",
+    "documento"
+   ],
+   "despues_desde": 19
+  },
+  {
+   "id": "ba2",
+   "ini": 22.0,
+   "fin": 25.0,
+   "etiquetas": [
+    "Tarea",
+    "Primer paso"
+   ],
+   "tachar": false,
+   "antes": "Lavar la ropa",
+   "despues": "Ponerla en la lavadora",
+   "antes_en": [
+    "lavar",
+    21
+   ],
+   "despues_en": [
+    "ponerla",
+    "en",
+    "la",
+    "lavadora"
+   ],
+   "despues_desde": 22.8
+  },
+  {
+   "id": "ba3",
+   "ini": 25.7,
+   "fin": 30.3,
+   "etiquetas": [
+    "Tarea",
+    "Primer paso"
+   ],
+   "tachar": false,
+   "antes": "Responder un correo",
+   "despues": "Abrirlo y escribir la primera frase",
+   "antes_en": [
+    "responder",
+    25
+   ],
+   "despues_en": [
+    "abrirlo",
+    "y",
+    "escribir",
+    "la",
+    "primera",
+    "frase"
+   ],
+   "despues_desde": 27
+  }
+ ],
+ "alarma": {
+  "ini": 31.5,
+  "fin": 40.4,
+  "etiqueta": "Temporizador",
+  "ejemplo": false,
+  "hora": "2:00",
+  "titulo": "Dedícale dos minutos al primer paso",
+  "detalle_antes": "",
+  "detalle": "Sin obligación de terminar",
+  "subrayar_en": [
+   "obligación",
+   35
+  ]
+ },
+ "listas": [
+  {
+   "id": "l1",
+   "ini": 42.0,
+   "fin": 50.3,
+   "titulo": "Tú decides",
+   "items": [
+    {
+     "texto": "Continuar",
+     "en": [
+      "continuar",
+      42
+     ]
+    },
+    {
+     "texto": "Parar",
+     "en": [
+      "parar",
+      45
+     ]
+    },
+    {
+     "texto": "Revisar qué se te dificulta",
+     "en": [
+      "revisar",
+      47
+     ]
+    }
+   ]
+  }
+ ],
+ "destacados": [
+  {
+   "id": "d1",
+   "ini": 50.9,
+   "fin": 58.0,
+   "texto": "Esta estrategia no funciona igual para todas las personas",
+   "en": [
+    "estrategia",
+    50
+   ]
+  },
+  {
+   "id": "d2",
+   "ini": 59.8,
+   "fin": 63.9,
+   "texto": "Una forma diferente de iniciar",
+   "en": [
+    "forma",
+    60
+   ]
+  }
+ ],
+ "cierre": {
+  "ini": 64.85,
+  "titulo": "Guarda este video",
+  "chips": [
+   "Elige una tarea",
+   "La acción más pequeña",
+   "Dos minutos"
+  ],
+  "icono_en": [
+   "video",
+   65
+  ],
+  "chips_en": [
+   "próximo",
+   65
+  ],
+  "chips_anclas": [
+   [
+    "próximo",
+    65
+   ],
+   [
+    "pendientes",
+    66.5
+   ],
+   [
+    "dividir",
+    69
+   ]
+  ],
+  "url": "psicologakarentrujillo.com.mx",
+  "url_en": [
+   "paso",
+   70
+  ]
+ },
+ "zooms": [
+  [
+   8.3,
+   9.8,
+   1.04
+  ],
+  [
+   30.5,
+   32.0,
+   1.0
+  ],
+  [
+   41.3,
+   42.8,
+   1.04
+  ],
+  [
+   50.6,
+   52.1,
+   1.0
+  ],
+  [
+   64.8,
+   66.3,
+   1.05
+  ]
+ ]
+}
