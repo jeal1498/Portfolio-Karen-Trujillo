@@ -9,4 +9,4 @@ git add videos
 git commit -q -m "Videos: $1 (video, portada y copy)
 
 Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
-git fetch -q origin main && git rebase origin/main && git push origin HEAD:main
+git fetch -q origin main && git rebase --autostash origin/main && git push origin HEAD:main

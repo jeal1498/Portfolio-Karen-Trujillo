@@ -1,0 +1,262 @@
+{
+ "id": "karen-2",
+ "duracion": 80.5,
+ "ajustes": {
+  "1.16": null,
+  "1.88": "qué"
+ },
+ "claves": [
+  "tdah",
+  "olvidos",
+  "olvido",
+  "memoria",
+  "diagnóstico",
+  "valoración",
+  "profesional",
+  "pendientes",
+  "alarmas",
+  "visibles",
+  "estrés",
+  "ansiedad",
+  "persistentes",
+  "historia"
+ ],
+ "nametag": {
+  "nombre": "Karen Trujillo",
+  "cargo": "Neuropsicóloga Clínica",
+  "ini": 0.5,
+  "fin": 4.1
+ },
+ "pastillas": [
+  {
+   "texto": "No todo olvido es TDAH",
+   "ini": 8.4,
+   "fin": 26.6
+  },
+  {
+   "texto": "Cómo se evalúa un posible TDAH",
+   "ini": 26.9,
+   "fin": 54.3
+  },
+  {
+   "texto": "Cuándo buscar ayuda",
+   "ini": 54.5,
+   "fin": 63.6
+  },
+  {
+   "texto": "Mientras tanto",
+   "ini": 63.8,
+   "fin": 72.4
+  }
+ ],
+ "listas": [
+  {
+   "id": "l1",
+   "ini": 18.6,
+   "fin": 26.6,
+   "titulo": "También pueden influir",
+   "items": [
+    {
+     "texto": "Dormir poco",
+     "en": [
+      "dormir",
+      18
+     ]
+    },
+    {
+     "texto": "Estrés",
+     "en": [
+      "estrés",
+      20
+     ]
+    },
+    {
+     "texto": "Ansiedad",
+     "en": [
+      "ansiedad",
+      22
+     ]
+    },
+    {
+     "texto": "Sobrecarga",
+     "en": [
+      "sobrecargado",
+      23
+     ]
+    },
+    {
+     "texto": "Otras dificultades",
+     "en": [
+      "dificultades",
+      25
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "ini": 34.9,
+   "fin": 48.5,
+   "titulo": "Qué evalúa un profesional",
+   "items": [
+    {
+     "texto": "Tu historia",
+     "en": [
+      "historia",
+      35
+     ]
+    },
+    {
+     "texto": "Síntomas persistentes",
+     "en": [
+      "persistentes",
+      37
+     ]
+    },
+    {
+     "texto": "Distintos contextos",
+     "en": [
+      "contextos",
+      41
+     ]
+    },
+    {
+     "texto": "Afecta tu vida diaria",
+     "en": [
+      "cotidianamente",
+      43
+     ]
+    },
+    {
+     "texto": "Otras explicaciones posibles",
+     "en": [
+      "explicaciones",
+      46
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "ini": 56.9,
+   "fin": 63.5,
+   "titulo": "Si tus olvidos afectan",
+   "items": [
+    {
+     "texto": "Tu trabajo",
+     "en": [
+      "trabajo",
+      56
+     ]
+    },
+    {
+     "texto": "Tus relaciones",
+     "en": [
+      "relaciones",
+      58
+     ]
+    },
+    {
+     "texto": "Tus actividades diarias",
+     "en": [
+      "actividades",
+      58.5
+     ]
+    }
+   ]
+  }
+ ],
+ "destacados": [
+  {
+   "id": "d1",
+   "ini": 49.4,
+   "fin": 54.2,
+   "texto": "Un video o una lista de síntomas no pueden confirmar un diagnóstico",
+   "en": [
+    "video",
+    49
+   ]
+  },
+  {
+   "id": "d2",
+   "ini": 66.5,
+   "fin": 72.4,
+   "texto": "Anota tus pendientes en un lugar",
+   "en": [
+    "anotar",
+    66
+   ]
+  }
+ ],
+ "cierre": {
+  "ini": 72.7,
+  "titulo": "¿Qué te ayuda más a recordar?",
+  "icono": "pregunta",
+  "numerados": false,
+  "chips": [
+   "Escribirlo",
+   "Usar alarmas",
+   "Recordadores visibles"
+  ],
+  "icono_en": [
+   "recordar",
+   73
+  ],
+  "chips_en": [
+   "escribirlo",
+   74
+  ],
+  "chips_anclas": [
+   [
+    "escribirlo",
+    74
+   ],
+   [
+    "alarmas",
+    75
+   ],
+   [
+    "recordadores",
+    77
+   ]
+  ],
+  "url": "psicologakarentrujillo.com.mx",
+  "url_en": [
+   "visibles",
+   77
+  ],
+  "titulo_tam": 50
+ },
+ "zooms": [
+  [
+   8.3,
+   9.8,
+   1.04
+  ],
+  [
+   26.8,
+   28.3,
+   1.0
+  ],
+  [
+   30.6,
+   32.1,
+   1.04
+  ],
+  [
+   54.4,
+   55.9,
+   1.0
+  ],
+  [
+   63.7,
+   65.2,
+   1.04
+  ],
+  [
+   72.6,
+   74.1,
+   1.05
+  ]
+ ]
+}
