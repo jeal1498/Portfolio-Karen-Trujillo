@@ -40,3 +40,5 @@ yarn-error.log*
 !.claude/commands
 !.claude/skills
 !.claude/agents
+renders/
+**/renders/

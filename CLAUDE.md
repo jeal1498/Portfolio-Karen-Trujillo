@@ -20,6 +20,10 @@
 - **SEO:** `lib/seo.ts` — `applySeo()` y `injectSchema()` gestionan meta tags y JSON-LD por ruta
 - **Contacto:** `lib/contact.ts` — `WA_NUMBER`, `PHONE_NUMBER`, `waUrl()` son la única fuente de verdad para datos de contacto
 
+## Videos (Marca Personal)
+
+Los videos de Karen se editan con la skill `.claude/skills/videos-karen` (flujo con una aprobación por etapa). Antes de editar: `git pull origin main` y leer «Estado y pendientes» de la skill. Todo vive en `marketing/videos/Marca Personal/NN - Nombre/`, donde `NN` es el orden de subida, y el estado en `marketing/plan/calendario.md`. El `video.mp4` final se commitea una sola vez, ya aprobado.
+
 ## Estructura de Páginas
 
 | Ruta | Propósito |
