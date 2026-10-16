@@ -71,13 +71,16 @@ Si piden cambios en una etapa, se rehace solo esa etapa y no se avanza hasta su 
 - El lector de HyperFrames no expande `var(--x)` en `font-family`: el CSS ya usa nombres concretos. Elementos animados llevan `class="clip"` y `data-start/duration/track-index`.
 - Si la página de instalación o el CSS parecen viejos en el teléfono, es caché (agregar `?v=`). No aplica a estos videos, solo a la web.
 - Animar zoom en `#video-wrap`, no en el `<video>`. Sin `Math.random` ni `Date.now`.
-- Probado de punta a punta solo en el video 1: `componer.py` y `portada.py` reproducen exactamente sus resultados; `preparar.sh`, `renderizar.sh` y `guardar.sh` juntan los comandos que sí se usaron, pero aún no se corrieron enteros. Si fallan, corregir el script y anotarlo aquí.
+- **Probado en los videos 1 a 5:** `preparar.sh`, `componer.py` (con listas, destacados, ajustes de palabras y etiquetas) y `portada.py` funcionan; el render se corrió a mano con `hyperframes@0.8.163 render` (como en `renderizar.sh`). `guardar.sh` en su versión actual (carpeta Marca Personal + calendario) **aún no se ha corrido**: probarlo con el video 06 y corregir aquí si falla.
 
 ## Presupuesto de tiempo (referencia, video de 72 s)
 Preparar 4 min · spec 10 min · componer+verificar 10 min · render 6 min · portada 5 min · copy 10 min · guardar 2 min.
 
-## Estado y pendientes (16 oct 2026)
-- **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas ya están en `marketing/videos/Marca Personal/`. Ninguno está «Publicado», y su `copy.md` trae un apartado «Por confirmar con Karen» sin resolver.
-- **Numeración:** los números 01 a 05 **están confirmados por Eduardo (16 oct 2026)**; no se renombran. Los videos nuevos siguen con 06, 07… según el momento en que se vayan a subir.
-- **Pendiente de confirmar:** que `psicologakarentrujillo.com.mx` sea la web del cierre, y las palabras dudosas de cada transcripción.
-- **Siguiente paso:** el próximo video pasa por las 6 etapas con aprobación; la primera vez se prueban de punta a punta `preparar.sh`, `renderizar.sh` y `guardar.sh` (nueva versión).
+## Estado y pendientes (16 oct 2026, al cerrar la conversación)
+- **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas están en `marketing/videos/Marca Personal/`. Ninguno está «Publicado»; cada `copy.md` trae un «Por confirmar con Karen» sin resolver (palabras dudosas de la transcripción, datos de ejemplo y la web del cierre).
+- **Numeración:** 01 a 05 **confirmada por Eduardo**; no se renombra. Los nuevos siguen con 06, 07… según el momento de subida.
+- **Origen de los videos:** carpeta de Drive «Videos» (`1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV`, de `karentrujillopsic10@gmail.com`) con `v2.mp4` a `v5.mp4` y el primero (`2026_10_15_12_46_52 (1)~3.mp4`). Si llegan videos nuevos, listar la carpeta y bajarlos con el enlace `drive.usercontent.google.com/download?id=…`. No se puede subir nada a Drive desde aquí.
+- **Segunda versión:** otro video con guion diferente sobre el mismo tema (otro número). Todavía no se ha hecho ninguna.
+- **Pendiente de confirmar:** que `psicologakarentrujillo.com.mx` sea la web del cierre.
+- **Siguiente paso:** el próximo video pasa por las 6 etapas con aprobación y se guarda como el 06 con `guardar.sh`.
+- **Repo público:** los videos se pueden ver antes de publicarse; si no debe ser así, mover `marketing/videos/` a un repo privado.
