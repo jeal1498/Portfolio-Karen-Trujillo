@@ -5,7 +5,7 @@ description: Editar los videos de la psicóloga Karen Trujillo (9:16, ella habla
 
 # Videos de Karen Trujillo (Neuropsicóloga Clínica)
 
-Flujo probado con el video 1 (`videos/01-organiza-tus-pendientes/`). Meta: **un video completo en ~40–60 min de trabajo y pocos tokens**. No leer las skills `hyperframes-*` ni `talking-head-recut` salvo que algo falle: ya están resumidas aquí y en los scripts.
+Flujo con aprobación por etapa (ver más abajo). Probado con el video 1 (`videos/01-organiza-tus-pendientes/`). Meta: **un video completo en ~40–60 min de trabajo y pocos tokens**. No leer las skills `hyperframes-*` ni `talking-head-recut` salvo que algo falle: ya están resumidas aquí y en los scripts.
 
 ## Marca (de `DESIGN.md` y `PRODUCT.md` del repo)
 - Colores: ciruela `#433860` (principal), ciruela medio `#6B5F8A`, ciruela profundo `#2E2545`, lavanda `#C6BCE2`, rosa `#F9DEE3`, arena `#F5E7D6`, azul grisáceo `#E1E9EA`, éxito `#10b77f`.
@@ -19,7 +19,18 @@ Flujo probado con el video 1 (`videos/01-organiza-tus-pendientes/`). Meta: **un 
 1. **Pedir el original sin pasar por WhatsApp.** El del chat viene a 386×686 px; el de Drive/galería trae 880×1562. Si lo pasan por la carpeta de Drive de Eduardo/Karen, ver «Drive» abajo.
 2. Confirmar solo lo necesario: nada, si el estilo ya está elegido (sí lo está: **propuesta B** = subtítulos sobrios + tarjetas por idea + extras de «antes → después» y alarma/ejemplo + cierre «Guarda este video»; portada **estilo gancho 1**).
 
-## Pasos (con scripts de `scripts/`; `SK=.claude/skills/videos-karen`)
+## ⭐ Flujo con una aprobación por etapa (como en Checa; pedido por Eduardo el 16 oct 2026)
+Una etapa a la vez; **no pases a la siguiente sin su «aprobado»** y no adelantes archivos de etapas futuras (portada, copy). El estilo visual de Karen **no cambia**: ciruela y lavanda, Outfit y Maven Pro, subtítulos sobrios, cierre sobrio.
+Antes de la etapa 1 solo se hace trabajo de análisis (descargar el video, `preparar.sh`, leer la transcripción); no se compone ni se renderiza nada.
+1. **Transcripción y estructura.** En el chat: el texto corregido y de corrido, las palabras dudosas marcadas, y en 3–4 líneas cómo se divide el video (ideas, ejemplos y cierre). Karen/Eduardo aprueban o corrigen el texto.
+2. **Tabla de elementos por toma**, en el chat: `Segundo · Frase que dice · Elemento en pantalla` (etiqueta de tema, lista, destacado, tarjeta «antes → después», alarma/temporizador de ejemplo, cierre, zooms). Se marca con «Ejemplo» todo dato que ella no dijo. Se aprueba antes de componer.
+3. **Video.** Con la tabla aprobada: `componer.py`, `check`, `snapshot`, render y versión ligera. Se envía la **versión de prueba** con `SendUserFile` desde el scratchpad; **no se commitea** (cada re-render engorda el repo para siempre).
+4. **Portada.** Se proponen 3 ganchos con su frase exacta (salen de lo que ella dice; sin «siempre» ni «todos») y el estilo 1; se hace el que elijan y se envía para aprobarla.
+5. **Copy.** `copy.md` completo (título, textos por plataforma, hashtags, subtítulos, «Por confirmar con Karen»), enviado para aprobarlo.
+6. **Hecho.** Con el copy aprobado se guarda con `guardar.sh` (video, portada y copy en `videos/NN-slug/`, **un solo commit, ya aprobado**) y la fila queda como «Hecho» en `videos/README.md`. «Hecho» no es «Publicado»: «Publicado» solo lo marcan Karen o Eduardo al subirlo.
+Si piden cambios en una etapa, se rehace solo esa etapa y no se avanza hasta su «aprobado». Si piden varios videos a la vez, cada uno lleva su propia etapa y se pueden preparar en paralelo, pero un render no empieza sin la tabla aprobada.
+
+## Pasos técnicos (con scripts de `scripts/`; `SK=.claude/skills/videos-karen`; se ejecutan dentro de las etapas de arriba)
 1. **Preparar** (≈4 min): `bash $SK/scripts/preparar.sh <original.mp4> <trabajo>`
    Re-codifica a 1080×1920 (¡el celular guarda con rotación!), GOP denso, nivela la voz a −16 LUFS y transcribe con Whisper *medium* (`words.json`). Usar la carpeta de trabajo en el scratchpad, no en el repo.
 2. **Revisar la transcripción** y anotar palabras dudosas (en el video 1: «honor/horario/hora específica»). Se corrigen con `correcciones` del spec y **se listan en «Por confirmar» del copy**.
@@ -29,7 +40,7 @@ Flujo probado con el video 1 (`videos/01-organiza-tus-pendientes/`). Meta: **un 
 6. **Renderizar**: `bash $SK/scripts/renderizar.sh <trabajo> <video_web.mp4>` (≈5–6 min en software; **no esperar con `until`/grep en segundo plano**: usar `while pgrep -f "hyperframes render"`). Genera el master y una versión ligera ≈33 MB para GitHub.
 7. **Portada con gancho**: `python3 $SK/scripts/portada.py --estilo 1 --video <trabajo>/public/input-video.mp4 --tiempo <s con buena cara> --hook "Frase con {palabra}" --sub "…" --tag "Consejo para TDAH" --salida portada.png`. Escoger un cuadro donde mire a cámara y sonría (probar 3–4 tiempos con ffmpeg). Estilos 2 (`--antes/--despues`) y 3 (`|` = salto de línea) si ella los pide. **Ganchos**: salen de lo que ella dice (el video 1: «Deja de confiar en tu memoria»); proponer 3 y que elija. Prohibido el clickbait que culpa o promete curas.
 8. **Copy**: partir de `plantillas/copy.md`. Escribirlo con la skill `copywriting` (sin rayas largas, sin «no es X, es Y», sin listas «sin A, sin B»): título YouTube, texto IG/FB (con la lista de lo que ella dice y su llamada a guardar/compartir), texto corto TikTok, hashtags (#TDAH #neuropsicologia #saludmental #psicologia #Cancun + del tema), tabla de subtítulos (de `subtitulos.json`) y **«Por confirmar con Karen»**.
-9. **Guardar y entregar**: `bash $SK/scripts/guardar.sh NN-slug <video_web.mp4> portada.png copy.md "<gancho>"` desde la raíz del repo → crea `videos/NN-slug/{video.mp4,portada.png,copy.md}`, agrega la fila a `videos/README.md` y hace push a `main` (autorizado por Eduardo). Enviar al chat con `SendUserFile` el video y la portada, y decir qué falta confirmar.
+9. **Guardar (etapa 6, solo con el copy aprobado)**: `bash $SK/scripts/guardar.sh NN-slug <video_web.mp4> portada.png copy.md "<gancho>"` desde la raíz del repo → crea `videos/NN-slug/{video.mp4,portada.png,copy.md}`, agrega la fila a `videos/README.md` y hace push a `main` (autorizado por Eduardo). Enviar al chat con `SendUserFile` el video y la portada, y decir qué falta confirmar.
 
 ## Elementos del spec (videos 1 a 5; ver `ejemplos/videoN-spec.json`)
 - `pastillas` (con `n` numeradas o sin `n` como etiqueta de tema), `antes_despues` (con `etiquetas` y `tachar:false` para «Tarea → Primer paso»), `alarma` (también sirve de temporizador: `etiqueta`, `ejemplo:false`), `listas` (chips que aparecen al decir cada palabra), `destacados` (frase clave), `cierre` (`icono:"pregunta"` o bookmark, `chips_anclas`, `titulo_tam`) y `zooms`.

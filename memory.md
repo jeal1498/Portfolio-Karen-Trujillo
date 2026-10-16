@@ -18,6 +18,11 @@
 - Antes de implementar cualquier cambio propuesto (nuevo o corregido), explicar el enfoque primero y esperar confirmación explícita del usuario.
 - No ejecutar ediciones de código hasta recibir aprobación.
 
+## Videos de Karen — flujo por etapas
+
+- Desde el 16 oct 2026 cada video sigue el flujo con **una aprobación por etapa** (transcripción y estructura → tabla de elementos → video → portada → copy → hecho), igual que en Checa. Está en `.claude/skills/videos-karen/SKILL.md`.
+- El estilo visual de Karen no cambia (ciruela y lavanda, Outfit y Maven Pro). El video final se commitea una sola vez, ya aprobado. «Hecho» no es «Publicado».
+
 ## Impeccable Skill
 
 - Si context.mjs reporta UPDATE_AVAILABLE, actualizar siempre sin preguntar: `npx impeccable skills update`.
