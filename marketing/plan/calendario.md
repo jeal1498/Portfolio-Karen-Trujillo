@@ -1,6 +1,6 @@
 # Calendario de videos: Marca Personal (Karen Trujillo)
 
-Una sola cuenta. El **número** de cada video lo determina el momento en que se va a subir (01, 02, 03…); la segunda versión de un tema es **otro video con su propio número**, no una subcarpeta. Cada video vive en `marketing/videos/Marca Personal/NN - Nombre/` con `video.mp4`, `portada.png`, `copy.md` y `guion.md`.
+Una sola cuenta. El **número** de cada video lo determina el momento en que se va a subir (01, 02, 03…); la segunda versión de un tema es **otro video con un guion diferente sobre el mismo tema**, con su propio número, no una subcarpeta. La numeración 01 a 05 está confirmada. Cada video vive en `marketing/videos/Marca Personal/NN - Nombre/` con `video.mp4`, `portada.png`, `copy.md` y `guion.md`.
 
 **Hecho** = copy aprobado (los 6 pasos de la skill `videos-karen`). **Publicado** solo lo marcan Karen o Eduardo al subirlo.
 

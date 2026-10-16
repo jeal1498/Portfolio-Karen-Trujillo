@@ -21,7 +21,7 @@
 ## Videos de Karen — flujo por etapas
 
 - Desde el 16 oct 2026 cada video sigue el flujo con **una aprobación por etapa** (transcripción y estructura → tabla de elementos → video → portada → copy → hecho), igual que en Checa. Está en `.claude/skills/videos-karen/SKILL.md`.
-- Carpetas `marketing/videos/Marca Personal/NN - Nombre/` (NN = orden de subida), calendario en `marketing/plan/calendario.md`, `git pull` antes de editar y video final commiteado una sola vez. La segunda versión de un tema es otro video con su propio número, en la misma cuenta.
+- Carpetas `marketing/videos/Marca Personal/NN - Nombre/` (NN = orden de subida), calendario en `marketing/plan/calendario.md`, `git pull` antes de editar y video final commiteado una sola vez. La segunda versión de un tema es otro video con un guion diferente sobre el mismo tema, con su propio número, en la misma cuenta. La numeración 01 a 05 está confirmada.
 - El estilo visual de Karen no cambia (ciruela y lavanda, Outfit y Maven Pro). El video final se commitea una sola vez, ya aprobado. «Hecho» no es «Publicado».
 
 ## Impeccable Skill

@@ -19,10 +19,10 @@ Flujo con aprobación por etapa (ver más abajo). Probado con el video 1 (`marke
 Al empezar una sesión de videos: **`git pull origin main`** y lee la sección «Estado y pendientes» de abajo. Revisa también `marketing/plan/calendario.md` para saber qué número toca.
 
 ## ⭐ Dos versiones
-La «segunda versión» de un tema **no es una subcarpeta ni una v2 para otra cuenta**: es **otro video** del mismo material (otro corte, otro gancho, otra portada y otro copy) que se sube **en otro momento, en la misma cuenta**. Lleva su propio número y su propia carpeta, y su `guion.md` dice de qué video viene («Versión alternativa del 03»). No se repite el mismo gancho ni el mismo texto: Karen y Eduardo deciden el orden de subida.
+La «segunda versión» de un tema es **otro video con un guion diferente que habla del mismo tema**, y se sube en otro momento en la misma cuenta. No es una subcarpeta, ni un recorte del mismo video, ni una v2 para otra cuenta. Lleva su propio número y su propia carpeta, y su `guion.md` dice de qué tema viene («Mismo tema que el 03, otro guion»). No repite el gancho, los ejemplos ni el texto del primero. Como el video lo graba Karen, la segunda versión parte de un video nuevo suyo; si solo se pide «otra versión» de un video ya editado, se pregunta qué guion se quiere antes de empezar.
 
 ## ⭐ Carpetas (Marca Personal)
-Todo vive en `marketing/videos/Marca Personal/NN - Nombre del video/` (Checa usa `CHECA` y `PERSONAL`; **aquí no aplica**). **`NN` lo determina el momento en que se va a subir** (01, 02, 03… 09, 10…), no el orden en que se editó; si cambia el orden, se renombra la carpeta y se actualiza `marketing/plan/calendario.md`. Cada carpeta lleva `video.mp4`, `portada.png`, `copy.md` y `guion.md` (transcripción corregida + tabla de elementos aprobada). La fecha de subida y el estado «Hecho» / «Publicado» van solo en el calendario.
+Todo vive en `marketing/videos/Marca Personal/NN - Nombre del video/` (Checa usa `CHECA` y `PERSONAL`; **aquí no aplica**). **`NN` lo determina el momento en que se va a subir** (01, 02, 03… 09, 10…), no el orden en que se editó; si Karen o Eduardo cambian el orden de subida, se renombra la carpeta y se actualiza `marketing/plan/calendario.md`. Cada carpeta lleva `video.mp4`, `portada.png`, `copy.md` y `guion.md` (transcripción corregida + tabla de elementos aprobada). La fecha de subida y el estado «Hecho» / «Publicado» van solo en el calendario.
 
 ## ⭐ Git
 - El `video.mp4` final se commitea **una sola vez, ya aprobado** (etapa 6). Las versiones de prueba se mandan con `SendUserFile` desde la carpeta de trabajo del scratchpad (fuera del repo) y **no se commitean**; `renders/` está en `.gitignore`. Cada re-render commiteado engorda el repo para siempre.
@@ -78,6 +78,6 @@ Preparar 4 min · spec 10 min · componer+verificar 10 min · render 6 min · po
 
 ## Estado y pendientes (16 oct 2026)
 - **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas ya están en `marketing/videos/Marca Personal/`. Ninguno está «Publicado», y su `copy.md` trae un apartado «Por confirmar con Karen» sin resolver.
-- **Numeración:** los números 01 a 05 son provisionales (orden en que se editaron). Cuando Karen o Eduardo digan el orden de subida, renombrar carpetas y calendario.
+- **Numeración:** los números 01 a 05 **están confirmados por Eduardo (16 oct 2026)**; no se renombran. Los videos nuevos siguen con 06, 07… según el momento en que se vayan a subir.
 - **Pendiente de confirmar:** que `psicologakarentrujillo.com.mx` sea la web del cierre, y las palabras dudosas de cada transcripción.
 - **Siguiente paso:** el próximo video pasa por las 6 etapas con aprobación; la primera vez se prueban de punta a punta `preparar.sh`, `renderizar.sh` y `guardar.sh` (nueva versión).
