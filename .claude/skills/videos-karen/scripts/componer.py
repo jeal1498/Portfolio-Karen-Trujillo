@@ -7,7 +7,9 @@ import json, math, re, html, sys, os
 work, specp = sys.argv[1], sys.argv[2]
 SK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = json.load(open(specp)); W = json.load(open(f'{work}/words.json'))
-for w in W: w['t'] = spec.get('correcciones', {}).get(w['t'], w['t'])
+AJ = spec.get('ajustes', {})   # {"1.16": null, "1.88": "qué"}: quitar/cambiar la palabra que empieza en ese segundo
+W = [w for w in W if AJ.get(f"{w['s']:.2f}", w['t']) is not None]
+for w in W: w['t'] = AJ.get(f"{w['s']:.2f}", spec.get('correcciones', {}).get(w['t'], w['t']))
 FPS = 30; q = lambda x: round(round(x*FPS)/FPS, 4); esc = html.escape
 norm = lambda t: re.sub(r'[.,¿?¡!«»"]', '', t).lower()
 def wt(word, after=0, off=0.0):
@@ -48,6 +50,7 @@ DUR = spec['duracion']; caps[-1]['e'] = min(caps[-1]['e'], DUR-0.2)
 SV = lambda d: f'<svg viewBox="0 0 24 24">{d}</svg>'
 CHECK = SV('<path d="M5 12.5l4.5 4.5L19 7.5"/>'); ARROW = SV('<path d="M12 4v15m0 0l-6-6m6 6l6-6"/>')
 ALARM = SV('<circle cx="12" cy="13" r="7.5"/><path d="M12 9v4.2l2.8 1.8M4 5.5l3-2.4M20 5.5l-3-2.4"/>')
+QUEST = SV('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.7 2.7 0 015.2.9c0 1.8-2.7 2.3-2.7 4M12 17.2v.1"/>')
 BOOK = SV('<path d="M6.5 3.5h11a1 1 0 011 1V21l-6.5-4.5L5.5 21V4.5a1 1 0 011-1z"/>')
 words = lambda t: ''.join(f'<span class="w">{esc(x)}</span> ' for x in t.split())
 H = [f'<div id="video-wrap"><video id="bg-video" src="input-video.mp4" playsinline data-has-audio="true" data-start="0" data-duration="{DUR}" data-track-index="1"></video></div>']
@@ -59,9 +62,9 @@ nt = spec.get('nametag')
 if nt:
     H.append(f'<div class="nametag clip" id="nt" data-start="{nt["ini"]}" data-duration="{nt["fin"]-nt["ini"]}" data-track-index="2"><i class="bar"></i><div><b>{esc(nt["nombre"])}</b><span>{esc(nt["cargo"])}</span></div></div>')
     J.append(f"tl.fromTo('#nt',{{opacity:0,x:-50}},{{opacity:1,x:0,duration:0.5,ease:'power3.out'}},{nt['ini']});"); fout('#nt', nt['fin']-0.4)
-for p in spec.get('pastillas', []):
-    pid = f"p{p['n']}"; ic = f'<span class="ic" id="{pid}ic">{ALARM}</span>' if p.get('icono_alarma_en') else ''
-    H.append(f'<div class="pill clip" id="{pid}" data-start="{p["ini"]}" data-duration="{round(p["fin"]-p["ini"]+0.5,2)}" data-track-index="2"><span class="n">{p["n"]}</span>{esc(p["texto"])}{ic}</div>')
+for pi, p in enumerate(spec.get('pastillas', []), 1):
+    pid = f"p{pi}"; ic = f'<span class="ic" id="{pid}ic">{ALARM}</span>' if p.get('icono_alarma_en') else ''
+    H.append(f'<div class="pill clip" id="{pid}" data-start="{p["ini"]}" data-duration="{round(p["fin"]-p["ini"]+0.5,2)}" data-track-index="2">{'<span class="n">'+str(p["n"])+'</span>' if p.get("n") else ''}{esc(p["texto"])}{ic}</div>')
     J.append(f"tl.fromTo('#{pid}',{{opacity:0,y:-20,scale:.94}},{{opacity:1,y:0,scale:1,duration:0.45,ease:'back.out(1.5)'}},{p['ini']});"); fout('#'+pid, p['fin'])
     if p.get('icono_alarma_en'):
         t = anc(p['icono_alarma_en']); shake(f'#{pid}ic', t); J.append(f"tl.to('#{pid}ic',{{rotation:0,duration:.1}},{q(t+0.6)});")
@@ -84,6 +87,17 @@ for b in spec.get('antes_despues', []):
     for k, tt in enumerate(ts): J.append(f"tl.to('#{c}-d .w:nth-child({k+1})',{{opacity:1,y:0,duration:0.28,ease:'power2.out'}},{q(tt-0.05)});")
     J.append(f"tl.fromTo('#{c} .chk',{{scale:0,opacity:0}},{{scale:1,opacity:1,duration:0.4,ease:'back.out(2)'}},{q(ts[-1]+0.5)});")
     fout(f'#{c}', b['fin'], 0.4)
+for L in spec.get('listas', []):
+    c = L['id']; items = ''.join(f'<span class="li" id="{c}-{k}">{esc(it["texto"])}</span>' for k, it in enumerate(L['items']))
+    H.append(f'''<div class="card lista clip" id="{c}" data-start="{L['ini']}" data-duration="{round(L['fin']-L['ini']+0.5,2)}" data-track-index="3">
+ <div class="lt">{esc(L['titulo'])}</div><div class="lis">{items}</div></div>''')
+    fin(f'#{c}', L['ini']+0.05, 30, 0.5); J.append(f"tl.set('#{c} .li',{{opacity:0,scale:.9}},0);")
+    for k, it in enumerate(L['items']): J.append(f"tl.to('#{c}-{k}',{{opacity:1,scale:1,duration:0.35,ease:'back.out(1.6)'}},{q(anc(it['en'])-0.1)});")
+    fout(f'#{c}', L['fin'], 0.4)
+for D in spec.get('destacados', []):
+    c = D['id']
+    H.append(f'<div class="card dest clip" id="{c}" data-start="{D["ini"]}" data-duration="{round(D["fin"]-D["ini"]+0.5,2)}" data-track-index="3"><i></i><p>{esc(D["texto"])}</p></div>')
+    fin(f'#{c}', anc(D['en']) - 0.2, 30, 0.5); fout(f'#{c}', D['fin'], 0.4)
 a = spec.get('alarma')
 if a:
     H.append(f'''<div class="card alarm clip" id="al" data-start="{a['ini']}" data-duration="{round(a['fin']-a['ini']+0.4,2)}" data-track-index="3">
@@ -94,17 +108,19 @@ if a:
     J.append(f"tl.fromTo('#al u',{{backgroundSize:'0% 3px'}},{{backgroundSize:'100% 3px',duration:0.6,ease:'power2.out'}},{q(anc(a['subrayar_en']))});"); fout('#al', a['fin'], 0.4)
 c = spec.get('cierre')
 if c:
-    chips = ''.join(f'<span class="chip"><i>{i+1}</i>{esc(t)}</span>' for i, t in enumerate(c['chips']))
+    chips = ''.join(f'<span class="chip"><i>{i+1 if c.get("numerados", True) else ""}</i>{esc(t)}</span>' for i, t in enumerate(c['chips']))
     H.append(f'''<div class="card close clip" id="cl" data-start="{c['ini']}" data-duration="{round(DUR-c['ini'],2)}" data-track-index="3">
- <div class="cl-top"><span class="bm">{BOOK}</span><b>{esc(c['titulo'])}</b></div>
+ <div class="cl-top"><span class="bm">{QUEST if c.get('icono')=='pregunta' else BOOK}</span><b{" style=\"font-size:"+str(c["titulo_tam"])+"px\"" if c.get("titulo_tam") else ""}>{esc(c['titulo'])}</b></div>
  <div class="chips">{chips}</div>
  <div class="url">{esc(c['url'])}</div>
 </div>''')
     fin('#cl', c['ini']+0.05, 40, 0.55); tv = anc(c['icono_en']) + 0.1
-    J.append(f"tl.fromTo('#cl .bm path',{{fillOpacity:0}},{{fillOpacity:1,duration:0.5,ease:'power2.out'}},{q(tv)});")
+    if c.get('icono') != 'pregunta': J.append(f"tl.fromTo('#cl .bm path',{{fillOpacity:0}},{{fillOpacity:1,duration:0.5,ease:'power2.out'}},{q(tv)});")
     J.append(f"tl.fromTo('#cl .bm',{{scale:1}},{{scale:1.25,duration:0.22,yoyo:true,repeat:1,ease:'power2.inOut'}},{q(tv)});")
     J.append("tl.set('#cl .chip,#cl .url',{opacity:0},0);"); te = anc(c['chips_en'])
-    for k in range(len(c['chips'])): J.append(f"tl.fromTo('#cl .chip:nth-child({k+1})',{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.4,ease:'power2.out'}},{q(te-0.9+0.3*k)});")
+    for k in range(len(c['chips'])):
+        tk = anc(c['chips_anclas'][k]) - 0.1 if c.get('chips_anclas') else te - 0.9 + 0.3*k
+        J.append(f"tl.fromTo('#cl .chip:nth-child({k+1})',{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.4,ease:'power2.out'}},{q(tk)});")
     J.append(f"tl.to('#cl .url',{{opacity:1,duration:0.5}},{q(anc(c['url_en'])-0.4)});")
 for (t0, t1, s) in spec.get('zooms', []): J.append(f"tl.to('#video-wrap',{{scale:{s},duration:{q(t1-t0)},ease:'power2.inOut'}},{t0});")
 for i, cp in enumerate(caps):

@@ -29,10 +29,11 @@ if a.estilo == 1:
     body = f'''<style>{BASE} body{{background:#1E1730}}
 .g{{position:absolute;left:0;right:0;bottom:0;height:1100px;background:linear-gradient(to top,#1E1730 0%,rgba(30,23,48,.92) 45%,rgba(30,23,48,0) 100%)}}
 .k{{position:absolute;left:60px;top:260px;background:#F5E7D6;color:#2E2545;font:700 34px/1 "Maven Pro";letter-spacing:.12em;padding:16px 28px;border-radius:40px;text-transform:uppercase}}
-h1{{position:absolute;left:60px;right:60px;top:1010px;font:700 150px/1.02 Outfit;color:#fff;letter-spacing:-.02em}}
+h1{{font:700 150px/1.02 Outfit;color:#fff;letter-spacing:-.02em}}
+.tx{{position:absolute;left:60px;right:60px;bottom:330px}}
 h1 em{{font-style:normal;background:#F5E7D6;color:#2E2545;padding:0 22px;border-radius:24px;-webkit-box-decoration-break:clone;box-decoration-break:clone}}
-.s{{position:absolute;left:62px;top:1500px;font:700 46px/1.25 "Maven Pro";color:#C6BCE2}}</style>
-<div class=stage><div class=ph></div><div class=g></div>{f'<div class=k>{a.tag}</div>' if a.tag else ''}<h1>{hl(a.hook)}</h1><div class=s>{a.sub}</div></div>'''
+.s{{margin:30px 0 0 2px;font:700 46px/1.25 "Maven Pro";color:#C6BCE2}}</style>
+<div class=stage><div class=ph></div><div class=g></div>{f'<div class=k>{a.tag}</div>' if a.tag else ''}<div class=tx><h1>{hl(a.hook)}</h1><div class=s>{a.sub}</div></div></div>'''
 elif a.estilo == 2:
     body = f'''<style>{BASE} body{{background:#2E2545}} .stage{{background:#2E2545}}
 .ph{{inset:0 0 auto 0;height:1000px;background-position:50% 12%}}
