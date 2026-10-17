@@ -442,3 +442,7 @@ Plan completo y estado en **`docs/google-ads/PLAN.md`** (leer primero); reparto 
 - ⏳ Falta: Karen crea GA4 / Search Console / Google Ads y pone el ID en Vercel.
 - ✅ Fase 2 en borrador: PALABRAS-CLAVE.md, ANUNCIOS.md, REVISION-PAGINAS.md + evento `clic_agendar`. Falta confirmar volumen/CPC con las cuentas.
 - Regla: pagar por búsquedas con intención de agendar, no por las más buscadas (esas van al blog).
+
+## Repo de videos
+
+- Pendiente acordado el 17 oct 2026: mover `marketing/videos/` a un repo privado aparte justo después de cerrar el 06 (los videos pesan ~80 MB c/u, el repo es público y la historia crece). No consume tokens, solo tiempo de clonado. Pedir confirmación antes de reescribir historial.
