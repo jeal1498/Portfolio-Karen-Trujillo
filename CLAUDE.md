@@ -39,7 +39,7 @@ Los videos de Karen **ya no se editan desde este repo**: viven, junto con su ski
 
 ## Componentes Principales
 
-Organizados en `src/components/{layout,sections,blog,tools,ui}`. Import con alias: `@/components/<carpeta>/<Componente>`.
+Organizados en `src/components/{layout,blog,tools,ui}`. Las secciones de cada página (hero, servicios, testimonios, FAQ, ubicación) viven dentro de su archivo en `src/pages/`. Import con alias: `@/components/<carpeta>/<Componente>`.
 
 | Componente | Función |
 |------------|---------|
@@ -49,8 +49,6 @@ Organizados en `src/components/{layout,sections,blog,tools,ui}`. Import con alia
 | `layout/CookieBanner.tsx` · `layout/Analytics.tsx` | Consentimiento de cookies y GA4 (Consent Mode v2) |
 | `blog/ReadingProgressBar.tsx` · `blog/TableOfContents.tsx` | Utilidades de los artículos del blog |
 | `tools/SymptomCheckerHome.tsx` | Herramienta interactiva de auto-evaluación del home |
-
-Sin importadores actualmente (pendientes de decidir si se borran): `sections/*` (Hero, ServicesSection, AboutSection, TestimonialsSection, FAQSection, LocationSection), `blog/BlogLayout.tsx`, `layout/NavLink.tsx`, `tools/SymptomChecker.tsx`.
 
 ## Sistema de Tipos
 

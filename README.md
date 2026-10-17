@@ -65,18 +65,16 @@ public/
 
 ## Componentes principales
 
+Organizados en `src/components/{layout,blog,tools,ui}`. Las secciones de cada página viven dentro de su archivo en `src/pages/`.
+
 | Componente | Función |
 |------------|---------|
-| `Hero.tsx` | Primera impresión — credenciales, CTA principal, foto de Karen |
-| `ServicesSection.tsx` | 3 tarjetas de servicio con instrumentos, precio y CTA específico |
-| `AboutSection.tsx` | Bio de Karen — formación, trayectoria, humaniza a la especialista |
-| `TestimonialsSection.tsx` | Reseñas reales con nombres — prueba social principal |
-| `FAQSection.tsx` | Accordion — preguntas frecuentes que reducen la ansiedad de conversión |
-| `SymptomChecker.tsx` | Herramienta interactiva de auto-evaluación |
-| `LocationSection.tsx` | Mapa + dirección + cómo llegar |
-| `FloatingButtons.tsx` | CTAs flotantes de WhatsApp y teléfono — siempre visibles |
-| `Navbar.tsx` | Sticky, backdrop-blur, se opaca al hacer scroll |
-| `BlogLayout.tsx` | Layout compartido para todos los artículos del blog |
+| `layout/Navbar.tsx` | Sticky, backdrop-blur, se opaca al hacer scroll |
+| `layout/Footer.tsx` | Pie de página compartido |
+| `layout/FloatingButtons.tsx` | CTAs flotantes de WhatsApp y teléfono — siempre visibles |
+| `layout/CookieBanner.tsx` · `layout/Analytics.tsx` | Consentimiento de cookies y GA4 (Consent Mode v2) |
+| `blog/ReadingProgressBar.tsx` · `blog/TableOfContents.tsx` | Utilidades de los artículos del blog |
+| `tools/SymptomCheckerHome.tsx` | Herramienta interactiva de auto-evaluación del home |
 
 ---
 
