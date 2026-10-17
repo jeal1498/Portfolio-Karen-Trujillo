@@ -18,11 +18,9 @@
 - Antes de implementar cualquier cambio propuesto (nuevo o corregido), explicar el enfoque primero y esperar confirmación explícita del usuario.
 - No ejecutar ediciones de código hasta recibir aprobación.
 
-## Videos de Karen — flujo por etapas
+## Videos de Karen
 
-- Desde el 16 oct 2026 cada video sigue el flujo con **una aprobación por etapa** (transcripción y estructura → tabla de elementos → video → portada → copy → hecho), igual que en Checa. Está en `.claude/skills/videos-karen/SKILL.md`.
-- Carpetas `NN - Nombre/` en el repo privado `jeal1498/videos-karen-trujillo` (NN = orden de subida), calendario en su `calendario.md`, `git pull` antes de editar y video final commiteado una sola vez. La segunda versión de un tema es otro video con un guion diferente sobre el mismo tema, con su propio número, en la misma cuenta. La numeración 01 a 05 está confirmada.
-- El estilo visual de Karen no cambia (ciruela y lavanda, Outfit y Maven Pro). El video final se commitea una sola vez, ya aprobado. «Hecho» no es «Publicado».
+- Se movieron al repo privado `jeal1498/videos-karen-trujillo` (17 oct 2026), con su skill, `CLAUDE.md` y `memory.md`. No editar videos desde este repo.
 
 ## Impeccable Skill
 
@@ -442,7 +440,3 @@ Plan completo y estado en **`docs/google-ads/PLAN.md`** (leer primero); reparto 
 - ⏳ Falta: Karen crea GA4 / Search Console / Google Ads y pone el ID en Vercel.
 - ✅ Fase 2 en borrador: PALABRAS-CLAVE.md, ANUNCIOS.md, REVISION-PAGINAS.md + evento `clic_agendar`. Falta confirmar volumen/CPC con las cuentas.
 - Regla: pagar por búsquedas con intención de agendar, no por las más buscadas (esas van al blog).
-
-## Repo de videos
-
-- Repo de videos creado el 17 oct 2026: `jeal1498/videos-karen-trujillo` (privado). Ya tiene los videos 01 a 05 y 07; `guardar.sh` guarda ahí. Pendiente: borrar `marketing/videos/` del repo del portafolio reescribiendo historial (force-push a main, pedir confirmación; el clasificador lo bloqueó la primera vez).
