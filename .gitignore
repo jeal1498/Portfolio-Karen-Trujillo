@@ -51,3 +51,7 @@ tsconfig.tsbuildinfo
 .claude/skills/media-use/
 .claude/skills/talking-head-recut/
 .claude/skills/hyperframes*/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
