@@ -22,7 +22,7 @@
 
 ## Videos (Marca Personal)
 
-Los videos de Karen se editan con la skill `.claude/skills/videos-karen` (flujo con una aprobación por etapa; orden desde el 17 oct 2026: transcripción → tabla → **portada** → video → copy; la portada se pone como primer cuadro del video antes de subirlo a git y debe quedar entre y=300 y y=1620 para que Instagram no la recorte). Antes de editar: `git pull origin main` y leer «Estado y pendientes» de la skill. Todo vive en `marketing/videos/Marca Personal/NN - Nombre/`, donde `NN` es el orden de subida, y el estado en `marketing/plan/calendario.md`. El `video.mp4` final se commitea una sola vez, ya aprobado.
+Los videos de Karen se editan con la skill `.claude/skills/videos-karen` (flujo con una aprobación por etapa; orden desde el 17 oct 2026: transcripción → tabla → **portada** → video → copy; la portada se pone como primer cuadro del video antes de subirlo a git y debe quedar entre y=300 y y=1620 para que Instagram no la recorte). Antes de editar: `git pull origin main` y leer «Estado y pendientes» de la skill. Todo vive en el repo privado `jeal1498/videos-karen-trujillo` (`NN - Nombre/`, donde `NN` es el orden de subida; el estado en su `calendario.md`), no en este repo. El `video.mp4` final se commitea una sola vez, ya aprobado.
 
 ## Estructura de Páginas
 

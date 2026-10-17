@@ -1,11 +1,11 @@
 ---
 name: videos-karen
-description: Editar los videos de la psicóloga Karen Trujillo (9:16, ella hablando a cámara) con la identidad de su marca (ciruela y lavanda, Outfit y Maven Pro, nada que ver con Checa) y entregar video editado, portada con gancho y copy .md guardados en `marketing/videos/Marca Personal/NN - Nombre/` del repo. Úsala cuando Eduardo o Karen pasen un video nuevo, pidan portada, copy, o continuar con el siguiente video. No usar `videos-checa` para esto.
+description: Editar los videos de la psicóloga Karen Trujillo (9:16, ella hablando a cámara) con la identidad de su marca (ciruela y lavanda, Outfit y Maven Pro, nada que ver con Checa) y entregar video editado, portada con gancho y copy .md guardados en `NN - Nombre/` (repo privado `jeal1498/videos-karen-trujillo`) del repo. Úsala cuando Eduardo o Karen pasen un video nuevo, pidan portada, copy, o continuar con el siguiente video. No usar `videos-checa` para esto.
 ---
 
 # Videos de Karen Trujillo (Neuropsicóloga Clínica)
 
-Flujo con aprobación por etapa (ver más abajo). Probado con el video 1 (`marketing/videos/Marca Personal/01 - Organiza tus pendientes/`). Meta: **un video completo en ~40–60 min de trabajo y pocos tokens**. No leer las skills `hyperframes-*` ni `talking-head-recut` salvo que algo falle: ya están resumidas aquí y en los scripts.
+Flujo con aprobación por etapa (ver más abajo). Probado con el video 1 (`01 - Organiza tus pendientes/` del repo de videos). Meta: **un video completo en ~40–60 min de trabajo y pocos tokens**. No leer las skills `hyperframes-*` ni `talking-head-recut` salvo que algo falle: ya están resumidas aquí y en los scripts.
 
 ## Marca (de `DESIGN.md` y `PRODUCT.md` del repo)
 - Colores: ciruela `#433860` (principal), ciruela medio `#6B5F8A`, ciruela profundo `#2E2545`, lavanda `#C6BCE2`, rosa `#F9DEE3`, arena `#F5E7D6`, azul grisáceo `#E1E9EA`, éxito `#10b77f`.
@@ -17,18 +17,18 @@ Flujo con aprobación por etapa (ver más abajo). Probado con el video 1 (`marke
 
 ## ⭐ Fuente de los videos (carpeta de Drive)
 Todos los videos grabados por Karen se suben a esta carpeta, que es la **fuente oficial**: https://drive.google.com/drive/folders/1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV (ID `1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV`).
-- Al empezar, listarla con `search_files` (`parentId = '1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV'`) y comparar con los videos ya hechos en `marketing/videos/Marca Personal/` y `marketing/plan/calendario.md` para saber cuáles faltan.
+- Al empezar, listarla con `search_files` (`parentId = '1VUra8EiQS0sDd22CKZCnpvy4Q5XMyYKV'`) y comparar con los videos ya hechos en la raíz del repo de videos y `calendario.md` del repo de videos para saber cuáles faltan.
 - Descargar con `curl -L "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"` (el conector limita a 10 MB). Si falla por permisos, pedir que compartan el archivo.
 - Usar siempre el original de la carpeta, no el de WhatsApp. Si un video no dice a qué tema o número corresponde, preguntar antes de asignarle `NN`.
 
 ## ⭐ Antes de editar
-Al empezar una sesión de videos: **`git pull origin main`** y lee la sección «Estado y pendientes» de abajo. Revisa también `marketing/plan/calendario.md` para saber qué número toca.
+Al empezar una sesión de videos: **`git pull origin main`** y lee la sección «Estado y pendientes» de abajo. Revisa también `calendario.md` del repo de videos para saber qué número toca.
 
 ## ⭐ Dos versiones
 La «segunda versión» de un tema es **otro video con un guion diferente que habla del mismo tema**, y se sube en otro momento en la misma cuenta. No es una subcarpeta, ni un recorte del mismo video, ni una v2 para otra cuenta. Lleva su propio número y su propia carpeta, y su `guion.md` dice de qué tema viene («Mismo tema que el 03, otro guion»). No repite el gancho, los ejemplos ni el texto del primero. Como el video lo graba Karen, la segunda versión parte de un video nuevo suyo; si solo se pide «otra versión» de un video ya editado, se pregunta qué guion se quiere antes de empezar.
 
 ## ⭐ Carpetas (Marca Personal)
-Todo vive en `marketing/videos/Marca Personal/NN - Nombre del video/` (Checa usa `CHECA` y `PERSONAL`; **aquí no aplica**). **`NN` lo determina el momento en que se va a subir** (01, 02, 03… 09, 10…), no el orden en que se editó; si Karen o Eduardo cambian el orden de subida, se renombra la carpeta y se actualiza `marketing/plan/calendario.md`. Cada carpeta lleva `video.mp4`, `portada.png`, `copy.md` y `guion.md` (transcripción corregida + tabla de elementos aprobada). La fecha de subida y el estado «Hecho» / «Publicado» van solo en el calendario.
+Todo vive en `NN - Nombre del video/` en la raíz del **repo privado `jeal1498/videos-karen-trujillo`** (desde el 17 oct 2026; clonado en `/home/user/videos-karen-trujillo`; los videos ya no van en el repo del portafolio. Checa usa `CHECA` y `PERSONAL`; **aquí no aplica**). **`NN` lo determina el momento en que se va a subir** (01, 02, 03… 09, 10…), no el orden en que se editó; si Karen o Eduardo cambian el orden de subida, se renombra la carpeta y se actualiza `calendario.md` del repo de videos. Cada carpeta lleva `video.mp4`, `portada.png`, `copy.md` y `guion.md` (transcripción corregida + tabla de elementos aprobada). La fecha de subida y el estado «Hecho» / «Publicado» van solo en el calendario.
 
 ## ⭐ Git
 - El `video.mp4` final se commitea **una sola vez, ya aprobado** (etapa 6). Las versiones de prueba se mandan con `SendUserFile` desde la carpeta de trabajo del scratchpad (fuera del repo) y **no se commitean**; `renders/` está en `.gitignore`. Cada re-render commiteado engorda el repo para siempre.
@@ -46,7 +46,7 @@ Antes de la etapa 1 solo se hace trabajo de análisis (descargar el video, `prep
 3. **Portada** (orden nuevo, Eduardo 17 oct 2026: va **antes** del video). Se proponen 3 ganchos con su frase exacta (salen de lo que ella dice; sin «siempre» ni «todos») y el estilo 1; se hace el que elijan y se envía para aprobarla. Se saca del `input-video.mp4` que deja `preparar.sh`, así que no necesita el video renderizado. **Zona segura para todas las redes** (se publica en TikTok, Instagram, YouTube Shorts y Facebook): todo el contenido entre y=300 y y=1620, porque la cuadrícula de Instagram recorta a 3:4 (240 px arriba y abajo). `portada.py` ya la respeta.
 4. **Video.** Con la tabla y la portada aprobadas: **encuadre de ojos** (`encuadre.py`, ver paso 1b), `componer.py`, `check`, `snapshot`, render y versión ligera. Se envía la **versión de prueba** con `SendUserFile` desde el scratchpad; **no se commitea** (cada re-render engorda el repo para siempre). Con portada y video aprobados, la portada se pone como **primer cuadro** del video con `bash $SK/scripts/portada_primer_cuadro.sh <video_web.mp4> portada.png <video_final.mp4>` (0.2 s, para que las redes la tomen de portada), se envía esa versión y **ese es el video que se guarda** en la etapa 6.
 5. **Copy.** `copy.md` completo (título, textos por plataforma, hashtags, subtítulos, «Por confirmar con Karen»), enviado para aprobarlo.
-6. **Hecho.** Con el copy aprobado se guarda con `guardar.sh` (video **con la portada incluida**, portada, copy y guion en `marketing/videos/Marca Personal/NN - Nombre/`, **un solo commit, ya aprobado**) y la fila queda como «Hecho» en `marketing/plan/calendario.md`. «Hecho» no es «Publicado»: «Publicado» solo lo marcan Karen o Eduardo al subirlo.
+6. **Hecho.** Con el copy aprobado se guarda con `guardar.sh` (video **con la portada incluida**, portada, copy y guion en `NN - Nombre/` (repo privado `jeal1498/videos-karen-trujillo`), **un solo commit, ya aprobado**) y la fila queda como «Hecho» en `calendario.md` del repo de videos. «Hecho» no es «Publicado»: «Publicado» solo lo marcan Karen o Eduardo al subirlo.
 Si piden cambios en una etapa, se rehace solo esa etapa y no se avanza hasta su «aprobado». Si piden varios videos a la vez, cada uno lleva su propia etapa y se pueden preparar en paralelo, pero un render no empieza sin la tabla aprobada.
 
 ## Pasos técnicos (con scripts de `scripts/`; `SK=.claude/skills/videos-karen`; se ejecutan dentro de las etapas de arriba)
@@ -85,11 +85,11 @@ Si piden cambios en una etapa, se rehace solo esa etapa y no se avanza hasta su 
 Preparar 4 min · spec 10 min · componer+verificar 10 min · render 6 min · portada 5 min · copy 10 min · guardar 2 min.
 
 ## Estado y pendientes (16 oct 2026, al cerrar la conversación)
-- **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas están en `marketing/videos/Marca Personal/`. Ninguno está «Publicado»; cada `copy.md` trae un «Por confirmar con Karen» sin resolver (palabras dudosas de la transcripción y datos de ejemplo). **07 Reducir todo a flojera no ayuda (V7)** quedó «Hecho» con el flujo por etapas; su `copy.md` trae «Por confirmar con Karen» sin resolver (ver su carpeta).
+- **Entregados antes del flujo por etapas (01 a 05):** 01 Organiza tus pendientes, 02 No todo olvido es TDAH, 03 Solo una tarea, no diez, 04 10 minutos que se vuelven una hora, 05 Planifica tu salida. Sus carpetas están en la raíz del repo de videos. Ninguno está «Publicado»; cada `copy.md` trae un «Por confirmar con Karen» sin resolver (palabras dudosas de la transcripción y datos de ejemplo). **07 Reducir todo a flojera no ayuda (V7)** quedó «Hecho» con el flujo por etapas; su `copy.md` trae «Por confirmar con Karen» sin resolver (ver su carpeta).
 - **Numeración:** 01 a 05 **confirmada por Eduardo**; no se renombra. Los nuevos siguen según el momento de subida: el 07 ya es V7 y el 06 queda reservado para otro video.
 - **Origen de los videos:** carpeta de Drive oficial (ver «Fuente de los videos»). Karen sigue subiendo ahí todo lo grabado: al iniciar, listar la carpeta y detectar videos nuevos. No se puede subir nada a Drive desde aquí.
 - **Segunda versión:** otro video con guion diferente sobre el mismo tema (otro número). Todavía no se ha hecho ninguna.
 - **Web del cierre:** `psicologakarentrujillo.com.mx`, confirmada; ya no se pregunta ni se lista como «Por confirmar».
 - **Orden nuevo (17 oct 2026, Eduardo):** guion/transcripción → tabla → **portada** → video → copy; la portada se pone como primer cuadro del video (`portada_primer_cuadro.sh`) y todo va dentro de y=300–1620 (zona segura de Instagram, TikTok, YouTube Shorts y Facebook). Los videos 01 a 05 ya guardados no se rehacen.
-- **Siguiente paso:** **migración de `marketing/videos/` a un repo privado aparte** (acordado con Eduardo el 17 oct 2026, justo después de cerrar el 06): crear el repo, mover videos y scripts de guardado, limpiar el historial del repo de la web (requiere force-push, pedir confirmación) y actualizar esta skill. Luego, el V8 (carpeta de Drive) pasa por las etapas y se guarda como el 08 (o el 06 si Eduardo lo asigna).
-- **Repo público:** los videos se pueden ver antes de publicarse; si no debe ser así, mover `marketing/videos/` a un repo privado.
+- **Siguiente paso:** el V8 (carpeta de Drive) pasa por las etapas y se guarda como el 08 (o el 06 si Eduardo lo asigna). Pendiente de la migración: borrar `marketing/videos/` del repo del portafolio **reescribiendo su historial** (force-push a `main`, requiere confirmación de Eduardo; el clasificador de permisos bloqueó la primera vez). Mientras no se haga, el repo del portafolio conserva una copia duplicada de los videos 01 a 05 y 07.
+- **Repo de videos:** privado (`jeal1498/videos-karen-trujillo`). `guardar.sh` guarda ahí (clona a `/home/user/videos-karen-trujillo` si falta, hace un solo commit y push a `main`) y actualiza su `calendario.md`. El repo del portafolio ya no recibe videos.

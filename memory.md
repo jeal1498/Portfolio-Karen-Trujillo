@@ -21,7 +21,7 @@
 ## Videos de Karen — flujo por etapas
 
 - Desde el 16 oct 2026 cada video sigue el flujo con **una aprobación por etapa** (transcripción y estructura → tabla de elementos → video → portada → copy → hecho), igual que en Checa. Está en `.claude/skills/videos-karen/SKILL.md`.
-- Carpetas `marketing/videos/Marca Personal/NN - Nombre/` (NN = orden de subida), calendario en `marketing/plan/calendario.md`, `git pull` antes de editar y video final commiteado una sola vez. La segunda versión de un tema es otro video con un guion diferente sobre el mismo tema, con su propio número, en la misma cuenta. La numeración 01 a 05 está confirmada.
+- Carpetas `NN - Nombre/` en el repo privado `jeal1498/videos-karen-trujillo` (NN = orden de subida), calendario en su `calendario.md`, `git pull` antes de editar y video final commiteado una sola vez. La segunda versión de un tema es otro video con un guion diferente sobre el mismo tema, con su propio número, en la misma cuenta. La numeración 01 a 05 está confirmada.
 - El estilo visual de Karen no cambia (ciruela y lavanda, Outfit y Maven Pro). El video final se commitea una sola vez, ya aprobado. «Hecho» no es «Publicado».
 
 ## Impeccable Skill
@@ -445,4 +445,4 @@ Plan completo y estado en **`docs/google-ads/PLAN.md`** (leer primero); reparto 
 
 ## Repo de videos
 
-- Pendiente acordado el 17 oct 2026: mover `marketing/videos/` a un repo privado aparte justo después de cerrar el 06 (los videos pesan ~80 MB c/u, el repo es público y la historia crece). No consume tokens, solo tiempo de clonado. Pedir confirmación antes de reescribir historial.
+- Repo de videos creado el 17 oct 2026: `jeal1498/videos-karen-trujillo` (privado). Ya tiene los videos 01 a 05 y 07; `guardar.sh` guarda ahí. Pendiente: borrar `marketing/videos/` del repo del portafolio reescribiendo historial (force-push a main, pedir confirmación; el clasificador lo bloqueó la primera vez).
