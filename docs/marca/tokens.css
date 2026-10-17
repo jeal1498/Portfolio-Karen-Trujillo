@@ -1,0 +1,28 @@
+:root {
+  --plum-ink: #433860;
+  --plum-medium: #6b5f8a;
+  --plum-deep: #2e2545;
+  --lavender-mist: #c6bce2;
+  --blush: #f9dee3;
+  --warm-sand: #f5e7d6;
+  --blue-gray: #e1e9ea;
+  --quiet-white: #fafafa;
+  --ink-secondary: #515e71;
+  --whatsapp: #0f7a3c;
+  --logo-lavender: #b4abd6;
+  --logo-blush: #eac7ce;
+  --logo-sand: #ead0b5;
+  --logo-teal: #bfd6d8;
+
+  /* color por servicio */
+  --servicio-tdah-infantil: var(--lavender-mist);
+  --servicio-autismo-tea: var(--blush);
+  --servicio-tdah-adultos: var(--warm-sand);
+  --servicio-informativo: var(--blue-gray);
+
+  --fuente-titulos: 'Outfit', system-ui, sans-serif;
+  --fuente-texto: 'Maven Pro', system-ui, sans-serif;
+  --radio-tarjeta: 16px;
+  --curva: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --entrada: 380ms;
+}

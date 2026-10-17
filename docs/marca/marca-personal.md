@@ -41,6 +41,8 @@ Primera persona singular («yo», «escríbeme»). Precisa sin ser fría, expert
 
 Los videos se producen en el repo `jeal1498/videos-karen-trujillo`.
 
+Recursos gráficos, íconos, plantillas y reglas de video: ver `identidad-grafica.md` (tokens y SVG en `docs/marca/`).
+
 ## Presencia
 
 - Nombre «Karen Trujillo»; descriptor «Neuropsicóloga clínica». Foto de perfil: retrato sobre Lavender Mist. Enlace único al sitio y botón de WhatsApp.

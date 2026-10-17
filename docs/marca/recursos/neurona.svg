@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="Trazo de conexión" fill="none" stroke="#433860" stroke-width="1.6" stroke-linecap="round">
+  <path d="M8 60C12 46 21 35 32 27"/>
+  <path d="M32 27L21 14"/><path d="M32 27L18 25"/><path d="M32 27L45 12"/><path d="M32 27L50 27"/><path d="M32 27L43 40"/>
+  <circle cx="32" cy="27" r="3.2" fill="#433860"/>
+  <circle cx="21" cy="14" r="1.7" fill="#433860" stroke="none"/><circle cx="18" cy="25" r="1.7" fill="#433860" stroke="none"/>
+  <circle cx="45" cy="12" r="1.7" fill="#433860" stroke="none"/><circle cx="50" cy="27" r="1.7" fill="#433860" stroke="none"/>
+  <circle cx="43" cy="40" r="1.7" fill="#433860" stroke="none"/>
+</svg>

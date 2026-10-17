@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 16" width="960" height="48" role="img" aria-label="Línea de conexión" fill="none" stroke="#433860" stroke-width="1.6" stroke-linecap="round">
+  <path d="M2 8H138"/>
+  <circle cx="160" cy="8" r="3.6" fill="#433860" stroke="none"/>
+  <path d="M182 8H318" stroke-dasharray="1 7"/>
+</svg>
