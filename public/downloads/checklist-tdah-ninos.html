@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist TDAH Niños — Karen Trujillo · Neuropsicóloga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm 18mm 14mm 18mm;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      border-bottom: 3px solid #382f51;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 17pt;
+      font-weight: 700;
+      color: #382f51;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .pdf-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #382f51;
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    .pdf-subtitle {
+      font-size: 9.5pt;
+      color: #515e71;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #382f51;
+      background-color: #ede9f8;
+      padding: 4px 8px;
+      margin-bottom: 7px;
+      border-left: 3px solid #382f51;
+    }
+
+    .items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 3px 0;
+      font-size: 10pt;
+      line-height: 1.5;
+      border-bottom: 1px solid #f0eef7;
+    }
+
+    .items li:last-child {
+      border-bottom: none;
+    }
+
+    .checkbox {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      min-width: 13px;
+      border: 1.5px solid #382f51;
+      margin-top: 2px;
+      border-radius: 2px;
+      background: #fff;
+    }
+
+    /* ── CONTEXT SECTION (horizontal) ── */
+    .context-items {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 4px 0;
+    }
+
+    .context-items span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10pt;
+    }
+
+    /* ── NOTES ── */
+    .notes-block {
+      margin-bottom: 12px;
+    }
+
+    .notes-label {
+      font-size: 9pt;
+      font-style: italic;
+      color: #515e71;
+      margin-bottom: 6px;
+    }
+
+    .note-line {
+      border-bottom: 1px solid #c6bce2;
+      height: 20px;
+      margin-bottom: 6px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: auto;
+      border-top: 2px solid #c6bce2;
+      padding-top: 9px;
+    }
+
+    .footer-note {
+      font-size: 8.5pt;
+      color: #515e71;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .footer-contact {
+      font-size: 8pt;
+      color: #382f51;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 16mm 18mm 14mm 18mm;
+      }
+      a { text-decoration: none; color: inherit; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">Karen Trujillo · Neuropsicóloga</div>
+    <div class="pdf-title">Checklist: Lo que observo en mi hijo</div>
+    <div class="pdf-subtitle">Marca lo que reconoces. Lleva este checklist a la siguiente consulta con el médico o la escuela.</div>
+  </header>
+
+  <!-- SECCIÓN 1 -->
+  <section class="section">
+    <div class="section-title">Sección 1 — Atención</div>
+    <ul class="items">
+      <li><span class="checkbox"></span> Le cuesta terminar tareas aunque quiera hacerlo</li>
+      <li><span class="checkbox"></span> Se distrae con facilidad ante cualquier estímulo externo</li>
+      <li><span class="checkbox"></span> Olvida materiales, instrucciones o compromisos escolares</li>
+      <li><span class="checkbox"></span> Parece no escuchar cuando se le habla directamente</li>
+      <li><span class="checkbox"></span> Evita actividades que requieren esfuerzo mental sostenido</li>
+      <li><span class="checkbox"></span> Comete errores por descuido en tareas o exámenes</li>
+    </ul>
+  </section>
+
+  <!-- SECCIÓN 2 -->
+  <section class="section">
+    <div class="section-title">Sección 2 — Actividad e impulsividad</div>
+    <ul class="items">
+      <li><span class="checkbox"></span> Se mueve constantemente o le cuesta quedarse sentado</li>
+      <li><span class="checkbox"></span> Habla en exceso o interrumpe conversaciones</li>
+      <li><span class="checkbox"></span> Actúa antes de pensar (sin medir consecuencias)</li>
+      <li><span class="checkbox"></span> Tiene explosiones emocionales intensas ante frustraciones pequeñas</li>
+      <li><span class="checkbox"></span> Le cuesta esperar su turno en juegos o conversaciones</li>
+    </ul>
+  </section>
+
+  <!-- SECCIÓN 3 -->
+  <section class="section">
+    <div class="section-title">Sección 3 — Contextos donde ocurre</div>
+    <div class="context-items">
+      <span><span class="checkbox"></span> En casa</span>
+      <span><span class="checkbox"></span> En la escuela</span>
+      <span><span class="checkbox"></span> En ambos contextos <em style="font-size:8.5pt;color:#515e71;">(importante mencionarlo al médico)</em></span>
+    </div>
+  </section>
+
+  <!-- NOTAS -->
+  <div class="notes-block">
+    <div class="notes-label">Escribe aquí ejemplos concretos que quieras mencionar:</div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+    <div class="note-line"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-note">
+      Si reconoces varias de estas señales, en casa y en la escuela, coméntalo en una consulta: una evaluación neuropsicológica formal puede darte claridad. Este checklist no es un diagnóstico, es información para esa conversación.
+    </div>
+    <div class="footer-contact">
+      Karen Trujillo · Cédula 11009616 · +52 998 321 1547 · psicologakarentrujillo.com.mx · @psicologakarentrujillo
+    </div>
+  </footer>
+
+</body>
+</html>
