@@ -8,9 +8,9 @@ import {
   Star, Users, CalendarCheck, Stethoscope, BookOpen, ChevronDown,
   Shield, BadgeCheck, Heart, XCircle,
 } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingButtons from '@/components/FloatingButtons';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import FloatingButtons from '@/components/layout/FloatingButtons';
 import { SOCIAL_PROFILES, WA_NUMBER, PHONE_NUMBER, PHONE_E164 } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE, KAREN_IMAGE_PATH, REVIEWS, GEO } from '@/lib/site';
 

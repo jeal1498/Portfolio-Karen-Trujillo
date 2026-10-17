@@ -4,8 +4,8 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import { Outfit, Maven_Pro } from 'next/font/google';
-import Analytics from '@/components/Analytics';
-import CookieBanner from '@/components/CookieBanner';
+import Analytics from '@/components/layout/Analytics';
+import CookieBanner from '@/components/layout/CookieBanner';
 import '@/index.css';
 
 const outfit = Outfit({

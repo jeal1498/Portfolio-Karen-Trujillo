@@ -42,3 +42,12 @@ yarn-error.log*
 !.claude/agents
 renders/
 **/renders/
+
+# TypeScript incremental cache
+tsconfig.tsbuildinfo
+
+# Skills de video: viven en jeal1498/videos-karen-trujillo, no en este repo
+.claude/skills/embedded-captions/
+.claude/skills/media-use/
+.claude/skills/talking-head-recut/
+.claude/skills/hyperframes*/

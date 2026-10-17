@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, HelpCircle, DollarSign, Clock, FileText, ChevronDown, Facebook, Link2, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingButtons from '@/components/FloatingButtons';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import FloatingButtons from '@/components/layout/FloatingButtons';
 import { WA_NUMBER } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 

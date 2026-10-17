@@ -7,9 +7,9 @@ import {
   Award, Star, Users, Stethoscope, ChevronDown,
   ShieldCheck, BadgeCheck, MapPin, Clock, Instagram,
 } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingButtons from '@/components/FloatingButtons';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import FloatingButtons from '@/components/layout/FloatingButtons';
 import { SOCIAL, SOCIAL_PROFILES, INSTAGRAM_HANDLE, WA_NUMBER, PHONE_E164 } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO } from '@/lib/site';
 

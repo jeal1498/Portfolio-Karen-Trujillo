@@ -9,10 +9,10 @@ import {
   Shield, BadgeCheck, Puzzle, Briefcase,
   MapPin, Navigation, ClipboardList,
 } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingButtons from '@/components/FloatingButtons';
-import SymptomCheckerHome from '@/components/SymptomCheckerHome';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import FloatingButtons from '@/components/layout/FloatingButtons';
+import SymptomCheckerHome from '@/components/tools/SymptomCheckerHome';
 import { WA_NUMBER, PHONE_NUMBER, PHONE_E164, waUrl, SOCIAL_PROFILES } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE, REVIEWS, GEO, ADDRESS } from '@/lib/site';
 import type { Service, Credential, Review, FaqItem } from '@/types/portfolio';

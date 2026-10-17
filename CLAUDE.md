@@ -39,18 +39,18 @@ Los videos de Karen **ya no se editan desde este repo**: viven, junto con su ski
 
 ## Componentes Principales
 
+Organizados en `src/components/{layout,sections,blog,tools,ui}`. Import con alias: `@/components/<carpeta>/<Componente>`.
+
 | Componente | Función |
 |------------|---------|
-| `Hero.tsx` | Primera impresión — credenciales, CTA principal, foto de Karen |
-| `ServicesSection.tsx` | 3 tarjetas de servicio con instrumentos, precio, CTA específico |
-| `AboutSection.tsx` | Bio de Karen — formación, trayectoria, humaniza la especialista |
-| `TestimonialsSection.tsx` | Reseñas reales con nombres — la prueba social más importante |
-| `FAQSection.tsx` | Accordion — preguntas frecuentes que reducen la ansiedad de conversión |
-| `SymptomChecker.tsx` | Herramienta interactiva de auto-evaluación |
-| `LocationSection.tsx` | Mapa + dirección + cómo llegar |
-| `FloatingButtons.tsx` | CTAs flotantes de WhatsApp y teléfono — siempre visibles |
-| `Navbar.tsx` | Sticky, backdrop-blur, se opaca al hacer scroll |
-| `BlogLayout.tsx` | Layout compartido para todos los artículos del blog |
+| `layout/Navbar.tsx` | Sticky, backdrop-blur, se opaca al hacer scroll |
+| `layout/Footer.tsx` | Pie de página compartido |
+| `layout/FloatingButtons.tsx` | CTAs flotantes de WhatsApp y teléfono — siempre visibles |
+| `layout/CookieBanner.tsx` · `layout/Analytics.tsx` | Consentimiento de cookies y GA4 (Consent Mode v2) |
+| `blog/ReadingProgressBar.tsx` · `blog/TableOfContents.tsx` | Utilidades de los artículos del blog |
+| `tools/SymptomCheckerHome.tsx` | Herramienta interactiva de auto-evaluación del home |
+
+Sin importadores actualmente (pendientes de decidir si se borran): `sections/*` (Hero, ServicesSection, AboutSection, TestimonialsSection, FAQSection, LocationSection), `blog/BlogLayout.tsx`, `layout/NavLink.tsx`, `tools/SymptomChecker.tsx`.
 
 ## Sistema de Tipos
 
@@ -131,11 +131,11 @@ interface FaqItem { q, a }
 - **Lección**: El HTML servido por Next.js SSR suele venir como una sola línea larga (sin saltos de línea). `grep -c` cuenta líneas coincidentes, no ocurrencias — con HTML de una línea, `grep -c "X"` siempre da como máximo 1 aunque "X" aparezca varias veces.
 - **Acción**: Usar `grep -o "X" archivo | wc -l` para contar ocurrencias reales al verificar contenido renderizado.
 
-## 3. `tsconfig.tsbuildinfo` está versionado en este repo - automation-pattern
-- **Fecha**: 2026-06-16
+## 3. `tsconfig.tsbuildinfo` ya no se versiona - automation-pattern
+- **Fecha**: 2026-10-17
 - **Clasificación**: automation-pattern
-- **Lección**: A diferencia de la convención usual de ignorar cachés de build, este repo versiona `tsconfig.tsbuildinfo` (confirmado con `git log --follow -- tsconfig.tsbuildinfo`, múltiples commits `chore: actualizar caché...`). El stop-hook de git marca el repo como "sucio" si este archivo queda sin commitear tras correr `tsc`/`next build`.
-- **Acción**: Antes de asumir que un archivo de build es descartable, revisar su historial con `git log --follow`. Si está versionado, incluirlo en el commit junto con los cambios de código.
+- **Lección**: Antes este repo versionaba `tsconfig.tsbuildinfo` y el stop-hook marcaba el repo "sucio" tras cada `tsc`/`next build`. Se sacó del índice y se añadió al `.gitignore` para evitar commits `chore: actualizar caché...`.
+- **Acción**: No commitear `tsconfig.tsbuildinfo`. Si aparece como modificado, es caché local; ignorarlo.
 
 ## 4. Delegar el mismo patrón a múltiples agentes en paralelo - automation-pattern
 - **Fecha**: 2026-06-16

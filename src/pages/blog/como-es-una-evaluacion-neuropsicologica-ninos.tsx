@@ -9,9 +9,9 @@ import {
   ShieldCheck, Stethoscope, ClipboardList, UserCheck,
   MessagesSquare, Brain,
 } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingButtons from '@/components/FloatingButtons';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import FloatingButtons from '@/components/layout/FloatingButtons';
 import { WA_NUMBER } from '@/lib/contact';
 import { SITE_URL, CEDULA, KAREN_IMAGE } from '@/lib/site';
 
