@@ -522,7 +522,7 @@ export default function QueEsAdos2Autismo() {
                 <div className="bg-white/8 border border-white/15 rounded-2xl p-6 sm:p-8 mb-8">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/20 shadow-md shrink-0"><Image src={KAREN_IMAGE} alt="Neuropsicóloga Karen Trujillo" width={48} height={48} className="w-full h-full object-cover object-top" loading="lazy" unoptimized /></div>
-                    <div><p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span></div></div>
+                    <div><p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p><div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1"><span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span><span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 18 reseñas · 5.0</span></div></div>
                   </div>
                   <div className="grid sm:grid-cols-3 gap-3 mb-6">
                     {[{ label: 'Pruebas', value: 'ADOS-2, ADI-R, WISC-V, Vineland-3, SRS-2' },{ label: 'Duración', value: '5-6 sesiones · 3-4 semanas' },{ label: 'Inversión', value: '$8,500 MXN todo incluido' }].map((item) => (

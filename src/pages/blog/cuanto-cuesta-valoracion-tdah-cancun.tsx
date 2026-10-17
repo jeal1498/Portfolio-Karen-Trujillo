@@ -343,7 +343,7 @@ export default function CuantoCuestaValoracionTDAH() {
                   className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
                 />
                 <span>Karen Trujillo · Cédula {CEDULA}</span>
-                <span>★ 47+ reseñas · 5.0</span>
+                <span>★ 18 reseñas · 5.0</span>
               </div>
               <a
                 href={`https://wa.me/${WA_NUMBER}?text=Hola%20Karen,%20leí%20tu%20artículo%20y%20quiero%20información%20sobre%20la%20valoración`}

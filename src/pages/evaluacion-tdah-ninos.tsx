@@ -883,7 +883,7 @@ export default function TDAHNinosFunnel() {
             <div className="max-w-4xl mx-auto px-6">
               <SectionReveal>
                 <p className="text-xs font-bold uppercase tracking-widest text-accent-blue mb-4 text-center">Lo que dicen las familias</p>
-                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">47+ familias en Cancún ya tienen claridad</h2>
+                <h2 className="text-headline font-serif font-bold text-primary mb-4 text-center">Cientos de familias en Cancún ya tienen claridad</h2>
                 <p className="text-muted-foreground font-light text-center max-w-xl mx-auto mb-10">Las familias destacan la claridad del informe y las recomendaciones concretas para la escuela.</p>
               </SectionReveal>
 
@@ -920,7 +920,7 @@ export default function TDAHNinosFunnel() {
 
           {/* ══════════════════════════════════════════════════════
               8 · QUIÉN ES KAREN
-              FIX: Stats clarified (500+ valoraciones, 47+ reseñas)
+              FIX: Stats clarified (500+ valoraciones, 18 reseñas)
               ══════════════════════════════════════════════════════ */}
           <section className="py-14 sm:py-20 bg-card border-t border-border relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 relative">
@@ -963,7 +963,7 @@ export default function TDAHNinosFunnel() {
                       {[
                         { valor: '7+', label: 'años de experiencia' },
                         { valor: '500+', label: 'valoraciones realizadas' },
-                        { valor: '47+', label: 'reseñas 5 estrellas' },
+                        { valor: '18', label: 'reseñas 5 estrellas' },
                         { valor: 'SEP', label: 'cédula validada' },
                       ].map((stat) => (
                         <div key={stat.label} className="bg-secondary/60 border border-border rounded-xl p-3 text-center">
@@ -989,7 +989,7 @@ export default function TDAHNinosFunnel() {
                         { icon: ShieldCheck, label: 'Informe válido ante SEP e IMSS' },
                         { icon: Users, label: 'Atención a niños desde los 5 años' },
                         { icon: Stethoscope, label: 'Pruebas estandarizadas internacionales' },
-                        { icon: Star, label: '47+ reseñas verificadas · 5 estrellas' },
+                        { icon: Star, label: '18 reseñas verificadas · 5 estrellas' },
                       ].map((cred) => (
                         <div key={cred.label} className="flex items-center gap-3 p-3 bg-secondary/50 border border-border rounded-xl">
                           <cred.icon className="w-4 h-4 text-primary/60 shrink-0" />

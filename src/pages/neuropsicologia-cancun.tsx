@@ -512,7 +512,7 @@ export default function NeuropsicologiaCancun() {
                       {[
                         { valor: '7+', label: 'años de experiencia' },
                         { valor: '500+', label: 'evaluaciones' },
-                        { valor: '47+', label: 'reseñas 5 estrellas' },
+                        { valor: '18', label: 'reseñas 5 estrellas' },
                         { valor: REVIEWS.ratingValue, label: 'calificación promedio' },
                       ].map((stat) => (
                         <div
@@ -593,7 +593,7 @@ export default function NeuropsicologiaCancun() {
                         { icon: Stethoscope, label: '7+ años de experiencia clínica' },
                         { icon: Users, label: '500+ evaluaciones realizadas' },
                         { icon: ShieldCheck, label: 'Miembro del Colegio de Psicólogos de Quintana Roo' },
-                        { icon: Star, label: '47+ reseñas verificadas · 5 estrellas' },
+                        { icon: Star, label: '18 reseñas verificadas · 5 estrellas' },
                       ].map((cred) => (
                         <div
                           key={cred.label}

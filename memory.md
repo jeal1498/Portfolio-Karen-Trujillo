@@ -22,6 +22,12 @@
 
 - Se movieron al repo privado `jeal1498/videos-karen-trujillo` (17 oct 2026), con su skill, `CLAUDE.md` y `memory.md`. No editar videos desde este repo.
 
+## Marca
+
+- Se eligió la **opción C (marca personal profesional)** el 17 oct 2026, con la identidad visual actual (Outfit + Maven Pro, Plum Ink #433860). Guía: `docs/marca/marca-personal.md`.
+- Reseñas reales: **18** (5.0). Voz en primera persona singular ("yo", "escríbeme").
+- Pendiente: Karen debe escribir su historia personal (recuadro en la bio larga de la guía).
+
 ## Impeccable Skill
 
 - Si context.mjs reporta UPDATE_AVAILABLE, actualizar siempre sin preguntar: `npx impeccable skills update`.

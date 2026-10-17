@@ -530,7 +530,7 @@ export default function BurnoutVsTDAH() {
                   loading="lazy"
                 />
                 <span>Karen Trujillo · Cédula {CEDULA}</span>
-                <span>★ 47+ reseñas · 5.0</span>
+                <span>★ 18 reseñas · 5.0</span>
               </div>
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary font-bold text-xs uppercase tracking-widest px-10 py-4 rounded-lg hover:opacity-90 transition-all shadow-lg">

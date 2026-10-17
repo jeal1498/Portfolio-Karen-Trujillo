@@ -1079,7 +1079,7 @@ export default function AutismoCancunFunnel() {
                       {[
                         { valor: '7+', label: 'años de experiencia' },
                         { valor: '500+', label: 'valoraciones realizadas' },
-                        { valor: '47+', label: 'reseñas 5 estrellas' },
+                        { valor: '18', label: 'reseñas 5 estrellas' },
                         { valor: 'SEP', label: 'cédula validada' },
                       ].map((stat) => (
                         <div key={stat.label} className="bg-secondary/60 border border-border rounded-xl p-3 text-center">
@@ -1105,7 +1105,7 @@ export default function AutismoCancunFunnel() {
                         { icon: ShieldCheck, label: 'Informe válido ante SEP e IMSS' },
                         { icon: Eye, label: 'ADOS-2 certificada' },
                         { icon: Stethoscope, label: 'Pruebas estandarizadas internacionales' },
-                        { icon: Star, label: '47+ reseñas verificadas · 5 estrellas' },
+                        { icon: Star, label: '18 reseñas verificadas · 5 estrellas' },
                       ].map((cred) => (
                         <div key={cred.label} className="flex items-center gap-3 p-3 bg-secondary/50 border border-border rounded-xl">
                           <cred.icon className="w-4 h-4 text-primary/60 shrink-0" />

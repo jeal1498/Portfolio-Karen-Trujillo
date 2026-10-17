@@ -540,7 +540,7 @@ export default function CuantoCuestaEvaluacionAutismo() {
                   loading="lazy"
                 />
                 <span>Karen Trujillo · Cédula {CEDULA}</span>
-                <span>★ 47+ reseñas · 5.0</span>
+                <span>★ 18 reseñas · 5.0</span>
               </div>
               <a
                 href={WA}

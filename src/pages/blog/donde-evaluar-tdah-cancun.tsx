@@ -449,7 +449,7 @@ export default function DondeEvaluarTDAHCancun() {
                   className="w-9 h-9 rounded-full object-cover object-top border border-white/20"
                 />
                 <span>Karen Trujillo · Cédula {CEDULA}</span>
-                <span>★ 47+ reseñas · 5.0</span>
+                <span>★ 18 reseñas · 5.0</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={WA} target="_blank" rel="noopener noreferrer"

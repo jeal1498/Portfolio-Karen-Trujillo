@@ -8,7 +8,7 @@
 
 **Usuario objetivo:** Padres/madres con hijos de 5–17 años con dificultades de atención o comunicación social; adultos de 25–45 años con TDAH no diagnosticado; familias buscando diagnóstico TEA. Llegan con años de incertidumbre y ansiedad. La pregunta real que responde el sitio: *"¿puedo confiarle la evaluación de mi hijo?"*
 
-**La respuesta correcta a esa pregunta:** Instrumentos estandarizados específicos (ADOS-2, WISC-V, CAARS-2, CONNERS-3, BRIEF-2, CPT-3), cédula profesional real (11009616), reseñas con nombres propios, proceso explicado en pasos concretos.
+**La respuesta correcta a esa pregunta:** Instrumentos estandarizados específicos (ADOS-2, WISC-V, CAARS-2, CONNERS-3, BRIEF-2, CPT-3), cédula profesional real (11009616), reseñas con nombres propios (18 reseñas, 5.0 en Google — fuente: `REVIEWS` en `lib/site.ts`), proceso explicado en pasos concretos.
 
 ## Stack Técnico
 
@@ -60,14 +60,14 @@ interface Review { name, text, stars, service }
 interface FaqItem { q, a }
 ```
 
-## Design System (ver DESIGN.md para detalle completo)
+## Design System (ver DESIGN.md para detalle completo; marca personal en `docs/marca/marca-personal.md`)
 
-**Paleta — regla clave:** Plum Ink (`#382f51`) es el único color saturado. Los acentos (lavender `#d0d0e7`, blush `#fbdbe0`, warm-sand `#f5dfc5`) son solo fondos de tarjeta — nunca texto sobre blanco.
+**Paleta — regla clave:** Plum Ink (`#433860`, Pantone P 97-15 C) es el único color saturado. Los acentos (lavender `#c6bce2`, blush `#f9dee3`, warm-sand `#f5e7d6`) son solo fondos de tarjeta — nunca texto sobre blanco.
 
 **Tipografía:**
-- Display/Headline: Playfair Display 700 — solo h1 y h2
-- Body/UI: Montserrat — todo lo demás
-- Labels/CTAs: Montserrat 700, 0.625rem, uppercase, tracking 0.12em
+- Display/Headline: Outfit 700 — solo h1 y h2
+- Body/UI: Maven Pro — todo lo demás
+- Labels/CTAs: Maven Pro 700, 0.75rem, uppercase, tracking 0.12em
 
 **Sombras:** Siempre con tinte plum `rgba(56, 47, 81, 0.X)` — nunca gris genérico. Las tarjetas son planas en reposo; la sombra solo aparece en hover.
 
@@ -94,7 +94,7 @@ interface FaqItem { q, a }
 
 - WCAG AA como base
 - `prefers-reduced-motion` debe estar cubierto en **toda** animación de Framer Motion
-- Contraste mínimo de texto: Ink Secondary (`#515e71`) sobre blanco — verificar siempre antes de usar un color de texto nuevo
+- Contraste mínimo de texto: Ink Secondary (`#515e71`) sobre blanco (6.58:1). No usarlo sobre Lavender (4.35:1): ahí va Plum Ink. Botón de WhatsApp: fondo `#0f7a3c` con texto blanco (5.43:1); el `#25d366` no cumple
 - Jerarquía de información clara y predecible — prioridad para familias con hijos neurodivergentes
 
 ## Guías de Código

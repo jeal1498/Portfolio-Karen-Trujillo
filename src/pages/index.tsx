@@ -67,7 +67,7 @@ const credentials: Credential[] = [
   { icon: BadgeCheck,   text: `Cédula Federal ${CEDULA}` },
   { icon: Award,        text: '7+ años de experiencia' },
   { icon: Stethoscope,  text: 'Pruebas estandarizadas internacionales' },
-  { icon: Star,         text: '47+ reseñas · 5 estrellas' },
+  { icon: Star,         text: '18 reseñas · 5 estrellas' },
   { icon: FileText,     text: 'Informes con validez oficial SEP e IMSS' },
   { icon: CalendarCheck,text: 'Agenda en línea · Resultados en semanas' },
 ];
@@ -369,123 +369,89 @@ export default function Home() {
         <main id="main-content" className="w-full min-w-0 overflow-x-hidden">
 
           {/* ══════════════════════════════════════════════════════
-              1 · HERO — dark plum, routing cards, photo badge
+              1 · HERO — fondo claro, foto de Karen siempre visible
               ══════════════════════════════════════════════════════ */}
           <section
             id="inicio"
             aria-label="Presentación principal"
-            className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-            style={{ background: '#2e2545', paddingTop: '72px' }}
+            style={{ background: '#fafafa', paddingTop: '72px' }}
           >
-            {/* Radial glow decorations */}
-            <div aria-hidden="true" className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(208,208,231,0.07) 0%, transparent 70%)' }} />
-            <div aria-hidden="true" className="absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(91,78,127,0.18) 0%, transparent 70%)' }} />
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full py-12 sm:py-20">
+              <div className="flex flex-wrap items-center gap-12 lg:gap-16">
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full py-16 sm:py-20 relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-                {/* Left: copy */}
-                <div className="animate-[fadeInUp_0.8s_ease-out_both]">
-                  <div className="text-center">
-                    {/* Credential bar */}
-                    <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 mb-6">
-                      {[`Cédula Federal ${CEDULA}`, '18 reseñas ★ 5.0', '7+ años de experiencia'].map((item, i) => (
-                        <span key={item} className="flex items-center gap-1.5 text-xs font-semibold tracking-wide" style={{ color: 'rgba(208,208,231,0.8)' }}>
-                          {i > 0 && <span aria-hidden="true" className="inline-block w-1 h-1 rounded-full" style={{ background: 'rgba(208,208,231,0.45)' }} />}
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-
-                    <h1 className="font-serif font-bold text-white leading-[1.08] mb-3" style={{ fontSize: 'clamp(1.9rem, 9vw, 5rem)' }}>
-                      Neuropsicóloga<br />en Cancún
-                      <span className="block text-[0.45em] font-normal tracking-widest uppercase mt-2" style={{ color: 'rgba(208,208,231,0.55)', fontSize: 'clamp(0.7rem, 2vw, 1rem)' }}>Especialista en TDAH y Autismo</span>
-                    </h1>
-
-                    <p className="font-serif font-normal italic leading-snug mb-5" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', color: 'rgba(208,208,231,0.72)' }}>
-                      Llegan con años de incertidumbre.<br />
-                      <span style={{ fontSize: '0.75em', fontStyle: 'normal', color: 'rgba(208,208,231,0.55)' }}>Se van con un diagnóstico claro, un informe válido y un plan concreto.</span>
-                    </p>
-
-                    <p className="text-base leading-relaxed mb-8 max-w-[54ch] mx-auto" style={{ color: 'rgba(208,208,231,0.82)' }}>
-                      Evaluaciones neuropsicológicas de <strong className="text-white font-semibold">TDAH</strong> y{' '}
-                      <strong className="text-white font-semibold">Autismo (TEA)</strong> con pruebas estandarizadas internacionales.
-                      Informes con validez oficial ante SEP, IMSS e instituciones educativas.
-                    </p>
-                  </div>
-
-                  {/* Routing cards — vertical column */}
-                  <div className="flex flex-col gap-2.5 mb-8 animate-[fadeIn_0.8s_ease-out_0.35s_both]">
-                    {[
-                      { href: '/evaluacion-tdah-ninos',     label: 'Para padres y madres', text: 'Mi hijo tiene problemas de atención o conducta',              price: 'Desde $8,300 MXN' },
-                      { href: '/evaluacion-tdah-adultos',   label: 'Para adultos',          text: 'Sospecho que tengo TDAH no diagnosticado',                    price: 'Desde $8,300 MXN' },
-                      { href: '/evaluacion-autismo-cancun', label: 'Diagnóstico TEA',       text: 'Mi hijo se relaciona de forma diferente — busco diagnóstico de autismo', price: 'Desde $8,500 MXN' },
-                    ].map((card) => (
-                      <Link
-                        key={card.href}
-                        href={card.href}
-                        className="group flex items-center gap-3 p-4 rounded-xl transition-all duration-200 hover:translate-x-1"
-                        style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(208,208,231,0.18)' }}
-                      >
-                        <div className="flex-1 min-w-0">
-                          <span className="block text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgba(208,208,231,0.90)' }}>{card.label}</span>
-                          <span className="block text-sm font-medium leading-snug" style={{ color: 'rgba(255,255,255,0.88)' }}>{card.text}</span>
-                          <span className="block text-xs mt-0.5" style={{ color: 'rgba(208,208,231,0.80)' }}>{card.price}</span>
-                        </div>
-                        <ArrowRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" style={{ color: 'rgba(208,208,231,0.5)' }} aria-hidden="true" />
-                      </Link>
+                {/* Copy */}
+                <div className="min-w-0 animate-[fadeInUp_0.8s_ease-out_both]" style={{ flex: '1.15 1 420px' }}>
+                  <div className="flex flex-wrap gap-2.5 mb-7">
+                    {[`Cédula Federal ${CEDULA}`, `${REVIEWS.reviewCount} reseñas ★ ${REVIEWS.ratingValue}`, '7+ años de experiencia'].map((item) => (
+                      <span key={item} className="inline-flex items-center rounded-full bg-white px-3.5 py-2 text-sm font-medium" style={{ border: '1px solid #e2e8f0', color: '#515e71' }}>
+                        {item}
+                      </span>
                     ))}
                   </div>
 
-                  {/* CTA principal */}
-                  <div className="flex flex-wrap gap-3 animate-[fadeIn_0.8s_ease-out_0.5s_both]">
-                    <div className="flex flex-col gap-1">
-                      <a
-                        href={waUrl('Hola Karen, vi tu página y me gustaría agendar una valoración')}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-xl text-white transition-all hover:-translate-y-0.5 hover:brightness-110"
-                        style={{ background: '#25d366' }}
-                        aria-label="Agendar cita por WhatsApp"
-                      >
-                        <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                        Agendar por WhatsApp
-                      </a>
-                      <p className="text-xs text-center" style={{ color: 'rgba(208,208,231,0.55)' }}>Respuesta habitual en menos de 2 horas · Lun–Sáb</p>
-                    </div>
+                  <h1 className="font-serif font-bold leading-[1.05] mb-5 text-balance" style={{ fontSize: 'clamp(2.25rem, 7vw, 4rem)', color: '#433860' }}>
+                    Neuropsicóloga en Cancún
+                    <span className="block mt-3.5 font-sans text-sm font-bold tracking-[0.12em] uppercase" style={{ color: '#515e71' }}>Especialista en TDAH y Autismo</span>
+                  </h1>
+
+                  <p className="font-serif font-medium leading-snug mb-4 text-balance" style={{ fontSize: 'clamp(1.25rem, 3vw, 1.625rem)', color: '#433860', maxWidth: '40ch' }}>
+                    Llegan con años de incertidumbre. Se van con un diagnóstico claro, un informe válido y un plan concreto.
+                  </p>
+
+                  <p className="text-base sm:text-lg leading-relaxed mb-9" style={{ color: '#515e71', maxWidth: '54ch' }}>
+                    Evaluaciones neuropsicológicas de <strong style={{ color: '#433860' }}>TDAH</strong> y{' '}
+                    <strong style={{ color: '#433860' }}>Autismo (TEA)</strong> con pruebas estandarizadas internacionales.
+                    Informes con validez oficial ante SEP, IMSS e instituciones educativas.
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-3.5 mb-3.5">
+                    <a
+                      href={waUrl('Hola Karen, vi tu página y me gustaría agendar una valoración')}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2.5 font-bold text-base px-7 rounded-xl text-white transition-colors hover:bg-[#0b6232]"
+                      style={{ background: '#0f7a3c', minHeight: '56px' }}
+                      aria-label="Agendar cita por WhatsApp"
+                    >
+                      <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                      Agendar por WhatsApp
+                    </a>
+                    <a
+                      href="#servicios"
+                      className="inline-flex items-center justify-center font-bold text-base px-7 rounded-xl transition-colors hover:bg-[rgba(67,56,96,0.06)]"
+                      style={{ color: '#433860', border: '2px solid #c6bce2', minHeight: '56px' }}
+                    >
+                      Ver evaluaciones y precios
+                    </a>
                   </div>
+                  <p className="text-sm" style={{ color: '#515e71' }}>Respuesta habitual en menos de 2 horas · Lun–Sáb</p>
                 </div>
 
-                {/* Right: photo + badge */}
-                <div className="hidden lg:flex justify-end animate-[fadeIn_1s_ease-out_0.4s_both]">
-                  <div className="relative inline-block">
+                {/* Foto */}
+                <div className="min-w-0 w-full" style={{ flex: '0.85 1 300px' }}>
+                  <div className="relative overflow-hidden mx-auto lg:mr-0 lg:ml-auto" style={{ background: '#c6bce2', borderRadius: '16px', aspectRatio: '465 / 533', maxWidth: '420px' }}>
                     <Image
                       src={KAREN_IMAGE}
                       alt="Neuropsicóloga Karen Trujillo — especialista en TDAH y Autismo en Cancún"
-                      width={440}
-                      height={587}
-                      className="block w-full object-cover object-top"
-                      style={{ maxWidth: '420px', borderRadius: '20px 20px 80px 20px', boxShadow: '0 30px 80px rgba(0,0,0,0.3)' }}
+                      fill
+                      sizes="(min-width: 1024px) 420px, 90vw"
+                      className="object-cover object-top"
                       priority
                       unoptimized
                     />
-                    {/* Photo badge */}
-                    <div
-                      className="absolute bg-white rounded-2xl"
-                      style={{ bottom: '24px', left: '-20px', padding: '14px 18px', minWidth: '210px', boxShadow: '0 8px 32px rgba(67,56,96,0.22)' }}
-                    >
-                      <p className="text-[11px] font-bold tracking-wide mb-1" style={{ color: '#6b5f8a' }}>Cédula {CEDULA} · SEP</p>
-                      <span role="img" aria-label="5 estrellas" className="flex gap-0.5 mb-1">
+                    <div className="absolute left-4 bottom-4 bg-white rounded-xl flex flex-col gap-1" style={{ border: '1px solid #e2e8f0', padding: '14px 18px', minWidth: '210px' }}>
+                      <p className="text-sm font-bold" style={{ color: '#6b5f8a' }}>Cédula {CEDULA} · SEP</p>
+                      <span role="img" aria-label="5 estrellas" className="flex gap-0.5">
                         {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-warning text-warning" aria-hidden="true" />)}
                       </span>
                       <a
                         href="https://maps.google.com/?cid=4630406520710891531"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[11px] hover:underline"
+                        className="text-sm hover:underline"
                         style={{ color: '#515e71' }}
                       >
-                        47 reseñas verificadas · 5.0/5
+                        {REVIEWS.reviewCount} reseñas verificadas · {REVIEWS.ratingValue}/5
                       </a>
                     </div>
                   </div>
@@ -669,7 +635,7 @@ export default function Home() {
               <SectionReveal delay={0.3}>
                 <div className="mt-10 text-center">
                   <p className="text-sm font-light mb-3" style={{ color: '#515e71' }}>
-                    ¿Ya te evaluaste con Karen? Tu reseña ayuda a que más familias de Cancún nos encuentren.
+                    ¿Ya te evaluaste con Karen? Tu reseña ayuda a que más familias de Cancún me encuentren.
                   </p>
                   <a
                     href="https://maps.google.com/maps?cid=4630406520710891531&action=writeareview"
@@ -704,7 +670,7 @@ export default function Home() {
                     width={400}
                     height={467}
                     className="block w-full object-cover object-top"
-                    style={{ maxWidth: '380px', borderRadius: '20px 80px 20px 20px', boxShadow: '0 24px 64px rgba(0,0,0,0.28)' }}
+                    style={{ maxWidth: '380px', borderRadius: '16px' }}
                     loading="lazy"
                     unoptimized
                   />
@@ -750,7 +716,7 @@ export default function Home() {
 
                   {/* Mini stats */}
                   <div className="flex flex-wrap gap-6 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                    {[{ v: '7+', l: 'Años' }, { v: '500+', l: 'Evaluaciones' }, { v: '47+', l: 'Reseñas 5★' }].map((s) => (
+                    {[{ v: '7+', l: 'Años' }, { v: '500+', l: 'Evaluaciones' }, { v: '18', l: 'Reseñas 5★' }].map((s) => (
                       <div key={s.l}>
                         <p className="font-serif font-bold text-white" style={{ fontSize: '1.8rem', lineHeight: '1' }}>{s.v}</p>
                         <p className="text-[11px] font-semibold uppercase tracking-widest mt-1" style={{ color: 'rgba(208,208,231,0.65)' }}>{s.l}</p>
@@ -1079,7 +1045,7 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all hover:opacity-90"
-                        style={{ background: '#25d366' }}
+                        style={{ background: '#0f7a3c' }}
                       >
                         <MessageCircle className="w-4 h-4" aria-hidden="true" />
                         WhatsApp
@@ -1138,7 +1104,7 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all hover:opacity-90"
-                      style={{ background: '#25d366' }}
+                      style={{ background: '#0f7a3c' }}
                     >
                       <MessageCircle className="w-4 h-4" aria-hidden="true" />
                       WhatsApp

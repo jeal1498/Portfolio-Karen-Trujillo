@@ -504,7 +504,7 @@ export default function AutismoNivel1SintomasAdultos() {
                   loading="lazy"
                 />
                 <span>Karen Trujillo · Cédula {CEDULA}</span>
-                <span>★ 47+ reseñas · 5.0</span>
+                <span>★ 18 reseñas · 5.0</span>
               </div>
               <div className="flex justify-center">
                 <a href={WA} target="_blank" rel="noopener noreferrer"

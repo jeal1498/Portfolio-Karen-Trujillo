@@ -898,7 +898,7 @@ export default function SenalesTDAHNinos() {
                       <p className="font-bold text-white">Neuropsicóloga Karen Trujillo</p>
                       <div className="flex flex-wrap items-center gap-3 text-xs text-white/70 mt-1">
                         <span className="flex items-center gap-1"><BadgeCheck className="w-3 h-3 text-white/40" /> Cédula {CEDULA}</span>
-                        <span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 47+ reseñas · 5.0</span>
+                        <span className="flex items-center gap-1"><Star className="w-3 h-3 text-warning fill-warning" /> 18 reseñas · 5.0</span>
                       </div>
                     </div>
                   </div>

@@ -112,7 +112,7 @@ components:
 
 Este sistema visual funciona como una consulta médica bien llevada: el espacio es ordenado y preciso, el especialista habla tu idioma, y sales con respuestas concretas en lugar de incertidumbre. No hay ornamento innecesario — cada elemento del diseño existe porque ayuda a que la familia ansiosa tome una decisión bien fundamentada. La credibilidad no se declara; se demuestra con instrumentos específicos, credenciales reales y testimonios con nombres propios.
 
-La paleta gira en torno a un morado ciruela oscuro (plum-ink) que transmite autoridad clínica sin caer en el azul institucional frío. Las superficies son blancas y gris-azuladas muy suaves — limpias, no estériles. Los acentos lavanda y blush diferencian las tres categorías de servicio (TDAH infantil, TDAH adultos, autismo) sin convertirse en decoración. La tipografía combina Playfair Display para headings — cálida y seria, con personalidad — con Montserrat para el cuerpo, legible y neutral.
+La paleta gira en torno a un morado ciruela oscuro (plum-ink) que transmite autoridad clínica sin caer en el azul institucional frío. Las superficies son blancas y gris-azuladas muy suaves — limpias, no estériles. Los acentos lavanda y blush diferencian las tres categorías de servicio (TDAH infantil, TDAH adultos, autismo) sin convertirse en decoración. La tipografía combina Outfit para headings — cálida y seria, con personalidad — con Maven Pro para el cuerpo, legible y neutral.
 
 Este sistema rechaza explícitamente: las clínicas genéricas con fotos de stock en bata blanca, las landing pages de startup SaaS con métricas hero y gradientes de texto, los sitios hospitalarios fríos con azul corporativo sin cara, y las páginas de wellness con fondos crema y tono aspiracional vago. La calidez aquí no viene de pasteles ni de frases motivacionales — viene de la precisión que tranquiliza.
 
@@ -157,14 +157,14 @@ Estos cuatro tonos son las variaciones del logo en el brandbook. No se usan como
 
 **La Regla del Ancla Única.** Plum Ink es el único color saturado del sistema. Los tres acentos (lavender, blush, sand) existen como tintes de fondo y nunca compiten con el ancla en intensidad. Si un nuevo color parece necesario, primero prueba si un tinte más oscuro de plum-ink resuelve el problema.
 
-**La Regla del Contraste No Negociable.** Ink Secondary (`#515e71`) sobre Surface (`#ffffff`) cumple 4.5:1. Plum Ink (`#382f51`) sobre cualquier superficie cumple 7:1. Antes de usar cualquier color de texto sobre fondo de color, verifica el ratio — nunca se asume.
+**La Regla del Contraste No Negociable.** Ink Secondary (`#515e71`) sobre Surface (`#ffffff`) cumple 4.5:1. Plum Ink (`#433860`) sobre cualquier superficie cumple 7:1. Antes de usar cualquier color de texto sobre fondo de color, verifica el ratio — nunca se asume.
 
 ## 3. Typography
 
 **Display/Headline Font:** Outfit (sans-serif — brandbook oficial)
 **Body/UI Font:** Maven Pro (sans-serif — brandbook oficial)
 
-**Character:** Outfit es geométrica y moderna con personalidad propia — más cálida que Montserrat, menos formal que una serif, perfecta para una especialista que quiere ser accesible sin perder autoridad. Maven Pro tiene excelente legibilidad en cuerpo de texto y combina naturalmente con Outfit al compartir su ADN geométrico. Juntas comunican "profesional contemporánea y cercana".
+**Character:** Outfit es geométrica y moderna con personalidad propia — más cálida que una sans neutra, menos formal que una serif, perfecta para una especialista que quiere ser accesible sin perder autoridad. Maven Pro tiene excelente legibilidad en cuerpo de texto y combina naturalmente con Outfit al compartir su ADN geométrico. Juntas comunican "profesional contemporánea y cercana".
 
 **Google Fonts import:**
 ```
@@ -177,7 +177,7 @@ https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Maven+Pr
 - **Headline** (Outfit 700, `clamp(1.875rem, 4vw, 2.25rem)`, lh 1.2, ls -0.01em): Titulares de sección (h2). Siempre con `text-wrap: balance`.
 - **Title** (Maven Pro 700, `1.25rem`, lh 1.5): Títulos de tarjeta y subtítulos de componente (h3).
 - **Body** (Maven Pro 400, `1rem` sobre base 17px, lh 1.7): Todo el texto descriptivo. Máximo 75ch de ancho. `text-wrap: pretty` para párrafos largos.
-- **Label** (Maven Pro 700, `0.625rem`, lh 1.5, ls 0.12em, uppercase): Eyebrows de sección, badges de categoría, etiquetas de CTA. Uso muy restringido — máximo una instancia por sección.
+- **Label** (Maven Pro 700, `0.75rem` (12 px), lh 1.5, ls 0.12em, uppercase): Eyebrows de sección, badges de categoría, etiquetas de CTA. Uso muy restringido — máximo una instancia por sección.
 
 ### Named Rules
 
@@ -234,7 +234,7 @@ Estilo stroke: borde 1px border-subtle, fondo surface, radius 6px (`rounded-md`)
 
 ### Navigation
 
-- **Style:** Fondo surface/95 con backdrop-blur-lg. Links: Montserrat 500, texto ink-secondary. En hover: texto plum-ink.
+- **Style:** Fondo surface/95 con backdrop-blur-lg. Links: Maven Pro 500, texto ink-secondary. En hover: texto plum-ink.
 - **Active:** Indicador sutil — texto plum-ink bold.
 - **Mobile:** Sheet/drawer lateral, fondo surface, links a full width.
 - **Sticky behavior:** Navbar se vuelve opaca al hacer scroll, con soft ambient shadow.
@@ -249,10 +249,10 @@ WhatsApp y Teléfono flotantes en mobile/desktop.
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** usar Plum Ink (`#382f51`) como el único color de acento saturado. Los tres colores de categoría (lavender, blush, sand) son tintes de fondo — nunca en texto sobre blanco.
+- **Do** usar Plum Ink (`#433860`) como el único color de acento saturado. Los tres colores de categoría (lavender, blush, sand) son tintes de fondo — nunca en texto sobre blanco.
 - **Do** mantener el radius de tarjetas en 16px máximo (`rounded-2xl`). Un card con 24px+ de radio comunica app de consumo, no consultorio clínico.
 - **Do** escribir labels y CTAs con verbo + objeto específico: "Ver servicios", "Agendar evaluación TDAH", "Llamar al consultorio". Nunca "Ver más" o "Click aquí".
-- **Do** usar Playfair Display exclusivamente para h1 y h2. Su autoridad viene de su rareza en el sistema.
+- **Do** usar Outfit exclusivamente para h1 y h2. Su autoridad viene de su rareza en el sistema.
 - **Do** agregar `@media (prefers-reduced-motion: reduce)` a cada animación. Las familias con hijos neurodivergentes pueden tener configurado este setting.
 - **Do** verificar contraste antes de cada color de texto nuevo. Ink Secondary (`#515e71`) es el mínimo permitido sobre blanco — nunca más claro que eso.
 - **Do** usar sombras con tinte plum: `rgba(56, 47, 81, 0.X)`. El gris genérico de box-shadow hace que las tarjetas parezcan templates de Figma.
