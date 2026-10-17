@@ -3,6 +3,7 @@
 Estilos: 1 = foto completa + titular abajo (el que eligió Karen en el video 1)
          2 = foto arriba + «Así NO…» con ejemplo tachado/correcto
          3 = fondo arena + arco con foto (frase emocional)
+Zona segura (Eduardo, 16 oct 2026): todo el contenido entre y=300 y y=1620 (Instagram recorta a 3:4 en el perfil).
 En --hook, lo que va entre {llaves} es la palabra resaltada.
 Ejemplo:
   portada.py --estilo 1 --video trabajo/public/input-video.mp4 --tiempo 3.2 \\
@@ -28,7 +29,7 @@ BASE = '''@font-face{font-family:Outfit;src:url(Outfit-700-latin.woff2);font-wei
 if a.estilo == 1:
     body = f'''<style>{BASE} body{{background:#1E1730}}
 .g{{position:absolute;left:0;right:0;bottom:0;height:1100px;background:linear-gradient(to top,#1E1730 0%,rgba(30,23,48,.92) 45%,rgba(30,23,48,0) 100%)}}
-.k{{position:absolute;left:60px;top:260px;background:#F5E7D6;color:#2E2545;font:700 34px/1 "Maven Pro";letter-spacing:.12em;padding:16px 28px;border-radius:40px;text-transform:uppercase}}
+.k{{position:absolute;left:60px;top:310px;background:#F5E7D6;color:#2E2545;font:700 34px/1 "Maven Pro";letter-spacing:.12em;padding:16px 28px;border-radius:40px;text-transform:uppercase}}
 h1{{font:700 150px/1.02 Outfit;color:#fff;letter-spacing:-.02em}}
 .tx{{position:absolute;left:60px;right:60px;bottom:330px}}
 h1 em{{font-style:normal;background:#F5E7D6;color:#2E2545;padding:0 22px;border-radius:24px;-webkit-box-decoration-break:clone;box-decoration-break:clone}}
@@ -49,11 +50,11 @@ h1 em{{font-style:normal;color:#F5E7D6;text-decoration:underline;text-decoration
 <div class=bx><div class="c c1">{a.antes}</div><div class="c c2"><b><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b>{a.despues}</div></div></div>'''
 else:
     body = f'''<style>{BASE} body{{background:#F5E7D6}} .stage{{background:#F5E7D6}}
-h1{{position:absolute;left:60px;right:60px;top:240px;font:700 132px/1.2 Outfit;color:#2E2545;letter-spacing:-.02em}}
+h1{{position:absolute;left:60px;right:60px;top:310px;font:700 132px/1.2 Outfit;color:#2E2545;letter-spacing:-.02em}}
 h1 em{{font-style:normal;color:#fff;background:#433860;padding:0 20px;border-radius:22px;-webkit-box-decoration-break:clone;box-decoration-break:clone}}
-.arch{{position:absolute;left:110px;right:110px;top:660px;height:960px;border-radius:430px 430px 44px 44px;overflow:hidden;box-shadow:0 30px 60px rgba(46,37,69,.3);border:10px solid #C6BCE2}}
+.arch{{position:absolute;left:110px;right:110px;top:700px;height:860px;border-radius:430px 430px 44px 44px;overflow:hidden;box-shadow:0 30px 60px rgba(46,37,69,.3);border:10px solid #C6BCE2}}
 .arch div{{position:absolute;inset:0;background:url(foto.jpg) 50% 22%/cover}}
-.s{{position:absolute;left:0;right:0;top:1650px;text-align:center;font:700 40px/1.2 "Maven Pro";color:#433860}}</style>
+.s{{position:absolute;left:0;right:0;top:1580px;text-align:center;font:700 40px/1.2 "Maven Pro";color:#433860}}</style>
 <div class=stage><h1>{hl(a.hook).replace('|','<br>')}</h1><div class=arch><div></div></div><div class=s>{a.sub}</div></div>'''
 open(f'{T}/p.html', 'w').write(f'<!doctype html><meta charset=utf-8>{body}')
 js = f'''const {{chromium}}=require('/opt/node22/lib/node_modules/playwright');
