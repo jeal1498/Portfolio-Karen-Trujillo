@@ -300,6 +300,8 @@ function SectionReveal({ children, className = '', delay = 0 }: { children: Reac
 }
 
 /* ─── service badge colours (match HTML prototype) ─── */
+const svcDuration = ['2–3 semanas · 4–5 citas', '2–3 semanas · 4–5 citas', '3–4 semanas · 5–6 citas'];
+
 const svcBadge = [
   { bg: '#c6bce2', color: '#433860', hoverBorder: '#c6bce2cc' },
   { bg: '#f5e7d6', color: '#6b4e1a', hoverBorder: '#f5e7d6cc' },
@@ -463,22 +465,6 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              2 · SYMPTOM CHECKER — interactive 3-tab tool
-              ══════════════════════════════════════════════════════ */}
-          <section className="py-14 sm:py-20 bg-card border-b border-border">
-            <div className="max-w-3xl mx-auto px-6">
-              <SectionReveal>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Reconoces estas señales?</h2>
-                <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-8">Selecciona el perfil que más se parece a tu situación y marca lo que reconozcas.</p>
-              </SectionReveal>
-              <SectionReveal delay={0.1}>
-                <SymptomCheckerHome />
-              </SectionReveal>
-            </div>
-          </section>
-
-
-          {/* ══════════════════════════════════════════════════════
               4 · SERVICES — clean pill-badge cards
               ══════════════════════════════════════════════════════ */}
           <section id="servicios" aria-labelledby="servicios-heading" className="py-20 scroll-mt-20" style={{ background: '#f8f7fc' }}>
@@ -513,6 +499,7 @@ export default function Home() {
                       <p className="text-xs font-bold mb-4" style={{ color: '#515e71', letterSpacing: '0.02em' }}>
                         {service.age}&nbsp;&nbsp;·&nbsp;&nbsp;{service.price}
                       </p>
+                      <p className="text-xs mb-4" style={{ color: '#515e71' }}>{svcDuration[i]}</p>
                       <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: '#515e71', lineHeight: '1.7' }}>
                         {service.desc}
                       </p>
@@ -558,6 +545,66 @@ export default function Home() {
                   </a>
                 </div>
               </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              2 · SYMPTOM CHECKER — interactive 3-tab tool
+              ══════════════════════════════════════════════════════ */}
+          <section className="py-14 sm:py-20 bg-card border-b border-border">
+            <div className="max-w-3xl mx-auto px-6">
+              <SectionReveal>
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-3 text-center">¿Reconoces estas señales?</h2>
+                <p className="text-muted-foreground font-light text-center max-w-lg mx-auto mb-8">Selecciona el perfil que más se parece a tu situación y marca lo que reconozcas.</p>
+              </SectionReveal>
+              <SectionReveal delay={0.1}>
+                <SymptomCheckerHome />
+              </SectionReveal>
+            </div>
+          </section>
+
+
+          {/* ══════════════════════════════════════════════════════
+              6 · PROCESS — numbered timeline 01-04
+              ══════════════════════════════════════════════════════ */}
+          <section id="proceso" aria-labelledby="proceso-heading" className="py-20 border-t border-border" style={{ background: '#fafafa' }}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+              <SectionReveal>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Paso a paso</p>
+                <h2 id="proceso-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
+                  ¿Cómo es el proceso?
+                </h2>
+                <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: '#6b5f8a' }} />
+                <p className="text-base font-light max-w-[52ch] mb-14" style={{ color: '#515e71', lineHeight: '1.7' }}>
+                  Un proceso claro en cuatro pasos, desde la primera consulta hasta el informe final.
+                </p>
+              </SectionReveal>
+
+              <ol className="list-none m-0 p-0 grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
+                {[
+                  { n: '01', title: 'Entrevista inicial', subtitle: '(online o presencial)', desc: 'Primera sesión para conocer el motivo de consulta, historia clínica y contexto del paciente.', duration: '60–90 min' },
+                  { n: '02', title: 'Aplicación de pruebas neuropsicológicas', subtitle: '', desc: 'Sesiones presenciales de evaluación con instrumentos estandarizados internacionales.', duration: 'TDAH: 2–3 sesiones · Autismo: 3–4 sesiones' },
+                  { n: '03', title: 'Análisis e interpretación de resultados', subtitle: '', desc: 'Karen integra los datos de todas las pruebas en un informe clínico completo con diagnóstico diferencial.', duration: '' },
+                  { n: '04', title: 'Sesión de devolución', subtitle: '', desc: 'Se explica el informe en detalle, se responden preguntas y se entregan recomendaciones concretas y plan terapéutico.', duration: 'Presencial u online' },
+                ].map((step, i) => (
+                  <li key={step.n} style={{ borderTop: '2px solid #433860', paddingTop: '1.25rem' }}>
+                    <SectionReveal delay={i * 0.1}>
+                      <p className="font-serif font-bold leading-none mb-3" style={{ fontSize: '2.75rem', color: '#6b5f8a' }}>{step.n}</p>
+                      <h3 className="font-bold mb-2" style={{ fontSize: '1.15rem', color: '#433860', lineHeight: 1.35 }}>
+                        {step.title}{' '}
+                        {step.subtitle && <span className="font-normal text-sm" style={{ color: '#515e71' }}>{step.subtitle}</span>}
+                      </h3>
+                      <p className="text-base leading-relaxed" style={{ color: '#515e71', lineHeight: '1.7' }}>{step.desc}</p>
+                      {step.duration && (
+                        <span className="inline-block text-xs font-bold rounded-full mt-3" style={{ color: '#433860', background: '#fff', border: '1px solid #c6bce2', padding: '6px 12px' }}>
+                          {step.duration}
+                        </span>
+                      )}
+                    </SectionReveal>
+                  </li>
+                ))}
+              </ol>
             </div>
           </section>
 
@@ -725,95 +772,6 @@ export default function Home() {
                   </div>
                 </SectionReveal>
 
-              </div>
-            </div>
-          </section>
-
-
-          {/* ══════════════════════════════════════════════════════
-              6 · PROCESS — numbered timeline 01-04
-              ══════════════════════════════════════════════════════ */}
-          <section id="proceso" aria-labelledby="proceso-heading" className="py-20 bg-white">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
-              <SectionReveal>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: '#6b5f8a' }}>Paso a paso</p>
-                <h2 id="proceso-heading" className="font-serif font-bold leading-tight mb-4" style={{ fontSize: 'clamp(1.9rem,4vw,2.6rem)', color: '#433860' }}>
-                  ¿Cómo es el proceso?
-                </h2>
-                <div className="w-10 h-0.5 rounded-full mb-5" style={{ background: '#6b5f8a' }} />
-                <p className="text-base font-light max-w-[52ch] mb-14" style={{ color: '#515e71', lineHeight: '1.7' }}>
-                  Un proceso claro en cuatro pasos, desde la primera consulta hasta el informe final.
-                </p>
-              </SectionReveal>
-
-              <div className="flex flex-col max-w-[680px]" style={{ gap: 0 }}>
-                {[
-                  {
-                    n: '01',
-                    title: 'Entrevista inicial',
-                    subtitle: '(online o presencial)',
-                    desc: 'Primera sesión para conocer el motivo de consulta, historia clínica y contexto del paciente.',
-                    duration: '60–90 min',
-                  },
-                  {
-                    n: '02',
-                    title: 'Aplicación de pruebas neuropsicológicas',
-                    subtitle: '',
-                    desc: 'Sesiones presenciales de evaluación con instrumentos estandarizados internacionales.',
-                    duration: 'TDAH: 2–3 sesiones · Autismo: 3–4 sesiones',
-                  },
-                  {
-                    n: '03',
-                    title: 'Análisis e interpretación de resultados',
-                    subtitle: '',
-                    desc: 'Karen integra los datos de todas las pruebas en un informe clínico completo con diagnóstico diferencial.',
-                    duration: '',
-                  },
-                  {
-                    n: '04',
-                    title: 'Sesión de devolución',
-                    subtitle: '',
-                    desc: 'Se explica el informe en detalle, se responden preguntas y se entregan recomendaciones concretas y plan terapéutico.',
-                    duration: 'Presencial u online',
-                  },
-                ].map((step, i, arr) => (
-                  <SectionReveal key={step.n} delay={i * 0.1}>
-                    <div className="grid" style={{ gridTemplateColumns: '72px 1fr', gap: '1.5rem', paddingBottom: i < arr.length - 1 ? '2.5rem' : 0 }}>
-                      {/* Number + connector */}
-                      <div style={{ position: 'relative' }}>
-                        <div className="font-serif leading-none" style={{ fontSize: '3rem', color: '#7a6fa0', lineHeight: '1' }}>{step.n}</div>
-                        {i < arr.length - 1 && (
-                          <div
-                            style={{
-                              position: 'absolute',
-                              left: '36px',
-                              top: '58px',
-                              bottom: '-2rem',
-                              width: '1px',
-                              background: 'linear-gradient(to bottom, rgba(208,208,231,0.55), transparent)',
-                            }}
-                          />
-                        )}
-                      </div>
-                      {/* Content */}
-                      <div style={{ paddingTop: '0.25rem' }}>
-                        <h3 className="font-bold mb-2" style={{ fontSize: '1.1rem', color: '#433860' }}>
-                          {step.title}{' '}
-                          {step.subtitle && <span className="font-normal text-sm" style={{ color: '#515e71' }}>{step.subtitle}</span>}
-                        </h3>
-                        <p className="text-sm leading-relaxed" style={{ color: '#515e71', lineHeight: '1.7' }}>{step.desc}</p>
-                        {step.duration && (
-                          <span
-                            className="inline-block text-xs font-semibold rounded-full mt-2.5"
-                            style={{ color: '#6b5f8a', background: '#f8f7fc', border: '1px solid #c6bce2', padding: '4px 12px', letterSpacing: '0.06em' }}
-                          >
-                            {step.duration}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </SectionReveal>
-                ))}
               </div>
             </div>
           </section>
@@ -1059,14 +1017,14 @@ export default function Home() {
 
 
           {/* ══════════════════════════════════════════════════════
-              12 · CTA FINAL — closing conversion
+              12 · CTA FINAL — cierre sobre plum plano
               ══════════════════════════════════════════════════════ */}
-          <section id="cta-final" className="py-14 sm:py-20 bg-gradient-to-br from-secondary to-accent-blue/20 border-t border-border">
+          <section id="cta-final" className="py-14 sm:py-20" style={{ background: '#433860' }}>
             <div className="max-w-3xl mx-auto px-6">
               <SectionReveal>
                 <div className="text-center mb-10">
-                  <h2 className="text-4xl sm:text-5xl font-serif font-bold text-primary mb-4">¿Lista para dar el primer paso?</h2>
-                  <p className="text-muted-foreground font-light max-w-xl mx-auto">
+                  <h2 className="font-serif font-bold text-white mb-4 text-balance" style={{ fontSize: 'clamp(2rem, 5vw, 2.75rem)', lineHeight: 1.15 }}>¿Lista para dar el primer paso?</h2>
+                  <p className="max-w-xl mx-auto text-lg leading-relaxed" style={{ color: '#e4e0ee' }}>
                     Selecciona la evaluación que necesitas o escríbeme por WhatsApp para orientación gratuita.
                   </p>
                 </div>
@@ -1078,17 +1036,13 @@ export default function Home() {
                     <Link
                       key={service.slug}
                       href={service.slug}
-                      className={`group flex flex-col items-center gap-3 p-5 bg-card border-2 border-border rounded-2xl hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 ${service.borderHover}`}
+                      className="flex flex-col items-center gap-1.5 p-5 rounded-2xl text-center transition-colors hover:bg-white/10"
+                      style={{ border: '1px solid rgba(255,255,255,0.28)', background: 'rgba(255,255,255,0.06)' }}
                     >
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <service.icon className="w-5 h-5 text-primary/70" aria-hidden="true" />
-                      </div>
-                      <div className="text-center">
-                        <p className="font-bold text-primary text-sm mb-0.5">{service.label}</p>
-                        <p className="text-xs text-muted-foreground font-light">{service.age} · {service.price}</p>
-                      </div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-primary/75 flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Agendar <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                      <span className="font-bold text-white">{service.label}</span>
+                      <span className="text-sm" style={{ color: '#e4e0ee' }}>{service.age} · {service.price}</span>
+                      <span className="mt-1.5 text-sm font-bold text-white inline-flex items-center gap-1">
+                        Agendar <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                       </span>
                     </Link>
                   ))}
@@ -1096,44 +1050,45 @@ export default function Home() {
               </SectionReveal>
 
               <SectionReveal delay={0.2}>
-                <div className="pt-8 border-t border-border">
-                  <p className="text-center text-sm text-muted-foreground font-light mb-5">¿Prefieres hablar antes de agendar?</p>
+                <div className="pt-8 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.18)' }}>
+                  <p className="mb-5" style={{ color: '#e4e0ee' }}>¿Prefieres hablar antes de agendar?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a
                       href={waUrl('Hola Karen, vi tu página y me gustaría saber más sobre las evaluaciones que ofreces.')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all hover:opacity-90"
-                      style={{ background: '#0f7a3c' }}
+                      className="inline-flex items-center justify-center gap-2 px-7 rounded-xl font-bold text-white transition-colors hover:bg-[#0b6232]"
+                      style={{ background: '#0f7a3c', border: '2px solid #fff', minHeight: '52px' }}
                     >
-                      <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                      <MessageCircle className="w-5 h-5" aria-hidden="true" />
                       WhatsApp
                     </a>
                     <a
                       href={`tel:${PHONE_E164}`}
-                      className="flex items-center justify-center gap-2 px-6 py-3.5 bg-card border-2 border-border hover:border-primary/50 text-primary font-bold text-xs uppercase tracking-widest rounded-xl transition-all"
+                      className="inline-flex items-center justify-center gap-2 px-7 rounded-xl font-bold text-white transition-colors hover:border-white"
+                      style={{ border: '2px solid rgba(255,255,255,0.55)', minHeight: '52px' }}
                     >
-                      <Phone className="w-4 h-4" aria-hidden="true" />
+                      <Phone className="w-5 h-5" aria-hidden="true" />
                       Llamar
                     </a>
                   </div>
-                  <p className="text-xs text-muted-foreground/50 text-center mt-4">
+                  <p className="text-sm mt-5" style={{ color: '#c6bce2' }}>
                     Lunes a Viernes 9:00–7:00 PM · Sábados 9:00–2:00 PM
                   </p>
                 </div>
               </SectionReveal>
 
               <SectionReveal delay={0.3}>
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border">
-                    <Shield className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Cancelación con 48 hrs
-                  </span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border">
-                    <ShieldCheck className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Reembolso del anticipo
-                  </span>
-                  <span className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border">
-                    <BadgeCheck className="w-3.5 h-3.5 text-primary/50" aria-hidden="true" /> Cédula {CEDULA}
-                  </span>
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm" style={{ color: '#e4e0ee' }}>
+                  {[
+                    { Icon: Shield, label: 'Cancelación con 48 hrs' },
+                    { Icon: ShieldCheck, label: 'Reembolso del anticipo' },
+                    { Icon: BadgeCheck, label: `Cédula ${CEDULA}` },
+                  ].map(({ Icon, label }) => (
+                    <span key={label} className="flex items-center gap-2 px-3.5 py-2 rounded-full" style={{ border: '1px solid rgba(255,255,255,0.28)' }}>
+                      <Icon className="w-3.5 h-3.5" aria-hidden="true" /> {label}
+                    </span>
+                  ))}
                 </div>
               </SectionReveal>
             </div>
